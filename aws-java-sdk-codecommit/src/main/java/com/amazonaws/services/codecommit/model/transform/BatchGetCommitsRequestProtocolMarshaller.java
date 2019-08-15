@@ -10,7 +10,7 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.glue.model.transform;
+package com.amazonaws.services.codecommit.model.transform;
 
 import javax.annotation.Generated;
 
@@ -18,7 +18,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.Request;
 
 import com.amazonaws.http.HttpMethodName;
-import com.amazonaws.services.glue.model.*;
+import com.amazonaws.services.codecommit.model.*;
 import com.amazonaws.transform.Marshaller;
 
 import com.amazonaws.protocol.*;
@@ -26,34 +26,34 @@ import com.amazonaws.protocol.Protocol;
 import com.amazonaws.annotation.SdkInternalApi;
 
 /**
- * GetJobBookmarksRequest Marshaller
+ * BatchGetCommitsRequest Marshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 @SdkInternalApi
-public class GetJobBookmarksRequestProtocolMarshaller implements Marshaller<Request<GetJobBookmarksRequest>, GetJobBookmarksRequest> {
+public class BatchGetCommitsRequestProtocolMarshaller implements Marshaller<Request<BatchGetCommitsRequest>, BatchGetCommitsRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.AWS_JSON).requestUri("/")
-            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true).operationIdentifier("AWSGlue.GetJobBookmarks")
-            .serviceName("AWSGlue").build();
+            .httpMethodName(HttpMethodName.POST).hasExplicitPayloadMember(false).hasPayloadMembers(true)
+            .operationIdentifier("CodeCommit_20150413.BatchGetCommits").serviceName("AWSCodeCommit").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 
-    public GetJobBookmarksRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
+    public BatchGetCommitsRequestProtocolMarshaller(com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory) {
         this.protocolFactory = protocolFactory;
     }
 
-    public Request<GetJobBookmarksRequest> marshall(GetJobBookmarksRequest getJobBookmarksRequest) {
+    public Request<BatchGetCommitsRequest> marshall(BatchGetCommitsRequest batchGetCommitsRequest) {
 
-        if (getJobBookmarksRequest == null) {
+        if (batchGetCommitsRequest == null) {
             throw new SdkClientException("Invalid argument passed to marshall(...)");
         }
 
         try {
-            final ProtocolRequestMarshaller<GetJobBookmarksRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
-                    getJobBookmarksRequest);
+            final ProtocolRequestMarshaller<BatchGetCommitsRequest> protocolMarshaller = protocolFactory.createProtocolMarshaller(SDK_OPERATION_BINDING,
+                    batchGetCommitsRequest);
 
             protocolMarshaller.startMarshalling();
-            GetJobBookmarksRequestMarshaller.getInstance().marshall(getJobBookmarksRequest, protocolMarshaller);
+            BatchGetCommitsRequestMarshaller.getInstance().marshall(batchGetCommitsRequest, protocolMarshaller);
             return protocolMarshaller.finishMarshalling();
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

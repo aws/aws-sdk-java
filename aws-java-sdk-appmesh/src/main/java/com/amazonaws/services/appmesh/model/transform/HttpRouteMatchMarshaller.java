@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.appmesh.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -27,8 +28,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HttpRouteMatchMarshaller {
 
+    private static final MarshallingInfo<List> HEADERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("headers").build();
+    private static final MarshallingInfo<String> METHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("method").build();
     private static final MarshallingInfo<String> PREFIX_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("prefix").build();
+    private static final MarshallingInfo<String> SCHEME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("scheme").build();
 
     private static final HttpRouteMatchMarshaller instance = new HttpRouteMatchMarshaller();
 
@@ -46,7 +53,10 @@ public class HttpRouteMatchMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(httpRouteMatch.getHeaders(), HEADERS_BINDING);
+            protocolMarshaller.marshall(httpRouteMatch.getMethod(), METHOD_BINDING);
             protocolMarshaller.marshall(httpRouteMatch.getPrefix(), PREFIX_BINDING);
+            protocolMarshaller.marshall(httpRouteMatch.getScheme(), SCHEME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

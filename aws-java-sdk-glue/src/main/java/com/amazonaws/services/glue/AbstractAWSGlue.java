@@ -318,11 +318,6 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
-    public GetJobBookmarksResult getJobBookmarks(GetJobBookmarksRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public GetJobRunResult getJobRun(GetJobRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

@@ -614,12 +614,17 @@ public interface AWSAppMesh {
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -715,12 +720,17 @@ public interface AWSAppMesh {
      * @return Result of the TagResource operation returned by the service.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws TooManyTagsException
      *         The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user
      *         tags per resource. You must reduce the number of tags in the request. None of the tags in this request
@@ -740,12 +750,17 @@ public interface AWSAppMesh {
      * @return Result of the UntagResource operation returned by the service.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource" target="_top">AWS API
      *      Documentation</a>

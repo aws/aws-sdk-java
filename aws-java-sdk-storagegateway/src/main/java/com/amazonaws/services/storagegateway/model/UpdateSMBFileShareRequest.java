@@ -104,8 +104,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private Boolean sMBACLEnabled;
     /**
      * <p>
-     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      */
@@ -710,14 +710,14 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
-     * @return A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *         group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
-     *         Authentication is set to <code>ActiveDirectory</code>.
+     * @return A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     *         prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set
+     *         to <code>ActiveDirectory</code>.
      */
 
     public java.util.List<String> getAdminUserList() {
@@ -729,15 +729,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
-     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
-     *        Authentication is set to <code>ActiveDirectory</code>.
+     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     *        prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set
+     *        to <code>ActiveDirectory</code>.
      */
 
     public void setAdminUserList(java.util.Collection<String> adminUserList) {
@@ -751,8 +751,8 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * <p>
@@ -762,9 +762,9 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param adminUserList
-     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
-     *        Authentication is set to <code>ActiveDirectory</code>.
+     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     *        prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set
+     *        to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -780,15 +780,15 @@ public class UpdateSMBFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A list of users or groups in the Active Directory that have administrator rights to the file share. A group must
-     * be prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
+     * A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     * prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.
      * </p>
      * 
      * @param adminUserList
-     *        A list of users or groups in the Active Directory that have administrator rights to the file share. A
-     *        group must be prefixed with the @ character. For example <code>@group1</code>. Can only be set if
-     *        Authentication is set to <code>ActiveDirectory</code>.
+     *        A list of users in the Active Directory that have administrator rights to the file share. A group must be
+     *        prefixed with the @ character. For example <code>@group1</code>. Can only be set if Authentication is set
+     *        to <code>ActiveDirectory</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

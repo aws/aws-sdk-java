@@ -1979,39 +1979,6 @@ public class AWSGlueAsyncClient extends AWSGlueClient implements AWSGlueAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(GetJobBookmarksRequest request) {
-
-        return getJobBookmarksAsync(request, null);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetJobBookmarksResult> getJobBookmarksAsync(final GetJobBookmarksRequest request,
-            final com.amazonaws.handlers.AsyncHandler<GetJobBookmarksRequest, GetJobBookmarksResult> asyncHandler) {
-        final GetJobBookmarksRequest finalRequest = beforeClientExecution(request);
-
-        return executorService.submit(new java.util.concurrent.Callable<GetJobBookmarksResult>() {
-            @Override
-            public GetJobBookmarksResult call() throws Exception {
-                GetJobBookmarksResult result = null;
-
-                try {
-                    result = executeGetJobBookmarks(finalRequest);
-                } catch (Exception ex) {
-                    if (asyncHandler != null) {
-                        asyncHandler.onError(ex);
-                    }
-                    throw ex;
-                }
-
-                if (asyncHandler != null) {
-                    asyncHandler.onSuccess(finalRequest, result);
-                }
-                return result;
-            }
-        });
-    }
-
-    @Override
     public java.util.concurrent.Future<GetJobRunResult> getJobRunAsync(GetJobRunRequest request) {
 
         return getJobRunAsync(request, null);

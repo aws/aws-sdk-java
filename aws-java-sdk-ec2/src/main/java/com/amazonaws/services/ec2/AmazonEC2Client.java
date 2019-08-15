@@ -19177,6 +19177,59 @@ public class AmazonEC2Client extends AmazonWebServiceClient implements AmazonEC2
 
     /**
      * <p>
+     * Modifies the VPN tunnel endpoint certificate.
+     * </p>
+     * 
+     * @param modifyVpnTunnelCertificateRequest
+     * @return Result of the ModifyVpnTunnelCertificate operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnTunnelCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ModifyVpnTunnelCertificateResult modifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyVpnTunnelCertificate(request);
+    }
+
+    @SdkInternalApi
+    final ModifyVpnTunnelCertificateResult executeModifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest modifyVpnTunnelCertificateRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyVpnTunnelCertificateRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyVpnTunnelCertificateRequest> request = null;
+        Response<ModifyVpnTunnelCertificateResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyVpnTunnelCertificateRequestMarshaller().marshall(super.beforeMarshalling(modifyVpnTunnelCertificateRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "EC2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyVpnTunnelCertificate");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyVpnTunnelCertificateResult> responseHandler = new StaxResponseHandler<ModifyVpnTunnelCertificateResult>(
+                    new ModifyVpnTunnelCertificateResultStaxUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
      * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

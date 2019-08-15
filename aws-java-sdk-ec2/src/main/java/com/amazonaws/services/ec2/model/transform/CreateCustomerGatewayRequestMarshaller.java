@@ -48,6 +48,10 @@ public class CreateCustomerGatewayRequestMarshaller implements Marshaller<Reques
             request.addParameter("IpAddress", StringUtils.fromString(createCustomerGatewayRequest.getPublicIp()));
         }
 
+        if (createCustomerGatewayRequest.getCertificateArn() != null) {
+            request.addParameter("CertificateArn", StringUtils.fromString(createCustomerGatewayRequest.getCertificateArn()));
+        }
+
         if (createCustomerGatewayRequest.getType() != null) {
             request.addParameter("Type", StringUtils.fromString(createCustomerGatewayRequest.getType()));
         }

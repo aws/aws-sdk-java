@@ -142,6 +142,11 @@ import com.amazonaws.services.codecommit.model.*;
  * <ul>
  * <li>
  * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>
@@ -492,6 +497,43 @@ public interface AWSCodeCommit {
      *      target="_top">AWS API Documentation</a>
      */
     BatchDescribeMergeConflictsResult batchDescribeMergeConflicts(BatchDescribeMergeConflictsRequest batchDescribeMergeConflictsRequest);
+
+    /**
+     * <p>
+     * Returns information about the contents of one or more commits in a repository.
+     * </p>
+     * 
+     * @param batchGetCommitsRequest
+     * @return Result of the BatchGetCommits operation returned by the service.
+     * @throws CommitIdsListRequiredException
+     * @throws CommitIdsLimitExceededException
+     *         The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests
+     *         contains no more than 100 commit IDs, and then try again.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchGetCommits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchGetCommitsResult batchGetCommits(BatchGetCommitsRequest batchGetCommitsRequest);
 
     /**
      * <p>

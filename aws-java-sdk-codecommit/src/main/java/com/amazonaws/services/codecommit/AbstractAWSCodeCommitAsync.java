@@ -41,6 +41,19 @@ public class AbstractAWSCodeCommitAsync extends AbstractAWSCodeCommit implements
     }
 
     @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest request) {
+
+        return batchGetCommitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetCommitsRequest, BatchGetCommitsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGetRepositoriesResult> batchGetRepositoriesAsync(BatchGetRepositoriesRequest request) {
 
         return batchGetRepositoriesAsync(request, null);

@@ -43,6 +43,11 @@ public class AbstractAWSCodeCommit implements AWSCodeCommit {
     }
 
     @Override
+    public BatchGetCommitsResult batchGetCommits(BatchGetCommitsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetRepositoriesResult batchGetRepositories(BatchGetRepositoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

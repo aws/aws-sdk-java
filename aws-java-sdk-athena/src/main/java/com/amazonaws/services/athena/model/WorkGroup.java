@@ -50,8 +50,8 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for query results; whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup; whether workgroup settings override client-side settings; and the data usage limit for the amount
-     * of data scanned per query, if it is specified. The workgroup settings override is specified in
+     * the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount
+     * of data scanned per query or per workgroup. The workgroup settings override is specified in
      * EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
@@ -173,8 +173,8 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for query results; whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup; whether workgroup settings override client-side settings; and the data usage limit for the amount
-     * of data scanned per query, if it is specified. The workgroup settings override is specified in
+     * the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount
+     * of data scanned per query or per workgroup. The workgroup settings override is specified in
      * EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
@@ -183,7 +183,7 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      *        The configuration of the workgroup, which includes the location in Amazon S3 where query results are
      *        stored, the encryption configuration, if any, used for query results; whether the Amazon CloudWatch
      *        Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the
-     *        data usage limit for the amount of data scanned per query, if it is specified. The workgroup settings
+     *        data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings
      *        override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
@@ -196,8 +196,8 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for query results; whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup; whether workgroup settings override client-side settings; and the data usage limit for the amount
-     * of data scanned per query, if it is specified. The workgroup settings override is specified in
+     * the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount
+     * of data scanned per query or per workgroup. The workgroup settings override is specified in
      * EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
@@ -205,7 +205,7 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      * @return The configuration of the workgroup, which includes the location in Amazon S3 where query results are
      *         stored, the encryption configuration, if any, used for query results; whether the Amazon CloudWatch
      *         Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the
-     *         data usage limit for the amount of data scanned per query, if it is specified. The workgroup settings
+     *         data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings
      *         override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      *         <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      */
@@ -218,8 +218,8 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
      * encryption configuration, if any, used for query results; whether the Amazon CloudWatch Metrics are enabled for
-     * the workgroup; whether workgroup settings override client-side settings; and the data usage limit for the amount
-     * of data scanned per query, if it is specified. The workgroup settings override is specified in
+     * the workgroup; whether workgroup settings override client-side settings; and the data usage limits for the amount
+     * of data scanned per query or per workgroup. The workgroup settings override is specified in
      * EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * </p>
@@ -228,7 +228,7 @@ public class WorkGroup implements Serializable, Cloneable, StructuredPojo {
      *        The configuration of the workgroup, which includes the location in Amazon S3 where query results are
      *        stored, the encryption configuration, if any, used for query results; whether the Amazon CloudWatch
      *        Metrics are enabled for the workgroup; whether workgroup settings override client-side settings; and the
-     *        data usage limit for the amount of data scanned per query, if it is specified. The workgroup settings
+     *        data usage limits for the amount of data scanned per query or per workgroup. The workgroup settings
      *        override is specified in EnforceWorkGroupConfiguration (true/false) in the WorkGroupConfiguration. See
      *        <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
      * @return Returns a reference to this object so that method calls can be chained together.

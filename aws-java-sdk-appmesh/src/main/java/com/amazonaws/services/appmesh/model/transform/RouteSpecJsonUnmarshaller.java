@@ -52,6 +52,10 @@ public class RouteSpecJsonUnmarshaller implements Unmarshaller<RouteSpec, JsonUn
                     context.nextToken();
                     routeSpec.setHttpRoute(HttpRouteJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("priority", targetDepth)) {
+                    context.nextToken();
+                    routeSpec.setPriority(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("tcpRoute", targetDepth)) {
                     context.nextToken();
                     routeSpec.setTcpRoute(TcpRouteJsonUnmarshaller.getInstance().unmarshall(context));

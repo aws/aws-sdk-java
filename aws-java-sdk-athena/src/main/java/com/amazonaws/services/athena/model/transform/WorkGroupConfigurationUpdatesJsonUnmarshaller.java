@@ -68,6 +68,10 @@ public class WorkGroupConfigurationUpdatesJsonUnmarshaller implements Unmarshall
                     context.nextToken();
                     workGroupConfigurationUpdates.setRemoveBytesScannedCutoffPerQuery(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("RequesterPaysEnabled", targetDepth)) {
+                    context.nextToken();
+                    workGroupConfigurationUpdates.setRequesterPaysEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

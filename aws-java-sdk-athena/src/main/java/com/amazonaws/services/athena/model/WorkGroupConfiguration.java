@@ -21,8 +21,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The configuration of the workgroup, which includes the location in Amazon S3 where query results are stored, the
  * encryption option, if any, used for query results, whether the Amazon CloudWatch Metrics are enabled for the
- * workgroup and whether workgroup settings override query settings, and the data usage limit for the amount of data
- * scanned per query, if it is specified. The workgroup settings override is specified in EnforceWorkGroupConfiguration
+ * workgroup and whether workgroup settings override query settings, and the data usage limits for the amount of data
+ * scanned per query or per workgroup. The workgroup settings override is specified in EnforceWorkGroupConfiguration
  * (true/false) in the WorkGroupConfiguration. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
  * </p>
  * 
@@ -35,7 +35,11 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results.
+     * the encryption option, if any, used for query results. To run the query, you must specify the query results
+     * location using one of the ways: either in the workgroup using this setting, or for individual queries
+     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
+     * that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      * </p>
      */
     private ResultConfiguration resultConfiguration;
@@ -60,16 +64,35 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
      * </p>
      */
     private Long bytesScannedCutoffPerQuery;
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean requesterPaysEnabled;
 
     /**
      * <p>
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results.
+     * the encryption option, if any, used for query results. To run the query, you must specify the query results
+     * location using one of the ways: either in the workgroup using this setting, or for individual queries
+     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
+     * that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      * </p>
      * 
      * @param resultConfiguration
      *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *        stored and the encryption option, if any, used for query results.
+     *        stored and the encryption option, if any, used for query results. To run the query, you must specify the
+     *        query results location using one of the ways: either in the workgroup using this setting, or for
+     *        individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set,
+     *        Athena issues an error that no output location is provided. For more information, see <a
+     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      */
 
     public void setResultConfiguration(ResultConfiguration resultConfiguration) {
@@ -79,11 +102,19 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results.
+     * the encryption option, if any, used for query results. To run the query, you must specify the query results
+     * location using one of the ways: either in the workgroup using this setting, or for individual queries
+     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
+     * that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      * </p>
      * 
      * @return The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *         stored and the encryption option, if any, used for query results.
+     *         stored and the encryption option, if any, used for query results. To run the query, you must specify the
+     *         query results location using one of the ways: either in the workgroup using this setting, or for
+     *         individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is
+     *         set, Athena issues an error that no output location is provided. For more information, see <a
+     *         href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      */
 
     public ResultConfiguration getResultConfiguration() {
@@ -93,12 +124,20 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     /**
      * <p>
      * The configuration for the workgroup, which includes the location in Amazon S3 where query results are stored and
-     * the encryption option, if any, used for query results.
+     * the encryption option, if any, used for query results. To run the query, you must specify the query results
+     * location using one of the ways: either in the workgroup using this setting, or for individual queries
+     * (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues an error
+     * that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      * </p>
      * 
      * @param resultConfiguration
      *        The configuration for the workgroup, which includes the location in Amazon S3 where query results are
-     *        stored and the encryption option, if any, used for query results.
+     *        stored and the encryption option, if any, used for query results. To run the query, you must specify the
+     *        query results location using one of the ways: either in the workgroup using this setting, or for
+     *        individual queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none of them is set,
+     *        Athena issues an error that no output location is provided. For more information, see <a
+     *        href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query Results</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,6 +318,98 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param requesterPaysEnabled
+     *        If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays
+     *        buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *        buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *        <code>false</code>. For more information about Requester Pays buckets, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *        Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public void setRequesterPaysEnabled(Boolean requesterPaysEnabled) {
+        this.requesterPaysEnabled = requesterPaysEnabled;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays
+     *         buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *         buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *         <code>false</code>. For more information about Requester Pays buckets, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *         Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public Boolean getRequesterPaysEnabled() {
+        return this.requesterPaysEnabled;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param requesterPaysEnabled
+     *        If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays
+     *        buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *        buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *        <code>false</code>. For more information about Requester Pays buckets, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *        Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfiguration withRequesterPaysEnabled(Boolean requesterPaysEnabled) {
+        setRequesterPaysEnabled(requesterPaysEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon S3 Requester Pays
+     *         buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *         buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *         <code>false</code>. For more information about Requester Pays buckets, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *         Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public Boolean isRequesterPaysEnabled() {
+        return this.requesterPaysEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -297,7 +428,9 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         if (getPublishCloudWatchMetricsEnabled() != null)
             sb.append("PublishCloudWatchMetricsEnabled: ").append(getPublishCloudWatchMetricsEnabled()).append(",");
         if (getBytesScannedCutoffPerQuery() != null)
-            sb.append("BytesScannedCutoffPerQuery: ").append(getBytesScannedCutoffPerQuery());
+            sb.append("BytesScannedCutoffPerQuery: ").append(getBytesScannedCutoffPerQuery()).append(",");
+        if (getRequesterPaysEnabled() != null)
+            sb.append("RequesterPaysEnabled: ").append(getRequesterPaysEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -330,6 +463,10 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
             return false;
         if (other.getBytesScannedCutoffPerQuery() != null && other.getBytesScannedCutoffPerQuery().equals(this.getBytesScannedCutoffPerQuery()) == false)
             return false;
+        if (other.getRequesterPaysEnabled() == null ^ this.getRequesterPaysEnabled() == null)
+            return false;
+        if (other.getRequesterPaysEnabled() != null && other.getRequesterPaysEnabled().equals(this.getRequesterPaysEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -342,6 +479,7 @@ public class WorkGroupConfiguration implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getEnforceWorkGroupConfiguration() == null) ? 0 : getEnforceWorkGroupConfiguration().hashCode());
         hashCode = prime * hashCode + ((getPublishCloudWatchMetricsEnabled() == null) ? 0 : getPublishCloudWatchMetricsEnabled().hashCode());
         hashCode = prime * hashCode + ((getBytesScannedCutoffPerQuery() == null) ? 0 : getBytesScannedCutoffPerQuery().hashCode());
+        hashCode = prime * hashCode + ((getRequesterPaysEnabled() == null) ? 0 : getRequesterPaysEnabled().hashCode());
         return hashCode;
     }
 

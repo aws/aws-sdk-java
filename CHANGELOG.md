@@ -1,3 +1,28 @@
+# __1.11.612__ __2019-08-15__
+## __AWS App Mesh__
+  - ### Features
+    - This release adds support for http header based routing and route prioritization.
+
+## __AWS CodeCommit__
+  - ### Features
+    - This release adds an API, BatchGetCommits, that allows retrieval of metadata for multiple commits in an AWS CodeCommit repository.
+
+## __AWS Glue__
+  - ### Features
+    - GetJobBookmarks API is withdrawn.
+
+## __AWS Storage Gateway__
+  - ### Features
+    - CreateSnapshotFromVolumeRecoveryPoint API supports new parameter: Tags (to be attached to the created resource)
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds support for querying S3 Requester Pays buckets. Users can enable this feature through their Workgroup settings.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds an option to use private certificates from AWS Certificate Manager (ACM) to authenticate a Site-to-Site VPN connection's tunnel endpoints and customer gateway device. 
+
 # __1.11.611__ __2019-08-14__
 ## __Amazon Elastic Compute Cloud__
   - ### Features

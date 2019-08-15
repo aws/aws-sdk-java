@@ -48,6 +48,10 @@ public class ModifyVpnConnectionRequestMarshaller implements Marshaller<Request<
             request.addParameter("TransitGatewayId", StringUtils.fromString(modifyVpnConnectionRequest.getTransitGatewayId()));
         }
 
+        if (modifyVpnConnectionRequest.getCustomerGatewayId() != null) {
+            request.addParameter("CustomerGatewayId", StringUtils.fromString(modifyVpnConnectionRequest.getCustomerGatewayId()));
+        }
+
         if (modifyVpnConnectionRequest.getVpnGatewayId() != null) {
             request.addParameter("VpnGatewayId", StringUtils.fromString(modifyVpnConnectionRequest.getVpnGatewayId()));
         }

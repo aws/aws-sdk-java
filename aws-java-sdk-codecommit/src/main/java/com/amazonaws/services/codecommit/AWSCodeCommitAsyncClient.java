@@ -146,6 +146,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>
@@ -597,6 +602,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executeBatchDescribeMergeConflicts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(BatchGetCommitsRequest request) {
+
+        return batchGetCommitsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetCommitsResult> batchGetCommitsAsync(final BatchGetCommitsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetCommitsRequest, BatchGetCommitsResult> asyncHandler) {
+        final BatchGetCommitsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetCommitsResult>() {
+            @Override
+            public BatchGetCommitsResult call() throws Exception {
+                BatchGetCommitsResult result = null;
+
+                try {
+                    result = executeBatchGetCommits(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

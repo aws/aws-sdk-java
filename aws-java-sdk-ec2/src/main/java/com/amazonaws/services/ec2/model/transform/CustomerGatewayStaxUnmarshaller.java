@@ -60,6 +60,11 @@ public class CustomerGatewayStaxUnmarshaller implements Unmarshaller<CustomerGat
                     continue;
                 }
 
+                if (context.testExpression("certificateArn", targetDepth)) {
+                    customerGateway.setCertificateArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("state", targetDepth)) {
                     customerGateway.setState(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;

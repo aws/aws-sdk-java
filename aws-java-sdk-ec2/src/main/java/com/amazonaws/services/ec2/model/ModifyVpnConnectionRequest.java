@@ -39,6 +39,12 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
     private String transitGatewayId;
     /**
      * <p>
+     * The ID of the customer gateway at your end of the VPN connection.
+     * </p>
+     */
+    private String customerGatewayId;
+    /**
+     * <p>
      * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      */
@@ -126,6 +132,46 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
     /**
      * <p>
+     * The ID of the customer gateway at your end of the VPN connection.
+     * </p>
+     * 
+     * @param customerGatewayId
+     *        The ID of the customer gateway at your end of the VPN connection.
+     */
+
+    public void setCustomerGatewayId(String customerGatewayId) {
+        this.customerGatewayId = customerGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer gateway at your end of the VPN connection.
+     * </p>
+     * 
+     * @return The ID of the customer gateway at your end of the VPN connection.
+     */
+
+    public String getCustomerGatewayId() {
+        return this.customerGatewayId;
+    }
+
+    /**
+     * <p>
+     * The ID of the customer gateway at your end of the VPN connection.
+     * </p>
+     * 
+     * @param customerGatewayId
+     *        The ID of the customer gateway at your end of the VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyVpnConnectionRequest withCustomerGatewayId(String customerGatewayId) {
+        setCustomerGatewayId(customerGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of the virtual private gateway at the AWS side of the VPN connection.
      * </p>
      * 
@@ -191,6 +237,8 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
             sb.append("VpnConnectionId: ").append(getVpnConnectionId()).append(",");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getCustomerGatewayId() != null)
+            sb.append("CustomerGatewayId: ").append(getCustomerGatewayId()).append(",");
         if (getVpnGatewayId() != null)
             sb.append("VpnGatewayId: ").append(getVpnGatewayId());
         sb.append("}");
@@ -215,6 +263,10 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
+        if (other.getCustomerGatewayId() == null ^ this.getCustomerGatewayId() == null)
+            return false;
+        if (other.getCustomerGatewayId() != null && other.getCustomerGatewayId().equals(this.getCustomerGatewayId()) == false)
+            return false;
         if (other.getVpnGatewayId() == null ^ this.getVpnGatewayId() == null)
             return false;
         if (other.getVpnGatewayId() != null && other.getVpnGatewayId().equals(this.getVpnGatewayId()) == false)
@@ -229,6 +281,7 @@ public class ModifyVpnConnectionRequest extends AmazonWebServiceRequest implemen
 
         hashCode = prime * hashCode + ((getVpnConnectionId() == null) ? 0 : getVpnConnectionId().hashCode());
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getCustomerGatewayId() == null) ? 0 : getCustomerGatewayId().hashCode());
         hashCode = prime * hashCode + ((getVpnGatewayId() == null) ? 0 : getVpnGatewayId().hashCode());
         return hashCode;
     }

@@ -30,6 +30,18 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The client request headers to match on.
+     * </p>
+     */
+    private java.util.List<HttpRouteHeader> headers;
+    /**
+     * <p>
+     * The client request header method to match on.
+     * </p>
+     */
+    private String method;
+    /**
+     * <p>
      * Specifies the path to match requests with. This parameter must always start with <code>/</code>, which by itself
      * matches all requests to the virtual service name. You can also match for path-based routing of requests. For
      * example, if your virtual service name is <code>my-service.local</code> and you want the route to match requests
@@ -37,6 +49,141 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String prefix;
+    /**
+     * <p>
+     * The client request scheme to match on.
+     * </p>
+     */
+    private String scheme;
+
+    /**
+     * <p>
+     * The client request headers to match on.
+     * </p>
+     * 
+     * @return The client request headers to match on.
+     */
+
+    public java.util.List<HttpRouteHeader> getHeaders() {
+        return headers;
+    }
+
+    /**
+     * <p>
+     * The client request headers to match on.
+     * </p>
+     * 
+     * @param headers
+     *        The client request headers to match on.
+     */
+
+    public void setHeaders(java.util.Collection<HttpRouteHeader> headers) {
+        if (headers == null) {
+            this.headers = null;
+            return;
+        }
+
+        this.headers = new java.util.ArrayList<HttpRouteHeader>(headers);
+    }
+
+    /**
+     * <p>
+     * The client request headers to match on.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setHeaders(java.util.Collection)} or {@link #withHeaders(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param headers
+     *        The client request headers to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withHeaders(HttpRouteHeader... headers) {
+        if (this.headers == null) {
+            setHeaders(new java.util.ArrayList<HttpRouteHeader>(headers.length));
+        }
+        for (HttpRouteHeader ele : headers) {
+            this.headers.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request headers to match on.
+     * </p>
+     * 
+     * @param headers
+     *        The client request headers to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRouteMatch withHeaders(java.util.Collection<HttpRouteHeader> headers) {
+        setHeaders(headers);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request header method to match on.
+     * </p>
+     * 
+     * @param method
+     *        The client request header method to match on.
+     * @see HttpMethod
+     */
+
+    public void setMethod(String method) {
+        this.method = method;
+    }
+
+    /**
+     * <p>
+     * The client request header method to match on.
+     * </p>
+     * 
+     * @return The client request header method to match on.
+     * @see HttpMethod
+     */
+
+    public String getMethod() {
+        return this.method;
+    }
+
+    /**
+     * <p>
+     * The client request header method to match on.
+     * </p>
+     * 
+     * @param method
+     *        The client request header method to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HttpMethod
+     */
+
+    public HttpRouteMatch withMethod(String method) {
+        setMethod(method);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request header method to match on.
+     * </p>
+     * 
+     * @param method
+     *        The client request header method to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HttpMethod
+     */
+
+    public HttpRouteMatch withMethod(HttpMethod method) {
+        this.method = method.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -100,6 +247,65 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The client request scheme to match on.
+     * </p>
+     * 
+     * @param scheme
+     *        The client request scheme to match on.
+     * @see HttpScheme
+     */
+
+    public void setScheme(String scheme) {
+        this.scheme = scheme;
+    }
+
+    /**
+     * <p>
+     * The client request scheme to match on.
+     * </p>
+     * 
+     * @return The client request scheme to match on.
+     * @see HttpScheme
+     */
+
+    public String getScheme() {
+        return this.scheme;
+    }
+
+    /**
+     * <p>
+     * The client request scheme to match on.
+     * </p>
+     * 
+     * @param scheme
+     *        The client request scheme to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HttpScheme
+     */
+
+    public HttpRouteMatch withScheme(String scheme) {
+        setScheme(scheme);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The client request scheme to match on.
+     * </p>
+     * 
+     * @param scheme
+     *        The client request scheme to match on.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HttpScheme
+     */
+
+    public HttpRouteMatch withScheme(HttpScheme scheme) {
+        this.scheme = scheme.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -111,8 +317,14 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getHeaders() != null)
+            sb.append("Headers: ").append(getHeaders()).append(",");
+        if (getMethod() != null)
+            sb.append("Method: ").append(getMethod()).append(",");
         if (getPrefix() != null)
-            sb.append("Prefix: ").append(getPrefix());
+            sb.append("Prefix: ").append(getPrefix()).append(",");
+        if (getScheme() != null)
+            sb.append("Scheme: ").append(getScheme());
         sb.append("}");
         return sb.toString();
     }
@@ -127,9 +339,21 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof HttpRouteMatch == false)
             return false;
         HttpRouteMatch other = (HttpRouteMatch) obj;
+        if (other.getHeaders() == null ^ this.getHeaders() == null)
+            return false;
+        if (other.getHeaders() != null && other.getHeaders().equals(this.getHeaders()) == false)
+            return false;
+        if (other.getMethod() == null ^ this.getMethod() == null)
+            return false;
+        if (other.getMethod() != null && other.getMethod().equals(this.getMethod()) == false)
+            return false;
         if (other.getPrefix() == null ^ this.getPrefix() == null)
             return false;
         if (other.getPrefix() != null && other.getPrefix().equals(this.getPrefix()) == false)
+            return false;
+        if (other.getScheme() == null ^ this.getScheme() == null)
+            return false;
+        if (other.getScheme() != null && other.getScheme().equals(this.getScheme()) == false)
             return false;
         return true;
     }
@@ -139,7 +363,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getHeaders() == null) ? 0 : getHeaders().hashCode());
+        hashCode = prime * hashCode + ((getMethod() == null) ? 0 : getMethod().hashCode());
         hashCode = prime * hashCode + ((getPrefix() == null) ? 0 : getPrefix().hashCode());
+        hashCode = prime * hashCode + ((getScheme() == null) ? 0 : getScheme().hashCode());
         return hashCode;
     }
 

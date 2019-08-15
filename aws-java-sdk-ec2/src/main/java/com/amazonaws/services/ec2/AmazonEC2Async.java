@@ -15275,6 +15275,39 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the VPN tunnel endpoint certificate.
+     * </p>
+     * 
+     * @param modifyVpnTunnelCertificateRequest
+     * @return A Java Future containing the result of the ModifyVpnTunnelCertificate operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVpnTunnelCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnTunnelCertificateResult> modifyVpnTunnelCertificateAsync(
+            ModifyVpnTunnelCertificateRequest modifyVpnTunnelCertificateRequest);
+
+    /**
+     * <p>
+     * Modifies the VPN tunnel endpoint certificate.
+     * </p>
+     * 
+     * @param modifyVpnTunnelCertificateRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpnTunnelCertificate operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpnTunnelCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnTunnelCertificateResult> modifyVpnTunnelCertificateAsync(
+            ModifyVpnTunnelCertificateRequest modifyVpnTunnelCertificateRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpnTunnelCertificateRequest, ModifyVpnTunnelCertificateResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
      * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

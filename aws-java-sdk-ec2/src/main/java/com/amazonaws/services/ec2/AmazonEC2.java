@@ -6750,6 +6750,19 @@ public interface AmazonEC2 {
 
     /**
      * <p>
+     * Modifies the VPN tunnel endpoint certificate.
+     * </p>
+     * 
+     * @param modifyVpnTunnelCertificateRequest
+     * @return Result of the ModifyVpnTunnelCertificate operation returned by the service.
+     * @sample AmazonEC2.ModifyVpnTunnelCertificate
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelCertificate" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ModifyVpnTunnelCertificateResult modifyVpnTunnelCertificate(ModifyVpnTunnelCertificateRequest modifyVpnTunnelCertificateRequest);
+
+    /**
+     * <p>
      * Enables detailed monitoring for a running instance. Otherwise, basic monitoring is enabled. For more information,
      * see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring Your Instances
      * and Volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

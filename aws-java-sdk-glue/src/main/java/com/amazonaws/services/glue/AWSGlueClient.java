@@ -3842,67 +3842,6 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
 
     /**
      * <p>
-     * Returns information on the job bookmark entries. The list is ordered on decreasing version numbers.
-     * </p>
-     * 
-     * @param getJobBookmarksRequest
-     * @return Result of the GetJobBookmarks operation returned by the service.
-     * @throws InvalidInputException
-     *         The input provided was not valid.
-     * @throws EntityNotFoundException
-     *         A specified entity does not exist
-     * @throws InternalServiceException
-     *         An internal service error occurred.
-     * @throws OperationTimeoutException
-     *         The operation timed out.
-     * @sample AWSGlue.GetJobBookmarks
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetJobBookmarks" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public GetJobBookmarksResult getJobBookmarks(GetJobBookmarksRequest request) {
-        request = beforeClientExecution(request);
-        return executeGetJobBookmarks(request);
-    }
-
-    @SdkInternalApi
-    final GetJobBookmarksResult executeGetJobBookmarks(GetJobBookmarksRequest getJobBookmarksRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(getJobBookmarksRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<GetJobBookmarksRequest> request = null;
-        Response<GetJobBookmarksResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new GetJobBookmarksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobBookmarksRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Glue");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobBookmarks");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<GetJobBookmarksResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetJobBookmarksResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
      * Retrieves the metadata for a given job run.
      * </p>
      * 

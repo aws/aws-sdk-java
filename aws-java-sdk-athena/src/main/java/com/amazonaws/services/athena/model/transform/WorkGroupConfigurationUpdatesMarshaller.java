@@ -37,6 +37,8 @@ public class WorkGroupConfigurationUpdatesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BytesScannedCutoffPerQuery").build();
     private static final MarshallingInfo<Boolean> REMOVEBYTESSCANNEDCUTOFFPERQUERY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoveBytesScannedCutoffPerQuery").build();
+    private static final MarshallingInfo<Boolean> REQUESTERPAYSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPaysEnabled").build();
 
     private static final WorkGroupConfigurationUpdatesMarshaller instance = new WorkGroupConfigurationUpdatesMarshaller();
 
@@ -59,6 +61,7 @@ public class WorkGroupConfigurationUpdatesMarshaller {
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getPublishCloudWatchMetricsEnabled(), PUBLISHCLOUDWATCHMETRICSENABLED_BINDING);
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getBytesScannedCutoffPerQuery(), BYTESSCANNEDCUTOFFPERQUERY_BINDING);
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getRemoveBytesScannedCutoffPerQuery(), REMOVEBYTESSCANNEDCUTOFFPERQUERY_BINDING);
+            protocolMarshaller.marshall(workGroupConfigurationUpdates.getRequesterPaysEnabled(), REQUESTERPAYSENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

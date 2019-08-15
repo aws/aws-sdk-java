@@ -10,13 +10,13 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package com.amazonaws.services.glue.model.transform;
+package com.amazonaws.services.appmesh.model.transform;
 
 import java.math.*;
 
 import javax.annotation.Generated;
 
-import com.amazonaws.services.glue.model.*;
+import com.amazonaws.services.appmesh.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
@@ -24,13 +24,13 @@ import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
- * GetJobBookmarksResult JSON Unmarshaller
+ * HeaderMatchMethod JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GetJobBookmarksResultJsonUnmarshaller implements Unmarshaller<GetJobBookmarksResult, JsonUnmarshallerContext> {
+public class HeaderMatchMethodJsonUnmarshaller implements Unmarshaller<HeaderMatchMethod, JsonUnmarshallerContext> {
 
-    public GetJobBookmarksResult unmarshall(JsonUnmarshallerContext context) throws Exception {
-        GetJobBookmarksResult getJobBookmarksResult = new GetJobBookmarksResult();
+    public HeaderMatchMethod unmarshall(JsonUnmarshallerContext context) throws Exception {
+        HeaderMatchMethod headerMatchMethod = new HeaderMatchMethod();
 
         int originalDepth = context.getCurrentDepth();
         String currentParentElement = context.getCurrentParentElement();
@@ -40,7 +40,7 @@ public class GetJobBookmarksResultJsonUnmarshaller implements Unmarshaller<GetJo
         if (token == null)
             token = context.nextToken();
         if (token == VALUE_NULL) {
-            return getJobBookmarksResult;
+            return null;
         }
 
         while (true) {
@@ -48,14 +48,25 @@ public class GetJobBookmarksResultJsonUnmarshaller implements Unmarshaller<GetJo
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("JobBookmarkEntries", targetDepth)) {
+                if (context.testExpression("exact", targetDepth)) {
                     context.nextToken();
-                    getJobBookmarksResult.setJobBookmarkEntries(new ListUnmarshaller<JobBookmarkEntry>(JobBookmarkEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+                    headerMatchMethod.setExact(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("NextToken", targetDepth)) {
+                if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();
-                    getJobBookmarksResult.setNextToken(context.getUnmarshaller(Integer.class).unmarshall(context));
+                    headerMatchMethod.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("range", targetDepth)) {
+                    context.nextToken();
+                    headerMatchMethod.setRange(MatchRangeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("regex", targetDepth)) {
+                    context.nextToken();
+                    headerMatchMethod.setRegex(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("suffix", targetDepth)) {
+                    context.nextToken();
+                    headerMatchMethod.setSuffix(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
@@ -66,14 +77,14 @@ public class GetJobBookmarksResultJsonUnmarshaller implements Unmarshaller<GetJo
             token = context.nextToken();
         }
 
-        return getJobBookmarksResult;
+        return headerMatchMethod;
     }
 
-    private static GetJobBookmarksResultJsonUnmarshaller instance;
+    private static HeaderMatchMethodJsonUnmarshaller instance;
 
-    public static GetJobBookmarksResultJsonUnmarshaller getInstance() {
+    public static HeaderMatchMethodJsonUnmarshaller getInstance() {
         if (instance == null)
-            instance = new GetJobBookmarksResultJsonUnmarshaller();
+            instance = new HeaderMatchMethodJsonUnmarshaller();
         return instance;
     }
 }

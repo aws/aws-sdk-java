@@ -48,9 +48,21 @@ public class HttpRouteMatchJsonUnmarshaller implements Unmarshaller<HttpRouteMat
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("headers", targetDepth)) {
+                    context.nextToken();
+                    httpRouteMatch.setHeaders(new ListUnmarshaller<HttpRouteHeader>(HttpRouteHeaderJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
+                if (context.testExpression("method", targetDepth)) {
+                    context.nextToken();
+                    httpRouteMatch.setMethod(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("prefix", targetDepth)) {
                     context.nextToken();
                     httpRouteMatch.setPrefix(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scheme", targetDepth)) {
+                    context.nextToken();
+                    httpRouteMatch.setScheme(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

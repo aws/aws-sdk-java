@@ -67,6 +67,11 @@ public class VgwTelemetryStaxUnmarshaller implements Unmarshaller<VgwTelemetry, 
                     vgwTelemetry.setStatusMessage(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("certificateArn", targetDepth)) {
+                    vgwTelemetry.setCertificateArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vgwTelemetry;

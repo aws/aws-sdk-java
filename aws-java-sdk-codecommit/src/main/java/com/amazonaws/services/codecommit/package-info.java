@@ -128,6 +128,11 @@
  * <ul>
  * <li>
  * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>

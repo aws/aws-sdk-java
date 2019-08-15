@@ -2868,12 +2868,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Sends you notification through CloudWatch Events when all files written to your NFS file share have been uploaded
-     * to Amazon S3.
+     * Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to
+     * Amazon S3.
      * </p>
      * <p>
      * AWS Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file
-     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the NFS file
+     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the file
      * share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you
      * notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification
      * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported for file
@@ -2895,12 +2895,12 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Sends you notification through CloudWatch Events when all files written to your NFS file share have been uploaded
-     * to Amazon S3.
+     * Sends you notification through CloudWatch Events when all files written to your file share have been uploaded to
+     * Amazon S3.
      * </p>
      * <p>
      * AWS Storage Gateway can send a notification through Amazon CloudWatch Events when all files written to your file
-     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the NFS file
+     * share up to that point in time have been uploaded to Amazon S3. These files include files written to the file
      * share up to the time that you make a request for notification. When the upload is done, Storage Gateway sends you
      * notification through an Amazon CloudWatch Event. You can configure CloudWatch Events to send the notification
      * through event targets such as Amazon SNS or AWS Lambda function. This operation is only supported for file
@@ -3944,6 +3944,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
      * </p>
+     * <note>
+     * <p>
+     * This API is called Security level in the User Guide.
+     * </p>
+     * <p>
+     * A higher security level can affect performance of the gateway.
+     * </p>
+     * </note>
      * 
      * @param updateSMBSecurityStrategyRequest
      * @return A Java Future containing the result of the UpdateSMBSecurityStrategy operation returned by the service.
@@ -3958,6 +3966,14 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <p>
      * Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.
      * </p>
+     * <note>
+     * <p>
+     * This API is called Security level in the User Guide.
+     * </p>
+     * <p>
+     * A higher security level can affect performance of the gateway.
+     * </p>
+     * </note>
      * 
      * @param updateSMBSecurityStrategyRequest
      * @param asyncHandler

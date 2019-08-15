@@ -166,6 +166,11 @@ import com.amazonaws.services.codecommit.model.transform.*;
  * <ul>
  * <li>
  * <p>
+ * <a>BatchGetCommits</a>, which returns information about one or more commits in a repository
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>CreateCommit</a>, which creates a commit for changes to a repository.
  * </p>
  * </li>
@@ -722,6 +727,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                             new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdOutdatedException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException.class))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsListRequiredException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.CommitIdsListRequiredException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidContinuationTokenException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
                     .addErrorMetadata(
@@ -820,6 +828,9 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActorArnException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidActorArnException.class))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsLimitExceededException").withModeledClass(
+                                    com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException.class))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidDestinationCommitSpecifierException").withModeledClass(
                                     com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException.class))
@@ -1153,6 +1164,83 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
             HttpResponseHandler<AmazonWebServiceResponse<BatchDescribeMergeConflictsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchDescribeMergeConflictsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the contents of one or more commits in a repository.
+     * </p>
+     * 
+     * @param batchGetCommitsRequest
+     * @return Result of the BatchGetCommits operation returned by the service.
+     * @throws CommitIdsListRequiredException
+     * @throws CommitIdsLimitExceededException
+     *         The maximum number of allowed commit IDs in a batch request is 100. Verify that your batch requests
+     *         contains no more than 100 commit IDs, and then try again.
+     * @throws RepositoryNameRequiredException
+     *         A repository name is required but was not specified.
+     * @throws InvalidRepositoryNameException
+     *         At least one specified repository name is not valid.</p> <note>
+     *         <p>
+     *         This exception only occurs when a specified repository name is not valid. Other exceptions occur when a
+     *         required repository parameter is missing, or when a specified repository does not exist.
+     *         </p>
+     * @throws RepositoryDoesNotExistException
+     *         The specified repository does not exist.
+     * @throws EncryptionIntegrityChecksFailedException
+     *         An encryption integrity check failed.
+     * @throws EncryptionKeyAccessDeniedException
+     *         An encryption key could not be accessed.
+     * @throws EncryptionKeyDisabledException
+     *         The encryption key is disabled.
+     * @throws EncryptionKeyNotFoundException
+     *         No encryption key was found.
+     * @throws EncryptionKeyUnavailableException
+     *         The encryption key is not available.
+     * @sample AWSCodeCommit.BatchGetCommits
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchGetCommits" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchGetCommitsResult batchGetCommits(BatchGetCommitsRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetCommits(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetCommitsResult executeBatchGetCommits(BatchGetCommitsRequest batchGetCommitsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetCommitsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetCommitsRequest> request = null;
+        Response<BatchGetCommitsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetCommitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetCommitsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeCommit");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCommits");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetCommitsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetCommitsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

@@ -43,7 +43,7 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String domainName;
     /**
      * <p>
-     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and
      * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      * </p>
      */
@@ -156,14 +156,13 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and
      * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      * </p>
      * 
      * @param organizationalUnit
-     *        The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
-     *        computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
-     *        domain.
+     *        The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers,
+     *        and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      */
 
     public void setOrganizationalUnit(String organizationalUnit) {
@@ -172,11 +171,11 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and
      * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      * </p>
      * 
-     * @return The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
+     * @return The organizational unit (OU) is a container in an Active Directory that can hold users, groups,
      *         computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
      *         domain.
      */
@@ -187,14 +186,13 @@ public class JoinDomainRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The organizational unit (OU) is a container with an Active Directory that can hold users, groups, computers, and
+     * The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers, and
      * other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      * </p>
      * 
      * @param organizationalUnit
-     *        The organizational unit (OU) is a container with an Active Directory that can hold users, groups,
-     *        computers, and other OUs and this parameter specifies the OU that the gateway will join within the AD
-     *        domain.
+     *        The organizational unit (OU) is a container in an Active Directory that can hold users, groups, computers,
+     *        and other OUs and this parameter specifies the OU that the gateway will join within the AD domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

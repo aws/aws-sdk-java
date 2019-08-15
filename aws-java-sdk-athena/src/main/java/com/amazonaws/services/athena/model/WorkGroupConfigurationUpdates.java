@@ -66,6 +66,17 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
      * </p>
      */
     private Boolean removeBytesScannedCutoffPerQuery;
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     */
+    private Boolean requesterPaysEnabled;
 
     /**
      * <p>
@@ -342,6 +353,98 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
     }
 
     /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param requesterPaysEnabled
+     *        If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays
+     *        buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *        buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *        <code>false</code>. For more information about Requester Pays buckets, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *        Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public void setRequesterPaysEnabled(Boolean requesterPaysEnabled) {
+        this.requesterPaysEnabled = requesterPaysEnabled;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays
+     *         buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *         buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *         <code>false</code>. For more information about Requester Pays buckets, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *         Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public Boolean getRequesterPaysEnabled() {
+        return this.requesterPaysEnabled;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @param requesterPaysEnabled
+     *        If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays
+     *        buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *        buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *        <code>false</code>. For more information about Requester Pays buckets, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *        Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupConfigurationUpdates withRequesterPaysEnabled(Boolean requesterPaysEnabled) {
+        setRequesterPaysEnabled(requesterPaysEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays buckets
+     * in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays buckets, and
+     * queries that retrieve data from Requester Pays buckets cause an error. The default is <code>false</code>. For
+     * more information about Requester Pays buckets, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * 
+     * @return If set to <code>true</code>, allows members assigned to a workgroup to specify Amazon S3 Requester Pays
+     *         buckets in queries. If set to <code>false</code>, workgroup members cannot query data from Requester Pays
+     *         buckets, and queries that retrieve data from Requester Pays buckets cause an error. The default is
+     *         <code>false</code>. For more information about Requester Pays buckets, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays
+     *         Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     */
+
+    public Boolean isRequesterPaysEnabled() {
+        return this.requesterPaysEnabled;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -362,7 +465,9 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
         if (getBytesScannedCutoffPerQuery() != null)
             sb.append("BytesScannedCutoffPerQuery: ").append(getBytesScannedCutoffPerQuery()).append(",");
         if (getRemoveBytesScannedCutoffPerQuery() != null)
-            sb.append("RemoveBytesScannedCutoffPerQuery: ").append(getRemoveBytesScannedCutoffPerQuery());
+            sb.append("RemoveBytesScannedCutoffPerQuery: ").append(getRemoveBytesScannedCutoffPerQuery()).append(",");
+        if (getRequesterPaysEnabled() != null)
+            sb.append("RequesterPaysEnabled: ").append(getRequesterPaysEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -400,6 +505,10 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
         if (other.getRemoveBytesScannedCutoffPerQuery() != null
                 && other.getRemoveBytesScannedCutoffPerQuery().equals(this.getRemoveBytesScannedCutoffPerQuery()) == false)
             return false;
+        if (other.getRequesterPaysEnabled() == null ^ this.getRequesterPaysEnabled() == null)
+            return false;
+        if (other.getRequesterPaysEnabled() != null && other.getRequesterPaysEnabled().equals(this.getRequesterPaysEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +522,7 @@ public class WorkGroupConfigurationUpdates implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getPublishCloudWatchMetricsEnabled() == null) ? 0 : getPublishCloudWatchMetricsEnabled().hashCode());
         hashCode = prime * hashCode + ((getBytesScannedCutoffPerQuery() == null) ? 0 : getBytesScannedCutoffPerQuery().hashCode());
         hashCode = prime * hashCode + ((getRemoveBytesScannedCutoffPerQuery() == null) ? 0 : getRemoveBytesScannedCutoffPerQuery().hashCode());
+        hashCode = prime * hashCode + ((getRequesterPaysEnabled() == null) ? 0 : getRequesterPaysEnabled().hashCode());
         return hashCode;
     }
 
