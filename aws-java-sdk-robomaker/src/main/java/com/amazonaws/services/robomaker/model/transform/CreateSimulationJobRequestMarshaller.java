@@ -36,6 +36,8 @@ public class CreateSimulationJobRequestMarshaller {
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputLocation").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("loggingConfig").build();
     private static final MarshallingInfo<Long> MAXJOBDURATIONINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxJobDurationInSeconds").build();
     private static final MarshallingInfo<String> IAMROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -46,6 +48,8 @@ public class CreateSimulationJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("robotApplications").build();
     private static final MarshallingInfo<List> SIMULATIONAPPLICATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulationApplications").build();
+    private static final MarshallingInfo<List> DATASOURCES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dataSources").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -69,11 +73,13 @@ public class CreateSimulationJobRequestMarshaller {
         try {
             protocolMarshaller.marshall(createSimulationJobRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getOutputLocation(), OUTPUTLOCATION_BINDING);
+            protocolMarshaller.marshall(createSimulationJobRequest.getLoggingConfig(), LOGGINGCONFIG_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getMaxJobDurationInSeconds(), MAXJOBDURATIONINSECONDS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getIamRole(), IAMROLE_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getFailureBehavior(), FAILUREBEHAVIOR_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getRobotApplications(), ROBOTAPPLICATIONS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getSimulationApplications(), SIMULATIONAPPLICATIONS_BINDING);
+            protocolMarshaller.marshall(createSimulationJobRequest.getDataSources(), DATASOURCES_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createSimulationJobRequest.getVpcConfig(), VPCCONFIG_BINDING);
         } catch (Exception e) {

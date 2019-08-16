@@ -55,8 +55,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String family;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
-     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+     * grants containers in the task permission to call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -528,8 +528,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
-     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+     * grants containers in the task permission to call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -542,9 +542,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
-     *        in the task permission to call AWS APIs on your behalf. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     *        The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+     *        that grants containers in the task permission to call AWS APIs on your behalf. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
      *        Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
@@ -560,8 +560,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
-     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+     * grants containers in the task permission to call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -573,9 +573,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
-     *         in the task permission to call AWS APIs on your behalf. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     * @return The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+     *         that grants containers in the task permission to call AWS APIs on your behalf. For more information, see
+     *         <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
      *         Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
      *         IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you
@@ -591,8 +591,8 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers in the
-     * task permission to call AWS APIs on your behalf. For more information, see <a
+     * The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role that
+     * grants containers in the task permission to call AWS APIs on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task Role</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -605,9 +605,9 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param taskRoleArn
-     *        The Amazon Resource Name (ARN) of an AWS Identity and Access Management (IAM) role that grants containers
-     *        in the task permission to call AWS APIs on your behalf. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
+     *        The short name or full Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
+     *        that grants containers in the task permission to call AWS APIs on your behalf. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_IAM_role.html">Amazon ECS Task
      *        Role</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
      *        IAM roles for tasks on Windows require that the <code>-EnableTaskIAMRole</code> option is set when you

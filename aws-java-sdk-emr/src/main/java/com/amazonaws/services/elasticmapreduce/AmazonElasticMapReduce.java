@@ -354,6 +354,27 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Returns the Amazon EMR block public access configuration for your AWS account in the current Region. For more
+     * information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
+     * Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param getBlockPublicAccessConfigurationRequest
+     * @return Result of the GetBlockPublicAccessConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetBlockPublicAccessConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetBlockPublicAccessConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetBlockPublicAccessConfigurationResult getBlockPublicAccessConfiguration(GetBlockPublicAccessConfigurationRequest getBlockPublicAccessConfigurationRequest);
+
+    /**
+     * <p>
      * Provides information about the bootstrap actions associated with a cluster.
      * </p>
      * 
@@ -562,6 +583,27 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates or updates an Amazon EMR block public access configuration for your AWS account in the current Region.
+     * For more information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block
+     * Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.
+     * </p>
+     * 
+     * @param putBlockPublicAccessConfigurationRequest
+     * @return Result of the PutBlockPublicAccessConfiguration operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.PutBlockPublicAccessConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutBlockPublicAccessConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutBlockPublicAccessConfigurationResult putBlockPublicAccessConfiguration(PutBlockPublicAccessConfigurationRequest putBlockPublicAccessConfigurationRequest);
+
+    /**
+     * <p>
      * Removes an automatic scaling policy from a specified instance group within an EMR cluster.
      * </p>
      * 
@@ -678,6 +720,9 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Sets whether all AWS Identity and Access Management (IAM) users under your account can access the specified
      * clusters (job flows). This action works on running clusters. You can also set the visibility of a cluster when
      * you launch it using the <code>VisibleToAllUsers</code> parameter of <a>RunJobFlow</a>. The SetVisibleToAllUsers
@@ -685,6 +730,8 @@ public interface AmazonElasticMapReduce {
      * </p>
      * 
      * @param setVisibleToAllUsersRequest
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
      *        The input to the SetVisibleToAllUsers action.
      * @return Result of the SetVisibleToAllUsers operation returned by the service.
      * @throws InternalServerErrorException

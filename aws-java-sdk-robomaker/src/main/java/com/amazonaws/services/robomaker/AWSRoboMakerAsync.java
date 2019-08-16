@@ -769,10 +769,6 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
-     * <note>
-     * <p>
-     * </p>
-     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @return A Java Future containing the result of the ListDeploymentJobs operation returned by the service.
@@ -787,10 +783,6 @@ public interface AWSRoboMakerAsync extends AWSRoboMaker {
      * Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment
      * jobs.
      * </p>
-     * <note>
-     * <p>
-     * </p>
-     * </note>
      * 
      * @param listDeploymentJobsRequest
      * @param asyncHandler

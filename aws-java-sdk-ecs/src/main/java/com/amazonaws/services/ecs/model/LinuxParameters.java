@@ -90,6 +90,42 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tmpfs> tmpfs;
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * </p>
+     * </note>
+     */
+    private Integer maxSwap;
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * </p>
+     * </note>
+     */
+    private Integer swappiness;
 
     /**
      * <p>
@@ -593,6 +629,230 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @param maxSwap
+     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <p>
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *        container will use the swap configuration for the container instance it is running on. A
+     *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *        supported.
+     *        </p>
+     */
+
+    public void setMaxSwap(Integer maxSwap) {
+        this.maxSwap = maxSwap;
+    }
+
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @return The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *         <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *         <p>
+     *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *         values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *         container will use the swap configuration for the container instance it is running on. A
+     *         <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *         supported.
+     *         </p>
+     */
+
+    public Integer getMaxSwap() {
+        return this.maxSwap;
+    }
+
+    /**
+     * <p>
+     * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
+     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * </p>
+     * <p>
+     * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
+     * are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the container will
+     * use the swap configuration for the container instance it is running on. A <code>maxSwap</code> value must be set
+     * for the <code>swappiness</code> parameter to be used.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @param maxSwap
+     *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
+     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <p>
+     *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
+     *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
+     *        container will use the swap configuration for the container instance it is running on. A
+     *        <code>maxSwap</code> value must be set for the <code>swappiness</code> parameter to be used.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>maxSwap</code> parameter is not
+     *        supported.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withMaxSwap(Integer maxSwap) {
+        setMaxSwap(maxSwap);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @param swappiness
+     *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *        specified, a default value of <code>60</code> is used. If a value is not specified for
+     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *        supported.
+     *        </p>
+     */
+
+    public void setSwappiness(Integer swappiness) {
+        this.swappiness = swappiness;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @return This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *         <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *         value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *         numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *         specified, a default value of <code>60</code> is used. If a value is not specified for
+     *         <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *         <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *         run</a>.</p> <note>
+     *         <p>
+     *         If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *         supported.
+     *         </p>
+     */
+
+    public Integer getSwappiness() {
+        return this.swappiness;
+    }
+
+    /**
+     * <p>
+     * This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     * <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code> value of
+     * <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole numbers between
+     * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
+     * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
+     * This parameter maps to the <code>--memory-swappiness</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not supported.
+     * </p>
+     * </note>
+     * 
+     * @param swappiness
+     *        This allows you to tune a container's memory swappiness behavior. A <code>swappiness</code> value of
+     *        <code>0</code> will cause swapping to not happen unless absolutely necessary. A <code>swappiness</code>
+     *        value of <code>100</code> will cause pages to be swapped very aggressively. Accepted values are whole
+     *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
+     *        specified, a default value of <code>60</code> is used. If a value is not specified for
+     *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
+     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+     *        run</a>.</p> <note>
+     *        <p>
+     *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
+     *        supported.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LinuxParameters withSwappiness(Integer swappiness) {
+        setSwappiness(swappiness);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -613,7 +873,11 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         if (getSharedMemorySize() != null)
             sb.append("SharedMemorySize: ").append(getSharedMemorySize()).append(",");
         if (getTmpfs() != null)
-            sb.append("Tmpfs: ").append(getTmpfs());
+            sb.append("Tmpfs: ").append(getTmpfs()).append(",");
+        if (getMaxSwap() != null)
+            sb.append("MaxSwap: ").append(getMaxSwap()).append(",");
+        if (getSwappiness() != null)
+            sb.append("Swappiness: ").append(getSwappiness());
         sb.append("}");
         return sb.toString();
     }
@@ -648,6 +912,14 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTmpfs() != null && other.getTmpfs().equals(this.getTmpfs()) == false)
             return false;
+        if (other.getMaxSwap() == null ^ this.getMaxSwap() == null)
+            return false;
+        if (other.getMaxSwap() != null && other.getMaxSwap().equals(this.getMaxSwap()) == false)
+            return false;
+        if (other.getSwappiness() == null ^ this.getSwappiness() == null)
+            return false;
+        if (other.getSwappiness() != null && other.getSwappiness().equals(this.getSwappiness()) == false)
+            return false;
         return true;
     }
 
@@ -661,6 +933,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getInitProcessEnabled() == null) ? 0 : getInitProcessEnabled().hashCode());
         hashCode = prime * hashCode + ((getSharedMemorySize() == null) ? 0 : getSharedMemorySize().hashCode());
         hashCode = prime * hashCode + ((getTmpfs() == null) ? 0 : getTmpfs().hashCode());
+        hashCode = prime * hashCode + ((getMaxSwap() == null) ? 0 : getMaxSwap().hashCode());
+        hashCode = prime * hashCode + ((getSwappiness() == null) ? 0 : getSwappiness().hashCode());
         return hashCode;
     }
 

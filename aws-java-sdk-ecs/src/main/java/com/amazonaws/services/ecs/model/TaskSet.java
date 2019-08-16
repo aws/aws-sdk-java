@@ -212,13 +212,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * <note>
-     * <p>
-     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
-     * until it expires.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1373,13 +1367,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * <note>
-     * <p>
-     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
-     * until it expires.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1409,13 +1397,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        <note>
-     *        <p>
-     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
-     *        ignored until it expires.
-     *        </p>
-     *        </note></li>
+     *        </li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1451,13 +1433,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * <note>
-     * <p>
-     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
-     * until it expires.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1486,13 +1462,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *         All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *         checks.
      *         </p>
-     *         <note>
-     *         <p>
-     *         If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     *         <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
-     *         ignored until it expires.
-     *         </p>
-     *         </note></li>
+     *         </li>
      *         </ul>
      *         <p>
      *         If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1528,13 +1498,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * <note>
-     * <p>
-     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
-     * until it expires.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1564,13 +1528,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        <note>
-     *        <p>
-     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
-     *        ignored until it expires.
-     *        </p>
-     *        </note></li>
+     *        </li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1608,13 +1566,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * All tasks are reporting a healthy status from the load balancers, service discovery, and container health checks.
      * </p>
-     * <note>
-     * <p>
-     * If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     * <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be ignored
-     * until it expires.
-     * </p>
-     * </note></li>
+     * </li>
      * </ul>
      * <p>
      * If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.
@@ -1644,13 +1596,7 @@ public class TaskSet implements Serializable, Cloneable, StructuredPojo {
      *        All tasks are reporting a healthy status from the load balancers, service discovery, and container health
      *        checks.
      *        </p>
-     *        <note>
-     *        <p>
-     *        If a <code>healthCheckGracePeriodSeconds</code> value was set when the service was created, you may see a
-     *        <code>STEADY_STATE</code> reached since unhealthy Elastic Load Balancing target health checks will be
-     *        ignored until it expires.
-     *        </p>
-     *        </note></li>
+     *        </li>
      *        </ul>
      *        <p>
      *        If any of those conditions are not met, the stability status returns <code>STABILIZING</code>.

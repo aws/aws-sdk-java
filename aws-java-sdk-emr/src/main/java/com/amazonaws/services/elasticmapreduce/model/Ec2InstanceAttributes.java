@@ -38,13 +38,8 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
     private String ec2KeyName;
     /**
      * <p>
-     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
-     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
-     * of a VPC.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     * Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      * </p>
      */
     private String ec2SubnetId;
@@ -53,7 +48,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
      * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
      * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
-     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
      * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
      * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
@@ -164,22 +159,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
-     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
-     * of a VPC.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     * Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
-     *        AWS cloud, outside of a VPC.</p>
-     *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
-     *        you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     *        Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you
+     *        do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      */
 
     public void setEc2SubnetId(String ec2SubnetId) {
@@ -188,21 +174,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
-     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
-     * of a VPC.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     * Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      * </p>
      * 
-     * @return To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *         you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
-     *         AWS cloud, outside of a VPC.</p>
-     *         <p>
-     *         Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances.
-     *         Thus, you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     * @return Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If
+     *         you do not specify this value, and your account supports EC2-Classic, the cluster launches in
+     *         EC2-Classic.
      */
 
     public String getEc2SubnetId() {
@@ -211,22 +189,13 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where you want
-     * the cluster to launch. If you do not specify this value, the cluster is launched in the normal AWS cloud, outside
-     * of a VPC.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus, you
-     * cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     * Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you do not
+     * specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      * </p>
      * 
      * @param ec2SubnetId
-     *        To launch the cluster in Amazon VPC, set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the cluster to launch. If you do not specify this value, the cluster is launched in the normal
-     *        AWS cloud, outside of a VPC.</p>
-     *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus,
-     *        you cannot specify the cc1.4xlarge instance type for nodes of a cluster launched in a VPC.
+     *        Set this parameter to the identifier of the Amazon VPC subnet where you want the cluster to launch. If you
+     *        do not specify this value, and your account supports EC2-Classic, the cluster launches in EC2-Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +209,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
      * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
      * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
-     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
      * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
      * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
@@ -251,7 +220,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      *         more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
      *         Amazon EMR chooses the EC2 subnet with the best fit from among the list of
      *         <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
-     *         value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *         value is not specified, and the account and Region support EC2-Classic networks, the cluster launches
      *         instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      *         setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
      *         you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be
@@ -270,7 +239,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
      * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
      * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
-     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
      * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
      * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
@@ -282,7 +251,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
      *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
      *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
-     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        value is not specified, and the account and Region support EC2-Classic networks, the cluster launches
      *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
      *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
@@ -303,7 +272,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
      * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
      * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
-     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
      * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
      * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
@@ -320,7 +289,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
      *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
      *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
-     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        value is not specified, and the account and Region support EC2-Classic networks, the cluster launches
      *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
      *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified
@@ -343,7 +312,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      * Applies to clusters configured with the instance fleets option. Specifies the unique identifier of one or more
      * Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
      * chooses the EC2 subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then
-     * launches all cluster instances within that Subnet. If this value is not specified, and the account and region
+     * launches all cluster instances within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic network and uses
      * <code>RequestedEc2AvailabilityZones</code> instead of this setting. If EC2-Classic is not supported, and no
      * Subnet is specified, Amazon EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and
@@ -355,7 +324,7 @@ public class Ec2InstanceAttributes implements Serializable, Cloneable, Structure
      *        more Amazon EC2 subnets in which to launch EC2 cluster instances. Subnets must exist within the same VPC.
      *        Amazon EMR chooses the EC2 subnet with the best fit from among the list of
      *        <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances within that Subnet. If this
-     *        value is not specified, and the account and region support EC2-Classic networks, the cluster launches
+     *        value is not specified, and the account and Region support EC2-Classic networks, the cluster launches
      *        instances in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead of this
      *        setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon EMR chooses the subnet for
      *        you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code> cannot be specified

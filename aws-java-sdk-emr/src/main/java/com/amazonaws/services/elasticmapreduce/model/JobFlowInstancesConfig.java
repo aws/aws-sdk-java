@@ -105,13 +105,8 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * <p>
      * Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual
      * Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the
-     * cluster to launch. If you do not specify this value, the cluster launches in the normal Amazon Web Services
-     * cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region
-     * where the cluster launches.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you
-     * cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     * cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches
+     * in EC2-Classic.
      * </p>
      */
     private String ec2SubnetId;
@@ -735,24 +730,15 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * <p>
      * Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual
      * Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the
-     * cluster to launch. If you do not specify this value, the cluster launches in the normal Amazon Web Services
-     * cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region
-     * where the cluster launches.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you
-     * cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     * cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches
+     * in EC2-Classic.
      * </p>
      * 
      * @param ec2SubnetId
      *        Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon
      *        Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the cluster to launch. If you do not specify this value, the cluster launches in the normal
-     *        Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2
-     *        Classic networks in the region where the cluster launches.</p>
-     *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus
-     *        you cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     *        you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic,
+     *        the cluster launches in EC2-Classic.
      */
 
     public void setEc2SubnetId(String ec2SubnetId) {
@@ -763,23 +749,14 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * <p>
      * Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual
      * Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the
-     * cluster to launch. If you do not specify this value, the cluster launches in the normal Amazon Web Services
-     * cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region
-     * where the cluster launches.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you
-     * cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     * cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches
+     * in EC2-Classic.
      * </p>
      * 
      * @return Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon
      *         Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where
-     *         you want the cluster to launch. If you do not specify this value, the cluster launches in the normal
-     *         Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2
-     *         Classic networks in the region where the cluster launches.</p>
-     *         <p>
-     *         Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus
-     *         you cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     *         you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic,
+     *         the cluster launches in EC2-Classic.
      */
 
     public String getEc2SubnetId() {
@@ -790,24 +767,15 @@ public class JobFlowInstancesConfig implements Serializable, Cloneable, Structur
      * <p>
      * Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon Virtual
      * Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where you want the
-     * cluster to launch. If you do not specify this value, the cluster launches in the normal Amazon Web Services
-     * cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2 Classic networks in the region
-     * where the cluster launches.
-     * </p>
-     * <p>
-     * Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus you
-     * cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     * cluster to launch. If you do not specify this value and your account supports EC2-Classic, the cluster launches
+     * in EC2-Classic.
      * </p>
      * 
      * @param ec2SubnetId
      *        Applies to clusters that use the uniform instance group configuration. To launch the cluster in Amazon
      *        Virtual Private Cloud (Amazon VPC), set this parameter to the identifier of the Amazon VPC subnet where
-     *        you want the cluster to launch. If you do not specify this value, the cluster launches in the normal
-     *        Amazon Web Services cloud, outside of an Amazon VPC, if the account launching the cluster supports EC2
-     *        Classic networks in the region where the cluster launches.</p>
-     *        <p>
-     *        Amazon VPC currently does not support cluster compute quadruple extra large (cc1.4xlarge) instances. Thus
-     *        you cannot specify the cc1.4xlarge instance type for clusters launched in an Amazon VPC.
+     *        you want the cluster to launch. If you do not specify this value and your account supports EC2-Classic,
+     *        the cluster launches in EC2-Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

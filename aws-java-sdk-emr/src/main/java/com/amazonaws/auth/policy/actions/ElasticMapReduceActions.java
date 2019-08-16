@@ -47,6 +47,8 @@ public enum ElasticMapReduceActions implements Action {
     DescribeSecurityConfiguration("elasticmapreduce:DescribeSecurityConfiguration"),
     /** Action for the DescribeStep operation. */
     DescribeStep("elasticmapreduce:DescribeStep"),
+    /** Action for the GetBlockPublicAccessConfiguration operation. */
+    GetBlockPublicAccessConfiguration("elasticmapreduce:GetBlockPublicAccessConfiguration"),
     /** Action for the ListBootstrapActions operation. */
     ListBootstrapActions("elasticmapreduce:ListBootstrapActions"),
     /** Action for the ListClusters operation. */
@@ -67,6 +69,8 @@ public enum ElasticMapReduceActions implements Action {
     ModifyInstanceGroups("elasticmapreduce:ModifyInstanceGroups"),
     /** Action for the PutAutoScalingPolicy operation. */
     PutAutoScalingPolicy("elasticmapreduce:PutAutoScalingPolicy"),
+    /** Action for the PutBlockPublicAccessConfiguration operation. */
+    PutBlockPublicAccessConfiguration("elasticmapreduce:PutBlockPublicAccessConfiguration"),
     /** Action for the RemoveAutoScalingPolicy operation. */
     RemoveAutoScalingPolicy("elasticmapreduce:RemoveAutoScalingPolicy"),
     /** Action for the RemoveTags operation. */

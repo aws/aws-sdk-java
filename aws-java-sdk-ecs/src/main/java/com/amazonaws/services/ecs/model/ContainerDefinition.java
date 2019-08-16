@@ -691,14 +691,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.
-     * </p>
-     * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
-     * </p>
-     * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
@@ -5812,14 +5804,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.
-     * </p>
-     * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
-     * </p>
-     * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
@@ -5855,15 +5839,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param logConfiguration
      *        The log configuration specification for the container.</p>
-     *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     *        <code>splunk</code>.
-     *        </p>
-     *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
-     *        </p>
      *        <p>
      *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -5908,14 +5883,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.
-     * </p>
-     * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
-     * </p>
-     * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
@@ -5950,15 +5917,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </note>
      * 
      * @return The log configuration specification for the container.</p>
-     *         <p>
-     *         For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     *         <code>splunk</code>.
-     *         </p>
-     *         <p>
-     *         For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *         <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *         and <code>json-file</code>.
-     *         </p>
      *         <p>
      *         This parameter maps to <code>LogConfig</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
@@ -6003,14 +5961,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * The log configuration specification for the container.
      * </p>
      * <p>
-     * For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     * <code>splunk</code>.
-     * </p>
-     * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
-     * </p>
-     * <p>
      * This parameter maps to <code>LogConfig</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--log-driver</code>
@@ -6046,15 +5996,6 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * 
      * @param logConfiguration
      *        The log configuration specification for the container.</p>
-     *        <p>
-     *        For tasks using the Fargate launch type, the supported log drivers are <code>awslogs</code> and
-     *        <code>splunk</code>.
-     *        </p>
-     *        <p>
-     *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
-     *        </p>
      *        <p>
      *        This parameter maps to <code>LogConfig</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section

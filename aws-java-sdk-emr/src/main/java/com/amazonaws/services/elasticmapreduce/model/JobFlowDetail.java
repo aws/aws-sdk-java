@@ -86,6 +86,9 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<String> supportedProducts;
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
      * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
@@ -631,6 +634,9 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
      * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
@@ -638,6 +644,8 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param visibleToAllUsers
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
      *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
      *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
      *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
@@ -651,13 +659,18 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
      * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
      * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
      *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
      *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
      *         user that created the cluster can view and manage it. This value can be changed using the
@@ -670,6 +683,9 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
      * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
@@ -677,6 +693,8 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param visibleToAllUsers
+     *        <i>This member will be deprecated.</i> </p>
+     *        <p>
      *        Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
      *        If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
      *        the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
@@ -692,13 +710,18 @@ public class JobFlowDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member will be deprecated.</i>
+     * </p>
+     * <p>
      * Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster. If this
      * value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have the proper policy
      * permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM user that created the
      * cluster can view and manage it. This value can be changed using the <a>SetVisibleToAllUsers</a> action.
      * </p>
      * 
-     * @return Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
+     * @return <i>This member will be deprecated.</i> </p>
+     *         <p>
+     *         Specifies whether the cluster is visible to all IAM users of the AWS account associated with the cluster.
      *         If this value is set to <code>true</code>, all IAM users of that AWS account can view and (if they have
      *         the proper policy permissions set) manage the cluster. If it is set to <code>false</code>, only the IAM
      *         user that created the cluster can view and manage it. This value can be changed using the

@@ -425,11 +425,12 @@ public interface AmazonECS {
      * <p>
      * When you delete a service, if there are still running tasks that require cleanup, the service status moves from
      * <code>ACTIVE</code> to <code>DRAINING</code>, and the service is no longer visible in the console or in the
-     * <a>ListServices</a> API operation. After the tasks have stopped, then the service status moves from
-     * <code>DRAINING</code> to <code>INACTIVE</code>. Services in the <code>DRAINING</code> or <code>INACTIVE</code>
-     * status can still be viewed with the <a>DescribeServices</a> API operation. However, in the future,
-     * <code>INACTIVE</code> services may be cleaned up and purged from Amazon ECS record keeping, and
-     * <a>DescribeServices</a> calls on those services return a <code>ServiceNotFoundException</code> error.
+     * <a>ListServices</a> API operation. After all tasks have transitioned to either <code>STOPPING</code> or
+     * <code>STOPPED</code> status, the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>.
+     * Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be viewed with the
+     * <a>DescribeServices</a> API operation. However, in the future, <code>INACTIVE</code> services may be cleaned up
+     * and purged from Amazon ECS record keeping, and <a>DescribeServices</a> calls on those services return a
+     * <code>ServiceNotFoundException</code> error.
      * </p>
      * </note> <important>
      * <p>
@@ -1041,9 +1042,11 @@ public interface AmazonECS {
 
     /**
      * <p>
-     * Modifies an account setting. If you change the account setting for the root user, the default settings for all of
-     * the IAM users and roles for which no individual account setting has been specified are reset. For more
-     * information, see <a
+     * Modifies an account setting. Account settings are set on a per-Region basis.
+     * </p>
+     * <p>
+     * If you change the account setting for the root user, the default settings for all of the IAM users and roles for
+     * which no individual account setting has been specified are reset. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account Settings</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
@@ -1091,7 +1094,7 @@ public interface AmazonECS {
     /**
      * <p>
      * Modifies an account setting for all IAM users on an account for whom no individual account setting has been
-     * specified.
+     * specified. Account settings are set on a per-Region basis.
      * </p>
      * 
      * @param putAccountSettingDefaultRequest

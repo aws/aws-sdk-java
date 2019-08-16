@@ -38,8 +38,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -88,8 +89,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -120,8 +122,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
@@ -158,8 +160,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -189,8 +192,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *         </p>
      *         <p>
      *         For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *         <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *         and <code>json-file</code>.
+     *         <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *         <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
      *         </p>
      *         <p>
      *         For more information about using the <code>awslogs</code> log driver, see <a
@@ -227,8 +230,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -259,8 +263,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
@@ -299,8 +303,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -331,8 +336,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a
@@ -369,8 +374,9 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      * <code>splunk</code>.
      * </p>
      * <p>
-     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>syslog</code>,
-     * <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>, and <code>json-file</code>.
+     * For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>, <code>fluentd</code>,
+     * <code>gelf</code>, <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
+     * <code>splunk</code>, and <code>syslog</code>.
      * </p>
      * <p>
      * For more information about using the <code>awslogs</code> log driver, see <a
@@ -401,8 +407,8 @@ public class LogConfiguration implements Serializable, Cloneable, StructuredPojo
      *        </p>
      *        <p>
      *        For tasks using the EC2 launch type, the supported log drivers are <code>awslogs</code>,
-     *        <code>syslog</code>, <code>gelf</code>, <code>fluentd</code>, <code>splunk</code>, <code>journald</code>,
-     *        and <code>json-file</code>.
+     *        <code>fluentd</code>, <code>gelf</code>, <code>json-file</code>, <code>journald</code>,
+     *        <code>logentries</code>, <code>syslog</code>, <code>splunk</code>, and <code>syslog</code>.
      *        </p>
      *        <p>
      *        For more information about using the <code>awslogs</code> log driver, see <a

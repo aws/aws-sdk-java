@@ -64,6 +64,12 @@ public class SimulationJobSummary implements Serializable, Cloneable, Structured
      * </p>
      */
     private java.util.List<String> robotApplicationNames;
+    /**
+     * <p>
+     * The names of the data sources.
+     * </p>
+     */
+    private java.util.List<String> dataSourceNames;
 
     /**
      * <p>
@@ -385,6 +391,76 @@ public class SimulationJobSummary implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * The names of the data sources.
+     * </p>
+     * 
+     * @return The names of the data sources.
+     */
+
+    public java.util.List<String> getDataSourceNames() {
+        return dataSourceNames;
+    }
+
+    /**
+     * <p>
+     * The names of the data sources.
+     * </p>
+     * 
+     * @param dataSourceNames
+     *        The names of the data sources.
+     */
+
+    public void setDataSourceNames(java.util.Collection<String> dataSourceNames) {
+        if (dataSourceNames == null) {
+            this.dataSourceNames = null;
+            return;
+        }
+
+        this.dataSourceNames = new java.util.ArrayList<String>(dataSourceNames);
+    }
+
+    /**
+     * <p>
+     * The names of the data sources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSourceNames(java.util.Collection)} or {@link #withDataSourceNames(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param dataSourceNames
+     *        The names of the data sources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJobSummary withDataSourceNames(String... dataSourceNames) {
+        if (this.dataSourceNames == null) {
+            setDataSourceNames(new java.util.ArrayList<String>(dataSourceNames.length));
+        }
+        for (String ele : dataSourceNames) {
+            this.dataSourceNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the data sources.
+     * </p>
+     * 
+     * @param dataSourceNames
+     *        The names of the data sources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJobSummary withDataSourceNames(java.util.Collection<String> dataSourceNames) {
+        setDataSourceNames(dataSourceNames);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -407,7 +483,9 @@ public class SimulationJobSummary implements Serializable, Cloneable, Structured
         if (getSimulationApplicationNames() != null)
             sb.append("SimulationApplicationNames: ").append(getSimulationApplicationNames()).append(",");
         if (getRobotApplicationNames() != null)
-            sb.append("RobotApplicationNames: ").append(getRobotApplicationNames());
+            sb.append("RobotApplicationNames: ").append(getRobotApplicationNames()).append(",");
+        if (getDataSourceNames() != null)
+            sb.append("DataSourceNames: ").append(getDataSourceNames());
         sb.append("}");
         return sb.toString();
     }
@@ -446,6 +524,10 @@ public class SimulationJobSummary implements Serializable, Cloneable, Structured
             return false;
         if (other.getRobotApplicationNames() != null && other.getRobotApplicationNames().equals(this.getRobotApplicationNames()) == false)
             return false;
+        if (other.getDataSourceNames() == null ^ this.getDataSourceNames() == null)
+            return false;
+        if (other.getDataSourceNames() != null && other.getDataSourceNames().equals(this.getDataSourceNames()) == false)
+            return false;
         return true;
     }
 
@@ -460,6 +542,7 @@ public class SimulationJobSummary implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getSimulationApplicationNames() == null) ? 0 : getSimulationApplicationNames().hashCode());
         hashCode = prime * hashCode + ((getRobotApplicationNames() == null) ? 0 : getRobotApplicationNames().hashCode());
+        hashCode = prime * hashCode + ((getDataSourceNames() == null) ? 0 : getDataSourceNames().hashCode());
         return hashCode;
     }
 

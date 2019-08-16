@@ -142,6 +142,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
+     * <dt>WrongRegionS3Output</dt>
+     * <dd>
+     * <p>
+     * S3 output bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionRobotApplication</dt>
+     * <dd>
+     * <p>
+     * RobotApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * SimulationApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
      * </dl>
      */
     private String failureCode;
@@ -157,6 +175,12 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private OutputLocation outputLocation;
+    /**
+     * <p>
+     * The logging configuration.
+     * </p>
+     */
+    private LoggingConfig loggingConfig;
     /**
      * <p>
      * The maximum simulation job duration in seconds.
@@ -188,6 +212,12 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private java.util.List<SimulationApplicationConfig> simulationApplications;
+    /**
+     * <p>
+     * The data sources for the simulation job.
+     * </p>
+     */
+    private java.util.List<DataSource> dataSources;
     /**
      * <p>
      * The list of all tags added to the simulation job.
@@ -528,6 +558,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
+     * <dt>WrongRegionS3Output</dt>
+     * <dd>
+     * <p>
+     * S3 output bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionRobotApplication</dt>
+     * <dd>
+     * <p>
+     * RobotApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * SimulationApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -615,6 +663,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <dd>
      *        <p>
      *        Etag for SimulationApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        S3 output bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        RobotApplication bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
      *        </p>
      *        </dd>
      * @see SimulationJobErrorCode
@@ -713,6 +779,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
+     * <dt>WrongRegionS3Output</dt>
+     * <dd>
+     * <p>
+     * S3 output bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionRobotApplication</dt>
+     * <dd>
+     * <p>
+     * RobotApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * SimulationApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
      * </dl>
      * 
      * @return The failure code of the simulation job if it failed:</p>
@@ -799,6 +883,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *         <dd>
      *         <p>
      *         Etag for SimulationApplication does not match value during version creation.
+     *         </p>
+     *         </dd>
+     *         <dt>WrongRegionS3Output</dt>
+     *         <dd>
+     *         <p>
+     *         S3 output bucket is in a different region than AWS RoboMaker.
+     *         </p>
+     *         </dd>
+     *         <dt>WrongRegionRobotApplication</dt>
+     *         <dd>
+     *         <p>
+     *         RobotApplication bucket is in a different region than AWS RoboMaker.
+     *         </p>
+     *         </dd>
+     *         <dt>WrongRegionSimulationApplication</dt>
+     *         <dd>
+     *         <p>
+     *         SimulationApplication bucket is in a different region than AWS RoboMaker.
      *         </p>
      *         </dd>
      * @see SimulationJobErrorCode
@@ -897,6 +999,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
+     * <dt>WrongRegionS3Output</dt>
+     * <dd>
+     * <p>
+     * S3 output bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionRobotApplication</dt>
+     * <dd>
+     * <p>
+     * RobotApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * SimulationApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -984,6 +1104,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <dd>
      *        <p>
      *        Etag for SimulationApplication does not match value during version creation.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        S3 output bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        RobotApplication bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1084,6 +1222,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
+     * <dt>WrongRegionS3Output</dt>
+     * <dd>
+     * <p>
+     * S3 output bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionRobotApplication</dt>
+     * <dd>
+     * <p>
+     * RobotApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
+     * <dt>WrongRegionSimulationApplication</dt>
+     * <dd>
+     * <p>
+     * SimulationApplication bucket is in a different region than AWS RoboMaker.
+     * </p>
+     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -1173,6 +1329,24 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        Etag for SimulationApplication does not match value during version creation.
      *        </p>
      *        </dd>
+     *        <dt>WrongRegionS3Output</dt>
+     *        <dd>
+     *        <p>
+     *        S3 output bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionRobotApplication</dt>
+     *        <dd>
+     *        <p>
+     *        RobotApplication bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
+     *        <dt>WrongRegionSimulationApplication</dt>
+     *        <dd>
+     *        <p>
+     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SimulationJobErrorCode
      */
@@ -1259,6 +1433,46 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     public CreateSimulationJobResult withOutputLocation(OutputLocation outputLocation) {
         setOutputLocation(outputLocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The logging configuration.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The logging configuration.
+     */
+
+    public void setLoggingConfig(LoggingConfig loggingConfig) {
+        this.loggingConfig = loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The logging configuration.
+     * </p>
+     * 
+     * @return The logging configuration.
+     */
+
+    public LoggingConfig getLoggingConfig() {
+        return this.loggingConfig;
+    }
+
+    /**
+     * <p>
+     * The logging configuration.
+     * </p>
+     * 
+     * @param loggingConfig
+     *        The logging configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobResult withLoggingConfig(LoggingConfig loggingConfig) {
+        setLoggingConfig(loggingConfig);
         return this;
     }
 
@@ -1530,6 +1744,76 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
+     * The data sources for the simulation job.
+     * </p>
+     * 
+     * @return The data sources for the simulation job.
+     */
+
+    public java.util.List<DataSource> getDataSources() {
+        return dataSources;
+    }
+
+    /**
+     * <p>
+     * The data sources for the simulation job.
+     * </p>
+     * 
+     * @param dataSources
+     *        The data sources for the simulation job.
+     */
+
+    public void setDataSources(java.util.Collection<DataSource> dataSources) {
+        if (dataSources == null) {
+            this.dataSources = null;
+            return;
+        }
+
+        this.dataSources = new java.util.ArrayList<DataSource>(dataSources);
+    }
+
+    /**
+     * <p>
+     * The data sources for the simulation job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataSources(java.util.Collection)} or {@link #withDataSources(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dataSources
+     *        The data sources for the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobResult withDataSources(DataSource... dataSources) {
+        if (this.dataSources == null) {
+            setDataSources(new java.util.ArrayList<DataSource>(dataSources.length));
+        }
+        for (DataSource ele : dataSources) {
+            this.dataSources.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The data sources for the simulation job.
+     * </p>
+     * 
+     * @param dataSources
+     *        The data sources for the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSimulationJobResult withDataSources(java.util.Collection<DataSource> dataSources) {
+        setDataSources(dataSources);
+        return this;
+    }
+
+    /**
+     * <p>
      * The list of all tags added to the simulation job.
      * </p>
      * 
@@ -1657,6 +1941,8 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getOutputLocation() != null)
             sb.append("OutputLocation: ").append(getOutputLocation()).append(",");
+        if (getLoggingConfig() != null)
+            sb.append("LoggingConfig: ").append(getLoggingConfig()).append(",");
         if (getMaxJobDurationInSeconds() != null)
             sb.append("MaxJobDurationInSeconds: ").append(getMaxJobDurationInSeconds()).append(",");
         if (getSimulationTimeMillis() != null)
@@ -1667,6 +1953,8 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("RobotApplications: ").append(getRobotApplications()).append(",");
         if (getSimulationApplications() != null)
             sb.append("SimulationApplications: ").append(getSimulationApplications()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
@@ -1717,6 +2005,10 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getOutputLocation() != null && other.getOutputLocation().equals(this.getOutputLocation()) == false)
             return false;
+        if (other.getLoggingConfig() == null ^ this.getLoggingConfig() == null)
+            return false;
+        if (other.getLoggingConfig() != null && other.getLoggingConfig().equals(this.getLoggingConfig()) == false)
+            return false;
         if (other.getMaxJobDurationInSeconds() == null ^ this.getMaxJobDurationInSeconds() == null)
             return false;
         if (other.getMaxJobDurationInSeconds() != null && other.getMaxJobDurationInSeconds().equals(this.getMaxJobDurationInSeconds()) == false)
@@ -1736,6 +2028,10 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
         if (other.getSimulationApplications() == null ^ this.getSimulationApplications() == null)
             return false;
         if (other.getSimulationApplications() != null && other.getSimulationApplications().equals(this.getSimulationApplications()) == false)
+            return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -1761,11 +2057,13 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getOutputLocation() == null) ? 0 : getOutputLocation().hashCode());
+        hashCode = prime * hashCode + ((getLoggingConfig() == null) ? 0 : getLoggingConfig().hashCode());
         hashCode = prime * hashCode + ((getMaxJobDurationInSeconds() == null) ? 0 : getMaxJobDurationInSeconds().hashCode());
         hashCode = prime * hashCode + ((getSimulationTimeMillis() == null) ? 0 : getSimulationTimeMillis().hashCode());
         hashCode = prime * hashCode + ((getIamRole() == null) ? 0 : getIamRole().hashCode());
         hashCode = prime * hashCode + ((getRobotApplications() == null) ? 0 : getRobotApplications().hashCode());
         hashCode = prime * hashCode + ((getSimulationApplications() == null) ? 0 : getSimulationApplications().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         return hashCode;

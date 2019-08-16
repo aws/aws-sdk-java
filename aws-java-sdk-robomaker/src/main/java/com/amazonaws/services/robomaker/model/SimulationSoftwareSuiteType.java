@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum SimulationSoftwareSuiteType {
 
-    Gazebo("Gazebo");
+    Gazebo("Gazebo"),
+    RosbagPlay("RosbagPlay");
 
     private String value;
 

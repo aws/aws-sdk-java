@@ -56,6 +56,10 @@ public class DeploymentConfigJsonUnmarshaller implements Unmarshaller<Deployment
                     context.nextToken();
                     deploymentConfig.setFailureThresholdPercentage(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("robotDeploymentTimeoutInSeconds", targetDepth)) {
+                    context.nextToken();
+                    deploymentConfig.setRobotDeploymentTimeoutInSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
