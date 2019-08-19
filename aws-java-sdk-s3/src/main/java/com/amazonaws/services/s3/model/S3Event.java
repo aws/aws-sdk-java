@@ -15,6 +15,9 @@
 
 package com.amazonaws.services.s3.model;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * A enum class for all Amazon S3 events.
  */
@@ -44,6 +47,7 @@ public enum S3Event {
     ;
 
     private final String event;
+	private static final String S3_PREFIX = "S3:";
 
     private S3Event(String event) {
         this.event = event;
@@ -53,4 +57,22 @@ public enum S3Event {
     public String toString() {
         return this.event;
     }
+    
+	private static final Map<String, S3Event> stringToEnum = new HashMap<>();
+
+	static {
+		for(S3Event s3Event : S3Event.values()) {
+			stringToEnum.put(s3Event.toString().toUpperCase(), s3Event);
+		}
+	}
+
+	public static S3Event fromString(String key) {
+		S3Event s3Event = stringToEnum.get(key.toUpperCase());
+		if (s3Event == null) {
+			// the S3 record returned for an event differs slightly from the value in the enum
+			// so here we try to match the value adding the s3: prefix
+			s3Event = stringToEnum.get(S3_PREFIX.concat(key.toUpperCase()));
+		}
+		return s3Event;
+	}
 }
