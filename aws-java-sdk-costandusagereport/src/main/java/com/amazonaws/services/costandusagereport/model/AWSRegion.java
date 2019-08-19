@@ -31,7 +31,8 @@ public enum AWSRegion {
     ApSoutheast2("ap-southeast-2"),
     ApNortheast1("ap-northeast-1"),
     EuNorth1("eu-north-1"),
-    ApNortheast3("ap-northeast-3");
+    ApNortheast3("ap-northeast-3"),
+    ApEast1("ap-east-1");
 
     private String value;
 

@@ -1936,7 +1936,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>An object representing the AWS Cloud Map attribute information for your virtual\n         node.</p>",
+      "documentation" : "<p>An object representing the AWS Cloud Map attribute information for your virtual node.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -1949,11 +1949,11 @@
         "c2jName" : "key",
         "c2jShape" : "AwsCloudMapInstanceAttributeKey",
         "deprecated" : false,
-        "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>",
+        "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withKey",
-        "getterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@return The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.*/",
+        "getterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@return The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.*/",
         "getterMethodName" : "getKey",
         "getterModel" : {
           "returnType" : "String",
@@ -1987,7 +1987,7 @@
         "marshallingType" : "STRING",
         "name" : "Key",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.*/",
+        "setterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.*/",
         "setterMethodName" : "setKey",
         "setterModel" : {
           "timestampFormat" : null,
@@ -2001,13 +2001,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "key",
           "variableType" : "String",
-          "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>",
+          "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -2085,11 +2085,11 @@
           "c2jName" : "key",
           "c2jShape" : "AwsCloudMapInstanceAttributeKey",
           "deprecated" : false,
-          "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>",
+          "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withKey",
-          "getterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@return The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.*/",
+          "getterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@return The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.*/",
           "getterMethodName" : "getKey",
           "getterModel" : {
             "returnType" : "String",
@@ -2123,7 +2123,7 @@
           "marshallingType" : "STRING",
           "name" : "Key",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.*/",
+          "setterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.*/",
           "setterMethodName" : "setKey",
           "setterModel" : {
             "timestampFormat" : null,
@@ -2137,13 +2137,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>\n@param key The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "key",
             "variableType" : "String",
-            "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service\n         instance that contains the specified key and value is returned.</p>",
+            "documentation" : "<p>The name of an AWS Cloud Map service instance attribute key. Any AWS Cloud Map service instance\n         that contains the specified key and value is returned.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -13968,7 +13968,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>An object representing the method and value to match the header value sent with a\n         request. Specify one match method.</p>",
+      "documentation" : "<p>An object representing the method and value to match the header value sent with a request. Specify one match method.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -14115,11 +14115,11 @@
         "c2jName" : "range",
         "c2jShape" : "MatchRange",
         "deprecated" : false,
-        "documentation" : "<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>",
+        "documentation" : "<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withRange",
-        "getterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@return The object that specifies the range of numbers within which the header value sent by the client\n         must be included.*/",
+        "getterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@return The object that specifies the range of numbers that the header value sent by the client must be included in.*/",
         "getterMethodName" : "getRange",
         "getterModel" : {
           "returnType" : "MatchRange",
@@ -14153,7 +14153,7 @@
         "marshallingType" : "STRUCTURED",
         "name" : "Range",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.*/",
+        "setterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.*/",
         "setterMethodName" : "setRange",
         "setterModel" : {
           "timestampFormat" : null,
@@ -14167,13 +14167,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : false,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "MatchRange",
           "variableName" : "range",
           "variableType" : "MatchRange",
-          "documentation" : "<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>",
+          "documentation" : "<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>",
           "simpleType" : "MatchRange",
           "variableSetterType" : "MatchRange"
         },
@@ -14454,11 +14454,11 @@
           "c2jName" : "range",
           "c2jShape" : "MatchRange",
           "deprecated" : false,
-          "documentation" : "<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>",
+          "documentation" : "<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withRange",
-          "getterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@return The object that specifies the range of numbers within which the header value sent by the client\n         must be included.*/",
+          "getterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@return The object that specifies the range of numbers that the header value sent by the client must be included in.*/",
           "getterMethodName" : "getRange",
           "getterModel" : {
             "returnType" : "MatchRange",
@@ -14492,7 +14492,7 @@
           "marshallingType" : "STRUCTURED",
           "name" : "Range",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.*/",
+          "setterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.*/",
           "setterMethodName" : "setRange",
           "setterModel" : {
             "timestampFormat" : null,
@@ -14506,13 +14506,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : false,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>\n@param range The object that specifies the range of numbers within which the header value sent by the client\n         must be included.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>\n@param range The object that specifies the range of numbers that the header value sent by the client must be included in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "MatchRange",
             "variableName" : "range",
             "variableType" : "MatchRange",
-            "documentation" : "<p>The object that specifies the range of numbers within which the header value sent by the client\n         must be included.</p>",
+            "documentation" : "<p>The object that specifies the range of numbers that the header value sent by the client must be included in.</p>",
             "simpleType" : "MatchRange",
             "variableSetterType" : "MatchRange"
           },
@@ -15674,32 +15674,32 @@
       "deprecated" : false,
       "documentation" : "",
       "enums" : [ {
-        "name" : "Connect",
-        "value" : "connect"
+        "name" : "CONNECT",
+        "value" : "CONNECT"
       }, {
-        "name" : "Delete",
-        "value" : "delete"
+        "name" : "DELETE",
+        "value" : "DELETE"
       }, {
-        "name" : "Get",
-        "value" : "get"
+        "name" : "GET",
+        "value" : "GET"
       }, {
-        "name" : "Head",
-        "value" : "head"
+        "name" : "HEAD",
+        "value" : "HEAD"
       }, {
-        "name" : "Options",
-        "value" : "options"
+        "name" : "OPTIONS",
+        "value" : "OPTIONS"
       }, {
-        "name" : "Patch",
-        "value" : "patch"
+        "name" : "PATCH",
+        "value" : "PATCH"
       }, {
-        "name" : "Post",
-        "value" : "post"
+        "name" : "POST",
+        "value" : "POST"
       }, {
-        "name" : "Put",
-        "value" : "put"
+        "name" : "PUT",
+        "value" : "PUT"
       }, {
-        "name" : "Trace",
-        "value" : "trace"
+        "name" : "TRACE",
+        "value" : "TRACE"
       } ],
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -16406,11 +16406,11 @@
         "c2jName" : "invert",
         "c2jShape" : "Boolean",
         "deprecated" : false,
-        "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>",
+        "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withInvert",
-        "getterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@return Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.*/",
+        "getterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@return Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.*/",
         "getterMethodName" : "getInvert",
         "getterModel" : {
           "returnType" : "Boolean",
@@ -16444,7 +16444,7 @@
         "marshallingType" : "BOOLEAN",
         "name" : "Invert",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.*/",
+        "setterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.*/",
         "setterMethodName" : "setInvert",
         "setterModel" : {
           "timestampFormat" : null,
@@ -16458,13 +16458,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Boolean",
           "variableName" : "invert",
           "variableType" : "Boolean",
-          "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>",
+          "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>",
           "simpleType" : "Boolean",
           "variableSetterType" : "Boolean"
         },
@@ -16609,11 +16609,11 @@
           "c2jName" : "invert",
           "c2jShape" : "Boolean",
           "deprecated" : false,
-          "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>",
+          "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withInvert",
-          "getterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@return Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.*/",
+          "getterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@return Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.*/",
           "getterMethodName" : "getInvert",
           "getterModel" : {
             "returnType" : "Boolean",
@@ -16647,7 +16647,7 @@
           "marshallingType" : "BOOLEAN",
           "name" : "Invert",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.*/",
+          "setterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.*/",
           "setterMethodName" : "setInvert",
           "setterModel" : {
             "timestampFormat" : null,
@@ -16661,13 +16661,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>\n@param invert Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Boolean",
             "variableName" : "invert",
             "variableType" : "Boolean",
-            "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code>\n         method and value. The default value is <code>False</code>.</p>",
+            "documentation" : "<p>Specify <code>True</code> to match the opposite of the <code>HeaderMatchMethod</code> method and value. The default value is <code>False</code>.</p>",
             "simpleType" : "Boolean",
             "variableSetterType" : "Boolean"
           },
@@ -17136,11 +17136,11 @@
         "c2jName" : "scheme",
         "c2jShape" : "HttpScheme",
         "deprecated" : false,
-        "documentation" : "<p>The client request scheme to match on.</p>",
+        "documentation" : "<p>The client request header scheme to match on.</p>",
         "enumType" : "HttpScheme",
-        "fluentSetterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
+        "fluentSetterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
         "fluentSetterMethodName" : "withScheme",
-        "getterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@return The client request scheme to match on.\n@see HttpScheme*/",
+        "getterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@return The client request header scheme to match on.\n@see HttpScheme*/",
         "getterMethodName" : "getScheme",
         "getterModel" : {
           "returnType" : "String",
@@ -17174,7 +17174,7 @@
         "marshallingType" : "STRING",
         "name" : "Scheme",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@see HttpScheme*/",
+        "setterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@see HttpScheme*/",
         "setterMethodName" : "setScheme",
         "setterModel" : {
           "timestampFormat" : null,
@@ -17188,13 +17188,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
+        "varargSetterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "scheme",
           "variableType" : "String",
-          "documentation" : "<p>The client request scheme to match on.</p>",
+          "documentation" : "<p>The client request header scheme to match on.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -17491,11 +17491,11 @@
           "c2jName" : "scheme",
           "c2jShape" : "HttpScheme",
           "deprecated" : false,
-          "documentation" : "<p>The client request scheme to match on.</p>",
+          "documentation" : "<p>The client request header scheme to match on.</p>",
           "enumType" : "HttpScheme",
-          "fluentSetterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
+          "fluentSetterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
           "fluentSetterMethodName" : "withScheme",
-          "getterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@return The client request scheme to match on.\n@see HttpScheme*/",
+          "getterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@return The client request header scheme to match on.\n@see HttpScheme*/",
           "getterMethodName" : "getScheme",
           "getterModel" : {
             "returnType" : "String",
@@ -17529,7 +17529,7 @@
           "marshallingType" : "STRING",
           "name" : "Scheme",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@see HttpScheme*/",
+          "setterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@see HttpScheme*/",
           "setterMethodName" : "setScheme",
           "setterModel" : {
             "timestampFormat" : null,
@@ -17543,13 +17543,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The client request scheme to match on.</p>\n@param scheme The client request scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
+          "varargSetterDocumentation" : "/**<p>The client request header scheme to match on.</p>\n@param scheme The client request header scheme to match on.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HttpScheme*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "scheme",
             "variableType" : "String",
-            "documentation" : "<p>The client request scheme to match on.</p>",
+            "documentation" : "<p>The client request header scheme to match on.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
@@ -23760,7 +23760,7 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>The range of values to match on. The first character of the range is included in the\n         range, though the last character is not. For example, if the range specified were 1-100,\n         only values 1-99 would be matched.</p>",
+      "documentation" : "<p>The range of values to match on. The first character of the range is included in the range, though the last character is not. For example, if the range specified were 1-100, only values 1-99 would be matched.</p>",
       "enums" : null,
       "errorCode" : null,
       "hasHeaderMember" : false,
@@ -23773,11 +23773,11 @@
         "c2jName" : "end",
         "c2jShape" : "Long",
         "deprecated" : false,
-        "documentation" : "<p>End of the range value.</p>",
+        "documentation" : "<p>The end of the range.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withEnd",
-        "getterDocumentation" : "/**<p>End of the range value.</p>\n@return End of the range value.*/",
+        "getterDocumentation" : "/**<p>The end of the range.</p>\n@return The end of the range.*/",
         "getterMethodName" : "getEnd",
         "getterModel" : {
           "returnType" : "Long",
@@ -23811,7 +23811,7 @@
         "marshallingType" : "LONG",
         "name" : "End",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.*/",
+        "setterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.*/",
         "setterMethodName" : "setEnd",
         "setterModel" : {
           "timestampFormat" : null,
@@ -23825,13 +23825,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "end",
           "variableType" : "Long",
-          "documentation" : "<p>End of the range value.</p>",
+          "documentation" : "<p>The end of the range.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -23840,11 +23840,11 @@
         "c2jName" : "start",
         "c2jShape" : "Long",
         "deprecated" : false,
-        "documentation" : "<p>Start of the range value.</p>",
+        "documentation" : "<p>The start of the range.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withStart",
-        "getterDocumentation" : "/**<p>Start of the range value.</p>\n@return Start of the range value.*/",
+        "getterDocumentation" : "/**<p>The start of the range.</p>\n@return The start of the range.*/",
         "getterMethodName" : "getStart",
         "getterModel" : {
           "returnType" : "Long",
@@ -23878,7 +23878,7 @@
         "marshallingType" : "LONG",
         "name" : "Start",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.*/",
+        "setterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.*/",
         "setterMethodName" : "setStart",
         "setterModel" : {
           "timestampFormat" : null,
@@ -23892,13 +23892,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Long",
           "variableName" : "start",
           "variableType" : "Long",
-          "documentation" : "<p>Start of the range value.</p>",
+          "documentation" : "<p>The start of the range.</p>",
           "simpleType" : "Long",
           "variableSetterType" : "Long"
         },
@@ -23909,11 +23909,11 @@
           "c2jName" : "end",
           "c2jShape" : "Long",
           "deprecated" : false,
-          "documentation" : "<p>End of the range value.</p>",
+          "documentation" : "<p>The end of the range.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withEnd",
-          "getterDocumentation" : "/**<p>End of the range value.</p>\n@return End of the range value.*/",
+          "getterDocumentation" : "/**<p>The end of the range.</p>\n@return The end of the range.*/",
           "getterMethodName" : "getEnd",
           "getterModel" : {
             "returnType" : "Long",
@@ -23947,7 +23947,7 @@
           "marshallingType" : "LONG",
           "name" : "End",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.*/",
+          "setterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.*/",
           "setterMethodName" : "setEnd",
           "setterModel" : {
             "timestampFormat" : null,
@@ -23961,13 +23961,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>End of the range value.</p>\n@param end End of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The end of the range.</p>\n@param end The end of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "end",
             "variableType" : "Long",
-            "documentation" : "<p>End of the range value.</p>",
+            "documentation" : "<p>The end of the range.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -23977,11 +23977,11 @@
           "c2jName" : "start",
           "c2jShape" : "Long",
           "deprecated" : false,
-          "documentation" : "<p>Start of the range value.</p>",
+          "documentation" : "<p>The start of the range.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withStart",
-          "getterDocumentation" : "/**<p>Start of the range value.</p>\n@return Start of the range value.*/",
+          "getterDocumentation" : "/**<p>The start of the range.</p>\n@return The start of the range.*/",
           "getterMethodName" : "getStart",
           "getterModel" : {
             "returnType" : "Long",
@@ -24015,7 +24015,7 @@
           "marshallingType" : "LONG",
           "name" : "Start",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.*/",
+          "setterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.*/",
           "setterMethodName" : "setStart",
           "setterModel" : {
             "timestampFormat" : null,
@@ -24029,13 +24029,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>Start of the range value.</p>\n@param start Start of the range value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The start of the range.</p>\n@param start The start of the range.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Long",
             "variableName" : "start",
             "variableType" : "Long",
-            "documentation" : "<p>Start of the range value.</p>",
+            "documentation" : "<p>The start of the range.</p>",
             "simpleType" : "Long",
             "variableSetterType" : "Long"
           },
@@ -28036,11 +28036,11 @@
         "c2jName" : "priority",
         "c2jShape" : "RoutePriority",
         "deprecated" : false,
-        "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>",
+        "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>",
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withPriority",
-        "getterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@return The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.*/",
+        "getterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@return The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.*/",
         "getterMethodName" : "getPriority",
         "getterModel" : {
           "returnType" : "Integer",
@@ -28074,7 +28074,7 @@
         "marshallingType" : "INTEGER",
         "name" : "Priority",
         "sensitive" : false,
-        "setterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.*/",
+        "setterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.*/",
         "setterMethodName" : "setPriority",
         "setterModel" : {
           "timestampFormat" : null,
@@ -28088,13 +28088,13 @@
         "shouldEmitLegacyEnumSetter" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "Integer",
           "variableName" : "priority",
           "variableType" : "Integer",
-          "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>",
+          "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>",
           "simpleType" : "Integer",
           "variableSetterType" : "Integer"
         },
@@ -28240,11 +28240,11 @@
           "c2jName" : "priority",
           "c2jShape" : "RoutePriority",
           "deprecated" : false,
-          "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>",
+          "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>",
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withPriority",
-          "getterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@return The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.*/",
+          "getterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@return The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.*/",
           "getterMethodName" : "getPriority",
           "getterModel" : {
             "returnType" : "Integer",
@@ -28278,7 +28278,7 @@
           "marshallingType" : "INTEGER",
           "name" : "Priority",
           "sensitive" : false,
-          "setterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.*/",
+          "setterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.*/",
           "setterMethodName" : "setPriority",
           "setterModel" : {
             "timestampFormat" : null,
@@ -28292,13 +28292,13 @@
           "shouldEmitLegacyEnumSetter" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>\n@param priority The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "Integer",
             "variableName" : "priority",
             "variableType" : "Integer",
-            "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is\n         the highest priority.</p>",
+            "documentation" : "<p>The priority for the route. Routes are matched based on the specified value, where 0 is the highest priority.</p>",
             "simpleType" : "Integer",
             "variableSetterType" : "Integer"
           },

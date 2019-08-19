@@ -54,6 +54,19 @@ public class AbstractAWSCostAndUsageReportAsync extends AbstractAWSCostAndUsageR
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(ModifyReportDefinitionRequest request) {
+
+        return modifyReportDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(ModifyReportDefinitionRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyReportDefinitionRequest, ModifyReportDefinitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PutReportDefinitionResult> putReportDefinitionAsync(PutReportDefinitionRequest request) {
 
         return putReportDefinitionAsync(request, null);

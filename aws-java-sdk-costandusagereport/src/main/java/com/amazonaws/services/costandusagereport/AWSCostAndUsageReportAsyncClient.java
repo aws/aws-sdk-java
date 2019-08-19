@@ -332,6 +332,39 @@ public class AWSCostAndUsageReportAsyncClient extends AWSCostAndUsageReportClien
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(ModifyReportDefinitionRequest request) {
+
+        return modifyReportDefinitionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyReportDefinitionResult> modifyReportDefinitionAsync(final ModifyReportDefinitionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyReportDefinitionRequest, ModifyReportDefinitionResult> asyncHandler) {
+        final ModifyReportDefinitionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyReportDefinitionResult>() {
+            @Override
+            public ModifyReportDefinitionResult call() throws Exception {
+                ModifyReportDefinitionResult result = null;
+
+                try {
+                    result = executeModifyReportDefinition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutReportDefinitionResult> putReportDefinitionAsync(PutReportDefinitionRequest request) {
 
         return putReportDefinitionAsync(request, null);

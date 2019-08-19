@@ -20,15 +20,15 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum HttpMethod {
 
-    Connect("connect"),
-    Delete("delete"),
-    Get("get"),
-    Head("head"),
-    Options("options"),
-    Patch("patch"),
-    Post("post"),
-    Put("put"),
-    Trace("trace");
+    CONNECT("CONNECT"),
+    DELETE("DELETE"),
+    GET("GET"),
+    HEAD("HEAD"),
+    OPTIONS("OPTIONS"),
+    PATCH("PATCH"),
+    POST("POST"),
+    PUT("PUT"),
+    TRACE("TRACE");
 
     private String value;
 

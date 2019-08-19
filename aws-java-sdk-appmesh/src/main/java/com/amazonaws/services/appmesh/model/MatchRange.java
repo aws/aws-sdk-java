@@ -31,24 +31,24 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End of the range value.
+     * The end of the range.
      * </p>
      */
     private Long end;
     /**
      * <p>
-     * Start of the range value.
+     * The start of the range.
      * </p>
      */
     private Long start;
 
     /**
      * <p>
-     * End of the range value.
+     * The end of the range.
      * </p>
      * 
      * @param end
-     *        End of the range value.
+     *        The end of the range.
      */
 
     public void setEnd(Long end) {
@@ -57,10 +57,10 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End of the range value.
+     * The end of the range.
      * </p>
      * 
-     * @return End of the range value.
+     * @return The end of the range.
      */
 
     public Long getEnd() {
@@ -69,11 +69,11 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * End of the range value.
+     * The end of the range.
      * </p>
      * 
      * @param end
-     *        End of the range value.
+     *        The end of the range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start of the range value.
+     * The start of the range.
      * </p>
      * 
      * @param start
-     *        Start of the range value.
+     *        The start of the range.
      */
 
     public void setStart(Long start) {
@@ -97,10 +97,10 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start of the range value.
+     * The start of the range.
      * </p>
      * 
-     * @return Start of the range value.
+     * @return The start of the range.
      */
 
     public Long getStart() {
@@ -109,11 +109,11 @@ public class MatchRange implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Start of the range value.
+     * The start of the range.
      * </p>
      * 
      * @param start
-     *        Start of the range value.
+     *        The start of the range.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

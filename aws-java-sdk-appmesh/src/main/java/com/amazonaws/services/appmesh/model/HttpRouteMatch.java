@@ -51,7 +51,7 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
     private String prefix;
     /**
      * <p>
-     * The client request scheme to match on.
+     * The client request header scheme to match on.
      * </p>
      */
     private String scheme;
@@ -248,11 +248,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on.
+     * The client request header scheme to match on.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on.
+     *        The client request header scheme to match on.
      * @see HttpScheme
      */
 
@@ -262,10 +262,10 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on.
+     * The client request header scheme to match on.
      * </p>
      * 
-     * @return The client request scheme to match on.
+     * @return The client request header scheme to match on.
      * @see HttpScheme
      */
 
@@ -275,11 +275,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on.
+     * The client request header scheme to match on.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on.
+     *        The client request header scheme to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */
@@ -291,11 +291,11 @@ public class HttpRouteMatch implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The client request scheme to match on.
+     * The client request header scheme to match on.
      * </p>
      * 
      * @param scheme
-     *        The client request scheme to match on.
+     *        The client request header scheme to match on.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see HttpScheme
      */

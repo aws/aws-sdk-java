@@ -48,6 +48,11 @@ public class AbstractAWSCostAndUsageReport implements AWSCostAndUsageReport {
     }
 
     @Override
+    public ModifyReportDefinitionResult modifyReportDefinition(ModifyReportDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutReportDefinitionResult putReportDefinition(PutReportDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

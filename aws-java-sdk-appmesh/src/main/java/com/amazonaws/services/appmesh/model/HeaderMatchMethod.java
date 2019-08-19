@@ -42,7 +42,7 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
     private String prefix;
     /**
      * <p>
-     * The object that specifies the range of numbers within which the header value sent by the client must be included.
+     * The object that specifies the range of numbers that the header value sent by the client must be included in.
      * </p>
      */
     private MatchRange range;
@@ -141,12 +141,12 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers within which the header value sent by the client must be included.
+     * The object that specifies the range of numbers that the header value sent by the client must be included in.
      * </p>
      * 
      * @param range
-     *        The object that specifies the range of numbers within which the header value sent by the client must be
-     *        included.
+     *        The object that specifies the range of numbers that the header value sent by the client must be included
+     *        in.
      */
 
     public void setRange(MatchRange range) {
@@ -155,11 +155,11 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers within which the header value sent by the client must be included.
+     * The object that specifies the range of numbers that the header value sent by the client must be included in.
      * </p>
      * 
-     * @return The object that specifies the range of numbers within which the header value sent by the client must be
-     *         included.
+     * @return The object that specifies the range of numbers that the header value sent by the client must be included
+     *         in.
      */
 
     public MatchRange getRange() {
@@ -168,12 +168,12 @@ public class HeaderMatchMethod implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The object that specifies the range of numbers within which the header value sent by the client must be included.
+     * The object that specifies the range of numbers that the header value sent by the client must be included in.
      * </p>
      * 
      * @param range
-     *        The object that specifies the range of numbers within which the header value sent by the client must be
-     *        included.
+     *        The object that specifies the range of numbers that the header value sent by the client must be included
+     *        in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

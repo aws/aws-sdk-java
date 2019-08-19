@@ -431,6 +431,64 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
 
     /**
      * <p>
+     * Allows you to programatically update your report preferences.
+     * </p>
+     * 
+     * @param modifyReportDefinitionRequest
+     * @return Result of the ModifyReportDefinition operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws ValidationException
+     *         The input fails to satisfy the constraints specified by an AWS service.
+     * @sample AWSCostAndUsageReport.ModifyReportDefinition
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/ModifyReportDefinition" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyReportDefinitionResult modifyReportDefinition(ModifyReportDefinitionRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyReportDefinition(request);
+    }
+
+    @SdkInternalApi
+    final ModifyReportDefinitionResult executeModifyReportDefinition(ModifyReportDefinitionRequest modifyReportDefinitionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyReportDefinitionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyReportDefinitionRequest> request = null;
+        Response<ModifyReportDefinitionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyReportDefinitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(modifyReportDefinitionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cost and Usage Report Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyReportDefinition");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ModifyReportDefinitionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ModifyReportDefinitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new report using the description that you provide.
      * </p>
      * 
