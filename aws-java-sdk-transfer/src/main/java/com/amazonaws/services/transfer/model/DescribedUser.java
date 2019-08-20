@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns properties of the user that you wish to describe.
+ * Returns properties of the user that you want to describe.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedUser" target="_top">AWS API
@@ -36,8 +36,8 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * This property specifies the landing directory (or folder) which is the location that files are written to or read
-     * from in an Amazon S3 bucket for the described user. An example would be:
+     * This property specifies the landing directory (or folder), which is the location that files are written to or
+     * read from in an Amazon S3 bucket for the described user. An example is
      * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      * </p>
      */
@@ -123,14 +123,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder) which is the location that files are written to or read
-     * from in an Amazon S3 bucket for the described user. An example would be:
+     * This property specifies the landing directory (or folder), which is the location that files are written to or
+     * read from in an Amazon S3 bucket for the described user. An example is
      * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        This property specifies the landing directory (or folder) which is the location that files are written to
-     *        or read from in an Amazon S3 bucket for the described user. An example would be:
+     *        This property specifies the landing directory (or folder), which is the location that files are written to
+     *        or read from in an Amazon S3 bucket for the described user. An example is
      *        <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      */
 
@@ -140,13 +140,13 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder) which is the location that files are written to or read
-     * from in an Amazon S3 bucket for the described user. An example would be:
+     * This property specifies the landing directory (or folder), which is the location that files are written to or
+     * read from in an Amazon S3 bucket for the described user. An example is
      * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      * </p>
      * 
-     * @return This property specifies the landing directory (or folder) which is the location that files are written to
-     *         or read from in an Amazon S3 bucket for the described user. An example would be:
+     * @return This property specifies the landing directory (or folder), which is the location that files are written
+     *         to or read from in an Amazon S3 bucket for the described user. An example is
      *         <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      */
 
@@ -156,14 +156,14 @@ public class DescribedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property specifies the landing directory (or folder) which is the location that files are written to or read
-     * from in an Amazon S3 bucket for the described user. An example would be:
+     * This property specifies the landing directory (or folder), which is the location that files are written to or
+     * read from in an Amazon S3 bucket for the described user. An example is
      * <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        This property specifies the landing directory (or folder) which is the location that files are written to
-     *        or read from in an Amazon S3 bucket for the described user. An example would be:
+     *        This property specifies the landing directory (or folder), which is the location that files are written to
+     *        or read from in an Amazon S3 bucket for the described user. An example is
      *        <code>/<i>bucket_name</i>/home/<i>username</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

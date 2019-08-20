@@ -30,18 +30,77 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String volumeKmsKeyId;
 
     /**
      * <p>
-     * The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code>
+     *        can be any of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        // KMS Key ID
+     *        </p>
+     *        <p>
+     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
      */
 
     public void setVolumeKmsKeyId(String volumeKmsKeyId) {
@@ -50,10 +109,49 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *         volume attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code>
+     *         can be any of the following formats:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         // KMS Key ID
+     *         </p>
+     *         <p>
+     *         <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         // Amazon Resource Name (ARN) of a KMS Key
+     *         </p>
+     *         <p>
+     *         <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *         </p>
+     *         </li>
      */
 
     public String getVolumeKmsKeyId() {
@@ -62,11 +160,50 @@ public class LabelingJobResourceConfig implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     * The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage volume
+     * attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code> can be any of
+     * the following formats:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * // KMS Key ID
+     * </p>
+     * <p>
+     * <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * // Amazon Resource Name (ARN) of a KMS Key
+     * </p>
+     * <p>
+     * <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param volumeKmsKeyId
-     *        The AWS Key Management Service key ID for the key used to encrypt the output data, if any.
+     *        The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt data on the storage
+     *        volume attached to the ML compute instance(s) that run the training job. The <code>VolumeKmsKeyId</code>
+     *        can be any of the following formats:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        // KMS Key ID
+     *        </p>
+     *        <p>
+     *        <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        // Amazon Resource Name (ARN) of a KMS Key
+     *        </p>
+     *        <p>
+     *        <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

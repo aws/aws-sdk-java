@@ -90,6 +90,13 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private ApplicationSettings applicationSettings;
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     */
+    private java.util.List<AccessEndpoint> accessEndpoints;
 
     /**
      * <p>
@@ -648,6 +655,84 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @return The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *         AppStream 2.0 only through the specified endpoints.
+     */
+
+    public java.util.List<AccessEndpoint> getAccessEndpoints() {
+        return accessEndpoints;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     */
+
+    public void setAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        if (accessEndpoints == null) {
+            this.accessEndpoints = null;
+            return;
+        }
+
+        this.accessEndpoints = new java.util.ArrayList<AccessEndpoint>(accessEndpoints);
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccessEndpoints(java.util.Collection)} or {@link #withAccessEndpoints(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withAccessEndpoints(AccessEndpoint... accessEndpoints) {
+        if (this.accessEndpoints == null) {
+            setAccessEndpoints(new java.util.ArrayList<AccessEndpoint>(accessEndpoints.length));
+        }
+        for (AccessEndpoint ele : accessEndpoints) {
+            this.accessEndpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
+     * 2.0 only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        AppStream 2.0 only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateStackRequest withAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        setAccessEndpoints(accessEndpoints);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -678,7 +763,9 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getUserSettings() != null)
             sb.append("UserSettings: ").append(getUserSettings()).append(",");
         if (getApplicationSettings() != null)
-            sb.append("ApplicationSettings: ").append(getApplicationSettings());
+            sb.append("ApplicationSettings: ").append(getApplicationSettings()).append(",");
+        if (getAccessEndpoints() != null)
+            sb.append("AccessEndpoints: ").append(getAccessEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -733,6 +820,10 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getApplicationSettings() != null && other.getApplicationSettings().equals(this.getApplicationSettings()) == false)
             return false;
+        if (other.getAccessEndpoints() == null ^ this.getAccessEndpoints() == null)
+            return false;
+        if (other.getAccessEndpoints() != null && other.getAccessEndpoints().equals(this.getAccessEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -751,6 +842,7 @@ public class UpdateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         hashCode = prime * hashCode + ((getUserSettings() == null) ? 0 : getUserSettings().hashCode());
         hashCode = prime * hashCode + ((getApplicationSettings() == null) ? 0 : getApplicationSettings().hashCode());
+        hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
         return hashCode;
     }
 

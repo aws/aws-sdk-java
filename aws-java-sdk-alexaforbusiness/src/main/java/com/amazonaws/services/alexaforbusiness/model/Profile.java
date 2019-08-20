@@ -78,6 +78,12 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
     private String wakeWord;
     /**
      * <p>
+     * The locale of a room profile.
+     * </p>
+     */
+    private String locale;
+    /**
+     * <p>
      * The setup mode of a room profile.
      * </p>
      */
@@ -492,6 +498,46 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The locale of a room profile.
+     * </p>
+     * 
+     * @param locale
+     *        The locale of a room profile.
+     */
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     * <p>
+     * The locale of a room profile.
+     * </p>
+     * 
+     * @return The locale of a room profile.
+     */
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    /**
+     * <p>
+     * The locale of a room profile.
+     * </p>
+     * 
+     * @param locale
+     *        The locale of a room profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Profile withLocale(String locale) {
+        setLocale(locale);
+        return this;
+    }
+
+    /**
+     * <p>
      * The setup mode of a room profile.
      * </p>
      * 
@@ -702,6 +748,8 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
             sb.append("TemperatureUnit: ").append(getTemperatureUnit()).append(",");
         if (getWakeWord() != null)
             sb.append("WakeWord: ").append(getWakeWord()).append(",");
+        if (getLocale() != null)
+            sb.append("Locale: ").append(getLocale()).append(",");
         if (getSetupModeDisabled() != null)
             sb.append("SetupModeDisabled: ").append(getSetupModeDisabled()).append(",");
         if (getMaxVolumeLimit() != null)
@@ -756,6 +804,10 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWakeWord() != null && other.getWakeWord().equals(this.getWakeWord()) == false)
             return false;
+        if (other.getLocale() == null ^ this.getLocale() == null)
+            return false;
+        if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
+            return false;
         if (other.getSetupModeDisabled() == null ^ this.getSetupModeDisabled() == null)
             return false;
         if (other.getSetupModeDisabled() != null && other.getSetupModeDisabled().equals(this.getSetupModeDisabled()) == false)
@@ -788,6 +840,7 @@ public class Profile implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());
         hashCode = prime * hashCode + ((getTemperatureUnit() == null) ? 0 : getTemperatureUnit().hashCode());
         hashCode = prime * hashCode + ((getWakeWord() == null) ? 0 : getWakeWord().hashCode());
+        hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getSetupModeDisabled() == null) ? 0 : getSetupModeDisabled().hashCode());
         hashCode = prime * hashCode + ((getMaxVolumeLimit() == null) ? 0 : getMaxVolumeLimit().hashCode());
         hashCode = prime * hashCode + ((getPSTNEnabled() == null) ? 0 : getPSTNEnabled().hashCode());

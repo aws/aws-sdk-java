@@ -1,3 +1,20 @@
+# __1.11.615__ __2019-08-20__
+## __AWS Transfer for SFTP__
+  - ### Features
+    - New field in response of TestIdentityProvider
+
+## __Alexa For Business__
+  - ### Features
+    - Adding support for optional locale input in CreateProfile and UpdateProfile APIs
+
+## __Amazon AppStream__
+  - ### Features
+    - Includes API updates to support streaming through VPC endpoints for image builders and stacks.
+
+## __Amazon SageMaker Service__
+  - ### Features
+    - Amazon SageMaker introduces Managed Spot Training. Increases the maximum number of metric definitions to 40 for SageMaker Training and Hyperparameter Tuning Jobs. SageMaker Neo adds support for Acer aiSage and Qualcomm QCS605 and QCS603. 
+
 # __1.11.614__ __2019-08-19__
 ## __AWS App Mesh__
   - ### Features

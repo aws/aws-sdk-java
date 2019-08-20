@@ -32,7 +32,7 @@ import java.util.concurrent.ExecutorService;
  * authentication systems, and providing DNS routing with Amazon Route 53—so nothing changes for your customers and
  * partners, or their applications. With your data in S3, you can use it with AWS services for processing, analytics,
  * machine learning, and archiving. Getting started with AWS Transfer for SFTP (AWS SFTP) is easy; there is no
- * infrastructure to buy and setup.
+ * infrastructure to buy and set up.
  * </p>
  */
 @ThreadSafe

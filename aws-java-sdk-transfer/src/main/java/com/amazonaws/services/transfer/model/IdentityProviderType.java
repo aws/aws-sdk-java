@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * Returns information related to the type of user authentication that is in use for a server's users. For
  * <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a user on an SFTP
  * server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is implemented by
- * using an API call. A server can only have one method of authentication.
+ * using an API call. A server can have only one method of authentication.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -73,6 +73,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>US East (Ohio) (us-east-2):</b>
@@ -96,6 +101,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -123,6 +133,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>EU (Ireland) (eu-west-1):</b>
@@ -146,6 +161,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -173,9 +193,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      * </p>
      * <ul>
      * <li>
@@ -196,6 +221,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -233,7 +263,9 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     private Integer taskTimeLimitInSeconds;
     /**
      * <p>
-     * The length of time that a task remains available for labelling by human workers.
+     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
+     * as listed.
      * </p>
      */
     private Integer taskAvailabilityLifetimeInSeconds;
@@ -252,7 +284,7 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
     private AnnotationConsolidationConfig annotationConsolidationConfig;
     /**
      * <p>
-     * The price that you pay for each task performed by a public worker.
+     * The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      * </p>
      */
     private PublicWorkforceTaskPrice publicWorkforceTaskPrice;
@@ -370,6 +402,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>US East (Ohio) (us-east-2):</b>
@@ -393,6 +430,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -420,6 +462,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>EU (Ireland) (eu-west-1):</b>
@@ -443,6 +490,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -470,9 +522,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      * </p>
      * <ul>
      * <li>
@@ -493,6 +550,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -528,6 +590,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>US East (Ohio) (us-east-2):</b>
@@ -551,6 +618,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -578,6 +650,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>EU (Ireland) (eu-west-1):</b>
@@ -601,6 +678,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -628,9 +710,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     *        <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -651,6 +738,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      */
@@ -692,6 +784,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>US East (Ohio) (us-east-2):</b>
@@ -715,6 +812,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -742,6 +844,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>EU (Ireland) (eu-west-1):</b>
@@ -765,6 +872,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -792,9 +904,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      * </p>
      * <ul>
      * <li>
@@ -815,6 +932,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -849,6 +971,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>US East (Ohio) (us-east-2):</b>
@@ -872,6 +999,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -899,6 +1031,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         <b>EU (Ireland) (eu-west-1):</b>
@@ -922,6 +1059,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      *         </p>
      *         </li>
      *         </ul>
@@ -949,9 +1091,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
-     *         <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     *         <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      *         </p>
      *         <ul>
      *         <li>
@@ -972,6 +1119,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      *         </p>
      *         </li>
      */
@@ -1013,6 +1165,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>US East (Ohio) (us-east-2):</b>
@@ -1036,6 +1193,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -1063,6 +1225,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>EU (Ireland) (eu-west-1):</b>
@@ -1086,6 +1253,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -1113,9 +1285,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     * </p>
+     * </li>
      * </ul>
      * <p>
-     * <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     * <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      * </p>
      * <ul>
      * <li>
@@ -1136,6 +1313,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      * </p>
      * </li>
      * </ul>
@@ -1171,6 +1353,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>US East (Ohio) (us-east-2):</b>
@@ -1194,6 +1381,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1221,6 +1413,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        <b>EU (Ireland) (eu-west-1):</b>
@@ -1244,6 +1441,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        </ul>
@@ -1271,9 +1473,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
-     *        <b>Asia Pacific (Sydney) (ap-southeast-1):</b>
+     *        <b>Asia Pacific (Sydney) (ap-southeast-2):</b>
      *        </p>
      *        <ul>
      *        <li>
@@ -1294,6 +1501,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1536,11 +1748,15 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labelling by human workers.
+     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
+     * as listed.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labelling by human workers.
+     *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
+     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
+     *        the maximum is as listed.
      */
 
     public void setTaskAvailabilityLifetimeInSeconds(Integer taskAvailabilityLifetimeInSeconds) {
@@ -1549,10 +1765,14 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labelling by human workers.
+     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
+     * as listed.
      * </p>
      * 
-     * @return The length of time that a task remains available for labelling by human workers.
+     * @return The length of time that a task remains available for labeling by human workers. <b>If you choose the
+     *         Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
+     *         the maximum is as listed.
      */
 
     public Integer getTaskAvailabilityLifetimeInSeconds() {
@@ -1561,11 +1781,15 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labelling by human workers.
+     * The length of time that a task remains available for labeling by human workers. <b>If you choose the Amazon
+     * Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces, the maximum is
+     * as listed.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labelling by human workers.
+     *        The length of time that a task remains available for labeling by human workers. <b>If you choose the
+     *        Amazon Mechanical Turk workforce, the maximum is 12 hours (43200)</b>. For private and vendor workforces,
+     *        the maximum is as listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1662,11 +1886,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The price that you pay for each task performed by a public worker.
+     * The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      * </p>
      * 
      * @param publicWorkforceTaskPrice
-     *        The price that you pay for each task performed by a public worker.
+     *        The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      */
 
     public void setPublicWorkforceTaskPrice(PublicWorkforceTaskPrice publicWorkforceTaskPrice) {
@@ -1675,10 +1899,10 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The price that you pay for each task performed by a public worker.
+     * The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      * </p>
      * 
-     * @return The price that you pay for each task performed by a public worker.
+     * @return The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      */
 
     public PublicWorkforceTaskPrice getPublicWorkforceTaskPrice() {
@@ -1687,11 +1911,11 @@ public class HumanTaskConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The price that you pay for each task performed by a public worker.
+     * The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      * </p>
      * 
      * @param publicWorkforceTaskPrice
-     *        The price that you pay for each task performed by a public worker.
+     *        The price that you pay for each task performed by an Amazon Mechanical Turk worker.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

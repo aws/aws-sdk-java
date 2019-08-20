@@ -41,6 +41,8 @@ public class CreateProfileRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemperatureUnit").build();
     private static final MarshallingInfo<String> WAKEWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("WakeWord").build();
+    private static final MarshallingInfo<String> LOCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Locale").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -73,6 +75,7 @@ public class CreateProfileRequestMarshaller {
             protocolMarshaller.marshall(createProfileRequest.getDistanceUnit(), DISTANCEUNIT_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getTemperatureUnit(), TEMPERATUREUNIT_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getWakeWord(), WAKEWORD_BINDING);
+            protocolMarshaller.marshall(createProfileRequest.getLocale(), LOCALE_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getSetupModeDisabled(), SETUPMODEDISABLED_BINDING);
             protocolMarshaller.marshall(createProfileRequest.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);

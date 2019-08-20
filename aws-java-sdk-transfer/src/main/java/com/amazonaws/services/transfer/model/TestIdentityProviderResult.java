@@ -25,16 +25,22 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The result of the authorization test as a message.
+     * The response that is returned from your API Gateway.
      * </p>
      */
-    private String message;
+    private String response;
     /**
      * <p>
      * The HTTP status code that is the response from your API Gateway.
      * </p>
      */
     private Integer statusCode;
+    /**
+     * <p>
+     * A message that indicates whether the test was successful or not.
+     * </p>
+     */
+    private String message;
     /**
      * <p>
      * The endpoint of the service used to authenticate a user.
@@ -44,41 +50,41 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The result of the authorization test as a message.
+     * The response that is returned from your API Gateway.
      * </p>
      * 
-     * @param message
-     *        The result of the authorization test as a message.
+     * @param response
+     *        The response that is returned from your API Gateway.
      */
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setResponse(String response) {
+        this.response = response;
     }
 
     /**
      * <p>
-     * The result of the authorization test as a message.
+     * The response that is returned from your API Gateway.
      * </p>
      * 
-     * @return The result of the authorization test as a message.
+     * @return The response that is returned from your API Gateway.
      */
 
-    public String getMessage() {
-        return this.message;
+    public String getResponse() {
+        return this.response;
     }
 
     /**
      * <p>
-     * The result of the authorization test as a message.
+     * The response that is returned from your API Gateway.
      * </p>
      * 
-     * @param message
-     *        The result of the authorization test as a message.
+     * @param response
+     *        The response that is returned from your API Gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public TestIdentityProviderResult withMessage(String message) {
-        setMessage(message);
+    public TestIdentityProviderResult withResponse(String response) {
+        setResponse(response);
         return this;
     }
 
@@ -119,6 +125,46 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
 
     public TestIdentityProviderResult withStatusCode(Integer statusCode) {
         setStatusCode(statusCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A message that indicates whether the test was successful or not.
+     * </p>
+     * 
+     * @param message
+     *        A message that indicates whether the test was successful or not.
+     */
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
+    /**
+     * <p>
+     * A message that indicates whether the test was successful or not.
+     * </p>
+     * 
+     * @return A message that indicates whether the test was successful or not.
+     */
+
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * <p>
+     * A message that indicates whether the test was successful or not.
+     * </p>
+     * 
+     * @param message
+     *        A message that indicates whether the test was successful or not.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestIdentityProviderResult withMessage(String message) {
+        setMessage(message);
         return this;
     }
 
@@ -174,10 +220,12 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getMessage() != null)
-            sb.append("Message: ").append(getMessage()).append(",");
+        if (getResponse() != null)
+            sb.append("Response: ").append(getResponse()).append(",");
         if (getStatusCode() != null)
             sb.append("StatusCode: ").append(getStatusCode()).append(",");
+        if (getMessage() != null)
+            sb.append("Message: ").append(getMessage()).append(",");
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl());
         sb.append("}");
@@ -194,13 +242,17 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
         if (obj instanceof TestIdentityProviderResult == false)
             return false;
         TestIdentityProviderResult other = (TestIdentityProviderResult) obj;
-        if (other.getMessage() == null ^ this.getMessage() == null)
+        if (other.getResponse() == null ^ this.getResponse() == null)
             return false;
-        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
+        if (other.getResponse() != null && other.getResponse().equals(this.getResponse()) == false)
             return false;
         if (other.getStatusCode() == null ^ this.getStatusCode() == null)
             return false;
         if (other.getStatusCode() != null && other.getStatusCode().equals(this.getStatusCode()) == false)
+            return false;
+        if (other.getMessage() == null ^ this.getMessage() == null)
+            return false;
+        if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
             return false;
         if (other.getUrl() == null ^ this.getUrl() == null)
             return false;
@@ -214,8 +266,9 @@ public class TestIdentityProviderResult extends com.amazonaws.AmazonWebServiceRe
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
+        hashCode = prime * hashCode + ((getResponse() == null) ? 0 : getResponse().hashCode());
         hashCode = prime * hashCode + ((getStatusCode() == null) ? 0 : getStatusCode().hashCode());
+        hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         return hashCode;
     }

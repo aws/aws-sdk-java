@@ -34,15 +34,15 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to
+     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
      * continue listing additional users.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned
-     * to it.
+     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users assigned to
+     * it.
      * </p>
      */
     private String serverId;
@@ -90,14 +90,14 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to
+     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
      * continue listing additional users.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *        parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
-     *        parameter to continue listing additional users.
+     *        parameter is returned in the output. You can then pass in a subsequent command to the
+     *        <code>NextToken</code> parameter to continue listing additional users.
      */
 
     public void setNextToken(String nextToken) {
@@ -107,13 +107,13 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to
+     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
      * continue listing additional users.
      * </p>
      * 
      * @return When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *         parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
-     *         parameter to continue listing additional users.
+     *         parameter is returned in the output. You can then pass in a subsequent command to the
+     *         <code>NextToken</code> parameter to continue listing additional users.
      */
 
     public String getNextToken() {
@@ -123,14 +123,14 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code> parameter is
-     * returned in the output. You can then pass in a subsequent command the <code>NextToken</code> parameter to
+     * returned in the output. You can then pass in a subsequent command to the <code>NextToken</code> parameter to
      * continue listing additional users.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-     *        parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
-     *        parameter to continue listing additional users.
+     *        parameter is returned in the output. You can then pass in a subsequent command to the
+     *        <code>NextToken</code> parameter to continue listing additional users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,12 +141,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned
-     * to it.
+     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users assigned to
+     * it.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are
+     *        A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users
      *        assigned to it.
      */
 
@@ -156,11 +156,11 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned
-     * to it.
+     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users assigned to
+     * it.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are
+     * @return A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users
      *         assigned to it.
      */
 
@@ -170,12 +170,12 @@ public class ListUsersRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are assigned
-     * to it.
+     * A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users assigned to
+     * it.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users are
+     *        A system-assigned unique identifier for a Secure File Transfer Protocol (SFTP) server that has users
      *        assigned to it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

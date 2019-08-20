@@ -27,18 +27,33 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server
-     * using their client. An example would be: <code>/home/<i>username</i> </code>.
+     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
+     * client. An example is <code>/home/<i>username</i> </code>.
      * </p>
      */
     private String homeDirectory;
     /**
      * <p>
      * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket.
+     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
      * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      * </p>
+     * <note>
+     * <p>
+     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * </p>
+     * <p>
+     * For an example of a scope-down policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     * Scope-Down Policy.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * Security Token Service API Reference</i>.
+     * </p>
+     * </note>
      */
     private String policy;
     /**
@@ -58,23 +73,23 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String serverId;
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
-     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
-     * user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
+     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+     * and hyphen. The user name can't start with a hyphen.
      * </p>
      */
     private String userName;
 
     /**
      * <p>
-     * The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server
-     * using their client. An example would be: <code>/home/<i>username</i> </code>.
+     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
+     * client. An example is <code>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the
-     *        server using their client. An example would be: <code>/home/<i>username</i> </code>.
+     *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
+     *        their client. An example is <code>/home/<i>username</i> </code>.
      */
 
     public void setHomeDirectory(String homeDirectory) {
@@ -83,12 +98,12 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server
-     * using their client. An example would be: <code>/home/<i>username</i> </code>.
+     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
+     * client. An example is <code>/home/<i>username</i> </code>.
      * </p>
      * 
-     * @return The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the
-     *         server using their client. An example would be: <code>/home/<i>username</i> </code>.
+     * @return A parameter that specifies the landing directory (folder) for a user when they log in to the server using
+     *         their client. An example is <code>/home/<i>username</i> </code>.
      */
 
     public String getHomeDirectory() {
@@ -97,13 +112,13 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the server
-     * using their client. An example would be: <code>/home/<i>username</i> </code>.
+     * A parameter that specifies the landing directory (folder) for a user when they log in to the server using their
+     * client. An example is <code>/home/<i>username</i> </code>.
      * </p>
      * 
      * @param homeDirectory
-     *        The HomeDirectory parameter specifies the landing directory (folder) for a user when they log in to the
-     *        server using their client. An example would be: <code>/home/<i>username</i> </code>.
+     *        A parameter that specifies the landing directory (folder) for a user when they log in to the server using
+     *        their client. An example is <code>/home/<i>username</i> </code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,16 +130,45 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket.
+     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
      * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      * </p>
+     * <note>
+     * <p>
+     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * </p>
+     * <p>
+     * For an example of a scope-down policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     * Scope-Down Policy.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * Security Token Service API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *        Management (IAM) role across multiple users. The policy scopes down users access to portions of your
-     *        Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     *        Management (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon
+     *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
+     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        <p>
+     *        For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *        <code>Policy</code> argument.
+     *        </p>
+     *        <p>
+     *        For an example of a scope-down policy, see
+     *        "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     *        Scope-Down Policy.
+     *        </p>
+     *        <p>
+     *        For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     *        <i>AWS Security Token Service API Reference</i>.
+     *        </p>
      */
 
     public void setPolicy(String policy) {
@@ -134,15 +178,44 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket.
+     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
      * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      * </p>
+     * <note>
+     * <p>
+     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * </p>
+     * <p>
+     * For an example of a scope-down policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     * Scope-Down Policy.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * Security Token Service API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @return Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *         Management (IAM) role across multiple users. The policy scopes down users access to portions of your
+     *         Management (IAM) role across multiple users. The policy scopes down user access to portions of your
      *         Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *         <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     *         <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *         <p>
+     *         For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *         Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *         <code>Policy</code> argument.
+     *         </p>
+     *         <p>
+     *         For an example of a scope-down policy, see
+     *         "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating
+     *         a Scope-Down Policy.
+     *         </p>
+     *         <p>
+     *         For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in
+     *         the <i>AWS Security Token Service API Reference</i>.
+     *         </p>
      */
 
     public String getPolicy() {
@@ -152,16 +225,45 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access Management
-     * (IAM) role across multiple users. The policy scopes down users access to portions of your Amazon S3 bucket.
+     * (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon S3 bucket.
      * Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
      * <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
      * </p>
+     * <note>
+     * <p>
+     * For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon Resource
+     * Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the <code>Policy</code> argument.
+     * </p>
+     * <p>
+     * For an example of a scope-down policy, see
+     * "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     * Scope-Down Policy.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the <i>AWS
+     * Security Token Service API Reference</i>.
+     * </p>
+     * </note>
      * 
      * @param policy
      *        Allows you to supply a scope-down policy for your user so you can use the same AWS Identity and Access
-     *        Management (IAM) role across multiple users. The policy scopes down users access to portions of your
-     *        Amazon S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
-     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+     *        Management (IAM) role across multiple users. The policy scopes down user access to portions of your Amazon
+     *        S3 bucket. Variables you can use inside this policy include <code>${Transfer:UserName}</code>,
+     *        <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.</p> <note>
+     *        <p>
+     *        For scope-down policies, AWS Transfer for SFTP stores the policy as a JSON blob, instead of the Amazon
+     *        Resource Name (ARN) of the policy. You save the policy as a JSON blob and pass it in the
+     *        <code>Policy</code> argument.
+     *        </p>
+     *        <p>
+     *        For an example of a scope-down policy, see
+     *        "https://docs.aws.amazon.com/transfer/latest/userguide/users.html#users-policies-scope-down"&gt;Creating a
+     *        Scope-Down Policy.
+     *        </p>
+     *        <p>
+     *        For more information, see "https://docs.aws.amazon.com/STS/latest/APIReference/API_AssumeRole.html" in the
+     *        <i>AWS Security Token Service API Reference</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,17 +375,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
-     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
-     * user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
+     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+     * and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *        is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     *        minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
-     *        underscore, and hyphen. The user name can't start with a hyphen.
+     *        A unique string that identifies a user and is associated with a server as specified by the
+     *        <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
+     *        server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     *        characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public void setUserName(String userName) {
@@ -292,16 +394,16 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
-     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
-     * user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
+     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+     * and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
-     * @return A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *         is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     *         minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
-     *         underscore, and hyphen. The user name can't start with a hyphen.
+     * @return A unique string that identifies a user and is associated with a server as specified by the
+     *         <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
+     *         server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     *         characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      */
 
     public String getUserName() {
@@ -310,17 +412,17 @@ public class UpdateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A unique string that identifies a user and is associated with a server as specified by the ServerId. This is the
-     * string that will be used by your user when they log in to your SFTP server. This user name is a minimum of 3 and
-     * a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore, and hyphen. The
-     * user name can't start with a hyphen.
+     * A unique string that identifies a user and is associated with a server as specified by the <code>ServerId</code>.
+     * This is the string that will be used by your user when they log in to your SFTP server. This user name is a
+     * minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9, underscore,
+     * and hyphen. The user name can't start with a hyphen.
      * </p>
      * 
      * @param userName
-     *        A unique string that identifies a user and is associated with a server as specified by the ServerId. This
-     *        is the string that will be used by your user when they log in to your SFTP server. This user name is a
-     *        minimum of 3 and a maximum of 32 characters long. The following are valid characters: a-z, A-Z, 0-9,
-     *        underscore, and hyphen. The user name can't start with a hyphen.
+     *        A unique string that identifies a user and is associated with a server as specified by the
+     *        <code>ServerId</code>. This is the string that will be used by your user when they log in to your SFTP
+     *        server. This user name is a minimum of 3 and a maximum of 32 characters long. The following are valid
+     *        characters: a-z, A-Z, 0-9, underscore, and hyphen. The user name can't start with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,13 +48,17 @@ public class TestIdentityProviderResultJsonUnmarshaller implements Unmarshaller<
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Message", targetDepth)) {
+                if (context.testExpression("Response", targetDepth)) {
                     context.nextToken();
-                    testIdentityProviderResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
+                    testIdentityProviderResult.setResponse(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("StatusCode", targetDepth)) {
                     context.nextToken();
                     testIdentityProviderResult.setStatusCode(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Message", targetDepth)) {
+                    context.nextToken();
+                    testIdentityProviderResult.setMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Url", targetDepth)) {
                     context.nextToken();

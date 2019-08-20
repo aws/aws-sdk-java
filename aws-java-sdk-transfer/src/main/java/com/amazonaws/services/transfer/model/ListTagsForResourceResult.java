@@ -32,7 +32,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
-     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code>
      * parameter to continue listing additional tags.
      * </p>
      */
@@ -40,7 +40,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items.
-     * Tags are metadata that you define that you can use for any purpose.
+     * Tags are metadata that you define.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -88,14 +88,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
-     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code>
      * parameter to continue listing additional tags.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListTagsForResource</code> call, a
-     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
-     *        <code>NextToken</code> parameter to continue listing additional tags.
+     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to
+     *        the <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public void setNextToken(String nextToken) {
@@ -105,13 +105,13 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
-     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code>
      * parameter to continue listing additional tags.
      * </p>
      * 
      * @return When you can get additional results from the <code>ListTagsForResource</code> call, a
-     *         <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
-     *         <code>NextToken</code> parameter to continue listing additional tags.
+     *         <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to
+     *         the <code>NextToken</code> parameter to continue listing additional tags.
      */
 
     public String getNextToken() {
@@ -121,14 +121,14 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * When you can get additional results from the <code>ListTagsForResource</code> call, a <code>NextToken</code>
-     * parameter is returned in the output. You can then pass in a subsequent command the <code>NextToken</code>
+     * parameter is returned in the output. You can then pass in a subsequent command to the <code>NextToken</code>
      * parameter to continue listing additional tags.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListTagsForResource</code> call, a
-     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command the
-     *        <code>NextToken</code> parameter to continue listing additional tags.
+     *        <code>NextToken</code> parameter is returned in the output. You can then pass in a subsequent command to
+     *        the <code>NextToken</code> parameter to continue listing additional tags.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -140,11 +140,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items.
-     * Tags are metadata that you define that you can use for any purpose.
+     * Tags are metadata that you define.
      * </p>
      * 
      * @return Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for
-     *         items. Tags are metadata that you define that you can use for any purpose.
+     *         items. Tags are metadata that you define.
      */
 
     public java.util.List<Tag> getTags() {
@@ -154,12 +154,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items.
-     * Tags are metadata that you define that you can use for any purpose.
+     * Tags are metadata that you define.
      * </p>
      * 
      * @param tags
      *        Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for
-     *        items. Tags are metadata that you define that you can use for any purpose.
+     *        items. Tags are metadata that you define.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -174,7 +174,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items.
-     * Tags are metadata that you define that you can use for any purpose.
+     * Tags are metadata that you define.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -184,7 +184,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * 
      * @param tags
      *        Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for
-     *        items. Tags are metadata that you define that you can use for any purpose.
+     *        items. Tags are metadata that you define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,12 +201,12 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
     /**
      * <p>
      * Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for items.
-     * Tags are metadata that you define that you can use for any purpose.
+     * Tags are metadata that you define.
      * </p>
      * 
      * @param tags
      *        Key-value pairs that are assigned to a resource, usually for the purpose of grouping and searching for
-     *        items. Tags are metadata that you define that you can use for any purpose.
+     *        items. Tags are metadata that you define.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

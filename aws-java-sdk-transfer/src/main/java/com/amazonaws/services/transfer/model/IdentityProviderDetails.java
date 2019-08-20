@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Returns information related to the type of user authentication that is in use for a server's users. A server can only
- * have one method of authentication.
+ * Returns information related to the type of user authentication that is in use for a server's users. A server can have
+ * only one method of authentication.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/IdentityProviderDetails" target="_top">AWS
@@ -31,28 +31,26 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     * authenticate users.
+     * The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate users.
      * </p>
      */
     private String url;
     /**
      * <p>
-     * The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user
-     * account.
+     * The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to authenticate
+     * the user account.
      * </p>
      */
     private String invocationRole;
 
     /**
      * <p>
-     * The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     * authenticate users.
+     * The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate users.
      * </p>
      * 
      * @param url
-     *        The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     *        authenticate users.
+     *        The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate
+     *        users.
      */
 
     public void setUrl(String url) {
@@ -61,11 +59,10 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     * authenticate users.
+     * The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate users.
      * </p>
      * 
-     * @return The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
+     * @return The <code>Url</code> parameter provides contains the location of the service endpoint used to
      *         authenticate users.
      */
 
@@ -75,13 +72,12 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     * authenticate users.
+     * The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate users.
      * </p>
      * 
      * @param url
-     *        The <code>IdentityProviderDetail</code> parameter contains the location of the service endpoint used to
-     *        authenticate users.
+     *        The <code>Url</code> parameter provides contains the location of the service endpoint used to authenticate
+     *        users.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,13 +88,13 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user
-     * account.
+     * The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to authenticate
+     * the user account.
      * </p>
      * 
      * @param invocationRole
-     *        The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the
-     *        user account.
+     *        The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to
+     *        authenticate the user account.
      */
 
     public void setInvocationRole(String invocationRole) {
@@ -107,12 +103,12 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user
-     * account.
+     * The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to authenticate
+     * the user account.
      * </p>
      * 
-     * @return The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the
-     *         user account.
+     * @return The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to
+     *         authenticate the user account.
      */
 
     public String getInvocationRole() {
@@ -121,13 +117,13 @@ public class IdentityProviderDetails implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the user
-     * account.
+     * The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to authenticate
+     * the user account.
      * </p>
      * 
      * @param invocationRole
-     *        The <code>Role</code> parameter provides the type of <code>InvocationRole</code> used to authenticate the
-     *        user account.
+     *        The <code>InvocationRole</code> parameter provides the type of <code>InvocationRole</code> used to
+     *        authenticate the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -48,6 +48,8 @@ public class UpdateStackRequestMarshaller {
             .marshallLocationName("UserSettings").build();
     private static final MarshallingInfo<StructuredPojo> APPLICATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationSettings").build();
+    private static final MarshallingInfo<List> ACCESSENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessEndpoints").build();
 
     private static final UpdateStackRequestMarshaller instance = new UpdateStackRequestMarshaller();
 
@@ -75,6 +77,7 @@ public class UpdateStackRequestMarshaller {
             protocolMarshaller.marshall(updateStackRequest.getAttributesToDelete(), ATTRIBUTESTODELETE_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getUserSettings(), USERSETTINGS_BINDING);
             protocolMarshaller.marshall(updateStackRequest.getApplicationSettings(), APPLICATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(updateStackRequest.getAccessEndpoints(), ACCESSENDPOINTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

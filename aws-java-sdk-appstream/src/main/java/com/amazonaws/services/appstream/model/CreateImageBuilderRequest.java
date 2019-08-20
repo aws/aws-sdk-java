@@ -105,10 +105,17 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
+     * builder only through the specified endpoints.
+     * </p>
+     */
+    private java.util.List<AccessEndpoint> accessEndpoints;
 
     /**
      * <p>
@@ -552,7 +559,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @return The tags to associate with the image builder. A tag is a key-value pair, and the value is optional. For
@@ -570,7 +577,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         For more information about tags, see <a
      *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -595,7 +602,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param tags
@@ -614,7 +621,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information about tags, see <a
      *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -639,7 +646,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * For more information about tags, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param tags
@@ -658,7 +665,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        For more information about tags, see <a
      *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,6 +692,84 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateImageBuilderRequest clearTagsEntries() {
         this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
+     * builder only through the specified endpoints.
+     * </p>
+     * 
+     * @return The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
+     *         image builder only through the specified endpoints.
+     */
+
+    public java.util.List<AccessEndpoint> getAccessEndpoints() {
+        return accessEndpoints;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
+     * builder only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
+     *        image builder only through the specified endpoints.
+     */
+
+    public void setAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        if (accessEndpoints == null) {
+            this.accessEndpoints = null;
+            return;
+        }
+
+        this.accessEndpoints = new java.util.ArrayList<AccessEndpoint>(accessEndpoints);
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
+     * builder only through the specified endpoints.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAccessEndpoints(java.util.Collection)} or {@link #withAccessEndpoints(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
+     *        image builder only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withAccessEndpoints(AccessEndpoint... accessEndpoints) {
+        if (this.accessEndpoints == null) {
+            setAccessEndpoints(new java.util.ArrayList<AccessEndpoint>(accessEndpoints.length));
+        }
+        for (AccessEndpoint ele : accessEndpoints) {
+            this.accessEndpoints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
+     * builder only through the specified endpoints.
+     * </p>
+     * 
+     * @param accessEndpoints
+     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
+     *        image builder only through the specified endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
+        setAccessEndpoints(accessEndpoints);
         return this;
     }
 
@@ -721,7 +806,9 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         if (getAppstreamAgentVersion() != null)
             sb.append("AppstreamAgentVersion: ").append(getAppstreamAgentVersion()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getAccessEndpoints() != null)
+            sb.append("AccessEndpoints: ").append(getAccessEndpoints());
         sb.append("}");
         return sb.toString();
     }
@@ -780,6 +867,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAccessEndpoints() == null ^ this.getAccessEndpoints() == null)
+            return false;
+        if (other.getAccessEndpoints() != null && other.getAccessEndpoints().equals(this.getAccessEndpoints()) == false)
+            return false;
         return true;
     }
 
@@ -799,6 +890,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAccessEndpoints() == null) ? 0 : getAccessEndpoints().hashCode());
         return hashCode;
     }
 

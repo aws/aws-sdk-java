@@ -91,6 +91,14 @@ public class HyperParameterTrainingJobDefinitionJsonUnmarshaller implements Unma
                     context.nextToken();
                     hyperParameterTrainingJobDefinition.setEnableInterContainerTrafficEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableManagedSpotTraining", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setEnableManagedSpotTraining(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CheckpointConfig", targetDepth)) {
+                    context.nextToken();
+                    hyperParameterTrainingJobDefinition.setCheckpointConfig(CheckpointConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

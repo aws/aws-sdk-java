@@ -31,7 +31,7 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
-     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * </p>
      */
     private String instanceType;
@@ -72,12 +72,12 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
-     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * </p>
      * 
      * @param instanceType
      *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
-     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * @see TransformInstanceType
      */
 
@@ -88,11 +88,11 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
-     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * </p>
      * 
      * @return The ML compute instance type for the transform job. If you are using built-in algorithms to transform
-     *         moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     *         moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * @see TransformInstanceType
      */
 
@@ -103,12 +103,12 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
-     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * </p>
      * 
      * @param instanceType
      *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
-     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -121,12 +121,12 @@ public class TransformResources implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * The ML compute instance type for the transform job. If you are using built-in algorithms to transform moderately
-     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     * sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * </p>
      * 
      * @param instanceType
      *        The ML compute instance type for the transform job. If you are using built-in algorithms to transform
-     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance types.
+     *        moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code> instance types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */

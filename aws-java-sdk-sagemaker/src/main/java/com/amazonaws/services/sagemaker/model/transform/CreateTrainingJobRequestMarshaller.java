@@ -53,6 +53,10 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableNetworkIsolation").build();
     private static final MarshallingInfo<Boolean> ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableInterContainerTrafficEncryption").build();
+    private static final MarshallingInfo<Boolean> ENABLEMANAGEDSPOTTRAINING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableManagedSpotTraining").build();
+    private static final MarshallingInfo<StructuredPojo> CHECKPOINTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CheckpointConfig").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -82,6 +86,8 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getEnableNetworkIsolation(), ENABLENETWORKISOLATION_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getEnableInterContainerTrafficEncryption(), ENABLEINTERCONTAINERTRAFFICENCRYPTION_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getEnableManagedSpotTraining(), ENABLEMANAGEDSPOTTRAINING_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getCheckpointConfig(), CHECKPOINTCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -60,6 +60,8 @@ public class ImageBuilderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImageBuilderErrors").build();
     private static final MarshallingInfo<String> APPSTREAMAGENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
+    private static final MarshallingInfo<List> ACCESSENDPOINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessEndpoints").build();
 
     private static final ImageBuilderMarshaller instance = new ImageBuilderMarshaller();
 
@@ -93,6 +95,7 @@ public class ImageBuilderMarshaller {
             protocolMarshaller.marshall(imageBuilder.getNetworkAccessConfiguration(), NETWORKACCESSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(imageBuilder.getImageBuilderErrors(), IMAGEBUILDERERRORS_BINDING);
             protocolMarshaller.marshall(imageBuilder.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
+            protocolMarshaller.marshall(imageBuilder.getAccessEndpoints(), ACCESSENDPOINTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

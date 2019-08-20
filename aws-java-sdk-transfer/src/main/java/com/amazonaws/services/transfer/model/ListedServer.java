@@ -36,9 +36,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The authentication method used to validate a user for the server that was specified. listed. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * The authentication method used to validate a user for the server that was specified. This can include Secure
+     * Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * </p>
      */
     private String identityProviderType;
@@ -68,7 +68,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
      * </p>
      * <p>
-     * The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate
+     * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
      * state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
@@ -124,15 +124,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for the server that was specified. listed. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * The authentication method used to validate a user for the server that was specified. This can include Secure
+     * Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for the server that was specified. listed. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        The authentication method used to validate a user for the server that was specified. This can include
+     *        Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid
+     *        values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * @see IdentityProviderType
      */
 
@@ -142,14 +142,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for the server that was specified. listed. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * The authentication method used to validate a user for the server that was specified. This can include Secure
+     * Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * </p>
      * 
-     * @return The authentication method used to validate a user for the server that was specified. listed. This can
-     *         include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     *         method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * @return The authentication method used to validate a user for the server that was specified. This can include
+     *         Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid
+     *         values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * @see IdentityProviderType
      */
 
@@ -159,15 +159,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for the server that was specified. listed. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * The authentication method used to validate a user for the server that was specified. This can include Secure
+     * Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for the server that was specified. listed. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        The authentication method used to validate a user for the server that was specified. This can include
+     *        Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid
+     *        values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -179,15 +179,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for the server that was specified. listed. This can include
-     * Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values
-     * include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * The authentication method used to validate a user for the server that was specified. This can include Secure
+     * Shell (SSH), user name and password combinations, or your own custom authentication method. Valid values include
+     * <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for the server that was specified. listed. This can
-     *        include Secure Shell (SSH), user name and password combinations, or your own custom authentication method.
-     *        Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        The authentication method used to validate a user for the server that was specified. This can include
+     *        Secure Shell (SSH), user name and password combinations, or your own custom authentication method. Valid
+     *        values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -352,7 +352,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
      * </p>
      * <p>
-     * The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate
+     * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
      * state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
@@ -362,7 +362,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code>
      *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
-     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an
+     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
      *        <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.
      * @see State
@@ -379,7 +379,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
      * </p>
      * <p>
-     * The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate
+     * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
      * state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
@@ -389,7 +389,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *         <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer
      *         operations.</p>
      *         <p>
-     *         The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an
+     *         The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *         intermediate state, either not fully able to respond, or not fully offline. The values of
      *         <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.
      * @see State
@@ -406,7 +406,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
      * </p>
      * <p>
-     * The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate
+     * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
      * state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
@@ -416,7 +416,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code>
      *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
-     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an
+     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
      *        <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -435,7 +435,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * of <code>OFFLINE</code> means that the server cannot perform file transfer operations.
      * </p>
      * <p>
-     * The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an intermediate
+     * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
      * state, either not fully able to respond, or not fully offline. The values of <code>START_FAILED</code> or
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
@@ -445,7 +445,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      *        <code>ONLINE</code>&gt; indicates that the server can accept jobs and transfer files. A <code>State</code>
      *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
-     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicated that the server is in an
+     *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
      *        <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an error condition.
      * @return Returns a reference to this object so that method calls can be chained together.

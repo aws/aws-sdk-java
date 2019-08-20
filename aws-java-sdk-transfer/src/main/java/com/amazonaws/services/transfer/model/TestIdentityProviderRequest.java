@@ -27,14 +27,14 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system assigned identifier for a specific server. That server's user authentication method is tested with a
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
      * user name and password.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * This request parameter is name of the user account to be tested.
+     * This request parameter is the name of the user account to be tested.
      * </p>
      */
     private String userName;
@@ -47,12 +47,12 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system assigned identifier for a specific server. That server's user authentication method is tested with a
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
      * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system assigned identifier for a specific server. That server's user authentication method is tested
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
      *        with a user name and password.
      */
 
@@ -62,11 +62,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system assigned identifier for a specific server. That server's user authentication method is tested with a
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
      * user name and password.
      * </p>
      * 
-     * @return A system assigned identifier for a specific server. That server's user authentication method is tested
+     * @return A system-assigned identifier for a specific server. That server's user authentication method is tested
      *         with a user name and password.
      */
 
@@ -76,12 +76,12 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system assigned identifier for a specific server. That server's user authentication method is tested with a
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
      * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system assigned identifier for a specific server. That server's user authentication method is tested
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
      *        with a user name and password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -93,11 +93,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is name of the user account to be tested.
+     * This request parameter is the name of the user account to be tested.
      * </p>
      * 
      * @param userName
-     *        This request parameter is name of the user account to be tested.
+     *        This request parameter is the name of the user account to be tested.
      */
 
     public void setUserName(String userName) {
@@ -106,10 +106,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is name of the user account to be tested.
+     * This request parameter is the name of the user account to be tested.
      * </p>
      * 
-     * @return This request parameter is name of the user account to be tested.
+     * @return This request parameter is the name of the user account to be tested.
      */
 
     public String getUserName() {
@@ -118,11 +118,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This request parameter is name of the user account to be tested.
+     * This request parameter is the name of the user account to be tested.
      * </p>
      * 
      * @param userName
-     *        This request parameter is name of the user account to be tested.
+     *        This request parameter is the name of the user account to be tested.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,7 +188,7 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserPassword() != null)
-            sb.append("UserPassword: ").append(getUserPassword());
+            sb.append("UserPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }

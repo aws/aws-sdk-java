@@ -80,6 +80,10 @@ public class ProfileJsonUnmarshaller implements Unmarshaller<Profile, JsonUnmars
                     context.nextToken();
                     profile.setWakeWord(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Locale", targetDepth)) {
+                    context.nextToken();
+                    profile.setLocale(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("SetupModeDisabled", targetDepth)) {
                     context.nextToken();
                     profile.setSetupModeDisabled(context.getUnmarshaller(Boolean.class).unmarshall(context));

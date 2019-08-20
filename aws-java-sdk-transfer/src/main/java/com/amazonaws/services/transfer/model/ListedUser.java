@@ -30,7 +30,7 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     * This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      */
     private String arn;
@@ -43,8 +43,8 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
     private String homeDirectory;
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this
-     * case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
+     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
+     * case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
      * that enables that user to perform file operations to their Amazon S3 bucket.
      * </p>
      */
@@ -64,11 +64,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     * This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
      * @param arn
-     *        This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     *        This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      */
 
     public void setArn(String arn) {
@@ -77,10 +77,10 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     * This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
-     * @return This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     * @return This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      */
 
     public String getArn() {
@@ -89,11 +89,11 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     * This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * </p>
      * 
      * @param arn
-     *        This property is the unique Amazon Resource Name (ARN) for the user that you wish to learn about.
+     *        This property is the unique Amazon Resource Name (ARN) for the user that you want to learn about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,14 +150,14 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this
-     * case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
+     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
+     * case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
      * that enables that user to perform file operations to their Amazon S3 bucket.
      * </p>
      * 
      * @param role
-     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in
-     *        this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
+     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in
+     *        this case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
      *        relationship that enables that user to perform file operations to their Amazon S3 bucket.
      */
 
@@ -167,13 +167,13 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this
-     * case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
+     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
+     * case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
      * that enables that user to perform file operations to their Amazon S3 bucket.
      * </p>
      * 
-     * @return The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in
-     *         this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
+     * @return The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that,
+     *         in this case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
      *         relationship that enables that user to perform file operations to their Amazon S3 bucket.
      */
 
@@ -183,14 +183,14 @@ public class ListedUser implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in this
-     * case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
+     * The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in this
+     * case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust relationship
      * that enables that user to perform file operations to their Amazon S3 bucket.
      * </p>
      * 
      * @param role
-     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that in
-     *        this case allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
+     *        The role in use by this user. A <i>role</i> is an AWS Identity and Access Management (IAM) entity that, in
+     *        this case, allows the SFTP server to act on a user's behalf. It allows the server to inherit the trust
      *        relationship that enables that user to perform file operations to their Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

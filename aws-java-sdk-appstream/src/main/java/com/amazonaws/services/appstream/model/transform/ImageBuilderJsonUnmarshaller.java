@@ -112,6 +112,10 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                     context.nextToken();
                     imageBuilder.setAppstreamAgentVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AccessEndpoints", targetDepth)) {
+                    context.nextToken();
+                    imageBuilder.setAccessEndpoints(new ListUnmarshaller<AccessEndpoint>(AccessEndpointJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

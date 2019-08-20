@@ -250,7 +250,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -1652,7 +1652,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @return The tags to associate with the fleet. A tag is a key-value pair, and the value is optional. For example,
@@ -1670,7 +1670,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *         Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *         Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -1695,7 +1695,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param tags
@@ -1714,7 +1714,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -1739,7 +1739,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your Resources</a>
-     * in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param tags
@@ -1758,7 +1758,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/appstream2/latest/developerguide/tagging-basic.html">Tagging Your
-     *        Resources</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        Resources</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

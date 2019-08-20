@@ -63,6 +63,12 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String wakeWord;
     /**
      * <p>
+     * The locale of the room profile.
+     * </p>
+     */
+    private String locale;
+    /**
+     * <p>
      * The user-specified token that is used during the creation of a profile.
      * </p>
      */
@@ -385,6 +391,46 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
+     * The locale of the room profile.
+     * </p>
+     * 
+     * @param locale
+     *        The locale of the room profile.
+     */
+
+    public void setLocale(String locale) {
+        this.locale = locale;
+    }
+
+    /**
+     * <p>
+     * The locale of the room profile.
+     * </p>
+     * 
+     * @return The locale of the room profile.
+     */
+
+    public String getLocale() {
+        return this.locale;
+    }
+
+    /**
+     * <p>
+     * The locale of the room profile.
+     * </p>
+     * 
+     * @param locale
+     *        The locale of the room profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateProfileRequest withLocale(String locale) {
+        setLocale(locale);
+        return this;
+    }
+
+    /**
+     * <p>
      * The user-specified token that is used during the creation of a profile.
      * </p>
      * 
@@ -591,6 +637,8 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("TemperatureUnit: ").append(getTemperatureUnit()).append(",");
         if (getWakeWord() != null)
             sb.append("WakeWord: ").append(getWakeWord()).append(",");
+        if (getLocale() != null)
+            sb.append("Locale: ").append(getLocale()).append(",");
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getSetupModeDisabled() != null)
@@ -637,6 +685,10 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getWakeWord() != null && other.getWakeWord().equals(this.getWakeWord()) == false)
             return false;
+        if (other.getLocale() == null ^ this.getLocale() == null)
+            return false;
+        if (other.getLocale() != null && other.getLocale().equals(this.getLocale()) == false)
+            return false;
         if (other.getClientRequestToken() == null ^ this.getClientRequestToken() == null)
             return false;
         if (other.getClientRequestToken() != null && other.getClientRequestToken().equals(this.getClientRequestToken()) == false)
@@ -667,6 +719,7 @@ public class CreateProfileRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getDistanceUnit() == null) ? 0 : getDistanceUnit().hashCode());
         hashCode = prime * hashCode + ((getTemperatureUnit() == null) ? 0 : getTemperatureUnit().hashCode());
         hashCode = prime * hashCode + ((getWakeWord() == null) ? 0 : getWakeWord().hashCode());
+        hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getSetupModeDisabled() == null) ? 0 : getSetupModeDisabled().hashCode());
         hashCode = prime * hashCode + ((getMaxVolumeLimit() == null) ? 0 : getMaxVolumeLimit().hashCode());

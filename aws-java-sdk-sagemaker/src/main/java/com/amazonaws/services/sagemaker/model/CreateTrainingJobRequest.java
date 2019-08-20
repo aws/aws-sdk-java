@@ -162,6 +162,25 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private Boolean enableInterContainerTrafficEncryption;
+    /**
+     * <p>
+     * To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully
+     * managed and scalable infrastructure for training machine learning models. this option is useful when training
+     * jobs can be interrupted and when there is flexibility when the training job is run.
+     * </p>
+     * <p>
+     * The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting
+     * point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used
+     * to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * </p>
+     */
+    private Boolean enableManagedSpotTraining;
+    /**
+     * <p>
+     * Contains information about the output location for managed spot training checkpoint data.
+     * </p>
+     */
+    private CheckpointConfig checkpointConfig;
 
     /**
      * <p>
@@ -1178,6 +1197,150 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully
+     * managed and scalable infrastructure for training machine learning models. this option is useful when training
+     * jobs can be interrupted and when there is flexibility when the training job is run.
+     * </p>
+     * <p>
+     * The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting
+     * point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used
+     * to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * </p>
+     * 
+     * @param enableManagedSpotTraining
+     *        To train models using managed spot training, choose <code>True</code>. Managed spot training provides a
+     *        fully managed and scalable infrastructure for training machine learning models. this option is useful when
+     *        training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+     *        <p>
+     *        The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a
+     *        starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch.
+     *        They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     */
+
+    public void setEnableManagedSpotTraining(Boolean enableManagedSpotTraining) {
+        this.enableManagedSpotTraining = enableManagedSpotTraining;
+    }
+
+    /**
+     * <p>
+     * To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully
+     * managed and scalable infrastructure for training machine learning models. this option is useful when training
+     * jobs can be interrupted and when there is flexibility when the training job is run.
+     * </p>
+     * <p>
+     * The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting
+     * point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used
+     * to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * </p>
+     * 
+     * @return To train models using managed spot training, choose <code>True</code>. Managed spot training provides a
+     *         fully managed and scalable infrastructure for training machine learning models. this option is useful
+     *         when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+     *         <p>
+     *         The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a
+     *         starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch.
+     *         They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     */
+
+    public Boolean getEnableManagedSpotTraining() {
+        return this.enableManagedSpotTraining;
+    }
+
+    /**
+     * <p>
+     * To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully
+     * managed and scalable infrastructure for training machine learning models. this option is useful when training
+     * jobs can be interrupted and when there is flexibility when the training job is run.
+     * </p>
+     * <p>
+     * The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting
+     * point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used
+     * to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * </p>
+     * 
+     * @param enableManagedSpotTraining
+     *        To train models using managed spot training, choose <code>True</code>. Managed spot training provides a
+     *        fully managed and scalable infrastructure for training machine learning models. this option is useful when
+     *        training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+     *        <p>
+     *        The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a
+     *        starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch.
+     *        They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withEnableManagedSpotTraining(Boolean enableManagedSpotTraining) {
+        setEnableManagedSpotTraining(enableManagedSpotTraining);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To train models using managed spot training, choose <code>True</code>. Managed spot training provides a fully
+     * managed and scalable infrastructure for training machine learning models. this option is useful when training
+     * jobs can be interrupted and when there is flexibility when the training job is run.
+     * </p>
+     * <p>
+     * The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a starting
+     * point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch. They can be used
+     * to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     * </p>
+     * 
+     * @return To train models using managed spot training, choose <code>True</code>. Managed spot training provides a
+     *         fully managed and scalable infrastructure for training machine learning models. this option is useful
+     *         when training jobs can be interrupted and when there is flexibility when the training job is run. </p>
+     *         <p>
+     *         The complete and intermediate results of jobs are stored in an Amazon S3 bucket, and can be used as a
+     *         starting point to train models incrementally. Amazon SageMaker provides metrics and logs in CloudWatch.
+     *         They can be used to see when managed spot training jobs are running, interrupted, resumed, or completed.
+     */
+
+    public Boolean isEnableManagedSpotTraining() {
+        return this.enableManagedSpotTraining;
+    }
+
+    /**
+     * <p>
+     * Contains information about the output location for managed spot training checkpoint data.
+     * </p>
+     * 
+     * @param checkpointConfig
+     *        Contains information about the output location for managed spot training checkpoint data.
+     */
+
+    public void setCheckpointConfig(CheckpointConfig checkpointConfig) {
+        this.checkpointConfig = checkpointConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the output location for managed spot training checkpoint data.
+     * </p>
+     * 
+     * @return Contains information about the output location for managed spot training checkpoint data.
+     */
+
+    public CheckpointConfig getCheckpointConfig() {
+        return this.checkpointConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information about the output location for managed spot training checkpoint data.
+     * </p>
+     * 
+     * @param checkpointConfig
+     *        Contains information about the output location for managed spot training checkpoint data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTrainingJobRequest withCheckpointConfig(CheckpointConfig checkpointConfig) {
+        setCheckpointConfig(checkpointConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1212,7 +1375,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getEnableNetworkIsolation() != null)
             sb.append("EnableNetworkIsolation: ").append(getEnableNetworkIsolation()).append(",");
         if (getEnableInterContainerTrafficEncryption() != null)
-            sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption());
+            sb.append("EnableInterContainerTrafficEncryption: ").append(getEnableInterContainerTrafficEncryption()).append(",");
+        if (getEnableManagedSpotTraining() != null)
+            sb.append("EnableManagedSpotTraining: ").append(getEnableManagedSpotTraining()).append(",");
+        if (getCheckpointConfig() != null)
+            sb.append("CheckpointConfig: ").append(getCheckpointConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1276,6 +1443,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getEnableInterContainerTrafficEncryption() != null
                 && other.getEnableInterContainerTrafficEncryption().equals(this.getEnableInterContainerTrafficEncryption()) == false)
             return false;
+        if (other.getEnableManagedSpotTraining() == null ^ this.getEnableManagedSpotTraining() == null)
+            return false;
+        if (other.getEnableManagedSpotTraining() != null && other.getEnableManagedSpotTraining().equals(this.getEnableManagedSpotTraining()) == false)
+            return false;
+        if (other.getCheckpointConfig() == null ^ this.getCheckpointConfig() == null)
+            return false;
+        if (other.getCheckpointConfig() != null && other.getCheckpointConfig().equals(this.getCheckpointConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1296,6 +1471,8 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getEnableNetworkIsolation() == null) ? 0 : getEnableNetworkIsolation().hashCode());
         hashCode = prime * hashCode + ((getEnableInterContainerTrafficEncryption() == null) ? 0 : getEnableInterContainerTrafficEncryption().hashCode());
+        hashCode = prime * hashCode + ((getEnableManagedSpotTraining() == null) ? 0 : getEnableManagedSpotTraining().hashCode());
+        hashCode = prime * hashCode + ((getCheckpointConfig() == null) ? 0 : getCheckpointConfig().hashCode());
         return hashCode;
     }
 

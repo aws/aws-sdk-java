@@ -777,7 +777,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * </ol>
      * <p>
-     * After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN).
+     * After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN). You can't change
+     * the name of a notebook instance after you create it.
      * </p>
      * <p>
      * After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter
@@ -838,7 +839,8 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * </ol>
      * <p>
-     * After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN).
+     * After creating the notebook instance, Amazon SageMaker returns its Amazon Resource Name (ARN). You can't change
+     * the name of a notebook instance after you create it.
      * </p>
      * <p>
      * After Amazon SageMaker creates the notebook instance, you can connect to the Jupyter server and work in Jupyter
@@ -1059,6 +1061,14 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
+     * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning models by up to 80% by
+     * using Amazon EC2 Spot instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
      * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
      * successfully complete model training.
@@ -1066,7 +1076,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter to cap model training costs.
+     * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
+     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait for a
+     * managed spot training job to complete.
      * </p>
      * </li>
      * </ul>
@@ -1129,6 +1141,14 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
+     * <code>EnableManagedSpotTraining</code> - Optimize the cost of training machine learning models by up to 80% by
+     * using Amazon EC2 Spot instances. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-managed-spot-training.html">Managed Spot
+     * Training</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>RoleARN</code> - The Amazon Resource Number (ARN) that Amazon SageMaker assumes to perform tasks on your
      * behalf during model training. You must grant this role the necessary permissions so that Amazon SageMaker can
      * successfully complete model training.
@@ -1136,7 +1156,9 @@ public interface AmazonSageMakerAsync extends AmazonSageMaker {
      * </li>
      * <li>
      * <p>
-     * <code>StoppingCondition</code> - Sets a time limit for training. Use this parameter to cap model training costs.
+     * <code>StoppingCondition</code> - To help cap training costs, use <code>MaxRuntimeInSeconds</code> to set a time
+     * limit for training. Use <code>MaxWaitTimeInSeconds</code> to specify how long you are willing to to wait for a
+     * managed spot training job to complete.
      * </p>
      * </li>
      * </ul>

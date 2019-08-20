@@ -760,11 +760,6 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * entire previous history of voice input data and associated response data. This action can be called once every 24
      * hours for a specific shared device.
      * </p>
-     * <p>
-     * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
-     * device.
-     * </p>
      * 
      * @param deleteDeviceUsageDataRequest
      * @return A Java Future containing the result of the DeleteDeviceUsageData operation returned by the service.
@@ -779,11 +774,6 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * When this action is called for a specified shared device, it allows authorized users to delete the device's
      * entire previous history of voice input data and associated response data. This action can be called once every 24
      * hours for a specific shared device.
-     * </p>
-     * <p>
-     * When this action is called for a specified shared device, it allows authorized users to delete the device's
-     * entire previous history of voice input data. This action can be called once every 24 hours for a specific shared
-     * device.
      * </p>
      * 
      * @param deleteDeviceUsageDataRequest

@@ -43,6 +43,8 @@ public class ProfileMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemperatureUnit").build();
     private static final MarshallingInfo<String> WAKEWORD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("WakeWord").build();
+    private static final MarshallingInfo<String> LOCALE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Locale").build();
     private static final MarshallingInfo<Boolean> SETUPMODEDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SetupModeDisabled").build();
     private static final MarshallingInfo<Integer> MAXVOLUMELIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -76,6 +78,7 @@ public class ProfileMarshaller {
             protocolMarshaller.marshall(profile.getDistanceUnit(), DISTANCEUNIT_BINDING);
             protocolMarshaller.marshall(profile.getTemperatureUnit(), TEMPERATUREUNIT_BINDING);
             protocolMarshaller.marshall(profile.getWakeWord(), WAKEWORD_BINDING);
+            protocolMarshaller.marshall(profile.getLocale(), LOCALE_BINDING);
             protocolMarshaller.marshall(profile.getSetupModeDisabled(), SETUPMODEDISABLED_BINDING);
             protocolMarshaller.marshall(profile.getMaxVolumeLimit(), MAXVOLUMELIMIT_BINDING);
             protocolMarshaller.marshall(profile.getPSTNEnabled(), PSTNENABLED_BINDING);

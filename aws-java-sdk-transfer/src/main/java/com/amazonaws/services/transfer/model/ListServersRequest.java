@@ -33,9 +33,9 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
     private Integer maxResults;
     /**
      * <p>
-     * When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned
-     * in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional servers.
      * </p>
      */
     private String nextToken;
@@ -82,15 +82,15 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned
-     * in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional servers.
      * </p>
      * 
      * @param nextToken
-     *        When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is
-     *        returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     *        continue listing additional servers.
+     *        When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     *        parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
+     *        subsequent command to continue listing additional servers.
      */
 
     public void setNextToken(String nextToken) {
@@ -99,14 +99,14 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned
-     * in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional servers.
      * </p>
      * 
-     * @return When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is
-     *         returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     *         continue listing additional servers.
+     * @return When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     *         parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
+     *         subsequent command to continue listing additional servers.
      */
 
     public String getNextToken() {
@@ -115,15 +115,15 @@ public class ListServersRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is returned
-     * in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to continue listing
-     * additional servers.
+     * When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     * parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent
+     * command to continue listing additional servers.
      * </p>
      * 
      * @param nextToken
-     *        When additional results are obtained from the ListServers command, a <code>NextToken</code> parameter is
-     *        returned in the output. You can then pass the <code>NextToken</code> parameter in a subsequent command to
-     *        continue listing additional servers.
+     *        When additional results are obtained from the <code>ListServers</code> command, a <code>NextToken</code>
+     *        parameter is returned in the output. You can then pass the <code>NextToken</code> parameter in a
+     *        subsequent command to continue listing additional servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

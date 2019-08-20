@@ -61,7 +61,7 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The session context. For more information, see <a href=
      * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     * >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      */
     private String sessionContext;
@@ -282,13 +282,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The session context. For more information, see <a href=
      * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     * >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param sessionContext
      *        The session context. For more information, see <a href=
      *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public void setSessionContext(String sessionContext) {
@@ -299,12 +299,12 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The session context. For more information, see <a href=
      * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     * >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @return The session context. For more information, see <a href=
      *         "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     *         >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *         >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      */
 
     public String getSessionContext() {
@@ -315,13 +315,13 @@ public class CreateStreamingURLRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The session context. For more information, see <a href=
      * "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     * >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     * >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * </p>
      * 
      * @param sessionContext
      *        The session context. For more information, see <a href=
      *        "https://docs.aws.amazon.com/appstream2/latest/developerguide/managing-stacks-fleets.html#managing-stacks-fleets-parameters"
-     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Developer Guide</i>.
+     *        >Session Context</a> in the <i>Amazon AppStream 2.0 Administration Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

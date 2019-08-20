@@ -22,7 +22,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Defines the amount of money paid to an Amazon Mechanical Turk worker for each task performed.
  * </p>
  * <p>
- * Use one of the following prices for bounding box tasks. Prices are in US dollars.
+ * Use one of the following prices for bounding box tasks. Prices are in US dollars and should be based on the
+ * complexity of the task; the longer it takes in your initial testing, the more you should offer.
  * </p>
  * <ul>
  * <li>
@@ -216,18 +217,18 @@ public class PublicWorkforceTaskPrice implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the amount of money paid to a worker in United States dollars.
+     * Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      * </p>
      */
     private USD amountInUsd;
 
     /**
      * <p>
-     * Defines the amount of money paid to a worker in United States dollars.
+     * Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      * </p>
      * 
      * @param amountInUsd
-     *        Defines the amount of money paid to a worker in United States dollars.
+     *        Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      */
 
     public void setAmountInUsd(USD amountInUsd) {
@@ -236,10 +237,10 @@ public class PublicWorkforceTaskPrice implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the amount of money paid to a worker in United States dollars.
+     * Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      * </p>
      * 
-     * @return Defines the amount of money paid to a worker in United States dollars.
+     * @return Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      */
 
     public USD getAmountInUsd() {
@@ -248,11 +249,11 @@ public class PublicWorkforceTaskPrice implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Defines the amount of money paid to a worker in United States dollars.
+     * Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      * </p>
      * 
      * @param amountInUsd
-     *        Defines the amount of money paid to a worker in United States dollars.
+     *        Defines the amount of money paid to an Amazon Mechanical Turk worker in United States dollars.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

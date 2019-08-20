@@ -147,6 +147,22 @@ public class DescribeTrainingJobResultJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     describeTrainingJobResult.setEnableInterContainerTrafficEncryption(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
+                if (context.testExpression("EnableManagedSpotTraining", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setEnableManagedSpotTraining(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CheckpointConfig", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setCheckpointConfig(CheckpointConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("TrainingTimeInSeconds", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setTrainingTimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("BillableTimeInSeconds", targetDepth)) {
+                    context.nextToken();
+                    describeTrainingJobResult.setBillableTimeInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)
