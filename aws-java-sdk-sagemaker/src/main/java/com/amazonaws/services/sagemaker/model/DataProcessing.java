@@ -23,7 +23,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * data that is relevant to the prediction results in the output. The input filter provided allows you to exclude input
  * data that is not needed for inference in a batch transform job. The output filter provided allows you to include
  * input data relevant to interpreting the predictions in the output from the job. For more information, see <a
- * href="http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
+ * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html">Associate Prediction
  * Results with their Corresponding Input Records</a>.
  * </p>
  * 
@@ -36,7 +36,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      * <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon
      * SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.
@@ -49,7 +49,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch
      * transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the
      * default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined
@@ -85,7 +85,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      * <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon
      * SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.
@@ -96,7 +96,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param inputFilter
      *        A <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *        >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      *        <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want
      *        Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value
@@ -112,7 +112,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      * <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon
      * SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.
@@ -122,7 +122,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A <a href=
-     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *         >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      *         <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want
      *         Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value
@@ -138,7 +138,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      * <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want Amazon
      * SageMaker to pass the entire input dataset to the algorithm, accept the default value <code>$</code>.
@@ -149,7 +149,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param inputFilter
      *        A <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *        >JSONPath</a> expression used to select a portion of the input data to pass to the algorithm. Use the
      *        <code>InputFilter</code> parameter to exclude fields, such as an ID column, from the input. If you want
      *        Amazon SageMaker to pass the entire input dataset to the algorithm, accept the default value
@@ -167,7 +167,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch
      * transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the
      * default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined
@@ -179,7 +179,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param outputFilter
      *        A <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *        >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a
      *        batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file,
      *        leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of
@@ -195,7 +195,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch
      * transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the
      * default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined
@@ -206,7 +206,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return A <a href=
-     *         "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *         >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a
      *         batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file,
      *         leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of
@@ -222,7 +222,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A <a href=
-     * "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     * "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      * >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a batch
      * transform job. If you want Amazon SageMaker to store the entire input dataset in the output file, leave the
      * default value, <code>$</code>. If you specify indexes that aren't within the dimension size of the joined
@@ -234,7 +234,7 @@ public class DataProcessing implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param outputFilter
      *        A <a href=
-     *        "http://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators"
      *        >JSONPath</a> expression used to select a portion of the joined dataset to save in the output file for a
      *        batch transform job. If you want Amazon SageMaker to store the entire input dataset in the output file,
      *        leave the default value, <code>$</code>. If you specify indexes that aren't within the dimension size of

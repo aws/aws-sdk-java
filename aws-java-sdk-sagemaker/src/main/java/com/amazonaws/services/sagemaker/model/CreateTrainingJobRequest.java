@@ -80,19 +80,21 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of
      * input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel
-     * provides the S3 location where the input data is stored. It also provides information about the stored data: the
-     * MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     * provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the
+     * stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
      * </p>
      * <p>
      * Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an
-     * S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     * S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if
+     * you specify an EFS location, input data files will be made available as input streams. They do not need to be
+     * downloaded.
      * </p>
      */
     private java.util.List<Channel> inputDataConfig;
     /**
      * <p>
-     * Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders
-     * for the artifacts.
+     * Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
+     * subfolders for the artifacts.
      * </p>
      */
     private OutputDataConfig outputDataConfig;
@@ -509,12 +511,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of
      * input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel
-     * provides the S3 location where the input data is stored. It also provides information about the stored data: the
-     * MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     * provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the
+     * stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
      * </p>
      * <p>
      * Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an
-     * S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     * S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if
+     * you specify an EFS location, input data files will be made available as input streams. They do not need to be
+     * downloaded.
      * </p>
      * 
      * @return An array of <code>Channel</code> objects. Each channel is a named input source.
@@ -522,13 +526,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *         <p>
      *         Algorithms can accept input data from one or more channels. For example, an algorithm might have two
      *         channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration
-     *         for each channel provides the S3 location where the input data is stored. It also provides information
-     *         about the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO
-     *         format.
+     *         for each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides
+     *         information about the stored data: the MIME type, compression method, and whether the data is wrapped in
+     *         RecordIO format.
      *         </p>
      *         <p>
      *         Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files
      *         from an S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     *         For example, if you specify an EFS location, input data files will be made available as input streams.
+     *         They do not need to be downloaded.
      */
 
     public java.util.List<Channel> getInputDataConfig() {
@@ -543,12 +549,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of
      * input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel
-     * provides the S3 location where the input data is stored. It also provides information about the stored data: the
-     * MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     * provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the
+     * stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
      * </p>
      * <p>
      * Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an
-     * S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     * S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if
+     * you specify an EFS location, input data files will be made available as input streams. They do not need to be
+     * downloaded.
      * </p>
      * 
      * @param inputDataConfig
@@ -557,12 +565,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        Algorithms can accept input data from one or more channels. For example, an algorithm might have two
      *        channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for
-     *        each channel provides the S3 location where the input data is stored. It also provides information about
-     *        the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     *        each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides
+     *        information about the stored data: the MIME type, compression method, and whether the data is wrapped in
+     *        RecordIO format.
      *        </p>
      *        <p>
      *        Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files
      *        from an S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     *        For example, if you specify an EFS location, input data files will be made available as input streams.
+     *        They do not need to be downloaded.
      */
 
     public void setInputDataConfig(java.util.Collection<Channel> inputDataConfig) {
@@ -582,12 +593,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of
      * input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel
-     * provides the S3 location where the input data is stored. It also provides information about the stored data: the
-     * MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     * provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the
+     * stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
      * </p>
      * <p>
      * Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an
-     * S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     * S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if
+     * you specify an EFS location, input data files will be made available as input streams. They do not need to be
+     * downloaded.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -601,12 +614,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        Algorithms can accept input data from one or more channels. For example, an algorithm might have two
      *        channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for
-     *        each channel provides the S3 location where the input data is stored. It also provides information about
-     *        the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     *        each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides
+     *        information about the stored data: the MIME type, compression method, and whether the data is wrapped in
+     *        RecordIO format.
      *        </p>
      *        <p>
      *        Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files
      *        from an S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     *        For example, if you specify an EFS location, input data files will be made available as input streams.
+     *        They do not need to be downloaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -628,12 +644,14 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * Algorithms can accept input data from one or more channels. For example, an algorithm might have two channels of
      * input data, <code>training_data</code> and <code>validation_data</code>. The configuration for each channel
-     * provides the S3 location where the input data is stored. It also provides information about the stored data: the
-     * MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     * provides the S3, EFS, or FSx location where the input data is stored. It also provides information about the
+     * stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
      * </p>
      * <p>
      * Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files from an
-     * S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     * S3 bucket to a local directory in the Docker container, or makes it available as input streams. For example, if
+     * you specify an EFS location, input data files will be made available as input streams. They do not need to be
+     * downloaded.
      * </p>
      * 
      * @param inputDataConfig
@@ -642,12 +660,15 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
      *        <p>
      *        Algorithms can accept input data from one or more channels. For example, an algorithm might have two
      *        channels of input data, <code>training_data</code> and <code>validation_data</code>. The configuration for
-     *        each channel provides the S3 location where the input data is stored. It also provides information about
-     *        the stored data: the MIME type, compression method, and whether the data is wrapped in RecordIO format.
+     *        each channel provides the S3, EFS, or FSx location where the input data is stored. It also provides
+     *        information about the stored data: the MIME type, compression method, and whether the data is wrapped in
+     *        RecordIO format.
      *        </p>
      *        <p>
      *        Depending on the input mode that the algorithm supports, Amazon SageMaker either copies input data files
      *        from an S3 bucket to a local directory in the Docker container, or makes it available as input streams.
+     *        For example, if you specify an EFS location, input data files will be made available as input streams.
+     *        They do not need to be downloaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -658,12 +679,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders
-     * for the artifacts.
+     * Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
+     * subfolders for the artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates
+     *        Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
      *        subfolders for the artifacts.
      */
 
@@ -673,11 +694,11 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders
-     * for the artifacts.
+     * Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
+     * subfolders for the artifacts.
      * </p>
      * 
-     * @return Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates
+     * @return Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
      *         subfolders for the artifacts.
      */
 
@@ -687,12 +708,12 @@ public class CreateTrainingJobRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates subfolders
-     * for the artifacts.
+     * Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
+     * subfolders for the artifacts.
      * </p>
      * 
      * @param outputDataConfig
-     *        Specifies the path to the S3 bucket where you want to store model artifacts. Amazon SageMaker creates
+     *        Specifies the path to the S3 location where you want to store model artifacts. Amazon SageMaker creates
      *        subfolders for the artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

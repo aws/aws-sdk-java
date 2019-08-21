@@ -46,7 +46,7 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
      * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
      * Amazon CloudWatch</a>.
      * </p>
      */
@@ -286,14 +286,14 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
      * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
      * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param failureReason
      *        If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a
      *        log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see
-     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
      *        Events with Amazon CloudWatch</a>.
      */
 
@@ -305,14 +305,14 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
      * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
      * Amazon CloudWatch</a>.
      * </p>
      * 
      * @return If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates
      *         a log file, which includes error messages, and stores it as an Amazon S3 object. For more information,
-     *         see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
-     *         Events with Amazon CloudWatch</a>.
+     *         see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon
+     *         SageMaker Events with Amazon CloudWatch</a>.
      */
 
     public String getFailureReason() {
@@ -323,14 +323,14 @@ public class DescribeTransformJobResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a log
      * file, which includes error messages, and stores it as an Amazon S3 object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker Events with
      * Amazon CloudWatch</a>.
      * </p>
      * 
      * @param failureReason
      *        If the transform job failed, <code>FailureReason</code> describes why it failed. A transform job creates a
      *        log file, which includes error messages, and stores it as an Amazon S3 object. For more information, see
-     *        <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
+     *        <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log Amazon SageMaker
      *        Events with Amazon CloudWatch</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

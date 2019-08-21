@@ -55,6 +55,16 @@ public class ListAllowedNodeTypeModificationsResultStaxUnmarshaller implements U
                     continue;
                 }
 
+                if (context.testExpression("ScaleDownModifications", targetDepth)) {
+                    listAllowedNodeTypeModificationsResult.withScaleDownModifications(new ArrayList<String>());
+                    continue;
+                }
+
+                if (context.testExpression("ScaleDownModifications/member", targetDepth)) {
+                    listAllowedNodeTypeModificationsResult.withScaleDownModifications(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return listAllowedNodeTypeModificationsResult;

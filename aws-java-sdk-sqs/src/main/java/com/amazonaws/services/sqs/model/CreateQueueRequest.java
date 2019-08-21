@@ -236,6 +236,56 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     * <code>sqs:TagQueue</code> permissions.
+     * </p>
+     * <p>
+     * Cross-account permissions don't apply to this action. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, String> tags;
 
     /**
      * Default constructor for CreateQueueRequest object. Callers should use the setter or fluent setter (with...)
@@ -1580,6 +1630,331 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     * <code>sqs:TagQueue</code> permissions.
+     * </p>
+     * <p>
+     * Cross-account permissions don't apply to this action. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @return Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     *         href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html"
+     *         >Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     *         <p>
+     *         When you use queue tags, keep the following guidelines in mind:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Adding more than 50 tags to a queue isn't recommended.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tags are case-sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For a full list of tag restrictions, see <a href=
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     *         >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     *         <code>sqs:TagQueue</code> permissions.
+     *         </p>
+     *         <p>
+     *         Cross-account permissions don't apply to this action. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     *         >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service
+     *         Developer Guide</i>.
+     *         </p>
+     */
+
+    public java.util.Map<String, String> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     * <code>sqs:TagQueue</code> permissions.
+     * </p>
+     * <p>
+     * Cross-account permissions don't apply to this action. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html"
+     *        >Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use queue tags, keep the following guidelines in mind:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Adding more than 50 tags to a queue isn't recommended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tags are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For a full list of tag restrictions, see <a href=
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     *        >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     *        <code>sqs:TagQueue</code> permissions.
+     *        </p>
+     *        <p>
+     *        Cross-account permissions don't apply to this action. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     *        >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service
+     *        Developer Guide</i>.
+     *        </p>
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags == null ? null : new com.amazonaws.internal.SdkInternalMap<String, String>(tags);
+    }
+
+    /**
+     * <p>
+     * Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging
+     * Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When you use queue tags, keep the following guidelines in mind:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Adding more than 50 tags to a queue isn't recommended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tags are case-sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a full list of tag restrictions, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     * >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     * <code>sqs:TagQueue</code> permissions.
+     * </p>
+     * <p>
+     * Cross-account permissions don't apply to this action. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * Guide</i>.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a
+     *        href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html"
+     *        >Tagging Your Amazon SQS Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.</p>
+     *        <p>
+     *        When you use queue tags, keep the following guidelines in mind:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Adding more than 50 tags to a queue isn't recommended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tags don't have any semantic meaning. Amazon SQS interprets tags as character strings.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tags are case-sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        A new tag with a key identical to that of an existing tag overwrites the existing tag.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For a full list of tag restrictions, see <a href=
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-limits.html#limits-queues"
+     *        >Limits Related to Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        To be able to tag a queue on creation, you must have the <code>sqs:CreateQueue</code> and
+     *        <code>sqs:TagQueue</code> permissions.
+     *        </p>
+     *        <p>
+     *        Cross-account permissions don't apply to this action. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
+     *        >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service
+     *        Developer Guide</i>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public CreateQueueRequest addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new com.amazonaws.internal.SdkInternalMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateQueueRequest clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1594,7 +1969,9 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getQueueName() != null)
             sb.append("QueueName: ").append(getQueueName()).append(",");
         if (getAttributes() != null)
-            sb.append("Attributes: ").append(getAttributes());
+            sb.append("Attributes: ").append(getAttributes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1617,6 +1994,10 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAttributes() != null && other.getAttributes().equals(this.getAttributes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1627,6 +2008,7 @@ public class CreateQueueRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getQueueName() == null) ? 0 : getQueueName().hashCode());
         hashCode = prime * hashCode + ((getAttributes() == null) ? 0 : getAttributes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

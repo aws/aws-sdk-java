@@ -52,6 +52,10 @@ public class DataSourceJsonUnmarshaller implements Unmarshaller<DataSource, Json
                     context.nextToken();
                     dataSource.setS3DataSource(S3DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("FileSystemDataSource", targetDepth)) {
+                    context.nextToken();
+                    dataSource.setFileSystemDataSource(FileSystemDataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

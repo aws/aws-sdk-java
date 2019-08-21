@@ -80,8 +80,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      */
     private String kmsKeyId;
@@ -145,8 +146,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -202,8 +204,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        The KMS key policy must grant permission to the IAM role that you specify in your
      *        <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *        <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"
+     *        >Using Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -262,8 +264,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) key that Amazon SageMaker uses to encrypt the model artifacts at
@@ -318,8 +321,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *         The KMS key policy must grant permission to the IAM role that you specify in your
      *         <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *         <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *         href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *         KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *         href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"
+     *         >Using Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
 
     public String getKmsKeyId() {
@@ -378,8 +381,9 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      * <p>
      * The KMS key policy must grant permission to the IAM role that you specify in your <code>CreateTrainingJob</code>,
      * <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code> requests. For more information,
-     * see <a href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     * KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * see <a
+     * href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+     * Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * </p>
      * 
      * @param kmsKeyId
@@ -435,8 +439,8 @@ public class OutputDataConfig implements Serializable, Cloneable, StructuredPojo
      *        The KMS key policy must grant permission to the IAM role that you specify in your
      *        <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or
      *        <code>CreateHyperParameterTuningJob</code> requests. For more information, see <a
-     *        href="http://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using Key Policies in AWS
-     *        KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/http:/docs.aws.amazon.com/kms/latest/developerguide/key-policies.html"
+     *        >Using Key Policies in AWS KMS</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

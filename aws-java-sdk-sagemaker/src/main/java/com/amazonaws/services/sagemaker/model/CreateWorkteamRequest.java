@@ -35,7 +35,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
      * User Pools</a>.
      * </p>
      * <p>
@@ -56,7 +56,18 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private NotificationConfiguration notificationConfiguration;
-    /** <p/> */
+    /**
+     * <p>
+     * An array of key-value pairs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+     * </p>
+     */
     private java.util.List<Tag> tags;
 
     /**
@@ -103,7 +114,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
      * User Pools</a>.
      * </p>
      * <p>
@@ -113,7 +124,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @return A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito
      *         user pool that makes up the work team. For more information, see <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      *         Cognito User Pools</a>.</p>
      *         <p>
      *         All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the
@@ -128,7 +139,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
      * User Pools</a>.
      * </p>
      * <p>
@@ -139,7 +150,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param memberDefinitions
      *        A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito
      *        user pool that makes up the work team. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      *        Cognito User Pools</a>.</p>
      *        <p>
      *        All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the
@@ -159,7 +170,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
      * User Pools</a>.
      * </p>
      * <p>
@@ -175,7 +186,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param memberDefinitions
      *        A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito
      *        user pool that makes up the work team. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      *        Cognito User Pools</a>.</p>
      *        <p>
      *        All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the
@@ -197,7 +208,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito user pool
      * that makes up the work team. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon Cognito
      * User Pools</a>.
      * </p>
      * <p>
@@ -208,7 +219,7 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * @param memberDefinitions
      *        A list of <code>MemberDefinition</code> objects that contains objects that identify the Amazon Cognito
      *        user pool that makes up the work team. For more information, see <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">Amazon
      *        Cognito User Pools</a>.</p>
      *        <p>
      *        All of the <code>CognitoMemberDefinition</code> objects that make up the member definition must have the
@@ -302,9 +313,24 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of key-value pairs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+     * </p>
      * 
-     * @return
+     * @return An array of key-value pairs.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html"
+     *         >Resource Tag</a> and <a href=
+     *         "https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     *         Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -312,9 +338,25 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of key-value pairs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+     * </p>
      * 
      * @param tags
+     *        An array of key-value pairs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html"
+     *        >Resource Tag</a> and <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -327,7 +369,16 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of key-value pairs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+     * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
@@ -335,6 +386,13 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tags
+     *        An array of key-value pairs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html"
+     *        >Resource Tag</a> and <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,9 +407,25 @@ public class CreateWorkteamRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
-     * <p/>
+     * <p>
+     * An array of key-value pairs.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html">Resource
+     * Tag</a> and <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
+     * </p>
      * 
      * @param tags
+     *        An array of key-value pairs.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resource-tags.html"
+     *        >Resource Tag</a> and <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
+     *        >Using Cost Allocation Tags</a> in the <i> AWS Billing and Cost Management User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

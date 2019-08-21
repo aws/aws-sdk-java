@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a single type of moderated content found in an image or video. Each type of moderated
- * content has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon
+ * Provides information about a single type of unsafe content found in an image or video. Each type of moderated content
+ * has a label within a hierarchical taxonomy. For more information, see Detecting Unsafe Content in the Amazon
  * Rekognition Developer Guide.
  * </p>
  */
@@ -39,7 +39,7 @@ public class ModerationLabel implements Serializable, Cloneable, StructuredPojo 
     private Float confidence;
     /**
      * <p>
-     * The label name for the type of content detected in the image.
+     * The label name for the type of unsafe content detected in the image.
      * </p>
      */
     private String name;
@@ -116,11 +116,11 @@ public class ModerationLabel implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The label name for the type of content detected in the image.
+     * The label name for the type of unsafe content detected in the image.
      * </p>
      * 
      * @param name
-     *        The label name for the type of content detected in the image.
+     *        The label name for the type of unsafe content detected in the image.
      */
 
     public void setName(String name) {
@@ -129,10 +129,10 @@ public class ModerationLabel implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The label name for the type of content detected in the image.
+     * The label name for the type of unsafe content detected in the image.
      * </p>
      * 
-     * @return The label name for the type of content detected in the image.
+     * @return The label name for the type of unsafe content detected in the image.
      */
 
     public String getName() {
@@ -141,11 +141,11 @@ public class ModerationLabel implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The label name for the type of content detected in the image.
+     * The label name for the type of unsafe content detected in the image.
      * </p>
      * 
      * @param name
-     *        The label name for the type of content detected in the image.
+     *        The label name for the type of unsafe content detected in the image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

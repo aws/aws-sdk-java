@@ -85,9 +85,9 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * The Git repository associated with the notebook instance as its default code repository. This can be either the
      * name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
-     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
      * Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
      */
@@ -96,10 +96,11 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * An array of up to three Git repositories associated with the notebook instance. These can be either the names of
      * Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      */
     private java.util.List<String> additionalCodeRepositories;
@@ -493,19 +494,19 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * The Git repository associated with the notebook instance as its default code repository. This can be either the
      * name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
-     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
      * Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param defaultCodeRepository
      *        The Git repository associated with the notebook instance as its default code repository. This can be
      *        either the name of a Git repository stored as a resource in your account, or the URL of a Git repository
-     *        in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
+     *        in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
      *        any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      *        repository. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
      */
 
@@ -517,19 +518,19 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * The Git repository associated with the notebook instance as its default code repository. This can be either the
      * name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
-     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
      * Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @return The Git repository associated with the notebook instance as its default code repository. This can be
      *         either the name of a Git repository stored as a resource in your account, or the URL of a Git repository
-     *         in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
-     *         any other Git repository. When you open a notebook instance, it opens in the directory that contains this
-     *         repository. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *         Amazon SageMaker Notebook Instances</a>.
+     *         in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or
+     *         in any other Git repository. When you open a notebook instance, it opens in the directory that contains
+     *         this repository. For more information, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
+     *         with Amazon SageMaker Notebook Instances</a>.
      */
 
     public String getDefaultCodeRepository() {
@@ -540,19 +541,19 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * The Git repository associated with the notebook instance as its default code repository. This can be either the
      * name of a Git repository stored as a resource in your account, or the URL of a Git repository in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. When you open a notebook instance, it opens in the directory that contains this repository. For more
-     * information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. When you open a notebook instance, it opens in the directory that contains this repository. For
+     * more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git
      * Repositories with Amazon SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param defaultCodeRepository
      *        The Git repository associated with the notebook instance as its default code repository. This can be
      *        either the name of a Git repository stored as a resource in your account, or the URL of a Git repository
-     *        in <a href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
+     *        in <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in
      *        any other Git repository. When you open a notebook instance, it opens in the directory that contains this
      *        repository. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -566,19 +567,20 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * An array of up to three Git repositories associated with the notebook instance. These can be either the names of
      * Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @return An array of up to three Git repositories associated with the notebook instance. These can be either the
      *         names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *         href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *         href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
      *         other Git repository. These repositories are cloned at the same level as the default repository of your
      *         notebook instance. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
-     *         Amazon SageMaker Notebook Instances</a>.
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories
+     *         with Amazon SageMaker Notebook Instances</a>.
      */
 
     public java.util.List<String> getAdditionalCodeRepositories() {
@@ -589,19 +591,20 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * An array of up to three Git repositories associated with the notebook instance. These can be either the names of
      * Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories associated with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
      *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
      */
 
@@ -618,10 +621,11 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * An array of up to three Git repositories associated with the notebook instance. These can be either the names of
      * Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -632,10 +636,10 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories associated with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
      *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -654,19 +658,20 @@ public class NotebookInstanceSummary implements Serializable, Cloneable, Structu
      * <p>
      * An array of up to three Git repositories associated with the notebook instance. These can be either the names of
      * Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     * href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other Git
-     * repository. These repositories are cloned at the same level as the default repository of your notebook instance.
-     * For more information, see <a href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating
-     * Git Repositories with Amazon SageMaker Notebook Instances</a>.
+     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any other
+     * Git repository. These repositories are cloned at the same level as the default repository of your notebook
+     * instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with Amazon
+     * SageMaker Notebook Instances</a>.
      * </p>
      * 
      * @param additionalCodeRepositories
      *        An array of up to three Git repositories associated with the notebook instance. These can be either the
      *        names of Git repositories stored as resources in your account, or the URL of Git repositories in <a
-     *        href="http://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
+     *        href="https://docs.aws.amazon.com/codecommit/latest/userguide/welcome.html">AWS CodeCommit</a> or in any
      *        other Git repository. These repositories are cloned at the same level as the default repository of your
      *        notebook instance. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/nbi-git-repo.html">Associating Git Repositories with
      *        Amazon SageMaker Notebook Instances</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

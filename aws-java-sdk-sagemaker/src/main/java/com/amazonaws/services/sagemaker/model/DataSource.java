@@ -34,6 +34,12 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private S3DataSource s3DataSource;
+    /**
+     * <p>
+     * The file system that is associated with a channel.
+     * </p>
+     */
+    private FileSystemDataSource fileSystemDataSource;
 
     /**
      * <p>
@@ -76,6 +82,46 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The file system that is associated with a channel.
+     * </p>
+     * 
+     * @param fileSystemDataSource
+     *        The file system that is associated with a channel.
+     */
+
+    public void setFileSystemDataSource(FileSystemDataSource fileSystemDataSource) {
+        this.fileSystemDataSource = fileSystemDataSource;
+    }
+
+    /**
+     * <p>
+     * The file system that is associated with a channel.
+     * </p>
+     * 
+     * @return The file system that is associated with a channel.
+     */
+
+    public FileSystemDataSource getFileSystemDataSource() {
+        return this.fileSystemDataSource;
+    }
+
+    /**
+     * <p>
+     * The file system that is associated with a channel.
+     * </p>
+     * 
+     * @param fileSystemDataSource
+     *        The file system that is associated with a channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSource withFileSystemDataSource(FileSystemDataSource fileSystemDataSource) {
+        setFileSystemDataSource(fileSystemDataSource);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +134,9 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getS3DataSource() != null)
-            sb.append("S3DataSource: ").append(getS3DataSource());
+            sb.append("S3DataSource: ").append(getS3DataSource()).append(",");
+        if (getFileSystemDataSource() != null)
+            sb.append("FileSystemDataSource: ").append(getFileSystemDataSource());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getS3DataSource() != null && other.getS3DataSource().equals(this.getS3DataSource()) == false)
             return false;
+        if (other.getFileSystemDataSource() == null ^ this.getFileSystemDataSource() == null)
+            return false;
+        if (other.getFileSystemDataSource() != null && other.getFileSystemDataSource().equals(this.getFileSystemDataSource()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getS3DataSource() == null) ? 0 : getS3DataSource().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemDataSource() == null) ? 0 : getFileSystemDataSource().hashCode());
         return hashCode;
     }
 

@@ -52,7 +52,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <p>
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
@@ -226,7 +226,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <p>
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
@@ -265,7 +265,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * @param scalingType
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>
@@ -310,7 +310,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <p>
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
@@ -348,7 +348,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * 
      * @return The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *         choosing a hyperparameter scale, see <a href=
-     *         "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      *         >Hyperparameter Scaling</a>. One of the following values:</p>
      *         <dl>
      *         <dt>Auto</dt>
@@ -393,7 +393,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <p>
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
@@ -432,7 +432,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * @param scalingType
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>
@@ -479,7 +479,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * <p>
      * The scale that hyperparameter tuning uses to search the hyperparameter range. For information about choosing a
      * hyperparameter scale, see <a
-     * href="http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      * >Hyperparameter Scaling</a>. One of the following values:
      * </p>
      * <dl>
@@ -518,7 +518,7 @@ public class ContinuousParameterRange implements Serializable, Cloneable, Struct
      * @param scalingType
      *        The scale that hyperparameter tuning uses to search the hyperparameter range. For information about
      *        choosing a hyperparameter scale, see <a href=
-     *        "http://docs.aws.amazon.com//sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-define-ranges.html#scaling-type"
      *        >Hyperparameter Scaling</a>. One of the following values:</p>
      *        <dl>
      *        <dt>Auto</dt>

@@ -20,20 +20,20 @@ public class StartContentModerationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
-     * subsequent call to <code>GetContentModeration</code>.
+     * The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a subsequent
+     * call to <code>GetContentModeration</code>.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
-     * subsequent call to <code>GetContentModeration</code>.
+     * The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a subsequent
+     * call to <code>GetContentModeration</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
+     *        The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a
      *        subsequent call to <code>GetContentModeration</code>.
      */
 
@@ -43,11 +43,11 @@ public class StartContentModerationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
-     * subsequent call to <code>GetContentModeration</code>.
+     * The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a subsequent
+     * call to <code>GetContentModeration</code>.
      * </p>
      * 
-     * @return The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
+     * @return The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a
      *         subsequent call to <code>GetContentModeration</code>.
      */
 
@@ -57,12 +57,12 @@ public class StartContentModerationResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
-     * subsequent call to <code>GetContentModeration</code>.
+     * The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a subsequent
+     * call to <code>GetContentModeration</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the content moderation analysis job. Use <code>JobId</code> to identify the job in a
+     *        The identifier for the unsafe content analysis job. Use <code>JobId</code> to identify the job in a
      *        subsequent call to <code>GetContentModeration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

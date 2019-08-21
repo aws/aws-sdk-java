@@ -60,6 +60,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -83,6 +101,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -108,6 +144,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -131,6 +185,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
      * <li>
@@ -160,7 +274,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      */
@@ -198,6 +312,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -221,6 +353,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -246,6 +396,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -269,6 +437,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
      * <li>
@@ -298,7 +526,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
@@ -332,6 +560,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -355,6 +601,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
      *        <li>
@@ -380,6 +644,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -403,6 +685,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        to most-assigned label.
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        <li>
@@ -432,7 +774,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *        Consolidation</a>.
      */
 
@@ -472,6 +814,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -495,6 +855,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -520,6 +898,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -543,6 +939,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
      * <li>
@@ -572,7 +1028,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
@@ -606,6 +1062,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <p>
      *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -629,6 +1103,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </p>
      *         <p>
      *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *         </p>
      *         </li>
      *         <li>
@@ -654,6 +1146,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         <p>
      *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -677,6 +1187,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </p>
      *         <p>
      *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries,
+     *         resolving to most-assigned label.
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *         </p>
      *         </li>
      *         <li>
@@ -706,7 +1276,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *         Consolidation</a>.
      */
 
@@ -746,6 +1316,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -769,6 +1357,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      * </p>
      * </li>
      * <li>
@@ -794,6 +1400,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -817,6 +1441,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </p>
      * <p>
      * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving to
+     * most-assigned label.
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     * </p>
+     * <p>
+     * <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      * </p>
      * </li>
      * <li>
@@ -846,7 +1530,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      * </ul>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
@@ -880,6 +1564,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-BoundingBox</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-BoundingBox</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-BoundingBox</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -903,6 +1605,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-ImageMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-ImageMultiClass</code>
      *        </p>
      *        </li>
      *        <li>
@@ -928,6 +1648,24 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-SemanticSegmentation</code>
      *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-SemanticSegmentation</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-SemanticSegmentation</code>
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -951,6 +1689,66 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </p>
      *        <p>
      *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-TextMultiClass</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <i>Named entity eecognition</i> - Groups similar selections and calculates aggregate boundaries, resolving
+     *        to most-assigned label.
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-1:432418664414:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-east-2:266458841044:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:us-west-2:081040173940:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-1:568282634449:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-1:477331159723:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-2:454466003867:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-south-1:565803892007:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-central-1:203001061592:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-northeast-2:845288260483:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:eu-west-2:487402164563:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ap-southeast-1:377565633583:function:ACS-NamedEntityRecognition</code>
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:lambda:ca-central-1:918755190332:function:ACS-NamedEntityRecognition</code>
      *        </p>
      *        </li>
      *        <li>
@@ -980,7 +1778,7 @@ public class AnnotationConsolidationConfig implements Serializable, Cloneable, S
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *        Consolidation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

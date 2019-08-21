@@ -42,7 +42,7 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Optional value specifying the minimum confidence in the face match to return. For example, don't return any
-     * matches where confidence in matches is less than 70%.
+     * matches where confidence in matches is less than 70%. The default value is 80%.
      * </p>
      */
     private Float faceMatchThreshold;
@@ -176,12 +176,12 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Optional value specifying the minimum confidence in the face match to return. For example, don't return any
-     * matches where confidence in matches is less than 70%.
+     * matches where confidence in matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @param faceMatchThreshold
      *        Optional value specifying the minimum confidence in the face match to return. For example, don't return
-     *        any matches where confidence in matches is less than 70%.
+     *        any matches where confidence in matches is less than 70%. The default value is 80%.
      */
 
     public void setFaceMatchThreshold(Float faceMatchThreshold) {
@@ -191,11 +191,11 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Optional value specifying the minimum confidence in the face match to return. For example, don't return any
-     * matches where confidence in matches is less than 70%.
+     * matches where confidence in matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @return Optional value specifying the minimum confidence in the face match to return. For example, don't return
-     *         any matches where confidence in matches is less than 70%.
+     *         any matches where confidence in matches is less than 70%. The default value is 80%.
      */
 
     public Float getFaceMatchThreshold() {
@@ -205,12 +205,12 @@ public class SearchFacesRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Optional value specifying the minimum confidence in the face match to return. For example, don't return any
-     * matches where confidence in matches is less than 70%.
+     * matches where confidence in matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @param faceMatchThreshold
      *        Optional value specifying the minimum confidence in the face match to return. For example, don't return
-     *        any matches where confidence in matches is less than 70%.
+     *        any matches where confidence in matches is less than 70%. The default value is 80%.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

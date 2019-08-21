@@ -81,7 +81,7 @@ public class LabelingJobSummary implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers
      * into a label for a data object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      */
@@ -455,14 +455,14 @@ public class LabelingJobSummary implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers
      * into a label for a data object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
      * @param annotationConsolidationLambdaArn
      *        The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual
      *        workers into a label for a data object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *        Consolidation</a>.
      */
 
@@ -474,13 +474,13 @@ public class LabelingJobSummary implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers
      * into a label for a data object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual
      *         workers into a label for a data object. For more information, see <a
-     *         href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *         Consolidation</a>.
      */
 
@@ -492,14 +492,14 @@ public class LabelingJobSummary implements Serializable, Cloneable, StructuredPo
      * <p>
      * The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual workers
      * into a label for a data object. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      * Consolidation</a>.
      * </p>
      * 
      * @param annotationConsolidationLambdaArn
      *        The Amazon Resource Name (ARN) of the Lambda function used to consolidate the annotations from individual
      *        workers into a label for a data object. For more information, see <a
-     *        href="http://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-annotation-consolidation.html">Annotation
      *        Consolidation</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

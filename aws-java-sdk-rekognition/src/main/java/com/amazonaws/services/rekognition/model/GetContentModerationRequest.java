@@ -22,7 +22,7 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to
+     * The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call to
      * <code>GetContentModeration</code>.
      * </p>
      */
@@ -37,8 +37,8 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of content
-     * moderation labels.
+     * pagination token in the response. You can use this pagination token to retrieve the next set of unsafe content
+     * labels.
      * </p>
      */
     private String nextToken;
@@ -54,13 +54,13 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to
+     * The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call to
      * <code>GetContentModeration</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent
-     *        call to <code>GetContentModeration</code>.
+     *        The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call
+     *        to <code>GetContentModeration</code>.
      */
 
     public void setJobId(String jobId) {
@@ -69,11 +69,11 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to
+     * The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call to
      * <code>GetContentModeration</code>.
      * </p>
      * 
-     * @return The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent
+     * @return The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent
      *         call to <code>GetContentModeration</code>.
      */
 
@@ -83,13 +83,13 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent call to
+     * The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call to
      * <code>GetContentModeration</code>.
      * </p>
      * 
      * @param jobId
-     *        The identifier for the content moderation job. Use <code>JobId</code> to identify the job in a subsequent
-     *        call to <code>GetContentModeration</code>.
+     *        The identifier for the unsafe content job. Use <code>JobId</code> to identify the job in a subsequent call
+     *        to <code>GetContentModeration</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,14 +147,14 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of content
-     * moderation labels.
+     * pagination token in the response. You can use this pagination token to retrieve the next set of unsafe content
+     * labels.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
      *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *        content moderation labels.
+     *        unsafe content labels.
      */
 
     public void setNextToken(String nextToken) {
@@ -164,13 +164,13 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of content
-     * moderation labels.
+     * pagination token in the response. You can use this pagination token to retrieve the next set of unsafe content
+     * labels.
      * </p>
      * 
      * @return If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
      *         returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *         content moderation labels.
+     *         unsafe content labels.
      */
 
     public String getNextToken() {
@@ -180,14 +180,14 @@ public class GetContentModerationRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition returns a
-     * pagination token in the response. You can use this pagination token to retrieve the next set of content
-     * moderation labels.
+     * pagination token in the response. You can use this pagination token to retrieve the next set of unsafe content
+     * labels.
      * </p>
      * 
      * @param nextToken
      *        If the previous response was incomplete (because there is more data to retrieve), Amazon Rekognition
      *        returns a pagination token in the response. You can use this pagination token to retrieve the next set of
-     *        content moderation labels.
+     *        unsafe content labels.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

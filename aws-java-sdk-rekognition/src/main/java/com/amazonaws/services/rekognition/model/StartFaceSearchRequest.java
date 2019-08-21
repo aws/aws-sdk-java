@@ -37,7 +37,7 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The minimum confidence in the person match to return. For example, don't return any matches where confidence in
-     * matches is less than 70%.
+     * matches is less than 70%. The default value is 80%.
      * </p>
      */
     private Float faceMatchThreshold;
@@ -56,8 +56,9 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     private NotificationChannel notificationChannel;
     /**
      * <p>
-     * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     * Notification Service topic.
+     * An identifier you specify that's returned in the completion notification that's published to your Amazon Simple
+     * Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them
+     * in the completion notification.
      * </p>
      */
     private String jobTag;
@@ -157,12 +158,12 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The minimum confidence in the person match to return. For example, don't return any matches where confidence in
-     * matches is less than 70%.
+     * matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @param faceMatchThreshold
      *        The minimum confidence in the person match to return. For example, don't return any matches where
-     *        confidence in matches is less than 70%.
+     *        confidence in matches is less than 70%. The default value is 80%.
      */
 
     public void setFaceMatchThreshold(Float faceMatchThreshold) {
@@ -172,11 +173,11 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The minimum confidence in the person match to return. For example, don't return any matches where confidence in
-     * matches is less than 70%.
+     * matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @return The minimum confidence in the person match to return. For example, don't return any matches where
-     *         confidence in matches is less than 70%.
+     *         confidence in matches is less than 70%. The default value is 80%.
      */
 
     public Float getFaceMatchThreshold() {
@@ -186,12 +187,12 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The minimum confidence in the person match to return. For example, don't return any matches where confidence in
-     * matches is less than 70%.
+     * matches is less than 70%. The default value is 80%.
      * </p>
      * 
      * @param faceMatchThreshold
      *        The minimum confidence in the person match to return. For example, don't return any matches where
-     *        confidence in matches is less than 70%.
+     *        confidence in matches is less than 70%. The default value is 80%.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -288,13 +289,15 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     * Notification Service topic.
+     * An identifier you specify that's returned in the completion notification that's published to your Amazon Simple
+     * Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them
+     * in the completion notification.
      * </p>
      * 
      * @param jobTag
-     *        Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     *        Notification Service topic.
+     *        An identifier you specify that's returned in the completion notification that's published to your Amazon
+     *        Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and
+     *        identify them in the completion notification.
      */
 
     public void setJobTag(String jobTag) {
@@ -303,12 +306,14 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     * Notification Service topic.
+     * An identifier you specify that's returned in the completion notification that's published to your Amazon Simple
+     * Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them
+     * in the completion notification.
      * </p>
      * 
-     * @return Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     *         Notification Service topic.
+     * @return An identifier you specify that's returned in the completion notification that's published to your Amazon
+     *         Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and
+     *         identify them in the completion notification.
      */
 
     public String getJobTag() {
@@ -317,13 +322,15 @@ public class StartFaceSearchRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     * Notification Service topic.
+     * An identifier you specify that's returned in the completion notification that's published to your Amazon Simple
+     * Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and identify them
+     * in the completion notification.
      * </p>
      * 
      * @param jobTag
-     *        Unique identifier you specify to identify the job in the completion status published to the Amazon Simple
-     *        Notification Service topic.
+     *        An identifier you specify that's returned in the completion notification that's published to your Amazon
+     *        Simple Notification Service topic. For example, you can use <code>JobTag</code> to group related jobs and
+     *        identify them in the completion notification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

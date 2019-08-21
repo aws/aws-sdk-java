@@ -76,7 +76,11 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date lastUpdatedDate;
-
+    /**
+     * <p>
+     * Configures SNS notifications of available or expiring work items for work teams.
+     * </p>
+     */
     private NotificationConfiguration notificationConfiguration;
 
     /**
@@ -460,7 +464,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Configures SNS notifications of available or expiring work items for work teams.
+     * </p>
+     * 
      * @param notificationConfiguration
+     *        Configures SNS notifications of available or expiring work items for work teams.
      */
 
     public void setNotificationConfiguration(NotificationConfiguration notificationConfiguration) {
@@ -468,7 +477,11 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * <p>
+     * Configures SNS notifications of available or expiring work items for work teams.
+     * </p>
+     * 
+     * @return Configures SNS notifications of available or expiring work items for work teams.
      */
 
     public NotificationConfiguration getNotificationConfiguration() {
@@ -476,7 +489,12 @@ public class Workteam implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Configures SNS notifications of available or expiring work items for work teams.
+     * </p>
+     * 
      * @param notificationConfiguration
+     *        Configures SNS notifications of available or expiring work items for work teams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
