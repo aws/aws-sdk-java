@@ -675,33 +675,14 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <code>ModifyDBCluster</code>.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
@@ -5020,61 +5001,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <code>ModifyDBCluster</code>.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *        <a>CreateDBInstance</a>.</p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines
-     *        </p>
-     *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     *        information, see <code>ModifyDBCluster</code>.
-     *        </p>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
+     *        For more information about IAM database authentication, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -5084,60 +5027,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <code>ModifyDBCluster</code>.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *         <a>CreateDBInstance</a>.</p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines
-     *         </p>
-     *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     *         information, see <code>ModifyDBCluster</code>.
-     *         </p>
-     *         <p>
-     *         <b>MySQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
+     *         For more information about IAM database authentication, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -5147,61 +5052,23 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <code>ModifyDBCluster</code>.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.</p>
+     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *        <a>CreateDBInstance</a>.</p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines
-     *        </p>
-     *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     *        information, see <code>ModifyDBCluster</code>.
-     *        </p>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
+     *        For more information about IAM database authentication, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -5213,60 +5080,22 @@ public class ModifyDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more information,
-     * see <code>ModifyDBCluster</code>.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.</p>
+     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *         <a>CreateDBInstance</a>.</p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines
-     *         </p>
-     *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster. For more
-     *         information, see <code>ModifyDBCluster</code>.
-     *         </p>
-     *         <p>
-     *         <b>MySQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
+     *         For more information about IAM database authentication, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

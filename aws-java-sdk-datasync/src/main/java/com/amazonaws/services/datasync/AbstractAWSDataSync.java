@@ -53,6 +53,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
     }
 
     @Override
+    public CreateLocationSmbResult createLocationSmb(CreateLocationSmbRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTaskResult createTask(CreateTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +94,11 @@ public class AbstractAWSDataSync implements AWSDataSync {
 
     @Override
     public DescribeLocationS3Result describeLocationS3(DescribeLocationS3Request request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeLocationSmbResult describeLocationSmb(DescribeLocationSmbRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

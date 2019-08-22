@@ -968,7 +968,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance. For information about valid Iops values, see see <a
+     * instance. For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -1230,7 +1230,37 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For MySQL 8.0, minor version 8.0.16 or higher
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.5, minor version 9.5.15 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.6, minor version 9.6.11 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PostgreSQL 10.6, 10.7, and 10.9
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
@@ -7561,7 +7591,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance. For information about valid Iops values, see see <a
+     * instance. For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -7571,7 +7601,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *        instance. For information about valid Iops values, see see <a
+     *        instance. For information about valid Iops values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
@@ -7585,7 +7615,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance. For information about valid Iops values, see see <a
+     * instance. For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -7594,7 +7624,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *         instance. For information about valid Iops values, see see <a
+     *         instance. For information about valid Iops values, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *         Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
@@ -7608,7 +7638,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     * instance. For information about valid Iops values, see see <a
+     * instance. For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
@@ -7618,7 +7648,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to be initially allocated for the DB
-     *        instance. For information about valid Iops values, see see <a
+     *        instance. For information about valid Iops values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
@@ -9229,7 +9259,37 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For MySQL 8.0, minor version 8.0.16 or higher
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.5, minor version 9.5.15 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.6, minor version 9.6.11 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PostgreSQL 10.6, 10.7, and 10.9
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
@@ -9257,6 +9317,36 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        For MySQL 5.7, minor version 5.7.16 or higher
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 8.0, minor version 8.0.16 or higher
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For PostgreSQL 9.5, minor version 9.5.15 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For PostgreSQL 9.6, minor version 9.6.11 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PostgreSQL 10.6, 10.7, and 10.9
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -9291,7 +9381,37 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For MySQL 8.0, minor version 8.0.16 or higher
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.5, minor version 9.5.15 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.6, minor version 9.6.11 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PostgreSQL 10.6, 10.7, and 10.9
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *         database accounts. By default, mapping is disabled.</p>
@@ -9318,6 +9438,36 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         For MySQL 5.7, minor version 5.7.16 or higher
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 8.0, minor version 8.0.16 or higher
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PostgreSQL 9.5, minor version 9.5.15 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PostgreSQL 9.6, minor version 9.6.11 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PostgreSQL 10.6, 10.7, and 10.9
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -9352,7 +9502,37 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For MySQL 8.0, minor version 8.0.16 or higher
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.5, minor version 9.5.15 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.6, minor version 9.6.11 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PostgreSQL 10.6, 10.7, and 10.9
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
@@ -9380,6 +9560,36 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        For MySQL 5.7, minor version 5.7.16 or higher
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        For MySQL 8.0, minor version 8.0.16 or higher
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For PostgreSQL 9.5, minor version 9.5.15 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For PostgreSQL 9.6, minor version 9.6.11 or higher
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PostgreSQL 10.6, 10.7, and 10.9
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9416,7 +9626,37 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * For MySQL 5.7, minor version 5.7.16 or higher
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * For MySQL 8.0, minor version 8.0.16 or higher
+     * </p>
+     * </li>
      * </ul>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.5, minor version 9.5.15 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For PostgreSQL 9.6, minor version 9.6.11 or higher
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PostgreSQL 10.6, 10.7, and 10.9
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *         database accounts. By default, mapping is disabled.</p>
@@ -9443,6 +9683,36 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         For MySQL 5.7, minor version 5.7.16 or higher
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         For MySQL 8.0, minor version 8.0.16 or higher
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PostgreSQL 9.5, minor version 9.5.15 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PostgreSQL 9.6, minor version 9.6.11 or higher
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PostgreSQL 10.6, 10.7, and 10.9
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

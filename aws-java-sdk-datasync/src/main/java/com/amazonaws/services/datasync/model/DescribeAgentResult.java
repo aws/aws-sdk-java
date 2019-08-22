@@ -66,11 +66,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      */
     private String endpointType;
-    /**
-     * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
-     * </p>
-     */
+
     private PrivateLinkConfig privateLinkConfig;
 
     /**
@@ -384,12 +380,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
-     * </p>
-     * 
      * @param privateLinkConfig
-     *        The subnet and the security group that DataSync used to access a VPC endpoint.
      */
 
     public void setPrivateLinkConfig(PrivateLinkConfig privateLinkConfig) {
@@ -397,11 +388,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
-     * </p>
-     * 
-     * @return The subnet and the security group that DataSync used to access a VPC endpoint.
+     * @return
      */
 
     public PrivateLinkConfig getPrivateLinkConfig() {
@@ -409,12 +396,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     }
 
     /**
-     * <p>
-     * The subnet and the security group that DataSync used to access a VPC endpoint.
-     * </p>
-     * 
      * @param privateLinkConfig
-     *        The subnet and the security group that DataSync used to access a VPC endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

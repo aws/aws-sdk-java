@@ -93,6 +93,19 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest request) {
+
+        return createLocationSmbAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateLocationSmbRequest, CreateLocationSmbResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTaskResult> createTaskAsync(CreateTaskRequest request) {
 
         return createTaskAsync(request, null);
@@ -192,6 +205,19 @@ public class AbstractAWSDataSyncAsync extends AbstractAWSDataSync implements AWS
     @Override
     public java.util.concurrent.Future<DescribeLocationS3Result> describeLocationS3Async(DescribeLocationS3Request request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationS3Request, DescribeLocationS3Result> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest request) {
+
+        return describeLocationSmbAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeLocationSmbRequest, DescribeLocationSmbResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

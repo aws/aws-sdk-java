@@ -121,8 +121,38 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
     private String snapshotType;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -744,10 +774,70 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter is not currently supported.
+     * @return A filter that specifies one or more DB snapshots to describe.</p>
+     *         <p>
+     *         Supported filters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *         (ARNs).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>snapshot-type</code> - Accepts types of DB snapshots.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine</code> - Accepts names of database engines.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -759,11 +849,71 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -777,8 +927,38 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -786,7 +966,37 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -802,11 +1012,71 @@ public class DescribeDBSnapshotsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon Resource Names
+     *        (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dbi-resource-id</code> - Accepts identifiers of source DB instances.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

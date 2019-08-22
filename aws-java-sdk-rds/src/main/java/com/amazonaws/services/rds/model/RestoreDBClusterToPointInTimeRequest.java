@@ -220,6 +220,11 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
@@ -1548,10 +1553,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -1563,9 +1577,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -1577,10 +1600,19 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1594,9 +1626,18 @@ public class RestoreDBClusterToPointInTimeRequest extends com.amazonaws.AmazonWe
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

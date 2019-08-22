@@ -98,6 +98,39 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The version of the database engine to use for the new DB cluster.
      * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
+     * </p>
      */
     private String engineVersion;
     /**
@@ -181,6 +214,11 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -724,9 +762,75 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The version of the database engine to use for the new DB cluster.
      * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
+     * </p>
      * 
      * @param engineVersion
-     *        The version of the database engine to use for the new DB cluster.
+     *        The version of the database engine to use for the new DB cluster.</p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *        <code>5.7.mysql_aurora.2.04.5</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>, <code>10.7</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -737,8 +841,74 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The version of the database engine to use for the new DB cluster.
      * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
+     * </p>
      * 
-     * @return The version of the database engine to use for the new DB cluster.
+     * @return The version of the database engine to use for the new DB cluster.</p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *         use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *         Aurora), use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *         command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora MySQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *         <code>5.7.mysql_aurora.2.04.5</code>
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Example: <code>9.6.3</code>, <code>10.7</code>
      */
 
     public String getEngineVersion() {
@@ -749,9 +919,75 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * <p>
      * The version of the database engine to use for the new DB cluster.
      * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
+     * </p>
      * 
      * @param engineVersion
-     *        The version of the database engine to use for the new DB cluster.
+     *        The version of the database engine to use for the new DB cluster.</p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *        <code>5.7.mysql_aurora.2.04.5</code>
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Example: <code>9.6.3</code>, <code>10.7</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1315,10 +1551,19 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -1330,9 +1575,18 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -1344,10 +1598,19 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1361,9 +1624,18 @@ public class RestoreDBClusterFromSnapshotRequest extends com.amazonaws.AmazonWeb
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

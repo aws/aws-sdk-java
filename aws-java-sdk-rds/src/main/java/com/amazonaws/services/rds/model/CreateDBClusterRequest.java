@@ -146,16 +146,37 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>9.6.3</code>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
      * </p>
      */
     private String engineVersion;
@@ -379,6 +400,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
     /**
@@ -435,6 +461,22 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String globalClusterIdentifier;
+    /**
+     * <p>
+     * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
+     * HTTP endpoint is disabled.
+     * </p>
+     * <p>
+     * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
+     * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     */
+    private Boolean enableHttpEndpoint;
     /**
      * <p>
      * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
@@ -1233,31 +1275,74 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>9.6.3</code>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *        <code>5.7.mysql_aurora.2.04.5</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>9.6.3</code>
+     *        Example: <code>9.6.3</code>, <code>10.7</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1269,30 +1354,73 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>9.6.3</code>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
      *         <p>
+     *         To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *         use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *         Aurora), use the following command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
+     *         To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *         command:
+     *         </p>
+     *         <p>
+     *         <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *         </p>
+     *         <p>
      *         <b>Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *         Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *         <code>5.7.mysql_aurora.2.04.5</code>
      *         </p>
      *         <p>
      *         <b>Aurora PostgreSQL</b>
      *         </p>
      *         <p>
-     *         Example: <code>9.6.3</code>
+     *         Example: <code>9.6.3</code>, <code>10.7</code>
      */
 
     public String getEngineVersion() {
@@ -1304,31 +1432,74 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The version number of the database engine to use.
      * </p>
      * <p>
+     * To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora), use the
+     * following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible Aurora), use
+     * the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
+     * To list all of the available engine versions for <code>aurora-postgresql</code>, use the following command:
+     * </p>
+     * <p>
+     * <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     * </p>
+     * <p>
      * <b>Aurora MySQL</b>
      * </p>
      * <p>
-     * Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     * Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     * <code>5.7.mysql_aurora.2.04.5</code>
      * </p>
      * <p>
      * <b>Aurora PostgreSQL</b>
      * </p>
      * <p>
-     * Example: <code>9.6.3</code>
+     * Example: <code>9.6.3</code>, <code>10.7</code>
      * </p>
      * 
      * @param engineVersion
      *        The version number of the database engine to use.</p>
      *        <p>
+     *        To list all of the available engine versions for <code>aurora</code> (for MySQL 5.6-compatible Aurora),
+     *        use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL 5.7-compatible
+     *        Aurora), use the following command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
+     *        To list all of the available engine versions for <code>aurora-postgresql</code>, use the following
+     *        command:
+     *        </p>
+     *        <p>
+     *        <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+     *        </p>
+     *        <p>
      *        <b>Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>5.6.10a</code>, <code>5.7.12</code>
+     *        Example: <code>5.6.10a</code>, <code>5.6.mysql_aurora.1.19.2</code>, <code>5.7.12</code>,
+     *        <code>5.7.mysql_aurora.2.04.5</code>
      *        </p>
      *        <p>
      *        <b>Aurora PostgreSQL</b>
      *        </p>
      *        <p>
-     *        Example: <code>9.6.3</code>
+     *        Example: <code>9.6.3</code>, <code>10.7</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2703,10 +2874,19 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2718,9 +2898,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2732,10 +2921,19 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *        Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2749,9 +2947,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
      * accounts. By default, mapping is disabled.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/UsingWithRDS.IAMDBAuth.html"> IAM
+     *         Database Authentication</a> in the <i>Amazon Aurora User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -3161,6 +3368,138 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
+     * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
+     * HTTP endpoint is disabled.
+     * </p>
+     * <p>
+     * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
+     * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param enableHttpEndpoint
+     *        A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *        default, the HTTP endpoint is disabled.</p>
+     *        <p>
+     *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
+     *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
+     *        editor.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
+     *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public void setEnableHttpEndpoint(Boolean enableHttpEndpoint) {
+        this.enableHttpEndpoint = enableHttpEndpoint;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
+     * HTTP endpoint is disabled.
+     * </p>
+     * <p>
+     * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
+     * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *         default, the HTTP endpoint is disabled.</p>
+     *         <p>
+     *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
+     *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
+     *         editor.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
+     *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public Boolean getEnableHttpEndpoint() {
+        return this.enableHttpEndpoint;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
+     * HTTP endpoint is disabled.
+     * </p>
+     * <p>
+     * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
+     * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @param enableHttpEndpoint
+     *        A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *        default, the HTTP endpoint is disabled.</p>
+     *        <p>
+     *        When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
+     *        Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
+     *        editor.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
+     *        Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableHttpEndpoint(Boolean enableHttpEndpoint) {
+        setEnableHttpEndpoint(enableHttpEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By default, the
+     * HTTP endpoint is disabled.
+     * </p>
+     * <p>
+     * When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the Aurora
+     * Serverless DB cluster. You can also query your database from inside the RDS console with the query editor.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
+     * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable the HTTP endpoint for an Aurora Serverless DB cluster. By
+     *         default, the HTTP endpoint is disabled.</p>
+     *         <p>
+     *         When enabled, the HTTP endpoint provides a connectionless web service API for running SQL queries on the
+     *         Aurora Serverless DB cluster. You can also query your database from inside the RDS console with the query
+     *         editor.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for
+     *         Aurora Serverless</a> in the <i>Amazon Aurora User Guide</i>.
+     */
+
+    public Boolean isEnableHttpEndpoint() {
+        return this.enableHttpEndpoint;
+    }
+
+    /**
+     * <p>
      * A value that indicates whether to copy all tags from the DB cluster to snapshots of the DB cluster. The default
      * is not to copy them.
      * </p>
@@ -3321,6 +3660,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getGlobalClusterIdentifier() != null)
             sb.append("GlobalClusterIdentifier: ").append(getGlobalClusterIdentifier()).append(",");
+        if (getEnableHttpEndpoint() != null)
+            sb.append("EnableHttpEndpoint: ").append(getEnableHttpEndpoint()).append(",");
         if (getCopyTagsToSnapshot() != null)
             sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getSourceRegion() != null)
@@ -3452,6 +3793,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getGlobalClusterIdentifier() != null && other.getGlobalClusterIdentifier().equals(this.getGlobalClusterIdentifier()) == false)
             return false;
+        if (other.getEnableHttpEndpoint() == null ^ this.getEnableHttpEndpoint() == null)
+            return false;
+        if (other.getEnableHttpEndpoint() != null && other.getEnableHttpEndpoint().equals(this.getEnableHttpEndpoint()) == false)
+            return false;
         if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
@@ -3496,6 +3841,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getScalingConfiguration() == null) ? 0 : getScalingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getGlobalClusterIdentifier() == null) ? 0 : getGlobalClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getEnableHttpEndpoint() == null) ? 0 : getEnableHttpEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;

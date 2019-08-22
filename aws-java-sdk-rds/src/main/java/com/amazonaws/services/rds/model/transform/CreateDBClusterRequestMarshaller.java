@@ -219,6 +219,10 @@ public class CreateDBClusterRequestMarshaller implements Marshaller<Request<Crea
             request.addParameter("GlobalClusterIdentifier", StringUtils.fromString(createDBClusterRequest.getGlobalClusterIdentifier()));
         }
 
+        if (createDBClusterRequest.getEnableHttpEndpoint() != null) {
+            request.addParameter("EnableHttpEndpoint", StringUtils.fromBoolean(createDBClusterRequest.getEnableHttpEndpoint()));
+        }
+
         if (createDBClusterRequest.getCopyTagsToSnapshot() != null) {
             request.addParameter("CopyTagsToSnapshot", StringUtils.fromBoolean(createDBClusterRequest.getCopyTagsToSnapshot()));
         }

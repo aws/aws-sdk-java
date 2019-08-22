@@ -108,8 +108,33 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
     private String snapshotType;
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB cluster snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
@@ -651,10 +676,59 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB cluster snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return This parameter is not currently supported.
+     * @return A filter that specifies one or more DB cluster snapshots to describe.</p>
+     *         <p>
+     *         Supported filters:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>engine</code> - Accepts names of database engines.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -666,11 +740,60 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB cluster snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB cluster snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -684,8 +807,33 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB cluster snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override
@@ -693,7 +841,31 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB cluster snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -709,11 +881,60 @@ public class DescribeDBClusterSnapshotsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * This parameter is not currently supported.
+     * A filter that specifies one or more DB cluster snapshots to describe.
      * </p>
+     * <p>
+     * Supported filters:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>engine</code> - Accepts names of database engines.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param filters
-     *        This parameter is not currently supported.
+     *        A filter that specifies one or more DB cluster snapshots to describe.</p>
+     *        <p>
+     *        Supported filters:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon Resource Names (ARNs).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>db-cluster-snapshot-id</code> - Accepts DB cluster snapshot identifiers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>snapshot-type</code> - Accepts types of DB cluster snapshots.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>engine</code> - Accepts names of database engines.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

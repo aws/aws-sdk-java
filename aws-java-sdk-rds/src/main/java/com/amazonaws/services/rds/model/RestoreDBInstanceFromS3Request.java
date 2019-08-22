@@ -304,7 +304,7 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance.
-     * For information about valid Iops values, see see <a
+     * For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
@@ -413,7 +413,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
+     * </p>
+     * <p>
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -2321,14 +2327,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance.
-     * For information about valid Iops values, see see <a
+     * For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB
-     *        instance. For information about valid Iops values, see see <a
+     *        instance. For information about valid Iops values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      */
@@ -2340,13 +2346,13 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance.
-     * For information about valid Iops values, see see <a
+     * For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB
-     *         instance. For information about valid Iops values, see see <a
+     *         instance. For information about valid Iops values, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *         Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      */
@@ -2358,14 +2364,14 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB instance.
-     * For information about valid Iops values, see see <a
+     * For information about valid Iops values, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS Provisioned
      * IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param iops
      *        The amount of Provisioned IOPS (input/output operations per second) to allocate initially for the DB
-     *        instance. For information about valid Iops values, see see <a
+     *        instance. For information about valid Iops values, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon RDS
      *        Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -3084,12 +3090,23 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
+     * </p>
+     * <p>
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *        <a>CreateDBInstance</a>.</p>
+     *        <p>
+     *        For more information about IAM database authentication, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -3099,11 +3116,22 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
+     * </p>
+     * <p>
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *         <a>CreateDBInstance</a>.</p>
+     *         <p>
+     *         For more information about IAM database authentication, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -3113,12 +3141,23 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
+     * </p>
+     * <p>
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *        database accounts. By default, mapping is disabled.
+     *        database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *        <a>CreateDBInstance</a>.</p>
+     *        <p>
+     *        For more information about IAM database authentication, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *        Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3130,11 +3169,22 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to database
-     * accounts. By default, mapping is disabled.
+     * accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     * <a>CreateDBInstance</a>.
+     * </p>
+     * <p>
+     * For more information about IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     * Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
-     *         database accounts. By default, mapping is disabled.
+     *         database accounts. By default, mapping is disabled. For information about the supported DB engines, see
+     *         <a>CreateDBInstance</a>.</p>
+     *         <p>
+     *         For more information about IAM database authentication, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
+     *         Authentication for MySQL and PostgreSQL</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {

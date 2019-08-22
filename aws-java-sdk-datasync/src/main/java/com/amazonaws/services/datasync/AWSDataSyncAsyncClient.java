@@ -233,6 +233,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
     }
 
     @Override
+    public java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest request) {
+
+        return createLocationSmbAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(final CreateLocationSmbRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLocationSmbRequest, CreateLocationSmbResult> asyncHandler) {
+        final CreateLocationSmbRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLocationSmbResult>() {
+            @Override
+            public CreateLocationSmbResult call() throws Exception {
+                CreateLocationSmbResult result = null;
+
+                try {
+                    result = executeCreateLocationSmb(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTaskResult> createTaskAsync(CreateTaskRequest request) {
 
         return createTaskAsync(request, null);
@@ -481,6 +514,39 @@ public class AWSDataSyncAsyncClient extends AWSDataSyncClient implements AWSData
 
                 try {
                     result = executeDescribeLocationS3(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest request) {
+
+        return describeLocationSmbAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(final DescribeLocationSmbRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeLocationSmbRequest, DescribeLocationSmbResult> asyncHandler) {
+        final DescribeLocationSmbRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeLocationSmbResult>() {
+            @Override
+            public DescribeLocationSmbResult call() throws Exception {
+                DescribeLocationSmbResult result = null;
+
+                try {
+                    result = executeDescribeLocationSmb(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

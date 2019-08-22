@@ -273,6 +273,39 @@ public interface AWSDataSyncAsync extends AWSDataSync {
 
     /**
      * <p>
+     * Creates an endpoint for a Server Message Block (SMB) file system.
+     * </p>
+     * 
+     * @param createLocationSmbRequest
+     *        CreateLocationSmbRequest
+     * @return A Java Future containing the result of the CreateLocationSmb operation returned by the service.
+     * @sample AWSDataSyncAsync.CreateLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest createLocationSmbRequest);
+
+    /**
+     * <p>
+     * Creates an endpoint for a Server Message Block (SMB) file system.
+     * </p>
+     * 
+     * @param createLocationSmbRequest
+     *        CreateLocationSmbRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateLocationSmb operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.CreateLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateLocationSmbResult> createLocationSmbAsync(CreateLocationSmbRequest createLocationSmbRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateLocationSmbRequest, CreateLocationSmbResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a task. A task is a set of two locations (source and destination) and a set of Options that you use to
      * control the behavior of a task. If you don't specify Options when you create a task, AWS DataSync populates them
      * with service defaults.
@@ -568,6 +601,39 @@ public interface AWSDataSyncAsync extends AWSDataSync {
      */
     java.util.concurrent.Future<DescribeLocationS3Result> describeLocationS3Async(DescribeLocationS3Request describeLocationS3Request,
             com.amazonaws.handlers.AsyncHandler<DescribeLocationS3Request, DescribeLocationS3Result> asyncHandler);
+
+    /**
+     * <p>
+     * Returns metadata, such as the path and user information about a SMB location.
+     * </p>
+     * 
+     * @param describeLocationSmbRequest
+     *        DescribeLocationSmbRequest
+     * @return A Java Future containing the result of the DescribeLocationSmb operation returned by the service.
+     * @sample AWSDataSyncAsync.DescribeLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest describeLocationSmbRequest);
+
+    /**
+     * <p>
+     * Returns metadata, such as the path and user information about a SMB location.
+     * </p>
+     * 
+     * @param describeLocationSmbRequest
+     *        DescribeLocationSmbRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeLocationSmb operation returned by the service.
+     * @sample AWSDataSyncAsyncHandler.DescribeLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeLocationSmbResult> describeLocationSmbAsync(DescribeLocationSmbRequest describeLocationSmbRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeLocationSmbRequest, DescribeLocationSmbResult> asyncHandler);
 
     /**
      * <p>

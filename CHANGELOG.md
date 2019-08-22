@@ -1,3 +1,12 @@
+# __1.11.617__ __2019-08-22__
+## __AWS DataSync__
+  - ### Features
+    - This release adds support for SMB location type.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release allows users to enable RDS Data API while creating Aurora Serverless databases. 
+
 # __1.11.616__ __2019-08-21__
 ## __Amazon ElastiCache__
   - ### Features

@@ -173,6 +173,24 @@ public interface AWSDataSync {
 
     /**
      * <p>
+     * Creates an endpoint for a Server Message Block (SMB) file system.
+     * </p>
+     * 
+     * @param createLocationSmbRequest
+     *        CreateLocationSmbRequest
+     * @return Result of the CreateLocationSmb operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.CreateLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/CreateLocationSmb" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateLocationSmbResult createLocationSmb(CreateLocationSmbRequest createLocationSmbRequest);
+
+    /**
+     * <p>
      * Creates a task. A task is a set of two locations (source and destination) and a set of Options that you use to
      * control the behavior of a task. If you don't specify Options when you create a task, AWS DataSync populates them
      * with service defaults.
@@ -331,6 +349,24 @@ public interface AWSDataSync {
      *      API Documentation</a>
      */
     DescribeLocationS3Result describeLocationS3(DescribeLocationS3Request describeLocationS3Request);
+
+    /**
+     * <p>
+     * Returns metadata, such as the path and user information about a SMB location.
+     * </p>
+     * 
+     * @param describeLocationSmbRequest
+     *        DescribeLocationSmbRequest
+     * @return Result of the DescribeLocationSmb operation returned by the service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws InternalException
+     *         This exception is thrown when an error occurs in the AWS DataSync service.
+     * @sample AWSDataSync.DescribeLocationSmb
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/datasync-2018-11-09/DescribeLocationSmb" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeLocationSmbResult describeLocationSmb(DescribeLocationSmbRequest describeLocationSmbRequest);
 
     /**
      * <p>
