@@ -21,7 +21,96 @@
     "contentTypeOverride" : null,
     "convenienceTypeOverloads" : [ ],
     "customClientConfigFactory" : null,
-    "customCodeTemplates" : null,
+    "customCodeTemplates" : {
+      "acceptorClass" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/waiter/Acceptor.ftl"
+      },
+      "apiGatewayGradleBuildTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/gradle/build.gradle.ftl"
+      },
+      "apiGatewayGradleSettingsTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/gradle/settings.gradle.ftl"
+      },
+      "apiGatewayPomTemplate" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/api-gateway/maven/pom.xml.ftl"
+      },
+      "apiGatewayReadmeTemplate" : {
+        "childTemplates" : [ {
+          "importAsNamespace" : "README_Dependencies",
+          "location" : "/templates/api-gateway/README_Dependencies.ftl"
+        } ],
+        "mainTemplate" : "/templates/api-gateway/README.md.ftl"
+      },
+      "asyncAbstractClass" : null,
+      "asyncClient" : null,
+      "asyncClientBuilder" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/common/AsyncClientBuilder.ftl"
+      },
+      "asyncInterface" : null,
+      "baseExceptionClass" : null,
+      "commonChildTemplates" : null,
+      "cucumberModuleInjector" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/cucumber/ModuleInjector.ftl"
+      },
+      "cucumberPropertiesFile" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/cucumber/cucumberProperties.ftl"
+      },
+      "cucumberTest" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/cucumber/RunCucumberTest.ftl"
+      },
+      "customRequestSignerClass" : null,
+      "endpointDiscoveryCache" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/endpoint-discovery/Cache.ftl"
+      },
+      "endpointDiscoveryCacheLoader" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/endpoint-discovery/CacheLoader.ftl"
+      },
+      "exceptionClass" : null,
+      "exceptionUnmarshaller" : null,
+      "modelClass" : null,
+      "modelEnum" : null,
+      "modelMarshaller" : null,
+      "modelUnmarshaller" : null,
+      "packageInfo" : null,
+      "policyActionClass" : null,
+      "requestClass" : null,
+      "requestMarshaller" : null,
+      "responseClass" : null,
+      "sdkFunctionClass" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/waiter/SdkFunction.ftl"
+      },
+      "syncAbstractClass" : null,
+      "syncClient" : {
+        "childTemplates" : [ {
+          "importAsNamespace" : "AdditionalClientMethodsMacro",
+          "location" : "/macros/client/AdditionalClientMethods.ftl"
+        }, {
+          "importAsNamespace" : "AdditionalServiceSyncClientFieldsMacro",
+          "location" : "/macros/client/AdditionalFields.ftl"
+        } ],
+        "mainTemplate" : null
+      },
+      "syncClientBuilder" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/common/SyncClientBuilder.ftl"
+      },
+      "syncInterface" : null,
+      "waiterClass" : {
+        "childTemplates" : null,
+        "mainTemplate" : "/templates/waiter/Waiter.ftl"
+      }
+    },
     "customErrorCodeFieldName" : null,
     "customExceptionUnmarshallerImpl" : null,
     "customFileHeader" : null,

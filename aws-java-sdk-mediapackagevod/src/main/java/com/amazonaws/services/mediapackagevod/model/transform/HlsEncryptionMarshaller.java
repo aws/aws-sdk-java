@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class HlsEncryptionMarshaller {
 
+    private static final MarshallingInfo<String> CONSTANTINITIALIZATIONVECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("constantInitializationVector").build();
     private static final MarshallingInfo<String> ENCRYPTIONMETHOD_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionMethod").build();
     private static final MarshallingInfo<StructuredPojo> SPEKEKEYPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class HlsEncryptionMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(hlsEncryption.getConstantInitializationVector(), CONSTANTINITIALIZATIONVECTOR_BINDING);
             protocolMarshaller.marshall(hlsEncryption.getEncryptionMethod(), ENCRYPTIONMETHOD_BINDING);
             protocolMarshaller.marshall(hlsEncryption.getSpekeKeyProvider(), SPEKEKEYPROVIDER_BINDING);
         } catch (Exception e) {

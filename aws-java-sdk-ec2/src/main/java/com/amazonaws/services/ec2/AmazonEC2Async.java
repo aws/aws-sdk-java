@@ -7346,7 +7346,38 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified export tasks or all your export tasks.
+     * Describes the specified export image tasks or all your export image tasks.
+     * </p>
+     * 
+     * @param describeExportImageTasksRequest
+     * @return A Java Future containing the result of the DescribeExportImageTasks operation returned by the service.
+     * @sample AmazonEC2Async.DescribeExportImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportImageTasksResult> describeExportImageTasksAsync(DescribeExportImageTasksRequest describeExportImageTasksRequest);
+
+    /**
+     * <p>
+     * Describes the specified export image tasks or all your export image tasks.
+     * </p>
+     * 
+     * @param describeExportImageTasksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExportImageTasks operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.DescribeExportImageTasks
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeExportImageTasks" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportImageTasksResult> describeExportImageTasksAsync(DescribeExportImageTasksRequest describeExportImageTasksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportImageTasksRequest, DescribeExportImageTasksResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the specified export instance tasks or all your export instance tasks.
      * </p>
      * 
      * @param describeExportTasksRequest
@@ -7359,7 +7390,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Describes the specified export tasks or all your export tasks.
+     * Describes the specified export instance tasks or all your export instance tasks.
      * </p>
      * 
      * @param describeExportTasksRequest
@@ -12559,6 +12590,41 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
+     * Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM Directory from
+     * an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * 
+     * @param exportImageRequest
+     * @return A Java Future containing the result of the ExportImage operation returned by the service.
+     * @sample AmazonEC2Async.ExportImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportImageResult> exportImageAsync(ExportImageRequest exportImageRequest);
+
+    /**
+     * <p>
+     * Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a
+     * href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM Directory from
+     * an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User Guide</i>.
+     * </p>
+     * 
+     * @param exportImageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportImage operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ExportImage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ExportImage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportImageResult> exportImageAsync(ExportImageRequest exportImageRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportImageRequest, ExportImageResult> asyncHandler);
+
+    /**
+     * <p>
      * Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes
      * are exported. Alternatively, you can filter by CIDR range.
      * </p>
@@ -13532,7 +13598,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>lowestPrice</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If
      * the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
      * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from
-     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     * Spot Instance pools with optimal capacity for the number of instances that are launching.
      * </p>
      * <p>
      * To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that
@@ -13574,7 +13640,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>lowestPrice</code>, the EC2 Fleet launches instances using the Spot Instance pool with the lowest price. If
      * the allocation strategy is <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
      * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from
-     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     * Spot Instance pools with optimal capacity for the number of instances that are launching.
      * </p>
      * <p>
      * To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels any open requests that
@@ -14363,7 +14429,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot Instance pool with the lowest price.
      * If the allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
      * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet launches instances from
-     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     * Spot Instance pools with optimal capacity for the number of instances that are launching.
      * </p>
      * <p>
      * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
@@ -14406,7 +14472,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * <code>lowestPrice</code>, the Spot Fleet launches instances using the Spot Instance pool with the lowest price.
      * If the allocation strategy is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
      * Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot Fleet launches instances from
-     * Spot Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     * Spot Instance pools with optimal capacity for the number of instances that are launching.
      * </p>
      * <p>
      * To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet cancels any open requests that
@@ -17155,11 +17221,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about configuring your operating system to generate a crash dump when a kernel panic or stop
-     * error occurs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send a
+     * error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a
      * Diagnostic Interrupt</a> (Linux instances) or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
-     * a Diagnostic Interrupt</a> (Windows instances).
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a Diagnostic
+     * Interrupt</a> (Windows instances).
      * </p>
      * 
      * @param sendDiagnosticInterruptRequest
@@ -17187,11 +17252,10 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * </p>
      * <p>
      * For more information about configuring your operating system to generate a crash dump when a kernel panic or stop
-     * error occurs, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-console.html#diagnostic-interrupt">Send a
+     * error occurs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/diagnostic-interrupt.html">Send a
      * Diagnostic Interrupt</a> (Linux instances) or <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/unreachable-instance.html#diagnostic-interrupt">Send
-     * a Diagnostic Interrupt</a> (Windows instances).
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/diagnostic-interrupt.html">Send a Diagnostic
+     * Interrupt</a> (Windows instances).
      * </p>
      * 
      * @param sendDiagnosticInterruptRequest

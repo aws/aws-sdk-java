@@ -595,11 +595,6 @@ public class ClientConfigurationTest {
     }
 
     @Test
-    public void defaultTlsKeyManagersProviderIsSystemPropertiesProvider() {
-        assertThat(new ClientConfiguration().getTlsKeyManagersProvider(), Matchers.<TlsKeyManagersProvider>instanceOf(SystemPropertyTlsKeyManagersProvider.class));
-    }
-
-    @Test
     public void getProxyUserName_envVarSet_noUserName_doesNotThrow() {
         EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
 

@@ -34,8 +34,8 @@ public class CpuOptionsRequest implements Serializable, Cloneable {
     private Integer coreCount;
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>
+     * . Otherwise, specify the default value of <code>2</code>.
      * </p>
      */
     private Integer threadsPerCore;
@@ -82,13 +82,13 @@ public class CpuOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>
+     * . Otherwise, specify the default value of <code>2</code>.
      * </p>
      * 
      * @param threadsPerCore
-     *        The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *        a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     *        The number of threads per CPU core. To disable multithreading for the instance, specify a value of
+     *        <code>1</code>. Otherwise, specify the default value of <code>2</code>.
      */
 
     public void setThreadsPerCore(Integer threadsPerCore) {
@@ -97,12 +97,12 @@ public class CpuOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>
+     * . Otherwise, specify the default value of <code>2</code>.
      * </p>
      * 
-     * @return The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *         a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     * @return The number of threads per CPU core. To disable multithreading for the instance, specify a value of
+     *         <code>1</code>. Otherwise, specify the default value of <code>2</code>.
      */
 
     public Integer getThreadsPerCore() {
@@ -111,13 +111,13 @@ public class CpuOptionsRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of <code>1</code>
+     * . Otherwise, specify the default value of <code>2</code>.
      * </p>
      * 
      * @param threadsPerCore
-     *        The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *        a value of <code>1</code>. Otherwise, specify the default value of <code>2</code>.
+     *        The number of threads per CPU core. To disable multithreading for the instance, specify a value of
+     *        <code>1</code>. Otherwise, specify the default value of <code>2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

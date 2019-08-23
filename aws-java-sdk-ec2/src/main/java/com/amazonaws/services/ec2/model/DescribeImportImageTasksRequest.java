@@ -28,21 +28,20 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     * deleting, deleted.
+     * Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>,
+     * <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Filter> filters;
     /**
      * <p>
-     * A list of import image task IDs.
+     * The IDs of the import image tasks.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> importTaskIds;
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value.
+     * The maximum number of results to return in a single call.
      * </p>
      */
     private Integer maxResults;
@@ -55,12 +54,12 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     * deleting, deleted.
+     * Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>,
+     * <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * </p>
      * 
-     * @return Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     *         deleting, deleted.
+     * @return Filter tasks using the <code>task-state</code> filter and one of the following values:
+     *         <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -72,13 +71,13 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     * deleting, deleted.
+     * Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>,
+     * <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * </p>
      * 
      * @param filters
-     *        Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     *        deleting, deleted.
+     *        Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>
+     *        , <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -92,8 +91,8 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     * deleting, deleted.
+     * Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>,
+     * <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -102,8 +101,8 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param filters
-     *        Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     *        deleting, deleted.
+     *        Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>
+     *        , <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,13 +118,13 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     * deleting, deleted.
+     * Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>,
+     * <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * </p>
      * 
      * @param filters
-     *        Filter tasks using the <code>task-state</code> filter and one of the following values: active, completed,
-     *        deleting, deleted.
+     *        Filter tasks using the <code>task-state</code> filter and one of the following values: <code>active</code>
+     *        , <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,10 +135,10 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of import image task IDs.
+     * The IDs of the import image tasks.
      * </p>
      * 
-     * @return A list of import image task IDs.
+     * @return The IDs of the import image tasks.
      */
 
     public java.util.List<String> getImportTaskIds() {
@@ -151,11 +150,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of import image task IDs.
+     * The IDs of the import image tasks.
      * </p>
      * 
      * @param importTaskIds
-     *        A list of import image task IDs.
+     *        The IDs of the import image tasks.
      */
 
     public void setImportTaskIds(java.util.Collection<String> importTaskIds) {
@@ -169,7 +168,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of import image task IDs.
+     * The IDs of the import image tasks.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -178,7 +177,7 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
      * </p>
      * 
      * @param importTaskIds
-     *        A list of import image task IDs.
+     *        The IDs of the import image tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -194,11 +193,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of import image task IDs.
+     * The IDs of the import image tasks.
      * </p>
      * 
      * @param importTaskIds
-     *        A list of import image task IDs.
+     *        The IDs of the import image tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,13 +208,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value.
+     * The maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value.
+     *        The maximum number of results to return in a single call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -224,12 +221,10 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value.
+     * The maximum number of results to return in a single call.
      * </p>
      * 
-     * @return The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *         call with the returned <code>NextToken</code> value.
+     * @return The maximum number of results to return in a single call.
      */
 
     public Integer getMaxResults() {
@@ -238,13 +233,11 @@ public class DescribeImportImageTasksRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum number of results to return in a single call. To retrieve the remaining results, make another call
-     * with the returned <code>NextToken</code> value.
+     * The maximum number of results to return in a single call.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to return in a single call. To retrieve the remaining results, make another
-     *        call with the returned <code>NextToken</code> value.
+     *        The maximum number of results to return in a single call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

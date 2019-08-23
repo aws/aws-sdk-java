@@ -158,6 +158,31 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      */
     protected final List<Unmarshaller<AmazonServiceException, Node>> exceptionUnmarshallers = new ArrayList<Unmarshaller<AmazonServiceException, Node>>();
 
+    // STS regions that originally mapped to the global endpoint but now have region-specific endpoints
+    private static final Set<String> LEGACY_ENABLED_REGIONS;
+    static {
+        Set<String> legacyEnabledRegions = new HashSet<String>();
+        legacyEnabledRegions.add("ap-northeast-1");
+        legacyEnabledRegions.add("ap-south-1");
+        legacyEnabledRegions.add("ap-southeast-1");
+        legacyEnabledRegions.add("ap-southeast-2");
+        legacyEnabledRegions.add("aws-global");
+        legacyEnabledRegions.add("ca-central-1");
+        legacyEnabledRegions.add("eu-central-1");
+        legacyEnabledRegions.add("eu-north-1");
+        legacyEnabledRegions.add("eu-west-1");
+        legacyEnabledRegions.add("eu-west-2");
+        legacyEnabledRegions.add("eu-west-3");
+        legacyEnabledRegions.add("sa-east-1");
+        legacyEnabledRegions.add("us-east-1");
+        legacyEnabledRegions.add("us-east-2");
+        legacyEnabledRegions.add("us-west-1");
+        legacyEnabledRegions.add("us-west-2");
+        LEGACY_ENABLED_REGIONS = Collections.unmodifiableSet(legacyEnabledRegions);
+    }
+
+    private static RegionalEndpointsOptionResolver REGIONAL_ENDPOINTS_OPTION_RESOLVER = new RegionalEndpointsOptionResolver();
+
     /**
      * Constructs a new client to invoke service methods on AWS STS. A credentials provider chain will be used that
      * searches for credentials in this order:
@@ -1402,6 +1427,29 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
     @Override
     public GetSessionTokenResult getSessionToken() {
         return getSessionToken(new GetSessionTokenRequest());
+    }
+
+    @Override
+    @Deprecated
+    public void setRegion(Region region) {
+        Region mappedRegion = mapToLegacyRegionIfNecessary(region);
+        super.setRegion(mappedRegion);
+    }
+
+    private Region mapToLegacyRegionIfNecessary(Region region) {
+        if (legacyRegionModeEnabled() && LEGACY_ENABLED_REGIONS.contains(region.getName())) {
+            return RegionUtils.getRegion("aws-global");
+        }
+        return region;
+    }
+
+    private boolean legacyRegionModeEnabled() {
+        return REGIONAL_ENDPOINTS_OPTION_RESOLVER.useLegacyMode();
+    }
+
+    @com.amazonaws.annotation.SdkTestInternalApi
+    static void setRegionalEndpointsOptionResolver(RegionalEndpointsOptionResolver resolver) {
+        REGIONAL_ENDPOINTS_OPTION_RESOLVER = resolver;
     }
 
     /**

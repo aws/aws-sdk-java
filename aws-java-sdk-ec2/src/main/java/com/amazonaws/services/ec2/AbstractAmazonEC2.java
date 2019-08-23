@@ -860,6 +860,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeExportImageTasksResult describeExportImageTasks(DescribeExportImageTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeExportTasksResult describeExportTasks(DescribeExportTasksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1577,6 +1582,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ExportClientVpnClientConfigurationResult exportClientVpnClientConfiguration(ExportClientVpnClientConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExportImageResult exportImage(ExportImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

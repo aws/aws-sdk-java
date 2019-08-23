@@ -26,10 +26,55 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class HlsEncryption implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * A constant initialization vector for encryption (optional). When not specified the initialization vector will be
+     * periodically rotated.
+     */
+    private String constantInitializationVector;
     /** The encryption method to use. */
     private String encryptionMethod;
 
     private SpekeKeyProvider spekeKeyProvider;
+
+    /**
+     * A constant initialization vector for encryption (optional). When not specified the initialization vector will be
+     * periodically rotated.
+     * 
+     * @param constantInitializationVector
+     *        A constant initialization vector for encryption (optional). When not specified the initialization vector
+     *        will be periodically rotated.
+     */
+
+    public void setConstantInitializationVector(String constantInitializationVector) {
+        this.constantInitializationVector = constantInitializationVector;
+    }
+
+    /**
+     * A constant initialization vector for encryption (optional). When not specified the initialization vector will be
+     * periodically rotated.
+     * 
+     * @return A constant initialization vector for encryption (optional). When not specified the initialization vector
+     *         will be periodically rotated.
+     */
+
+    public String getConstantInitializationVector() {
+        return this.constantInitializationVector;
+    }
+
+    /**
+     * A constant initialization vector for encryption (optional). When not specified the initialization vector will be
+     * periodically rotated.
+     * 
+     * @param constantInitializationVector
+     *        A constant initialization vector for encryption (optional). When not specified the initialization vector
+     *        will be periodically rotated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HlsEncryption withConstantInitializationVector(String constantInitializationVector) {
+        setConstantInitializationVector(constantInitializationVector);
+        return this;
+    }
 
     /**
      * The encryption method to use.
@@ -120,6 +165,8 @@ public class HlsEncryption implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConstantInitializationVector() != null)
+            sb.append("ConstantInitializationVector: ").append(getConstantInitializationVector()).append(",");
         if (getEncryptionMethod() != null)
             sb.append("EncryptionMethod: ").append(getEncryptionMethod()).append(",");
         if (getSpekeKeyProvider() != null)
@@ -138,6 +185,10 @@ public class HlsEncryption implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof HlsEncryption == false)
             return false;
         HlsEncryption other = (HlsEncryption) obj;
+        if (other.getConstantInitializationVector() == null ^ this.getConstantInitializationVector() == null)
+            return false;
+        if (other.getConstantInitializationVector() != null && other.getConstantInitializationVector().equals(this.getConstantInitializationVector()) == false)
+            return false;
         if (other.getEncryptionMethod() == null ^ this.getEncryptionMethod() == null)
             return false;
         if (other.getEncryptionMethod() != null && other.getEncryptionMethod().equals(this.getEncryptionMethod()) == false)
@@ -154,6 +205,7 @@ public class HlsEncryption implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConstantInitializationVector() == null) ? 0 : getConstantInitializationVector().hashCode());
         hashCode = prime * hashCode + ((getEncryptionMethod() == null) ? 0 : getEncryptionMethod().hashCode());
         hashCode = prime * hashCode + ((getSpekeKeyProvider() == null) ? 0 : getSpekeKeyProvider().hashCode());
         return hashCode;

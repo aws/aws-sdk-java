@@ -41,7 +41,7 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools that are optimally chosen based on the available Spot Instance capacity.
+     * pools with optimal capacity for the number of instances that are launching.
      * </p>
      */
     private String allocationStrategy;
@@ -100,7 +100,7 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools that are optimally chosen based on the available Spot Instance capacity.
+     * pools with optimal capacity for the number of instances that are launching.
      * </p>
      * 
      * @param allocationStrategy
@@ -116,7 +116,7 @@ public class SpotOptions implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     *        Instance pools with optimal capacity for the number of instances that are launching.
      * @see SpotAllocationStrategy
      */
 
@@ -139,7 +139,7 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools that are optimally chosen based on the available Spot Instance capacity.
+     * pools with optimal capacity for the number of instances that are launching.
      * </p>
      * 
      * @return Indicates how to allocate the target Spot Instance capacity across the Spot Instance pools specified by
@@ -154,7 +154,7 @@ public class SpotOptions implements Serializable, Cloneable {
      *         </p>
      *         <p>
      *         If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
-     *         Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     *         Instance pools with optimal capacity for the number of instances that are launching.
      * @see SpotAllocationStrategy
      */
 
@@ -177,7 +177,7 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools that are optimally chosen based on the available Spot Instance capacity.
+     * pools with optimal capacity for the number of instances that are launching.
      * </p>
      * 
      * @param allocationStrategy
@@ -193,7 +193,7 @@ public class SpotOptions implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     *        Instance pools with optimal capacity for the number of instances that are launching.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */
@@ -218,7 +218,7 @@ public class SpotOptions implements Serializable, Cloneable {
      * </p>
      * <p>
      * If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot Instance
-     * pools that are optimally chosen based on the available Spot Instance capacity.
+     * pools with optimal capacity for the number of instances that are launching.
      * </p>
      * 
      * @param allocationStrategy
@@ -234,7 +234,7 @@ public class SpotOptions implements Serializable, Cloneable {
      *        </p>
      *        <p>
      *        If the allocation strategy is <code>capacityOptimized</code>, EC2 Fleet launches instances from Spot
-     *        Instance pools that are optimally chosen based on the available Spot Instance capacity.
+     *        Instance pools with optimal capacity for the number of instances that are launching.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotAllocationStrategy
      */

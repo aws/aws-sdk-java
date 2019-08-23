@@ -29,22 +29,33 @@ import com.amazonaws.SdkClientException;
 import com.github.tomakehurst.wiremock.WireMockServer;
 import java.io.IOException;
 import java.net.URI;
+import javax.net.ssl.SSLException;
 import javax.net.ssl.SSLHandshakeException;
+import org.hamcrest.core.IsInstanceOf;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 import org.mockito.Mockito;
 
 /**
  * Tests for the TLS client side auth behavior for {@link AmazonHttpClient}.
  */
 public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
+    private static final String KEY_STORE_PROPERTY = "javax.net.ssl.keyStore";
+    private static final String KEY_STORE_PASSWORD_PROPERTY = "javax.net.ssl.keyStorePassword";
+    private static final String KEY_STORE_TYPE_PROPERTY = "javax.net.ssl.keyStoreType";
+
     private static WireMockServer wireMockServer;
     private static AmazonHttpClient httpClient;
 
     private static TlsKeyManagersProvider provider;
+
+    @Rule
+    public ExpectedException thrown = ExpectedException.none();
 
     @BeforeClass
     public static void setUp() throws IOException {
@@ -57,6 +68,7 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
         System.setProperty("javax.net.ssl.trustStoreType", "jks");
 
         wireMockServer = new WireMockServer(wireMockConfig()
+                .dynamicPort()
                 .dynamicHttpsPort()
                 .needClientAuth(true)
                 .keystorePath(serverKeyStore.getAbsolutePath())
@@ -97,13 +109,41 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
         makeRequestWithClient(httpClient);
     }
 
-    @Test(expected = SSLHandshakeException.class)
-    public void requestFailsWhenKeyProviderNotConfigured() throws Throwable {
+    @Test
+    public void requestFailsWhenNoKeyManagersProvided() throws Throwable {
+        thrown.expectCause(IsInstanceOf.<Throwable>instanceOf(SSLException.class));
+        httpClient = new AmazonHttpClient(new ClientConfiguration()
+                .withTlsKeyManagersProvider(NoneTlsKeyManagersProvider.getInstance()));
+        makeRequestWithClient(httpClient);
+    }
+
+    @Test
+    public void defaultsToSystemPropertiesKeyManagersProvider() throws Exception {
+        System.setProperty(KEY_STORE_PROPERTY, clientKeyStore.getAbsolutePath());
+        System.setProperty(KEY_STORE_TYPE_PROPERTY, CLIENT_STORE_TYPE);
+        System.setProperty(KEY_STORE_PASSWORD_PROPERTY, STORE_PASSWORD);
+        httpClient = new AmazonHttpClient(new ClientConfiguration());
+        try {
+            makeRequestWithClient(httpClient);
+        } finally {
+            System.clearProperty(KEY_STORE_PROPERTY);
+            System.clearProperty(KEY_STORE_TYPE_PROPERTY);
+            System.clearProperty(KEY_STORE_PASSWORD_PROPERTY);
+        }
+    }
+
+    @Test
+    public void defaultsToSystemPropertiesKeyManagersProvider_explicitlySetToNull() throws Exception {
+        System.setProperty(KEY_STORE_PROPERTY, clientKeyStore.getAbsolutePath());
+        System.setProperty(KEY_STORE_TYPE_PROPERTY, CLIENT_STORE_TYPE);
+        System.setProperty(KEY_STORE_PASSWORD_PROPERTY, STORE_PASSWORD);
         httpClient = new AmazonHttpClient(new ClientConfiguration().withTlsKeyManagersProvider(null));
         try {
             makeRequestWithClient(httpClient);
-        } catch (SdkClientException e) {
-            throw e.getCause();
+        } finally {
+            System.clearProperty(KEY_STORE_PROPERTY);
+            System.clearProperty(KEY_STORE_TYPE_PROPERTY);
+            System.clearProperty(KEY_STORE_PASSWORD_PROPERTY);
         }
     }
 

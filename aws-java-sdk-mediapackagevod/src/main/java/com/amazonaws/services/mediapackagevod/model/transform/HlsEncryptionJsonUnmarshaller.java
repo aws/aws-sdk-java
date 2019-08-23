@@ -48,6 +48,10 @@ public class HlsEncryptionJsonUnmarshaller implements Unmarshaller<HlsEncryption
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("constantInitializationVector", targetDepth)) {
+                    context.nextToken();
+                    hlsEncryption.setConstantInitializationVector(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("encryptionMethod", targetDepth)) {
                     context.nextToken();
                     hlsEncryption.setEncryptionMethod(context.getUnmarshaller(String.class).unmarshall(context));

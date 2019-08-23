@@ -34,8 +34,8 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
     private Integer coreCount;
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of 1. Otherwise, specify the default value of 2.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1. Otherwise,
+     * specify the default value of 2.
      * </p>
      */
     private Integer threadsPerCore;
@@ -82,13 +82,13 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of 1. Otherwise, specify the default value of 2.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1. Otherwise,
+     * specify the default value of 2.
      * </p>
      * 
      * @param threadsPerCore
-     *        The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *        a value of 1. Otherwise, specify the default value of 2.
+     *        The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1.
+     *        Otherwise, specify the default value of 2.
      */
 
     public void setThreadsPerCore(Integer threadsPerCore) {
@@ -97,12 +97,12 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of 1. Otherwise, specify the default value of 2.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1. Otherwise,
+     * specify the default value of 2.
      * </p>
      * 
-     * @return The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *         a value of 1. Otherwise, specify the default value of 2.
+     * @return The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1.
+     *         Otherwise, specify the default value of 2.
      */
 
     public Integer getThreadsPerCore() {
@@ -111,13 +111,13 @@ public class LaunchTemplateCpuOptionsRequest implements Serializable, Cloneable 
 
     /**
      * <p>
-     * The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify a value
-     * of 1. Otherwise, specify the default value of 2.
+     * The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1. Otherwise,
+     * specify the default value of 2.
      * </p>
      * 
      * @param threadsPerCore
-     *        The number of threads per CPU core. To disable Intel Hyper-Threading Technology for the instance, specify
-     *        a value of 1. Otherwise, specify the default value of 2.
+     *        The number of threads per CPU core. To disable multithreading for the instance, specify a value of 1.
+     *        Otherwise, specify the default value of 2.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

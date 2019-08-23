@@ -188,11 +188,7 @@ public class HttpClientSettings {
         return config.getProxyProtocol();
     }
 
-    public KeyManager[] getKeyManagers() {
-        TlsKeyManagersProvider provider = config.getTlsKeyManagersProvider();
-        if (provider != null) {
-            return provider.getKeyManagers();
-        }
-        return null;
+    public TlsKeyManagersProvider getTlsKeyMangersProvider() {
+        return config.getTlsKeyManagersProvider();
     }
 }

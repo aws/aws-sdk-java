@@ -366,7 +366,7 @@ public class ClientConfiguration {
 
     private final AtomicReference<URLHolder> httpsProxyHolder = new AtomicReference<URLHolder>();
 
-    private TlsKeyManagersProvider tlsKeyManagersProvider = new SystemPropertyTlsKeyManagersProvider();
+    private TlsKeyManagersProvider tlsKeyManagersProvider;
 
     public ClientConfiguration() {
         apacheHttpClientConfig = new ApacheHttpClientConfig();
@@ -2425,7 +2425,9 @@ public class ClientConfiguration {
      * Sets {@link TlsKeyManagersProvider} that will provide the {@link javax.net.ssl.KeyManager}s to use when
      * constructing the client's SSL context.
      * <p>
-     * The default is {@link SystemPropertyTlsKeyManagersProvider}.
+     * The default used by the client will be {@link SystemPropertyTlsKeyManagersProvider}. Set an instance {@link
+     * com.amazonaws.http.NoneTlsKeyManagersProvider} or another instance of {@link TlsKeyManagersProvider} to override
+     * it.
      */
     public void setTlsKeyManagersProvider(TlsKeyManagersProvider tlsKeyManagersProvider) {
         withTlsKeyManagersProvider(tlsKeyManagersProvider);

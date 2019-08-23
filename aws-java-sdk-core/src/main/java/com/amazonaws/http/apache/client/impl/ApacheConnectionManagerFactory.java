@@ -17,11 +17,14 @@ package com.amazonaws.http.apache.client.impl;
 import com.amazonaws.SDKGlobalConfiguration;
 import com.amazonaws.http.AmazonHttpClient;
 import com.amazonaws.http.DelegatingDnsResolver;
+import com.amazonaws.http.SystemPropertyTlsKeyManagersProvider;
+import com.amazonaws.http.TlsKeyManagersProvider;
 import com.amazonaws.http.client.ConnectionManagerFactory;
 import com.amazonaws.http.conn.SdkPlainSocketFactory;
 import com.amazonaws.http.conn.ssl.SdkTLSSocketFactory;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.internal.SdkSSLContext;
+import javax.net.ssl.KeyManager;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.HttpHost;
@@ -86,10 +89,9 @@ public class ApacheConnectionManagerFactory implements
         return sslsf != null
                 ? sslsf
                 : new SdkTLSSocketFactory(
-                SdkSSLContext.getPreferredSSLContext(settings.getKeyManagers(), settings.getSecureRandom()),
+                SdkSSLContext.getPreferredSSLContext(getKeyManagers(settings), settings.getSecureRandom()),
                 getHostNameVerifier(settings));
     }
-
 
     private SocketConfig buildSocketConfig(HttpClientSettings settings) {
         return SocketConfig.custom()
@@ -109,6 +111,14 @@ public class ApacheConnectionManagerFactory implements
                 : ConnectionConfig.custom()
                 .setBufferSize(socketBufferSize)
                 .build();
+    }
+
+    private KeyManager[] getKeyManagers(HttpClientSettings settings) {
+        TlsKeyManagersProvider provider = settings.getTlsKeyMangersProvider();
+        if (provider == null) {
+            provider = new SystemPropertyTlsKeyManagersProvider();
+        }
+        return provider.getKeyManagers();
     }
 
     private HostnameVerifier getHostNameVerifier
