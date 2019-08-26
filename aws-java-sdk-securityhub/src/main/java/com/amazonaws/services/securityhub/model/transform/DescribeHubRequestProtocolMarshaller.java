@@ -33,7 +33,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class DescribeHubRequestProtocolMarshaller implements Marshaller<Request<DescribeHubRequest>, DescribeHubRequest> {
 
     private static final OperationInfo SDK_OPERATION_BINDING = OperationInfo.builder().protocol(Protocol.REST_JSON).requestUri("/accounts")
-            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(true).serviceName("AWSSecurityHub").build();
+            .httpMethodName(HttpMethodName.GET).hasExplicitPayloadMember(false).hasPayloadMembers(false).serviceName("AWSSecurityHub").build();
 
     private final com.amazonaws.protocol.json.SdkJsonProtocolFactory protocolFactory;
 

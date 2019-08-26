@@ -27,8 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DescribeHubRequestMarshaller {
 
-    private static final MarshallingInfo<String> HUBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("HubArn").build();
+    private static final MarshallingInfo<String> HUBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("HubArn").build();
 
     private static final DescribeHubRequestMarshaller instance = new DescribeHubRequestMarshaller();
 

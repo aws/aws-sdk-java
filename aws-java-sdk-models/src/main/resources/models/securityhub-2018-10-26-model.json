@@ -641,6 +641,10 @@
   "shapes":{
     "AcceptInvitationRequest":{
       "type":"structure",
+      "required":[
+        "MasterId",
+        "InvitationId"
+      ],
       "members":{
         "MasterId":{
           "shape":"NonEmptyString",
@@ -1523,6 +1527,7 @@
     },
     "DeclineInvitationsRequest":{
       "type":"structure",
+      "required":["AccountIds"],
       "members":{
         "AccountIds":{
           "shape":"AccountIdList",
@@ -1585,6 +1590,7 @@
     },
     "DeleteInvitationsRequest":{
       "type":"structure",
+      "required":["AccountIds"],
       "members":{
         "AccountIds":{
           "shape":"AccountIdList",
@@ -1655,7 +1661,9 @@
       "members":{
         "HubArn":{
           "shape":"NonEmptyString",
-          "documentation":"<p>The ARN of the Hub resource to retrieve.</p>"
+          "documentation":"<p>The ARN of the Hub resource to retrieve.</p>",
+          "location":"querystring",
+          "locationName":"HubArn"
         }
       }
     },

@@ -33,13 +33,8 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
     private String instanceId;
     /**
      * <p>
-     * Each entry in the array is a structure containing:
-     * </p>
-     * <p>
-     * Key (string, between 1 and 128 characters)
-     * </p>
-     * <p>
-     * Values (array of strings, each string between 1 and 256 characters)
+     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
+     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PatchOrchestratorFilter> filters;
@@ -98,21 +93,13 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Each entry in the array is a structure containing:
-     * </p>
-     * <p>
-     * Key (string, between 1 and 128 characters)
-     * </p>
-     * <p>
-     * Values (array of strings, each string between 1 and 256 characters)
+     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
+     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
      * </p>
      * 
-     * @return Each entry in the array is a structure containing:</p>
-     *         <p>
-     *         Key (string, between 1 and 128 characters)
-     *         </p>
-     *         <p>
-     *         Values (array of strings, each string between 1 and 256 characters)
+     * @return An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
+     *         values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
+     *         <code>State</code>.
      */
 
     public java.util.List<PatchOrchestratorFilter> getFilters() {
@@ -124,22 +111,14 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Each entry in the array is a structure containing:
-     * </p>
-     * <p>
-     * Key (string, between 1 and 128 characters)
-     * </p>
-     * <p>
-     * Values (array of strings, each string between 1 and 256 characters)
+     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
+     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
      * </p>
      * 
      * @param filters
-     *        Each entry in the array is a structure containing:</p>
-     *        <p>
-     *        Key (string, between 1 and 128 characters)
-     *        </p>
-     *        <p>
-     *        Values (array of strings, each string between 1 and 256 characters)
+     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
+     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
+     *        <code>State</code>.
      */
 
     public void setFilters(java.util.Collection<PatchOrchestratorFilter> filters) {
@@ -153,13 +132,8 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Each entry in the array is a structure containing:
-     * </p>
-     * <p>
-     * Key (string, between 1 and 128 characters)
-     * </p>
-     * <p>
-     * Values (array of strings, each string between 1 and 256 characters)
+     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
+     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,12 +142,9 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        Each entry in the array is a structure containing:</p>
-     *        <p>
-     *        Key (string, between 1 and 128 characters)
-     *        </p>
-     *        <p>
-     *        Values (array of strings, each string between 1 and 256 characters)
+     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
+     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
+     *        <code>State</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -189,22 +160,14 @@ public class DescribeInstancePatchesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Each entry in the array is a structure containing:
-     * </p>
-     * <p>
-     * Key (string, between 1 and 128 characters)
-     * </p>
-     * <p>
-     * Values (array of strings, each string between 1 and 256 characters)
+     * An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid values
+     * for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> | <code>State</code>.
      * </p>
      * 
      * @param filters
-     *        Each entry in the array is a structure containing:</p>
-     *        <p>
-     *        Key (string, between 1 and 128 characters)
-     *        </p>
-     *        <p>
-     *        Values (array of strings, each string between 1 and 256 characters)
+     *        An array of structures. Each entry in the array is a structure containing a Key, Value combination. Valid
+     *        values for Key are <code>Classification</code> | <code>KBId</code> | <code>Severity</code> |
+     *        <code>State</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

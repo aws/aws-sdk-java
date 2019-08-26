@@ -52,7 +52,7 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
     private String versionName;
     /**
      * <p>
-     * The version of the document that you want to update.
+     * (Required) The version of the document that you want to update.
      * </p>
      */
     private String documentVersion;
@@ -271,11 +271,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the document that you want to update.
+     * (Required) The version of the document that you want to update.
      * </p>
      * 
      * @param documentVersion
-     *        The version of the document that you want to update.
+     *        (Required) The version of the document that you want to update.
      */
 
     public void setDocumentVersion(String documentVersion) {
@@ -284,10 +284,10 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the document that you want to update.
+     * (Required) The version of the document that you want to update.
      * </p>
      * 
-     * @return The version of the document that you want to update.
+     * @return (Required) The version of the document that you want to update.
      */
 
     public String getDocumentVersion() {
@@ -296,11 +296,11 @@ public class UpdateDocumentRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The version of the document that you want to update.
+     * (Required) The version of the document that you want to update.
      * </p>
      * 
      * @param documentVersion
-     *        The version of the document that you want to update.
+     *        (Required) The version of the document that you want to update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -21,7 +21,8 @@ import javax.annotation.Generated;
 public enum ParameterTier {
 
     Standard("Standard"),
-    Advanced("Advanced");
+    Advanced("Advanced"),
+    IntelligentTiering("Intelligent-Tiering");
 
     private String value;
 

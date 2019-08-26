@@ -1,3 +1,12 @@
+# __1.11.619__ __2019-08-26__
+## __AWS SecurityHub__
+  - ### Features
+    - This release resolves an issue with the DescribeHub action, changes the MasterId and InvitationId parameters for AcceptInvitation to Required, and changes the AccountIds parameter for DeleteInvitations and DeclineInvitations to Required.
+
+## __Amazon Simple Systems Manager (SSM)__
+  - ### Features
+    - This feature adds "default tier" to the AWS Systems Manager Parameter Store for parameter creation and update. AWS customers can now set the "default tier" to one of the following values: Standard (default), Advanced or Intelligent-Tiering.  This allows customers to create advanced parameters or parameters in corresponding tiers with one setting rather than code change to specify parameter tiers.
+
 # __1.11.618__ __2019-08-23__
 ## __AWS Elemental MediaPackage VOD__
   - ### Features

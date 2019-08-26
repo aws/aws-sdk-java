@@ -183,27 +183,90 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
+     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
      * </p>
      * <p>
      * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
-     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
-     * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
      * </p>
      */
     private String tier;
@@ -1372,52 +1435,177 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
-     * </p>
-     * <p>
-     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
      * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * </p>
      * 
      * @param tier
-     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
-     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
-     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        The parameter tier to assign to a parameter.</p>
      *        <p>
-     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
-     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
-     *        charge.
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of
+     *        10,000 standard parameters for each Region in an AWS account. Standard parameters are offered at no
+     *        additional cost.
      *        </p>
      *        <p>
-     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
-     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
-     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
-     *        use a different form of encryption than standard parameters.
+     *        Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You
+     *        can create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters
+     *        incur a charge. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
+     *        parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in
+     *        data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would
+     *        also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of
+     *        encryption than standard parameters.
      *        </p>
      *        <p>
      *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
-     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        parameter, you must delete it and recreate it as a new standard parameter.
+     *        </p>
+     *        <p>
+     *        <b>Using the Default Tier Configuration</b>
+     *        </p>
+     *        <p>
+     *        In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you
+     *        specify a tier in the request, Parameter Store creates or updates the parameter according to that request.
+     *        However, if you do not specify a tier in a request, Parameter Store assigns the tier based on the current
+     *        Parameter Store default tier configuration.
+     *        </p>
+     *        <p>
+     *        The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     *        advanced-parameter tier, you can specify one of the following as the default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     *        parameter is standard or advanced.
+     *        </p>
+     *        <p>
+     *        If the request doesn't include any options that require an advanced parameter, the parameter is created in
+     *        the standard-parameter tier. If one or more options requiring an advanced parameter are included in the
+     *        request, Parameter Store create a parameter in the advanced-parameter tier.
+     *        </p>
+     *        <p>
+     *        This approach helps control your parameter-related costs by always creating standard parameters unless an
+     *        advanced parameter is necessary.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Options that require an advanced parameter include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The content size of the parameter is more than 4 KB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The parameter uses a parameter policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        More than 10,000 parameters already exist in your AWS account in the current Region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring the default tier option, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
      * @see ParameterTier
      */
 
@@ -1427,52 +1615,176 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
-     * </p>
-     * <p>
-     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
      * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * </p>
      * 
-     * @return Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
-     *         value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
-     *         standard parameters per account and per Region. Standard parameters are offered at no additional
-     *         cost.</p>
+     * @return The parameter tier to assign to a parameter.</p>
      *         <p>
-     *         Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
-     *         create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
-     *         charge.
+     *         Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *         content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of
+     *         10,000 standard parameters for each Region in an AWS account. Standard parameters are offered at no
+     *         additional cost.
      *         </p>
      *         <p>
-     *         If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using
-     *         the standard tier. You can change a standard parameter to an advanced parameter at any time. But you
-     *         can't revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-     *         parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
-     *         to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
-     *         use a different form of encryption than standard parameters.
+     *         Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies.
+     *         You can create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced
+     *         parameters incur a charge. For more information, see <a href=
+     *         "http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *         >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         </p>
+     *         <p>
+     *         You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
+     *         parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
+     *         in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting
+     *         would also remove any policies attached to the parameter. Lastly, advanced parameters use a different
+     *         form of encryption than standard parameters.
      *         </p>
      *         <p>
      *         If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
-     *         parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
-     *         href
-     *         ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *         >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         parameter, you must delete it and recreate it as a new standard parameter.
+     *         </p>
+     *         <p>
+     *         <b>Using the Default Tier Configuration</b>
+     *         </p>
+     *         <p>
+     *         In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you
+     *         specify a tier in the request, Parameter Store creates or updates the parameter according to that
+     *         request. However, if you do not specify a tier in a request, Parameter Store assigns the tier based on
+     *         the current Parameter Store default tier configuration.
+     *         </p>
+     *         <p>
+     *         The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     *         advanced-parameter tier, you can specify one of the following as the default:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     *         parameter is standard or advanced.
+     *         </p>
+     *         <p>
+     *         If the request doesn't include any options that require an advanced parameter, the parameter is created
+     *         in the standard-parameter tier. If one or more options requiring an advanced parameter are included in
+     *         the request, Parameter Store create a parameter in the advanced-parameter tier.
+     *         </p>
+     *         <p>
+     *         This approach helps control your parameter-related costs by always creating standard parameters unless an
+     *         advanced parameter is necessary.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Options that require an advanced parameter include the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The content size of the parameter is more than 4 KB.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The parameter uses a parameter policy.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than 10,000 parameters already exist in your AWS account in the current Region.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about configuring the default tier option, see <a
+     *         href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+     *         Default Parameter Tier</a> in the AWS Systems Manager User Guide.
      * @see ParameterTier
      */
 
@@ -1482,52 +1794,177 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
-     * </p>
-     * <p>
-     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
      * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * </p>
      * 
      * @param tier
-     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
-     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
-     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        The parameter tier to assign to a parameter.</p>
      *        <p>
-     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
-     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
-     *        charge.
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of
+     *        10,000 standard parameters for each Region in an AWS account. Standard parameters are offered at no
+     *        additional cost.
      *        </p>
      *        <p>
-     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
-     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
-     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
-     *        use a different form of encryption than standard parameters.
+     *        Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You
+     *        can create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters
+     *        incur a charge. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
+     *        parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in
+     *        data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would
+     *        also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of
+     *        encryption than standard parameters.
      *        </p>
      *        <p>
      *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
-     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        parameter, you must delete it and recreate it as a new standard parameter.
+     *        </p>
+     *        <p>
+     *        <b>Using the Default Tier Configuration</b>
+     *        </p>
+     *        <p>
+     *        In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you
+     *        specify a tier in the request, Parameter Store creates or updates the parameter according to that request.
+     *        However, if you do not specify a tier in a request, Parameter Store assigns the tier based on the current
+     *        Parameter Store default tier configuration.
+     *        </p>
+     *        <p>
+     *        The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     *        advanced-parameter tier, you can specify one of the following as the default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     *        parameter is standard or advanced.
+     *        </p>
+     *        <p>
+     *        If the request doesn't include any options that require an advanced parameter, the parameter is created in
+     *        the standard-parameter tier. If one or more options requiring an advanced parameter are included in the
+     *        request, Parameter Store create a parameter in the advanced-parameter tier.
+     *        </p>
+     *        <p>
+     *        This approach helps control your parameter-related costs by always creating standard parameters unless an
+     *        advanced parameter is necessary.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Options that require an advanced parameter include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The content size of the parameter is more than 4 KB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The parameter uses a parameter policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        More than 10,000 parameters already exist in your AWS account in the current Region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring the default tier option, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */
@@ -1539,52 +1976,177 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
-     * </p>
-     * <p>
-     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
      * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * </p>
      * 
      * @param tier
-     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
-     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
-     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        The parameter tier to assign to a parameter.</p>
      *        <p>
-     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
-     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
-     *        charge.
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of
+     *        10,000 standard parameters for each Region in an AWS account. Standard parameters are offered at no
+     *        additional cost.
      *        </p>
      *        <p>
-     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
-     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
-     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
-     *        use a different form of encryption than standard parameters.
+     *        Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You
+     *        can create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters
+     *        incur a charge. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
+     *        parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in
+     *        data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would
+     *        also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of
+     *        encryption than standard parameters.
      *        </p>
      *        <p>
      *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
-     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        parameter, you must delete it and recreate it as a new standard parameter.
+     *        </p>
+     *        <p>
+     *        <b>Using the Default Tier Configuration</b>
+     *        </p>
+     *        <p>
+     *        In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you
+     *        specify a tier in the request, Parameter Store creates or updates the parameter according to that request.
+     *        However, if you do not specify a tier in a request, Parameter Store assigns the tier based on the current
+     *        Parameter Store default tier configuration.
+     *        </p>
+     *        <p>
+     *        The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     *        advanced-parameter tier, you can specify one of the following as the default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     *        parameter is standard or advanced.
+     *        </p>
+     *        <p>
+     *        If the request doesn't include any options that require an advanced parameter, the parameter is created in
+     *        the standard-parameter tier. If one or more options requiring an advanced parameter are included in the
+     *        request, Parameter Store create a parameter in the advanced-parameter tier.
+     *        </p>
+     *        <p>
+     *        This approach helps control your parameter-related costs by always creating standard parameters unless an
+     *        advanced parameter is necessary.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Options that require an advanced parameter include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The content size of the parameter is more than 4 KB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The parameter uses a parameter policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        More than 10,000 parameters already exist in your AWS account in the current Region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring the default tier option, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
      * @see ParameterTier
      */
 
@@ -1594,52 +2156,177 @@ public class PutParameterRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a value
-     * limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
-     * parameters per account and per Region. Standard parameters are offered at no additional cost.
+     * The parameter tier to assign to a parameter.
      * </p>
      * <p>
-     * Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can create a
-     * maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a charge.
+     * Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a content
+     * size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000 standard
+     * parameters for each Region in an AWS account. Standard parameters are offered at no additional cost.
      * </p>
      * <p>
-     * If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     * standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't revert an
-     * advanced parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result
-     * in data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also
-     * remove any policies attached to the parameter. Lastly, advanced parameters use a different form of encryption
-     * than standard parameters.
-     * </p>
-     * <p>
-     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
-     * you must delete it and recreate it as a new standard parameter. For more information, see <a
+     * Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You can
+     * create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters incur a
+     * charge. For more information, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html">About
      * Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * <p>
+     * You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced parameter
+     * to a standard parameter. Reverting an advanced parameter to a standard parameter would result in data loss
+     * because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would also remove any
+     * policies attached to the parameter. Lastly, advanced parameters use a different form of encryption than standard
+     * parameters.
+     * </p>
+     * <p>
+     * If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced parameter,
+     * you must delete it and recreate it as a new standard parameter.
+     * </p>
+     * <p>
+     * <b>Using the Default Tier Configuration</b>
+     * </p>
+     * <p>
+     * In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you specify
+     * a tier in the request, Parameter Store creates or updates the parameter according to that request. However, if
+     * you do not specify a tier in a request, Parameter Store assigns the tier based on the current Parameter Store
+     * default tier configuration.
+     * </p>
+     * <p>
+     * The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     * advanced-parameter tier, you can specify one of the following as the default:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     * parameter is standard or advanced.
+     * </p>
+     * <p>
+     * If the request doesn't include any options that require an advanced parameter, the parameter is created in the
+     * standard-parameter tier. If one or more options requiring an advanced parameter are included in the request,
+     * Parameter Store create a parameter in the advanced-parameter tier.
+     * </p>
+     * <p>
+     * This approach helps control your parameter-related costs by always creating standard parameters unless an
+     * advanced parameter is necessary.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Options that require an advanced parameter include the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The content size of the parameter is more than 4 KB.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The parameter uses a parameter policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * More than 10,000 parameters already exist in your AWS account in the current Region.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about configuring the default tier option, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a Default
+     * Parameter Tier</a> in the AWS Systems Manager User Guide.
+     * </p>
      * 
      * @param tier
-     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
-     *        value limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of 10,000
-     *        standard parameters per account and per Region. Standard parameters are offered at no additional cost.</p>
+     *        The parameter tier to assign to a parameter.</p>
      *        <p>
-     *        Advanced parameters have a value limit of 8 KB and can be configured to use parameter policies. You can
-     *        create a maximum of 100,000 advanced parameters per account and per Region. Advanced parameters incur a
-     *        charge.
+     *        Parameter Store offers a standard tier and an advanced tier for parameters. Standard parameters have a
+     *        content size limit of 4 KB and can't be configured to use parameter policies. You can create a maximum of
+     *        10,000 standard parameters for each Region in an AWS account. Standard parameters are offered at no
+     *        additional cost.
      *        </p>
      *        <p>
-     *        If you don't specify a parameter tier when you create a new parameter, the parameter defaults to using the
-     *        standard tier. You can change a standard parameter to an advanced parameter at any time. But you can't
-     *        revert an advanced parameter to a standard parameter. Reverting an advanced parameter to a standard
-     *        parameter would result in data loss because the system would truncate the size of the parameter from 8 KB
-     *        to 4 KB. Reverting would also remove any policies attached to the parameter. Lastly, advanced parameters
-     *        use a different form of encryption than standard parameters.
+     *        Advanced parameters have a content size limit of 8 KB and can be configured to use parameter policies. You
+     *        can create a maximum of 100,000 advanced parameters for each Region in an AWS account. Advanced parameters
+     *        incur a charge. For more information, see <a href=
+     *        "http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
+     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
+     *        <p>
+     *        You can change a standard parameter to an advanced parameter any time. But you can't revert an advanced
+     *        parameter to a standard parameter. Reverting an advanced parameter to a standard parameter would result in
+     *        data loss because the system would truncate the size of the parameter from 8 KB to 4 KB. Reverting would
+     *        also remove any policies attached to the parameter. Lastly, advanced parameters use a different form of
+     *        encryption than standard parameters.
      *        </p>
      *        <p>
      *        If you no longer need an advanced parameter, or if you no longer want to incur charges for an advanced
-     *        parameter, you must delete it and recreate it as a new standard parameter. For more information, see <a
-     *        href
-     *        ="http://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-advanced-parameters.html"
-     *        >About Advanced Parameters</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        parameter, you must delete it and recreate it as a new standard parameter.
+     *        </p>
+     *        <p>
+     *        <b>Using the Default Tier Configuration</b>
+     *        </p>
+     *        <p>
+     *        In <code>PutParameter</code> requests, you can specify the tier to create the parameter in. Whenever you
+     *        specify a tier in the request, Parameter Store creates or updates the parameter according to that request.
+     *        However, if you do not specify a tier in a request, Parameter Store assigns the tier based on the current
+     *        Parameter Store default tier configuration.
+     *        </p>
+     *        <p>
+     *        The default tier when you begin using Parameter Store is the standard-parameter tier. If you use the
+     *        advanced-parameter tier, you can specify one of the following as the default:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Advanced</b>: With this option, Parameter Store evaluates all requests as advanced parameters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Intelligent-Tiering</b>: With this option, Parameter Store evaluates each request to determine if the
+     *        parameter is standard or advanced.
+     *        </p>
+     *        <p>
+     *        If the request doesn't include any options that require an advanced parameter, the parameter is created in
+     *        the standard-parameter tier. If one or more options requiring an advanced parameter are included in the
+     *        request, Parameter Store create a parameter in the advanced-parameter tier.
+     *        </p>
+     *        <p>
+     *        This approach helps control your parameter-related costs by always creating standard parameters unless an
+     *        advanced parameter is necessary.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Options that require an advanced parameter include the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The content size of the parameter is more than 4 KB.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The parameter uses a parameter policy.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        More than 10,000 parameters already exist in your AWS account in the current Region.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about configuring the default tier option, see <a
+     *        href="http://docs.aws.amazon.com/systems-manager/latest/userguide/ps-default-tier.html">Specifying a
+     *        Default Parameter Tier</a> in the AWS Systems Manager User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ParameterTier
      */
