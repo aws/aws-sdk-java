@@ -31,7 +31,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string requires
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
      * "car-" followed by from 8 to 32 lower-case letters or digits.
      * </p>
      */
@@ -43,7 +43,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string requires
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
      * "car-" followed by from 8 to 32 lower-case letters or digits.
      * </p>
      * 
@@ -52,7 +52,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *        response to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a>
      *        operation.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
      *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
      */
 
@@ -66,7 +66,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string requires
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
      * "car-" followed by from 8 to 32 lower-case letters or digits.
      * </p>
      * 
@@ -74,7 +74,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *         response to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a>
      *         operation.</p>
      *         <p>
-     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string
+     *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
      *         requires "car-" followed by from 8 to 32 lower-case letters or digits.
      */
 
@@ -88,7 +88,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      * to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a> operation.
      * </p>
      * <p>
-     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string requires
+     * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string requires
      * "car-" followed by from 8 to 32 lower-case letters or digits.
      * </p>
      * 
@@ -97,7 +97,7 @@ public class DescribeCreateAccountStatusRequest extends com.amazonaws.AmazonWebS
      *        response to an earlier <a>CreateAccount</a> request, or from the <a>ListCreateAccountStatus</a>
      *        operation.</p>
      *        <p>
-     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an create account request ID string
+     *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account request ID string
      *        requires "car-" followed by from 8 to 32 lower-case letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

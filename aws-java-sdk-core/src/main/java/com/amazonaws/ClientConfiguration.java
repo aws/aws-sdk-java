@@ -213,7 +213,7 @@ public class ClientConfiguration {
     private int maxConnections = DEFAULT_MAX_CONNECTIONS;
 
     /**
-     * The amount of time to wait (in milliseconds) for data to be transfered over an established,
+     * The amount of time to wait (in milliseconds) for data to be transferred over an established,
      * open connection before the connection is timed out. A value of 0 means infinity, and is not
      * recommended.
      */
@@ -1280,11 +1280,11 @@ public class ClientConfiguration {
     }
 
     /**
-     * Returns the amount of time to wait (in milliseconds) for data to be transfered over an
+     * Returns the amount of time to wait (in milliseconds) for data to be transferred over an
      * established, open connection before the connection times out and is closed. A value of 0
      * means infinity, and isn't recommended.
      *
-     * @return The amount of time to wait (in milliseconds) for data to be transfered over an
+     * @return The amount of time to wait (in milliseconds) for data to be transferred over an
      *         established, open connection before the connection times out and is closed.
      */
     public int getSocketTimeout() {
@@ -1292,12 +1292,12 @@ public class ClientConfiguration {
     }
 
     /**
-     * Sets the amount of time to wait (in milliseconds) for data to be transfered over an
+     * Sets the amount of time to wait (in milliseconds) for data to be transferred over an
      * established, open connection before the connection times out and is closed. A value of 0
      * means infinity, and isn't recommended.
      *
      * @param socketTimeout
-     *            The amount of time to wait (in milliseconds) for data to be transfered over an
+     *            The amount of time to wait (in milliseconds) for data to be transferred over an
      *            established, open connection before the connection times out and is closed.
      */
     public void setSocketTimeout(int socketTimeout) {
@@ -1305,12 +1305,12 @@ public class ClientConfiguration {
     }
 
     /**
-     * Sets the amount of time to wait (in milliseconds) for data to be transfered over an
+     * Sets the amount of time to wait (in milliseconds) for data to be transferred over an
      * established, open connection before the connection times out and is closed, and returns the
      * updated ClientConfiguration object so that additional method calls may be chained together.
      *
      * @param socketTimeout
-     *            The amount of time to wait (in milliseconds) for data to be transfered over an
+     *            The amount of time to wait (in milliseconds) for data to be transferred over an
      *            established, open connection before the connection times out and is closed.
      * @return The updated ClientConfiguration object.
      */

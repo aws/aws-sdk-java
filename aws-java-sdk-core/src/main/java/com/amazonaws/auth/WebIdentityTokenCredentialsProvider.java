@@ -73,6 +73,10 @@ public class WebIdentityTokenCredentialsProvider implements AWSCredentialsProvid
 
     }
 
+    public static WebIdentityTokenCredentialsProvider create() {
+        return builder().build();
+    }
+
     public static Builder builder() {
         return new BuilderImpl();
     }

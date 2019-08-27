@@ -1,3 +1,8 @@
+# __1.11.620__ __2019-08-27__
+## __AWS Organizations__
+  - ### Features
+    - Documentation updates for organizations
+
 # __1.11.619__ __2019-08-26__
 ## __AWS SecurityHub__
   - ### Features
