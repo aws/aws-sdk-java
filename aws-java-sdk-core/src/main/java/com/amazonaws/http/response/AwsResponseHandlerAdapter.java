@@ -24,7 +24,6 @@ import com.amazonaws.http.HttpResponseHandler;
 import com.amazonaws.http.SdkHttpMetadata;
 import com.amazonaws.util.AWSRequestMetrics;
 import com.amazonaws.util.MetadataCache;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -93,6 +92,9 @@ public class AwsResponseHandlerAdapter<T> implements HttpResponseHandler<T> {
             // it is not available from the response header.
             logResponseRequestId(awsRequestId);
         }
+
+        logExtendedRequestId(response);
+
         awsRequestMetrics.addProperty(AWSRequestMetrics.Field.AWSRequestID, awsRequestId);
         return fillInResponseMetadata(awsResponse, response);
     }
@@ -152,6 +154,27 @@ public class AwsResponseHandlerAdapter<T> implements HttpResponseHandler<T> {
         if (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled()) {
             final String msg = "AWS Request ID: " +
                                (awsRequestId == null ? "not available" : awsRequestId);
+            if (requestIdLog.isDebugEnabled()) {
+                requestIdLog.debug(msg);
+            } else {
+                requestLog.debug(msg);
+            }
+        }
+    }
+
+    /**
+     * Used to log the "x-amz-id-2" header at DEBUG level, if any, from the response. This
+     * method assumes the apache httpClientSettings request/response has just been successfully
+     * executed. The extended request id is logged using the "com.amazonaws.requestId" logger
+     * if it was enabled at DEBUG level; otherwise, it is logged using at DEBUG level
+     * using the "com.amazonaws.request" logger.
+     */
+    private void logExtendedRequestId(HttpResponse response) {
+        String reqId = response.getHeaders()
+                               .get(HttpResponseHandler.X_AMZN_EXTENDED_REQUEST_ID_HEADER);
+
+        if (reqId != null && (requestIdLog.isDebugEnabled() || requestLog.isDebugEnabled())) {
+            String msg = "AWS Extended Request ID: " + reqId;
             if (requestIdLog.isDebugEnabled()) {
                 requestIdLog.debug(msg);
             } else {

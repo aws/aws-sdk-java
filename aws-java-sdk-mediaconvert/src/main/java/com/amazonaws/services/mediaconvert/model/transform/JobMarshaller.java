@@ -61,6 +61,8 @@ public class JobMarshaller {
             .marshallLocationName("role").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<String> SIMULATERESERVEDQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulateReservedQueue").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSUPDATEINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -102,6 +104,7 @@ public class JobMarshaller {
             protocolMarshaller.marshall(job.getRetryCount(), RETRYCOUNT_BINDING);
             protocolMarshaller.marshall(job.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(job.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(job.getSimulateReservedQueue(), SIMULATERESERVEDQUEUE_BINDING);
             protocolMarshaller.marshall(job.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(job.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);
             protocolMarshaller.marshall(job.getTiming(), TIMING_BINDING);

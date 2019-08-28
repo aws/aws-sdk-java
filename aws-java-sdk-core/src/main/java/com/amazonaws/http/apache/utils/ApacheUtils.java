@@ -19,6 +19,7 @@ import com.amazonaws.SdkClientException;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.settings.HttpClientSettings;
 import com.amazonaws.util.FakeIOException;
+import com.amazonaws.util.ReflectionMethodInvoker;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -47,6 +48,13 @@ import org.apache.http.protocol.HttpContext;
 
 public class ApacheUtils {
     private static final Log log = LogFactory.getLog(ApacheUtils.class);
+
+    private static final ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder> NORMALIZE_URI_INVOKER =
+        new ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder>(RequestConfig.Builder.class,
+                                                                                  RequestConfig.Builder.class,
+                                                                                  "setNormalizeUri",
+                                                                                  boolean.class);
+
     /**
      * Checks if the request was successful or not based on the status code.
      *
@@ -164,10 +172,10 @@ public class ApacheUtils {
      */
     public static void disableNormalizeUri(RequestConfig.Builder requestConfigBuilder) {
         try {
-            requestConfigBuilder.setNormalizeUri(false);
-        } catch (NoSuchMethodError error) {
+            NORMALIZE_URI_INVOKER.invoke(requestConfigBuilder, false);
+        } catch (NoSuchMethodException ignored) {
             // setNormalizeUri method was added in httpclient 4.5.8
-            log.warn("NoSuchMethodError was thrown when disabling normalizeUri. This indicates you are using "
+            log.warn("NoSuchMethodException was thrown when disabling normalizeUri. This indicates you are using "
                            + "an old version (< 4.5.8) of Apache http client. It is recommended to use http client "
                            + "version >= 4.5.9 to avoid the breaking change introduced in apache client 4.5.7 and "
                            + "the latency in exception handling. See https://github.com/aws/aws-sdk-java/issues/1919"

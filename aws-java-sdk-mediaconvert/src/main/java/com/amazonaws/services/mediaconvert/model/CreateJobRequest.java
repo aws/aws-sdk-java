@@ -62,6 +62,12 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /** JobSettings contains all the transcode settings for a job. */
     private JobSettings settings;
     /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     */
+    private String simulateReservedQueue;
+    /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
@@ -432,6 +438,73 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @see SimulateReservedQueue
+     */
+
+    public void setSimulateReservedQueue(String simulateReservedQueue) {
+        this.simulateReservedQueue = simulateReservedQueue;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @return Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *         need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance
+     *         to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @see SimulateReservedQueue
+     */
+
+    public String getSimulateReservedQueue() {
+        return this.simulateReservedQueue;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SimulateReservedQueue
+     */
+
+    public CreateJobRequest withSimulateReservedQueue(String simulateReservedQueue) {
+        setSimulateReservedQueue(simulateReservedQueue);
+        return this;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SimulateReservedQueue
+     */
+
+    public CreateJobRequest withSimulateReservedQueue(SimulateReservedQueue simulateReservedQueue) {
+        this.simulateReservedQueue = simulateReservedQueue.toString();
+        return this;
+    }
+
+    /**
      * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch Events. Set the interval, in
      * seconds, between status updates. MediaConvert sends an update at this interval from the time the service begins
      * processing your job to the time it completes the transcode or encounters an error.
@@ -587,6 +660,8 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Role: ").append(getRole()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getSimulateReservedQueue() != null)
+            sb.append("SimulateReservedQueue: ").append(getSimulateReservedQueue()).append(",");
         if (getStatusUpdateInterval() != null)
             sb.append("StatusUpdateInterval: ").append(getStatusUpdateInterval()).append(",");
         if (getUserMetadata() != null)
@@ -637,6 +712,10 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getSimulateReservedQueue() == null ^ this.getSimulateReservedQueue() == null)
+            return false;
+        if (other.getSimulateReservedQueue() != null && other.getSimulateReservedQueue().equals(this.getSimulateReservedQueue()) == false)
+            return false;
         if (other.getStatusUpdateInterval() == null ^ this.getStatusUpdateInterval() == null)
             return false;
         if (other.getStatusUpdateInterval() != null && other.getStatusUpdateInterval().equals(this.getStatusUpdateInterval()) == false)
@@ -661,6 +740,7 @@ public class CreateJobRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getQueue() == null) ? 0 : getQueue().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getSimulateReservedQueue() == null) ? 0 : getSimulateReservedQueue().hashCode());
         hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getUserMetadata() == null) ? 0 : getUserMetadata().hashCode());
         return hashCode;

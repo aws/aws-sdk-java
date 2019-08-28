@@ -36,6 +36,11 @@ import com.amazonaws.services.globalaccelerator.model.*;
  * AWS Global Accelerator is a network layer service in which you create accelerators to improve availability and
  * performance for internet applications used by a global audience.
  * </p>
+ * <important>
+ * <p>
+ * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+ * </p>
+ * </important>
  * <p>
  * Global Accelerator provides you with static IP addresses that you associate with your accelerator. These IP addresses
  * are anycast from the AWS edge network and distribute incoming application traffic across multiple endpoint resources
@@ -119,6 +124,11 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see
      * an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param createAcceleratorRequest
      * @return A Java Future containing the result of the CreateAccelerator operation returned by the service.
@@ -134,6 +144,11 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
      * traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see
      * an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param createAcceleratorRequest
      * @param asyncHandler
@@ -534,8 +549,13 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Update an accelerator.
+     * Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param updateAcceleratorRequest
      * @return A Java Future containing the result of the UpdateAccelerator operation returned by the service.
@@ -547,8 +567,13 @@ public interface AWSGlobalAcceleratorAsync extends AWSGlobalAccelerator {
 
     /**
      * <p>
-     * Update an accelerator.
+     * Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param updateAcceleratorRequest
      * @param asyncHandler

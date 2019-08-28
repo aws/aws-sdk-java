@@ -37,8 +37,8 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
     private String acceleratorArn;
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
      * </p>
      */
     private String name;
@@ -50,7 +50,7 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
     private String ipAddressType;
     /**
      * <p>
-     * Indicates whether theaccelerator is enabled. The value is true or false. The default value is true.
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
      * </p>
      * <p>
      * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
@@ -59,7 +59,7 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
     private Boolean enabled;
     /**
      * <p>
-     * IP address set associated with the accelerator.
+     * The static IP addresses that Global Accelerator associates with the accelerator.
      * </p>
      */
     private java.util.List<IpSet> ipSets;
@@ -124,13 +124,13 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *        not begin or end with a hyphen.
      */
 
     public void setName(String name) {
@@ -139,12 +139,12 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
      * </p>
      * 
-     * @return The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *         characters or hyphens (-), and must not begin or end with a hyphen.
+     * @return The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *         not begin or end with a hyphen.
      */
 
     public String getName() {
@@ -153,13 +153,13 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     * characters or hyphens (-), and must not begin or end with a hyphen.
+     * The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must not
+     * begin or end with a hyphen.
      * </p>
      * 
      * @param name
-     *        The name of the accelerator. The name can have a maximum of 32 characters, must contain only alphanumeric
-     *        characters or hyphens (-), and must not begin or end with a hyphen.
+     *        The name of the accelerator. The name must contain only alphanumeric characters or hyphens (-), and must
+     *        not begin or end with a hyphen.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,14 +229,14 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether theaccelerator is enabled. The value is true or false. The default value is true.
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
      * </p>
      * <p>
      * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p>
+     *        Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
      *        <p>
      *        If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
      *        deleted.
@@ -248,13 +248,13 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether theaccelerator is enabled. The value is true or false. The default value is true.
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
      * </p>
      * <p>
      * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
      * </p>
      * 
-     * @return Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p>
+     * @return Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
      *         <p>
      *         If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
      *         deleted.
@@ -266,14 +266,14 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether theaccelerator is enabled. The value is true or false. The default value is true.
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
      * </p>
      * <p>
      * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
      * </p>
      * 
      * @param enabled
-     *        Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p>
+     *        Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
      *        <p>
      *        If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
      *        deleted.
@@ -287,13 +287,13 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether theaccelerator is enabled. The value is true or false. The default value is true.
+     * Indicates whether the accelerator is enabled. The value is true or false. The default value is true.
      * </p>
      * <p>
      * If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be deleted.
      * </p>
      * 
-     * @return Indicates whether theaccelerator is enabled. The value is true or false. The default value is true. </p>
+     * @return Indicates whether the accelerator is enabled. The value is true or false. The default value is true. </p>
      *         <p>
      *         If the value is set to true, the accelerator cannot be deleted. If set to false, accelerator can be
      *         deleted.
@@ -305,10 +305,10 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address set associated with the accelerator.
+     * The static IP addresses that Global Accelerator associates with the accelerator.
      * </p>
      * 
-     * @return IP address set associated with the accelerator.
+     * @return The static IP addresses that Global Accelerator associates with the accelerator.
      */
 
     public java.util.List<IpSet> getIpSets() {
@@ -317,11 +317,11 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address set associated with the accelerator.
+     * The static IP addresses that Global Accelerator associates with the accelerator.
      * </p>
      * 
      * @param ipSets
-     *        IP address set associated with the accelerator.
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
      */
 
     public void setIpSets(java.util.Collection<IpSet> ipSets) {
@@ -335,7 +335,7 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address set associated with the accelerator.
+     * The static IP addresses that Global Accelerator associates with the accelerator.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -344,7 +344,7 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param ipSets
-     *        IP address set associated with the accelerator.
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,11 +360,11 @@ public class Accelerator implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * IP address set associated with the accelerator.
+     * The static IP addresses that Global Accelerator associates with the accelerator.
      * </p>
      * 
      * @param ipSets
-     *        IP address set associated with the accelerator.
+     *        The static IP addresses that Global Accelerator associates with the accelerator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

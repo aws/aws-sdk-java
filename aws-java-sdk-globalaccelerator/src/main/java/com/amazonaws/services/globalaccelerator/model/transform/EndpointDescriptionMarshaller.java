@@ -35,6 +35,8 @@ public class EndpointDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthState").build();
     private static final MarshallingInfo<String> HEALTHREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthReason").build();
+    private static final MarshallingInfo<Boolean> CLIENTIPPRESERVATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientIPPreservationEnabled").build();
 
     private static final EndpointDescriptionMarshaller instance = new EndpointDescriptionMarshaller();
 
@@ -56,6 +58,7 @@ public class EndpointDescriptionMarshaller {
             protocolMarshaller.marshall(endpointDescription.getWeight(), WEIGHT_BINDING);
             protocolMarshaller.marshall(endpointDescription.getHealthState(), HEALTHSTATE_BINDING);
             protocolMarshaller.marshall(endpointDescription.getHealthReason(), HEALTHREASON_BINDING);
+            protocolMarshaller.marshall(endpointDescription.getClientIPPreservationEnabled(), CLIENTIPPRESERVATIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

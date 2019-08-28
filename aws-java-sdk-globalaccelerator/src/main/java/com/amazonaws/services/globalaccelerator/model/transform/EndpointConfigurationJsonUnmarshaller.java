@@ -56,6 +56,10 @@ public class EndpointConfigurationJsonUnmarshaller implements Unmarshaller<Endpo
                     context.nextToken();
                     endpointConfiguration.setWeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ClientIPPreservationEnabled", targetDepth)) {
+                    context.nextToken();
+                    endpointConfiguration.setClientIPPreservationEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

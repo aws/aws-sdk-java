@@ -78,6 +78,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private String role;
     /** JobSettings contains all the transcode settings for a job. */
     private JobSettings settings;
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     */
+    private String simulateReservedQueue;
     /** A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR. */
     private String status;
     /**
@@ -776,6 +782,73 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @see SimulateReservedQueue
+     */
+
+    public void setSimulateReservedQueue(String simulateReservedQueue) {
+        this.simulateReservedQueue = simulateReservedQueue;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @return Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *         need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance
+     *         to what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @see SimulateReservedQueue
+     */
+
+    public String getSimulateReservedQueue() {
+        return this.simulateReservedQueue;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SimulateReservedQueue
+     */
+
+    public Job withSimulateReservedQueue(String simulateReservedQueue) {
+        setSimulateReservedQueue(simulateReservedQueue);
+        return this;
+    }
+
+    /**
+     * Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you need. When
+     * this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to what you will see
+     * with one RTS in a reserved queue. This setting is disabled by default.
+     * 
+     * @param simulateReservedQueue
+     *        Enable this setting when you run a test job to estimate how many reserved transcoding slots (RTS) you
+     *        need. When this is enabled, MediaConvert runs your job from an on-demand queue with similar performance to
+     *        what you will see with one RTS in a reserved queue. This setting is disabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SimulateReservedQueue
+     */
+
+    public Job withSimulateReservedQueue(SimulateReservedQueue simulateReservedQueue) {
+        this.simulateReservedQueue = simulateReservedQueue.toString();
+        return this;
+    }
+
+    /**
      * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
      * 
      * @param status
@@ -1035,6 +1108,8 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             sb.append("Role: ").append(getRole()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getSimulateReservedQueue() != null)
+            sb.append("SimulateReservedQueue: ").append(getSimulateReservedQueue()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusUpdateInterval() != null)
@@ -1121,6 +1196,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
             return false;
+        if (other.getSimulateReservedQueue() == null ^ this.getSimulateReservedQueue() == null)
+            return false;
+        if (other.getSimulateReservedQueue() != null && other.getSimulateReservedQueue().equals(this.getSimulateReservedQueue()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -1161,6 +1240,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRetryCount() == null) ? 0 : getRetryCount().hashCode());
         hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getSimulateReservedQueue() == null) ? 0 : getSimulateReservedQueue().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusUpdateInterval() == null) ? 0 : getStatusUpdateInterval().hashCode());
         hashCode = prime * hashCode + ((getTiming() == null) ? 0 : getTiming().hashCode());

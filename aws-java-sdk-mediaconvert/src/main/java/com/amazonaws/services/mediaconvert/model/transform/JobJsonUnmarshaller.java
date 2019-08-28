@@ -112,6 +112,10 @@ public class JobJsonUnmarshaller implements Unmarshaller<Job, JsonUnmarshallerCo
                     context.nextToken();
                     job.setSettings(JobSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("simulateReservedQueue", targetDepth)) {
+                    context.nextToken();
+                    job.setSimulateReservedQueue(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     job.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

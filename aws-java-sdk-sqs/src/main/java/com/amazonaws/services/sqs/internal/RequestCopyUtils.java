@@ -29,11 +29,12 @@ public class RequestCopyUtils {
     public static SendMessageBatchRequestEntry createSendMessageBatchRequestEntryFrom(String id,
                                                                                       SendMessageRequest sendMessageRequest) {
         return new SendMessageBatchRequestEntry()
-                .withId(id)
-                .withMessageBody(sendMessageRequest.getMessageBody())
-                .withDelaySeconds(sendMessageRequest.getDelaySeconds())
-                .withMessageAttributes(sendMessageRequest.getMessageAttributes())
-                .withMessageDeduplicationId(sendMessageRequest.getMessageDeduplicationId())
-                .withMessageGroupId(sendMessageRequest.getMessageGroupId());
+            .withId(id)
+            .withMessageBody(sendMessageRequest.getMessageBody())
+            .withDelaySeconds(sendMessageRequest.getDelaySeconds())
+            .withMessageAttributes(sendMessageRequest.getMessageAttributes())
+            .withMessageDeduplicationId(sendMessageRequest.getMessageDeduplicationId())
+            .withMessageGroupId(sendMessageRequest.getMessageGroupId())
+            .withMessageSystemAttributes(sendMessageRequest.getMessageSystemAttributes());
     }
 }

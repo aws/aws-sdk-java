@@ -48,6 +48,8 @@ public class CreateJobRequestMarshaller {
             .marshallLocationName("role").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("settings").build();
+    private static final MarshallingInfo<String> SIMULATERESERVEDQUEUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("simulateReservedQueue").build();
     private static final MarshallingInfo<String> STATUSUPDATEINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusUpdateInterval").build();
     private static final MarshallingInfo<Map> USERMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,6 +79,7 @@ public class CreateJobRequestMarshaller {
             protocolMarshaller.marshall(createJobRequest.getQueue(), QUEUE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getRole(), ROLE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(createJobRequest.getSimulateReservedQueue(), SIMULATERESERVEDQUEUE_BINDING);
             protocolMarshaller.marshall(createJobRequest.getStatusUpdateInterval(), STATUSUPDATEINTERVAL_BINDING);
             protocolMarshaller.marshall(createJobRequest.getUserMetadata(), USERMETADATA_BINDING);
         } catch (Exception e) {

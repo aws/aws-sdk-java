@@ -61,6 +61,11 @@ import com.amazonaws.services.globalaccelerator.model.transform.*;
  * AWS Global Accelerator is a network layer service in which you create accelerators to improve availability and
  * performance for internet applications used by a global audience.
  * </p>
+ * <important>
+ * <p>
+ * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+ * </p>
+ * </important>
  * <p>
  * Global Accelerator provides you with static IP addresses that you associate with your accelerator. These IP addresses
  * are anycast from the AWS edge network and distribute incoming application traffic across multiple endpoint resources
@@ -158,6 +163,9 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
+                                    com.amazonaws.services.globalaccelerator.model.AccessDeniedException.class))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
                                     com.amazonaws.services.globalaccelerator.model.InvalidArgumentException.class))
                     .addErrorMetadata(
@@ -247,6 +255,11 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. To see
      * an AWS CLI example of creating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param createAcceleratorRequest
      * @return Result of the CreateAccelerator operation returned by the service.
@@ -322,6 +335,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      *         An argument that you specified is invalid.
      * @throws LimitExceededException
      *         Processing your request would cause you to exceed an AWS Global Accelerator limit.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
      * @sample AWSGlobalAccelerator.CreateEndpointGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/CreateEndpointGroup"
      *      target="_top">AWS API Documentation</a>
@@ -505,6 +520,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * 
      * @param deleteEndpointGroupRequest
      * @return Result of the DeleteEndpointGroup operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
      * @throws EndpointGroupNotFoundException
      *         The endpoint group that you specified doesn't exist.
      * @throws InternalServiceErrorException
@@ -562,6 +579,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * 
      * @param deleteListenerRequest
      * @return Result of the DeleteListener operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
      * @throws ListenerNotFoundException
      *         The listener that you specified doesn't exist.
      * @throws AssociatedEndpointGroupFoundException
@@ -742,6 +761,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * 
      * @param describeEndpointGroupRequest
      * @return Result of the DescribeEndpointGroup operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
      * @throws EndpointGroupNotFoundException
      *         The endpoint group that you specified doesn't exist.
      * @throws InternalServiceErrorException
@@ -859,6 +880,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * 
      * @param listAcceleratorsRequest
      * @return Result of the ListAccelerators operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
      * @throws InvalidNextTokenException
      *         There isn't another item to return.
      * @throws InternalServiceErrorException
@@ -977,6 +1000,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      * 
      * @param listListenersRequest
      * @return Result of the ListListeners operation returned by the service.
+     * @throws InvalidArgumentException
+     *         An argument that you specified is invalid.
      * @throws AcceleratorNotFoundException
      *         The accelerator that you specified doesn't exist.
      * @throws InvalidNextTokenException
@@ -1031,8 +1056,13 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Update an accelerator.
+     * Update an accelerator. To see an AWS CLI example of updating an accelerator, scroll down to <b>Example</b>.
      * </p>
+     * <important>
+     * <p>
+     * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+     * </p>
+     * </important>
      * 
      * @param updateAcceleratorRequest
      * @return Result of the UpdateAccelerator operation returned by the service.
@@ -1102,6 +1132,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      *         There was an internal error for AWS Global Accelerator.
      * @throws InvalidArgumentException
      *         An argument that you specified is invalid.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
      * @sample AWSGlobalAccelerator.UpdateAcceleratorAttributes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateAcceleratorAttributes"
      *      target="_top">AWS API Documentation</a>
@@ -1165,6 +1197,8 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
      *         There was an internal error for AWS Global Accelerator.
      * @throws LimitExceededException
      *         Processing your request would cause you to exceed an AWS Global Accelerator limit.
+     * @throws AccessDeniedException
+     *         You don't have access permission.
      * @sample AWSGlobalAccelerator.UpdateEndpointGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/globalaccelerator-2018-08-08/UpdateEndpointGroup"
      *      target="_top">AWS API Documentation</a>

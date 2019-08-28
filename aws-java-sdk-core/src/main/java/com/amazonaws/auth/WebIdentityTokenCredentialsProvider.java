@@ -42,6 +42,10 @@ public class WebIdentityTokenCredentialsProvider implements AWSCredentialsProvid
                 builder.roleSessionName != null ? builder.roleSessionName
                                                 : System.getenv(AWS_ROLE_SESSION_NAME_ENV_VAR);
 
+            if (roleSessionName == null) {
+                roleSessionName = "aws-sdk-java-" + System.currentTimeMillis();
+            }
+
             RoleInfo roleInfo = new RoleInfo()
                     .withRoleArn(roleArn)
                     .withRoleSessionName(roleSessionName)

@@ -36,6 +36,11 @@ import java.util.concurrent.ExecutorService;
  * AWS Global Accelerator is a network layer service in which you create accelerators to improve availability and
  * performance for internet applications used by a global audience.
  * </p>
+ * <important>
+ * <p>
+ * You must specify the US-West-2 (Oregon) Region to create or update accelerators.
+ * </p>
+ * </important>
  * <p>
  * Global Accelerator provides you with static IP addresses that you associate with your accelerator. These IP addresses
  * are anycast from the AWS edge network and distribute incoming application traffic across multiple endpoint resources

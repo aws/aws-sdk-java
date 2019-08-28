@@ -26,7 +26,8 @@ public enum MessageSystemAttributeName {
     ApproximateFirstReceiveTimestamp("ApproximateFirstReceiveTimestamp"),
     SequenceNumber("SequenceNumber"),
     MessageDeduplicationId("MessageDeduplicationId"),
-    MessageGroupId("MessageGroupId");
+    MessageGroupId("MessageGroupId"),
+    AWSTraceHeader("AWSTraceHeader");
 
     private String value;
 

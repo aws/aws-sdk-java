@@ -72,6 +72,47 @@ public class SendMessageBatchRequestEntryStaxUnmarshaller implements Unmarshalle
 
     }
 
+    private static class MessageSystemAttributesMapEntryUnmarshaller implements
+            Unmarshaller<Map.Entry<String, MessageSystemAttributeValue>, StaxUnmarshallerContext> {
+
+        @Override
+        public Entry<String, MessageSystemAttributeValue> unmarshall(StaxUnmarshallerContext context) throws Exception {
+            int originalDepth = context.getCurrentDepth();
+            int targetDepth = originalDepth + 1;
+
+            MapEntry<String, MessageSystemAttributeValue> entry = new MapEntry<String, MessageSystemAttributeValue>();
+
+            while (true) {
+                XMLEvent xmlEvent = context.nextEvent();
+                if (xmlEvent.isEndDocument())
+                    return entry;
+
+                if (xmlEvent.isAttribute() || xmlEvent.isStartElement()) {
+                    if (context.testExpression("Name", targetDepth)) {
+                        entry.setKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                    if (context.testExpression("Value", targetDepth)) {
+                        entry.setValue(MessageSystemAttributeValueStaxUnmarshaller.getInstance().unmarshall(context));
+                        continue;
+                    }
+                } else if (xmlEvent.isEndElement()) {
+                    if (context.getCurrentDepth() < originalDepth)
+                        return entry;
+                }
+            }
+        }
+
+        private static MessageSystemAttributesMapEntryUnmarshaller instance;
+
+        public static MessageSystemAttributesMapEntryUnmarshaller getInstance() {
+            if (instance == null)
+                instance = new MessageSystemAttributesMapEntryUnmarshaller();
+            return instance;
+        }
+
+    }
+
     public SendMessageBatchRequestEntry unmarshall(StaxUnmarshallerContext context) throws Exception {
         SendMessageBatchRequestEntry sendMessageBatchRequestEntry = new SendMessageBatchRequestEntry();
         int originalDepth = context.getCurrentDepth();
@@ -105,6 +146,12 @@ public class SendMessageBatchRequestEntryStaxUnmarshaller implements Unmarshalle
                 if (context.testExpression("MessageAttribute", targetDepth)) {
                     Entry<String, MessageAttributeValue> entry = MessageAttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
                     sendMessageBatchRequestEntry.addMessageAttributesEntry(entry.getKey(), entry.getValue());
+                    continue;
+                }
+
+                if (context.testExpression("MessageSystemAttribute", targetDepth)) {
+                    Entry<String, MessageSystemAttributeValue> entry = MessageSystemAttributesMapEntryUnmarshaller.getInstance().unmarshall(context);
+                    sendMessageBatchRequestEntry.addMessageSystemAttributesEntry(entry.getKey(), entry.getValue());
                     continue;
                 }
 

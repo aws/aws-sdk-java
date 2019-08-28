@@ -31,6 +31,8 @@ public class EndpointConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointId").build();
     private static final MarshallingInfo<Integer> WEIGHT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Weight").build();
+    private static final MarshallingInfo<Boolean> CLIENTIPPRESERVATIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientIPPreservationEnabled").build();
 
     private static final EndpointConfigurationMarshaller instance = new EndpointConfigurationMarshaller();
 
@@ -50,6 +52,7 @@ public class EndpointConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(endpointConfiguration.getEndpointId(), ENDPOINTID_BINDING);
             protocolMarshaller.marshall(endpointConfiguration.getWeight(), WEIGHT_BINDING);
+            protocolMarshaller.marshall(endpointConfiguration.getClientIPPreservationEnabled(), CLIENTIPPRESERVATIONENABLED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

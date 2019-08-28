@@ -23,19 +23,16 @@ import com.amazonaws.retry.PredefinedBackoffStrategies;
 import com.amazonaws.retry.RetryPolicy;
 import com.amazonaws.retry.RetryUtils;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenService;
-import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClient;
 import com.amazonaws.services.securitytoken.AWSSecurityTokenServiceClientBuilder;
 import com.amazonaws.services.securitytoken.model.AssumeRoleWithWebIdentityRequest;
 import com.amazonaws.services.securitytoken.model.AssumeRoleWithWebIdentityResult;
 import com.amazonaws.services.securitytoken.model.IDPCommunicationErrorException;
 import com.amazonaws.services.securitytoken.model.InvalidIdentityTokenException;
-import org.apache.http.impl.client.DefaultBackoffStrategy;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.concurrent.Callable;
@@ -122,7 +119,10 @@ public class STSAssumeRoleWithWebIdentitySessionCredentialsProvider implements A
         ClientConfiguration clientConfiguration = new ClientConfiguration();
         clientConfiguration.setRetryPolicy(retryPolicy);
 
-        return AWSSecurityTokenServiceClientBuilder.standard().withClientConfiguration(clientConfiguration).build();
+        return AWSSecurityTokenServiceClientBuilder.standard()
+                                                   .withClientConfiguration(clientConfiguration)
+                                                   .withCredentials(new AWSStaticCredentialsProvider(new AnonymousAWSCredentials()))
+                                                   .build();
     }
 
     @Override

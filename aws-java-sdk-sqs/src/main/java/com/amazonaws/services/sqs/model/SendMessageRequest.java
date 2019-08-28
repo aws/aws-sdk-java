@@ -79,6 +79,28 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private com.amazonaws.internal.SdkInternalMap<String, MessageAttributeValue> messageAttributes;
     /**
      * <p>
+     * The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     * <code>Type</code>, and <code>Value</code>.
+     * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of a message system attribute doesn't count towards the total size of a message.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     */
+    private com.amazonaws.internal.SdkInternalMap<String, MessageSystemAttributeValue> messageSystemAttributes;
+    /**
+     * <p>
      * This parameter applies only to FIFO (first-in-first-out) queues.
      * </p>
      * <p>
@@ -572,6 +594,161 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public SendMessageRequest clearMessageAttributesEntries() {
         this.messageAttributes = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     * <code>Type</code>, and <code>Value</code>.
+     * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of a message system attribute doesn't count towards the total size of a message.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @return The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     *         <code>Type</code>, and <code>Value</code>.</p> <important>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The size of a message system attribute doesn't count towards the total size of a message.
+     *         </p>
+     *         </li>
+     *         </ul>
+     */
+
+    public java.util.Map<String, MessageSystemAttributeValue> getMessageSystemAttributes() {
+        if (messageSystemAttributes == null) {
+            messageSystemAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageSystemAttributeValue>();
+        }
+        return messageSystemAttributes;
+    }
+
+    /**
+     * <p>
+     * The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     * <code>Type</code>, and <code>Value</code>.
+     * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of a message system attribute doesn't count towards the total size of a message.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param messageSystemAttributes
+     *        The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     *        <code>Type</code>, and <code>Value</code>.</p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The size of a message system attribute doesn't count towards the total size of a message.
+     *        </p>
+     *        </li>
+     *        </ul>
+     */
+
+    public void setMessageSystemAttributes(java.util.Map<String, MessageSystemAttributeValue> messageSystemAttributes) {
+        this.messageSystemAttributes = messageSystemAttributes == null ? null : new com.amazonaws.internal.SdkInternalMap<String, MessageSystemAttributeValue>(
+                messageSystemAttributes);
+    }
+
+    /**
+     * <p>
+     * The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     * <code>Type</code>, and <code>Value</code>.
+     * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The size of a message system attribute doesn't count towards the total size of a message.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param messageSystemAttributes
+     *        The message system attribute to send. Each message system attribute consists of a <code>Name</code>,
+     *        <code>Type</code>, and <code>Value</code>.</p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The size of a message system attribute doesn't count towards the total size of a message.
+     *        </p>
+     *        </li>
+     *        </ul>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendMessageRequest withMessageSystemAttributes(java.util.Map<String, MessageSystemAttributeValue> messageSystemAttributes) {
+        setMessageSystemAttributes(messageSystemAttributes);
+        return this;
+    }
+
+    public SendMessageRequest addMessageSystemAttributesEntry(String key, MessageSystemAttributeValue value) {
+        if (null == this.messageSystemAttributes) {
+            this.messageSystemAttributes = new com.amazonaws.internal.SdkInternalMap<String, MessageSystemAttributeValue>();
+        }
+        if (this.messageSystemAttributes.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.messageSystemAttributes.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into MessageSystemAttributes.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendMessageRequest clearMessageSystemAttributesEntries() {
+        this.messageSystemAttributes = null;
         return this;
     }
 
@@ -1366,6 +1543,8 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("DelaySeconds: ").append(getDelaySeconds()).append(",");
         if (getMessageAttributes() != null)
             sb.append("MessageAttributes: ").append(getMessageAttributes()).append(",");
+        if (getMessageSystemAttributes() != null)
+            sb.append("MessageSystemAttributes: ").append(getMessageSystemAttributes()).append(",");
         if (getMessageDeduplicationId() != null)
             sb.append("MessageDeduplicationId: ").append(getMessageDeduplicationId()).append(",");
         if (getMessageGroupId() != null)
@@ -1400,6 +1579,10 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getMessageAttributes() != null && other.getMessageAttributes().equals(this.getMessageAttributes()) == false)
             return false;
+        if (other.getMessageSystemAttributes() == null ^ this.getMessageSystemAttributes() == null)
+            return false;
+        if (other.getMessageSystemAttributes() != null && other.getMessageSystemAttributes().equals(this.getMessageSystemAttributes()) == false)
+            return false;
         if (other.getMessageDeduplicationId() == null ^ this.getMessageDeduplicationId() == null)
             return false;
         if (other.getMessageDeduplicationId() != null && other.getMessageDeduplicationId().equals(this.getMessageDeduplicationId()) == false)
@@ -1420,6 +1603,7 @@ public class SendMessageRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getMessageBody() == null) ? 0 : getMessageBody().hashCode());
         hashCode = prime * hashCode + ((getDelaySeconds() == null) ? 0 : getDelaySeconds().hashCode());
         hashCode = prime * hashCode + ((getMessageAttributes() == null) ? 0 : getMessageAttributes().hashCode());
+        hashCode = prime * hashCode + ((getMessageSystemAttributes() == null) ? 0 : getMessageSystemAttributes().hashCode());
         hashCode = prime * hashCode + ((getMessageDeduplicationId() == null) ? 0 : getMessageDeduplicationId().hashCode());
         hashCode = prime * hashCode + ((getMessageGroupId() == null) ? 0 : getMessageGroupId().hashCode());
         return hashCode;

@@ -59,6 +59,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -346,6 +351,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -404,6 +414,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         <code>ApproximateReceiveCount</code> - Returns the number of times a message has been received from the
      *         queue but not deleted.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -481,6 +496,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -540,6 +560,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <code>ApproximateReceiveCount</code> - Returns the number of times a message has been received from the
      *        queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -619,6 +644,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -683,6 +713,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <code>ApproximateReceiveCount</code> - Returns the number of times a message has been received from the
      *        queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -764,6 +799,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -823,6 +863,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <code>ApproximateReceiveCount</code> - Returns the number of times a message has been received from the
      *        queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -899,6 +944,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>SenderId</code>
      * </p>
      * <ul>
@@ -958,6 +1008,11 @@ public class ReceiveMessageRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        <code>ApproximateReceiveCount</code> - Returns the number of times a message has been received from the
      *        queue but not deleted.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AWSTraceHeader</code> - Returns the AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
