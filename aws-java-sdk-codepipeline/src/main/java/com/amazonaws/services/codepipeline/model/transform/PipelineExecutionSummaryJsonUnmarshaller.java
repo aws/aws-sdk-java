@@ -69,6 +69,10 @@ public class PipelineExecutionSummaryJsonUnmarshaller implements Unmarshaller<Pi
                     pipelineExecutionSummary.setSourceRevisions(new ListUnmarshaller<SourceRevision>(SourceRevisionJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("trigger", targetDepth)) {
+                    context.nextToken();
+                    pipelineExecutionSummary.setTrigger(ExecutionTriggerJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

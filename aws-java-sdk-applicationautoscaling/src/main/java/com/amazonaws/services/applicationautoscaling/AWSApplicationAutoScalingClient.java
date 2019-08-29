@@ -99,7 +99,7 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <b>API Summary</b>
  * </p>
  * <p>
- * The Application Auto Scaling service API includes two key sets of actions:
+ * The Application Auto Scaling service API includes three key sets of actions:
  * </p>
  * <ul>
  * <li>
@@ -113,6 +113,14 @@ import com.amazonaws.services.applicationautoscaling.model.transform.*;
  * <p>
  * Configure and manage automatic scaling - Define scaling policies to dynamically scale your resources in response to
  * CloudWatch alarms, schedule one-time or recurring scaling actions, and retrieve your recent scaling activity history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the
+ * <a>RegisterScalableTarget</a> action for any Application Auto Scaling scalable target. You can suspend and resume,
+ * individually or in combination, scale-out activities triggered by a scaling policy, scale-in activities triggered by
+ * a scaling policy, and scheduled scaling.
  * </p>
  * </li>
  * </ul>
@@ -146,27 +154,30 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.InternalServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.ObjectNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.ObjectNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FailedResourceAccessException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.FailedResourceAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withModeledClass(
-                                    com.amazonaws.services.applicationautoscaling.model.ConcurrentUpdateException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationautoscaling.model.transform.ConcurrentUpdateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException>(
+                                            com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Application Auto Scaling. A credentials provider chain will

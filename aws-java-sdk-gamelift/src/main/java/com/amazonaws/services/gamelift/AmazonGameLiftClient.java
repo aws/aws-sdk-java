@@ -121,45 +121,48 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FleetCapacityExceededException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.FleetCapacityExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FleetCapacityExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.FleetCapacityExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.IdempotentParameterMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TerminalRoutingStrategyException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TerminalRoutingStrategyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.TerminalRoutingStrategyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGameSessionStatusException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGameSessionStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.InvalidGameSessionStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.InternalServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GameSessionFullException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.GameSessionFullException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GameSessionFullException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.GameSessionFullExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedRegionException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.UnsupportedRegionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedRegionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.UnsupportedRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.UnauthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFleetStatusException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFleetStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.InvalidFleetStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
-                                    com.amazonaws.services.gamelift.model.ConflictException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.gamelift.model.AmazonGameLiftException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.gamelift.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.gamelift.model.AmazonGameLiftException>(
+                                            com.amazonaws.services.gamelift.model.AmazonGameLiftException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift. A credentials provider chain will be used

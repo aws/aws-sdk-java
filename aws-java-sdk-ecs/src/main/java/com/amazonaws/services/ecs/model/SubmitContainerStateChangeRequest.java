@@ -45,6 +45,12 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
     private String containerName;
     /**
      * <p>
+     * The ID of the Docker container.
+     * </p>
+     */
+    private String runtimeId;
+    /**
+     * <p>
      * The status of the state change request.
      * </p>
      */
@@ -185,6 +191,46 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
 
     public SubmitContainerStateChangeRequest withContainerName(String containerName) {
         setContainerName(containerName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     */
+
+    public void setRuntimeId(String runtimeId) {
+        this.runtimeId = runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @return The ID of the Docker container.
+     */
+
+    public String getRuntimeId() {
+        return this.runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubmitContainerStateChangeRequest withRuntimeId(String runtimeId) {
+        setRuntimeId(runtimeId);
         return this;
     }
 
@@ -399,6 +445,8 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
             sb.append("Task: ").append(getTask()).append(",");
         if (getContainerName() != null)
             sb.append("ContainerName: ").append(getContainerName()).append(",");
+        if (getRuntimeId() != null)
+            sb.append("RuntimeId: ").append(getRuntimeId()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getExitCode() != null)
@@ -433,6 +481,10 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getContainerName() != null && other.getContainerName().equals(this.getContainerName()) == false)
             return false;
+        if (other.getRuntimeId() == null ^ this.getRuntimeId() == null)
+            return false;
+        if (other.getRuntimeId() != null && other.getRuntimeId().equals(this.getRuntimeId()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -460,6 +512,7 @@ public class SubmitContainerStateChangeRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getContainerName() == null) ? 0 : getContainerName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeId() == null) ? 0 : getRuntimeId().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());

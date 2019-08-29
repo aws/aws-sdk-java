@@ -96,24 +96,27 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnresolvableUsageUnitException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnresolvableUsageUnitException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.UnresolvableUsageUnitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestChangedException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.RequestChangedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestChangedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.RequestChangedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DataUnavailableException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.DataUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DataUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.DataUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BillExpirationException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.BillExpirationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BillExpirationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.BillExpirationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.costexplorer.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.costexplorer.model.AWSCostExplorerException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costexplorer.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.costexplorer.model.AWSCostExplorerException>(
+                                            com.amazonaws.services.costexplorer.model.AWSCostExplorerException.class))));
 
     public static AWSCostExplorerClientBuilder builder() {
         return AWSCostExplorerClientBuilder.standard();

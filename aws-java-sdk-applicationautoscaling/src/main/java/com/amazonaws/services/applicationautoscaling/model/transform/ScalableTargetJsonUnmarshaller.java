@@ -76,6 +76,10 @@ public class ScalableTargetJsonUnmarshaller implements Unmarshaller<ScalableTarg
                     context.nextToken();
                     scalableTarget.setCreationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
+                if (context.testExpression("SuspendedState", targetDepth)) {
+                    context.nextToken();
+                    scalableTarget.setSuspendedState(SuspendedStateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

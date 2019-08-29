@@ -35,6 +35,8 @@ public class UpdateEventSourceMappingRequestMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
+    private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
 
     private static final UpdateEventSourceMappingRequestMarshaller instance = new UpdateEventSourceMappingRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getFunctionName(), FUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(updateEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
+            protocolMarshaller.marshall(updateEventSourceMappingRequest.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

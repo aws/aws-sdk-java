@@ -76,39 +76,42 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeviceStreamLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeviceStreamLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.DeviceStreamLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.NotAuthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.InvalidArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountStreamLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccountStreamLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.AccountStreamLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClientLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClientLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.ClientLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.VersionMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeviceException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.InvalidDeviceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeviceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidDeviceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceFormatException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceFormatException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.InvalidResourceFormatExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagsPerResourceExceededLimitException").withModeledClass(
-                                    com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("TagsPerResourceExceededLimitException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisvideo.model.transform.TagsPerResourceExceededLimitExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException>(
+                                            com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class))));
 
     public static AmazonKinesisVideoClientBuilder builder() {
         return AmazonKinesisVideoClientBuilder.standard();

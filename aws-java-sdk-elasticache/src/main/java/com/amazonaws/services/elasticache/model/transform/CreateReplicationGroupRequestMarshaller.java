@@ -252,6 +252,10 @@ public class CreateReplicationGroupRequestMarshaller implements Marshaller<Reque
             request.addParameter("AtRestEncryptionEnabled", StringUtils.fromBoolean(createReplicationGroupRequest.getAtRestEncryptionEnabled()));
         }
 
+        if (createReplicationGroupRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createReplicationGroupRequest.getKmsKeyId()));
+        }
+
         return request;
     }
 

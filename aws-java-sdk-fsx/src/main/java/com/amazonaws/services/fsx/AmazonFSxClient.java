@@ -78,57 +78,60 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.fsx.model.ServiceLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.ServiceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
-                                    com.amazonaws.services.fsx.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotServiceResourceError").withModeledClass(
-                                    com.amazonaws.services.fsx.model.NotServiceResourceErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotServiceResourceError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.NotServiceResourceErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperation").withModeledClass(
-                                    com.amazonaws.services.fsx.model.UnsupportedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperation").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportPath").withModeledClass(
-                                    com.amazonaws.services.fsx.model.InvalidImportPathException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportPath").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidImportPathExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNetworkSettings").withModeledClass(
-                                    com.amazonaws.services.fsx.model.InvalidNetworkSettingsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNetworkSettings").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidNetworkSettingsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingFileSystemConfiguration").withModeledClass(
-                                    com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingFileSystemConfiguration").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.MissingFileSystemConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withModeledClass(
-                                    com.amazonaws.services.fsx.model.FileSystemNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileSystemNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.FileSystemNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupRestoring").withModeledClass(
-                                    com.amazonaws.services.fsx.model.BackupRestoringException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupRestoring").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BackupRestoringExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleParameterError").withModeledClass(
-                                    com.amazonaws.services.fsx.model.IncompatibleParameterErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IncompatibleParameterError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.IncompatibleParameterErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupInProgress").withModeledClass(
-                                    com.amazonaws.services.fsx.model.BackupInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupInProgress").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BackupInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidExportPath").withModeledClass(
-                                    com.amazonaws.services.fsx.model.InvalidExportPathException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExportPath").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InvalidExportPathExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withModeledClass(
-                                    com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceDoesNotSupportTagging").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.ResourceDoesNotSupportTaggingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withModeledClass(
-                                    com.amazonaws.services.fsx.model.BackupNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActiveDirectoryError").withModeledClass(
-                                    com.amazonaws.services.fsx.model.ActiveDirectoryErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActiveDirectoryError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.ActiveDirectoryErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequest").withModeledClass(
-                                    com.amazonaws.services.fsx.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.fsx.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.fsx.model.AmazonFSxException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fsx.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.fsx.model.AmazonFSxException>(
+                                            com.amazonaws.services.fsx.model.AmazonFSxException.class))));
 
     public static AmazonFSxClientBuilder builder() {
         return AmazonFSxClientBuilder.standard();

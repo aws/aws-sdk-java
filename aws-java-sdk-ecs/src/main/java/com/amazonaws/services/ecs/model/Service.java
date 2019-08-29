@@ -54,13 +54,6 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
      * it appears in a container definition), and the container port to access from the load balancer.
      * </p>
-     * <p>
-     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
-     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
-     * an elastic network interface, not an Amazon EC2 instance.
-     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<LoadBalancer> loadBalancers;
     /**
@@ -448,23 +441,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
      * it appears in a container definition), and the container port to access from the load balancer.
      * </p>
-     * <p>
-     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
-     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
-     * an elastic network interface, not an Amazon EC2 instance.
-     * </p>
      * 
      * @return A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *         name (as it appears in a container definition), and the container port to access from the load
-     *         balancer.</p>
-     *         <p>
-     *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *         launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-     *         are not supported. Also, when you create any target groups for these services, you must choose
-     *         <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
-     *         network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     *         name (as it appears in a container definition), and the container port to access from the load balancer.
      */
 
     public java.util.List<LoadBalancer> getLoadBalancers() {
@@ -479,24 +458,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
      * it appears in a container definition), and the container port to access from the load balancer.
      * </p>
-     * <p>
-     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
-     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
-     * an elastic network interface, not an Amazon EC2 instance.
-     * </p>
      * 
      * @param loadBalancers
      *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load
-     *        balancer.</p>
-     *        <p>
-     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-     *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
-     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     *        name (as it appears in a container definition), and the container port to access from the load balancer.
      */
 
     public void setLoadBalancers(java.util.Collection<LoadBalancer> loadBalancers) {
@@ -514,13 +479,6 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * it appears in a container definition), and the container port to access from the load balancer.
      * </p>
      * <p>
-     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
-     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
-     * an elastic network interface, not an Amazon EC2 instance.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setLoadBalancers(java.util.Collection)} or {@link #withLoadBalancers(java.util.Collection)} if you want
      * to override the existing values.
@@ -528,14 +486,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param loadBalancers
      *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load
-     *        balancer.</p>
-     *        <p>
-     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-     *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
-     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     *        name (as it appears in a container definition), and the container port to access from the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -554,24 +505,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container name (as
      * it appears in a container definition), and the container port to access from the load balancer.
      * </p>
-     * <p>
-     * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
-     * type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers are not
-     * supported. Also, when you create any target groups for these services, you must choose <code>ip</code> as the
-     * target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network mode are associated with
-     * an elastic network interface, not an Amazon EC2 instance.
-     * </p>
      * 
      * @param loadBalancers
      *        A list of Elastic Load Balancing load balancer objects, containing the load balancer name, the container
-     *        name (as it appears in a container definition), and the container port to access from the load
-     *        balancer.</p>
-     *        <p>
-     *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
-     *        launch type) only support Application Load Balancers and Network Load Balancers. Classic Load Balancers
-     *        are not supported. Also, when you create any target groups for these services, you must choose
-     *        <code>ip</code> as the target type, not <code>instance</code>. Tasks that use the <code>awsvpc</code>
-     *        network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+     *        name (as it appears in a container definition), and the container port to access from the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -92,69 +92,72 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActivityDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActivityDoesNotExist").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ActivityDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDefinition").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidDefinitionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDefinition").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidDefinitionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidName").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidName").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineAlreadyExists").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineAlreadyExists").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.StateMachineAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExecutionLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExecutionLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ExecutionLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArn").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArn").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDeleting").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineDeletingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDeleting").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.StateMachineDeletingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActivityWorkerLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActivityWorkerLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ActivityWorkerLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TaskTimedOut").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.TaskTimedOutException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TaskTimedOut").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.TaskTimedOutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExecutionAlreadyExists").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExecutionAlreadyExists").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ExecutionAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameter").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.MissingRequiredParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameter").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.MissingRequiredParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExecutionDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExecutionDoesNotExist").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ExecutionDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.StateMachineLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidToken").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTags").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTags").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidOutputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOutput").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidOutputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.ActivityLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActivityLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.ActivityLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExecutionInput").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.InvalidExecutionInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TaskDoesNotExist").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.TaskDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withModeledClass(
-                                    com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withExceptionUnmarshaller(
+                                    com.amazonaws.services.stepfunctions.model.transform.StateMachineDoesNotExistExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException>(
+                                            com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS SFN. A credentials provider chain will be used that

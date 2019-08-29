@@ -1,3 +1,24 @@
+# __1.11.622__ __2019-08-29__
+## __AWS CodePipeline__
+  - ### Features
+    - Introducing pipeline execution trigger details in ListPipelineExecutions API.
+
+## __AWS Lambda__
+  - ### Features
+    - Adds a "MaximumBatchingWindowInSeconds" parameter to event source mapping api's. Usable by Dynamodb and Kinesis event sources.
+
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for including Docker container IDs in the API response when describing and stopping tasks. This enables customers to easily map containers to the tasks they are associated with.
+
+## __Amazon ElastiCache__
+  - ### Features
+    - Amazon ElastiCache for Redis now supports encryption at rest using customer managed customer master keys (CMKs) in AWS Key Management Service (KMS). Amazon ElastiCache now supports cluster names upto 40 characters for replicationGoups and upto 50 characters for cacheClusters.
+
+## __Application Auto Scaling__
+  - ### Features
+    - With the current release, you can suspend and later resume any of the following scaling actions in Application Auto Scaling: scheduled scaling actions, dynamic scaling in actions, dynamic scaling out actions.
+
 # __1.11.621__ __2019-08-28__
 ## __AWS Elemental MediaConvert__
   - ### Features

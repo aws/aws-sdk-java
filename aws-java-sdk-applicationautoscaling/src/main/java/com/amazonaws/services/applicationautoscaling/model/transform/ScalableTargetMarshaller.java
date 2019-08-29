@@ -41,6 +41,8 @@ public class ScalableTargetMarshaller {
             .marshallLocationName("RoleARN").build();
     private static final MarshallingInfo<java.util.Date> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> SUSPENDEDSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SuspendedState").build();
 
     private static final ScalableTargetMarshaller instance = new ScalableTargetMarshaller();
 
@@ -65,6 +67,7 @@ public class ScalableTargetMarshaller {
             protocolMarshaller.marshall(scalableTarget.getMaxCapacity(), MAXCAPACITY_BINDING);
             protocolMarshaller.marshall(scalableTarget.getRoleARN(), ROLEARN_BINDING);
             protocolMarshaller.marshall(scalableTarget.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(scalableTarget.getSuspendedState(), SUSPENDEDSTATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

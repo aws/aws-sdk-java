@@ -100,39 +100,42 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TemporarilyUnavailableException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.TemporarilyUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TemporarilyUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.TemporarilyUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameterException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.MissingRequiredParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.MissingRequiredParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicationJobNotFoundException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicationJobNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.ReplicationJobNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.OperationNotPermittedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerCannotBeReplicatedException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerCannotBeReplicatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.ServerCannotBeReplicatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicationRunLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicationRunLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.ReplicationRunLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperationException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.UnauthorizedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.UnauthorizedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicationJobAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicationJobAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.ReplicationJobAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoConnectorsAvailableException").withModeledClass(
-                                    com.amazonaws.services.servermigration.model.NoConnectorsAvailableException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.servermigration.model.AWSServerMigrationException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("NoConnectorsAvailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servermigration.model.transform.NoConnectorsAvailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servermigration.model.AWSServerMigrationException>(
+                                            com.amazonaws.services.servermigration.model.AWSServerMigrationException.class))));
 
     /**
      * Constructs a new client to invoke service methods on SMS. A credentials provider chain will be used that searches

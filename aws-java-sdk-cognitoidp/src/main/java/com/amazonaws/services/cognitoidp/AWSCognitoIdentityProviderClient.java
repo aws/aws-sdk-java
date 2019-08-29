@@ -84,117 +84,120 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaResponseException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaResponseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidLambdaResponseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOAuthFlowException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOAuthFlowException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidOAuthFlowExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleAccessPolicyException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleAccessPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidSmsRoleAccessPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UsernameExistsException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UsernameExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UsernameExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UsernameExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserImportInProgressException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserImportInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserImportInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserImportInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredCodeException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredCodeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.ExpiredCodeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MFAMethodNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MFAMethodNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.MFAMethodNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidPasswordException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidPasswordExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AliasExistsException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.AliasExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AliasExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.AliasExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserStateException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UnsupportedUserStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.NotAuthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedIdentityProviderException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedIdentityProviderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UnsupportedIdentityProviderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserNotConfirmedException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserNotConfirmedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserNotConfirmedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserNotConfirmedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SoftwareTokenMFANotFoundException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SoftwareTokenMFANotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.SoftwareTokenMFANotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PasswordResetRequiredException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PasswordResetRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.PasswordResetRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EnableSoftwareTokenMFAException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EnableSoftwareTokenMFAException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.EnableSoftwareTokenMFAExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnexpectedLambdaException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnexpectedLambdaException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UnexpectedLambdaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateProviderException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.DuplicateProviderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateProviderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.DuplicateProviderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserLambdaValidationException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserLambdaValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserLambdaValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleTrustRelationshipException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSmsRoleTrustRelationshipException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidSmsRoleTrustRelationshipExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyFailedAttemptsException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyFailedAttemptsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.TooManyFailedAttemptsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeDeliveryFailureException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CodeDeliveryFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.CodeDeliveryFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ScopeDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ScopeDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.ScopeDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEmailRoleAccessPolicyException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEmailRoleAccessPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidEmailRoleAccessPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.PreconditionNotMetException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GroupExistsException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.GroupExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GroupExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.GroupExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserPoolTaggingException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserPoolTaggingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserPoolTaggingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserPoolTaggingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UserPoolAddOnNotEnabledException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UserPoolAddOnNotEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.UserPoolAddOnNotEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidUserPoolConfigurationException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUserPoolConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.InvalidUserPoolConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeMismatchException").withModeledClass(
-                                    com.amazonaws.services.cognitoidp.model.CodeMismatchException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("CodeMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitoidp.model.transform.CodeMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException>(
+                                            com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity Provider. A credentials provider

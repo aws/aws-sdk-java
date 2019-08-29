@@ -79,42 +79,45 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedWorkspaceConfigurationException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedWorkspaceConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.UnsupportedWorkspaceConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.OperationNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.OperationNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAssociatedException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceAssociatedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAssociatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceAssociatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.InvalidResourceStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValuesException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.InvalidParameterValuesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValuesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.InvalidParameterValuesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationInProgressException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.OperationInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.OperationInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceCreationFailedException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceCreationFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceCreationFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceCreationFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.workspaces.model.ResourceLimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workspaces.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.workspaces.model.AmazonWorkspacesException>(
+                                            com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces. A credentials provider chain will be used

@@ -95,69 +95,72 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BlockedException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.BlockedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BlockedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.BlockedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsServicesException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ClusterContainsServicesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsServicesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ClusterContainsServicesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.UnsupportedFeatureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.UnsupportedFeatureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ClusterNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ClusterNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ClientException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PlatformUnknownException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.PlatformUnknownException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PlatformUnknownException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.PlatformUnknownExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UpdateInProgressException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.UpdateInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UpdateInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.UpdateInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsTasksException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ClusterContainsTasksException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsTasksException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ClusterContainsTasksExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoUpdateAvailableException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.NoUpdateAvailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoUpdateAvailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.NoUpdateAvailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PlatformTaskDefinitionIncompatibilityException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PlatformTaskDefinitionIncompatibilityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.PlatformTaskDefinitionIncompatibilityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingVersionException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.MissingVersionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingVersionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.MissingVersionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsContainerInstancesException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ClusterContainsContainerInstancesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterContainsContainerInstancesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ClusterContainsContainerInstancesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ServiceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ServiceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TaskSetNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.TaskSetNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TaskSetNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.TaskSetNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AttributeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.AttributeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AttributeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.AttributeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotActiveException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ServiceNotActiveException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceNotActiveException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ServiceNotActiveExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.ServerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.ServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecs.model.TargetNotFoundException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.ecs.model.AmazonECSException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecs.model.transform.TargetNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ecs.model.AmazonECSException>(
+                                            com.amazonaws.services.ecs.model.AmazonECSException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECS. A credentials provider chain will be used that
@@ -438,13 +441,13 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
     /**
      * <p>
      * Runs and maintains a desired number of tasks from a specified task definition. If the number of tasks running in
-     * a service drops below the <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the specified
+     * a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified
      * cluster. To update an existing service, see <a>UpdateService</a>.
      * </p>
      * <p>
      * In addition to maintaining the desired count of tasks in your service, you can optionally run your service behind
-     * a load balancer. The load balancer distributes traffic across the tasks that are associated with the service. For
-     * more information, see <a
+     * one or more load balancers. The load balancers distribute traffic across the tasks that are associated with the
+     * service. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
      * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>

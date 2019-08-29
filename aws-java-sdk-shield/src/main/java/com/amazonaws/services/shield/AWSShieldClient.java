@@ -81,45 +81,48 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.shield.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withModeledClass(
-                                    com.amazonaws.services.shield.model.OptimisticLockException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OptimisticLockException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.OptimisticLockExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withModeledClass(
-                                    com.amazonaws.services.shield.model.LockedSubscriptionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LockedSubscriptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.LockedSubscriptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withModeledClass(
-                                    com.amazonaws.services.shield.model.InvalidResourceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.shield.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
-                                    com.amazonaws.services.shield.model.InvalidOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.shield.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.shield.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                                    com.amazonaws.services.shield.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
-                                    com.amazonaws.services.shield.model.InvalidPaginationTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withModeledClass(
-                                    com.amazonaws.services.shield.model.LimitsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.LimitsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoAssociatedRoleException").withModeledClass(
-                                    com.amazonaws.services.shield.model.NoAssociatedRoleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoAssociatedRoleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.NoAssociatedRoleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withModeledClass(
-                                    com.amazonaws.services.shield.model.AccessDeniedForDependencyException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.shield.model.transform.AccessDeniedForDependencyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.shield.model.AWSShieldException>(
+                                            com.amazonaws.services.shield.model.AWSShieldException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Shield. A credentials provider chain will be used that

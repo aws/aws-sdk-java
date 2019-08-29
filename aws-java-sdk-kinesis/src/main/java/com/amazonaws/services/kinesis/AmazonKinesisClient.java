@@ -82,45 +82,48 @@ public class AmazonKinesisClient extends AmazonWebServiceClient implements Amazo
                     .withSupportsCbor(true)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.InvalidArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSOptInRequired").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSOptInRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSOptInRequired").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSOptInRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.ExpiredIteratorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ExpiredIteratorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSInvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSDisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.ProvisionedThroughputExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.KMSThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.KMSThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.ExpiredNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesis.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesis.model.AmazonKinesisException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesis.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesis.model.AmazonKinesisException>(
+                                            com.amazonaws.services.kinesis.model.AmazonKinesisException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis. A credentials provider chain will be used that

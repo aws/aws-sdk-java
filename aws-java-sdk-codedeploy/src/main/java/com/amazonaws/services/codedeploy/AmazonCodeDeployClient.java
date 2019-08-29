@@ -171,330 +171,337 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceValidationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ResourceValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ResourceValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.GitHubAccountTokenDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsToAddException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTagsToAddException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsToAddException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTagsToAddExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagSetListLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagSetListLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.TagSetListLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentConfigDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentConfigDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApplicationNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApplicationNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ApplicationNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionIdException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidLifecycleEventHookExecutionIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutoRollbackConfigException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutoRollbackConfigException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidAutoRollbackConfigExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagFilterException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTagFilterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTagFilterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentAlreadyCompletedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentAlreadyCompletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentAlreadyCompletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ResourceArnRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ResourceArnRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.OperationNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.OperationNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentGroupLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentGroupNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentGroupNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentGroupNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentTargetDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentTargetDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlarmsLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlarmsLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.AlarmsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidGitHubAccountTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TriggerTargetsLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TriggerTargetsLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.TriggerTargetsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLoadBalancerInfoException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLoadBalancerInfoException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidLoadBalancerInfoExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MultipleIamArnsProvidedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MultipleIamArnsProvidedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.MultipleIamArnsProvidedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentConfigNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentConfigNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentConfigNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LifecycleHookLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LifecycleHookLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.LifecycleHookLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IamUserArnAlreadyRegisteredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.IamUserArnAlreadyRegisteredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IamUserArnAlreadyRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.IamUserArnAlreadyRegisteredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RevisionRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.RevisionRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RevisionRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.RevisionRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentIsNotInReadyStateException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentIsNotInReadyStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentIsNotInReadyStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGitHubAccountTokenNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidGitHubAccountTokenNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceNotRegisteredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceNotRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceNotRegisteredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlueGreenDeploymentConfigurationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlueGreenDeploymentConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidBlueGreenDeploymentConfigurationExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApplicationAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApplicationAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ApplicationAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeployedStateFilterException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeployedStateFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeployedStateFilterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentTargetIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentTargetIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidECSServiceException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidECSServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidECSServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidECSServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAlarmConfigException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAlarmConfigException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidAlarmConfigExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DescriptionTooLongException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DescriptionTooLongException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DescriptionTooLongException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DescriptionTooLongExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceStatusException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidInstanceStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidIgnoreApplicationStopFailuresValueException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIgnoreApplicationStopFailuresValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentConfigNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetGroupPairException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetGroupPairException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTargetGroupPairExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetFilterNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTargetFilterNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetFilterNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTargetFilterNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApplicationLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ApplicationLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApplicationLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ApplicationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRegistrationStatusException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRegistrationStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidRegistrationStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionStatusException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLifecycleEventHookExecutionStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidLifecycleEventHookExecutionStatusExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentGroupDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedActionForDeploymentTypeException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedActionForDeploymentTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.UnsupportedActionForDeploymentTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMinimumHealthyHostValueException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMinimumHealthyHostValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidMinimumHealthyHostValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BatchLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.BatchLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BatchLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.BatchLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApplicationDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApplicationDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ApplicationDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetInstancesException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetInstancesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTargetInstancesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.TagRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.TagRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BucketNameFilterRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BucketNameFilterRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.BucketNameFilterRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidIamUserArnException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidIamUserArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIamUserArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidIamUserArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceTypeException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidInstanceTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidInstanceTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTriggerConfigException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTriggerConfigException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTriggerConfigExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IamArnRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.IamArnRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IamArnRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.IamArnRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyPrefixFilterException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyPrefixFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidKeyPrefixFilterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GitHubAccountTokenNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.GitHubAccountTokenNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ECSServiceMappingLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ECSServiceMappingLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ECSServiceMappingLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBucketNameFilterException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBucketNameFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidBucketNameFilterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidComputePlatformException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidComputePlatformException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidComputePlatformException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidComputePlatformExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RoleRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.RoleRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RoleRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.RoleRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentNotStartedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentNotStartedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentNotStartedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentNotStartedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LifecycleEventAlreadyCompletedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LifecycleEventAlreadyCompletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.LifecycleEventAlreadyCompletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidIamSessionArnException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidIamSessionArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidIamSessionArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentGroupAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOnPremisesTagCombinationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOnPremisesTagCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidOnPremisesTagCombinationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEC2TagCombinationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEC2TagCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidEC2TagCombinationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentConfigLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentConfigLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRevisionException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidRevisionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRevisionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidRevisionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IamUserArnRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.IamUserArnRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IamUserArnRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.IamUserArnRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidUpdateOutdatedInstancesOnlyValueException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUpdateOutdatedInstancesOnlyValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentIdException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ArnNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.ArnNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ArnNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.ArnNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetListSizeExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentTargetListSizeExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentTargetListSizeExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentStatusException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidInstanceNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidInstanceNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigInUseException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentConfigInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentConfigAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentConfigAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IamSessionArnAlreadyRegisteredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IamSessionArnAlreadyRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.IamSessionArnAlreadyRegisteredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceNameAlreadyRegisteredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceNameAlreadyRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceNameAlreadyRegisteredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTagException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationNameException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidApplicationNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidApplicationNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentStyleException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentStyleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentStyleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTimeRangeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidSortByException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidSortByExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentInstanceTypeException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentInstanceTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentInstanceTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentInstanceTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEC2TagException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidEC2TagException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEC2TagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidEC2TagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortOrderException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidSortOrderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortOrderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidSortOrderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DeploymentGroupNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.DeploymentGroupNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RevisionDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RevisionDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.RevisionDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidRoleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidRoleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InstanceIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InstanceIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InstanceIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InstanceIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileExistsBehaviorException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileExistsBehaviorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidFileExistsBehaviorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentTargetIdException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentTargetIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentTargetIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.TagLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.TagLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentWaitTypeException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeploymentWaitTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidDeploymentWaitTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutoScalingGroupException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAutoScalingGroupException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidAutoScalingGroupExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTrafficRoutingConfigurationException").withModeledClass(
-                                    com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.codedeploy.model.AmazonCodeDeployException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTrafficRoutingConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codedeploy.model.transform.InvalidTrafficRoutingConfigurationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codedeploy.model.AmazonCodeDeployException>(
+                                            com.amazonaws.services.codedeploy.model.AmazonCodeDeployException.class))));
 
     /**
      * Constructs a new client to invoke service methods on CodeDeploy. A credentials provider chain will be used that

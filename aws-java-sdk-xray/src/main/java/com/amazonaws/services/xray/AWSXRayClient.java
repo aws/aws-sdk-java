@@ -79,15 +79,18 @@ public class AWSXRayClient extends AmazonWebServiceClient implements AWSXRay {
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.xray.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.xray.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottledException").withModeledClass(
-                                    com.amazonaws.services.xray.model.ThrottledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.xray.model.transform.ThrottledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RuleLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.xray.model.RuleLimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.xray.model.AWSXRayException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("RuleLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.xray.model.transform.RuleLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.xray.model.AWSXRayException>(
+                                            com.amazonaws.services.xray.model.AWSXRayException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS X-Ray. A credentials provider chain will be used that

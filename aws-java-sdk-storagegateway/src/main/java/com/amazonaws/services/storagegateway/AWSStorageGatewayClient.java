@@ -150,15 +150,18 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGatewayRequestException").withModeledClass(
-                                    com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGatewayRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.storagegateway.model.transform.InvalidGatewayRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableError").withModeledClass(
-                                    com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.storagegateway.model.transform.ServiceUnavailableErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.storagegateway.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.storagegateway.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.storagegateway.model.AWSStorageGatewayException>(
+                                            com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway. A credentials provider chain will be

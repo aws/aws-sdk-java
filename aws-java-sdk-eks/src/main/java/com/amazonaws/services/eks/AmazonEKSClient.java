@@ -90,33 +90,36 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZoneException").withModeledClass(
-                                    com.amazonaws.services.eks.model.UnsupportedAvailabilityZoneException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAvailabilityZoneException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.UnsupportedAvailabilityZoneExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ServiceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.eks.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.eks.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ServerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ResourceLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withModeledClass(
-                                    com.amazonaws.services.eks.model.ClientException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.eks.model.AmazonEKSException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.eks.model.transform.ClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.eks.model.AmazonEKSException>(
+                                            com.amazonaws.services.eks.model.AmazonEKSException.class))));
 
     public static AmazonEKSClientBuilder builder() {
         return AmazonEKSClientBuilder.standard();

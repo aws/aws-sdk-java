@@ -81,21 +81,24 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TrimmedDataAccessException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TrimmedDataAccessException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TrimmedDataAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ExpiredIteratorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredIteratorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExpiredIteratorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException>(
+                                            com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon DynamoDB Streams. A credentials provider chain will

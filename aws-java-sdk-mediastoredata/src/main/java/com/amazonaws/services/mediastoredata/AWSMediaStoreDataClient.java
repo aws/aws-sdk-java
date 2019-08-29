@@ -79,18 +79,21 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestedRangeNotSatisfiableException").withModeledClass(
-                                    com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestedRangeNotSatisfiableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastoredata.model.transform.RequestedRangeNotSatisfiableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastoredata.model.ObjectNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ObjectNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastoredata.model.transform.ObjectNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.mediastoredata.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastoredata.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastoredata.model.ContainerNotFoundException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastoredata.model.transform.ContainerNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException>(
+                                            com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException.class))));
 
     public static AWSMediaStoreDataClientBuilder builder() {
         return AWSMediaStoreDataClientBuilder.standard();

@@ -233,12 +233,15 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.opsworks.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.opsworks.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.opsworks.model.ValidationException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.opsworks.model.AWSOpsWorksException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.opsworks.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.opsworks.model.AWSOpsWorksException>(
+                                            com.amazonaws.services.opsworks.model.AWSOpsWorksException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks. A credentials provider chain will be used that

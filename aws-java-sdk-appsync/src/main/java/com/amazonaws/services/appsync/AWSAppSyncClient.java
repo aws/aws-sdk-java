@@ -78,39 +78,42 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.InternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GraphQLSchemaException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.GraphQLSchemaException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GraphQLSchemaException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.GraphQLSchemaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.UnauthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.UnauthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ApiKeyLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.ApiKeyLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApiKeyValidityOutOfBoundsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.ApiKeyValidityOutOfBoundsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.ApiLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApiLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.ApiLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.appsync.model.BadRequestException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.appsync.model.AWSAppSyncException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appsync.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.appsync.model.AWSAppSyncException>(
+                                            com.amazonaws.services.appsync.model.AWSAppSyncException.class))));
 
     public static AWSAppSyncClientBuilder builder() {
         return AWSAppSyncClientBuilder.standard();

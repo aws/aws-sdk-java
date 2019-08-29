@@ -85,30 +85,33 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.DisabledOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DisabledOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.DisabledOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.InvalidTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.BaseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BaseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.BaseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
-                                    com.amazonaws.services.elasticsearch.model.InternalException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.elasticsearch.model.transform.InternalExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.elasticsearch.model.AWSElasticsearchException>(
+                                            com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elasticsearch Service. A credentials provider chain

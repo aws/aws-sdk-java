@@ -34,6 +34,8 @@ public class SubmitContainerStateChangeRequestMarshaller {
             .marshallLocationName("task").build();
     private static final MarshallingInfo<String> CONTAINERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerName").build();
+    private static final MarshallingInfo<String> RUNTIMEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runtimeId").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<Integer> EXITCODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -62,6 +64,7 @@ public class SubmitContainerStateChangeRequestMarshaller {
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getTask(), TASK_BINDING);
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getContainerName(), CONTAINERNAME_BINDING);
+            protocolMarshaller.marshall(submitContainerStateChangeRequest.getRuntimeId(), RUNTIMEID_BINDING);
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getExitCode(), EXITCODE_BINDING);
             protocolMarshaller.marshall(submitContainerStateChangeRequest.getReason(), REASON_BINDING);

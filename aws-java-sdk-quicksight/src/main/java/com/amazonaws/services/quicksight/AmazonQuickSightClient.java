@@ -81,51 +81,54 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DomainNotWhitelistedException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.DomainNotWhitelistedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DomainNotWhitelistedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.DomainNotWhitelistedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("QuickSightUserNotFoundException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("QuickSightUserNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.QuickSightUserNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.InternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdentityTypeNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdentityTypeNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.IdentityTypeNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.ResourceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.ThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.ResourceExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.ResourceExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SessionLifetimeInMinutesInvalidException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SessionLifetimeInMinutesInvalidException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.SessionLifetimeInMinutesInvalidExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserEditionException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.UnsupportedUserEditionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedUserEditionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.UnsupportedUserEditionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withModeledClass(
-                                    com.amazonaws.services.quicksight.model.PreconditionNotMetException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.quicksight.model.AmazonQuickSightException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.quicksight.model.AmazonQuickSightException>(
+                                            com.amazonaws.services.quicksight.model.AmazonQuickSightException.class))));
 
     public static AmazonQuickSightClientBuilder builder() {
         return AmazonQuickSightClientBuilder.standard();

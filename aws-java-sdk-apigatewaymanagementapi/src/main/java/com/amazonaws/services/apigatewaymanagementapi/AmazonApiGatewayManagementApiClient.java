@@ -81,18 +81,23 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                                    com.amazonaws.services.apigatewaymanagementapi.model.ForbiddenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.apigatewaymanagementapi.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PayloadTooLargeException").withModeledClass(
-                                    com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PayloadTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.apigatewaymanagementapi.model.transform.PayloadTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.apigatewaymanagementapi.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.apigatewaymanagementapi.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GoneException").withModeledClass(
-                                    com.amazonaws.services.apigatewaymanagementapi.model.GoneException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("GoneException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.apigatewaymanagementapi.model.transform.GoneExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(null)
+                                    .withExceptionUnmarshaller(
+                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException>(
+                                                    com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException.class))));
 
     public static AmazonApiGatewayManagementApiClientBuilder builder() {
         return AmazonApiGatewayManagementApiClientBuilder.standard();

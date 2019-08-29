@@ -56,6 +56,10 @@ public class CreateEventSourceMappingResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     createEventSourceMappingResult.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    context.nextToken();
+                    createEventSourceMappingResult.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
                     context.nextToken();
                     createEventSourceMappingResult.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));

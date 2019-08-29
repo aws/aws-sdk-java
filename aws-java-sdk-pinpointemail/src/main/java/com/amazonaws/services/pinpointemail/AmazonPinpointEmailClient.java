@@ -94,36 +94,39 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MessageRejected").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.MessageRejectedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MessageRejected").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.MessageRejectedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SendingPausedException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.SendingPausedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SendingPausedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.SendingPausedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountSuspendedException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.AccountSuspendedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccountSuspendedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.AccountSuspendedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.AlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MailFromDomainNotVerifiedException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MailFromDomainNotVerifiedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.MailFromDomainNotVerifiedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.pinpointemail.model.BadRequestException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.pinpointemail.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException>(
+                                            com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException.class))));
 
     public static AmazonPinpointEmailClientBuilder builder() {
         return AmazonPinpointEmailClientBuilder.standard();

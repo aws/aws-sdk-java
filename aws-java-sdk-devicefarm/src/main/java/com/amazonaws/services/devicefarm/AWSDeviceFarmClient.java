@@ -78,36 +78,39 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotEligibleException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.NotEligibleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotEligibleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.NotEligibleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.InvalidOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ArgumentException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.ArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.ArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.ServiceAccountException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.ServiceAccountExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagOperationException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.TagOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.TagOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.TagPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.TagPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withModeledClass(
-                                    com.amazonaws.services.devicefarm.model.IdempotencyException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.devicefarm.model.transform.IdempotencyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.devicefarm.model.AWSDeviceFarmException>(
+                                            com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Device Farm. A credentials provider chain will be used

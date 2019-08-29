@@ -78,42 +78,45 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.textract.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadDocumentException").withModeledClass(
-                                    com.amazonaws.services.textract.model.BadDocumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.BadDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.textract.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DocumentTooLargeException").withModeledClass(
-                                    com.amazonaws.services.textract.model.DocumentTooLargeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DocumentTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.DocumentTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                                    com.amazonaws.services.textract.model.ProvisionedThroughputExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedDocumentException").withModeledClass(
-                                    com.amazonaws.services.textract.model.UnsupportedDocumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.UnsupportedDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobIdException").withModeledClass(
-                                    com.amazonaws.services.textract.model.InvalidJobIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidJobIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withModeledClass(
-                                    com.amazonaws.services.textract.model.InvalidS3ObjectException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3ObjectException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidS3ObjectExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.textract.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.textract.model.ThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.textract.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.textract.model.IdempotentParameterMismatchException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.textract.model.AmazonTextractException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.textract.model.AmazonTextractException>(
+                                            com.amazonaws.services.textract.model.AmazonTextractException.class))));
 
     public static AmazonTextractClientBuilder builder() {
         return AmazonTextractClientBuilder.standard();

@@ -191,21 +191,24 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codebuild.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codebuild.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.codebuild.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codebuild.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codebuild.model.AccountLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccountLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codebuild.model.transform.AccountLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OAuthProviderException").withModeledClass(
-                                    com.amazonaws.services.codebuild.model.OAuthProviderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OAuthProviderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codebuild.model.transform.OAuthProviderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.codebuild.model.ResourceAlreadyExistsException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.codebuild.model.AWSCodeBuildException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codebuild.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codebuild.model.AWSCodeBuildException>(
+                                            com.amazonaws.services.codebuild.model.AWSCodeBuildException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS CodeBuild. A credentials provider chain will be used

@@ -89,66 +89,77 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCertificateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidCertificateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSDisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UpgradeDependencyFailureFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UpgradeDependencyFailureFault")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.databasemigrationservice.model.transform.UpgradeDependencyFailureExceptionUnmarshaller
+                                                    .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SNSInvalidTopicFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SNSInvalidTopicFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.SNSInvalidTopicExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientResourceCapacityFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientResourceCapacityFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InsufficientResourceCapacityExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceQuotaExceededFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.ResourceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.InvalidResourceStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSKeyNotAccessibleFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSKeyNotAccessibleFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSKeyNotAccessibleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetAlreadyInUse").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetAlreadyInUse").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.SubnetAlreadyInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.InvalidSubnetException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.InvalidSubnetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSThrottlingFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.KMSThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StorageQuotaExceededFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StorageQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.StorageQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SNSNoAuthorizationFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.databasemigrationservice.model.transform.SNSNoAuthorizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicationSubnetGroupDoesNotCoverEnoughAZs").withModeledClass(
-                                    com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException.class));
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode("ReplicationSubnetGroupDoesNotCoverEnoughAZs")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.databasemigrationservice.model.transform.ReplicationSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller
+                                                    .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(null)
+                                    .withExceptionUnmarshaller(
+                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException>(
+                                                    com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Database Migration Service. A credentials provider chain

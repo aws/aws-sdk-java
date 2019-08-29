@@ -145,39 +145,42 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionFailure").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.EncryptionFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionFailure").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.EncryptionFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.MalformedPolicyDocumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.MalformedPolicyDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DecryptionFailure").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.DecryptionFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DecryptionFailure").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.DecryptionFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.InternalServiceErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.ResourceExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.ResourceExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withModeledClass(
-                                    com.amazonaws.services.secretsmanager.model.PreconditionNotMetException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.secretsmanager.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException>(
+                                            com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException.class))));
 
     public static AWSSecretsManagerClientBuilder builder() {
         return AWSSecretsManagerClientBuilder.standard();

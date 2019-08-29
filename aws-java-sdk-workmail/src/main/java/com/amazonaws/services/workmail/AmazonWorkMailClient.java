@@ -120,54 +120,57 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.DirectoryUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.DirectoryUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.InvalidConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.InvalidConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MailDomainStateException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.MailDomainStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MailDomainStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.MailDomainStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.InvalidPasswordException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPasswordException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.InvalidPasswordExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.UnsupportedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.EntityNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReservedNameException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.ReservedNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReservedNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.ReservedNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MailDomainNotFoundException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.MailDomainNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MailDomainNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.MailDomainNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationStateException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.OrganizationStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.OrganizationStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DirectoryServiceAuthenticationFailedException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryServiceAuthenticationFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.DirectoryServiceAuthenticationFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotFoundException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.OrganizationNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.OrganizationNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NameAvailabilityException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.NameAvailabilityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NameAvailabilityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.NameAvailabilityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EmailAddressInUseException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.EmailAddressInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EmailAddressInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.EmailAddressInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityStateException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.EntityStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EntityStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.EntityStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyRegisteredException").withModeledClass(
-                                    com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.workmail.model.AmazonWorkMailException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyRegisteredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.EntityAlreadyRegisteredExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.workmail.model.AmazonWorkMailException>(
+                                            com.amazonaws.services.workmail.model.AmazonWorkMailException.class))));
 
     public static AmazonWorkMailClientBuilder builder() {
         return AmazonWorkMailClientBuilder.standard();

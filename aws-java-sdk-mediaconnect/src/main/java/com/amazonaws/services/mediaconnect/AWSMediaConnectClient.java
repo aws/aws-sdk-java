@@ -76,33 +76,36 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CreateFlow420Exception").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.CreateFlow420Exception.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CreateFlow420Exception").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.CreateFlow420ExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.ServiceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GrantFlowEntitlements420Exception").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GrantFlowEntitlements420Exception").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.GrantFlowEntitlements420ExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.ForbiddenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AddFlowOutputs420Exception").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.AddFlowOutputs420Exception.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AddFlowOutputs420Exception").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.AddFlowOutputs420ExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
-                                    com.amazonaws.services.mediaconnect.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.mediaconnect.model.AWSMediaConnectException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediaconnect.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediaconnect.model.AWSMediaConnectException>(
+                                            com.amazonaws.services.mediaconnect.model.AWSMediaConnectException.class))));
 
     public static AWSMediaConnectClientBuilder builder() {
         return AWSMediaConnectClientBuilder.standard();

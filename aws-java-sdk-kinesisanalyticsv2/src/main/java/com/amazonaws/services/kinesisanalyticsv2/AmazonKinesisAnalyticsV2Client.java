@@ -79,45 +79,50 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnableToDetectSchemaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceProvisionedThroughputExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceProvisionedThroughputExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceProvisionedThroughputExceededExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.InvalidApplicationConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidApplicationConfigurationExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeValidationException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.CodeValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CodeValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.CodeValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.UnsupportedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.ServiceUnavailableException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception>(
+                                            com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception.class))));
 
     public static AmazonKinesisAnalyticsV2ClientBuilder builder() {
         return AmazonKinesisAnalyticsV2ClientBuilder.standard();

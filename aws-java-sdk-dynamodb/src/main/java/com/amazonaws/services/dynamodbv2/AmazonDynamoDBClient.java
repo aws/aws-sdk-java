@@ -103,81 +103,84 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.RequestLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.GlobalTableAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConditionalCheckFailedException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConditionalCheckFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ConditionalCheckFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.GlobalTableNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GlobalTableNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.GlobalTableNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ItemCollectionSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ItemCollectionSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ItemCollectionSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicaNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicaNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ReplicaNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupInUseException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.BackupInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.BackupInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContinuousBackupsUnavailableException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ContinuousBackupsUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ContinuousBackupsUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.IdempotentParameterMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TransactionInProgressException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TransactionInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TransactionInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TransactionInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TableInUseException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TableInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TableInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TableInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ProvisionedThroughputExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ProvisionedThroughputExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ProvisionedThroughputExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PointInTimeRecoveryUnavailableException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PointInTimeRecoveryUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.PointInTimeRecoveryUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TableAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TableAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TableAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TransactionConflictException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TransactionConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TransactionConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TransactionConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRestoreTimeException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRestoreTimeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InvalidRestoreTimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplicaAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplicaAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ReplicaAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.BackupNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BackupNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.BackupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IndexNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.IndexNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IndexNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.IndexNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TableNotFoundException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TableNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TableNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TableNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TransactionCanceledException").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.TransactionCanceledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TransactionCanceledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.TransactionCanceledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.dynamodbv2.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException>(
+                                            com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class))));
 
     /**
      * Constructs a new client to invoke service methods on DynamoDB. A credentials provider chain will be used that

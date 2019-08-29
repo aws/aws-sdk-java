@@ -103,33 +103,36 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.PolicyLengthExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.PolicyLengthExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.InvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.InvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEventPatternException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEventPatternException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.InvalidEventPatternExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.InternalException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.InternalExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ManagedRuleException").withModeledClass(
-                                    com.amazonaws.services.cloudwatchevents.model.ManagedRuleException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ManagedRuleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudwatchevents.model.transform.ManagedRuleExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException>(
+                                            com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Events. A credentials provider chain will

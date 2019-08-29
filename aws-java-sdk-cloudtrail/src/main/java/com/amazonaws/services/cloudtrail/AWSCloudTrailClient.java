@@ -97,123 +97,127 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudTrailARNInvalidException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudTrailARNInvalidException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.CloudTrailARNInvalidExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDependencyServiceAccessPermissionException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDependencyServiceAccessPermissionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InsufficientDependencyServiceAccessPermissionExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCloudWatchLogsRoleArnException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCloudWatchLogsRoleArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidCloudWatchLogsRoleArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidKmsKeyIdException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKmsKeyIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidKmsKeyIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEventSelectorsException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEventSelectorsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidEventSelectorsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.UnsupportedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TrailNotProvidedException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TrailNotProvidedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.TrailNotProvidedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCloudWatchLogsLogGroupArnException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCloudWatchLogsLogGroupArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KmsException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.KmsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KmsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.KmsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotInAllFeaturesModeException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.OrganizationNotInAllFeaturesModeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotInAllFeaturesModeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.OrganizationNotInAllFeaturesModeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("S3BucketDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("S3BucketDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.S3BucketDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidParameterCombinationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidMaxResultsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidMaxResultsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagsLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagsLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.TagsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3BucketNameException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3BucketNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidS3BucketNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudWatchLogsDeliveryUnavailableException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudWatchLogsDeliveryUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudTrailAccessNotEnabledException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudTrailAccessNotEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.CloudTrailAccessNotEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTrailNameException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTrailNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTrailNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSnsTopicNameException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSnsTopicNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidSnsTopicNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientEncryptionPolicyException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientEncryptionPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InsufficientEncryptionPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotOrganizationMasterAccountException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotOrganizationMasterAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.NotOrganizationMasterAccountExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidTagParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidTagParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.KmsKeyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.OperationNotPermittedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TrailNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TrailNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.TrailNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLookupAttributesException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLookupAttributesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidLookupAttributesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumNumberOfTrailsExceededException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumNumberOfTrailsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.MaximumNumberOfTrailsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3PrefixException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3PrefixException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidS3PrefixExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientSnsTopicPolicyException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientSnsTopicPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InsufficientSnsTopicPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsNotInUseException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationsNotInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.OrganizationsNotInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientS3BucketPolicyException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientS3BucketPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InsufficientS3BucketPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidHomeRegionException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidHomeRegionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.InvalidHomeRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceTypeNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceTypeNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.ResourceTypeNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TrailAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TrailAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.TrailAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyDisabledException").withModeledClass(
-                                    com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudtrail.model.AWSCloudTrailException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudtrail.model.transform.KmsKeyDisabledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudtrail.model.AWSCloudTrailException>(
+                                            com.amazonaws.services.cloudtrail.model.AWSCloudTrailException.class))));
 
     /**
      * Constructs a new client to invoke service methods on CloudTrail. A credentials provider chain will be used that

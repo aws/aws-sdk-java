@@ -79,27 +79,30 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.InternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RangeNotSatisfiableException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RangeNotSatisfiableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.RangeNotSatisfiableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.ForbiddenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
-                                    com.amazonaws.services.iot1clickdevices.model.ResourceConflictException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.iot1clickdevices.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException>(
+                                            com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException.class))));
 
     public static AWSIoT1ClickDevicesClientBuilder builder() {
         return AWSIoT1ClickDevicesClientBuilder.standard();

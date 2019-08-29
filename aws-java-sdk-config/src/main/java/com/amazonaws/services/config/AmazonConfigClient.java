@@ -95,132 +95,139 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoRunningConfigurationRecorderException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoRunningConfigurationRecorderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoRunningConfigurationRecorderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withModeledClass(
-                                    com.amazonaws.services.config.model.ResourceNotDiscoveredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotDiscoveredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ResourceNotDiscoveredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchRemediationConfigurationException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchRemediationConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchRemediationConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchRemediationConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableDeliveryChannelException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoAvailableDeliveryChannelException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableDeliveryChannelException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoAvailableDeliveryChannelExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchRetentionConfigurationException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchRetentionConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchRetentionConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchRetentionConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResultTokenException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidResultTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResultTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidResultTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OversizedConfigurationItemException").withModeledClass(
-                                    com.amazonaws.services.config.model.OversizedConfigurationItemException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OversizedConfigurationItemException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.OversizedConfigurationItemExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withModeledClass(
-                                    com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InsufficientDeliveryPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationAggregatorException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationAggregatorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchConfigurationAggregatorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RemediationInProgressException").withModeledClass(
-                                    com.amazonaws.services.config.model.RemediationInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RemediationInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.RemediationInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.config.model.OrganizationAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.OrganizationAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableConfigurationRecorderException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableConfigurationRecorderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoAvailableConfigurationRecorderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableOrganizationException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoAvailableOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoAvailableOrganizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchDeliveryChannelException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchDeliveryChannelException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchDeliveryChannelExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LastDeliveryChannelDeleteFailedException").withModeledClass(
-                                    com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LastDeliveryChannelDeleteFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.LastDeliveryChannelDeleteFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationAllFeaturesNotEnabledException").withModeledClass(
-                                    com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationAllFeaturesNotEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.OrganizationAllFeaturesNotEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.config.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidLimitException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLimitException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidLimitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchOrganizationConfigRuleException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchOrganizationConfigRuleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchOrganizationConfigRuleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfDeliveryChannelsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigurationRecorderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchConfigurationRecorderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.config.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigRulesExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.MaxNumberOfConfigRulesExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withModeledClass(
-                                    com.amazonaws.services.config.model.InsufficientPermissionsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientPermissionsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InsufficientPermissionsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidExpressionException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidExpressionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExpressionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidExpressionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfOrganizationConfigRulesExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfOrganizationConfigRulesExceededException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.config.model.transform.MaxNumberOfOrganizationConfigRulesExceededExceptionUnmarshaller
+                                                    .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.config.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfConfigurationRecordersExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchBucketException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchBucketExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidRecordingGroupException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRecordingGroupException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidRecordingGroupExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfigurationRecorderNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidConfigurationRecorderNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.config.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSNSTopicARNException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidSNSTopicARNException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSNSTopicARNException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidSNSTopicARNExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfRetentionConfigurationsExceededException").withModeledClass(
-                                    com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaxNumberOfRetentionConfigurationsExceededException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.config.model.transform.MaxNumberOfRetentionConfigurationsExceededExceptionUnmarshaller
+                                                    .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidTimeRangeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTimeRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidTimeRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleException").withModeledClass(
-                                    com.amazonaws.services.config.model.NoSuchConfigRuleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchConfigRuleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.NoSuchConfigRuleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidRoleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRoleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidRoleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeliveryChannelNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidDeliveryChannelNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withModeledClass(
-                                    com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.config.model.AmazonConfigException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KeyPrefixException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidS3KeyPrefixExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.config.model.AmazonConfigException>(
+                                            com.amazonaws.services.config.model.AmazonConfigException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Config Service. A credentials provider chain will be used

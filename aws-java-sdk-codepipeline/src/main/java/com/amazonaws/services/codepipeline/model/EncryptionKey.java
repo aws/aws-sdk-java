@@ -31,8 +31,14 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
      * </p>
+     * <note>
+     * <p>
+     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
+     * you can only use the key ID or key ARN to identify the key.
+     * </p>
+     * </note>
      */
     private String id;
     /**
@@ -45,11 +51,22 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
      * </p>
+     * <note>
+     * <p>
+     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
+     * you can only use the key ID or key ARN to identify the key.
+     * </p>
+     * </note>
      * 
      * @param id
-     *        The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     *        The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
+     *        ARN.</p> <note>
+     *        <p>
+     *        Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
+     *        actions, you can only use the key ID or key ARN to identify the key.
+     *        </p>
      */
 
     public void setId(String id) {
@@ -58,10 +75,21 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
      * </p>
+     * <note>
+     * <p>
+     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
+     * you can only use the key ID or key ARN to identify the key.
+     * </p>
+     * </note>
      * 
-     * @return The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     * @return The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
+     *         ARN.</p> <note>
+     *         <p>
+     *         Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
+     *         actions, you can only use the key ID or key ARN to identify the key.
+     *         </p>
      */
 
     public String getId() {
@@ -70,11 +98,22 @@ public class EncryptionKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     * The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias ARN.
      * </p>
+     * <note>
+     * <p>
+     * Aliases are recognized only in the account that created the customer master key (CMK). For cross-account actions,
+     * you can only use the key ID or key ARN to identify the key.
+     * </p>
+     * </note>
      * 
      * @param id
-     *        The ID used to identify the key. For an AWS KMS key, this is the key ID or key ARN.
+     *        The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key ARN, or the alias
+     *        ARN.</p> <note>
+     *        <p>
+     *        Aliases are recognized only in the account that created the customer master key (CMK). For cross-account
+     *        actions, you can only use the key ID or key ARN to identify the key.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

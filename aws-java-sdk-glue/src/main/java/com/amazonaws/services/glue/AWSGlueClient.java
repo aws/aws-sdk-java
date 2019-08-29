@@ -78,72 +78,75 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SchedulerRunningException").withModeledClass(
-                                    com.amazonaws.services.glue.model.SchedulerRunningException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SchedulerRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.SchedulerRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SchedulerTransitioningException").withModeledClass(
-                                    com.amazonaws.services.glue.model.SchedulerTransitioningException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SchedulerTransitioningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.SchedulerTransitioningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MLTransformNotReadyException").withModeledClass(
-                                    com.amazonaws.services.glue.model.MLTransformNotReadyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MLTransformNotReadyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.MLTransformNotReadyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.glue.model.AlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CrawlerRunningException").withModeledClass(
-                                    com.amazonaws.services.glue.model.CrawlerRunningException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CrawlerRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.CrawlerRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withModeledClass(
-                                    com.amazonaws.services.glue.model.InternalServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withModeledClass(
-                                    com.amazonaws.services.glue.model.CrawlerStoppingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CrawlerStoppingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.CrawlerStoppingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.glue.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CrawlerNotRunningException").withModeledClass(
-                                    com.amazonaws.services.glue.model.CrawlerNotRunningException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CrawlerNotRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.CrawlerNotRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withModeledClass(
-                                    com.amazonaws.services.glue.model.EntityNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withModeledClass(
-                                    com.amazonaws.services.glue.model.GlueEncryptionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.GlueEncryptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withModeledClass(
-                                    com.amazonaws.services.glue.model.OperationTimeoutException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.OperationTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withModeledClass(
-                                    com.amazonaws.services.glue.model.VersionMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("VersionMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.VersionMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoScheduleException").withModeledClass(
-                                    com.amazonaws.services.glue.model.NoScheduleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoScheduleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.NoScheduleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.glue.model.IdempotentParameterMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentRunsExceededException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ConcurrentRunsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentRunsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ConcurrentRunsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNumberLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ResourceNumberLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNumberLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ResourceNumberLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SchedulerNotRunningException").withModeledClass(
-                                    com.amazonaws.services.glue.model.SchedulerNotRunningException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SchedulerNotRunningException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.SchedulerNotRunningExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.glue.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConditionCheckFailureException").withModeledClass(
-                                    com.amazonaws.services.glue.model.ConditionCheckFailureException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.glue.model.AWSGlueException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ConditionCheckFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glue.model.transform.ConditionCheckFailureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.glue.model.AWSGlueException>(
+                                            com.amazonaws.services.glue.model.AWSGlueException.class))));
 
     public static AWSGlueClientBuilder builder() {
         return AWSGlueClientBuilder.standard();

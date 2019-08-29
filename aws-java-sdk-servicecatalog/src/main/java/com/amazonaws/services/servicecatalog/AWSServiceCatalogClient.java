@@ -82,30 +82,33 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.InvalidParametersException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParametersException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.InvalidParametersExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.OperationNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.OperationNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.InvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.InvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.DuplicateResourceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.DuplicateResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagOptionNotMigratedException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagOptionNotMigratedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.TagOptionNotMigratedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.servicecatalog.model.ResourceInUseException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicecatalog.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException>(
+                                            com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Service Catalog. A credentials provider chain will be

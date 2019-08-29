@@ -30,6 +30,8 @@ public class ContainerStateChangeMarshaller {
 
     private static final MarshallingInfo<String> CONTAINERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerName").build();
+    private static final MarshallingInfo<String> RUNTIMEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("runtimeId").build();
     private static final MarshallingInfo<Integer> EXITCODE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("exitCode").build();
     private static final MarshallingInfo<List> NETWORKBINDINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -56,6 +58,7 @@ public class ContainerStateChangeMarshaller {
 
         try {
             protocolMarshaller.marshall(containerStateChange.getContainerName(), CONTAINERNAME_BINDING);
+            protocolMarshaller.marshall(containerStateChange.getRuntimeId(), RUNTIMEID_BINDING);
             protocolMarshaller.marshall(containerStateChange.getExitCode(), EXITCODE_BINDING);
             protocolMarshaller.marshall(containerStateChange.getNetworkBindings(), NETWORKBINDINGS_BINDING);
             protocolMarshaller.marshall(containerStateChange.getReason(), REASON_BINDING);

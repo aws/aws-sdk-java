@@ -82,18 +82,21 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateTagKeysException").withModeledClass(
-                                    com.amazonaws.services.directconnect.model.DuplicateTagKeysException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateTagKeysException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directconnect.model.transform.DuplicateTagKeysExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.directconnect.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directconnect.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectServerException").withModeledClass(
-                                    com.amazonaws.services.directconnect.model.DirectConnectServerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directconnect.model.transform.DirectConnectServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectClientException").withModeledClass(
-                                    com.amazonaws.services.directconnect.model.DirectConnectClientException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("DirectConnectClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.directconnect.model.transform.DirectConnectClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.directconnect.model.AmazonDirectConnectException>(
+                                            com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Direct Connect. A credentials provider chain will be

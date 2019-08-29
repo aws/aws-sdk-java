@@ -163,45 +163,48 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.InvalidArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ListenerNotFoundException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ListenerNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.ListenerNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AcceleratorNotFoundException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AcceleratorNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.AcceleratorNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AssociatedListenerFoundException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AssociatedListenerFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.AssociatedListenerFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.InternalServiceErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AssociatedEndpointGroupFoundException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AssociatedEndpointGroupFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.AssociatedEndpointGroupFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EndpointGroupNotFoundException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EndpointGroupNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.EndpointGroupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AcceleratorNotDisabledException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AcceleratorNotDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.AcceleratorNotDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EndpointGroupAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EndpointGroupAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.EndpointGroupAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPortRangeException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPortRangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.InvalidPortRangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.globalaccelerator.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.globalaccelerator.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException>(
+                                            com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException.class))));
 
     public static AWSGlobalAcceleratorClientBuilder builder() {
         return AWSGlobalAcceleratorClientBuilder.standard();

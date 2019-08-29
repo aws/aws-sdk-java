@@ -112,6 +112,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      * </ul>
      */
     private Integer batchSize;
+
+    private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
@@ -669,6 +671,32 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * @param maximumBatchingWindowInSeconds
+     */
+
+    public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        this.maximumBatchingWindowInSeconds = maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getMaximumBatchingWindowInSeconds() {
+        return this.maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @param maximumBatchingWindowInSeconds
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEventSourceMappingRequest withMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        setMaximumBatchingWindowInSeconds(maximumBatchingWindowInSeconds);
+        return this;
+    }
+
+    /**
      * <p>
      * The position in a stream from which to start reading. Required for Amazon Kinesis and Amazon DynamoDB Streams
      * sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
@@ -812,6 +840,8 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getBatchSize() != null)
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
+        if (getMaximumBatchingWindowInSeconds() != null)
+            sb.append("MaximumBatchingWindowInSeconds: ").append(getMaximumBatchingWindowInSeconds()).append(",");
         if (getStartingPosition() != null)
             sb.append("StartingPosition: ").append(getStartingPosition()).append(",");
         if (getStartingPositionTimestamp() != null)
@@ -846,6 +876,11 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getBatchSize() != null && other.getBatchSize().equals(this.getBatchSize()) == false)
             return false;
+        if (other.getMaximumBatchingWindowInSeconds() == null ^ this.getMaximumBatchingWindowInSeconds() == null)
+            return false;
+        if (other.getMaximumBatchingWindowInSeconds() != null
+                && other.getMaximumBatchingWindowInSeconds().equals(this.getMaximumBatchingWindowInSeconds()) == false)
+            return false;
         if (other.getStartingPosition() == null ^ this.getStartingPosition() == null)
             return false;
         if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false)
@@ -866,6 +901,7 @@ public class CreateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
+        hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode());
         hashCode = prime * hashCode + ((getStartingPositionTimestamp() == null) ? 0 : getStartingPositionTimestamp().hashCode());
         return hashCode;

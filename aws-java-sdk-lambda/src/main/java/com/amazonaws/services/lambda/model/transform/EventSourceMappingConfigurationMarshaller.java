@@ -31,6 +31,8 @@ public class EventSourceMappingConfigurationMarshaller {
             .marshallLocationName("UUID").build();
     private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
+    private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
     private static final MarshallingInfo<String> EVENTSOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSourceArn").build();
     private static final MarshallingInfo<String> FUNCTIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class EventSourceMappingConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getUUID(), UUID_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getBatchSize(), BATCHSIZE_BINDING);
+            protocolMarshaller.marshall(eventSourceMappingConfiguration.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getEventSourceArn(), EVENTSOURCEARN_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getFunctionArn(), FUNCTIONARN_BINDING);
             protocolMarshaller.marshall(eventSourceMappingConfiguration.getLastModified(), LASTMODIFIED_BINDING);

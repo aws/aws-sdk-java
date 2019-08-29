@@ -27,7 +27,7 @@ import java.util.List;
 public class JsonErrorMessageParser {
 
     private static final List<String> DEFAULT_ERROR_MESSAGE_LOCATIONS = Arrays
-            .asList("message", "Message", "errorMessage");
+            .asList("message", "Message", "errorMessage", "ErrorMessage");
 
     /**
      * x-amzn-error-message may be returned by RESTFUL services that do not send a response

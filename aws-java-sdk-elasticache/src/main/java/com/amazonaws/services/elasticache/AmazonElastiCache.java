@@ -1296,6 +1296,8 @@ public interface AmazonElastiCache {
      *         The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
      * @throws NoOperationException
      *         The operation was not performed because no changes were required.
+     * @throws InvalidKMSKeyException
+     *         The KMS key supplied is not valid.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1308,13 +1310,12 @@ public interface AmazonElastiCache {
 
     /**
      * <p>
-     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type
-     * up to.
+     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type.
      * </p>
      * <p>
-     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale up
-     * your cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node
-     * types returned by this operation.
+     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale your
+     * cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node types
+     * returned by this operation.
      * </p>
      * 
      * @param listAllowedNodeTypeModificationsRequest
@@ -1515,6 +1516,8 @@ public interface AmazonElastiCache {
      *         The requested cache parameter group name does not refer to an existing cache parameter group.
      * @throws InvalidVPCNetworkStateException
      *         The VPC network is in an invalid state.
+     * @throws InvalidKMSKeyException
+     *         The KMS key supplied is not valid.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1552,6 +1555,8 @@ public interface AmazonElastiCache {
      *         (shards) in a single replication group. The default maximum is 90
      * @throws NodeQuotaForCustomerExceededException
      *         The request cannot be processed because it would exceed the allowed number of cache nodes per customer.
+     * @throws InvalidKMSKeyException
+     *         The KMS key supplied is not valid.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException
@@ -1798,6 +1803,8 @@ public interface AmazonElastiCache {
      *         The specified replication group does not exist.
      * @throws TestFailoverNotAvailableException
      *         The <code>TestFailover</code> action is not available.
+     * @throws InvalidKMSKeyException
+     *         The KMS key supplied is not valid.
      * @throws InvalidParameterValueException
      *         The value for a parameter is invalid.
      * @throws InvalidParameterCombinationException

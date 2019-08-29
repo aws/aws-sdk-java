@@ -178,98 +178,102 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CloudHsmClusterNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredImportTokenException").withModeledClass(
-                                    com.amazonaws.services.kms.model.ExpiredImportTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredImportTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.ExpiredImportTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreNotFoundException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CustomKeyStoreNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withModeledClass(
-                                    com.amazonaws.services.kms.model.MalformedPolicyDocumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.MalformedPolicyDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyMaterialException").withModeledClass(
-                                    com.amazonaws.services.kms.model.IncorrectKeyMaterialException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectKeyMaterialException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.IncorrectKeyMaterialExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportTokenException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidImportTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidImportTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidImportTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
-                                    com.amazonaws.services.kms.model.KMSInvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotRelatedException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotRelatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CloudHsmClusterNotRelatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreInvalidStateException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreInvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CustomKeyStoreInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IncorrectTrustAnchorException").withModeledClass(
-                                    com.amazonaws.services.kms.model.IncorrectTrustAnchorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IncorrectTrustAnchorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.IncorrectTrustAnchorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DisabledException").withModeledClass(
-                                    com.amazonaws.services.kms.model.DisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.DisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.kms.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreHasCMKsException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreHasCMKsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CustomKeyStoreHasCMKsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KeyUnavailableException").withModeledClass(
-                                    com.amazonaws.services.kms.model.KeyUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KeyUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.KeyUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.kms.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterInUseException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CloudHsmClusterInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CloudHsmClusterInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCiphertextException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidCiphertextException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCiphertextException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidCiphertextExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantIdException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidGrantIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidGrantIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantTokenException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidGrantTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidGrantTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidGrantTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withModeledClass(
-                                    com.amazonaws.services.kms.model.UnsupportedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreNameInUseException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CustomKeyStoreNameInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CustomKeyStoreNameInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.kms.model.AlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagException").withModeledClass(com.amazonaws.services.kms.model.TagException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.TagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidKeyUsageException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKeyUsageException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidKeyUsageExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterInvalidConfigurationException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterInvalidConfigurationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CloudHsmClusterInvalidConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMarkerException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidMarkerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMarkerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidMarkerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAliasNameException").withModeledClass(
-                                    com.amazonaws.services.kms.model.InvalidAliasNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAliasNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.InvalidAliasNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DependencyTimeoutException").withModeledClass(
-                                    com.amazonaws.services.kms.model.DependencyTimeoutException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.DependencyTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInternalException").withModeledClass(
-                                    com.amazonaws.services.kms.model.KMSInternalException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.KMSInternalExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotActiveException").withModeledClass(
-                                    com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.kms.model.AWSKMSException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotActiveException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kms.model.transform.CloudHsmClusterNotActiveExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kms.model.AWSKMSException>(
+                                            com.amazonaws.services.kms.model.AWSKMSException.class))));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials provider chain will be used that searches

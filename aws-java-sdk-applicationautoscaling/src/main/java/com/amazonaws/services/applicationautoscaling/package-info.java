@@ -61,7 +61,7 @@
  * <b>API Summary</b>
  * </p>
  * <p>
- * The Application Auto Scaling service API includes two key sets of actions:
+ * The Application Auto Scaling service API includes three key sets of actions:
  * </p>
  * <ul>
  * <li>
@@ -75,6 +75,14 @@
  * <p>
  * Configure and manage automatic scaling - Define scaling policies to dynamically scale your resources in response to
  * CloudWatch alarms, schedule one-time or recurring scaling actions, and retrieve your recent scaling activity history.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Suspend and resume scaling - Temporarily suspend and later resume automatic scaling by calling the
+ * <a>RegisterScalableTarget</a> action for any Application Auto Scaling scalable target. You can suspend and resume,
+ * individually or in combination, scale-out activities triggered by a scaling policy, scale-in activities triggered by
+ * a scaling policy, and scheduled scaling.
  * </p>
  * </li>
  * </ul>

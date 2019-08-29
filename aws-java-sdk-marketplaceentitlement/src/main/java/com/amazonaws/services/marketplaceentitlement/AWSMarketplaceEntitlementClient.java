@@ -93,15 +93,18 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.marketplaceentitlement.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withModeledClass(
-                                    com.amazonaws.services.marketplaceentitlement.model.InternalServiceErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.marketplaceentitlement.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.marketplaceentitlement.model.ThrottlingException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.marketplaceentitlement.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException>(
+                                            com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException.class))));
 
     public static AWSMarketplaceEntitlementClientBuilder builder() {
         return AWSMarketplaceEntitlementClientBuilder.standard();

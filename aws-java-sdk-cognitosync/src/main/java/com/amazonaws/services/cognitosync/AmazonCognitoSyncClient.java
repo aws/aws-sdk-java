@@ -97,45 +97,48 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModification").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModification").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfiguration").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidConfigurationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConfiguration").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidConfigurationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameter").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameter").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.DuplicateRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.DuplicateRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflict").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.ResourceConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflict").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LambdaThrottled").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.LambdaThrottledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LambdaThrottled").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.LambdaThrottledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedError").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.NotAuthorizedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotAuthorizedError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.NotAuthorizedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequests").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequests").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaFunctionOutput").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.InvalidLambdaFunctionOutputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLambdaFunctionOutput").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.InvalidLambdaFunctionOutputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceeded").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyStreamed").withModeledClass(
-                                    com.amazonaws.services.cognitosync.model.AlreadyStreamedException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyStreamed").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cognitosync.model.transform.AlreadyStreamedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException>(
+                                            com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Sync. A credentials provider chain will be

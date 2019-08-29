@@ -78,21 +78,24 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                                    com.amazonaws.services.ec2instanceconnect.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AuthException").withModeledClass(
-                                    com.amazonaws.services.ec2instanceconnect.model.AuthException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AuthException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.AuthExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withModeledClass(
-                                    com.amazonaws.services.ec2instanceconnect.model.ThrottlingException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2InstanceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EC2InstanceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.EC2InstanceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withModeledClass(
-                                    com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ec2instanceconnect.model.transform.InvalidArgsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException>(
+                                            com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException.class))));
 
     public static AWSEC2InstanceConnectClientBuilder builder() {
         return AWSEC2InstanceConnectClientBuilder.standard();

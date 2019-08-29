@@ -81,39 +81,42 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AssessmentRunInProgressException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AssessmentRunInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.AssessmentRunInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.UnsupportedFeatureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedFeatureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.UnsupportedFeatureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceTemporarilyUnavailableException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceTemporarilyUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.ServiceTemporarilyUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchEntityException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.NoSuchEntityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchEntityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.NoSuchEntityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AgentsAlreadyRunningAssessmentException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AgentsAlreadyRunningAssessmentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.AgentsAlreadyRunningAssessmentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreviewGenerationInProgressException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.PreviewGenerationInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PreviewGenerationInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.PreviewGenerationInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCrossAccountRoleException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCrossAccountRoleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.InvalidCrossAccountRoleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withModeledClass(
-                                    com.amazonaws.services.inspector.model.InternalException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.inspector.model.AmazonInspectorException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.inspector.model.transform.InternalExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.inspector.model.AmazonInspectorException>(
+                                            com.amazonaws.services.inspector.model.AmazonInspectorException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector. A credentials provider chain will be used

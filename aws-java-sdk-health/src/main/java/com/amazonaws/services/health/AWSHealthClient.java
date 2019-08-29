@@ -145,12 +145,15 @@ public class AWSHealthClient extends AmazonWebServiceClient implements AWSHealth
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withModeledClass(
-                                    com.amazonaws.services.health.model.UnsupportedLocaleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLocale").withExceptionUnmarshaller(
+                                    com.amazonaws.services.health.model.transform.UnsupportedLocaleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withModeledClass(
-                                    com.amazonaws.services.health.model.InvalidPaginationTokenException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.health.model.AWSHealthException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationToken").withExceptionUnmarshaller(
+                                    com.amazonaws.services.health.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.health.model.AWSHealthException>(
+                                            com.amazonaws.services.health.model.AWSHealthException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWSHealth. A credentials provider chain will be used that

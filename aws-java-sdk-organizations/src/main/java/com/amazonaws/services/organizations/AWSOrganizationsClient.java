@@ -207,126 +207,130 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeNotAvailableForOrganizationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeNotAvailableForOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyTypeNotAvailableForOrganizationExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("HandshakeNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.HandshakeNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("HandshakeNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.HandshakeNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateAccountException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DuplicateAccountException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DuplicateAccountExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.MalformedPolicyDocumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedPolicyDocumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.MalformedPolicyDocumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateHandshakeException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DuplicateHandshakeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateHandshakeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DuplicateHandshakeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicatePolicyException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DuplicatePolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicatePolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DuplicatePolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("HandshakeAlreadyInStateException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("HandshakeAlreadyInStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.HandshakeAlreadyInStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ChildNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.ChildNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ChildNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.ChildNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountOwnerNotVerifiedException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccountOwnerNotVerifiedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AccountOwnerNotVerifiedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RootNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.RootNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RootNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.RootNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotEmptyException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.OrganizationNotEmptyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotEmptyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.OrganizationNotEmptyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationalUnitNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationalUnitNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.OrganizationalUnitNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeAlreadyEnabledException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeAlreadyEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyTypeAlreadyEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AccessDeniedForDependencyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AccessDeniedForDependencyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicatePolicyAttachmentException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicatePolicyAttachmentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DuplicatePolicyAttachmentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MasterCannotLeaveOrganizationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MasterCannotLeaveOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.MasterCannotLeaveOrganizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DestinationParentNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DestinationParentNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DestinationParentNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DestinationParentNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeNotEnabledException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyTypeNotEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyTypeNotEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConstraintViolationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.ConstraintViolationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConstraintViolationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.ConstraintViolationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.TargetNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.TargetNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CreateAccountStatusNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CreateAccountStatusNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.CreateAccountStatusNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotAttachedException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyNotAttachedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotAttachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyNotAttachedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AlreadyInOrganizationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AlreadyInOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AlreadyInOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AlreadyInOrganizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AccountNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccountNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AccountNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SourceParentNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.SourceParentNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SourceParentNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.SourceParentNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AWSOrganizationsNotInUseException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AWSOrganizationsNotInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.AWSOrganizationsNotInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAPIEndpointException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedAPIEndpointException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.UnsupportedAPIEndpointExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParentNotFoundException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.ParentNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParentNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.ParentNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateOrganizationalUnitException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateOrganizationalUnitException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.DuplicateOrganizationalUnitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidHandshakeTransitionException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidHandshakeTransitionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.InvalidHandshakeTransitionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("HandshakeConstraintViolationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.HandshakeConstraintViolationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("HandshakeConstraintViolationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.HandshakeConstraintViolationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyInUseException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.PolicyInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.PolicyInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FinalizingOrganizationException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.FinalizingOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FinalizingOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.FinalizingOrganizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationalUnitNotEmptyException").withModeledClass(
-                                    com.amazonaws.services.organizations.model.OrganizationalUnitNotEmptyException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.organizations.model.AWSOrganizationsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationalUnitNotEmptyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.organizations.model.transform.OrganizationalUnitNotEmptyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.organizations.model.AWSOrganizationsException>(
+                                            com.amazonaws.services.organizations.model.AWSOrganizationsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Organizations. A credentials provider chain will be used

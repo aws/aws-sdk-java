@@ -89,51 +89,54 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.InvalidResourceStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IllegalArgumentException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.IllegalArgumentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.IllegalArgumentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotInAllFeaturesModeException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OrganizationNotInAllFeaturesModeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.OrganizationNotInAllFeaturesModeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DependencyAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.DependencyAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.DependencyAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoSuchResourceException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.NoSuchResourceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoSuchResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.NoSuchResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AWSServiceAccessNotEnabledException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AWSServiceAccessNotEnabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.AWSServiceAccessNotEnabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("QuotaExceededException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.QuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("QuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.QuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.ResourceAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableOrganizationException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.NoAvailableOrganizationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoAvailableOrganizationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.NoAvailableOrganizationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TemplatesNotAvailableInRegionException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TemplatesNotAvailableInRegionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.TemplatesNotAvailableInRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.InvalidPaginationTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPaginationTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.InvalidPaginationTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaTemplateNotInUseException").withModeledClass(
-                                    com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.servicequotas.model.AWSServiceQuotasException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaTemplateNotInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.servicequotas.model.transform.ServiceQuotaTemplateNotInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servicequotas.model.AWSServiceQuotasException>(
+                                            com.amazonaws.services.servicequotas.model.AWSServiceQuotasException.class))));
 
     public static AWSServiceQuotasClientBuilder builder() {
         return AWSServiceQuotasClientBuilder.standard();

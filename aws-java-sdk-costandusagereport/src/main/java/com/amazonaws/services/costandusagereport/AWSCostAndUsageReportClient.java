@@ -97,18 +97,21 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.costandusagereport.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costandusagereport.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReportLimitReachedException").withModeledClass(
-                                    com.amazonaws.services.costandusagereport.model.ReportLimitReachedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReportLimitReachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costandusagereport.model.transform.ReportLimitReachedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                                    com.amazonaws.services.costandusagereport.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costandusagereport.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateReportNameException").withModeledClass(
-                                    com.amazonaws.services.costandusagereport.model.DuplicateReportNameException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateReportNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.costandusagereport.model.transform.DuplicateReportNameExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException>(
+                                            com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Cost and Usage Report Service. A credentials provider

@@ -86,15 +86,18 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalException").withModeledClass(
-                                    com.amazonaws.services.cloudhsm.model.CloudHsmInternalException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsm.model.transform.CloudHsmInternalExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.cloudhsm.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsm.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withModeledClass(
-                                    com.amazonaws.services.cloudhsm.model.CloudHsmServiceException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsm.model.transform.CloudHsmServiceExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudhsm.model.AWSCloudHSMException>(
+                                            com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class))));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A credentials provider chain will be used that

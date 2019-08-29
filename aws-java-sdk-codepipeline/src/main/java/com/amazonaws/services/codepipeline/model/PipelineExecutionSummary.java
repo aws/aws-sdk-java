@@ -81,6 +81,13 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<SourceRevision> sourceRevisions;
+    /**
+     * <p>
+     * The interaction or event that started a pipeline execution, such as automated change detection or a
+     * <code>StartPipelineExecution</code> API call.
+     * </p>
+     */
+    private ExecutionTrigger trigger;
 
     /**
      * <p>
@@ -571,6 +578,52 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The interaction or event that started a pipeline execution, such as automated change detection or a
+     * <code>StartPipelineExecution</code> API call.
+     * </p>
+     * 
+     * @param trigger
+     *        The interaction or event that started a pipeline execution, such as automated change detection or a
+     *        <code>StartPipelineExecution</code> API call.
+     */
+
+    public void setTrigger(ExecutionTrigger trigger) {
+        this.trigger = trigger;
+    }
+
+    /**
+     * <p>
+     * The interaction or event that started a pipeline execution, such as automated change detection or a
+     * <code>StartPipelineExecution</code> API call.
+     * </p>
+     * 
+     * @return The interaction or event that started a pipeline execution, such as automated change detection or a
+     *         <code>StartPipelineExecution</code> API call.
+     */
+
+    public ExecutionTrigger getTrigger() {
+        return this.trigger;
+    }
+
+    /**
+     * <p>
+     * The interaction or event that started a pipeline execution, such as automated change detection or a
+     * <code>StartPipelineExecution</code> API call.
+     * </p>
+     * 
+     * @param trigger
+     *        The interaction or event that started a pipeline execution, such as automated change detection or a
+     *        <code>StartPipelineExecution</code> API call.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineExecutionSummary withTrigger(ExecutionTrigger trigger) {
+        setTrigger(trigger);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -591,7 +644,9 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
         if (getLastUpdateTime() != null)
             sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
         if (getSourceRevisions() != null)
-            sb.append("SourceRevisions: ").append(getSourceRevisions());
+            sb.append("SourceRevisions: ").append(getSourceRevisions()).append(",");
+        if (getTrigger() != null)
+            sb.append("Trigger: ").append(getTrigger());
         sb.append("}");
         return sb.toString();
     }
@@ -626,6 +681,10 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
             return false;
         if (other.getSourceRevisions() != null && other.getSourceRevisions().equals(this.getSourceRevisions()) == false)
             return false;
+        if (other.getTrigger() == null ^ this.getTrigger() == null)
+            return false;
+        if (other.getTrigger() != null && other.getTrigger().equals(this.getTrigger()) == false)
+            return false;
         return true;
     }
 
@@ -639,6 +698,7 @@ public class PipelineExecutionSummary implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getSourceRevisions() == null) ? 0 : getSourceRevisions().hashCode());
+        hashCode = prime * hashCode + ((getTrigger() == null) ? 0 : getTrigger().hashCode());
         return hashCode;
     }
 

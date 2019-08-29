@@ -110,25 +110,30 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.ConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.ForbiddenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
-                                    com.amazonaws.services.serverlessapplicationrepository.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(
-                            com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.serverlessapplicationrepository.model.transform.InternalServerErrorExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata()
+                                    .withErrorCode(null)
+                                    .withExceptionUnmarshaller(
+                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException>(
+                                                    com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException.class))));
 
     public static AWSServerlessApplicationRepositoryClientBuilder builder() {
         return AWSServerlessApplicationRepositoryClientBuilder.standard();

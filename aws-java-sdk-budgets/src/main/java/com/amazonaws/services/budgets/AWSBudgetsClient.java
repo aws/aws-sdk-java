@@ -151,27 +151,30 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRecordException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.DuplicateRecordException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRecordException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.DuplicateRecordExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.InternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CreationLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.CreationLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CreationLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.CreationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withModeledClass(
-                                    com.amazonaws.services.budgets.model.ExpiredNextTokenException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.budgets.model.AWSBudgetsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.budgets.model.AWSBudgetsException>(
+                                            com.amazonaws.services.budgets.model.AWSBudgetsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWSBudgets. A credentials provider chain will be used that

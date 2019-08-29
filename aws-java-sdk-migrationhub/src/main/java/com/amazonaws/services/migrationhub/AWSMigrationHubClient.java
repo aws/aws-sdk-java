@@ -78,30 +78,33 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperation").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.UnauthorizedOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedOperation").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.UnauthorizedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyErrorException").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.PolicyErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.PolicyErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.ServiceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DryRunOperation").withModeledClass(
-                                    com.amazonaws.services.migrationhub.model.DryRunOperationException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.migrationhub.model.AWSMigrationHubException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("DryRunOperation").withExceptionUnmarshaller(
+                                    com.amazonaws.services.migrationhub.model.transform.DryRunOperationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.migrationhub.model.AWSMigrationHubException>(
+                                            com.amazonaws.services.migrationhub.model.AWSMigrationHubException.class))));
 
     public static AWSMigrationHubClientBuilder builder() {
         return AWSMigrationHubClientBuilder.standard();

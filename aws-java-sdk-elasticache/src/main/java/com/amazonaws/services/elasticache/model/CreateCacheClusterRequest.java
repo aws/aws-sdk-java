@@ -38,7 +38,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 50 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -526,7 +526,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *        A name must contain from 1 to 50 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -706,7 +706,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 50 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -729,7 +729,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *        A name must contain from 1 to 50 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -758,7 +758,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 50 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -780,7 +780,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *         A name must contain from 1 to 50 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -809,7 +809,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 50 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -832,7 +832,7 @@ public class CreateCacheClusterRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *        A name must contain from 1 to 50 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>

@@ -294,99 +294,103 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidClientTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidClientTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidJobStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidJobStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineVersionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookFilterPatternException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookFilterPatternException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidWebhookFilterPatternExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookAuthenticationParametersException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookAuthenticationParametersException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidWebhookAuthenticationParametersExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WebhookNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.WebhookNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WebhookNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.WebhookNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidApprovalTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidActionDeclarationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.PipelineExecutionNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineExecutionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ApprovalAlreadyCompletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineNameInUseException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNameInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineNameInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.PipelineNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidJobException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidJobExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActionTypeNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActionTypeNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ActionTypeNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StageNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.StageNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StageNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.StageNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.StageNotRetryableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.StageNotRetryableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidStructureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidStructureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidBlockerDeclarationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActionNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ActionNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ActionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStageDeclarationException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStageDeclarationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidStageDeclarationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.ValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.InvalidNonceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidNonceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.JobNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.JobNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withModeledClass(
-                                    com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.NotLatestPipelineExecutionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codepipeline.model.AWSCodePipelineException>(
+                                            com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class))));
 
     /**
      * Constructs a new client to invoke service methods on CodePipeline. A credentials provider chain will be used that
@@ -782,6 +786,13 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * <p>
      * Creates a pipeline.
      * </p>
+     * <note>
+     * <p>
+     * In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code> in
+     * your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use
+     * <code>artifactStores</code>.
+     * </p>
+     * </note>
      * 
      * @param createPipelineRequest
      *        Represents the input of a <code>CreatePipeline</code> action.

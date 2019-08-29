@@ -38,6 +38,8 @@ public class PipelineExecutionSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> SOURCEREVISIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceRevisions").build();
+    private static final MarshallingInfo<StructuredPojo> TRIGGER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trigger").build();
 
     private static final PipelineExecutionSummaryMarshaller instance = new PipelineExecutionSummaryMarshaller();
 
@@ -60,6 +62,7 @@ public class PipelineExecutionSummaryMarshaller {
             protocolMarshaller.marshall(pipelineExecutionSummary.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(pipelineExecutionSummary.getSourceRevisions(), SOURCEREVISIONS_BINDING);
+            protocolMarshaller.marshall(pipelineExecutionSummary.getTrigger(), TRIGGER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

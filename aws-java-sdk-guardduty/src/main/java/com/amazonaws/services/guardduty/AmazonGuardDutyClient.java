@@ -88,12 +88,15 @@ public class AmazonGuardDutyClient extends AmazonWebServiceClient implements Ama
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.guardduty.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
-                                    com.amazonaws.services.guardduty.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.guardduty.model.AmazonGuardDutyException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.guardduty.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.guardduty.model.AmazonGuardDutyException>(
+                                            com.amazonaws.services.guardduty.model.AmazonGuardDutyException.class))));
 
     public static AmazonGuardDutyClientBuilder builder() {
         return AmazonGuardDutyClientBuilder.standard();

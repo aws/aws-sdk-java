@@ -418,456 +418,466 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TargetsRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TargetsRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TargetsRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TargetsRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileContentRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileContentRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileContentRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BranchNameIsTagNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BranchNameIsTagNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BranchNameIsTagNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BranchNameIsTagNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentDeletedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentDeletedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentDeletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentDeletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumItemsToCompareExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumItemsToCompareExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumItemsToCompareExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TitleRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TitleRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TitleRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TitleRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlobIdException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidBlobIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlobIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidBlobIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryDescriptionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryDescriptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryDescriptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTargetsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTargetsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerDestinationArnException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerDestinationArnException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerDestinationArnExceptionUnmarshaller
+                                                    .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumRepositoryTriggersExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumRepositoryTriggersExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumRepositoryTriggersExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictDetailLevelException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictDetailLevelException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidConflictDetailLevelExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BlobIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BlobIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BlobIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BlobIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidReplacementTypeException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidReplacementTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidReplacementTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidReplacementTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNamesRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNamesRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryNamesRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AuthorDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.AuthorDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AuthorDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.AuthorDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilePositionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidFilePositionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilePositionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidFilePositionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileNameConflictsWithDirectoryNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileNameConflictsWithDirectoryNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileNameConflictsWithDirectoryNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceArnException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidResourceArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidResourceArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.EncryptionKeyAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BeforeCommitIdAndAfterCommitIdAreSameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BeforeCommitIdAndAfterCommitIdAreSameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BeforeCommitIdAndAfterCommitIdAreSameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BranchDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BranchDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BranchDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PullRequestDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PullRequestDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PullRequestDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReferenceTypeNotSupportedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReferenceTypeNotSupportedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReferenceTypeNotSupportedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FilePathConflictsWithSubmodulePathException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FilePathConflictsWithSubmodulePathException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FilePathConflictsWithSubmodulePathExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerEventsListRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryTriggerEventsListRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerEventsListRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryTriggerEventsListRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileModeRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileModeRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileModeRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileModeRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ResourceArnRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ResourceArnRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerCustomDataException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerCustomDataException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerCustomDataExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerEventsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerEventsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerEventsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotAssociatedWithPullRequestException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotAssociatedWithPullRequestException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.codecommit.model.transform.RepositoryNotAssociatedWithPullRequestExceptionUnmarshaller
+                                                    .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumRepositoryNamesExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumRepositoryNamesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumRepositoryNamesExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumRepositoryNamesExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileLocationException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidFileLocationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileLocationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidFileLocationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumOpenPullRequestsExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumOpenPullRequestsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumOpenPullRequestsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DefaultBranchCannotBeDeletedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DefaultBranchCannotBeDeletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.DefaultBranchCannotBeDeletedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumBranchesExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumBranchesExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumBranchesExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.EncryptionKeyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPathException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidPathException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPathException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidPathExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRelativeFileVersionEnumException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRelativeFileVersionEnumException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRelativeFileVersionEnumExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagKeysListRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TagKeysListRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagKeysListRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TagKeysListRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictResolutionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidConflictResolutionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictResolutionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidConflictResolutionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientRequestTokenException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientRequestTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidClientRequestTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FolderContentSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FolderContentSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FolderContentSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidReferenceNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidReferenceNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidReferenceNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidReferenceNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerDestinationArnRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerDestinationArnRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryTriggerDestinationArnRequiredExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictResolutionStrategyException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidConflictResolutionStrategyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidConflictResolutionStrategyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidConflictResolutionStrategyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidAuthorArnException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidAuthorArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidAuthorArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidAuthorArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentContentRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentContentRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentContentRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentContentRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagKeysListException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTagKeysListException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagKeysListException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTagKeysListExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetBranchException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTargetBranchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetBranchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTargetBranchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagsMapRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TagsMapRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagsMapRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TagsMapRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PathRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PathRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PathRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PathRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSystemTagUsageException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSystemTagUsageException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidSystemTagUsageExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplacementTypeRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ReplacementTypeRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplacementTypeRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReplacementTypeRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryTriggerNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitIdDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitIdDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidPullRequestStatusExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParentCommitIdException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidParentCommitIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParentCommitIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidParentCommitIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReferenceNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ReferenceNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReferenceNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReferenceNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusUpdateException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidPullRequestStatusUpdateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestStatusUpdateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidPullRequestStatusUpdateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxConflictFilesException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxConflictFilesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidMaxConflictFilesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ParentCommitIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ParentCommitIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommentIdException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidCommentIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommentIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidCommentIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestEventTypeException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestEventTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidPullRequestEventTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommitException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidCommitException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommitException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidCommitExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ActorDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ActorDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ActorDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ActorDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.IdempotencyParameterMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotencyParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.IdempotencyParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NoChangeException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.NoChangeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NoChangeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.NoChangeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumFileContentToLoadExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumFileContentToLoadExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumFileContentToLoadExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumFileContentToLoadExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDescriptionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidDescriptionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDescriptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidDescriptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MultipleRepositoriesInPullRequestException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MultipleRepositoriesInPullRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MultipleRepositoriesInPullRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BlobIdDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BlobIdDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BlobIdDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MergeOptionRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MergeOptionRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MergeOptionRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MergeOptionRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FolderDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FolderDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FolderDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FolderDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestIdException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidPullRequestIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPullRequestIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidPullRequestIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PullRequestIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PullRequestIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PullRequestIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PullRequestIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameExistsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNameExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryNameExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PathDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PathDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PathDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PathDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TipOfSourceReferenceIsDifferentException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TipOfSourceReferenceIsDifferentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TipOfSourceReferenceIsDifferentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BranchNameExistsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BranchNameExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BranchNameExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BranchNameExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggersListRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryTriggersListRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggersListRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryTriggersListRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidReplacementContentException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidReplacementContentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidReplacementContentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidReplacementContentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionIntegrityChecksFailedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionIntegrityChecksFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.EncryptionIntegrityChecksFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitMessageLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitMessageLengthExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitMessageLengthExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxMergeHunksException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxMergeHunksException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidMaxMergeHunksExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommitIdException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidCommitIdException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidCommitIdException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidCommitIdExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOrderException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidOrderException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOrderException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidOrderExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidEmailException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidEmailException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidEmailException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidEmailExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PullRequestAlreadyClosedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PullRequestAlreadyClosedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PullRequestAlreadyClosedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BranchNameRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.BranchNameRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BranchNameRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.BranchNameRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeletionParameterException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidDeletionParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDeletionParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidDeletionParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SourceFileOrContentRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.SourceFileOrContentRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SourceFileOrContentRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.SourceFileOrContentRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentIdRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentIdRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentIdRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentIdRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMergeOptionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidMergeOptionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMergeOptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidMergeOptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdOutdatedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitIdOutdatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ParentCommitIdOutdatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsListRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitIdsListRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsListRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitIdsListRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidContinuationTokenException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidContinuationTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidContinuationTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumFileEntriesExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumFileEntriesExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumFileEntriesExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClientRequestTokenRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClientRequestTokenRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ClientRequestTokenRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NameLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.NameLengthExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NameLengthExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.NameLengthExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MaximumConflictResolutionEntriesExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MaximumConflictResolutionEntriesExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MaximumConflictResolutionEntriesExceededExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyDisabledException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.EncryptionKeyDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MultipleConflictResolutionEntriesException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MultipleConflictResolutionEntriesException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.MultipleConflictResolutionEntriesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentNotCreatedByCallerException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentNotCreatedByCallerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentNotCreatedByCallerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileContentSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileContentSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TargetRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TargetRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TargetRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TargetRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsMapException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTagsMapException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagsMapException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTagsMapExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RestrictedSourceFileException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RestrictedSourceFileException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RestrictedSourceFileException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RestrictedSourceFileExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileTooLargeException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileTooLargeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ManualMergeRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ManualMergeRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ManualMergeRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ManualMergeRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PutFileEntryConflictException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PutFileEntryConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PutFileEntryConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PutFileEntryConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerBranchNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerBranchNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerBranchNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileContentAndSourceFileSpecifiedException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileContentAndSourceFileSpecifiedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileContentAndSourceFileSpecifiedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PullRequestStatusRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PullRequestStatusRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.PullRequestStatusRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentReferenceUpdateException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ConcurrentReferenceUpdateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentReferenceUpdateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ConcurrentReferenceUpdateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SamePathRequestException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.SamePathRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SamePathRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.SamePathRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TipsDivergenceExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TipsDivergenceExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TipsDivergenceExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TipsDivergenceExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidSortByException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSortByException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidSortByExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SameFileContentException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.SameFileContentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SameFileContentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.SameFileContentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTargetException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTargetException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTargetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerRegionException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryTriggerRegionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryTriggerRegionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReferenceDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReferenceDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReferenceDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommentContentSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommentContentSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommentContentSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidMaxResultsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidMaxResultsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitDoesNotExistException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParentCommitDoesNotExistException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ParentCommitDoesNotExistExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("FileEntryRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.FileEntryRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("FileEntryRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.FileEntryRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidActorArnException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidActorArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidActorArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidActorArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CommitIdsLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.CommitIdsLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidDestinationCommitSpecifierException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidDestinationCommitSpecifierException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidDestinationCommitSpecifierExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.TagPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.TagPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerBranchNameListRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryTriggerBranchNameListRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.RepositoryTriggerBranchNameListRequiredExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileModeException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidFileModeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFileModeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidFileModeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSourceCommitSpecifierException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSourceCommitSpecifierException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidSourceCommitSpecifierExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DirectoryNameConflictsWithFileNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.DirectoryNameConflictsWithFileNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryNameConflictsWithFileNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.DirectoryNameConflictsWithFileNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SourceAndDestinationAreSameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SourceAndDestinationAreSameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.SourceAndDestinationAreSameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTitleException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidTitleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTitleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidTitleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyUnavailableException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EncryptionKeyUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.EncryptionKeyUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidRepositoryNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRepositoryNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidRepositoryNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ReplacementContentRequiredException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.ReplacementContentRequiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ReplacementContentRequiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.ReplacementContentRequiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBranchNameException").withModeledClass(
-                                    com.amazonaws.services.codecommit.model.InvalidBranchNameException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.codecommit.model.AWSCodeCommitException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBranchNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codecommit.model.transform.InvalidBranchNameExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codecommit.model.AWSCodeCommitException>(
+                                            com.amazonaws.services.codecommit.model.AWSCodeCommitException.class))));
 
     /**
      * Constructs a new client to invoke service methods on CodeCommit. A credentials provider chain will be used that

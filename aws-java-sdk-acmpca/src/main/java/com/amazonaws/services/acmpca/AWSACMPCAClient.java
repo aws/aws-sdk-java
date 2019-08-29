@@ -94,60 +94,63 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidTagException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CertificateMismatchException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.CertificateMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CertificateMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.CertificateMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidArgsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidArgsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedCSRException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.MalformedCSRException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedCSRException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.MalformedCSRExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestInProgressException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.RequestInProgressException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.RequestInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PermissionAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PermissionAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.PermissionAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestAlreadyProcessedException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestAlreadyProcessedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.RequestAlreadyProcessedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedCertificateException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.MalformedCertificateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedCertificateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.MalformedCertificateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestFailedException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.RequestFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.RequestFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.InvalidNextTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.acmpca.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.acmpca.model.AWSACMPCAException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.acmpca.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.acmpca.model.AWSACMPCAException>(
+                                            com.amazonaws.services.acmpca.model.AWSACMPCAException.class))));
 
     public static AWSACMPCAClientBuilder builder() {
         return AWSACMPCAClientBuilder.standard();

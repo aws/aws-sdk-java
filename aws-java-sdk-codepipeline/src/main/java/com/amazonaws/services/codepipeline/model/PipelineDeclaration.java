@@ -45,17 +45,25 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * <p>
      * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
      */
     private ArtifactStore artifactStore;
     /**
      * <p>
      * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
-     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
-     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
+     * for the pipeline region and for each cross-region action within the pipeline.
      * </p>
+     * <note>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
+     * </note>
      */
     private java.util.Map<String, ArtifactStore> artifactStores;
     /**
@@ -162,9 +170,20 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * <p>
      * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
      * 
      * @param artifactStore
-     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      */
 
     public void setArtifactStore(ArtifactStore artifactStore) {
@@ -175,8 +194,19 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * <p>
      * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
      * 
-     * @return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     * @return Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *         <p>
+     *         You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *         you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *         <code>artifactStores</code>.
+     *         </p>
      */
 
     public ArtifactStore getArtifactStore() {
@@ -187,9 +217,20 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
      * <p>
      * Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
      * </p>
+     * <note>
+     * <p>
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * </p>
+     * </note>
      * 
      * @param artifactStore
-     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.
+     *        Represents information about the Amazon S3 bucket where artifacts are stored for the pipeline.</p> <note>
+     *        <p>
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,18 +242,22 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
-     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
-     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
+     * for the pipeline region and for each cross-region action within the pipeline.
      * </p>
+     * <note>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
+     * </note>
      * 
      * @return A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an
-     *         artifact store for the pipeline region and for each cross-region action within the pipeline. You can only
-     *         use either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
+     *         artifact store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
      *         <p>
-     *         If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     *         You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *         you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *         <code>artifactStores</code>.
+     *         </p>
      */
 
     public java.util.Map<String, ArtifactStore> getArtifactStores() {
@@ -222,19 +267,23 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
-     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
-     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
+     * for the pipeline region and for each cross-region action within the pipeline.
      * </p>
+     * <note>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
+     * </note>
      * 
      * @param artifactStores
      *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
-     *        store for the pipeline region and for each cross-region action within the pipeline. You can only use
-     *        either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
+     *        store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
      *        <p>
-     *        If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      */
 
     public void setArtifactStores(java.util.Map<String, ArtifactStore> artifactStores) {
@@ -244,19 +293,23 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
     /**
      * <p>
      * A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact store
-     * for the pipeline region and for each cross-region action within the pipeline. You can only use either
-     * <code>artifactStore</code> or <code>artifactStores</code>, not both.
+     * for the pipeline region and for each cross-region action within the pipeline.
      * </p>
+     * <note>
      * <p>
-     * If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you
+     * cannot use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
      * </p>
+     * </note>
      * 
      * @param artifactStores
      *        A mapping of <code>artifactStore</code> objects and their corresponding regions. There must be an artifact
-     *        store for the pipeline region and for each cross-region action within the pipeline. You can only use
-     *        either <code>artifactStore</code> or <code>artifactStores</code>, not both.</p>
+     *        store for the pipeline region and for each cross-region action within the pipeline.</p> <note>
      *        <p>
-     *        If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+     *        You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but
+     *        you cannot use both. If you create a cross-region action in your pipeline, you must use
+     *        <code>artifactStores</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -96,6 +96,8 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
      */
     private Integer batchSize;
 
+    private Integer maximumBatchingWindowInSeconds;
+
     /**
      * <p>
      * The identifier of the event source mapping.
@@ -540,6 +542,32 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * @param maximumBatchingWindowInSeconds
+     */
+
+    public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        this.maximumBatchingWindowInSeconds = maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @return
+     */
+
+    public Integer getMaximumBatchingWindowInSeconds() {
+        return this.maximumBatchingWindowInSeconds;
+    }
+
+    /**
+     * @param maximumBatchingWindowInSeconds
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateEventSourceMappingRequest withMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
+        setMaximumBatchingWindowInSeconds(maximumBatchingWindowInSeconds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -558,7 +586,9 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         if (getEnabled() != null)
             sb.append("Enabled: ").append(getEnabled()).append(",");
         if (getBatchSize() != null)
-            sb.append("BatchSize: ").append(getBatchSize());
+            sb.append("BatchSize: ").append(getBatchSize()).append(",");
+        if (getMaximumBatchingWindowInSeconds() != null)
+            sb.append("MaximumBatchingWindowInSeconds: ").append(getMaximumBatchingWindowInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -589,6 +619,11 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getBatchSize() != null && other.getBatchSize().equals(this.getBatchSize()) == false)
             return false;
+        if (other.getMaximumBatchingWindowInSeconds() == null ^ this.getMaximumBatchingWindowInSeconds() == null)
+            return false;
+        if (other.getMaximumBatchingWindowInSeconds() != null
+                && other.getMaximumBatchingWindowInSeconds().equals(this.getMaximumBatchingWindowInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -601,6 +636,7 @@ public class UpdateEventSourceMappingRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getFunctionName() == null) ? 0 : getFunctionName().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
+        hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
         return hashCode;
     }
 

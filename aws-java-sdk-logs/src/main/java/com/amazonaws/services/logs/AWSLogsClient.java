@@ -109,39 +109,42 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.logs.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withModeledClass(
-                                    com.amazonaws.services.logs.model.InvalidOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationAbortedException").withModeledClass(
-                                    com.amazonaws.services.logs.model.OperationAbortedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationAbortedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.OperationAbortedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.logs.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnrecognizedClientException").withModeledClass(
-                                    com.amazonaws.services.logs.model.UnrecognizedClientException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnrecognizedClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.UnrecognizedClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedQueryException").withModeledClass(
-                                    com.amazonaws.services.logs.model.MalformedQueryException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedQueryException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.MalformedQueryExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.logs.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DataAlreadyAcceptedException").withModeledClass(
-                                    com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DataAlreadyAcceptedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.DataAlreadyAcceptedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSequenceTokenException").withModeledClass(
-                                    com.amazonaws.services.logs.model.InvalidSequenceTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSequenceTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.InvalidSequenceTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.logs.model.ServiceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.logs.model.ResourceAlreadyExistsException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.logs.model.AWSLogsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.logs.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.logs.model.AWSLogsException>(
+                                            com.amazonaws.services.logs.model.AWSLogsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Logs. A credentials provider chain will be

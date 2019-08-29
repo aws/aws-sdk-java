@@ -1899,13 +1899,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type
-     * up to.
+     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type.
      * </p>
      * <p>
-     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale up
-     * your cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node
-     * types returned by this operation.
+     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale your
+     * cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node types
+     * returned by this operation.
      * </p>
      * 
      * @param listAllowedNodeTypeModificationsRequest
@@ -1921,13 +1920,12 @@ public interface AmazonElastiCacheAsync extends AmazonElastiCache {
 
     /**
      * <p>
-     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type
-     * up to.
+     * Lists all available node types that you can scale your Redis cluster's or replication group's current node type.
      * </p>
      * <p>
-     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale up
-     * your cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node
-     * types returned by this operation.
+     * When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code> operations to scale your
+     * cluster or replication group, the value of the <code>CacheNodeType</code> parameter must be one of the node types
+     * returned by this operation.
      * </p>
      * 
      * @param listAllowedNodeTypeModificationsRequest

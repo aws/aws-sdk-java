@@ -13,9 +13,12 @@
             <#if shapeModel.type == "Exception">
                 .addErrorMetadata(new JsonErrorShapeMetadata()
                     .withErrorCode("${shapeModel.errorCode}")
-                    .withModeledClass(${serviceModelRoot.metadata.packageName}.model.${shapeModel.shapeName}.class))
+                    .withExceptionUnmarshaller(${serviceModelRoot.transformPackage}.${shapeModel.shapeName}Unmarshaller.getInstance()))
             </#if>
         </#list>
-        .withBaseServiceExceptionClass(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)
+        .addErrorMetadata(new JsonErrorShapeMetadata()
+            .withErrorCode(null)
+            .withExceptionUnmarshaller(new
+            JsonBaseExceptionUnmarshaller<${serviceModelRoot.sdkModeledExceptionBaseFqcn}>(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)))
         );
 </#macro>

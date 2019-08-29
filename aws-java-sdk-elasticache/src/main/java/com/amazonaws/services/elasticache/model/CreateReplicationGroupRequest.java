@@ -38,7 +38,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 40 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -569,8 +569,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     * <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created
-     * in an Amazon VPC.
+     * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
+     * created in an Amazon VPC.
      * </p>
      * <p>
      * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -608,6 +608,12 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private Boolean atRestEncryptionEnabled;
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the disk on the cluster.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -619,7 +625,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 40 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -642,7 +648,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *        A name must contain from 1 to 40 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -671,7 +677,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 40 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -693,7 +699,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *         A name must contain from 1 to 40 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -722,7 +728,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     * A name must contain from 1 to 40 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -745,7 +751,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        A name must contain from 1 to 20 alphanumeric characters or hyphens.
+     *        A name must contain from 1 to 40 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -4230,8 +4236,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     * <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created
-     * in an Amazon VPC.
+     * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
+     * created in an Amazon VPC.
      * </p>
      * <p>
      * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4259,8 +4265,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     *        <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being
-     *        created in an Amazon VPC.
+     *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
+     *        being created in an Amazon VPC.
      *        </p>
      *        <p>
      *        If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4294,8 +4300,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     * <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created
-     * in an Amazon VPC.
+     * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
+     * created in an Amazon VPC.
      * </p>
      * <p>
      * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4322,8 +4328,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     *         <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being
-     *         created in an Amazon VPC.
+     *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
+     *         being created in an Amazon VPC.
      *         </p>
      *         <p>
      *         If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4357,8 +4363,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     * <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created
-     * in an Amazon VPC.
+     * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
+     * created in an Amazon VPC.
      * </p>
      * <p>
      * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4386,8 +4392,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </p>
      *        <p>
      *        This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     *        <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being
-     *        created in an Amazon VPC.
+     *        <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
+     *        being created in an Amazon VPC.
      *        </p>
      *        <p>
      *        If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4423,8 +4429,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * <p>
      * This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     * <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being created
-     * in an Amazon VPC.
+     * <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is being
+     * created in an Amazon VPC.
      * </p>
      * <p>
      * If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4451,8 +4457,8 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </p>
      *         <p>
      *         This parameter is valid only if the <code>Engine</code> parameter is <code>redis</code>, the
-     *         <code>EngineVersion</code> parameter is <code>3.2.6</code> or <code>4.x</code>, and the cluster is being
-     *         created in an Amazon VPC.
+     *         <code>EngineVersion</code> parameter is <code>3.2.6</code>, <code>4.x</code> or later, and the cluster is
+     *         being created in an Amazon VPC.
      *         </p>
      *         <p>
      *         If you enable in-transit encryption, you must also specify a value for <code>CacheSubnetGroup</code>.
@@ -4620,6 +4626,46 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * The ID of the KMS key used to encrypt the disk on the cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the disk on the cluster.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the disk on the cluster.
+     * </p>
+     * 
+     * @return The ID of the KMS key used to encrypt the disk on the cluster.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the disk on the cluster.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the disk on the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationGroupRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -4686,7 +4732,9 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getTransitEncryptionEnabled() != null)
             sb.append("TransitEncryptionEnabled: ").append(getTransitEncryptionEnabled()).append(",");
         if (getAtRestEncryptionEnabled() != null)
-            sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled());
+            sb.append("AtRestEncryptionEnabled: ").append(getAtRestEncryptionEnabled()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -4813,6 +4861,10 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getAtRestEncryptionEnabled() != null && other.getAtRestEncryptionEnabled().equals(this.getAtRestEncryptionEnabled()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -4849,6 +4901,7 @@ public class CreateReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
         hashCode = prime * hashCode + ((getTransitEncryptionEnabled() == null) ? 0 : getTransitEncryptionEnabled().hashCode());
         hashCode = prime * hashCode + ((getAtRestEncryptionEnabled() == null) ? 0 : getAtRestEncryptionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

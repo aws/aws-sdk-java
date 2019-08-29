@@ -35,6 +35,8 @@ public class CreateEventSourceMappingRequestMarshaller {
             .marshallLocationName("Enabled").build();
     private static final MarshallingInfo<Integer> BATCHSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BatchSize").build();
+    private static final MarshallingInfo<Integer> MAXIMUMBATCHINGWINDOWINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumBatchingWindowInSeconds").build();
     private static final MarshallingInfo<String> STARTINGPOSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StartingPosition").build();
     private static final MarshallingInfo<java.util.Date> STARTINGPOSITIONTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -60,6 +62,7 @@ public class CreateEventSourceMappingRequestMarshaller {
             protocolMarshaller.marshall(createEventSourceMappingRequest.getFunctionName(), FUNCTIONNAME_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getEnabled(), ENABLED_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getBatchSize(), BATCHSIZE_BINDING);
+            protocolMarshaller.marshall(createEventSourceMappingRequest.getMaximumBatchingWindowInSeconds(), MAXIMUMBATCHINGWINDOWINSECONDS_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPosition(), STARTINGPOSITION_BINDING);
             protocolMarshaller.marshall(createEventSourceMappingRequest.getStartingPositionTimestamp(), STARTINGPOSITIONTIMESTAMP_BINDING);
         } catch (Exception e) {

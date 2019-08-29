@@ -77,24 +77,27 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.DuplicateRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateRequest").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.DuplicateRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInput").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInput").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TLDRulesViolation").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.TLDRulesViolationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TLDRulesViolation").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.TLDRulesViolationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DomainLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.DomainLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DomainLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.DomainLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.UnsupportedTLDException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedTLD").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.UnsupportedTLDExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.route53domains.model.OperationLimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.route53domains.model.transform.OperationLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException>(
+                                            com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53 Domains. A credentials provider chain will

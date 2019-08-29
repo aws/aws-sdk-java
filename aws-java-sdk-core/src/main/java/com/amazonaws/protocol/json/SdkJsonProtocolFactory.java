@@ -42,7 +42,7 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
 
     private final JsonClientMetadata metadata;
 
-    private final List<JsonErrorUnmarshaller> errorUnmarshallers = new ArrayList<JsonErrorUnmarshaller>();
+    private final List<JsonErrorUnmarshaller<? extends AmazonServiceException>> errorUnmarshallers = new ArrayList<JsonErrorUnmarshaller<? extends AmazonServiceException>>();
 
     public SdkJsonProtocolFactory(JsonClientMetadata metadata) {
         this.metadata = metadata;
@@ -100,14 +100,9 @@ public class SdkJsonProtocolFactory implements SdkJsonMarshallerFactory {
     @SuppressWarnings("unchecked")
     private void createErrorUnmarshallers() {
         for (JsonErrorShapeMetadata errorMetadata : metadata.getErrorShapeMetadata()) {
-            errorUnmarshallers.add(new JsonErrorUnmarshaller(
-                    (Class<? extends AmazonServiceException>) errorMetadata.getModeledClass(),
-                    errorMetadata.getErrorCode()));
+            errorUnmarshallers.add(errorMetadata.getExceptionUnmarshaller());
 
         }
-        errorUnmarshallers.add(new JsonErrorUnmarshaller(
-                (Class<? extends AmazonServiceException>) metadata.getBaseServiceExceptionClass(),
-                null));
     }
 
     /**

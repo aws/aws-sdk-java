@@ -48,6 +48,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
+     * The ID of the Docker container.
+     * </p>
+     */
+    private String runtimeId;
+    /**
+     * <p>
      * The last known status of the container.
      * </p>
      */
@@ -227,6 +233,46 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
 
     public Container withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     */
+
+    public void setRuntimeId(String runtimeId) {
+        this.runtimeId = runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @return The ID of the Docker container.
+     */
+
+    public String getRuntimeId() {
+        return this.runtimeId;
+    }
+
+    /**
+     * <p>
+     * The ID of the Docker container.
+     * </p>
+     * 
+     * @param runtimeId
+     *        The ID of the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withRuntimeId(String runtimeId) {
+        setRuntimeId(runtimeId);
         return this;
     }
 
@@ -786,6 +832,8 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             sb.append("TaskArn: ").append(getTaskArn()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getRuntimeId() != null)
+            sb.append("RuntimeId: ").append(getRuntimeId()).append(",");
         if (getLastStatus() != null)
             sb.append("LastStatus: ").append(getLastStatus()).append(",");
         if (getExitCode() != null)
@@ -831,6 +879,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getRuntimeId() == null ^ this.getRuntimeId() == null)
+            return false;
+        if (other.getRuntimeId() != null && other.getRuntimeId().equals(this.getRuntimeId()) == false)
             return false;
         if (other.getLastStatus() == null ^ this.getLastStatus() == null)
             return false;
@@ -883,6 +935,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getContainerArn() == null) ? 0 : getContainerArn().hashCode());
         hashCode = prime * hashCode + ((getTaskArn() == null) ? 0 : getTaskArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getRuntimeId() == null) ? 0 : getRuntimeId().hashCode());
         hashCode = prime * hashCode + ((getLastStatus() == null) ? 0 : getLastStatus().hashCode());
         hashCode = prime * hashCode + ((getExitCode() == null) ? 0 : getExitCode().hashCode());
         hashCode = prime * hashCode + ((getReason() == null) ? 0 : getReason().hashCode());

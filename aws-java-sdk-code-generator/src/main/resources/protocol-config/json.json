@@ -130,6 +130,21 @@
   "exceptionClass": {
     "mainTemplate" : "/templates/common/model-exception-class.ftl"
   },
+  "exceptionUnmarshaller": {
+    "mainTemplate" : "/templates/json/ExceptionUnmarshaller.ftl",
+    "childTemplates" : [
+      {
+        "location" : "/macros/unmarshaller/json/MemberUnmarshallerDeclaration.ftl",
+        "importAsNamespace" : "MemberUnmarshallerDeclarationMacro"
+      }, {
+        "location" : "/macros/unmarshaller/json/MemberUnmarshallerInvocation.ftl",
+        "importAsNamespace" : "MemberUnmarshallerInvocationMacro"
+      }, {
+        "location" : "/macros/unmarshaller/json/PayloadUnmarshaller.ftl",
+        "importAsNamespace" : "PayloadUnmarshallerMacro"
+      }
+    ]
+  },
   "policyActionClass" : {
     "mainTemplate" : "/templates/common/auth-policy-action-class.ftl"
   },

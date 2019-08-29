@@ -83,63 +83,66 @@ public class AWSWAFRegionalClient extends AmazonWebServiceClient implements AWSW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFLimitsExceededException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFLimitsExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFLimitsExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFLimitsExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFStaleDataException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFStaleDataException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFStaleDataExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidPermissionPolicyException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidPermissionPolicyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInvalidPermissionPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFBadRequestException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFBadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFBadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFBadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFTagOperationException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFTagOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFTagOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFTagOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFTagOperationInternalErrorException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFTagOperationInternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFTagOperationInternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFTagOperationInternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFSubscriptionNotFoundException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFSubscriptionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFSubscriptionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonEmptyEntityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFNonEmptyEntityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFReferencedItemException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFReferencedItemException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFReferencedItemExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFNonexistentItemException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentItemException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFNonexistentItemExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFServiceLinkedRoleErrorException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFServiceLinkedRoleErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFServiceLinkedRoleErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidAccountException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidAccountException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidAccountException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInvalidAccountExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFDisallowedNameException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFDisallowedNameException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFDisallowedNameException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFDisallowedNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidOperationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidRegexPatternException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFInvalidRegexPatternException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFInvalidRegexPatternException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFInvalidRegexPatternExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentContainerException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFNonexistentContainerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("WAFNonexistentContainerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFNonexistentContainerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WAFUnavailableEntityException").withModeledClass(
-                                    com.amazonaws.services.waf.model.WAFUnavailableEntityException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.waf.model.AWSWAFException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("WAFUnavailableEntityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.waf.model.waf_regional.transform.WAFUnavailableEntityExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.waf.model.AWSWAFException>(
+                                            com.amazonaws.services.waf.model.AWSWAFException.class))));
 
     /**
      * Constructs a new client to invoke service methods on WAF Regional. A credentials provider chain will be used that

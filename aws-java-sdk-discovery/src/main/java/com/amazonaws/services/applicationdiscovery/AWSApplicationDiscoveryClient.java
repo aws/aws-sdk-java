@@ -135,30 +135,33 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerInternalErrorException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.ServerInternalErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerInternalErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.ServerInternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictErrorException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.ConflictErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.ConflictErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.OperationNotPermittedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withModeledClass(
-                                    com.amazonaws.services.applicationdiscovery.model.AuthorizationErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationdiscovery.model.transform.AuthorizationErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException>(
+                                            com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Application Discovery Service. A credentials provider

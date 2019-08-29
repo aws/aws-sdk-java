@@ -80,15 +80,18 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withModeledClass(
-                                    com.amazonaws.services.sagemaker.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFound").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemaker.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceeded").withModeledClass(
-                                    com.amazonaws.services.sagemaker.model.ResourceLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemaker.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUse").withModeledClass(
-                                    com.amazonaws.services.sagemaker.model.ResourceInUseException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.sagemaker.model.AmazonSageMakerException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUse").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemaker.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.sagemaker.model.AmazonSageMakerException>(
+                                            com.amazonaws.services.sagemaker.model.AmazonSageMakerException.class))));
 
     public static AmazonSageMakerClientBuilder builder() {
         return AmazonSageMakerClientBuilder.standard();

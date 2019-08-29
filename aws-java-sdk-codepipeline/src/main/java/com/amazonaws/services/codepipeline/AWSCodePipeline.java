@@ -382,6 +382,13 @@ public interface AWSCodePipeline {
      * <p>
      * Creates a pipeline.
      * </p>
+     * <note>
+     * <p>
+     * In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code> in
+     * your pipeline, but you cannot use both. If you create a cross-region action in your pipeline, you must use
+     * <code>artifactStores</code>.
+     * </p>
+     * </note>
      * 
      * @param createPipelineRequest
      *        Represents the input of a <code>CreatePipeline</code> action.

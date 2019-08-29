@@ -3,7 +3,7 @@
     "mainTemplate" : "/templates/api-gateway/SyncClientClassBase.ftl",
     "childTemplates" : [
       {
-        "location" : "/macros/syncclientclass/json/AdditionalSyncClientFields.ftl",
+        "location" : "/macros/syncclientclass/api-gateway/AdditionalSyncClientFields.ftl",
         "importAsNamespace" : "AdditionalSyncClientFieldsMacro"
       }, {
         "location" : "/macros/syncclientclass/json/ClientInitMethod.ftl",

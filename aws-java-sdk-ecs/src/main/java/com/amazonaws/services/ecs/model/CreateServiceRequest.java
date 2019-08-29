@@ -53,11 +53,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String taskDefinition;
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service.
+     * A load balancer object representing the load balancers to use with your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
-     * target group.
+     * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
+     * service.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -74,15 +77,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
-     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
-     * </p>
-     * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
+     * </p>
+     * <p>
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -480,11 +483,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service.
+     * A load balancer object representing the load balancers to use with your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
-     * target group.
+     * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
+     * service.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -501,15 +507,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
-     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
-     * </p>
-     * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
+     * </p>
+     * <p>
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -519,10 +525,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * associated with an elastic network interface, not an Amazon EC2 instance.
      * </p>
      * 
-     * @return A load balancer object representing the load balancer to use with your service.</p>
+     * @return A load balancer object representing the load balancers to use with your service. For more information,
+     *         see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     *         Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *         <p>
-     *         If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
-     *         or target group.
+     *         If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     *         Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
+     *         the service.
      *         </p>
      *         <p>
      *         If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to
@@ -541,16 +551,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         updating the service.
      *         </p>
      *         <p>
-     *         For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *         appears in a container definition), and the container port to access from the load balancer. When a task
-     *         from this service is placed on a container instance, the container instance is registered with the load
-     *         balancer specified here.
-     *         </p>
-     *         <p>
      *         For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *         target group ARN, the container name (as it appears in a container definition), and the container port to
      *         access from the load balancer. When a task from this service is placed on a container instance, the
      *         container instance and port combination is registered as a target in the target group specified here.
+     *         </p>
+     *         <p>
+     *         For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *         appears in a container definition), and the container port to access from the load balancer. When a task
+     *         from this service is placed on a container instance, the container instance is registered with the load
+     *         balancer specified here.
      *         </p>
      *         <p>
      *         Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -570,11 +580,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service.
+     * A load balancer object representing the load balancers to use with your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
-     * target group.
+     * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
+     * service.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -591,15 +604,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
-     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
-     * </p>
-     * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
+     * </p>
+     * <p>
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -610,10 +623,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        A load balancer object representing the load balancers to use with your service. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
-     *        or target group.
+     *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
+     *        the service.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -632,16 +648,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        updating the service.
      *        </p>
      *        <p>
-     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
-     *        </p>
-     *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -663,11 +679,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service.
+     * A load balancer object representing the load balancers to use with your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
-     * target group.
+     * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
+     * service.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -684,15 +703,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
-     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
-     * </p>
-     * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
+     * </p>
+     * <p>
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -708,10 +727,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        A load balancer object representing the load balancers to use with your service. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
-     *        or target group.
+     *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
+     *        the service.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -730,16 +752,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        updating the service.
      *        </p>
      *        <p>
-     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
-     *        </p>
-     *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate
@@ -763,11 +785,14 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A load balancer object representing the load balancer to use with your service.
+     * A load balancer object representing the load balancers to use with your service. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service Load
+     * Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * <p>
-     * If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer or
-     * target group.
+     * If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     * Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to the
+     * service.
      * </p>
      * <p>
      * If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use either
@@ -784,15 +809,15 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * the <code>CODE_DEPLOY</code> deployment controller, these values can be changed when updating the service.
      * </p>
      * <p>
-     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
-     * a container definition), and the container port to access from the load balancer. When a task from this service
-     * is placed on a container instance, the container instance is registered with the load balancer specified here.
-     * </p>
-     * <p>
      * For Application Load Balancers and Network Load Balancers, this object must contain the load balancer target
      * group ARN, the container name (as it appears in a container definition), and the container port to access from
      * the load balancer. When a task from this service is placed on a container instance, the container instance and
      * port combination is registered as a target in the target group specified here.
+     * </p>
+     * <p>
+     * For Classic Load Balancers, this object must contain the load balancer name, the container name (as it appears in
+     * a container definition), and the container port to access from the load balancer. When a task from this service
+     * is placed on a container instance, the container instance is registered with the load balancer specified here.
      * </p>
      * <p>
      * Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate launch
@@ -803,10 +828,13 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param loadBalancers
-     *        A load balancer object representing the load balancer to use with your service.</p>
+     *        A load balancer object representing the load balancers to use with your service. For more information, see
+     *        <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+     *        Load Balancing</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      *        <p>
-     *        If the service is using the <code>ECS</code> deployment controller, you are limited to one load balancer
-     *        or target group.
+     *        If the service is using the rolling update (<code>ECS</code>) deployment controller and using either an
+     *        Application Load Balancer or Network Load Balancer, you can specify multiple target groups to attach to
+     *        the service.
      *        </p>
      *        <p>
      *        If the service is using the <code>CODE_DEPLOY</code> deployment controller, the service is required to use
@@ -825,16 +853,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        updating the service.
      *        </p>
      *        <p>
-     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
-     *        appears in a container definition), and the container port to access from the load balancer. When a task
-     *        from this service is placed on a container instance, the container instance is registered with the load
-     *        balancer specified here.
-     *        </p>
-     *        <p>
      *        For Application Load Balancers and Network Load Balancers, this object must contain the load balancer
      *        target group ARN, the container name (as it appears in a container definition), and the container port to
      *        access from the load balancer. When a task from this service is placed on a container instance, the
      *        container instance and port combination is registered as a target in the target group specified here.
+     *        </p>
+     *        <p>
+     *        For Classic Load Balancers, this object must contain the load balancer name, the container name (as it
+     *        appears in a container definition), and the container port to access from the load balancer. When a task
+     *        from this service is placed on a container instance, the container instance is registered with the load
+     *        balancer specified here.
      *        </p>
      *        <p>
      *        Services with tasks that use the <code>awsvpc</code> network mode (for example, those with the Fargate

@@ -56,6 +56,10 @@ public class EventSourceMappingConfigurationJsonUnmarshaller implements Unmarsha
                     context.nextToken();
                     eventSourceMappingConfiguration.setBatchSize(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("MaximumBatchingWindowInSeconds", targetDepth)) {
+                    context.nextToken();
+                    eventSourceMappingConfiguration.setMaximumBatchingWindowInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("EventSourceArn", targetDepth)) {
                     context.nextToken();
                     eventSourceMappingConfiguration.setEventSourceArn(context.getUnmarshaller(String.class).unmarshall(context));

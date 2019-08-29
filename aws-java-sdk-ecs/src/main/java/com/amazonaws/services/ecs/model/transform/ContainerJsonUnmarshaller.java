@@ -60,6 +60,10 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                     context.nextToken();
                     container.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("runtimeId", targetDepth)) {
+                    context.nextToken();
+                    container.setRuntimeId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("lastStatus", targetDepth)) {
                     context.nextToken();
                     container.setLastStatus(context.getUnmarshaller(String.class).unmarshall(context));

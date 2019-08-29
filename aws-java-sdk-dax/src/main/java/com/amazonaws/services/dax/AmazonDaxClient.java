@@ -80,84 +80,87 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetQuotaExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetQuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetGroupNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetGroupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupQuotaExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetGroupQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidVPCNetworkStateFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidVPCNetworkStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidVPCNetworkStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidVPCNetworkStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupAlreadyExistsFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupAlreadyExistsFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ParameterGroupAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetInUse").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetInUse").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ClusterNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ClusterNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NodeNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.NodeNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NodeNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.NodeNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidParameterCombinationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterCombinationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidParameterCombinationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NodeQuotaForCustomerExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.NodeQuotaForCustomerExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NodeQuotaForCustomerExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.NodeQuotaForCustomerExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidClusterStateFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidClusterStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClusterStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidClusterStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientClusterCapacityFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.InsufficientClusterCapacityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientClusterCapacityFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InsufficientClusterCapacityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.TagNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.TagNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidARNFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidARNException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidARNFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidARNExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagQuotaPerResourceExceeded").withModeledClass(
-                                    com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagQuotaPerResourceExceeded").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.TagQuotaPerResourceExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterQuotaForCustomerExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterQuotaForCustomerExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ClusterQuotaForCustomerExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupInUseFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetGroupInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupInUseFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetGroupInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterGroupStateFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidParameterGroupStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterGroupStateFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidParameterGroupStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ParameterGroupNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ParameterGroupNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withModeledClass(
-                                    com.amazonaws.services.dax.model.InvalidSubnetException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnet").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.InvalidSubnetExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ClusterAlreadyExistsFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ClusterAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ClusterAlreadyExistsFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ClusterAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceLinkedRoleNotFoundFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceLinkedRoleNotFoundFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ServiceLinkedRoleNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NodeQuotaForClusterExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.NodeQuotaForClusterExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NodeQuotaForClusterExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.NodeQuotaForClusterExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupQuotaExceededFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ParameterGroupQuotaExceededFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.ParameterGroupQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupAlreadyExistsFault").withModeledClass(
-                                    com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.dax.model.AmazonDaxException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetGroupAlreadyExistsFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dax.model.transform.SubnetGroupAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dax.model.AmazonDaxException>(
+                                            com.amazonaws.services.dax.model.AmazonDaxException.class))));
 
     public static AmazonDaxClientBuilder builder() {
         return AmazonDaxClientBuilder.standard();

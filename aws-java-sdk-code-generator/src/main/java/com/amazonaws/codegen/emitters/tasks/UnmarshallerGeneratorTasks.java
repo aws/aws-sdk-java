@@ -18,6 +18,7 @@ import com.amazonaws.codegen.emitters.FreemarkerGeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTask;
 import com.amazonaws.codegen.emitters.GeneratorTaskParams;
 import com.amazonaws.codegen.model.intermediate.Metadata;
+import com.amazonaws.codegen.model.intermediate.Protocol;
 import com.amazonaws.codegen.model.intermediate.ShapeModel;
 import com.amazonaws.codegen.model.intermediate.ShapeType;
 import com.amazonaws.util.ImmutableMapParameter;
@@ -95,8 +96,10 @@ public class UnmarshallerGeneratorTasks extends BaseGeneratorTasks {
             case Model:
                 return true;
             case Exception:
-                // Generating Exception Unmarshallers is not required for the JSON protocol
-                return !metadata.isJsonProtocol();
+                // APIG simply uses ObjectMapper to unmarshall exceptions
+                if (model.getMetadata().getProtocol() != Protocol.API_GATEWAY) {
+                    return true;
+                }
         }
         return false;
     }

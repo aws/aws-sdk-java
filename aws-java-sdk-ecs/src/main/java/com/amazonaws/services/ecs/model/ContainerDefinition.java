@@ -405,8 +405,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private com.amazonaws.internal.SdkInternalList<ContainerDependency> dependsOn;
     /**
      * <p>
-     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
-     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you
+     * specify two containers in a task definition with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
      * is specified for containerB and it does not reach the desired status within that time then containerA will give
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
@@ -431,10 +431,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private Integer startTimeout;
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. For tasks
-     * using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
-     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service requires
-     * platform version 1.3.0 or later.
+     * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
+     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
+     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
+     * requires platform version 1.3.0 or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3628,8 +3628,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
-     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you
+     * specify two containers in a task definition with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
      * is specified for containerB and it does not reach the desired status within that time then containerA will give
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
@@ -3652,9 +3652,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param startTimeout
-     *        Time duration to wait before giving up on resolving dependencies for a container. For example, you specify
-     *        two containers in a task definition with containerA having a dependency on containerB reaching a
-     *        <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     *        Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
+     *        example, you specify two containers in a task definition with containerA having a dependency on containerB
+     *        reaching a <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
      *        <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
      *        within that time then containerA will give up and not start. This results in the task transitioning to a
      *        <code>STOPPED</code> state.</p>
@@ -3683,8 +3683,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
-     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you
+     * specify two containers in a task definition with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
      * is specified for containerB and it does not reach the desired status within that time then containerA will give
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
@@ -3706,9 +3706,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * task or service requires platform version 1.3.0 or later.
      * </p>
      * 
-     * @return Time duration to wait before giving up on resolving dependencies for a container. For example, you
-     *         specify two containers in a task definition with containerA having a dependency on containerB reaching a
-     *         <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     * @return Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
+     *         example, you specify two containers in a task definition with containerA having a dependency on
+     *         containerB reaching a <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
      *         <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
      *         within that time then containerA will give up and not start. This results in the task transitioning to a
      *         <code>STOPPED</code> state.</p>
@@ -3737,8 +3737,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before giving up on resolving dependencies for a container. For example, you specify two
-     * containers in a task definition with containerA having a dependency on containerB reaching a
+     * Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For example, you
+     * specify two containers in a task definition with containerA having a dependency on containerB reaching a
      * <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a <code>startTimeout</code> value
      * is specified for containerB and it does not reach the desired status within that time then containerA will give
      * up and not start. This results in the task transitioning to a <code>STOPPED</code> state.
@@ -3761,9 +3761,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param startTimeout
-     *        Time duration to wait before giving up on resolving dependencies for a container. For example, you specify
-     *        two containers in a task definition with containerA having a dependency on containerB reaching a
-     *        <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
+     *        Time duration (in seconds) to wait before giving up on resolving dependencies for a container. For
+     *        example, you specify two containers in a task definition with containerA having a dependency on containerB
+     *        reaching a <code>COMPLETE</code>, <code>SUCCESS</code>, or <code>HEALTHY</code> status. If a
      *        <code>startTimeout</code> value is specified for containerB and it does not reach the desired status
      *        within that time then containerA will give up and not start. This results in the task transitioning to a
      *        <code>STOPPED</code> state.</p>
@@ -3794,10 +3794,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. For tasks
-     * using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
-     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service requires
-     * platform version 1.3.0 or later.
+     * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
+     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
+     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
+     * requires platform version 1.3.0 or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3815,10 +3815,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param stopTimeout
-     *        Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
-     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This
-     *        parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     *        task or service requires platform version 1.3.0 or later.</p>
+     *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
+     *        on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
+     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
+     *        and the task or service requires platform version 1.3.0 or later.</p>
      *        <p>
      *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
@@ -3841,10 +3841,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. For tasks
-     * using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
-     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service requires
-     * platform version 1.3.0 or later.
+     * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
+     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
+     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
+     * requires platform version 1.3.0 or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3861,10 +3861,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
-     *         For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This
-     *         parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and
-     *         the task or service requires platform version 1.3.0 or later.</p>
+     * @return Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
+     *         on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
+     *         This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
+     *         and the task or service requires platform version 1.3.0 or later.</p>
      *         <p>
      *         For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *         <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container
@@ -3887,10 +3887,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own. For tasks
-     * using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter is available
-     * for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service requires
-     * platform version 1.3.0 or later.
+     * Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally on its
+     * own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This parameter
+     * is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the task or service
+     * requires platform version 1.3.0 or later.
      * </p>
      * <p>
      * For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
@@ -3908,10 +3908,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param stopTimeout
-     *        Time duration to wait before the container is forcefully killed if it doesn't exit normally on its own.
-     *        For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes. This
-     *        parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only and the
-     *        task or service requires platform version 1.3.0 or later.</p>
+     *        Time duration (in seconds) to wait before the container is forcefully killed if it doesn't exit normally
+     *        on its own. For tasks using the Fargate launch type, the max <code>stopTimeout</code> value is 2 minutes.
+     *        This parameter is available for tasks using the Fargate launch type in the Ohio (us-east-2) region only
+     *        and the task or service requires platform version 1.3.0 or later.</p>
      *        <p>
      *        For tasks using the EC2 launch type, the stop timeout value for the container takes precedence over the
      *        <code>ECS_CONTAINER_STOP_TIMEOUT</code> container agent configuration parameter, if used. Container

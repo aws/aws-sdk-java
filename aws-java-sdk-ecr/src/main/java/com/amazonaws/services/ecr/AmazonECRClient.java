@@ -81,75 +81,78 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayerPartTooSmallException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayerPartTooSmallException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LayerPartTooSmallException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LayerPartTooSmallExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotEmptyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.RepositoryNotEmptyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LayerAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LayerAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.EmptyUploadException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EmptyUploadException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.EmptyUploadExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.RepositoryAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryPolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.RepositoryPolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ImageAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ImageAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayerInaccessibleException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LayerInaccessibleException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LayerInaccessibleExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.UploadNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UploadNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.UploadNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerPartException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.InvalidLayerPartException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerPartException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.InvalidLayerPartExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ImageTagAlreadyExistsException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ImageTagAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ImageTagAlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LifecyclePolicyPreviewNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.ServerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LifecyclePolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.InvalidTagParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.InvalidTagParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ImageNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.ImageNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ImageNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.ImageNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LayersNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LayersNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LayersNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LayersNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.InvalidLayerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidLayerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.InvalidLayerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.RepositoryNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RepositoryNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.RepositoryNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewInProgressException").withModeledClass(
-                                    com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.ecr.model.AmazonECRException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ecr.model.transform.LifecyclePolicyPreviewInProgressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ecr.model.AmazonECRException>(
+                                            com.amazonaws.services.ecr.model.AmazonECRException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECR. A credentials provider chain will be used that

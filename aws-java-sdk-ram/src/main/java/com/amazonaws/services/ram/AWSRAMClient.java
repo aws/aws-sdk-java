@@ -103,66 +103,69 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidClientTokenException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidClientTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withModeledClass(
-                                    com.amazonaws.services.ram.model.UnknownResourceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnknownResourceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.UnknownResourceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServerInternalException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ServerInternalException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServerInternalException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ServerInternalExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withModeledClass(
-                                    com.amazonaws.services.ram.model.IdempotentParameterMismatchException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidMaxResultsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidMaxResultsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidMaxResultsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceTypeException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidResourceTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidResourceTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ServiceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationExpiredException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationExpiredException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceShareInvitationExpiredExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameterException").withModeledClass(
-                                    com.amazonaws.services.ram.model.MissingRequiredParameterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingRequiredParameterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.MissingRequiredParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.ram.model.TagLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TagLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.TagLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceArnNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceArnNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceArnNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withModeledClass(
-                                    com.amazonaws.services.ram.model.OperationNotPermittedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationNotPermittedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.OperationNotPermittedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceShareLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceShareLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationAlreadyRejectedException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyRejectedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationAlreadyRejectedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceShareInvitationAlreadyRejectedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MalformedArnException").withModeledClass(
-                                    com.amazonaws.services.ram.model.MalformedArnException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MalformedArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.MalformedArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateTransitionException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidStateTransitionException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStateTransitionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidStateTransitionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationAlreadyAcceptedException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationAlreadyAcceptedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceShareInvitationAlreadyAcceptedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationArnNotFoundException").withModeledClass(
-                                    com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceShareInvitationArnNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.ResourceShareInvitationArnNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withModeledClass(
-                                    com.amazonaws.services.ram.model.InvalidNextTokenException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.ram.model.AWSRAMException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.ram.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ram.model.AWSRAMException>(
+                                            com.amazonaws.services.ram.model.AWSRAMException.class))));
 
     public static AWSRAMClientBuilder builder() {
         return AWSRAMClientBuilder.standard();

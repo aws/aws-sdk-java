@@ -75,12 +75,15 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceFault").withModeledClass(
-                                    com.amazonaws.services.mturk.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceFault").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mturk.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestError").withModeledClass(
-                                    com.amazonaws.services.mturk.model.RequestErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.mturk.model.AmazonMTurkException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("RequestError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mturk.model.transform.RequestErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mturk.model.AmazonMTurkException>(
+                                            com.amazonaws.services.mturk.model.AmazonMTurkException.class))));
 
     public static AmazonMTurkClientBuilder builder() {
         return AmazonMTurkClientBuilder.standard();

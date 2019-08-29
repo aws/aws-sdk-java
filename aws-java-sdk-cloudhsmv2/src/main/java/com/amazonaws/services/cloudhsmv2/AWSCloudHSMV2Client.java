@@ -78,21 +78,24 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalFailureException").withModeledClass(
-                                    com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmInternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withModeledClass(
-                                    com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception.class));
+                            new JsonErrorShapeMetadata().withErrorCode("CloudHsmInvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmInvalidRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception>(
+                                            com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception.class))));
 
     public static AWSCloudHSMV2ClientBuilder builder() {
         return AWSCloudHSMV2ClientBuilder.standard();

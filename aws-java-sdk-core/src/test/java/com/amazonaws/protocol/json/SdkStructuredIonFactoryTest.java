@@ -18,6 +18,8 @@ import static org.hamcrest.Matchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThat;
 
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.LinkedList;
@@ -32,7 +34,6 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.http.HttpResponse;
 import com.amazonaws.http.JsonErrorResponseHandler;
-import com.amazonaws.transform.JsonErrorUnmarshaller;
 
 import software.amazon.ion.IonStruct;
 import software.amazon.ion.IonSystem;
@@ -136,8 +137,8 @@ public class SdkStructuredIonFactoryTest {
     }
 
     private AmazonServiceException handleError(HttpResponse error) throws Exception {
-        List<JsonErrorUnmarshaller> unmarshallers = new LinkedList<JsonErrorUnmarshaller>();
-        unmarshallers.add(new JsonErrorUnmarshaller(InvalidParameterException.class, ERROR_TYPE));
+        List<JsonErrorUnmarshaller<?>> unmarshallers = new LinkedList<JsonErrorUnmarshaller<?>>();
+        unmarshallers.add(new InvalidParameterExceptionUnmarshaller(ERROR_TYPE));
 
         JsonErrorResponseHandler handler = SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY.createErrorResponseHandler(unmarshallers, NO_CUSTOM_ERROR_CODE_FIELD_NAME);
         return handler.handle(error);
@@ -148,6 +149,18 @@ public class SdkStructuredIonFactoryTest {
 
         public InvalidParameterException(String errorMessage) {
             super(errorMessage);
+        }
+    }
+
+    private static class InvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<InvalidParameterException> {
+
+        public InvalidParameterExceptionUnmarshaller(String handledErrorCode) {
+            super(handledErrorCode);
+        }
+
+        @Override
+        public InvalidParameterException unmarshall(JsonUnmarshallerContext in) throws Exception {
+            return new InvalidParameterException(null);
         }
     }
 }

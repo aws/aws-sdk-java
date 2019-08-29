@@ -117,30 +117,33 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.RequestTimeoutException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.RequestTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("MissingParameterValueException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.MissingParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("MissingParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.MissingParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InsufficientCapacityException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.InsufficientCapacityException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InsufficientCapacityException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.InsufficientCapacityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyEnforcedException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.PolicyEnforcedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyEnforcedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.PolicyEnforcedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.glacier.model.ServiceUnavailableException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.glacier.model.AmazonGlacierException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.glacier.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.glacier.model.AmazonGlacierException>(
+                                            com.amazonaws.services.glacier.model.AmazonGlacierException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Glacier. A credentials provider chain will be used

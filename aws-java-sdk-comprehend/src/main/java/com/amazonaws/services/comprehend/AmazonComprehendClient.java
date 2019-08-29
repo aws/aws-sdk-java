@@ -79,54 +79,57 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.ConcurrentModificationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.InvalidRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyValidationException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.KmsKeyValidationException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KmsKeyValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.KmsKeyValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilterException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.InvalidFilterException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidFilterException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.InvalidFilterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagKeysException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.TooManyTagKeysException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagKeysException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.TooManyTagKeysExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BatchSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BatchSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.BatchSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TextSizeLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.TextSizeLimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TextSizeLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.TextSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLanguageException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.UnsupportedLanguageException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedLanguageException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.UnsupportedLanguageExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.InternalServerException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.TooManyTagsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.ResourceUnavailableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceUnavailableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.ResourceUnavailableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.JobNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("JobNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.JobNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withModeledClass(
-                                    com.amazonaws.services.comprehend.model.ResourceLimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.comprehend.model.AmazonComprehendException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.comprehend.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.comprehend.model.AmazonComprehendException>(
+                                            com.amazonaws.services.comprehend.model.AmazonComprehendException.class))));
 
     public static AmazonComprehendClientBuilder builder() {
         return AmazonComprehendClientBuilder.standard();

@@ -85,39 +85,42 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.ConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.InternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.RequestTimeoutException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestTimeoutException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.RequestTimeoutExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("DependencyFailedException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.DependencyFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("DependencyFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.DependencyFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.UnsupportedMediaTypeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotAcceptableException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.NotAcceptableException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotAcceptableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.NotAcceptableExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.LimitExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadGatewayException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.BadGatewayException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadGatewayException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.BadGatewayExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LoopDetectedException").withModeledClass(
-                                    com.amazonaws.services.lexruntime.model.LoopDetectedException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LoopDetectedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lexruntime.model.transform.LoopDetectedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException>(
+                                            com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException.class))));
 
     public static AmazonLexRuntimeClientBuilder builder() {
         return AmazonLexRuntimeClientBuilder.standard();

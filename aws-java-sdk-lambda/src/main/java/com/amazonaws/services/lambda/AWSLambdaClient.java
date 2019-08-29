@@ -89,81 +89,84 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidParameterValueException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidParameterValueException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidParameterValueExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ResourceInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.EC2AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EC2AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EC2AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.PolicyLengthExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyLengthExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.PolicyLengthExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.KMSAccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSAccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.KMSAccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2ThrottledException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.EC2ThrottledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EC2ThrottledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EC2ThrottledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.KMSInvalidStateException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSInvalidStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.KMSInvalidStateExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidZipFileException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidZipFileException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidZipFileException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidZipFileExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.KMSDisabledException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSDisabledException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.KMSDisabledExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidRequestContentException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRequestContentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidRequestContentExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidRuntimeException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidRuntimeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidRuntimeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidRuntimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ResourceNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("EC2UnexpectedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.EC2UnexpectedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("EC2UnexpectedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.EC2UnexpectedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecurityGroupIDException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSecurityGroupIDException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidSecurityGroupIDExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ResourceConflictException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.CodeStorageExceededException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CodeStorageExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.CodeStorageExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.ENILimitReachedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ENILimitReachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.ENILimitReachedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("SubnetIPAddressLimitReachedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.SubnetIPAddressLimitReachedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.KMSNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("KMSNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.KMSNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.InvalidSubnetIDException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidSubnetIDException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.InvalidSubnetIDExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.PreconditionFailedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PreconditionFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.PreconditionFailedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.RequestTooLargeException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("RequestTooLargeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.RequestTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.TooManyRequestsException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withModeledClass(
-                                    com.amazonaws.services.lambda.model.UnsupportedMediaTypeException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.lambda.model.AWSLambdaException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lambda.model.transform.UnsupportedMediaTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lambda.model.AWSLambdaException>(
+                                            com.amazonaws.services.lambda.model.AWSLambdaException.class))));
 
     /**
      * Constructs a new client to invoke service methods on AWS Lambda. A credentials provider chain will be used that

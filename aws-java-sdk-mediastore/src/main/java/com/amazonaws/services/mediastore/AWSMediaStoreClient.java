@@ -78,24 +78,27 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.ContainerNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.ContainerNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ContainerInUseException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.ContainerInUseException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ContainerInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.ContainerInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.PolicyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("PolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.PolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("CorsPolicyNotFoundException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("CorsPolicyNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.CorsPolicyNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.InternalServerErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withModeledClass(
-                                    com.amazonaws.services.mediastore.model.LimitExceededException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.mediastore.model.AWSMediaStoreException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.mediastore.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediastore.model.AWSMediaStoreException>(
+                                            com.amazonaws.services.mediastore.model.AWSMediaStoreException.class))));
 
     public static AWSMediaStoreClientBuilder builder() {
         return AWSMediaStoreClientBuilder.standard();

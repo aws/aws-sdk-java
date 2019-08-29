@@ -21,8 +21,12 @@ import com.amazonaws.internal.http.ErrorCodeParser;
 import com.amazonaws.internal.http.JsonErrorMessageParser;
 import com.amazonaws.protocol.json.JsonContent;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
+import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.amazonaws.transform.JsonUnmarshallerContextImpl;
+import com.amazonaws.transform.Unmarshaller;
 import com.fasterxml.jackson.core.JsonFactory;
 
+import com.fasterxml.jackson.core.JsonParser;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -35,17 +39,38 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
 
     private static final Log LOG = LogFactory.getLog(JsonErrorResponseHandler.class);
 
-    private final List<JsonErrorUnmarshaller> unmarshallers;
+    private final List<JsonErrorUnmarshaller<? extends AmazonServiceException>> unmarshallers;
     private final ErrorCodeParser errorCodeParser;
     private final JsonErrorMessageParser errorMessageParser;
     private final JsonFactory jsonFactory;
 
+
+    private final Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers;
+    private final Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers;
+
     public JsonErrorResponseHandler(
-            List<JsonErrorUnmarshaller> errorUnmarshallers,
+            List<JsonErrorUnmarshaller<? extends AmazonServiceException>> errorUnmarshallers,
             ErrorCodeParser errorCodeParser,
             JsonErrorMessageParser errorMessageParser,
             JsonFactory jsonFactory) {
         this.unmarshallers = errorUnmarshallers;
+        this.simpleTypeUnmarshallers = null;
+        this.customTypeUnmarshallers = null;
+        this.errorCodeParser = errorCodeParser;
+        this.errorMessageParser = errorMessageParser;
+        this.jsonFactory = jsonFactory;
+    }
+
+    public JsonErrorResponseHandler(
+            List<JsonErrorUnmarshaller<? extends AmazonServiceException>> errorUnmarshallers,
+            Map<Class<?>, Unmarshaller<?, JsonUnmarshallerContext>> simpleTypeUnmarshallers,
+            Map<JsonUnmarshallerContext.UnmarshallerType, Unmarshaller<?, JsonUnmarshallerContext>> customTypeUnmarshallers,
+            ErrorCodeParser errorCodeParser,
+            JsonErrorMessageParser errorMessageParser,
+            JsonFactory jsonFactory) {
+        this.unmarshallers = errorUnmarshallers;
+        this.simpleTypeUnmarshallers = simpleTypeUnmarshallers;
+        this.customTypeUnmarshallers = customTypeUnmarshallers;
         this.errorCodeParser = errorCodeParser;
         this.errorMessageParser = errorMessageParser;
         this.jsonFactory = jsonFactory;
@@ -59,12 +84,15 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     @Override
     public AmazonServiceException handle(HttpResponse response) throws Exception {
         JsonContent jsonContent = JsonContent.createJsonContent(response, jsonFactory);
-        String errorCode = errorCodeParser.parseErrorCode(response, jsonContent);
-        AmazonServiceException ase = createException(errorCode, jsonContent);
 
-        // Jackson has special-casing for 'message' values when deserializing
-        // Throwables, but sometimes the service passes the error message in
-        // other JSON fields - handle it here.
+        byte[] rawContent = jsonContent.getRawContent();
+
+        String errorCode = errorCodeParser.parseErrorCode(response, jsonContent);
+        AmazonServiceException ase = createException(errorCode, response, rawContent);
+
+        // The marshallers instantiate the exception without providing a
+        // message. If the Exception included a message member find it and
+        // add it here.
         if (ase.getErrorMessage() == null) {
             ase.setErrorMessage(errorMessageParser.parseErrorMessage(response, jsonContent.getJsonNode()));
         }
@@ -73,7 +101,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         ase.setServiceName(response.getRequest().getServiceName());
         ase.setStatusCode(response.getStatusCode());
         ase.setErrorType(getErrorTypeFromStatusCode(response.getStatusCode()));
-        ase.setRawResponse(jsonContent.getRawContent());
+        ase.setRawResponse(rawContent);
         String requestId = getRequestIdFromHeaders(response.getHeaders());
         if (requestId != null) {
             ase.setRequestId(requestId);
@@ -92,8 +120,8 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
      *            JsonContent of HTTP response
      * @return AmazonServiceException
      */
-    private AmazonServiceException createException(String errorCode, JsonContent jsonContent) {
-        AmazonServiceException ase = unmarshallException(errorCode, jsonContent);
+    private AmazonServiceException createException(String errorCode, HttpResponse response, byte[] rawContent) {
+        AmazonServiceException ase = unmarshallException(errorCode, response, rawContent);
         if (ase == null) {
             ase = new AmazonServiceException(
                     "Unable to unmarshall exception response with the unmarshallers provided");
@@ -101,11 +129,17 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
         return ase;
     }
 
-    private AmazonServiceException unmarshallException(String errorCode, JsonContent jsonContent) {
-        for (JsonErrorUnmarshaller unmarshaller : unmarshallers) {
+    private AmazonServiceException unmarshallException(String errorCode, HttpResponse response, byte[] rawContent) {
+        for (JsonErrorUnmarshaller<? extends AmazonServiceException> unmarshaller : unmarshallers) {
             if (unmarshaller.matchErrorCode(errorCode)) {
                 try {
-                    return unmarshaller.unmarshall(jsonContent.getJsonNode());
+                    if (rawContent == null) {
+                        rawContent = new byte[0];
+                    }
+                    JsonParser jsonParser = jsonFactory.createParser(rawContent);
+                    JsonUnmarshallerContext unmarshallerContext = new JsonUnmarshallerContextImpl(
+                            jsonParser, simpleTypeUnmarshallers, customTypeUnmarshallers, response);
+                    return unmarshaller.unmarshall(unmarshallerContext);
                 } catch (Exception e) {
                     LOG.info("Unable to unmarshall exception content", e);
                     return null;

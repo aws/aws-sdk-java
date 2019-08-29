@@ -59,6 +59,12 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private String targetBucket;
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -259,6 +265,46 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the target snapshot.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @return The ID of the KMS key used to encrypt the target snapshot.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The ID of the KMS key used to encrypt the target snapshot.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The ID of the KMS key used to encrypt the target snapshot.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopySnapshotRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -275,7 +321,9 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getTargetSnapshotName() != null)
             sb.append("TargetSnapshotName: ").append(getTargetSnapshotName()).append(",");
         if (getTargetBucket() != null)
-            sb.append("TargetBucket: ").append(getTargetBucket());
+            sb.append("TargetBucket: ").append(getTargetBucket()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +350,10 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTargetBucket() != null && other.getTargetBucket().equals(this.getTargetBucket()) == false)
             return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
+            return false;
         return true;
     }
 
@@ -313,6 +365,7 @@ public class CopySnapshotRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSourceSnapshotName() == null) ? 0 : getSourceSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getTargetSnapshotName() == null) ? 0 : getTargetSnapshotName().hashCode());
         hashCode = prime * hashCode + ((getTargetBucket() == null) ? 0 : getTargetBucket().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

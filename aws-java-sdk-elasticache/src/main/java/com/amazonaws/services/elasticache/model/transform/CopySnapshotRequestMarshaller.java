@@ -52,6 +52,10 @@ public class CopySnapshotRequestMarshaller implements Marshaller<Request<CopySna
             request.addParameter("TargetBucket", StringUtils.fromString(copySnapshotRequest.getTargetBucket()));
         }
 
+        if (copySnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(copySnapshotRequest.getKmsKeyId()));
+        }
+
         return request;
     }
 

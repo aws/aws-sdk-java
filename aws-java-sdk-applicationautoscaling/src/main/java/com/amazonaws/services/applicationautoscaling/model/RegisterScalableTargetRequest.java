@@ -195,6 +195,42 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String roleARN;
+    /**
+     * <p>
+     * An embedded object that contains attributes and attribute values that are used to suspend and resume automatic
+     * scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling activities.
+     * Setting it to <code>false</code> (default) resumes the specified scaling activities.
+     * </p>
+     * <p>
+     * <b>Suspension Outcomes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve
+     * scheduled actions are suspended.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     * >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     */
+    private SuspendedState suspendedState;
 
     /**
      * <p>
@@ -1564,6 +1600,223 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * An embedded object that contains attributes and attribute values that are used to suspend and resume automatic
+     * scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling activities.
+     * Setting it to <code>false</code> (default) resumes the specified scaling activities.
+     * </p>
+     * <p>
+     * <b>Suspension Outcomes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve
+     * scheduled actions are suspended.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     * >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param suspendedState
+     *        An embedded object that contains attributes and attribute values that are used to suspend and resume
+     *        automatic scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling
+     *        activities. Setting it to <code>false</code> (default) resumes the specified scaling activities. </p>
+     *        <p>
+     *        <b>Suspension Outcomes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that
+     *        are triggered by a scaling policy are suspended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities
+     *        that are triggered by a scaling policy are suspended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that
+     *        involve scheduled actions are suspended.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     *        >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     */
+
+    public void setSuspendedState(SuspendedState suspendedState) {
+        this.suspendedState = suspendedState;
+    }
+
+    /**
+     * <p>
+     * An embedded object that contains attributes and attribute values that are used to suspend and resume automatic
+     * scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling activities.
+     * Setting it to <code>false</code> (default) resumes the specified scaling activities.
+     * </p>
+     * <p>
+     * <b>Suspension Outcomes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve
+     * scheduled actions are suspended.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     * >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @return An embedded object that contains attributes and attribute values that are used to suspend and resume
+     *         automatic scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling
+     *         activities. Setting it to <code>false</code> (default) resumes the specified scaling activities. </p>
+     *         <p>
+     *         <b>Suspension Outcomes</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that
+     *         are triggered by a scaling policy are suspended.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities
+     *         that are triggered by a scaling policy are suspended.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that
+     *         involve scheduled actions are suspended.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     *         >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     */
+
+    public SuspendedState getSuspendedState() {
+        return this.suspendedState;
+    }
+
+    /**
+     * <p>
+     * An embedded object that contains attributes and attribute values that are used to suspend and resume automatic
+     * scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling activities.
+     * Setting it to <code>false</code> (default) resumes the specified scaling activities.
+     * </p>
+     * <p>
+     * <b>Suspension Outcomes</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities that are
+     * triggered by a scaling policy are suspended.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that involve
+     * scheduled actions are suspended.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     * >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * </p>
+     * 
+     * @param suspendedState
+     *        An embedded object that contains attributes and attribute values that are used to suspend and resume
+     *        automatic scaling. Setting the value of an attribute to <code>true</code> suspends the specified scaling
+     *        activities. Setting it to <code>false</code> (default) resumes the specified scaling activities. </p>
+     *        <p>
+     *        <b>Suspension Outcomes</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>DynamicScalingInSuspended</code>, while a suspension is in effect, all scale-in activities that
+     *        are triggered by a scaling policy are suspended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>DynamicScalingOutSuspended</code>, while a suspension is in effect, all scale-out activities
+     *        that are triggered by a scaling policy are suspended.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>ScheduledScalingSuspended</code>, while a suspension is in effect, all scaling activities that
+     *        involve scheduled actions are suspended.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-suspend-resume-scaling.html"
+     *        >Suspend and Resume Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterScalableTargetRequest withSuspendedState(SuspendedState suspendedState) {
+        setSuspendedState(suspendedState);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1586,7 +1839,9 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
         if (getMaxCapacity() != null)
             sb.append("MaxCapacity: ").append(getMaxCapacity()).append(",");
         if (getRoleARN() != null)
-            sb.append("RoleARN: ").append(getRoleARN());
+            sb.append("RoleARN: ").append(getRoleARN()).append(",");
+        if (getSuspendedState() != null)
+            sb.append("SuspendedState: ").append(getSuspendedState());
         sb.append("}");
         return sb.toString();
     }
@@ -1625,6 +1880,10 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getRoleARN() != null && other.getRoleARN().equals(this.getRoleARN()) == false)
             return false;
+        if (other.getSuspendedState() == null ^ this.getSuspendedState() == null)
+            return false;
+        if (other.getSuspendedState() != null && other.getSuspendedState().equals(this.getSuspendedState()) == false)
+            return false;
         return true;
     }
 
@@ -1639,6 +1898,7 @@ public class RegisterScalableTargetRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getMinCapacity() == null) ? 0 : getMinCapacity().hashCode());
         hashCode = prime * hashCode + ((getMaxCapacity() == null) ? 0 : getMaxCapacity().hashCode());
         hashCode = prime * hashCode + ((getRoleARN() == null) ? 0 : getRoleARN().hashCode());
+        hashCode = prime * hashCode + ((getSuspendedState() == null) ? 0 : getSuspendedState().hashCode());
         return hashCode;
     }
 

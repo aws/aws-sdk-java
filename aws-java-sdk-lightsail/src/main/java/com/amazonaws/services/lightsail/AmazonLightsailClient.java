@@ -90,27 +90,30 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.OperationFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("OperationFailureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.OperationFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthenticatedException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.UnauthenticatedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthenticatedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.UnauthenticatedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.ServiceException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.ServiceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.NotFoundException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.AccessDeniedException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccountSetupInProgressException").withModeledClass(
-                                    com.amazonaws.services.lightsail.model.AccountSetupInProgressException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.lightsail.model.AmazonLightsailException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("AccountSetupInProgressException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lightsail.model.transform.AccountSetupInProgressExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lightsail.model.AmazonLightsailException>(
+                                            com.amazonaws.services.lightsail.model.AmazonLightsailException.class))));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Lightsail. A credentials provider chain will be used

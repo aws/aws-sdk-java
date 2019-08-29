@@ -79,12 +79,15 @@ public class AWSGreengrassClient extends AmazonWebServiceClient implements AWSGr
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withModeledClass(
-                                    com.amazonaws.services.greengrass.model.BadRequestException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.greengrass.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withModeledClass(
-                                    com.amazonaws.services.greengrass.model.InternalServerErrorException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.greengrass.model.AWSGreengrassException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.greengrass.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.greengrass.model.AWSGreengrassException>(
+                                            com.amazonaws.services.greengrass.model.AWSGreengrassException.class))));
 
     public static AWSGreengrassClientBuilder builder() {
         return AWSGreengrassClientBuilder.standard();

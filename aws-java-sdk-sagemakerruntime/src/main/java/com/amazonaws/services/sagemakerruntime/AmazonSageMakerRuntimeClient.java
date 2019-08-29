@@ -78,18 +78,21 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalFailure").withModeledClass(
-                                    com.amazonaws.services.sagemakerruntime.model.InternalFailureException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InternalFailure").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerruntime.model.transform.InternalFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ModelError").withModeledClass(
-                                    com.amazonaws.services.sagemakerruntime.model.ModelErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ModelError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerruntime.model.transform.ModelErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationError").withModeledClass(
-                                    com.amazonaws.services.sagemakerruntime.model.ValidationErrorException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationError").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerruntime.model.transform.ValidationErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailable").withModeledClass(
-                                    com.amazonaws.services.sagemakerruntime.model.ServiceUnavailableException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailable").withExceptionUnmarshaller(
+                                    com.amazonaws.services.sagemakerruntime.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException>(
+                                            com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException.class))));
 
     public static AmazonSageMakerRuntimeClientBuilder builder() {
         return AmazonSageMakerRuntimeClientBuilder.standard();

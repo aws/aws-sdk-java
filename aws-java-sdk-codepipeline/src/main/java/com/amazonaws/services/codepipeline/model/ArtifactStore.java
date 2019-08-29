@@ -21,6 +21,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The Amazon S3 bucket where artifacts are stored for the pipeline.
  * </p>
+ * <note>
+ * <p>
+ * You must include either <code>artifactStore</code> or <code>artifactStores</code> in your pipeline, but you cannot
+ * use both. If you create a cross-region action in your pipeline, you must use <code>artifactStores</code>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ArtifactStore" target="_top">AWS API
  *      Documentation</a>

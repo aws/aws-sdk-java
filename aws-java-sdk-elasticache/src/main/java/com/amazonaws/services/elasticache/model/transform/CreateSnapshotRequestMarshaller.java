@@ -52,6 +52,10 @@ public class CreateSnapshotRequestMarshaller implements Marshaller<Request<Creat
             request.addParameter("SnapshotName", StringUtils.fromString(createSnapshotRequest.getSnapshotName()));
         }
 
+        if (createSnapshotRequest.getKmsKeyId() != null) {
+            request.addParameter("KmsKeyId", StringUtils.fromString(createSnapshotRequest.getKmsKeyId()));
+        }
+
         return request;
     }
 

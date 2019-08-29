@@ -76,12 +76,15 @@ public class AmazonPersonalizeRuntimeClient extends AmazonWebServiceClient imple
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withModeledClass(
-                                    com.amazonaws.services.personalizeruntime.model.InvalidInputException.class))
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.personalizeruntime.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withModeledClass(
-                                    com.amazonaws.services.personalizeruntime.model.ResourceNotFoundException.class))
-                    .withBaseServiceExceptionClass(com.amazonaws.services.personalizeruntime.model.AmazonPersonalizeRuntimeException.class));
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.personalizeruntime.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
+                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.personalizeruntime.model.AmazonPersonalizeRuntimeException>(
+                                            com.amazonaws.services.personalizeruntime.model.AmazonPersonalizeRuntimeException.class))));
 
     public static AmazonPersonalizeRuntimeClientBuilder builder() {
         return AmazonPersonalizeRuntimeClientBuilder.standard();
