@@ -3,7 +3,7 @@
         context.getUnmarshaller(${memberModel.variable.variableType}.class,
                                 JsonUnmarshallerContext.UnmarshallerType.${memberModel.unmarshallingType})
     <#elseif memberModel.simple >
-        <#if memberModel.variable.simpleType == "Date" && !metadata.ionProtocol && !metadata.cborProtocol>
+        <#if memberModel.variable.variableType == "java.util.Date" && !metadata.ionProtocol && !metadata.cborProtocol>
         <#local timestampFormat = memberModel.variable.timestampFormat />
            DateJsonUnmarshallerFactory.getInstance("${timestampFormat}")
         <#else>
@@ -32,7 +32,7 @@
         </#if>
         new MapUnmarshaller<${memberModel.mapModel.keyType}, ${memberModel.mapModel.valueType}>(${keyUnmarshaller}, ${valueUnmarshaller})
     <#else>
-        <#if memberModel.variable.simpleType == "Date" && !metadata.ionProtocol && !metadata.cborProtocol>
+        <#if memberModel.variable.variableType == "java.util.Date" && !metadata.ionProtocol && !metadata.cborProtocol>
         <#local timestampFormat = memberModel.variable.timestampFormat />
            DateJsonUnmarshallerFactory.getInstance("${timestampFormat}")
         <#else>

@@ -24,7 +24,7 @@
             </#if>
 
                 if (context.testExpression("${listMemberPath}", targetDepth)) {
-                    <#if memberModel.listModel.listMemberModel.variable.simpleType == "Date">
+                    <#if memberModel.listModel.listMemberModel.variable.variableType == "java.util.Date">
                     <#local timestampFormat = memberModel.listModel.listMemberModel.variable.timestampFormat />
                         ${shapeVarName}.with${memberModel.name}(DateStaxUnmarshallerFactory.getInstance("${timestampFormat}").unmarshall(context));
                     <#else>
@@ -47,7 +47,7 @@
 
 <#else>
                 if (context.testExpression("${unmarshallerLocationName}", targetDepth)) {
-                <#if memberModel.variable.simpleType == "Date">
+                <#if memberModel.variable.variableType == "java.util.Date">
                     <#local timestampFormat = memberModel.variable.timestampFormat />
                     ${shapeVarName}.${memberModel.setterMethodName}(DateStaxUnmarshallerFactory.getInstance("${timestampFormat}").unmarshall(context));
                 <#else>

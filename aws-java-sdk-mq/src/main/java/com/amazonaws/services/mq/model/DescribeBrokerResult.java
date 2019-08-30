@@ -68,9 +68,11 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     private String pendingEngineVersion;
+    /** The list of pending security groups to authorize connections to brokers. */
+    private java.util.List<String> pendingSecurityGroups;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
-    /** Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers. */
+    /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
     private java.util.List<String> securityGroups;
     /**
      * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
@@ -749,6 +751,68 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * The list of pending security groups to authorize connections to brokers.
+     * 
+     * @return The list of pending security groups to authorize connections to brokers.
+     */
+
+    public java.util.List<String> getPendingSecurityGroups() {
+        return pendingSecurityGroups;
+    }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     * 
+     * @param pendingSecurityGroups
+     *        The list of pending security groups to authorize connections to brokers.
+     */
+
+    public void setPendingSecurityGroups(java.util.Collection<String> pendingSecurityGroups) {
+        if (pendingSecurityGroups == null) {
+            this.pendingSecurityGroups = null;
+            return;
+        }
+
+        this.pendingSecurityGroups = new java.util.ArrayList<String>(pendingSecurityGroups);
+    }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPendingSecurityGroups(java.util.Collection)} or
+     * {@link #withPendingSecurityGroups(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param pendingSecurityGroups
+     *        The list of pending security groups to authorize connections to brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withPendingSecurityGroups(String... pendingSecurityGroups) {
+        if (this.pendingSecurityGroups == null) {
+            setPendingSecurityGroups(new java.util.ArrayList<String>(pendingSecurityGroups.length));
+        }
+        for (String ele : pendingSecurityGroups) {
+            this.pendingSecurityGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The list of pending security groups to authorize connections to brokers.
+     * 
+     * @param pendingSecurityGroups
+     *        The list of pending security groups to authorize connections to brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeBrokerResult withPendingSecurityGroups(java.util.Collection<String> pendingSecurityGroups) {
+        setPendingSecurityGroups(pendingSecurityGroups);
+        return this;
+    }
+
+    /**
      * Required. Enables connections from applications outside of the VPC that hosts the broker's subnets.
      * 
      * @param publiclyAccessible
@@ -793,9 +857,9 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
-     * @return Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * @return The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -803,10 +867,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
      * @param securityGroups
-     *        Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -819,7 +883,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -827,7 +891,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param securityGroups
-     *        Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -842,10 +906,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
-     * Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
      * @param securityGroups
-     *        Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1093,6 +1157,8 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("MaintenanceWindowStartTime: ").append(getMaintenanceWindowStartTime()).append(",");
         if (getPendingEngineVersion() != null)
             sb.append("PendingEngineVersion: ").append(getPendingEngineVersion()).append(",");
+        if (getPendingSecurityGroups() != null)
+            sb.append("PendingSecurityGroups: ").append(getPendingSecurityGroups()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getSecurityGroups() != null)
@@ -1181,6 +1247,10 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getPendingEngineVersion() != null && other.getPendingEngineVersion().equals(this.getPendingEngineVersion()) == false)
             return false;
+        if (other.getPendingSecurityGroups() == null ^ this.getPendingSecurityGroups() == null)
+            return false;
+        if (other.getPendingSecurityGroups() != null && other.getPendingSecurityGroups().equals(this.getPendingSecurityGroups()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -1225,6 +1295,7 @@ public class DescribeBrokerResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceWindowStartTime() == null) ? 0 : getMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getPendingEngineVersion() == null) ? 0 : getPendingEngineVersion().hashCode());
+        hashCode = prime * hashCode + ((getPendingSecurityGroups() == null) ? 0 : getPendingSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());

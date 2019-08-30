@@ -115,6 +115,12 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> gpuIds;
+    /**
+     * <p>
+     * The FireLens configuration for the container.
+     * </p>
+     */
+    private FirelensConfiguration firelensConfiguration;
 
     /**
      * <p>
@@ -815,6 +821,46 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The FireLens configuration for the container.
+     * </p>
+     * 
+     * @param firelensConfiguration
+     *        The FireLens configuration for the container.
+     */
+
+    public void setFirelensConfiguration(FirelensConfiguration firelensConfiguration) {
+        this.firelensConfiguration = firelensConfiguration;
+    }
+
+    /**
+     * <p>
+     * The FireLens configuration for the container.
+     * </p>
+     * 
+     * @return The FireLens configuration for the container.
+     */
+
+    public FirelensConfiguration getFirelensConfiguration() {
+        return this.firelensConfiguration;
+    }
+
+    /**
+     * <p>
+     * The FireLens configuration for the container.
+     * </p>
+     * 
+     * @param firelensConfiguration
+     *        The FireLens configuration for the container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Container withFirelensConfiguration(FirelensConfiguration firelensConfiguration) {
+        setFirelensConfiguration(firelensConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -853,7 +899,9 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         if (getMemoryReservation() != null)
             sb.append("MemoryReservation: ").append(getMemoryReservation()).append(",");
         if (getGpuIds() != null)
-            sb.append("GpuIds: ").append(getGpuIds());
+            sb.append("GpuIds: ").append(getGpuIds()).append(",");
+        if (getFirelensConfiguration() != null)
+            sb.append("FirelensConfiguration: ").append(getFirelensConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -924,6 +972,10 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGpuIds() != null && other.getGpuIds().equals(this.getGpuIds()) == false)
             return false;
+        if (other.getFirelensConfiguration() == null ^ this.getFirelensConfiguration() == null)
+            return false;
+        if (other.getFirelensConfiguration() != null && other.getFirelensConfiguration().equals(this.getFirelensConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -946,6 +998,7 @@ public class Container implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getMemoryReservation() == null) ? 0 : getMemoryReservation().hashCode());
         hashCode = prime * hashCode + ((getGpuIds() == null) ? 0 : getGpuIds().hashCode());
+        hashCode = prime * hashCode + ((getFirelensConfiguration() == null) ? 0 : getFirelensConfiguration().hashCode());
         return hashCode;
     }
 

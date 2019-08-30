@@ -1,3 +1,16 @@
+# __1.11.623__ __2019-08-30__
+## __Amazon EC2 Container Service__
+  - ### Features
+    - This release of Amazon Elastic Container Service (Amazon ECS) introduces support for modifying the cluster settings for existing clusters, which enables you to toggle whether Container Insights is enabled or not. Support is also introduced for custom log routing using the ECS FireLens integration.
+
+## __AmazonApiGatewayManagementApi__
+  - ### Features
+    - You can use getConnection to return information about the connection (when it is connected, IP address, etc) and deleteConnection to disconnect the given connection
+
+## __AmazonMQ__
+  - ### Features
+    - Adds support for updating security groups selection of an Amazon MQ broker.
+
 # __1.11.622__ __2019-08-29__
 ## __AWS CodePipeline__
   - ### Features

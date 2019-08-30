@@ -1029,7 +1029,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of rules (1 minimum, 125 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1132,7 +1132,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "The list of rules (1 minimum, 125 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1614,6 +1614,11 @@
           "locationName" : "pendingEngineVersion",
           "documentation" : "The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
         },
+        "PendingSecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "pendingSecurityGroups",
+          "documentation" : "The list of pending security groups to authorize connections to brokers."
+        },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
           "locationName" : "publiclyAccessible",
@@ -1622,7 +1627,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -1737,6 +1742,11 @@
           "locationName" : "pendingEngineVersion",
           "documentation" : "The version of the broker engine to upgrade to. For a list of supported engine versions, see https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html"
         },
+        "PendingSecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "pendingSecurityGroups",
+          "documentation" : "The list of pending security groups to authorize connections to brokers."
+        },
         "PubliclyAccessible" : {
           "shape" : "__boolean",
           "locationName" : "publiclyAccessible",
@@ -1745,7 +1755,7 @@
         "SecurityGroups" : {
           "shape" : "__listOf__string",
           "locationName" : "securityGroups",
-          "documentation" : "Required. The list of rules (1 minimum, 125 maximum) that authorize connections to brokers."
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         },
         "SubnetIds" : {
           "shape" : "__listOf__string",
@@ -2524,6 +2534,11 @@
           "shape" : "Logs",
           "locationName" : "logs",
           "documentation" : "Enables Amazon CloudWatch logging for brokers."
+        },
+        "SecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "securityGroups",
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         }
       },
       "documentation" : "Updates the broker using the specified properties."
@@ -2555,6 +2570,11 @@
           "shape" : "Logs",
           "locationName" : "logs",
           "documentation" : "The list of information about logs to be enabled for the specified broker."
+        },
+        "SecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "securityGroups",
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         }
       },
       "documentation" : "Returns information about the updated broker."
@@ -2587,6 +2607,11 @@
           "shape" : "Logs",
           "locationName" : "logs",
           "documentation" : "Enables Amazon CloudWatch logging for brokers."
+        },
+        "SecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "securityGroups",
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         }
       },
       "documentation" : "Updates the broker using the specified properties.",
@@ -2619,6 +2644,11 @@
           "shape" : "Logs",
           "locationName" : "logs",
           "documentation" : "The list of information about logs to be enabled for the specified broker."
+        },
+        "SecurityGroups" : {
+          "shape" : "__listOf__string",
+          "locationName" : "securityGroups",
+          "documentation" : "The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers."
         }
       }
     },

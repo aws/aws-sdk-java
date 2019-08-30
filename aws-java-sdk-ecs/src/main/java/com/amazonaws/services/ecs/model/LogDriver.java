@@ -26,7 +26,8 @@ public enum LogDriver {
     Gelf("gelf"),
     Fluentd("fluentd"),
     Awslogs("awslogs"),
-    Splunk("splunk");
+    Splunk("splunk"),
+    Awsfirelens("awsfirelens");
 
     private String value;
 

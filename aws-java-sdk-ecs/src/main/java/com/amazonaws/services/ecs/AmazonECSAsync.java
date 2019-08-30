@@ -2135,6 +2135,37 @@ public interface AmazonECSAsync extends AmazonECS {
 
     /**
      * <p>
+     * Modifies the settings to use for a cluster.
+     * </p>
+     * 
+     * @param updateClusterSettingsRequest
+     * @return A Java Future containing the result of the UpdateClusterSettings operation returned by the service.
+     * @sample AmazonECSAsync.UpdateClusterSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterSettingsResult> updateClusterSettingsAsync(UpdateClusterSettingsRequest updateClusterSettingsRequest);
+
+    /**
+     * <p>
+     * Modifies the settings to use for a cluster.
+     * </p>
+     * 
+     * @param updateClusterSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateClusterSettings operation returned by the service.
+     * @sample AmazonECSAsyncHandler.UpdateClusterSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateClusterSettings" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateClusterSettingsResult> updateClusterSettingsAsync(UpdateClusterSettingsRequest updateClusterSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateClusterSettingsRequest, UpdateClusterSettingsResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent
      * does not interrupt running tasks or services on the container instance. The process for updating the agent
      * differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another

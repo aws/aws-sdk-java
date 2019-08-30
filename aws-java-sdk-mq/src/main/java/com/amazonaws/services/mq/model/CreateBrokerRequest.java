@@ -64,7 +64,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private WeeklyStartTime maintenanceWindowStartTime;
     /** Required. Enables connections from applications outside of the VPC that hosts the broker's subnets. */
     private Boolean publiclyAccessible;
-    /** The list of rules (1 minimum, 125 maximum) that authorize connections to brokers. */
+    /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
     private java.util.List<String> securityGroups;
     /**
      * The list of groups (2 maximum) that define which subnets and IP ranges the broker can use from different
@@ -582,9 +582,9 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
-     * @return The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * @return The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      */
 
     public java.util.List<String> getSecurityGroups() {
@@ -592,10 +592,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
      * @param securityGroups
-     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      */
 
     public void setSecurityGroups(java.util.Collection<String> securityGroups) {
@@ -608,7 +608,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
@@ -616,7 +616,7 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param securityGroups
-     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -631,10 +631,10 @@ public class CreateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
-     * The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * 
      * @param securityGroups
-     *        The list of rules (1 minimum, 125 maximum) that authorize connections to brokers.
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

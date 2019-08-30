@@ -46,6 +46,8 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String engineVersion;
     /** Enables Amazon CloudWatch logging for brokers. */
     private Logs logs;
+    /** The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers. */
+    private java.util.List<String> securityGroups;
 
     /**
      * Enables automatic upgrades to new minor versions for brokers, as Apache releases the versions. The automatic
@@ -254,6 +256,68 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * 
+     * @return The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     */
+
+    public java.util.List<String> getSecurityGroups() {
+        return securityGroups;
+    }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * 
+     * @param securityGroups
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     */
+
+    public void setSecurityGroups(java.util.Collection<String> securityGroups) {
+        if (securityGroups == null) {
+            this.securityGroups = null;
+            return;
+        }
+
+        this.securityGroups = new java.util.ArrayList<String>(securityGroups);
+    }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSecurityGroups(java.util.Collection)} or {@link #withSecurityGroups(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param securityGroups
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerRequest withSecurityGroups(String... securityGroups) {
+        if (this.securityGroups == null) {
+            setSecurityGroups(new java.util.ArrayList<String>(securityGroups.length));
+        }
+        for (String ele : securityGroups) {
+            this.securityGroups.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * 
+     * @param securityGroups
+     *        The list of security groups (1 minimum, 5 maximum) that authorize connections to brokers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerRequest withSecurityGroups(java.util.Collection<String> securityGroups) {
+        setSecurityGroups(securityGroups);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -274,7 +338,9 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getEngineVersion() != null)
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getLogs() != null)
-            sb.append("Logs: ").append(getLogs());
+            sb.append("Logs: ").append(getLogs()).append(",");
+        if (getSecurityGroups() != null)
+            sb.append("SecurityGroups: ").append(getSecurityGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -309,6 +375,10 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
             return false;
+        if (other.getSecurityGroups() == null ^ this.getSecurityGroups() == null)
+            return false;
+        if (other.getSecurityGroups() != null && other.getSecurityGroups().equals(this.getSecurityGroups()) == false)
+            return false;
         return true;
     }
 
@@ -322,6 +392,7 @@ public class UpdateBrokerRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
+        hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;
     }
 

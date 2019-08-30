@@ -37,6 +37,68 @@ public interface AmazonApiGatewayManagementApiAsync extends AmazonApiGatewayMana
 
     /**
      * <p>
+     * Delete the connection with the provided id.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonApiGatewayManagementApiAsync.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Delete the connection with the provided id.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonApiGatewayManagementApiAsyncHandler.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Get information about the connection with the provided id.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @return A Java Future containing the result of the GetConnection operation returned by the service.
+     * @sample AmazonApiGatewayManagementApiAsync.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest getConnectionRequest);
+
+    /**
+     * <p>
+     * Get information about the connection with the provided id.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetConnection operation returned by the service.
+     * @sample AmazonApiGatewayManagementApiAsyncHandler.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetConnectionResult> getConnectionAsync(GetConnectionRequest getConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionRequest, GetConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Sends the provided data to the specified connection.
      * </p>
      * 

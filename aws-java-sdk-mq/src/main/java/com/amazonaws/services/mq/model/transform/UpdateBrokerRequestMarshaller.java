@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mq.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class UpdateBrokerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("engineVersion").build();
     private static final MarshallingInfo<StructuredPojo> LOGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logs").build();
+    private static final MarshallingInfo<List> SECURITYGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroups").build();
 
     private static final UpdateBrokerRequestMarshaller instance = new UpdateBrokerRequestMarshaller();
 
@@ -59,6 +62,7 @@ public class UpdateBrokerRequestMarshaller {
             protocolMarshaller.marshall(updateBrokerRequest.getConfiguration(), CONFIGURATION_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getEngineVersion(), ENGINEVERSION_BINDING);
             protocolMarshaller.marshall(updateBrokerRequest.getLogs(), LOGS_BINDING);
+            protocolMarshaller.marshall(updateBrokerRequest.getSecurityGroups(), SECURITYGROUPS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -759,6 +759,13 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<ResourceRequirement> resourceRequirements;
+    /**
+     * <p>
+     * The FireLens configuration for the container. This is used to specify and configure a log router for container
+     * logs.
+     * </p>
+     */
+    private FirelensConfiguration firelensConfiguration;
 
     /**
      * <p>
@@ -6351,6 +6358,52 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The FireLens configuration for the container. This is used to specify and configure a log router for container
+     * logs.
+     * </p>
+     * 
+     * @param firelensConfiguration
+     *        The FireLens configuration for the container. This is used to specify and configure a log router for
+     *        container logs.
+     */
+
+    public void setFirelensConfiguration(FirelensConfiguration firelensConfiguration) {
+        this.firelensConfiguration = firelensConfiguration;
+    }
+
+    /**
+     * <p>
+     * The FireLens configuration for the container. This is used to specify and configure a log router for container
+     * logs.
+     * </p>
+     * 
+     * @return The FireLens configuration for the container. This is used to specify and configure a log router for
+     *         container logs.
+     */
+
+    public FirelensConfiguration getFirelensConfiguration() {
+        return this.firelensConfiguration;
+    }
+
+    /**
+     * <p>
+     * The FireLens configuration for the container. This is used to specify and configure a log router for container
+     * logs.
+     * </p>
+     * 
+     * @param firelensConfiguration
+     *        The FireLens configuration for the container. This is used to specify and configure a log router for
+     *        container logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withFirelensConfiguration(FirelensConfiguration firelensConfiguration) {
+        setFirelensConfiguration(firelensConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6435,7 +6488,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getSystemControls() != null)
             sb.append("SystemControls: ").append(getSystemControls()).append(",");
         if (getResourceRequirements() != null)
-            sb.append("ResourceRequirements: ").append(getResourceRequirements());
+            sb.append("ResourceRequirements: ").append(getResourceRequirements()).append(",");
+        if (getFirelensConfiguration() != null)
+            sb.append("FirelensConfiguration: ").append(getFirelensConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -6598,6 +6653,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getResourceRequirements() != null && other.getResourceRequirements().equals(this.getResourceRequirements()) == false)
             return false;
+        if (other.getFirelensConfiguration() == null ^ this.getFirelensConfiguration() == null)
+            return false;
+        if (other.getFirelensConfiguration() != null && other.getFirelensConfiguration().equals(this.getFirelensConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -6643,6 +6702,7 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
         hashCode = prime * hashCode + ((getSystemControls() == null) ? 0 : getSystemControls().hashCode());
         hashCode = prime * hashCode + ((getResourceRequirements() == null) ? 0 : getResourceRequirements().hashCode());
+        hashCode = prime * hashCode + ((getFirelensConfiguration() == null) ? 0 : getFirelensConfiguration().hashCode());
         return hashCode;
     }
 

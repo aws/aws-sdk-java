@@ -28,6 +28,16 @@ public class AbstractAmazonApiGatewayManagementApi implements AmazonApiGatewayMa
     }
 
     @Override
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectionResult getConnection(GetConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PostToConnectionResult postToConnection(PostToConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }

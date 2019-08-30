@@ -113,6 +113,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setPendingEngineVersion(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pendingSecurityGroups", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setPubliclyAccessible(context.getUnmarshaller(Boolean.class).unmarshall(context));

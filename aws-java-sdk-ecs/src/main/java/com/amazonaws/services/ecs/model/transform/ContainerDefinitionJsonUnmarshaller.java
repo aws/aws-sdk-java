@@ -199,6 +199,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     containerDefinition.setResourceRequirements(new ListUnmarshaller<ResourceRequirement>(ResourceRequirementJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("firelensConfiguration", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setFirelensConfiguration(FirelensConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

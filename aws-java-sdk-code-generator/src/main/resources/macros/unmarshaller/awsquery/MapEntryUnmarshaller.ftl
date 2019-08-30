@@ -20,7 +20,7 @@
                         continue;
                     }
                     if (context.testExpression("${memberModel.mapModel.valueLocationName}", targetDepth)) {
-                        <#if memberModel.mapModel.valueModel.variable.simpleType == "Date">
+                        <#if memberModel.mapModel.valueModel.variable.variableType == "java.util.Date">
                         <#local timestampFormat = memberModel.timestampFormat />
                             entry.setValue(DateStaxUnmarshallerFactory.getInstance("${timestampFormat}").unmarshall(context));
                         <#else>

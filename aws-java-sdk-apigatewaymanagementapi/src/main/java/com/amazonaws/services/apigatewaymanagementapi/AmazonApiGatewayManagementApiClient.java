@@ -149,6 +149,126 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
 
     /**
      * <p>
+     * Delete the connection with the provided id.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return Result of the DeleteConnection operation returned by the service.
+     * @throws GoneException
+     *         The connection with the provided id no longer exists.
+     * @throws LimitExceededException
+     *         The client is sending more than the allowed number of requests per unit of time or the WebSocket client
+     *         side buffer is full.
+     * @throws ForbiddenException
+     *         The caller is not authorized to invoke this operation.
+     * @sample AmazonApiGatewayManagementApi.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/DeleteConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteConnection(request);
+    }
+
+    @SdkInternalApi
+    final DeleteConnectionResult executeDeleteConnection(DeleteConnectionRequest deleteConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteConnectionRequest> request = null;
+        Response<DeleteConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayManagementApi");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Get information about the connection with the provided id.
+     * </p>
+     * 
+     * @param getConnectionRequest
+     * @return Result of the GetConnection operation returned by the service.
+     * @throws GoneException
+     *         The connection with the provided id no longer exists.
+     * @throws LimitExceededException
+     *         The client is sending more than the allowed number of requests per unit of time or the WebSocket client
+     *         side buffer is full.
+     * @throws ForbiddenException
+     *         The caller is not authorized to invoke this operation.
+     * @sample AmazonApiGatewayManagementApi.GetConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/apigatewaymanagementapi-2018-11-29/GetConnection"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetConnectionResult getConnection(GetConnectionRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetConnection(request);
+    }
+
+    @SdkInternalApi
+    final GetConnectionResult executeGetConnection(GetConnectionRequest getConnectionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getConnectionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetConnectionRequest> request = null;
+        Response<GetConnectionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetConnectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ApiGatewayManagementApi");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnection");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetConnectionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetConnectionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sends the provided data to the specified connection.
      * </p>
      * 
@@ -157,7 +277,8 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
      * @throws GoneException
      *         The connection with the provided id no longer exists.
      * @throws LimitExceededException
-     *         The client is sending more than the allowed number of requests per unit of time.
+     *         The client is sending more than the allowed number of requests per unit of time or the WebSocket client
+     *         side buffer is full.
      * @throws PayloadTooLargeException
      *         The data has exceeded the maximum size allowed.
      * @throws ForbiddenException
