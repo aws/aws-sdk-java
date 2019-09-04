@@ -56,6 +56,10 @@ public class GameSessionConnectionInfoJsonUnmarshaller implements Unmarshaller<G
                     context.nextToken();
                     gameSessionConnectionInfo.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsName", targetDepth)) {
+                    context.nextToken();
+                    gameSessionConnectionInfo.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
                     gameSessionConnectionInfo.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));

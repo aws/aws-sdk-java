@@ -36,6 +36,12 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<ContainerOverride> containerOverrides;
     /**
      * <p>
+     * The Elastic Inference accelerator override for the task.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride> inferenceAcceleratorOverrides;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that containers in this task can assume. All containers in this
      * task are granted the permissions that are specified in this role.
      * </p>
@@ -119,6 +125,79 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     public TaskOverride withContainerOverrides(java.util.Collection<ContainerOverride> containerOverrides) {
         setContainerOverrides(containerOverrides);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator override for the task.
+     * </p>
+     * 
+     * @return The Elastic Inference accelerator override for the task.
+     */
+
+    public java.util.List<InferenceAcceleratorOverride> getInferenceAcceleratorOverrides() {
+        if (inferenceAcceleratorOverrides == null) {
+            inferenceAcceleratorOverrides = new com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride>();
+        }
+        return inferenceAcceleratorOverrides;
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator override for the task.
+     * </p>
+     * 
+     * @param inferenceAcceleratorOverrides
+     *        The Elastic Inference accelerator override for the task.
+     */
+
+    public void setInferenceAcceleratorOverrides(java.util.Collection<InferenceAcceleratorOverride> inferenceAcceleratorOverrides) {
+        if (inferenceAcceleratorOverrides == null) {
+            this.inferenceAcceleratorOverrides = null;
+            return;
+        }
+
+        this.inferenceAcceleratorOverrides = new com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride>(inferenceAcceleratorOverrides);
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator override for the task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInferenceAcceleratorOverrides(java.util.Collection)} or
+     * {@link #withInferenceAcceleratorOverrides(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param inferenceAcceleratorOverrides
+     *        The Elastic Inference accelerator override for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskOverride withInferenceAcceleratorOverrides(InferenceAcceleratorOverride... inferenceAcceleratorOverrides) {
+        if (this.inferenceAcceleratorOverrides == null) {
+            setInferenceAcceleratorOverrides(new com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride>(inferenceAcceleratorOverrides.length));
+        }
+        for (InferenceAcceleratorOverride ele : inferenceAcceleratorOverrides) {
+            this.inferenceAcceleratorOverrides.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Elastic Inference accelerator override for the task.
+     * </p>
+     * 
+     * @param inferenceAcceleratorOverrides
+     *        The Elastic Inference accelerator override for the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskOverride withInferenceAcceleratorOverrides(java.util.Collection<InferenceAcceleratorOverride> inferenceAcceleratorOverrides) {
+        setInferenceAcceleratorOverrides(inferenceAcceleratorOverrides);
         return this;
     }
 
@@ -228,6 +307,8 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getContainerOverrides() != null)
             sb.append("ContainerOverrides: ").append(getContainerOverrides()).append(",");
+        if (getInferenceAcceleratorOverrides() != null)
+            sb.append("InferenceAcceleratorOverrides: ").append(getInferenceAcceleratorOverrides()).append(",");
         if (getTaskRoleArn() != null)
             sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
         if (getExecutionRoleArn() != null)
@@ -250,6 +331,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getContainerOverrides() != null && other.getContainerOverrides().equals(this.getContainerOverrides()) == false)
             return false;
+        if (other.getInferenceAcceleratorOverrides() == null ^ this.getInferenceAcceleratorOverrides() == null)
+            return false;
+        if (other.getInferenceAcceleratorOverrides() != null
+                && other.getInferenceAcceleratorOverrides().equals(this.getInferenceAcceleratorOverrides()) == false)
+            return false;
         if (other.getTaskRoleArn() == null ^ this.getTaskRoleArn() == null)
             return false;
         if (other.getTaskRoleArn() != null && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
@@ -267,6 +353,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getContainerOverrides() == null) ? 0 : getContainerOverrides().hashCode());
+        hashCode = prime * hashCode + ((getInferenceAcceleratorOverrides() == null) ? 0 : getInferenceAcceleratorOverrides().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         return hashCode;

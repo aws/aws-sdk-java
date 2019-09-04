@@ -23,6 +23,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
  * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * If you are using the Fargate launch type, task placement constraints are not supported.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PlacementConstraint" target="_top">AWS API
  *      Documentation</a>
@@ -34,7 +39,7 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      */
     private String type;
@@ -52,13 +57,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
      *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
-     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     *        group of valid candidates.
      * @see PlacementConstraintType
      */
 
@@ -70,12 +75,12 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      * 
      * @return The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
      *         is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
-     *         group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     *         group of valid candidates.
      * @see PlacementConstraintType
      */
 
@@ -87,13 +92,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
      *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
-     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     *        group of valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementConstraintType
      */
@@ -107,13 +112,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
      *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
-     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     *        group of valid candidates.
      * @see PlacementConstraintType
      */
 
@@ -125,13 +130,13 @@ public class PlacementConstraint implements Serializable, Cloneable, StructuredP
      * <p>
      * The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group is
      * running on a different container instance. Use <code>memberOf</code> to restrict the selection to a group of
-     * valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     * valid candidates.
      * </p>
      * 
      * @param type
      *        The type of constraint. Use <code>distinctInstance</code> to ensure that each task in a particular group
      *        is running on a different container instance. Use <code>memberOf</code> to restrict the selection to a
-     *        group of valid candidates. The value <code>distinctInstance</code> is not supported in task definitions.
+     *        group of valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PlacementConstraintType
      */

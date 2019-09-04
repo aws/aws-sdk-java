@@ -54,6 +54,8 @@ public class GameSessionPlacementMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpAddress").build();
+    private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsName").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<List> PLACEDPLAYERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -92,6 +94,7 @@ public class GameSessionPlacementMarshaller {
             protocolMarshaller.marshall(gameSessionPlacement.getStartTime(), STARTTIME_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getIpAddress(), IPADDRESS_BINDING);
+            protocolMarshaller.marshall(gameSessionPlacement.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getPlacedPlayerSessions(), PLACEDPLAYERSESSIONS_BINDING);
             protocolMarshaller.marshall(gameSessionPlacement.getGameSessionData(), GAMESESSIONDATA_BINDING);

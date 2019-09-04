@@ -186,6 +186,8 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
     private String instanceRoleArn;
 
+    private CertificateConfiguration certificateConfiguration;
+
     /**
      * <p>
      * Descriptive label that is associated with a fleet. Fleet names do not need to be unique.
@@ -1504,6 +1506,32 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * @param certificateConfiguration
+     */
+
+    public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
+        this.certificateConfiguration = certificateConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public CertificateConfiguration getCertificateConfiguration() {
+        return this.certificateConfiguration;
+    }
+
+    /**
+     * @param certificateConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
+        setCertificateConfiguration(certificateConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1548,7 +1576,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getFleetType() != null)
             sb.append("FleetType: ").append(getFleetType()).append(",");
         if (getInstanceRoleArn() != null)
-            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn());
+            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn()).append(",");
+        if (getCertificateConfiguration() != null)
+            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1632,6 +1662,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getInstanceRoleArn() != null && other.getInstanceRoleArn().equals(this.getInstanceRoleArn()) == false)
             return false;
+        if (other.getCertificateConfiguration() == null ^ this.getCertificateConfiguration() == null)
+            return false;
+        if (other.getCertificateConfiguration() != null && other.getCertificateConfiguration().equals(this.getCertificateConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1657,6 +1691,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getPeerVpcId() == null) ? 0 : getPeerVpcId().hashCode());
         hashCode = prime * hashCode + ((getFleetType() == null) ? 0 : getFleetType().hashCode());
         hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
         return hashCode;
     }
 

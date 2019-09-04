@@ -47,6 +47,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ipAddress;
+
+    private String dnsName;
     /**
      * <p>
      * Operating system that is running on this instance.
@@ -211,6 +213,32 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     public Instance withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * @param dnsName
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * @param dnsName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withDnsName(String dnsName) {
+        setDnsName(dnsName);
         return this;
     }
 
@@ -702,6 +730,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getOperatingSystem() != null)
             sb.append("OperatingSystem: ").append(getOperatingSystem()).append(",");
         if (getType() != null)
@@ -736,6 +766,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getOperatingSystem() == null ^ this.getOperatingSystem() == null)
             return false;
         if (other.getOperatingSystem() != null && other.getOperatingSystem().equals(this.getOperatingSystem()) == false)
@@ -763,6 +797,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getOperatingSystem() == null) ? 0 : getOperatingSystem().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

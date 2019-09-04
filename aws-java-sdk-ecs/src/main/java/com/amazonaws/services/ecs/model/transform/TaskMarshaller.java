@@ -86,6 +86,8 @@ public class TaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("healthStatus").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<List> INFERENCEACCELERATORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inferenceAccelerators").build();
 
     private static final TaskMarshaller instance = new TaskMarshaller();
 
@@ -132,6 +134,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(task.getHealthStatus(), HEALTHSTATUS_BINDING);
             protocolMarshaller.marshall(task.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(task.getInferenceAccelerators(), INFERENCEACCELERATORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

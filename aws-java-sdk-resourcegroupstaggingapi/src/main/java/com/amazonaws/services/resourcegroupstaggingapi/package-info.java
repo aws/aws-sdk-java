@@ -50,12 +50,45 @@
  * </p>
  * </li>
  * </ul>
+ * <p/>
  * <p>
- * To make full use of the resource groups tagging API operations, you might need additional IAM permissions, including
- * permission to access the resources of individual services as well as permission to view and apply tags to those
- * resources. For more information, see <a
- * href="http://docs.aws.amazon.com/awsconsolehelpdocs/latest/gsg/obtaining-permissions-for-resource-groups.html"
- * >Obtaining Permissions for Resource Groups and Tag Editor</a>.
+ * To use resource groups tagging API operations, you must add the following permissions to your IAM policy:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>tag:GetResources</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>tag:TagResources</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>tag:UntagResources</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>tag:GetTagKeys</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>tag:GetTagValues</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You'll also need permissions to access the resources of individual services so that you can tag and untag those
+ * resources.
+ * </p>
+ * <p>
+ * For more information on IAM policies, see <a
+ * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage.html">Managing IAM Policies</a> in the
+ * <i>IAM User Guide</i>.
  * </p>
  * <p>
  * You can use the Resource Groups Tagging API to tag resources for the following AWS services.
@@ -83,12 +116,22 @@
  * </li>
  * <li>
  * <p>
+ * AWS App Mesh
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * Amazon Athena
  * </p>
  * </li>
  * <li>
  * <p>
  * Amazon Aurora
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS Backup
  * </p>
  * </li>
  * <li>
@@ -144,6 +187,16 @@
  * <li>
  * <p>
  * AWS CodeBuild
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS CodeCommit
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * AWS CodePipeline
  * </p>
  * </li>
  * <li>

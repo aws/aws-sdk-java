@@ -19,16 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing a constraint on task placement in the task definition.
- * </p>
- * <p>
- * If you are using the Fargate launch type, task placement constraints are not supported.
- * </p>
- * <p>
- * For more information, see <a
+ * An object representing a constraint on task placement in the task definition. For more information, see <a
  * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task Placement
  * Constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
  * </p>
+ * <note>
+ * <p>
+ * If you are using the Fargate launch type, task placement constraints are not supported.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint"
  *      target="_top">AWS API Documentation</a>
@@ -38,9 +37,8 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      */
     private String type;
@@ -55,15 +53,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
@@ -73,14 +69,12 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
-     * @return The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *         particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *         restricts selection to be from a group of valid candidates.
+     * @return The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *         valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
@@ -90,15 +84,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskDefinitionPlacementConstraintType
      */
@@ -110,15 +102,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @see TaskDefinitionPlacementConstraintType
      */
 
@@ -128,15 +118,13 @@ public class TaskDefinitionPlacementConstraint implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a particular group
-     * is running on a different container instance. The <code>MemberOf</code> constraint restricts selection to be from
-     * a group of valid candidates.
+     * The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of valid
+     * candidates.
      * </p>
      * 
      * @param type
-     *        The type of constraint. The <code>DistinctInstance</code> constraint ensures that each task in a
-     *        particular group is running on a different container instance. The <code>MemberOf</code> constraint
-     *        restricts selection to be from a group of valid candidates.
+     *        The type of constraint. The <code>MemberOf</code> constraint restricts selection to be from a group of
+     *        valid candidates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TaskDefinitionPlacementConstraintType
      */

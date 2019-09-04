@@ -62,6 +62,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocationName("FleetType").build();
     private static final MarshallingInfo<String> INSTANCEROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceRoleArn").build();
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CertificateConfiguration").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -96,6 +98,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getPeerVpcId(), PEERVPCID_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getFleetType(), FLEETTYPE_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getInstanceRoleArn(), INSTANCEROLEARN_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getCertificateConfiguration(), CERTIFICATECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

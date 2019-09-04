@@ -153,6 +153,8 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ipAddress;
+
+    private String dnsName;
     /**
      * <p>
      * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
@@ -805,6 +807,32 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param dnsName
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * @param dnsName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PlayerSession withDnsName(String dnsName) {
+        setDnsName(dnsName);
+        return this;
+    }
+
+    /**
      * <p>
      * Port number for the game session. To connect to a Amazon GameLift server process, an app needs both the IP
      * address and port number.
@@ -924,6 +952,8 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getPlayerData() != null)
@@ -974,6 +1004,10 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -998,6 +1032,7 @@ public class PlayerSession implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTerminationTime() == null) ? 0 : getTerminationTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPlayerData() == null) ? 0 : getPlayerData().hashCode());
         return hashCode;

@@ -32,6 +32,8 @@ public class GameSessionConnectionInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionArn").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpAddress").build();
+    private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsName").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<List> MATCHEDPLAYERSESSIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -55,6 +57,7 @@ public class GameSessionConnectionInfoMarshaller {
         try {
             protocolMarshaller.marshall(gameSessionConnectionInfo.getGameSessionArn(), GAMESESSIONARN_BINDING);
             protocolMarshaller.marshall(gameSessionConnectionInfo.getIpAddress(), IPADDRESS_BINDING);
+            protocolMarshaller.marshall(gameSessionConnectionInfo.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(gameSessionConnectionInfo.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(gameSessionConnectionInfo.getMatchedPlayerSessions(), MATCHEDPLAYERSESSIONS_BINDING);
         } catch (Exception e) {

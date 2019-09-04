@@ -220,9 +220,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
     private String cpu;
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task.
+     * </p>
+     * <p>
+     * If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2028,9 +2034,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task.
+     * </p>
+     * <p>
+     * If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2064,9 +2076,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        The amount (in MiB) of memory used by the task.</p>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory
+     *        value is specified then the container-level memory value is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of valid values for the <code>cpu</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -2104,9 +2122,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task.
+     * </p>
+     * <p>
+     * If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2139,9 +2163,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *         any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *         the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     * @return The amount (in MiB) of memory used by the task.</p>
+     *         <p>
+     *         If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory
+     *         value is specified then the container-level memory value is optional.
+     *         </p>
+     *         <p>
+     *         If using the Fargate launch type, this field is required and you must use one of the following values,
+     *         which determines your range of valid values for the <code>cpu</code> parameter:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -2179,9 +2209,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and any
-     * value can be used. If using the Fargate launch type, this field is required and you must use one of the following
-     * values, which determines your range of valid values for the <code>cpu</code> parameter:
+     * The amount (in MiB) of memory used by the task.
+     * </p>
+     * <p>
+     * If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory value is
+     * specified then the container-level memory value is optional.
+     * </p>
+     * <p>
+     * If using the Fargate launch type, this field is required and you must use one of the following values, which
+     * determines your range of valid values for the <code>cpu</code> parameter:
      * </p>
      * <ul>
      * <li>
@@ -2215,9 +2251,15 @@ public class TaskDefinition implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param memory
-     *        The amount (in MiB) of memory used by the task. If using the EC2 launch type, this field is optional and
-     *        any value can be used. If using the Fargate launch type, this field is required and you must use one of
-     *        the following values, which determines your range of valid values for the <code>cpu</code> parameter:</p>
+     *        The amount (in MiB) of memory used by the task.</p>
+     *        <p>
+     *        If using the EC2 launch type, this field is optional and any value can be used. If a task-level memory
+     *        value is specified then the container-level memory value is optional.
+     *        </p>
+     *        <p>
+     *        If using the Fargate launch type, this field is required and you must use one of the following values,
+     *        which determines your range of valid values for the <code>cpu</code> parameter:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>

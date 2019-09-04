@@ -20,7 +20,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
-    GPU("GPU");
+    GPU("GPU"),
+    InferenceAccelerator("InferenceAccelerator");
 
     private String value;
 

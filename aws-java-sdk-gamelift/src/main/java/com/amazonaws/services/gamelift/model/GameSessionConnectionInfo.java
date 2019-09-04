@@ -45,6 +45,8 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
      * </p>
      */
     private String ipAddress;
+
+    private String dnsName;
     /**
      * <p>
      * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
@@ -151,6 +153,32 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
     public GameSessionConnectionInfo withIpAddress(String ipAddress) {
         setIpAddress(ipAddress);
+        return this;
+    }
+
+    /**
+     * @param dnsName
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * @param dnsName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSessionConnectionInfo withDnsName(String dnsName) {
+        setDnsName(dnsName);
         return this;
     }
 
@@ -290,6 +318,8 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
             sb.append("GameSessionArn: ").append(getGameSessionArn()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getMatchedPlayerSessions() != null)
@@ -316,6 +346,10 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -334,6 +368,7 @@ public class GameSessionConnectionInfo implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getGameSessionArn() == null) ? 0 : getGameSessionArn().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getMatchedPlayerSessions() == null) ? 0 : getMatchedPlayerSessions().hashCode());
         return hashCode;

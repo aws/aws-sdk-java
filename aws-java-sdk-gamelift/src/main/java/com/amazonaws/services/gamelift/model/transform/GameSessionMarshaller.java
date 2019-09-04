@@ -50,6 +50,8 @@ public class GameSessionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameProperties").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpAddress").build();
+    private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsName").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<String> PLAYERSESSIONCREATIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -88,6 +90,7 @@ public class GameSessionMarshaller {
             protocolMarshaller.marshall(gameSession.getStatusReason(), STATUSREASON_BINDING);
             protocolMarshaller.marshall(gameSession.getGameProperties(), GAMEPROPERTIES_BINDING);
             protocolMarshaller.marshall(gameSession.getIpAddress(), IPADDRESS_BINDING);
+            protocolMarshaller.marshall(gameSession.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(gameSession.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(gameSession.getPlayerSessionCreationPolicy(), PLAYERSESSIONCREATIONPOLICY_BINDING);
             protocolMarshaller.marshall(gameSession.getCreatorId(), CREATORID_BINDING);

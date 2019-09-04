@@ -24,7 +24,7 @@ import com.amazonaws.internal.SdkFilterInputStream;
 
 /**
  * @author Hanson Char
- * 
+ *
  * @see CipherLite
  * @see GCMCipherLite
  */
@@ -81,24 +81,10 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
     }
 
     @Override public int read() throws IOException {
-        if (curr_pos >= max_pos) {
-            if (eof)
-                return -1;
-            int count = 0;
-            int len;
-            do { 
-                if (count > MAX_RETRY)
-                    throw new IOException("exceeded maximum number of attempts to read next chunk of data");
-                len = nextChunk();
-                count++;
-            } while (len == 0);
-
-            if (len == -1)
-                return -1;
-        }
+        if (!readNextChunk())
+            return -1;
         return ((int) bufout[curr_pos++] & 0xFF);
-    };
-
+    }
 
     @Override public int read(byte b[]) throws IOException {
         return read(b, 0, b.length);
@@ -106,22 +92,8 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
 
     @Override
     public int read(byte buf[], int off, int target_len) throws IOException {
-        if (curr_pos >= max_pos) {
-            // all buffered data has been read, let's get some more
-            if (eof)
-                return -1;
-            int count=0;
-            int len;
-            do {
-                if (count > MAX_RETRY)
-                    throw new IOException("exceeded maximum number of attempts to read next chunk of data");
-                len = nextChunk();
-                count++;
-            } while (len == 0);
-
-            if (len == -1)
-                return -1;
-        }
+        if (!readNextChunk())
+            return -1;
         if (target_len <= 0)
             return 0;
         int len = max_pos - curr_pos;
@@ -131,6 +103,29 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         System.arraycopy(bufout, curr_pos, buf, off, len);
         curr_pos += len;
         return len;
+    }
+
+    private boolean readNextChunk() throws IOException {
+        if (curr_pos >= max_pos) {
+            // all buffered data has been read, let's get some more
+            if (eof)
+                return false;
+            int count=0;
+            int len;
+            do {
+                if (count > MAX_RETRY)
+                    throw new IOException("exceeded maximum number of attempts to read next chunk of data");
+                len = nextChunk();
+                // if buf != null, it means that data is being read off of the InputStream
+                if (bufout == null) {
+                    count++;
+                }
+            } while (len == 0);
+
+            if (len == -1)
+                return false;
+        }
+        return true;
     }
 
     /**
@@ -152,7 +147,7 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
 
     @Override public int available() {
         abortIfNeeded();
-        return max_pos - curr_pos; 
+        return max_pos - curr_pos;
     }
 
     @Override public void close() throws IOException {
@@ -208,12 +203,12 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
 
     /**
      * Reads and process the next chunk of data into memory.
-     * 
+     *
      * @return the length of the data chunk read and processed, or -1 if end of
      *         stream.
      * @throws IOException
      *             if there is an IO exception from the underlying input stream
-     * 
+     *
      * @throws SecurityException
      *             if there is authentication failure
      */
@@ -225,13 +220,13 @@ public class CipherLiteInputStream extends SdkFilterInputStream {
         int len = in.read(bufin);
         if (len == -1) {
             eof = true;
-            // Skip doFinal if it's a multi-part upload but not the last part 
+            // Skip doFinal if it's a multi-part upload but not the last part
             if (!multipart || lastMultiPart) {
                 try {
                     bufout = cipherLite.doFinal();
                     if (bufout == null) {
                         // bufout can be null, for example, when it was the
-                        // javax.crypto.NullCipher 
+                        // javax.crypto.NullCipher
                         return -1;
                     }
                     curr_pos = 0;

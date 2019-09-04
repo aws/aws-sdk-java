@@ -60,6 +60,10 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsName", targetDepth)) {
+                    context.nextToken();
+                    instance.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("OperatingSystem", targetDepth)) {
                     context.nextToken();
                     instance.setOperatingSystem(context.getUnmarshaller(String.class).unmarshall(context));

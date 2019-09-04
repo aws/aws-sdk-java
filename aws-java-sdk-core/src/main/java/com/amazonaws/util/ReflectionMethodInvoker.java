@@ -25,9 +25,8 @@ import com.amazonaws.annotation.SdkInternalApi;
  * reflection library to find and invoke the method.
  * <p>
  * The relatively expensive call to find the correct method on the class is lazy and will not be performed until the
- * first invocation. The result of that getMethod() call is cached for subsequent invocations. If a
- * NoSuchMethodException is thrown, the exception will be cached instead and all subsequent calls to invoke will
- * immediately throw the cached exception.
+ * first invocation or until the invoker is explicitly initialized. Once found, the method is cached so repeated
+ * calls to initialize() or invoke() will not incur the reflection cost of searching for the method on the class.
  * <p>
  * Example:
  * {@code
@@ -46,7 +45,6 @@ public class ReflectionMethodInvoker<T, R> {
     private final Class<?>[] parameterTypes;
 
     private Method targetMethod;
-    private NoSuchMethodException cachedException;
 
     /**
      * Construct an instance of {@code ReflectionMethodInvoker}.
@@ -70,7 +68,11 @@ public class ReflectionMethodInvoker<T, R> {
     }
 
     /**
-     * Attempt to invoke the method this proxy was initialized for on the given object with the given arguments.
+     * Attempt to invoke the method this proxy targets for on the given object with the given arguments. If the
+     * invoker has not yet been initialized, an attempt to initialize the invoker will be made first. If the call
+     * succeeds the invoker will be in an initialized state after this call and future calls to the same method will
+     * not incur an initialization cost. If the call fails because the target method could not be found, the invoker
+     * will remain in an uninitialized state after the exception is thrown.
      * @param obj The object to invoke the method on.
      * @param args The arguments to pass to the method. These arguments must match the signature of the method.
      * @return The returned value of the method cast to the 'returnType' class that this proxy was initialized with.
@@ -92,11 +94,25 @@ public class ReflectionMethodInvoker<T, R> {
         }
     }
 
-    private Method getTargetMethod() throws NoSuchMethodException {
-        if (cachedException != null) {
-            throw cachedException;
-        }
+    /**
+     * Initializes the method invoker by finding and caching the target method from the target class that will be used
+     * for subsequent invoke operations. If the invoker is already initialized this call will do nothing.
+     * @throws NoSuchMethodException if the JVM could not find a method matching the signature specified in the
+     * initialization of this proxy.
+     */
+    public void initialize() throws NoSuchMethodException {
+        getTargetMethod();
+    }
 
+    /**
+     * Gets the initialization state of the invoker.
+     * @return true if the invoker has been initialized and the method has been cached for invocation; otherwise false.
+     */
+    public boolean isInitialized() {
+        return targetMethod != null;
+    }
+
+    private Method getTargetMethod() throws NoSuchMethodException {
         if (targetMethod != null) {
             return targetMethod;
         }
@@ -104,9 +120,6 @@ public class ReflectionMethodInvoker<T, R> {
         try {
             targetMethod = clazz.getMethod(methodName, parameterTypes);
             return targetMethod;
-        } catch (NoSuchMethodException e) {
-            cachedException = e;
-            throw e;
         } catch (NullPointerException e) {
             throw new SdkClientException(e);
         }

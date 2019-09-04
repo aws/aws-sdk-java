@@ -53,6 +53,11 @@ public class TaskOverrideJsonUnmarshaller implements Unmarshaller<TaskOverride, 
                     taskOverride.setContainerOverrides(new ListUnmarshaller<ContainerOverride>(ContainerOverrideJsonUnmarshaller.getInstance())
                             .unmarshall(context));
                 }
+                if (context.testExpression("inferenceAcceleratorOverrides", targetDepth)) {
+                    context.nextToken();
+                    taskOverride.setInferenceAcceleratorOverrides(new ListUnmarshaller<InferenceAcceleratorOverride>(
+                            InferenceAcceleratorOverrideJsonUnmarshaller.getInstance()).unmarshall(context));
+                }
                 if (context.testExpression("taskRoleArn", targetDepth)) {
                     context.nextToken();
                     taskOverride.setTaskRoleArn(context.getUnmarshaller(String.class).unmarshall(context));

@@ -80,6 +80,10 @@ public class PlayerSessionJsonUnmarshaller implements Unmarshaller<PlayerSession
                     context.nextToken();
                     playerSession.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsName", targetDepth)) {
+                    context.nextToken();
+                    playerSession.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
                     playerSession.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));

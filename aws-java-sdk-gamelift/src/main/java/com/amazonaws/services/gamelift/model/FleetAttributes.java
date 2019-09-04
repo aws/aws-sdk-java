@@ -324,6 +324,8 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
      */
     private String instanceRoleArn;
 
+    private CertificateConfiguration certificateConfiguration;
+
     /**
      * <p>
      * Unique identifier for a fleet.
@@ -2061,6 +2063,32 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * @param certificateConfiguration
+     */
+
+    public void setCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
+        this.certificateConfiguration = certificateConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public CertificateConfiguration getCertificateConfiguration() {
+        return this.certificateConfiguration;
+    }
+
+    /**
+     * @param certificateConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FleetAttributes withCertificateConfiguration(CertificateConfiguration certificateConfiguration) {
+        setCertificateConfiguration(certificateConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2111,7 +2139,9 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         if (getStoppedActions() != null)
             sb.append("StoppedActions: ").append(getStoppedActions()).append(",");
         if (getInstanceRoleArn() != null)
-            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn());
+            sb.append("InstanceRoleArn: ").append(getInstanceRoleArn()).append(",");
+        if (getCertificateConfiguration() != null)
+            sb.append("CertificateConfiguration: ").append(getCertificateConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -2207,6 +2237,10 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getInstanceRoleArn() != null && other.getInstanceRoleArn().equals(this.getInstanceRoleArn()) == false)
             return false;
+        if (other.getCertificateConfiguration() == null ^ this.getCertificateConfiguration() == null)
+            return false;
+        if (other.getCertificateConfiguration() != null && other.getCertificateConfiguration().equals(this.getCertificateConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -2235,6 +2269,7 @@ public class FleetAttributes implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getMetricGroups() == null) ? 0 : getMetricGroups().hashCode());
         hashCode = prime * hashCode + ((getStoppedActions() == null) ? 0 : getStoppedActions().hashCode());
         hashCode = prime * hashCode + ((getInstanceRoleArn() == null) ? 0 : getInstanceRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getCertificateConfiguration() == null) ? 0 : getCertificateConfiguration().hashCode());
         return hashCode;
     }
 

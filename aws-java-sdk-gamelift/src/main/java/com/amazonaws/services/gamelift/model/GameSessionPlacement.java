@@ -161,6 +161,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
      * </p>
      */
     private String ipAddress;
+
+    private String dnsName;
     /**
      * <p>
      * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
@@ -1126,6 +1128,32 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
     }
 
     /**
+     * @param dnsName
+     */
+
+    public void setDnsName(String dnsName) {
+        this.dnsName = dnsName;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getDnsName() {
+        return this.dnsName;
+    }
+
+    /**
+     * @param dnsName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GameSessionPlacement withDnsName(String dnsName) {
+        setDnsName(dnsName);
+        return this;
+    }
+
+    /**
      * <p>
      * Port number for the game session. To connect to a Amazon GameLift game server, an app needs both the IP address
      * and port number. This value is set once the new game session is placed (placement status is
@@ -1442,6 +1470,8 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getIpAddress() != null)
             sb.append("IpAddress: ").append(getIpAddress()).append(",");
+        if (getDnsName() != null)
+            sb.append("DnsName: ").append(getDnsName()).append(",");
         if (getPort() != null)
             sb.append("Port: ").append(getPort()).append(",");
         if (getPlacedPlayerSessions() != null)
@@ -1516,6 +1546,10 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
             return false;
         if (other.getIpAddress() != null && other.getIpAddress().equals(this.getIpAddress()) == false)
             return false;
+        if (other.getDnsName() == null ^ this.getDnsName() == null)
+            return false;
+        if (other.getDnsName() != null && other.getDnsName().equals(this.getDnsName()) == false)
+            return false;
         if (other.getPort() == null ^ this.getPort() == null)
             return false;
         if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
@@ -1553,6 +1587,7 @@ public class GameSessionPlacement implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
+        hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getPlacedPlayerSessions() == null) ? 0 : getPlacedPlayerSessions().hashCode());
         hashCode = prime * hashCode + ((getGameSessionData() == null) ? 0 : getGameSessionData().hashCode());

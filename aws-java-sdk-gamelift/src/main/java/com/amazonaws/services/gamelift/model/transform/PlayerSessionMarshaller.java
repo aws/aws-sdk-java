@@ -43,6 +43,8 @@ public class PlayerSessionMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<String> IPADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IpAddress").build();
+    private static final MarshallingInfo<String> DNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("DnsName").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Port").build();
     private static final MarshallingInfo<String> PLAYERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -72,6 +74,7 @@ public class PlayerSessionMarshaller {
             protocolMarshaller.marshall(playerSession.getTerminationTime(), TERMINATIONTIME_BINDING);
             protocolMarshaller.marshall(playerSession.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(playerSession.getIpAddress(), IPADDRESS_BINDING);
+            protocolMarshaller.marshall(playerSession.getDnsName(), DNSNAME_BINDING);
             protocolMarshaller.marshall(playerSession.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(playerSession.getPlayerData(), PLAYERDATA_BINDING);
         } catch (Exception e) {

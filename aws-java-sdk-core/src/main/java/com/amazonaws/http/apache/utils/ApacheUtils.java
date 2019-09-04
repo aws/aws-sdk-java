@@ -49,11 +49,25 @@ import org.apache.http.protocol.HttpContext;
 public class ApacheUtils {
     private static final Log log = LogFactory.getLog(ApacheUtils.class);
 
-    private static final ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder> NORMALIZE_URI_INVOKER =
-        new ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder>(RequestConfig.Builder.class,
-                                                                                  RequestConfig.Builder.class,
-                                                                                  "setNormalizeUri",
-                                                                                  boolean.class);
+    private static final ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder> normalizeUriInvoker;
+
+    static {
+        // Attempt to initialize the invoker once on class-load. If it fails, it will not be attempted again, but we'll
+        // use that opportunity to log a warning.
+        normalizeUriInvoker =
+            new ReflectionMethodInvoker<RequestConfig.Builder, RequestConfig.Builder>(RequestConfig.Builder.class,
+                                                                                      RequestConfig.Builder.class,
+                                                                                      "setNormalizeUri",
+                                                                                      boolean.class);
+
+        try {
+            normalizeUriInvoker.initialize();
+        } catch (NoSuchMethodException ignored) {
+            noSuchMethodThrownByNormalizeUriInvoker();
+        }
+    }
+
+    private final boolean normalizeUriMethodNotFound = false;
 
     /**
      * Checks if the request was successful or not based on the status code.
@@ -171,15 +185,13 @@ public class ApacheUtils {
      * For more information, See https://github.com/aws/aws-sdk-java/issues/1919
      */
     public static void disableNormalizeUri(RequestConfig.Builder requestConfigBuilder) {
-        try {
-            NORMALIZE_URI_INVOKER.invoke(requestConfigBuilder, false);
-        } catch (NoSuchMethodException ignored) {
-            // setNormalizeUri method was added in httpclient 4.5.8
-            log.warn("NoSuchMethodException was thrown when disabling normalizeUri. This indicates you are using "
-                           + "an old version (< 4.5.8) of Apache http client. It is recommended to use http client "
-                           + "version >= 4.5.9 to avoid the breaking change introduced in apache client 4.5.7 and "
-                           + "the latency in exception handling. See https://github.com/aws/aws-sdk-java/issues/1919"
-                           + " for more information");
+        // For efficiency, do not attempt to call the invoker again if it failed to initialize on class-load
+        if (normalizeUriInvoker.isInitialized()) {
+            try {
+                normalizeUriInvoker.invoke(requestConfigBuilder, false);
+            } catch (NoSuchMethodException ignored) {
+                noSuchMethodThrownByNormalizeUriInvoker();
+            }
         }
     }
 
@@ -226,5 +238,15 @@ public class ApacheUtils {
             clientContext.setCredentialsProvider(credsProvider);
             clientContext.setAuthCache(authCache);
         }
+    }
+
+    // Just log and then swallow the exception
+    private static void noSuchMethodThrownByNormalizeUriInvoker() {
+        // setNormalizeUri method was added in httpclient 4.5.8
+        log.warn("NoSuchMethodException was thrown when disabling normalizeUri. This indicates you are using "
+                 + "an old version (< 4.5.8) of Apache http client. It is recommended to use http client "
+                 + "version >= 4.5.9 to avoid the breaking change introduced in apache client 4.5.7 and "
+                 + "the latency in exception handling. See https://github.com/aws/aws-sdk-java/issues/1919"
+                 + " for more information");
     }
 }

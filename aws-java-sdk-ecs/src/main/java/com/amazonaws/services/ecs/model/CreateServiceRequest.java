@@ -114,6 +114,10 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of instantiations of the specified task definition to place and keep running on your cluster.
      * </p>
+     * <p>
+     * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
+     * </p>
      */
     private Integer desiredCount;
     /**
@@ -1020,9 +1024,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of instantiations of the specified task definition to place and keep running on your cluster.
      * </p>
+     * <p>
+     * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
+     * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your cluster.
+     *        The number of instantiations of the specified task definition to place and keep running on your
+     *        cluster.</p>
+     *        <p>
+     *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
      */
 
     public void setDesiredCount(Integer desiredCount) {
@@ -1033,8 +1045,16 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of instantiations of the specified task definition to place and keep running on your cluster.
      * </p>
+     * <p>
+     * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
+     * </p>
      * 
-     * @return The number of instantiations of the specified task definition to place and keep running on your cluster.
+     * @return The number of instantiations of the specified task definition to place and keep running on your
+     *         cluster.</p>
+     *         <p>
+     *         This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     *         <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
      */
 
     public Integer getDesiredCount() {
@@ -1045,9 +1065,17 @@ public class CreateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The number of instantiations of the specified task definition to place and keep running on your cluster.
      * </p>
+     * <p>
+     * This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     * <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
+     * </p>
      * 
      * @param desiredCount
-     *        The number of instantiations of the specified task definition to place and keep running on your cluster.
+     *        The number of instantiations of the specified task definition to place and keep running on your
+     *        cluster.</p>
+     *        <p>
+     *        This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or is not specified. If
+     *        <code>schedulingStrategy</code> is <code>DAEMON</code> then this is not required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

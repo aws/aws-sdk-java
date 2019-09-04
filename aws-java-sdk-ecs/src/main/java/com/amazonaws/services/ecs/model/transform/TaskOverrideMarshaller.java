@@ -30,6 +30,8 @@ public class TaskOverrideMarshaller {
 
     private static final MarshallingInfo<List> CONTAINEROVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerOverrides").build();
+    private static final MarshallingInfo<List> INFERENCEACCELERATOROVERRIDES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inferenceAcceleratorOverrides").build();
     private static final MarshallingInfo<String> TASKROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskRoleArn").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -52,6 +54,7 @@ public class TaskOverrideMarshaller {
 
         try {
             protocolMarshaller.marshall(taskOverride.getContainerOverrides(), CONTAINEROVERRIDES_BINDING);
+            protocolMarshaller.marshall(taskOverride.getInferenceAcceleratorOverrides(), INFERENCEACCELERATOROVERRIDES_BINDING);
             protocolMarshaller.marshall(taskOverride.getTaskRoleArn(), TASKROLEARN_BINDING);
             protocolMarshaller.marshall(taskOverride.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
         } catch (Exception e) {

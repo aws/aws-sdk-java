@@ -101,6 +101,10 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                     context.nextToken();
                     gameSessionPlacement.setIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DnsName", targetDepth)) {
+                    context.nextToken();
+                    gameSessionPlacement.setDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Port", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setPort(context.getUnmarshaller(Integer.class).unmarshall(context));
