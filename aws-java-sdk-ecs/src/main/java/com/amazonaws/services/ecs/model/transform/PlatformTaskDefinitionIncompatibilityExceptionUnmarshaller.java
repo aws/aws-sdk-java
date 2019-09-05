@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PlatformTaskDefinitionIncompatibilityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PlatformTaskDefinitionIncompatibilityExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException> {
+public class PlatformTaskDefinitionIncompatibilityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PlatformTaskDefinitionIncompatibilityExceptionUnmarshaller() {
-        super("PlatformTaskDefinitionIncompatibilityException");
+        super(com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException.class, "PlatformTaskDefinitionIncompatibilityException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException platformTaskDefinitionIncompatibilityException = new com.amazonaws.services.ecs.model.PlatformTaskDefinitionIncompatibilityException(
                 null);
 

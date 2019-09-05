@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CodeValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CodeValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalytics.model.CodeValidationException> {
+public class CodeValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CodeValidationExceptionUnmarshaller() {
-        super("CodeValidationException");
+        super(com.amazonaws.services.kinesisanalytics.model.CodeValidationException.class, "CodeValidationException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalytics.model.CodeValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisanalytics.model.CodeValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisanalytics.model.CodeValidationException codeValidationException = new com.amazonaws.services.kinesisanalytics.model.CodeValidationException(
                 null);
 

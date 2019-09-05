@@ -108,10 +108,7 @@ public class AmazonKinesisVideoClient extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TagsPerResourceExceededLimitException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.TagsPerResourceExceededLimitExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException>(
-                                            com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class));
 
     public static AmazonKinesisVideoClientBuilder builder() {
         return AmazonKinesisVideoClientBuilder.standard();

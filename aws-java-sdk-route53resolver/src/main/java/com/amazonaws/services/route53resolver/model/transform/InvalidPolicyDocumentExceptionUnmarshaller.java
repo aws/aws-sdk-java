@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPolicyDocumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPolicyDocumentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException> {
+public class InvalidPolicyDocumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPolicyDocumentExceptionUnmarshaller() {
-        super("InvalidPolicyDocument");
+        super(com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException.class, "InvalidPolicyDocument");
     }
 
     @Override
-    public com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException invalidPolicyDocumentException = new com.amazonaws.services.route53resolver.model.InvalidPolicyDocumentException(
                 null);
 

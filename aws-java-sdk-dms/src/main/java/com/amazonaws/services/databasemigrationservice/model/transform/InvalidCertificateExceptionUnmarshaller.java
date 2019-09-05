@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCertificateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCertificateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException> {
+public class InvalidCertificateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCertificateExceptionUnmarshaller() {
-        super("InvalidCertificateFault");
+        super(com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException.class, "InvalidCertificateFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException invalidCertificateException = new com.amazonaws.services.databasemigrationservice.model.InvalidCertificateException(
                 null);
 

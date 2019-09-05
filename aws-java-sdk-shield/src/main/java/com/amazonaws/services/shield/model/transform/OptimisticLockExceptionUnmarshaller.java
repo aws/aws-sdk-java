@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OptimisticLockException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OptimisticLockExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.shield.model.OptimisticLockException> {
+public class OptimisticLockExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OptimisticLockExceptionUnmarshaller() {
-        super("OptimisticLockException");
+        super(com.amazonaws.services.shield.model.OptimisticLockException.class, "OptimisticLockException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.OptimisticLockException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.OptimisticLockException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.OptimisticLockException optimisticLockException = new com.amazonaws.services.shield.model.OptimisticLockException(
                 null);
 

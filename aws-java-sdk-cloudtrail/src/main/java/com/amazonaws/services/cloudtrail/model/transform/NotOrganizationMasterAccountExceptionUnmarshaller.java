@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotOrganizationMasterAccountException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotOrganizationMasterAccountExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException> {
+public class NotOrganizationMasterAccountExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotOrganizationMasterAccountExceptionUnmarshaller() {
-        super("NotOrganizationMasterAccountException");
+        super(com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException.class, "NotOrganizationMasterAccountException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException notOrganizationMasterAccountException = new com.amazonaws.services.cloudtrail.model.NotOrganizationMasterAccountException(
                 null);
 

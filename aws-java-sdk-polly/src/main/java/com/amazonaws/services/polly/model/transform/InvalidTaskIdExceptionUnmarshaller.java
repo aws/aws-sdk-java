@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTaskIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTaskIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidTaskIdException> {
+public class InvalidTaskIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTaskIdExceptionUnmarshaller() {
-        super("InvalidTaskIdException");
+        super(com.amazonaws.services.polly.model.InvalidTaskIdException.class, "InvalidTaskIdException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidTaskIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidTaskIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidTaskIdException invalidTaskIdException = new com.amazonaws.services.polly.model.InvalidTaskIdException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidActivationIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidActivationIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException> {
+public class InvalidActivationIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidActivationIdExceptionUnmarshaller() {
-        super("InvalidActivationId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException.class, "InvalidActivationId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException invalidActivationIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidActivationIdException(
                 null);
 

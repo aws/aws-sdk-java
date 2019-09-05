@@ -105,10 +105,7 @@ public class AWSServiceCatalogClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.servicecatalog.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException>(
-                                            com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.servicecatalog.model.AWSServiceCatalogException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Service Catalog. A credentials provider chain will be

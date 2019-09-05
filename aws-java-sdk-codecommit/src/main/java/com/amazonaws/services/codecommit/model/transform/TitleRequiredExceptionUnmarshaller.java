@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TitleRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TitleRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TitleRequiredException> {
+public class TitleRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TitleRequiredExceptionUnmarshaller() {
-        super("TitleRequiredException");
+        super(com.amazonaws.services.codecommit.model.TitleRequiredException.class, "TitleRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TitleRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TitleRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.TitleRequiredException titleRequiredException = new com.amazonaws.services.codecommit.model.TitleRequiredException(
                 null);
 

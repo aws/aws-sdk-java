@@ -93,10 +93,7 @@ public class AmazonDirectConnectClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DirectConnectClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directconnect.model.transform.DirectConnectClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.directconnect.model.AmazonDirectConnectException>(
-                                            com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.directconnect.model.AmazonDirectConnectException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Direct Connect. A credentials provider chain will be

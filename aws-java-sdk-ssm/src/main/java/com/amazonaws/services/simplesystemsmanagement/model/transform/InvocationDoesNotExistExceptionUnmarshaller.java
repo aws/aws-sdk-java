@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvocationDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvocationDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException> {
+public class InvocationDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvocationDoesNotExistExceptionUnmarshaller() {
-        super("InvocationDoesNotExist");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException.class, "InvocationDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException invocationDoesNotExistException = new com.amazonaws.services.simplesystemsmanagement.model.InvocationDoesNotExistException(
                 null);
 

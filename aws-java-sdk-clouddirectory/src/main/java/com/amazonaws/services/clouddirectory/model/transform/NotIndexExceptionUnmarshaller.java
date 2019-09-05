@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotIndexException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotIndexExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.NotIndexException> {
+public class NotIndexExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotIndexExceptionUnmarshaller() {
-        super("NotIndexException");
+        super(com.amazonaws.services.clouddirectory.model.NotIndexException.class, "NotIndexException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.NotIndexException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.NotIndexException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.NotIndexException notIndexException = new com.amazonaws.services.clouddirectory.model.NotIndexException(
                 null);
 

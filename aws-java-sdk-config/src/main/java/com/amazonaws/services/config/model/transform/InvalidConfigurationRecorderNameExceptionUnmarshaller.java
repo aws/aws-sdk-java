@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidConfigurationRecorderNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidConfigurationRecorderNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException> {
+public class InvalidConfigurationRecorderNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConfigurationRecorderNameExceptionUnmarshaller() {
-        super("InvalidConfigurationRecorderNameException");
+        super(com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException.class, "InvalidConfigurationRecorderNameException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException invalidConfigurationRecorderNameException = new com.amazonaws.services.config.model.InvalidConfigurationRecorderNameException(
                 null);
 

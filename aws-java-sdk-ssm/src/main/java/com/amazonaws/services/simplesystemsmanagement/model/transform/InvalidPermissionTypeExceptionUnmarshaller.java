@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPermissionTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPermissionTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException> {
+public class InvalidPermissionTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPermissionTypeExceptionUnmarshaller() {
-        super("InvalidPermissionType");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException.class, "InvalidPermissionType");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException invalidPermissionTypeException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidPermissionTypeException(
                 null);
 

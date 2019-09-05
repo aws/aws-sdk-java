@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterGroupAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterGroupAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException> {
+public class ParameterGroupAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterGroupAlreadyExistsExceptionUnmarshaller() {
-        super("ParameterGroupAlreadyExistsFault");
+        super(com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException.class, "ParameterGroupAlreadyExistsFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException parameterGroupAlreadyExistsException = new com.amazonaws.services.dax.model.ParameterGroupAlreadyExistsException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceRegistrationFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceRegistrationFailureExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.iot.model.ResourceRegistrationFailureException> {
+public class ResourceRegistrationFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceRegistrationFailureExceptionUnmarshaller() {
-        super("ResourceRegistrationFailureException");
+        super(com.amazonaws.services.iot.model.ResourceRegistrationFailureException.class, "ResourceRegistrationFailureException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.ResourceRegistrationFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.ResourceRegistrationFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.ResourceRegistrationFailureException resourceRegistrationFailureException = new com.amazonaws.services.iot.model.ResourceRegistrationFailureException(
                 null);
 

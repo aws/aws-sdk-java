@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedPolicyDocumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedPolicyDocumentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.MalformedPolicyDocumentException> {
+public class MalformedPolicyDocumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedPolicyDocumentExceptionUnmarshaller() {
-        super("MalformedPolicyDocumentException");
+        super(com.amazonaws.services.organizations.model.MalformedPolicyDocumentException.class, "MalformedPolicyDocumentException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.MalformedPolicyDocumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.MalformedPolicyDocumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.MalformedPolicyDocumentException malformedPolicyDocumentException = new com.amazonaws.services.organizations.model.MalformedPolicyDocumentException(
                 null);
 

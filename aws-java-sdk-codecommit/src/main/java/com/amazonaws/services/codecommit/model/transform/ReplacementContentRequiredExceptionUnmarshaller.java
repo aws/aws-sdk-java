@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplacementContentRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplacementContentRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ReplacementContentRequiredException> {
+public class ReplacementContentRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplacementContentRequiredExceptionUnmarshaller() {
-        super("ReplacementContentRequiredException");
+        super(com.amazonaws.services.codecommit.model.ReplacementContentRequiredException.class, "ReplacementContentRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ReplacementContentRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ReplacementContentRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ReplacementContentRequiredException replacementContentRequiredException = new com.amazonaws.services.codecommit.model.ReplacementContentRequiredException(
                 null);
 

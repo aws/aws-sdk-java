@@ -24,12 +24,26 @@ import javax.annotation.Generated;
 public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable,
         Cloneable {
 
+    /**
+     * <p>
+     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<OrganizationConfigRule> organizationConfigRules;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * </p>
+     * 
+     * @return Retuns a list <code>OrganizationConfigRule</code> objects.
      */
 
     public java.util.List<OrganizationConfigRule> getOrganizationConfigRules() {
@@ -40,7 +54,12 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * </p>
+     * 
      * @param organizationConfigRules
+     *        Retuns a list <code>OrganizationConfigRule</code> objects.
      */
 
     public void setOrganizationConfigRules(java.util.Collection<OrganizationConfigRule> organizationConfigRules) {
@@ -54,12 +73,16 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
+     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOrganizationConfigRules(java.util.Collection)} or
      * {@link #withOrganizationConfigRules(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param organizationConfigRules
+     *        Retuns a list <code>OrganizationConfigRule</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -74,7 +97,12 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * Retuns a list <code>OrganizationConfigRule</code> objects.
+     * </p>
+     * 
      * @param organizationConfigRules
+     *        Retuns a list <code>OrganizationConfigRule</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,7 +112,14 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -92,7 +127,13 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -100,7 +141,14 @@ public class DescribeOrganizationConfigRulesResult extends com.amazonaws.AmazonW
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

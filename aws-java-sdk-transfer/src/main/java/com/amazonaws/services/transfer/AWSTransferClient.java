@@ -100,10 +100,7 @@ public class AWSTransferClient extends AmazonWebServiceClient implements AWSTran
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.transfer.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.transfer.model.AWSTransferException>(
-                                            com.amazonaws.services.transfer.model.AWSTransferException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.transfer.model.AWSTransferException.class));
 
     public static AWSTransferClientBuilder builder() {
         return AWSTransferClientBuilder.standard();

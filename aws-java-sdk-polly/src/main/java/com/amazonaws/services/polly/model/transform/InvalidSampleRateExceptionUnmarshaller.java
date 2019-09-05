@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSampleRateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSampleRateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidSampleRateException> {
+public class InvalidSampleRateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSampleRateExceptionUnmarshaller() {
-        super("InvalidSampleRateException");
+        super(com.amazonaws.services.polly.model.InvalidSampleRateException.class, "InvalidSampleRateException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidSampleRateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidSampleRateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidSampleRateException invalidSampleRateException = new com.amazonaws.services.polly.model.InvalidSampleRateException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationalUnitNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationalUnitNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException> {
+public class OrganizationalUnitNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationalUnitNotFoundExceptionUnmarshaller() {
-        super("OrganizationalUnitNotFoundException");
+        super(com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException.class, "OrganizationalUnitNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException organizationalUnitNotFoundException = new com.amazonaws.services.organizations.model.OrganizationalUnitNotFoundException(
                 null);
 

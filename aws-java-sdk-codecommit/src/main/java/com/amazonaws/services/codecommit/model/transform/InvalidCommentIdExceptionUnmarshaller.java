@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCommentIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCommentIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidCommentIdException> {
+public class InvalidCommentIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCommentIdExceptionUnmarshaller() {
-        super("InvalidCommentIdException");
+        super(com.amazonaws.services.codecommit.model.InvalidCommentIdException.class, "InvalidCommentIdException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidCommentIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidCommentIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidCommentIdException invalidCommentIdException = new com.amazonaws.services.codecommit.model.InvalidCommentIdException(
                 null);
 

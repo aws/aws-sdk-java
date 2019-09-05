@@ -238,10 +238,7 @@ public class AWSOpsWorksClient extends AmazonWebServiceClient implements AWSOpsW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.opsworks.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.opsworks.model.AWSOpsWorksException>(
-                                            com.amazonaws.services.opsworks.model.AWSOpsWorksException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.opsworks.model.AWSOpsWorksException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS OpsWorks. A credentials provider chain will be used that

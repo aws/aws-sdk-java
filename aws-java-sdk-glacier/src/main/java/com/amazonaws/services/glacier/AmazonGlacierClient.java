@@ -140,10 +140,7 @@ public class AmazonGlacierClient extends AmazonWebServiceClient implements Amazo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glacier.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.glacier.model.AmazonGlacierException>(
-                                            com.amazonaws.services.glacier.model.AmazonGlacierException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.glacier.model.AmazonGlacierException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Glacier. A credentials provider chain will be used

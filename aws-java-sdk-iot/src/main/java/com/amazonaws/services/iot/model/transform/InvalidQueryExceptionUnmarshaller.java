@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidQueryException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidQueryExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.InvalidQueryException> {
+public class InvalidQueryExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidQueryExceptionUnmarshaller() {
-        super("InvalidQueryException");
+        super(com.amazonaws.services.iot.model.InvalidQueryException.class, "InvalidQueryException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.InvalidQueryException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.InvalidQueryException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.InvalidQueryException invalidQueryException = new com.amazonaws.services.iot.model.InvalidQueryException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -87,10 +87,7 @@ public class AWSMediaTailorClient extends AmazonWebServiceClient implements AWSM
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediatailor.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediatailor.model.AWSMediaTailorException>(
-                                            com.amazonaws.services.mediatailor.model.AWSMediaTailorException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediatailor.model.AWSMediaTailorException.class));
 
     public static AWSMediaTailorClientBuilder builder() {
         return AWSMediaTailorClientBuilder.standard();

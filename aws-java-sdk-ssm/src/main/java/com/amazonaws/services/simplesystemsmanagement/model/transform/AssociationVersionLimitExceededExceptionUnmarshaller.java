@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociationVersionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociationVersionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException> {
+public class AssociationVersionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociationVersionLimitExceededExceptionUnmarshaller() {
-        super("AssociationVersionLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException.class, "AssociationVersionLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException associationVersionLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.AssociationVersionLimitExceededException(
                 null);

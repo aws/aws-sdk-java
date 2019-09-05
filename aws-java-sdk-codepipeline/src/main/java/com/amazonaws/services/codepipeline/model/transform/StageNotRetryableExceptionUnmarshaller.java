@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StageNotRetryableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StageNotRetryableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.StageNotRetryableException> {
+public class StageNotRetryableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StageNotRetryableExceptionUnmarshaller() {
-        super("StageNotRetryableException");
+        super(com.amazonaws.services.codepipeline.model.StageNotRetryableException.class, "StageNotRetryableException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.StageNotRetryableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.StageNotRetryableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.StageNotRetryableException stageNotRetryableException = new com.amazonaws.services.codepipeline.model.StageNotRetryableException(
                 null);
 

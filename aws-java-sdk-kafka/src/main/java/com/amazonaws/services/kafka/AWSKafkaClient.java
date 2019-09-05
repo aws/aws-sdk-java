@@ -102,10 +102,7 @@ public class AWSKafkaClient extends AmazonWebServiceClient implements AWSKafka {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kafka.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kafka.model.AWSKafkaException>(
-                                            com.amazonaws.services.kafka.model.AWSKafkaException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kafka.model.AWSKafkaException.class));
 
     public static AWSKafkaClientBuilder builder() {
         return AWSKafkaClientBuilder.standard();

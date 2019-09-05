@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LoopDetectedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LoopDetectedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexruntime.model.LoopDetectedException> {
+public class LoopDetectedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LoopDetectedExceptionUnmarshaller() {
-        super("LoopDetectedException");
+        super(com.amazonaws.services.lexruntime.model.LoopDetectedException.class, "LoopDetectedException");
     }
 
     @Override
-    public com.amazonaws.services.lexruntime.model.LoopDetectedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexruntime.model.LoopDetectedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexruntime.model.LoopDetectedException loopDetectedException = new com.amazonaws.services.lexruntime.model.LoopDetectedException(
                 null);
 

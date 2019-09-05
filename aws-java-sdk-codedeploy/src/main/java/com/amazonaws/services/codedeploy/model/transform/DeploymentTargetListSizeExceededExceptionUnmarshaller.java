@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentTargetListSizeExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentTargetListSizeExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException> {
+public class DeploymentTargetListSizeExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentTargetListSizeExceededExceptionUnmarshaller() {
-        super("DeploymentTargetListSizeExceededException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException.class, "DeploymentTargetListSizeExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException deploymentTargetListSizeExceededException = new com.amazonaws.services.codedeploy.model.DeploymentTargetListSizeExceededException(
                 null);
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An organization config rule that has information about config rules that AWS Config creates in member accounts.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRule" target="_top">AWS API
  *      Documentation</a>
@@ -25,20 +28,50 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrganizationConfigRule implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     */
     private String organizationConfigRuleName;
-
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of organization config rule.
+     * </p>
+     */
     private String organizationConfigRuleArn;
-
+    /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     */
     private OrganizationManagedRuleMetadata organizationManagedRuleMetadata;
-
+    /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     */
     private OrganizationCustomRuleMetadata organizationCustomRuleMetadata;
-
+    /**
+     * <p>
+     * A comma-separated list of accounts excluded from organization config rule.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> excludedAccounts;
-
+    /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     */
     private java.util.Date lastUpdateTime;
 
     /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to organization config rule.
      */
 
     public void setOrganizationConfigRuleName(String organizationConfigRuleName) {
@@ -46,7 +79,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
+     * @return The name that you assign to organization config rule.
      */
 
     public String getOrganizationConfigRuleName() {
@@ -54,7 +91,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -64,7 +106,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleArn
+     *        The Amazon Resource Name (ARN) of organization config rule.
      */
 
     public void setOrganizationConfigRuleArn(String organizationConfigRuleArn) {
@@ -72,7 +119,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of organization config rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of organization config rule.
      */
 
     public String getOrganizationConfigRuleArn() {
@@ -80,7 +131,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleArn
+     *        The Amazon Resource Name (ARN) of organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,7 +146,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationManagedRuleMetadata
+     *        An <code>OrganizationManagedRuleMetadata</code> object.
      */
 
     public void setOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadata organizationManagedRuleMetadata) {
@@ -98,7 +159,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
+     * @return An <code>OrganizationManagedRuleMetadata</code> object.
      */
 
     public OrganizationManagedRuleMetadata getOrganizationManagedRuleMetadata() {
@@ -106,7 +171,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationManagedRuleMetadata
+     *        An <code>OrganizationManagedRuleMetadata</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -116,7 +186,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationCustomRuleMetadata
+     *        An <code>OrganizationCustomRuleMetadata</code> object.
      */
 
     public void setOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadata organizationCustomRuleMetadata) {
@@ -124,7 +199,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
+     * @return An <code>OrganizationCustomRuleMetadata</code> object.
      */
 
     public OrganizationCustomRuleMetadata getOrganizationCustomRuleMetadata() {
@@ -132,7 +211,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationCustomRuleMetadata
+     *        An <code>OrganizationCustomRuleMetadata</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,7 +226,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * A comma-separated list of accounts excluded from organization config rule.
+     * </p>
+     * 
+     * @return A comma-separated list of accounts excluded from organization config rule.
      */
 
     public java.util.List<String> getExcludedAccounts() {
@@ -153,7 +241,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * A comma-separated list of accounts excluded from organization config rule.
+     * </p>
+     * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts excluded from organization config rule.
      */
 
     public void setExcludedAccounts(java.util.Collection<String> excludedAccounts) {
@@ -167,12 +260,16 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * A comma-separated list of accounts excluded from organization config rule.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExcludedAccounts(java.util.Collection)} or {@link #withExcludedAccounts(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts excluded from organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,7 +284,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * A comma-separated list of accounts excluded from organization config rule.
+     * </p>
+     * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts excluded from organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -197,7 +299,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
      * @param lastUpdateTime
+     *        The timestamp of the last update.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -205,7 +312,11 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
-     * @return
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
+     * @return The timestamp of the last update.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -213,7 +324,12 @@ public class OrganizationConfigRule implements Serializable, Cloneable, Structur
     }
 
     /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
      * @param lastUpdateTime
+     *        The timestamp of the last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

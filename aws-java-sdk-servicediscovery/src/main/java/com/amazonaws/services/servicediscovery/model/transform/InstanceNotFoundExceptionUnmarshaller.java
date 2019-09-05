@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InstanceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.InstanceNotFoundException> {
+public class InstanceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InstanceNotFoundExceptionUnmarshaller() {
-        super("InstanceNotFound");
+        super(com.amazonaws.services.servicediscovery.model.InstanceNotFoundException.class, "InstanceNotFound");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.InstanceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.InstanceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.InstanceNotFoundException instanceNotFoundException = new com.amazonaws.services.servicediscovery.model.InstanceNotFoundException(
                 null);
 

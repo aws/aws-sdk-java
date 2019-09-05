@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRequestContentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRequestContentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidRequestContentException> {
+public class InvalidRequestContentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRequestContentExceptionUnmarshaller() {
-        super("InvalidRequestContentException");
+        super(com.amazonaws.services.lambda.model.InvalidRequestContentException.class, "InvalidRequestContentException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidRequestContentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidRequestContentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidRequestContentException invalidRequestContentException = new com.amazonaws.services.lambda.model.InvalidRequestContentException(
                 null);
 

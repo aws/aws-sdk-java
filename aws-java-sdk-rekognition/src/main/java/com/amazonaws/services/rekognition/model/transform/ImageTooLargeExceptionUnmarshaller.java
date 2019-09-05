@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ImageTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rekognition.model.ImageTooLargeException> {
+public class ImageTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ImageTooLargeExceptionUnmarshaller() {
-        super("ImageTooLargeException");
+        super(com.amazonaws.services.rekognition.model.ImageTooLargeException.class, "ImageTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.rekognition.model.ImageTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rekognition.model.ImageTooLargeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rekognition.model.ImageTooLargeException imageTooLargeException = new com.amazonaws.services.rekognition.model.ImageTooLargeException(
                 null);
 

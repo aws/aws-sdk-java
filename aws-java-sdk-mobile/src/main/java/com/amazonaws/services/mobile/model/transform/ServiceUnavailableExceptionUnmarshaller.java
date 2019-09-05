@@ -26,13 +26,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceUnavailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mobile.model.ServiceUnavailableException> {
+public class ServiceUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceUnavailableExceptionUnmarshaller() {
-        super("ServiceUnavailableException");
+        super(com.amazonaws.services.mobile.model.ServiceUnavailableException.class, "ServiceUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.mobile.model.ServiceUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mobile.model.ServiceUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mobile.model.ServiceUnavailableException serviceUnavailableException = new com.amazonaws.services.mobile.model.ServiceUnavailableException(
                 null);
 

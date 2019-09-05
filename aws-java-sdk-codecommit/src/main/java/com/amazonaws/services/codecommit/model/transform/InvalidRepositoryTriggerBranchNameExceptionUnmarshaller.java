@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryTriggerBranchNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryTriggerBranchNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException> {
+public class InvalidRepositoryTriggerBranchNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryTriggerBranchNameExceptionUnmarshaller() {
-        super("InvalidRepositoryTriggerBranchNameException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException.class, "InvalidRepositoryTriggerBranchNameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException invalidRepositoryTriggerBranchNameException = new com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerBranchNameException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotAuthorizedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotAuthorizedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitosync.model.NotAuthorizedException> {
+public class NotAuthorizedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotAuthorizedExceptionUnmarshaller() {
-        super("NotAuthorizedError");
+        super(com.amazonaws.services.cognitosync.model.NotAuthorizedException.class, "NotAuthorizedError");
     }
 
     @Override
-    public com.amazonaws.services.cognitosync.model.NotAuthorizedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitosync.model.NotAuthorizedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitosync.model.NotAuthorizedException notAuthorizedException = new com.amazonaws.services.cognitosync.model.NotAuthorizedException(
                 null);
 

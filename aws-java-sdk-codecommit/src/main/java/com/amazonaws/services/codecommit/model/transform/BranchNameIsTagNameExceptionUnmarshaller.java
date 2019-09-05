@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BranchNameIsTagNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BranchNameIsTagNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BranchNameIsTagNameException> {
+public class BranchNameIsTagNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BranchNameIsTagNameExceptionUnmarshaller() {
-        super("BranchNameIsTagNameException");
+        super(com.amazonaws.services.codecommit.model.BranchNameIsTagNameException.class, "BranchNameIsTagNameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BranchNameIsTagNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BranchNameIsTagNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.BranchNameIsTagNameException branchNameIsTagNameException = new com.amazonaws.services.codecommit.model.BranchNameIsTagNameException(
                 null);
 

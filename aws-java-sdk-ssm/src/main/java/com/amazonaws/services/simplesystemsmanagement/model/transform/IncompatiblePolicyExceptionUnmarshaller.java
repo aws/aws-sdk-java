@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncompatiblePolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatiblePolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException> {
+public class IncompatiblePolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncompatiblePolicyExceptionUnmarshaller() {
-        super("IncompatiblePolicyException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException.class, "IncompatiblePolicyException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException incompatiblePolicyException = new com.amazonaws.services.simplesystemsmanagement.model.IncompatiblePolicyException(
                 null);
 

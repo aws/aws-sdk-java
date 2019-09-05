@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ResourceValidationException> {
+public class ResourceValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceValidationExceptionUnmarshaller() {
-        super("ResourceValidationException");
+        super(com.amazonaws.services.codedeploy.model.ResourceValidationException.class, "ResourceValidationException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ResourceValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ResourceValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.ResourceValidationException resourceValidationException = new com.amazonaws.services.codedeploy.model.ResourceValidationException(
                 null);
 

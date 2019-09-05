@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExpiredIteratorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpiredIteratorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesis.model.ExpiredIteratorException> {
+public class ExpiredIteratorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExpiredIteratorExceptionUnmarshaller() {
-        super("ExpiredIteratorException");
+        super(com.amazonaws.services.kinesis.model.ExpiredIteratorException.class, "ExpiredIteratorException");
     }
 
     @Override
-    public com.amazonaws.services.kinesis.model.ExpiredIteratorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesis.model.ExpiredIteratorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesis.model.ExpiredIteratorException expiredIteratorException = new com.amazonaws.services.kinesis.model.ExpiredIteratorException(
                 null);
 

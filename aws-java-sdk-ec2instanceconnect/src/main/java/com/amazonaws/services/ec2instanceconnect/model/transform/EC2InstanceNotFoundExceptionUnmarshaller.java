@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EC2InstanceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EC2InstanceNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException> {
+public class EC2InstanceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EC2InstanceNotFoundExceptionUnmarshaller() {
-        super("EC2InstanceNotFoundException");
+        super(com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException.class, "EC2InstanceNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException eC2InstanceNotFoundException = new com.amazonaws.services.ec2instanceconnect.model.EC2InstanceNotFoundException(
                 null);
 

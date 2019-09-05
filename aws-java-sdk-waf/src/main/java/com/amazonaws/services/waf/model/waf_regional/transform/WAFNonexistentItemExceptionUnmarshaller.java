@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFNonexistentItemException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFNonexistentItemExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFNonexistentItemException> {
+public class WAFNonexistentItemExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFNonexistentItemExceptionUnmarshaller() {
-        super("WAFNonexistentItemException");
+        super(com.amazonaws.services.waf.model.WAFNonexistentItemException.class, "WAFNonexistentItemException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFNonexistentItemException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFNonexistentItemException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFNonexistentItemException wAFNonexistentItemException = new com.amazonaws.services.waf.model.WAFNonexistentItemException(
                 null);
 

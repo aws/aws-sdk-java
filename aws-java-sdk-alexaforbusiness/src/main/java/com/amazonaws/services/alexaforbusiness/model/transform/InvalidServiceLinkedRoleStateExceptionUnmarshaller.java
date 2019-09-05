@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidServiceLinkedRoleStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidServiceLinkedRoleStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException> {
+public class InvalidServiceLinkedRoleStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidServiceLinkedRoleStateExceptionUnmarshaller() {
-        super("InvalidServiceLinkedRoleStateException");
+        super(com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException.class, "InvalidServiceLinkedRoleStateException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException invalidServiceLinkedRoleStateException = new com.amazonaws.services.alexaforbusiness.model.InvalidServiceLinkedRoleStateException(
                 null);
 

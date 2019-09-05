@@ -80,10 +80,7 @@ public class AmazonMTurkClient extends AmazonWebServiceClient implements AmazonM
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("RequestError").withExceptionUnmarshaller(
                                     com.amazonaws.services.mturk.model.transform.RequestErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mturk.model.AmazonMTurkException>(
-                                            com.amazonaws.services.mturk.model.AmazonMTurkException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mturk.model.AmazonMTurkException.class));
 
     public static AmazonMTurkClientBuilder builder() {
         return AmazonMTurkClientBuilder.standard();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BadRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BadRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mobile.model.BadRequestException> {
+public class BadRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BadRequestExceptionUnmarshaller() {
-        super("BadRequestException");
+        super(com.amazonaws.services.mobile.model.BadRequestException.class, "BadRequestException");
     }
 
     @Override
-    public com.amazonaws.services.mobile.model.BadRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mobile.model.BadRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mobile.model.BadRequestException badRequestException = new com.amazonaws.services.mobile.model.BadRequestException(null);
 
         int originalDepth = context.getCurrentDepth();

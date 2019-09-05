@@ -144,10 +144,7 @@ public class AWSResourceGroupsClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resourcegroups.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.resourcegroups.model.AWSResourceGroupsException>(
-                                            com.amazonaws.services.resourcegroups.model.AWSResourceGroupsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.resourcegroups.model.AWSResourceGroupsException.class));
 
     public static AWSResourceGroupsClientBuilder builder() {
         return AWSResourceGroupsClientBuilder.standard();

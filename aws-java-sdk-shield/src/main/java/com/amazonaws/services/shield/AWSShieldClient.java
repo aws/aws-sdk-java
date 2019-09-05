@@ -119,10 +119,7 @@ public class AWSShieldClient extends AmazonWebServiceClient implements AWSShield
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedForDependencyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.shield.model.transform.AccessDeniedForDependencyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.shield.model.AWSShieldException>(
-                                            com.amazonaws.services.shield.model.AWSShieldException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.shield.model.AWSShieldException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Shield. A credentials provider chain will be used that

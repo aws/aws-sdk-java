@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MergeOptionRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MergeOptionRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MergeOptionRequiredException> {
+public class MergeOptionRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MergeOptionRequiredExceptionUnmarshaller() {
-        super("MergeOptionRequiredException");
+        super(com.amazonaws.services.codecommit.model.MergeOptionRequiredException.class, "MergeOptionRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MergeOptionRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MergeOptionRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.MergeOptionRequiredException mergeOptionRequiredException = new com.amazonaws.services.codecommit.model.MergeOptionRequiredException(
                 null);
 

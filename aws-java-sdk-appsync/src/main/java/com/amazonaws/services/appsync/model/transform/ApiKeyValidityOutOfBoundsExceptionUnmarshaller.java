@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApiKeyValidityOutOfBoundsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApiKeyValidityOutOfBoundsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException> {
+public class ApiKeyValidityOutOfBoundsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApiKeyValidityOutOfBoundsExceptionUnmarshaller() {
-        super("ApiKeyValidityOutOfBoundsException");
+        super(com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException.class, "ApiKeyValidityOutOfBoundsException");
     }
 
     @Override
-    public com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException apiKeyValidityOutOfBoundsException = new com.amazonaws.services.appsync.model.ApiKeyValidityOutOfBoundsException(
                 null);
 

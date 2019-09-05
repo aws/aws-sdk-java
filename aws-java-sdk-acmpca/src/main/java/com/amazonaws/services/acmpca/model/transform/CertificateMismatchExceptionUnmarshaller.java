@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CertificateMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CertificateMismatchExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.CertificateMismatchException> {
+public class CertificateMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CertificateMismatchExceptionUnmarshaller() {
-        super("CertificateMismatchException");
+        super(com.amazonaws.services.acmpca.model.CertificateMismatchException.class, "CertificateMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.CertificateMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.CertificateMismatchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.CertificateMismatchException certificateMismatchException = new com.amazonaws.services.acmpca.model.CertificateMismatchException(
                 null);
 

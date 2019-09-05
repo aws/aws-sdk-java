@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CrawlerNotRunningException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CrawlerNotRunningExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.CrawlerNotRunningException> {
+public class CrawlerNotRunningExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CrawlerNotRunningExceptionUnmarshaller() {
-        super("CrawlerNotRunningException");
+        super(com.amazonaws.services.glue.model.CrawlerNotRunningException.class, "CrawlerNotRunningException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.CrawlerNotRunningException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.CrawlerNotRunningException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.CrawlerNotRunningException crawlerNotRunningException = new com.amazonaws.services.glue.model.CrawlerNotRunningException(
                 null);
 

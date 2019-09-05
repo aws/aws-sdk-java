@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedMediaTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedMediaTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException> {
+public class UnsupportedMediaTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedMediaTypeExceptionUnmarshaller() {
-        super("UnsupportedMediaTypeException");
+        super(com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException.class, "UnsupportedMediaTypeException");
     }
 
     @Override
-    public com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException unsupportedMediaTypeException = new com.amazonaws.services.lexruntime.model.UnsupportedMediaTypeException(
                 null);
 

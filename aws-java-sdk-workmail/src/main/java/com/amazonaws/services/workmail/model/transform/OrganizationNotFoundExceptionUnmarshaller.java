@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.OrganizationNotFoundException> {
+public class OrganizationNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationNotFoundExceptionUnmarshaller() {
-        super("OrganizationNotFoundException");
+        super(com.amazonaws.services.workmail.model.OrganizationNotFoundException.class, "OrganizationNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.OrganizationNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.OrganizationNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.OrganizationNotFoundException organizationNotFoundException = new com.amazonaws.services.workmail.model.OrganizationNotFoundException(
                 null);
 

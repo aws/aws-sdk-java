@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeliveryChannelNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeliveryChannelNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidDeliveryChannelNameException> {
+public class InvalidDeliveryChannelNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeliveryChannelNameExceptionUnmarshaller() {
-        super("InvalidDeliveryChannelNameException");
+        super(com.amazonaws.services.config.model.InvalidDeliveryChannelNameException.class, "InvalidDeliveryChannelNameException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidDeliveryChannelNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidDeliveryChannelNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidDeliveryChannelNameException invalidDeliveryChannelNameException = new com.amazonaws.services.config.model.InvalidDeliveryChannelNameException(
                 null);
 

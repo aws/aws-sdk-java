@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReportLimitReachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReportLimitReachedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.costandusagereport.model.ReportLimitReachedException> {
+public class ReportLimitReachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReportLimitReachedExceptionUnmarshaller() {
-        super("ReportLimitReachedException");
+        super(com.amazonaws.services.costandusagereport.model.ReportLimitReachedException.class, "ReportLimitReachedException");
     }
 
     @Override
-    public com.amazonaws.services.costandusagereport.model.ReportLimitReachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costandusagereport.model.ReportLimitReachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costandusagereport.model.ReportLimitReachedException reportLimitReachedException = new com.amazonaws.services.costandusagereport.model.ReportLimitReachedException(
                 null);
 

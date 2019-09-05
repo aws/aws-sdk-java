@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserNotFoundException> {
+public class UserNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserNotFoundExceptionUnmarshaller() {
-        super("UserNotFoundException");
+        super(com.amazonaws.services.cognitoidp.model.UserNotFoundException.class, "UserNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserNotFoundException userNotFoundException = new com.amazonaws.services.cognitoidp.model.UserNotFoundException(
                 null);
 

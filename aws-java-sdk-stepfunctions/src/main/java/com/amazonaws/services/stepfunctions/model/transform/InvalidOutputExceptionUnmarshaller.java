@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOutputException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOutputExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.InvalidOutputException> {
+public class InvalidOutputExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOutputExceptionUnmarshaller() {
-        super("InvalidOutput");
+        super(com.amazonaws.services.stepfunctions.model.InvalidOutputException.class, "InvalidOutput");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.InvalidOutputException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.InvalidOutputException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.InvalidOutputException invalidOutputException = new com.amazonaws.services.stepfunctions.model.InvalidOutputException(
                 null);
 

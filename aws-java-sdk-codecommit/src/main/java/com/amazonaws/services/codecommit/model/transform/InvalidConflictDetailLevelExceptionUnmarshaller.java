@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidConflictDetailLevelException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidConflictDetailLevelExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException> {
+public class InvalidConflictDetailLevelExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConflictDetailLevelExceptionUnmarshaller() {
-        super("InvalidConflictDetailLevelException");
+        super(com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException.class, "InvalidConflictDetailLevelException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException invalidConflictDetailLevelException = new com.amazonaws.services.codecommit.model.InvalidConflictDetailLevelException(
                 null);
 

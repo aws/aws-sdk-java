@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmClusterInvalidConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmClusterInvalidConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException> {
+public class CloudHsmClusterInvalidConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmClusterInvalidConfigurationExceptionUnmarshaller() {
-        super("CloudHsmClusterInvalidConfigurationException");
+        super(com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException.class, "CloudHsmClusterInvalidConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException cloudHsmClusterInvalidConfigurationException = new com.amazonaws.services.kms.model.CloudHsmClusterInvalidConfigurationException(
                 null);
 

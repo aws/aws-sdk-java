@@ -94,10 +94,7 @@ public class AWSIoTEventsDataClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ioteventsdata.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ioteventsdata.model.AWSIoTEventsDataException>(
-                                            com.amazonaws.services.ioteventsdata.model.AWSIoTEventsDataException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ioteventsdata.model.AWSIoTEventsDataException.class));
 
     public static AWSIoTEventsDataClientBuilder builder() {
         return AWSIoTEventsDataClientBuilder.standard();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActivityWorkerLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityWorkerLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException> {
+public class ActivityWorkerLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActivityWorkerLimitExceededExceptionUnmarshaller() {
-        super("ActivityWorkerLimitExceeded");
+        super(com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException.class, "ActivityWorkerLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException activityWorkerLimitExceededException = new com.amazonaws.services.stepfunctions.model.ActivityWorkerLimitExceededException(
                 null);
 

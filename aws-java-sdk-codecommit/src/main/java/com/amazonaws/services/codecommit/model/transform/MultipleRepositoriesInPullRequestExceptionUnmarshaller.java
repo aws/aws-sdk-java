@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MultipleRepositoriesInPullRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MultipleRepositoriesInPullRequestExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException> {
+public class MultipleRepositoriesInPullRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MultipleRepositoriesInPullRequestExceptionUnmarshaller() {
-        super("MultipleRepositoriesInPullRequestException");
+        super(com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException.class, "MultipleRepositoriesInPullRequestException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException multipleRepositoriesInPullRequestException = new com.amazonaws.services.codecommit.model.MultipleRepositoriesInPullRequestException(
                 null);
 

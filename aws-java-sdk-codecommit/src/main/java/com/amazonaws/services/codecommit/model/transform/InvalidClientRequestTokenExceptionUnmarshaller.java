@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidClientRequestTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidClientRequestTokenExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException> {
+public class InvalidClientRequestTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidClientRequestTokenExceptionUnmarshaller() {
-        super("InvalidClientRequestTokenException");
+        super(com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException.class, "InvalidClientRequestTokenException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException invalidClientRequestTokenException = new com.amazonaws.services.codecommit.model.InvalidClientRequestTokenException(
                 null);
 

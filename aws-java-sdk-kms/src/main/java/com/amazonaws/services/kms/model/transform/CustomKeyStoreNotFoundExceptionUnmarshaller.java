@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomKeyStoreNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomKeyStoreNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException> {
+public class CustomKeyStoreNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomKeyStoreNotFoundExceptionUnmarshaller() {
-        super("CustomKeyStoreNotFoundException");
+        super(com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException.class, "CustomKeyStoreNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException customKeyStoreNotFoundException = new com.amazonaws.services.kms.model.CustomKeyStoreNotFoundException(
                 null);
 

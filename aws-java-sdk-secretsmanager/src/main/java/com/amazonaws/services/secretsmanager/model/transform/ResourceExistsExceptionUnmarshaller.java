@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.secretsmanager.model.ResourceExistsException> {
+public class ResourceExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceExistsExceptionUnmarshaller() {
-        super("ResourceExistsException");
+        super(com.amazonaws.services.secretsmanager.model.ResourceExistsException.class, "ResourceExistsException");
     }
 
     @Override
-    public com.amazonaws.services.secretsmanager.model.ResourceExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.secretsmanager.model.ResourceExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.secretsmanager.model.ResourceExistsException resourceExistsException = new com.amazonaws.services.secretsmanager.model.ResourceExistsException(
                 null);
 

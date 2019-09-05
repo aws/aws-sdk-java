@@ -111,10 +111,7 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotdata.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iotdata.model.AWSIotDataException>(
-                                            com.amazonaws.services.iotdata.model.AWSIotDataException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotdata.model.AWSIotDataException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT Data Plane. A credentials provider chain will be

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAutoRollbackConfigException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAutoRollbackConfigExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException> {
+public class InvalidAutoRollbackConfigExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAutoRollbackConfigExceptionUnmarshaller() {
-        super("InvalidAutoRollbackConfigException");
+        super(com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException.class, "InvalidAutoRollbackConfigException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException invalidAutoRollbackConfigException = new com.amazonaws.services.codedeploy.model.InvalidAutoRollbackConfigException(
                 null);
 

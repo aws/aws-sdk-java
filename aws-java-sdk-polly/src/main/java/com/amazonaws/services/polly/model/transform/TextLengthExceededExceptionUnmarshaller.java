@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TextLengthExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TextLengthExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.TextLengthExceededException> {
+public class TextLengthExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TextLengthExceededExceptionUnmarshaller() {
-        super("TextLengthExceededException");
+        super(com.amazonaws.services.polly.model.TextLengthExceededException.class, "TextLengthExceededException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.TextLengthExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.TextLengthExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.TextLengthExceededException textLengthExceededException = new com.amazonaws.services.polly.model.TextLengthExceededException(
                 null);
 

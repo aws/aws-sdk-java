@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidActorArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidActorArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidActorArnException> {
+public class InvalidActorArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidActorArnExceptionUnmarshaller() {
-        super("InvalidActorArnException");
+        super(com.amazonaws.services.codecommit.model.InvalidActorArnException.class, "InvalidActorArnException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidActorArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidActorArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidActorArnException invalidActorArnException = new com.amazonaws.services.codecommit.model.InvalidActorArnException(
                 null);
 

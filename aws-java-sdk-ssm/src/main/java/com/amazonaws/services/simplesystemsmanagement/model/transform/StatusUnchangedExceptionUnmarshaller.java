@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StatusUnchangedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StatusUnchangedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException> {
+public class StatusUnchangedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StatusUnchangedExceptionUnmarshaller() {
-        super("StatusUnchanged");
+        super(com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException.class, "StatusUnchanged");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException statusUnchangedException = new com.amazonaws.services.simplesystemsmanagement.model.StatusUnchangedException(
                 null);
 

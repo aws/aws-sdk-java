@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommentDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommentDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommentDoesNotExistException> {
+public class CommentDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommentDoesNotExistExceptionUnmarshaller() {
-        super("CommentDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.CommentDoesNotExistException.class, "CommentDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommentDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommentDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommentDoesNotExistException commentDoesNotExistException = new com.amazonaws.services.codecommit.model.CommentDoesNotExistException(
                 null);
 

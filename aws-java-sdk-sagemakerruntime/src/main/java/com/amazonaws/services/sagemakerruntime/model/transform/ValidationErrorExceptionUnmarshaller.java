@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ValidationErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ValidationErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.sagemakerruntime.model.ValidationErrorException> {
+public class ValidationErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ValidationErrorExceptionUnmarshaller() {
-        super("ValidationError");
+        super(com.amazonaws.services.sagemakerruntime.model.ValidationErrorException.class, "ValidationError");
     }
 
     @Override
-    public com.amazonaws.services.sagemakerruntime.model.ValidationErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.sagemakerruntime.model.ValidationErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.sagemakerruntime.model.ValidationErrorException validationErrorException = new com.amazonaws.services.sagemakerruntime.model.ValidationErrorException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BranchNameExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BranchNameExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BranchNameExistsException> {
+public class BranchNameExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BranchNameExistsExceptionUnmarshaller() {
-        super("BranchNameExistsException");
+        super(com.amazonaws.services.codecommit.model.BranchNameExistsException.class, "BranchNameExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BranchNameExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BranchNameExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.BranchNameExistsException branchNameExistsException = new com.amazonaws.services.codecommit.model.BranchNameExistsException(
                 null);
 

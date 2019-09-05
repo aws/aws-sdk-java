@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidUserPoolConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidUserPoolConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException> {
+public class InvalidUserPoolConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidUserPoolConfigurationExceptionUnmarshaller() {
-        super("InvalidUserPoolConfigurationException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException.class, "InvalidUserPoolConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException invalidUserPoolConfigurationException = new com.amazonaws.services.cognitoidp.model.InvalidUserPoolConfigurationException(
                 null);
 

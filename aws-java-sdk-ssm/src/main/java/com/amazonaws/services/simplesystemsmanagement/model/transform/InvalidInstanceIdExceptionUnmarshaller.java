@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInstanceIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInstanceIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException> {
+public class InvalidInstanceIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInstanceIdExceptionUnmarshaller() {
-        super("InvalidInstanceId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException.class, "InvalidInstanceId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException invalidInstanceIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceIdException(
                 null);
 

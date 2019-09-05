@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicaAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicaAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException> {
+public class ReplicaAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicaAlreadyExistsExceptionUnmarshaller() {
-        super("ReplicaAlreadyExistsException");
+        super(com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException.class, "ReplicaAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException replicaAlreadyExistsException = new com.amazonaws.services.dynamodbv2.model.ReplicaAlreadyExistsException(
                 null);
 

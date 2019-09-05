@@ -102,10 +102,7 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.rdsdata.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.rdsdata.model.AWSRDSDataException>(
-                                            com.amazonaws.services.rdsdata.model.AWSRDSDataException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.rdsdata.model.AWSRDSDataException.class));
 
     public static AWSRDSDataClientBuilder builder() {
         return AWSRDSDataClientBuilder.standard();

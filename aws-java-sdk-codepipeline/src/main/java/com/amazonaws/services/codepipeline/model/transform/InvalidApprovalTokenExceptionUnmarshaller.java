@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidApprovalTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidApprovalTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException> {
+public class InvalidApprovalTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidApprovalTokenExceptionUnmarshaller() {
-        super("InvalidApprovalTokenException");
+        super(com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException.class, "InvalidApprovalTokenException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException invalidApprovalTokenException = new com.amazonaws.services.codepipeline.model.InvalidApprovalTokenException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestAlreadyProcessedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestAlreadyProcessedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException> {
+public class RequestAlreadyProcessedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestAlreadyProcessedExceptionUnmarshaller() {
-        super("RequestAlreadyProcessedException");
+        super(com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException.class, "RequestAlreadyProcessedException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException requestAlreadyProcessedException = new com.amazonaws.services.acmpca.model.RequestAlreadyProcessedException(
                 null);
 

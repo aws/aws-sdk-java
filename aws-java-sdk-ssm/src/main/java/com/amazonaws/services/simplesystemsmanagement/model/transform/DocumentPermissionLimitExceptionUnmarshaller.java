@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentPermissionLimitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentPermissionLimitExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException> {
+public class DocumentPermissionLimitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentPermissionLimitExceptionUnmarshaller() {
-        super("DocumentPermissionLimit");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException.class, "DocumentPermissionLimit");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException documentPermissionLimitException = new com.amazonaws.services.simplesystemsmanagement.model.DocumentPermissionLimitException(
                 null);
 

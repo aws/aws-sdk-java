@@ -93,10 +93,7 @@ public class AmazonPinpointSMSVoiceClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointsmsvoice.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pinpointsmsvoice.model.AmazonPinpointSMSVoiceException>(
-                                            com.amazonaws.services.pinpointsmsvoice.model.AmazonPinpointSMSVoiceException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pinpointsmsvoice.model.AmazonPinpointSMSVoiceException.class));
 
     public static AmazonPinpointSMSVoiceClientBuilder builder() {
         return AmazonPinpointSMSVoiceClientBuilder.standard();

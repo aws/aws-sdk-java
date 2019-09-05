@@ -113,10 +113,7 @@ public class AWSLicenseManagerClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.licensemanager.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.licensemanager.model.AWSLicenseManagerException>(
-                                            com.amazonaws.services.licensemanager.model.AWSLicenseManagerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.licensemanager.model.AWSLicenseManagerException.class));
 
     public static AWSLicenseManagerClientBuilder builder() {
         return AWSLicenseManagerClientBuilder.standard();

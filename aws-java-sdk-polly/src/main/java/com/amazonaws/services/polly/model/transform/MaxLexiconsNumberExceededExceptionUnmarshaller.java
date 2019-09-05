@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxLexiconsNumberExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxLexiconsNumberExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException> {
+public class MaxLexiconsNumberExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxLexiconsNumberExceededExceptionUnmarshaller() {
-        super("MaxLexiconsNumberExceededException");
+        super(com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException.class, "MaxLexiconsNumberExceededException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException maxLexiconsNumberExceededException = new com.amazonaws.services.polly.model.MaxLexiconsNumberExceededException(
                 null);
 

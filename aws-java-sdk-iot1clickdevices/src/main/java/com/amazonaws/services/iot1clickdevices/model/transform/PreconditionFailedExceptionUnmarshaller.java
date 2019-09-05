@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PreconditionFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PreconditionFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException> {
+public class PreconditionFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PreconditionFailedExceptionUnmarshaller() {
-        super("PreconditionFailedException");
+        super(com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException.class, "PreconditionFailedException");
     }
 
     @Override
-    public com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException preconditionFailedException = new com.amazonaws.services.iot1clickdevices.model.PreconditionFailedException(
                 null);
 

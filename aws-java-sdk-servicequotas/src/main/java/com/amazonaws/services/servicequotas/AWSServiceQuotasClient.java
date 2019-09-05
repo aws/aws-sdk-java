@@ -133,10 +133,7 @@ public class AWSServiceQuotasClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaTemplateNotInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.servicequotas.model.transform.ServiceQuotaTemplateNotInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servicequotas.model.AWSServiceQuotasException>(
-                                            com.amazonaws.services.servicequotas.model.AWSServiceQuotasException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.servicequotas.model.AWSServiceQuotasException.class));
 
     public static AWSServiceQuotasClientBuilder builder() {
         return AWSServiceQuotasClientBuilder.standard();

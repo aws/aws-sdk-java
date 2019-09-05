@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GlobalTableAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GlobalTableAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException> {
+public class GlobalTableAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GlobalTableAlreadyExistsExceptionUnmarshaller() {
-        super("GlobalTableAlreadyExistsException");
+        super(com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException.class, "GlobalTableAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException globalTableAlreadyExistsException = new com.amazonaws.services.dynamodbv2.model.GlobalTableAlreadyExistsException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MarksNotSupportedForFormatException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MarksNotSupportedForFormatExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.polly.model.MarksNotSupportedForFormatException> {
+public class MarksNotSupportedForFormatExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MarksNotSupportedForFormatExceptionUnmarshaller() {
-        super("MarksNotSupportedForFormatException");
+        super(com.amazonaws.services.polly.model.MarksNotSupportedForFormatException.class, "MarksNotSupportedForFormatException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.MarksNotSupportedForFormatException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.MarksNotSupportedForFormatException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.MarksNotSupportedForFormatException marksNotSupportedForFormatException = new com.amazonaws.services.polly.model.MarksNotSupportedForFormatException(
                 null);
 

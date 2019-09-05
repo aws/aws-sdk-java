@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateHandshakeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateHandshakeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.DuplicateHandshakeException> {
+public class DuplicateHandshakeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateHandshakeExceptionUnmarshaller() {
-        super("DuplicateHandshakeException");
+        super(com.amazonaws.services.organizations.model.DuplicateHandshakeException.class, "DuplicateHandshakeException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.DuplicateHandshakeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.DuplicateHandshakeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.DuplicateHandshakeException duplicateHandshakeException = new com.amazonaws.services.organizations.model.DuplicateHandshakeException(
                 null);
 

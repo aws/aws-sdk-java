@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSecretsManagerResourceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSecretsManagerResourceExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException> {
+public class InvalidSecretsManagerResourceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSecretsManagerResourceExceptionUnmarshaller() {
-        super("InvalidSecretsManagerResourceException");
+        super(com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException.class, "InvalidSecretsManagerResourceException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException invalidSecretsManagerResourceException = new com.amazonaws.services.alexaforbusiness.model.InvalidSecretsManagerResourceException(
                 null);
 

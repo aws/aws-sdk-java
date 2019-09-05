@@ -177,10 +177,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException>(
-                                            com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
 
     /**
      * Constructs a new client to invoke service methods on DynamoDB. A credentials provider chain will be used that

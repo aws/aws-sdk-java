@@ -149,10 +149,7 @@ public class AmazonECRClient extends AmazonWebServiceClient implements AmazonECR
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LifecyclePolicyPreviewInProgressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecr.model.transform.LifecyclePolicyPreviewInProgressExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ecr.model.AmazonECRException>(
-                                            com.amazonaws.services.ecr.model.AmazonECRException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ecr.model.AmazonECRException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECR. A credentials provider chain will be used that

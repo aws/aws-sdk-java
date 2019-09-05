@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientEncryptionPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientEncryptionPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException> {
+public class InsufficientEncryptionPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientEncryptionPolicyExceptionUnmarshaller() {
-        super("InsufficientEncryptionPolicyException");
+        super(com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException.class, "InsufficientEncryptionPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException insufficientEncryptionPolicyException = new com.amazonaws.services.cloudtrail.model.InsufficientEncryptionPolicyException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DefaultUndefinedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DefaultUndefinedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException> {
+public class DefaultUndefinedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DefaultUndefinedExceptionUnmarshaller() {
-        super("DefaultUndefinedFault");
+        super(com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException.class, "DefaultUndefinedFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException defaultUndefinedException = new com.amazonaws.services.simpleworkflow.model.DefaultUndefinedException(
                 null);
 

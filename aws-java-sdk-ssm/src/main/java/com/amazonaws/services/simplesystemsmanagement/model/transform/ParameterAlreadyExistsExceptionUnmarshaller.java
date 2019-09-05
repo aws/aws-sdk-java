@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException> {
+public class ParameterAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterAlreadyExistsExceptionUnmarshaller() {
-        super("ParameterAlreadyExists");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException.class, "ParameterAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException parameterAlreadyExistsException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterAlreadyExistsException(
                 null);
 

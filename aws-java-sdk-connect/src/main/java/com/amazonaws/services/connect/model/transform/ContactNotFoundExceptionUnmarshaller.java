@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ContactNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContactNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.connect.model.ContactNotFoundException> {
+public class ContactNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ContactNotFoundExceptionUnmarshaller() {
-        super("ContactNotFoundException");
+        super(com.amazonaws.services.connect.model.ContactNotFoundException.class, "ContactNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.connect.model.ContactNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.connect.model.ContactNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.connect.model.ContactNotFoundException contactNotFoundException = new com.amazonaws.services.connect.model.ContactNotFoundException(
                 null);
 

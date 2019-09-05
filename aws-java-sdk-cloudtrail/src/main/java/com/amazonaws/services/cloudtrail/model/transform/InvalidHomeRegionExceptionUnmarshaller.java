@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidHomeRegionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidHomeRegionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException> {
+public class InvalidHomeRegionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidHomeRegionExceptionUnmarshaller() {
-        super("InvalidHomeRegionException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException.class, "InvalidHomeRegionException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException invalidHomeRegionException = new com.amazonaws.services.cloudtrail.model.InvalidHomeRegionException(
                 null);
 

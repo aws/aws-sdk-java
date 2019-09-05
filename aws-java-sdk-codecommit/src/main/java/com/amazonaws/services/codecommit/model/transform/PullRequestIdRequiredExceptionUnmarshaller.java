@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PullRequestIdRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PullRequestIdRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PullRequestIdRequiredException> {
+public class PullRequestIdRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PullRequestIdRequiredExceptionUnmarshaller() {
-        super("PullRequestIdRequiredException");
+        super(com.amazonaws.services.codecommit.model.PullRequestIdRequiredException.class, "PullRequestIdRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PullRequestIdRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PullRequestIdRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PullRequestIdRequiredException pullRequestIdRequiredException = new com.amazonaws.services.codecommit.model.PullRequestIdRequiredException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudTrailARNInvalidException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudTrailARNInvalidExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException> {
+public class CloudTrailARNInvalidExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudTrailARNInvalidExceptionUnmarshaller() {
-        super("CloudTrailARNInvalidException");
+        super(com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException.class, "CloudTrailARNInvalidException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException cloudTrailARNInvalidException = new com.amazonaws.services.cloudtrail.model.CloudTrailARNInvalidException(
                 null);
 

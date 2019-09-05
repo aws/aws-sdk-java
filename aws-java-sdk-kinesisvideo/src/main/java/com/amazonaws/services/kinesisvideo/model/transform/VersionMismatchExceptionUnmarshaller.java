@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * VersionMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VersionMismatchExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.VersionMismatchException> {
+public class VersionMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private VersionMismatchExceptionUnmarshaller() {
-        super("VersionMismatchException");
+        super(com.amazonaws.services.kinesisvideo.model.VersionMismatchException.class, "VersionMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.VersionMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.VersionMismatchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.VersionMismatchException versionMismatchException = new com.amazonaws.services.kinesisvideo.model.VersionMismatchException(
                 null);
 

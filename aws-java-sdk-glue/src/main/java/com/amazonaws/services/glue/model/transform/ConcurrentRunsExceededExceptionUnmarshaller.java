@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConcurrentRunsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConcurrentRunsExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.ConcurrentRunsExceededException> {
+public class ConcurrentRunsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConcurrentRunsExceededExceptionUnmarshaller() {
-        super("ConcurrentRunsExceededException");
+        super(com.amazonaws.services.glue.model.ConcurrentRunsExceededException.class, "ConcurrentRunsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.ConcurrentRunsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.ConcurrentRunsExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.ConcurrentRunsExceededException concurrentRunsExceededException = new com.amazonaws.services.glue.model.ConcurrentRunsExceededException(
                 null);
 

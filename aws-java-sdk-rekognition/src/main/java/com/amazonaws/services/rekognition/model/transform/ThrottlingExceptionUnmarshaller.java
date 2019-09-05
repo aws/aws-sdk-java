@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ThrottlingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThrottlingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rekognition.model.ThrottlingException> {
+public class ThrottlingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ThrottlingExceptionUnmarshaller() {
-        super("ThrottlingException");
+        super(com.amazonaws.services.rekognition.model.ThrottlingException.class, "ThrottlingException");
     }
 
     @Override
-    public com.amazonaws.services.rekognition.model.ThrottlingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rekognition.model.ThrottlingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rekognition.model.ThrottlingException throttlingException = new com.amazonaws.services.rekognition.model.ThrottlingException(
                 null);
 

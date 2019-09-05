@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidApplicationConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidApplicationConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException> {
+public class InvalidApplicationConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidApplicationConfigurationExceptionUnmarshaller() {
-        super("InvalidApplicationConfigurationException");
+        super(com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException.class, "InvalidApplicationConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException invalidApplicationConfigurationException = new com.amazonaws.services.kinesisanalytics.model.InvalidApplicationConfigurationException(
                 null);
 

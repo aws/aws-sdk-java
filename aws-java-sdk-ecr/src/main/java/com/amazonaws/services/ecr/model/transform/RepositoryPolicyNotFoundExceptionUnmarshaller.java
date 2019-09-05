@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryPolicyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryPolicyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException> {
+public class RepositoryPolicyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryPolicyNotFoundExceptionUnmarshaller() {
-        super("RepositoryPolicyNotFoundException");
+        super(com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException.class, "RepositoryPolicyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException repositoryPolicyNotFoundException = new com.amazonaws.services.ecr.model.RepositoryPolicyNotFoundException(
                 null);
 

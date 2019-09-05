@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IndexNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IndexNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.IndexNotFoundException> {
+public class IndexNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IndexNotFoundExceptionUnmarshaller() {
-        super("IndexNotFoundException");
+        super(com.amazonaws.services.dynamodbv2.model.IndexNotFoundException.class, "IndexNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.IndexNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.IndexNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.IndexNotFoundException indexNotFoundException = new com.amazonaws.services.dynamodbv2.model.IndexNotFoundException(
                 null);
 

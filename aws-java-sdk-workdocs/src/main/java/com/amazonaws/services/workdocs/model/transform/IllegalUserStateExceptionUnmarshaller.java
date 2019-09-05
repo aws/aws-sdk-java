@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IllegalUserStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IllegalUserStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.IllegalUserStateException> {
+public class IllegalUserStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IllegalUserStateExceptionUnmarshaller() {
-        super("IllegalUserStateException");
+        super(com.amazonaws.services.workdocs.model.IllegalUserStateException.class, "IllegalUserStateException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.IllegalUserStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.IllegalUserStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.IllegalUserStateException illegalUserStateException = new com.amazonaws.services.workdocs.model.IllegalUserStateException(
                 null);
 

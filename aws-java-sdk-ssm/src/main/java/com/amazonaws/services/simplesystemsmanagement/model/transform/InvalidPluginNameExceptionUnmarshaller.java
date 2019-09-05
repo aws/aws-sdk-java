@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPluginNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPluginNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException> {
+public class InvalidPluginNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPluginNameExceptionUnmarshaller() {
-        super("InvalidPluginName");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException.class, "InvalidPluginName");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException invalidPluginNameException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidPluginNameException(
                 null);
 

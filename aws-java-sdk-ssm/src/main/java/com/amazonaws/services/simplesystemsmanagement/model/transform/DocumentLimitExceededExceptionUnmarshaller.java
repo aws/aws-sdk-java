@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException> {
+public class DocumentLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentLimitExceededExceptionUnmarshaller() {
-        super("DocumentLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException.class, "DocumentLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException documentLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.DocumentLimitExceededException(
                 null);
 

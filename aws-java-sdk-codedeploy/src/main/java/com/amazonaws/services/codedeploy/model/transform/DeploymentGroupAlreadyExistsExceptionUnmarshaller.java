@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentGroupAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentGroupAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException> {
+public class DeploymentGroupAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentGroupAlreadyExistsExceptionUnmarshaller() {
-        super("DeploymentGroupAlreadyExistsException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException.class, "DeploymentGroupAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException deploymentGroupAlreadyExistsException = new com.amazonaws.services.codedeploy.model.DeploymentGroupAlreadyExistsException(
                 null);
 

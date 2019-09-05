@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BadDocumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BadDocumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.textract.model.BadDocumentException> {
+public class BadDocumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BadDocumentExceptionUnmarshaller() {
-        super("BadDocumentException");
+        super(com.amazonaws.services.textract.model.BadDocumentException.class, "BadDocumentException");
     }
 
     @Override
-    public com.amazonaws.services.textract.model.BadDocumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.textract.model.BadDocumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.textract.model.BadDocumentException badDocumentException = new com.amazonaws.services.textract.model.BadDocumentException(null);
 
         int originalDepth = context.getCurrentDepth();

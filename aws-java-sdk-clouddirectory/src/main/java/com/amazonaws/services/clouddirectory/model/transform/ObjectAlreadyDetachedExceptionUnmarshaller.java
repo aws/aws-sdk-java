@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ObjectAlreadyDetachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ObjectAlreadyDetachedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException> {
+public class ObjectAlreadyDetachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ObjectAlreadyDetachedExceptionUnmarshaller() {
-        super("ObjectAlreadyDetachedException");
+        super(com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException.class, "ObjectAlreadyDetachedException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException objectAlreadyDetachedException = new com.amazonaws.services.clouddirectory.model.ObjectAlreadyDetachedException(
                 null);
 

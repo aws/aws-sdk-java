@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedPlsLanguageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedPlsLanguageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.UnsupportedPlsLanguageException> {
+public class UnsupportedPlsLanguageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedPlsLanguageExceptionUnmarshaller() {
-        super("UnsupportedPlsLanguageException");
+        super(com.amazonaws.services.polly.model.UnsupportedPlsLanguageException.class, "UnsupportedPlsLanguageException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.UnsupportedPlsLanguageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.UnsupportedPlsLanguageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.UnsupportedPlsLanguageException unsupportedPlsLanguageException = new com.amazonaws.services.polly.model.UnsupportedPlsLanguageException(
                 null);
 

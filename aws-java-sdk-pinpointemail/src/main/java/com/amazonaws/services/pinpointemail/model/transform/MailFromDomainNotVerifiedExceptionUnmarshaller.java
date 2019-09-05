@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MailFromDomainNotVerifiedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MailFromDomainNotVerifiedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException> {
+public class MailFromDomainNotVerifiedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MailFromDomainNotVerifiedExceptionUnmarshaller() {
-        super("MailFromDomainNotVerifiedException");
+        super(com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException.class, "MailFromDomainNotVerifiedException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException mailFromDomainNotVerifiedException = new com.amazonaws.services.pinpointemail.model.MailFromDomainNotVerifiedException(
                 null);
 

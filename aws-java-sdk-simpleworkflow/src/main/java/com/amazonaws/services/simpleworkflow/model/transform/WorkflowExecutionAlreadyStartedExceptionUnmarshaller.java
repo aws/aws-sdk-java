@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WorkflowExecutionAlreadyStartedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WorkflowExecutionAlreadyStartedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException> {
+public class WorkflowExecutionAlreadyStartedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WorkflowExecutionAlreadyStartedExceptionUnmarshaller() {
-        super("WorkflowExecutionAlreadyStartedFault");
+        super(com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException.class, "WorkflowExecutionAlreadyStartedFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException workflowExecutionAlreadyStartedException = new com.amazonaws.services.simpleworkflow.model.WorkflowExecutionAlreadyStartedException(
                 null);
 

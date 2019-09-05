@@ -143,10 +143,7 @@ public class AWSGlueClient extends AmazonWebServiceClient implements AWSGlue {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConditionCheckFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.glue.model.transform.ConditionCheckFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.glue.model.AWSGlueException>(
-                                            com.amazonaws.services.glue.model.AWSGlueException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.glue.model.AWSGlueException.class));
 
     public static AWSGlueClientBuilder builder() {
         return AWSGlueClientBuilder.standard();

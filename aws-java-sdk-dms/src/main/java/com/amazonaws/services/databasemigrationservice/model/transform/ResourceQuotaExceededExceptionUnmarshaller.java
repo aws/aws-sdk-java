@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceQuotaExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceQuotaExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException> {
+public class ResourceQuotaExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceQuotaExceededExceptionUnmarshaller() {
-        super("ResourceQuotaExceededFault");
+        super(com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException.class, "ResourceQuotaExceededFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException resourceQuotaExceededException = new com.amazonaws.services.databasemigrationservice.model.ResourceQuotaExceededException(
                 null);
 

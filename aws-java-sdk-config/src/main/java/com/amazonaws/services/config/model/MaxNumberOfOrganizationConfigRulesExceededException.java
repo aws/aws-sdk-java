@@ -15,7 +15,9 @@ package com.amazonaws.services.config.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * You have reached the limit of the number of organization config rules you can create.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MaxNumberOfOrganizationConfigRulesExceededException extends com.amazonaws.services.config.model.AmazonConfigException {

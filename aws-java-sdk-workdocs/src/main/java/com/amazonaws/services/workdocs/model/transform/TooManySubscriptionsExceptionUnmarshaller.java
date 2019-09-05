@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManySubscriptionsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManySubscriptionsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.TooManySubscriptionsException> {
+public class TooManySubscriptionsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManySubscriptionsExceptionUnmarshaller() {
-        super("TooManySubscriptionsException");
+        super(com.amazonaws.services.workdocs.model.TooManySubscriptionsException.class, "TooManySubscriptionsException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.TooManySubscriptionsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.TooManySubscriptionsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.TooManySubscriptionsException tooManySubscriptionsException = new com.amazonaws.services.workdocs.model.TooManySubscriptionsException(
                 null);
 

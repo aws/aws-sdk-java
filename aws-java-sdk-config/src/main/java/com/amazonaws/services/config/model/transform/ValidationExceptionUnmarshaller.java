@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.ValidationException> {
+public class ValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ValidationExceptionUnmarshaller() {
-        super("ValidationException");
+        super(com.amazonaws.services.config.model.ValidationException.class, "ValidationException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.ValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.ValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.ValidationException validationException = new com.amazonaws.services.config.model.ValidationException(null);
 
         int originalDepth = context.getCurrentDepth();

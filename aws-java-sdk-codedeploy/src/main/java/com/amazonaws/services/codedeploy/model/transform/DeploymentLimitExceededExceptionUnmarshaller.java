@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException> {
+public class DeploymentLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentLimitExceededExceptionUnmarshaller() {
-        super("DeploymentLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException.class, "DeploymentLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException deploymentLimitExceededException = new com.amazonaws.services.codedeploy.model.DeploymentLimitExceededException(
                 null);
 

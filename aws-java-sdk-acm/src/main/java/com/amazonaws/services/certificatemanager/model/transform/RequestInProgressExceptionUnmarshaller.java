@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.certificatemanager.model.RequestInProgressException> {
+public class RequestInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestInProgressExceptionUnmarshaller() {
-        super("RequestInProgressException");
+        super(com.amazonaws.services.certificatemanager.model.RequestInProgressException.class, "RequestInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.certificatemanager.model.RequestInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.certificatemanager.model.RequestInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.certificatemanager.model.RequestInProgressException requestInProgressException = new com.amazonaws.services.certificatemanager.model.RequestInProgressException(
                 null);
 

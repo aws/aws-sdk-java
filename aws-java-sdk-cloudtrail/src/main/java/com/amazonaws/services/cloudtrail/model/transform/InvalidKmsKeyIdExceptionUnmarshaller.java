@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidKmsKeyIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidKmsKeyIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException> {
+public class InvalidKmsKeyIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidKmsKeyIdExceptionUnmarshaller() {
-        super("InvalidKmsKeyIdException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException.class, "InvalidKmsKeyIdException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException invalidKmsKeyIdException = new com.amazonaws.services.cloudtrail.model.InvalidKmsKeyIdException(
                 null);
 

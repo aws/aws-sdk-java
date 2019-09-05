@@ -112,10 +112,7 @@ public class AWSIoTJobsDataPlaneClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotjobsdataplane.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iotjobsdataplane.model.AWSIoTJobsDataPlaneException>(
-                                            com.amazonaws.services.iotjobsdataplane.model.AWSIoTJobsDataPlaneException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotjobsdataplane.model.AWSIoTJobsDataPlaneException.class));
 
     public static AWSIoTJobsDataPlaneClientBuilder builder() {
         return AWSIoTJobsDataPlaneClientBuilder.standard();

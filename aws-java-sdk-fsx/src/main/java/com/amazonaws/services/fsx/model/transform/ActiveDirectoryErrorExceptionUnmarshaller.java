@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActiveDirectoryErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActiveDirectoryErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.ActiveDirectoryErrorException> {
+public class ActiveDirectoryErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActiveDirectoryErrorExceptionUnmarshaller() {
-        super("ActiveDirectoryError");
+        super(com.amazonaws.services.fsx.model.ActiveDirectoryErrorException.class, "ActiveDirectoryError");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.ActiveDirectoryErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.ActiveDirectoryErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.ActiveDirectoryErrorException activeDirectoryErrorException = new com.amazonaws.services.fsx.model.ActiveDirectoryErrorException(
                 null);
 

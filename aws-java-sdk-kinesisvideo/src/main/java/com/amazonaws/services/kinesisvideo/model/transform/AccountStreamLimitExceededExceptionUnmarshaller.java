@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountStreamLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountStreamLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException> {
+public class AccountStreamLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountStreamLimitExceededExceptionUnmarshaller() {
-        super("AccountStreamLimitExceededException");
+        super(com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException.class, "AccountStreamLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException accountStreamLimitExceededException = new com.amazonaws.services.kinesisvideo.model.AccountStreamLimitExceededException(
                 null);
 

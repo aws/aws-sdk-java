@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInvalidOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInvalidOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInvalidOperationException> {
+public class WAFInvalidOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInvalidOperationExceptionUnmarshaller() {
-        super("WAFInvalidOperationException");
+        super(com.amazonaws.services.waf.model.WAFInvalidOperationException.class, "WAFInvalidOperationException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInvalidOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInvalidOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInvalidOperationException wAFInvalidOperationException = new com.amazonaws.services.waf.model.WAFInvalidOperationException(
                 null);
 

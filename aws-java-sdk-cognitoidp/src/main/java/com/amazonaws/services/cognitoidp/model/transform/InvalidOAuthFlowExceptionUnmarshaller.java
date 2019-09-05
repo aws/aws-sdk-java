@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOAuthFlowException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOAuthFlowExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException> {
+public class InvalidOAuthFlowExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOAuthFlowExceptionUnmarshaller() {
-        super("InvalidOAuthFlowException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException.class, "InvalidOAuthFlowException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException invalidOAuthFlowException = new com.amazonaws.services.cognitoidp.model.InvalidOAuthFlowException(
                 null);
 

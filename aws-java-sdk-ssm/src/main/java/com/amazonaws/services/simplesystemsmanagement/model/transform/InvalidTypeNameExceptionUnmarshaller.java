@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTypeNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTypeNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException> {
+public class InvalidTypeNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTypeNameExceptionUnmarshaller() {
-        super("InvalidTypeNameException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException.class, "InvalidTypeNameException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException invalidTypeNameException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidTypeNameException(
                 null);
 

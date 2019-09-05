@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPolicyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.InvalidPolicyException> {
+public class InvalidPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPolicyExceptionUnmarshaller() {
-        super("InvalidPolicyException");
+        super(com.amazonaws.services.acmpca.model.InvalidPolicyException.class, "InvalidPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.InvalidPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.InvalidPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.InvalidPolicyException invalidPolicyException = new com.amazonaws.services.acmpca.model.InvalidPolicyException(null);
 
         int originalDepth = context.getCurrentDepth();

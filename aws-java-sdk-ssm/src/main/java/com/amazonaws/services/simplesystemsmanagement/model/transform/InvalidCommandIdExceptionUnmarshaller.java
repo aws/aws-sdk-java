@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCommandIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCommandIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException> {
+public class InvalidCommandIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCommandIdExceptionUnmarshaller() {
-        super("InvalidCommandId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException.class, "InvalidCommandId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException invalidCommandIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidCommandIdException(
                 null);
 

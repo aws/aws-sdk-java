@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedAvailabilityZoneException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedAvailabilityZoneExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException> {
+public class UnsupportedAvailabilityZoneExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedAvailabilityZoneExceptionUnmarshaller() {
-        super("UnsupportedAvailabilityZone");
+        super(com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException.class, "UnsupportedAvailabilityZone");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException unsupportedAvailabilityZoneException = new com.amazonaws.services.elasticfilesystem.model.UnsupportedAvailabilityZoneException(
                 null);
 

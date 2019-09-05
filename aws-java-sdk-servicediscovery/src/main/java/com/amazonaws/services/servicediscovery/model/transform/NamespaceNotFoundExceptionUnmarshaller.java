@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NamespaceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NamespaceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException> {
+public class NamespaceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NamespaceNotFoundExceptionUnmarshaller() {
-        super("NamespaceNotFound");
+        super(com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException.class, "NamespaceNotFound");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException namespaceNotFoundException = new com.amazonaws.services.servicediscovery.model.NamespaceNotFoundException(
                 null);
 

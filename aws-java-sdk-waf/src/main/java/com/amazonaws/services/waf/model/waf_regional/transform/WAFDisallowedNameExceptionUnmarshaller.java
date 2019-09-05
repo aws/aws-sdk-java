@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFDisallowedNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFDisallowedNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFDisallowedNameException> {
+public class WAFDisallowedNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFDisallowedNameExceptionUnmarshaller() {
-        super("WAFDisallowedNameException");
+        super(com.amazonaws.services.waf.model.WAFDisallowedNameException.class, "WAFDisallowedNameException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFDisallowedNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFDisallowedNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFDisallowedNameException wAFDisallowedNameException = new com.amazonaws.services.waf.model.WAFDisallowedNameException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KmsKeyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KmsKeyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException> {
+public class KmsKeyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KmsKeyNotFoundExceptionUnmarshaller() {
-        super("KmsKeyNotFoundException");
+        super(com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException.class, "KmsKeyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException kmsKeyNotFoundException = new com.amazonaws.services.cloudtrail.model.KmsKeyNotFoundException(
                 null);
 

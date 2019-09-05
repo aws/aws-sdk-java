@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSThrottlingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSThrottlingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException> {
+public class KMSThrottlingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSThrottlingExceptionUnmarshaller() {
-        super("KMSThrottlingFault");
+        super(com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException.class, "KMSThrottlingFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException kMSThrottlingException = new com.amazonaws.services.databasemigrationservice.model.KMSThrottlingException(
                 null);
 

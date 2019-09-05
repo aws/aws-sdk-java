@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceUnavailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.ResourceUnavailableException> {
+public class ResourceUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceUnavailableExceptionUnmarshaller() {
-        super("ResourceUnavailableException");
+        super(com.amazonaws.services.comprehend.model.ResourceUnavailableException.class, "ResourceUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.ResourceUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.ResourceUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.ResourceUnavailableException resourceUnavailableException = new com.amazonaws.services.comprehend.model.ResourceUnavailableException(
                 null);
 

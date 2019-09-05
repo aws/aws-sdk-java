@@ -154,12 +154,7 @@ public class AWSDatabaseMigrationServiceClient extends AmazonWebServiceClient im
                                     .withExceptionUnmarshaller(
                                             com.amazonaws.services.databasemigrationservice.model.transform.ReplicationSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller
                                                     .getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException>(
-                                                    com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.databasemigrationservice.model.AWSDatabaseMigrationServiceException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Database Migration Service. A credentials provider chain

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LifecyclePolicyPreviewNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LifecyclePolicyPreviewNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException> {
+public class LifecyclePolicyPreviewNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LifecyclePolicyPreviewNotFoundExceptionUnmarshaller() {
-        super("LifecyclePolicyPreviewNotFoundException");
+        super(com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException.class, "LifecyclePolicyPreviewNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException lifecyclePolicyPreviewNotFoundException = new com.amazonaws.services.ecr.model.LifecyclePolicyPreviewNotFoundException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryNamesRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryNamesRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException> {
+public class RepositoryNamesRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryNamesRequiredExceptionUnmarshaller() {
-        super("RepositoryNamesRequiredException");
+        super(com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException.class, "RepositoryNamesRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException repositoryNamesRequiredException = new com.amazonaws.services.codecommit.model.RepositoryNamesRequiredException(
                 null);
 

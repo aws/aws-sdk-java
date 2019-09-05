@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateProviderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateProviderExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.DuplicateProviderException> {
+public class DuplicateProviderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateProviderExceptionUnmarshaller() {
-        super("DuplicateProviderException");
+        super(com.amazonaws.services.cognitoidp.model.DuplicateProviderException.class, "DuplicateProviderException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.DuplicateProviderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.DuplicateProviderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.DuplicateProviderException duplicateProviderException = new com.amazonaws.services.cognitoidp.model.DuplicateProviderException(
                 null);
 

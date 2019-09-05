@@ -95,10 +95,7 @@ public class AmazonPinpointClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpoint.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pinpoint.model.AmazonPinpointException>(
-                                            com.amazonaws.services.pinpoint.model.AmazonPinpointException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pinpoint.model.AmazonPinpointException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Pinpoint. A credentials provider chain will be used

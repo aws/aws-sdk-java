@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActionNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.ActionNotFoundException> {
+public class ActionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActionNotFoundExceptionUnmarshaller() {
-        super("ActionNotFoundException");
+        super(com.amazonaws.services.codepipeline.model.ActionNotFoundException.class, "ActionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.ActionNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.ActionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.ActionNotFoundException actionNotFoundException = new com.amazonaws.services.codepipeline.model.ActionNotFoundException(
                 null);
 

@@ -105,10 +105,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.medialive.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.medialive.model.AWSMediaLiveException>(
-                                            com.amazonaws.services.medialive.model.AWSMediaLiveException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.medialive.model.AWSMediaLiveException.class));
 
     public static AWSMediaLiveClientBuilder builder() {
         return AWSMediaLiveClientBuilder.standard();

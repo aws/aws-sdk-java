@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProjectNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProjectNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.ProjectNotFoundException> {
+public class ProjectNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProjectNotFoundExceptionUnmarshaller() {
-        super("ProjectNotFoundException");
+        super(com.amazonaws.services.codestar.model.ProjectNotFoundException.class, "ProjectNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.ProjectNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.ProjectNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.ProjectNotFoundException projectNotFoundException = new com.amazonaws.services.codestar.model.ProjectNotFoundException(
                 null);
 

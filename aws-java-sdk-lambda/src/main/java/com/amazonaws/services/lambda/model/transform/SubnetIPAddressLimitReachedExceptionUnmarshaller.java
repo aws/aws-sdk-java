@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetIPAddressLimitReachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetIPAddressLimitReachedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException> {
+public class SubnetIPAddressLimitReachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetIPAddressLimitReachedExceptionUnmarshaller() {
-        super("SubnetIPAddressLimitReachedException");
+        super(com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException.class, "SubnetIPAddressLimitReachedException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException subnetIPAddressLimitReachedException = new com.amazonaws.services.lambda.model.SubnetIPAddressLimitReachedException(
                 null);
 

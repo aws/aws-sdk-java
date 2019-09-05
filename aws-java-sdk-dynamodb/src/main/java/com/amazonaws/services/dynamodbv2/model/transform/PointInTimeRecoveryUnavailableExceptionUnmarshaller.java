@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PointInTimeRecoveryUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PointInTimeRecoveryUnavailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException> {
+public class PointInTimeRecoveryUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PointInTimeRecoveryUnavailableExceptionUnmarshaller() {
-        super("PointInTimeRecoveryUnavailableException");
+        super(com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException.class, "PointInTimeRecoveryUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException pointInTimeRecoveryUnavailableException = new com.amazonaws.services.dynamodbv2.model.PointInTimeRecoveryUnavailableException(
                 null);
 

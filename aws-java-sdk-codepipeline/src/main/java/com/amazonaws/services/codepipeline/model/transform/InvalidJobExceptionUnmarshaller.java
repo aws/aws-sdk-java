@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidJobException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidJobExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidJobException> {
+public class InvalidJobExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidJobExceptionUnmarshaller() {
-        super("InvalidJobException");
+        super(com.amazonaws.services.codepipeline.model.InvalidJobException.class, "InvalidJobException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidJobException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidJobException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidJobException invalidJobException = new com.amazonaws.services.codepipeline.model.InvalidJobException(
                 null);
 

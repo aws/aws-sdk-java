@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOutputFolderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOutputFolderExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException> {
+public class InvalidOutputFolderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOutputFolderExceptionUnmarshaller() {
-        super("InvalidOutputFolder");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException.class, "InvalidOutputFolder");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException invalidOutputFolderException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputFolderException(
                 null);
 

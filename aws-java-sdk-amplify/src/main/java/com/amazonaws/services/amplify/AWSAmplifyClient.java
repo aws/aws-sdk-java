@@ -98,10 +98,7 @@ public class AWSAmplifyClient extends AmazonWebServiceClient implements AWSAmpli
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.amplify.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.amplify.model.AWSAmplifyException>(
-                                            com.amazonaws.services.amplify.model.AWSAmplifyException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.amplify.model.AWSAmplifyException.class));
 
     public static AWSAmplifyClientBuilder builder() {
         return AWSAmplifyClientBuilder.standard();

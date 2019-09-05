@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidApplicationNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidApplicationNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidApplicationNameException> {
+public class InvalidApplicationNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidApplicationNameExceptionUnmarshaller() {
-        super("InvalidApplicationNameException");
+        super(com.amazonaws.services.codedeploy.model.InvalidApplicationNameException.class, "InvalidApplicationNameException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidApplicationNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidApplicationNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidApplicationNameException invalidApplicationNameException = new com.amazonaws.services.codedeploy.model.InvalidApplicationNameException(
                 null);
 

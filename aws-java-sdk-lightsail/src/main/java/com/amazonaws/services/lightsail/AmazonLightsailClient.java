@@ -110,10 +110,7 @@ public class AmazonLightsailClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccountSetupInProgressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lightsail.model.transform.AccountSetupInProgressExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lightsail.model.AmazonLightsailException>(
-                                            com.amazonaws.services.lightsail.model.AmazonLightsailException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.lightsail.model.AmazonLightsailException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Lightsail. A credentials provider chain will be used

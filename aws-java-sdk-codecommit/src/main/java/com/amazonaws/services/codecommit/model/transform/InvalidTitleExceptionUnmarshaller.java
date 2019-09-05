@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTitleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTitleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidTitleException> {
+public class InvalidTitleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTitleExceptionUnmarshaller() {
-        super("InvalidTitleException");
+        super(com.amazonaws.services.codecommit.model.InvalidTitleException.class, "InvalidTitleException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidTitleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidTitleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidTitleException invalidTitleException = new com.amazonaws.services.codecommit.model.InvalidTitleException(
                 null);
 

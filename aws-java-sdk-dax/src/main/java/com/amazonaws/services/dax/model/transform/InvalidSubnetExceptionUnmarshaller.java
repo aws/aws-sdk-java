@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSubnetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSubnetExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidSubnetException> {
+public class InvalidSubnetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSubnetExceptionUnmarshaller() {
-        super("InvalidSubnet");
+        super(com.amazonaws.services.dax.model.InvalidSubnetException.class, "InvalidSubnet");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidSubnetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidSubnetException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidSubnetException invalidSubnetException = new com.amazonaws.services.dax.model.InvalidSubnetException(null);
 
         int originalDepth = context.getCurrentDepth();

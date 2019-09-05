@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DependentServiceFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DependentServiceFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.amplify.model.DependentServiceFailureException> {
+public class DependentServiceFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DependentServiceFailureExceptionUnmarshaller() {
-        super("DependentServiceFailureException");
+        super(com.amazonaws.services.amplify.model.DependentServiceFailureException.class, "DependentServiceFailureException");
     }
 
     @Override
-    public com.amazonaws.services.amplify.model.DependentServiceFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.amplify.model.DependentServiceFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.amplify.model.DependentServiceFailureException dependentServiceFailureException = new com.amazonaws.services.amplify.model.DependentServiceFailureException(
                 null);
 

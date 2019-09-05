@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLimitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLimitExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidLimitException> {
+public class InvalidLimitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLimitExceptionUnmarshaller() {
-        super("InvalidLimitException");
+        super(com.amazonaws.services.config.model.InvalidLimitException.class, "InvalidLimitException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidLimitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidLimitException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidLimitException invalidLimitException = new com.amazonaws.services.config.model.InvalidLimitException(null);
 
         int originalDepth = context.getCurrentDepth();

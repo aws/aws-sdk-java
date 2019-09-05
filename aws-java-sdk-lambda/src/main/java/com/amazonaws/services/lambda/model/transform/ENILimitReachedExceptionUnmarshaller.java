@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ENILimitReachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ENILimitReachedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.ENILimitReachedException> {
+public class ENILimitReachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ENILimitReachedExceptionUnmarshaller() {
-        super("ENILimitReachedException");
+        super(com.amazonaws.services.lambda.model.ENILimitReachedException.class, "ENILimitReachedException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.ENILimitReachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.ENILimitReachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.ENILimitReachedException eNILimitReachedException = new com.amazonaws.services.lambda.model.ENILimitReachedException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WebhookNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WebhookNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.WebhookNotFoundException> {
+public class WebhookNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WebhookNotFoundExceptionUnmarshaller() {
-        super("WebhookNotFoundException");
+        super(com.amazonaws.services.codepipeline.model.WebhookNotFoundException.class, "WebhookNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.WebhookNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.WebhookNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.WebhookNotFoundException webhookNotFoundException = new com.amazonaws.services.codepipeline.model.WebhookNotFoundException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PreviewGenerationInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PreviewGenerationInProgressExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.PreviewGenerationInProgressException> {
+public class PreviewGenerationInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PreviewGenerationInProgressExceptionUnmarshaller() {
-        super("PreviewGenerationInProgressException");
+        super(com.amazonaws.services.inspector.model.PreviewGenerationInProgressException.class, "PreviewGenerationInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.PreviewGenerationInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.PreviewGenerationInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.inspector.model.PreviewGenerationInProgressException previewGenerationInProgressException = new com.amazonaws.services.inspector.model.PreviewGenerationInProgressException(
                 null);
 

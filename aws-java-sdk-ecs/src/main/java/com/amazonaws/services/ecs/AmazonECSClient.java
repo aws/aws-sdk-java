@@ -157,10 +157,7 @@ public class AmazonECSClient extends AmazonWebServiceClient implements AmazonECS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TargetNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ecs.model.transform.TargetNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ecs.model.AmazonECSException>(
-                                            com.amazonaws.services.ecs.model.AmazonECSException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ecs.model.AmazonECSException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon ECS. A credentials provider chain will be used that

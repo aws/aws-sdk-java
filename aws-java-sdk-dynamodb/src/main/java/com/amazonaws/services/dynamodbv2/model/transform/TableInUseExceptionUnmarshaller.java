@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TableInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TableInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TableInUseException> {
+public class TableInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TableInUseExceptionUnmarshaller() {
-        super("TableInUseException");
+        super(com.amazonaws.services.dynamodbv2.model.TableInUseException.class, "TableInUseException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TableInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TableInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TableInUseException tableInUseException = new com.amazonaws.services.dynamodbv2.model.TableInUseException(null);
 
         int originalDepth = context.getCurrentDepth();

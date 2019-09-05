@@ -222,10 +222,7 @@ public class AWSCodeStarClient extends AmazonWebServiceClient implements AWSCode
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codestar.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codestar.model.AWSCodeStarException>(
-                                            com.amazonaws.services.codestar.model.AWSCodeStarException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codestar.model.AWSCodeStarException.class));
 
     public static AWSCodeStarClientBuilder builder() {
         return AWSCodeStarClientBuilder.standard();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommentContentRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommentContentRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommentContentRequiredException> {
+public class CommentContentRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommentContentRequiredExceptionUnmarshaller() {
-        super("CommentContentRequiredException");
+        super(com.amazonaws.services.codecommit.model.CommentContentRequiredException.class, "CommentContentRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommentContentRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommentContentRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommentContentRequiredException commentContentRequiredException = new com.amazonaws.services.codecommit.model.CommentContentRequiredException(
                 null);
 

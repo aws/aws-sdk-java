@@ -103,10 +103,7 @@ public class AWSMobileClient extends AmazonWebServiceClient implements AWSMobile
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mobile.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mobile.model.AWSMobileException>(
-                                            com.amazonaws.services.mobile.model.AWSMobileException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mobile.model.AWSMobileException.class));
 
     public static AWSMobileClientBuilder builder() {
         return AWSMobileClientBuilder.standard();

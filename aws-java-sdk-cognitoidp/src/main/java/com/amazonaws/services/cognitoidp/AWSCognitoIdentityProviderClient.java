@@ -194,10 +194,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CodeMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cognitoidp.model.transform.CodeMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException>(
-                                            com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitoidp.model.AWSCognitoIdentityProviderException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity Provider. A credentials provider

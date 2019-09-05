@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DomainNotWhitelistedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainNotWhitelistedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.DomainNotWhitelistedException> {
+public class DomainNotWhitelistedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DomainNotWhitelistedExceptionUnmarshaller() {
-        super("DomainNotWhitelistedException");
+        super(com.amazonaws.services.quicksight.model.DomainNotWhitelistedException.class, "DomainNotWhitelistedException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.DomainNotWhitelistedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.DomainNotWhitelistedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.quicksight.model.DomainNotWhitelistedException domainNotWhitelistedException = new com.amazonaws.services.quicksight.model.DomainNotWhitelistedException(
                 null);
 

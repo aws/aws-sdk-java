@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProjectConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProjectConfigurationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.ProjectConfigurationException> {
+public class ProjectConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProjectConfigurationExceptionUnmarshaller() {
-        super("ProjectConfigurationException");
+        super(com.amazonaws.services.codestar.model.ProjectConfigurationException.class, "ProjectConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.ProjectConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.ProjectConfigurationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.ProjectConfigurationException projectConfigurationException = new com.amazonaws.services.codestar.model.ProjectConfigurationException(
                 null);
 

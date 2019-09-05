@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidExpressionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidExpressionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidExpressionException> {
+public class InvalidExpressionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidExpressionExceptionUnmarshaller() {
-        super("InvalidExpressionException");
+        super(com.amazonaws.services.config.model.InvalidExpressionException.class, "InvalidExpressionException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidExpressionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidExpressionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidExpressionException invalidExpressionException = new com.amazonaws.services.config.model.InvalidExpressionException(
                 null);
 

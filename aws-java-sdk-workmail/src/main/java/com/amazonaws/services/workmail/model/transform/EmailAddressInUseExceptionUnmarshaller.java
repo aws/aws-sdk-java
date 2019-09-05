@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EmailAddressInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EmailAddressInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.EmailAddressInUseException> {
+public class EmailAddressInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EmailAddressInUseExceptionUnmarshaller() {
-        super("EmailAddressInUseException");
+        super(com.amazonaws.services.workmail.model.EmailAddressInUseException.class, "EmailAddressInUseException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.EmailAddressInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.EmailAddressInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.EmailAddressInUseException emailAddressInUseException = new com.amazonaws.services.workmail.model.EmailAddressInUseException(
                 null);
 

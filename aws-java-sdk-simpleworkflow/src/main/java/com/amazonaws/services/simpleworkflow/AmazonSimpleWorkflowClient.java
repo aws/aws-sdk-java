@@ -118,10 +118,7 @@ public class AmazonSimpleWorkflowClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DefaultUndefinedFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.simpleworkflow.model.transform.DefaultUndefinedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException>(
-                                            com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.simpleworkflow.model.AmazonSimpleWorkflowException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SWF. A credentials provider chain will be used that

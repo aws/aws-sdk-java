@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPullRequestEventTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPullRequestEventTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException> {
+public class InvalidPullRequestEventTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPullRequestEventTypeExceptionUnmarshaller() {
-        super("InvalidPullRequestEventTypeException");
+        super(com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException.class, "InvalidPullRequestEventTypeException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException invalidPullRequestEventTypeException = new com.amazonaws.services.codecommit.model.InvalidPullRequestEventTypeException(
                 null);
 

@@ -145,10 +145,7 @@ public class AmazonElasticFileSystemClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticfilesystem.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException>(
-                                            com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elasticfilesystem.model.AmazonElasticFileSystemException.class));
 
     /**
      * Constructs a new client to invoke service methods on EFS. A credentials provider chain will be used that searches

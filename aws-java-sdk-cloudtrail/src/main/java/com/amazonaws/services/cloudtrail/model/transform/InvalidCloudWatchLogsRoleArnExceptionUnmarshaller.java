@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCloudWatchLogsRoleArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCloudWatchLogsRoleArnExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException> {
+public class InvalidCloudWatchLogsRoleArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCloudWatchLogsRoleArnExceptionUnmarshaller() {
-        super("InvalidCloudWatchLogsRoleArnException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException.class, "InvalidCloudWatchLogsRoleArnException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException invalidCloudWatchLogsRoleArnException = new com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsRoleArnException(
                 null);
 

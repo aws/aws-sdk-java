@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFileExistsBehaviorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFileExistsBehaviorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException> {
+public class InvalidFileExistsBehaviorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFileExistsBehaviorExceptionUnmarshaller() {
-        super("InvalidFileExistsBehaviorException");
+        super(com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException.class, "InvalidFileExistsBehaviorException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException invalidFileExistsBehaviorException = new com.amazonaws.services.codedeploy.model.InvalidFileExistsBehaviorException(
                 null);
 

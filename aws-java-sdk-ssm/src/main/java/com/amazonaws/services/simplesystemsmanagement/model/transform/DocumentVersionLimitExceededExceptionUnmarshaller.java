@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentVersionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentVersionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException> {
+public class DocumentVersionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentVersionLimitExceededExceptionUnmarshaller() {
-        super("DocumentVersionLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException.class, "DocumentVersionLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException documentVersionLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.DocumentVersionLimitExceededException(
                 null);

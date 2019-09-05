@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedIndexTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedIndexTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException> {
+public class UnsupportedIndexTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedIndexTypeExceptionUnmarshaller() {
-        super("UnsupportedIndexTypeException");
+        super(com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException.class, "UnsupportedIndexTypeException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException unsupportedIndexTypeException = new com.amazonaws.services.clouddirectory.model.UnsupportedIndexTypeException(
                 null);
 

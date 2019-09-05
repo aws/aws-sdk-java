@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BackupRestoringException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackupRestoringExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.BackupRestoringException> {
+public class BackupRestoringExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BackupRestoringExceptionUnmarshaller() {
-        super("BackupRestoring");
+        super(com.amazonaws.services.fsx.model.BackupRestoringException.class, "BackupRestoring");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.BackupRestoringException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.BackupRestoringException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.BackupRestoringException backupRestoringException = new com.amazonaws.services.fsx.model.BackupRestoringException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -100,10 +100,7 @@ public class AmazonLexModelBuildingClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexmodelbuilding.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lexmodelbuilding.model.AmazonLexModelBuildingException>(
-                                            com.amazonaws.services.lexmodelbuilding.model.AmazonLexModelBuildingException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.lexmodelbuilding.model.AmazonLexModelBuildingException.class));
 
     public static AmazonLexModelBuildingClientBuilder builder() {
         return AmazonLexModelBuildingClientBuilder.standard();

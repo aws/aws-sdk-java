@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTagKeysListException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTagKeysListExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidTagKeysListException> {
+public class InvalidTagKeysListExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTagKeysListExceptionUnmarshaller() {
-        super("InvalidTagKeysListException");
+        super(com.amazonaws.services.codecommit.model.InvalidTagKeysListException.class, "InvalidTagKeysListException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidTagKeysListException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidTagKeysListException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidTagKeysListException invalidTagKeysListException = new com.amazonaws.services.codecommit.model.InvalidTagKeysListException(
                 null);
 

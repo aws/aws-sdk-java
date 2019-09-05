@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSystemTagUsageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSystemTagUsageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException> {
+public class InvalidSystemTagUsageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSystemTagUsageExceptionUnmarshaller() {
-        super("InvalidSystemTagUsageException");
+        super(com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException.class, "InvalidSystemTagUsageException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException invalidSystemTagUsageException = new com.amazonaws.services.codecommit.model.InvalidSystemTagUsageException(
                 null);
 

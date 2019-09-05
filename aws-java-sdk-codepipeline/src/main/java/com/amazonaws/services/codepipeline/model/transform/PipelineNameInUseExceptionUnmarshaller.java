@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PipelineNameInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineNameInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.PipelineNameInUseException> {
+public class PipelineNameInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PipelineNameInUseExceptionUnmarshaller() {
-        super("PipelineNameInUseException");
+        super(com.amazonaws.services.codepipeline.model.PipelineNameInUseException.class, "PipelineNameInUseException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.PipelineNameInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.PipelineNameInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.PipelineNameInUseException pipelineNameInUseException = new com.amazonaws.services.codepipeline.model.PipelineNameInUseException(
                 null);
 

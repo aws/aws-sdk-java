@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInventoryRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInventoryRequestExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException> {
+public class InvalidInventoryRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInventoryRequestExceptionUnmarshaller() {
-        super("InvalidInventoryRequestException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException.class, "InvalidInventoryRequestException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException invalidInventoryRequestException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryRequestException(
                 null);
 

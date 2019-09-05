@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceTypeNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceTypeNotSupportedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException> {
+public class ResourceTypeNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceTypeNotSupportedExceptionUnmarshaller() {
-        super("ResourceTypeNotSupportedException");
+        super(com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException.class, "ResourceTypeNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException resourceTypeNotSupportedException = new com.amazonaws.services.cloudtrail.model.ResourceTypeNotSupportedException(
                 null);
 

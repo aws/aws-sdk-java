@@ -98,10 +98,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.fms.model.AWSFMSException>(
-                                            com.amazonaws.services.fms.model.AWSFMSException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.fms.model.AWSFMSException.class));
 
     public static AWSFMSClientBuilder builder() {
         return AWSFMSClientBuilder.standard();

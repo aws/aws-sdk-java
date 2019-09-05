@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PaginationTokenExpiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PaginationTokenExpiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException> {
+public class PaginationTokenExpiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PaginationTokenExpiredExceptionUnmarshaller() {
-        super("PaginationTokenExpiredException");
+        super(com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException.class, "PaginationTokenExpiredException");
     }
 
     @Override
-    public com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException paginationTokenExpiredException = new com.amazonaws.services.resourcegroupstaggingapi.model.PaginationTokenExpiredException(
                 null);
 

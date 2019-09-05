@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidGrantIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidGrantIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidGrantIdException> {
+public class InvalidGrantIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidGrantIdExceptionUnmarshaller() {
-        super("InvalidGrantIdException");
+        super(com.amazonaws.services.kms.model.InvalidGrantIdException.class, "InvalidGrantIdException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidGrantIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidGrantIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidGrantIdException invalidGrantIdException = new com.amazonaws.services.kms.model.InvalidGrantIdException(null);
 
         int originalDepth = context.getCurrentDepth();

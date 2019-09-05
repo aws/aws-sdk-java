@@ -116,10 +116,7 @@ public class AmazonEKSClient extends AmazonWebServiceClient implements AmazonEKS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eks.model.transform.ClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.eks.model.AmazonEKSException>(
-                                            com.amazonaws.services.eks.model.AmazonEKSException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.eks.model.AmazonEKSException.class));
 
     public static AmazonEKSClientBuilder builder() {
         return AmazonEKSClientBuilder.standard();

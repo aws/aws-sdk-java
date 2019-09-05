@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MissingCodecPrivateDataException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MissingCodecPrivateDataExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException> {
+public class MissingCodecPrivateDataExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MissingCodecPrivateDataExceptionUnmarshaller() {
-        super("MissingCodecPrivateDataException");
+        super(com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException.class, "MissingCodecPrivateDataException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException missingCodecPrivateDataException = new com.amazonaws.services.kinesisvideo.model.MissingCodecPrivateDataException(
                 null);
 

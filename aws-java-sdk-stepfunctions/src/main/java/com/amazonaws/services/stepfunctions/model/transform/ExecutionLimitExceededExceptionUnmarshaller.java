@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExecutionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExecutionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException> {
+public class ExecutionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExecutionLimitExceededExceptionUnmarshaller() {
-        super("ExecutionLimitExceeded");
+        super(com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException.class, "ExecutionLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException executionLimitExceededException = new com.amazonaws.services.stepfunctions.model.ExecutionLimitExceededException(
                 null);
 

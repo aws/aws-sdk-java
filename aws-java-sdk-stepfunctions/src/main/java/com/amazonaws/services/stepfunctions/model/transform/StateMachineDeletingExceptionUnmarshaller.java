@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StateMachineDeletingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StateMachineDeletingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.StateMachineDeletingException> {
+public class StateMachineDeletingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StateMachineDeletingExceptionUnmarshaller() {
-        super("StateMachineDeleting");
+        super(com.amazonaws.services.stepfunctions.model.StateMachineDeletingException.class, "StateMachineDeleting");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.StateMachineDeletingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.StateMachineDeletingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.StateMachineDeletingException stateMachineDeletingException = new com.amazonaws.services.stepfunctions.model.StateMachineDeletingException(
                 null);
 

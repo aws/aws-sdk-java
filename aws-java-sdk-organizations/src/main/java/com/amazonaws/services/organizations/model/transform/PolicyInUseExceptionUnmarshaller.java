@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyInUseException> {
+public class PolicyInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyInUseExceptionUnmarshaller() {
-        super("PolicyInUseException");
+        super(com.amazonaws.services.organizations.model.PolicyInUseException.class, "PolicyInUseException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.PolicyInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.PolicyInUseException policyInUseException = new com.amazonaws.services.organizations.model.PolicyInUseException(
                 null);
 

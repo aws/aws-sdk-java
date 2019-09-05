@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BillExpirationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BillExpirationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.costexplorer.model.BillExpirationException> {
+public class BillExpirationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BillExpirationExceptionUnmarshaller() {
-        super("BillExpirationException");
+        super(com.amazonaws.services.costexplorer.model.BillExpirationException.class, "BillExpirationException");
     }
 
     @Override
-    public com.amazonaws.services.costexplorer.model.BillExpirationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costexplorer.model.BillExpirationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costexplorer.model.BillExpirationException billExpirationException = new com.amazonaws.services.costexplorer.model.BillExpirationException(
                 null);
 

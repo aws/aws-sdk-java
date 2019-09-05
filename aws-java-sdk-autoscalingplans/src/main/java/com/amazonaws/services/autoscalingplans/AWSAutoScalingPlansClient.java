@@ -106,10 +106,7 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.autoscalingplans.model.transform.ConcurrentUpdateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException>(
-                                            com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.autoscalingplans.model.AWSAutoScalingPlansException.class));
 
     public static AWSAutoScalingPlansClientBuilder builder() {
         return AWSAutoScalingPlansClientBuilder.standard();

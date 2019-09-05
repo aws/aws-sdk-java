@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CrawlerStoppingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CrawlerStoppingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.CrawlerStoppingException> {
+public class CrawlerStoppingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CrawlerStoppingExceptionUnmarshaller() {
-        super("CrawlerStoppingException");
+        super(com.amazonaws.services.glue.model.CrawlerStoppingException.class, "CrawlerStoppingException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.CrawlerStoppingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.CrawlerStoppingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.CrawlerStoppingException crawlerStoppingException = new com.amazonaws.services.glue.model.CrawlerStoppingException(
                 null);
 

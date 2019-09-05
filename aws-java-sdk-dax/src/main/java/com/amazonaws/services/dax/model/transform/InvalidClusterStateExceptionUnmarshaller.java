@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidClusterStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidClusterStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidClusterStateException> {
+public class InvalidClusterStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidClusterStateExceptionUnmarshaller() {
-        super("InvalidClusterStateFault");
+        super(com.amazonaws.services.dax.model.InvalidClusterStateException.class, "InvalidClusterStateFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidClusterStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidClusterStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidClusterStateException invalidClusterStateException = new com.amazonaws.services.dax.model.InvalidClusterStateException(
                 null);
 

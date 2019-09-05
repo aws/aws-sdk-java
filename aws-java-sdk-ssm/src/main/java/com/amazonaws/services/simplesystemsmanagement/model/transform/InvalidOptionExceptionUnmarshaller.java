@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOptionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException> {
+public class InvalidOptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOptionExceptionUnmarshaller() {
-        super("InvalidOptionException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException.class, "InvalidOptionException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException invalidOptionException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidOptionException(
                 null);
 

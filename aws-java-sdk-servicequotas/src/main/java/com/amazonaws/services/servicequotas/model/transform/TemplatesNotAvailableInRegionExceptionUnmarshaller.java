@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TemplatesNotAvailableInRegionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TemplatesNotAvailableInRegionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException> {
+public class TemplatesNotAvailableInRegionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TemplatesNotAvailableInRegionExceptionUnmarshaller() {
-        super("TemplatesNotAvailableInRegionException");
+        super(com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException.class, "TemplatesNotAvailableInRegionException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException templatesNotAvailableInRegionException = new com.amazonaws.services.servicequotas.model.TemplatesNotAvailableInRegionException(
                 null);
 

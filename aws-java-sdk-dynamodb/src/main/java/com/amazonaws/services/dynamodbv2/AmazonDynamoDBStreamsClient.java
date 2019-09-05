@@ -95,10 +95,7 @@ public class AmazonDynamoDBStreamsClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException>(
-                                            com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.dynamodbv2.model.AmazonDynamoDBException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon DynamoDB Streams. A credentials provider chain will

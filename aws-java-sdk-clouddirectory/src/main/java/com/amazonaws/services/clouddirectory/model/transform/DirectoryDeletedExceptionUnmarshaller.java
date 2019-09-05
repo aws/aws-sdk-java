@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryDeletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryDeletedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.DirectoryDeletedException> {
+public class DirectoryDeletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryDeletedExceptionUnmarshaller() {
-        super("DirectoryDeletedException");
+        super(com.amazonaws.services.clouddirectory.model.DirectoryDeletedException.class, "DirectoryDeletedException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.DirectoryDeletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.DirectoryDeletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.DirectoryDeletedException directoryDeletedException = new com.amazonaws.services.clouddirectory.model.DirectoryDeletedException(
                 null);
 

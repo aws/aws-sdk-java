@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserPoolTaggingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserPoolTaggingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserPoolTaggingException> {
+public class UserPoolTaggingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserPoolTaggingExceptionUnmarshaller() {
-        super("UserPoolTaggingException");
+        super(com.amazonaws.services.cognitoidp.model.UserPoolTaggingException.class, "UserPoolTaggingException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserPoolTaggingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserPoolTaggingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserPoolTaggingException userPoolTaggingException = new com.amazonaws.services.cognitoidp.model.UserPoolTaggingException(
                 null);
 

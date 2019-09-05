@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InternalServiceErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InternalServiceErrorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException> {
+public class InternalServiceErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InternalServiceErrorExceptionUnmarshaller() {
-        super("InternalServiceErrorException");
+        super(com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException.class, "InternalServiceErrorException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException internalServiceErrorException = new com.amazonaws.services.pinpointsmsvoice.model.InternalServiceErrorException(
                 null);
 

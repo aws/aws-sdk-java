@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubTypeCountLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubTypeCountLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException> {
+public class SubTypeCountLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubTypeCountLimitExceededExceptionUnmarshaller() {
-        super("SubTypeCountLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException.class, "SubTypeCountLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException subTypeCountLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.SubTypeCountLimitExceededException(
                 null);
 

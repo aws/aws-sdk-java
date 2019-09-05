@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDescriptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDescriptionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidDescriptionException> {
+public class InvalidDescriptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDescriptionExceptionUnmarshaller() {
-        super("InvalidDescriptionException");
+        super(com.amazonaws.services.codecommit.model.InvalidDescriptionException.class, "InvalidDescriptionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidDescriptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidDescriptionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidDescriptionException invalidDescriptionException = new com.amazonaws.services.codecommit.model.InvalidDescriptionException(
                 null);
 

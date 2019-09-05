@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SnapshotLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SnapshotLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.SnapshotLimitExceededException> {
+public class SnapshotLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SnapshotLimitExceededExceptionUnmarshaller() {
-        super("SnapshotLimitExceededException");
+        super(com.amazonaws.services.directory.model.SnapshotLimitExceededException.class, "SnapshotLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.SnapshotLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.SnapshotLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.SnapshotLimitExceededException snapshotLimitExceededException = new com.amazonaws.services.directory.model.SnapshotLimitExceededException(
                 null);
 

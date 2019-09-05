@@ -123,10 +123,7 @@ public class AmazonPinpointEmailClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pinpointemail.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException>(
-                                            com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pinpointemail.model.AmazonPinpointEmailException.class));
 
     public static AmazonPinpointEmailClientBuilder builder() {
         return AmazonPinpointEmailClientBuilder.standard();

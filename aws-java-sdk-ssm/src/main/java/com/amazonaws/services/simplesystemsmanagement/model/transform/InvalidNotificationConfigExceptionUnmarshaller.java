@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidNotificationConfigException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidNotificationConfigExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException> {
+public class InvalidNotificationConfigExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidNotificationConfigExceptionUnmarshaller() {
-        super("InvalidNotificationConfig");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException.class, "InvalidNotificationConfig");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException invalidNotificationConfigException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidNotificationConfigException(
                 null);
 

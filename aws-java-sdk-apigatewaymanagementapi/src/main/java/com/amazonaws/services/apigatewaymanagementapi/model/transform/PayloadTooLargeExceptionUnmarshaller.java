@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PayloadTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PayloadTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException> {
+public class PayloadTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PayloadTooLargeExceptionUnmarshaller() {
-        super("PayloadTooLargeException");
+        super(com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException.class, "PayloadTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException payloadTooLargeException = new com.amazonaws.services.apigatewaymanagementapi.model.PayloadTooLargeException(
                 null);
 

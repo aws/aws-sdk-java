@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TypeDeprecatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TypeDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException> {
+public class TypeDeprecatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TypeDeprecatedExceptionUnmarshaller() {
-        super("TypeDeprecatedFault");
+        super(com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException.class, "TypeDeprecatedFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException typeDeprecatedException = new com.amazonaws.services.simpleworkflow.model.TypeDeprecatedException(
                 null);
 

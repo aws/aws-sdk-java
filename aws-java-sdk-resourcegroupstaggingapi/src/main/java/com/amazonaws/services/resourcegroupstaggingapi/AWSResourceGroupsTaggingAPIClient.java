@@ -588,12 +588,7 @@ public class AWSResourceGroupsTaggingAPIClient extends AmazonWebServiceClient im
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PaginationTokenExpiredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.resourcegroupstaggingapi.model.transform.PaginationTokenExpiredExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.resourcegroupstaggingapi.model.AWSResourceGroupsTaggingAPIException>(
-                                                    com.amazonaws.services.resourcegroupstaggingapi.model.AWSResourceGroupsTaggingAPIException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.resourcegroupstaggingapi.model.AWSResourceGroupsTaggingAPIException.class));
 
     public static AWSResourceGroupsTaggingAPIClientBuilder builder() {
         return AWSResourceGroupsTaggingAPIClientBuilder.standard();

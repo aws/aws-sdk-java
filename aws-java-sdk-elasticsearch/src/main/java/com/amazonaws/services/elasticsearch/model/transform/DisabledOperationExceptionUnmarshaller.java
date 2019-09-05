@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DisabledOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisabledOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticsearch.model.DisabledOperationException> {
+public class DisabledOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DisabledOperationExceptionUnmarshaller() {
-        super("DisabledOperationException");
+        super(com.amazonaws.services.elasticsearch.model.DisabledOperationException.class, "DisabledOperationException");
     }
 
     @Override
-    public com.amazonaws.services.elasticsearch.model.DisabledOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticsearch.model.DisabledOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticsearch.model.DisabledOperationException disabledOperationException = new com.amazonaws.services.elasticsearch.model.DisabledOperationException(
                 null);
 

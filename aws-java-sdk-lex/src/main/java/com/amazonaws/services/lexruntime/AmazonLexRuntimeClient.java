@@ -117,10 +117,7 @@ public class AmazonLexRuntimeClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LoopDetectedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lexruntime.model.transform.LoopDetectedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException>(
-                                            com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.lexruntime.model.AmazonLexRuntimeException.class));
 
     public static AmazonLexRuntimeClientBuilder builder() {
         return AmazonLexRuntimeClientBuilder.standard();

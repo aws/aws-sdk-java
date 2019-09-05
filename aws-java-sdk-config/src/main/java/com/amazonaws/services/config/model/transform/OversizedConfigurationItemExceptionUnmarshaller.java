@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OversizedConfigurationItemException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OversizedConfigurationItemExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.OversizedConfigurationItemException> {
+public class OversizedConfigurationItemExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OversizedConfigurationItemExceptionUnmarshaller() {
-        super("OversizedConfigurationItemException");
+        super(com.amazonaws.services.config.model.OversizedConfigurationItemException.class, "OversizedConfigurationItemException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.OversizedConfigurationItemException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.OversizedConfigurationItemException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.OversizedConfigurationItemException oversizedConfigurationItemException = new com.amazonaws.services.config.model.OversizedConfigurationItemException(
                 null);
 

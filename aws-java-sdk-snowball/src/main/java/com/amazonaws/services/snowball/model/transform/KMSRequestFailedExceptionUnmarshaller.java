@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSRequestFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSRequestFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.KMSRequestFailedException> {
+public class KMSRequestFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSRequestFailedExceptionUnmarshaller() {
-        super("KMSRequestFailedException");
+        super(com.amazonaws.services.snowball.model.KMSRequestFailedException.class, "KMSRequestFailedException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.KMSRequestFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.KMSRequestFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.KMSRequestFailedException kMSRequestFailedException = new com.amazonaws.services.snowball.model.KMSRequestFailedException(
                 null);
 

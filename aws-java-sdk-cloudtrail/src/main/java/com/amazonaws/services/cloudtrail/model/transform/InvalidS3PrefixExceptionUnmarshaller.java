@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3PrefixException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3PrefixExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException> {
+public class InvalidS3PrefixExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3PrefixExceptionUnmarshaller() {
-        super("InvalidS3PrefixException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException.class, "InvalidS3PrefixException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException invalidS3PrefixException = new com.amazonaws.services.cloudtrail.model.InvalidS3PrefixException(
                 null);
 

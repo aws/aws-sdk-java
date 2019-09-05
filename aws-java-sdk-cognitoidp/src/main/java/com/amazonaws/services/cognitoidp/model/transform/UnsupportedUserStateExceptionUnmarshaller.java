@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedUserStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedUserStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException> {
+public class UnsupportedUserStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedUserStateExceptionUnmarshaller() {
-        super("UnsupportedUserStateException");
+        super(com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException.class, "UnsupportedUserStateException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException unsupportedUserStateException = new com.amazonaws.services.cognitoidp.model.UnsupportedUserStateException(
                 null);
 

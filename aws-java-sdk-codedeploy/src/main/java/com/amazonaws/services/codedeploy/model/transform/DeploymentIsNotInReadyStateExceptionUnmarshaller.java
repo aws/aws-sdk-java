@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentIsNotInReadyStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentIsNotInReadyStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException> {
+public class DeploymentIsNotInReadyStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentIsNotInReadyStateExceptionUnmarshaller() {
-        super("DeploymentIsNotInReadyStateException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException.class, "DeploymentIsNotInReadyStateException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException deploymentIsNotInReadyStateException = new com.amazonaws.services.codedeploy.model.DeploymentIsNotInReadyStateException(
                 null);
 

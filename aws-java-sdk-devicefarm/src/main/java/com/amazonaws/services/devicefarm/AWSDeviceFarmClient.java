@@ -107,10 +107,7 @@ public class AWSDeviceFarmClient extends AmazonWebServiceClient implements AWSDe
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IdempotencyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.devicefarm.model.transform.IdempotencyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.devicefarm.model.AWSDeviceFarmException>(
-                                            com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.devicefarm.model.AWSDeviceFarmException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Device Farm. A credentials provider chain will be used

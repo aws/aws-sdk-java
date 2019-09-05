@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TrimmedDataAccessException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TrimmedDataAccessExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException> {
+public class TrimmedDataAccessExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TrimmedDataAccessExceptionUnmarshaller() {
-        super("TrimmedDataAccessException");
+        super(com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException.class, "TrimmedDataAccessException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException trimmedDataAccessException = new com.amazonaws.services.dynamodbv2.model.TrimmedDataAccessException(
                 null);
 

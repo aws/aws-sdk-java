@@ -127,10 +127,7 @@ public class AmazonCognitoIdentityClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cognitoidentity.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException>(
-                                            com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitoidentity.model.AmazonCognitoIdentityException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Identity. A credentials provider chain will

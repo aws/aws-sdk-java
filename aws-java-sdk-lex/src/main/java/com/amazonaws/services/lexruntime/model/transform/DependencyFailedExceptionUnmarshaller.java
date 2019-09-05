@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DependencyFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DependencyFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexruntime.model.DependencyFailedException> {
+public class DependencyFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DependencyFailedExceptionUnmarshaller() {
-        super("DependencyFailedException");
+        super(com.amazonaws.services.lexruntime.model.DependencyFailedException.class, "DependencyFailedException");
     }
 
     @Override
-    public com.amazonaws.services.lexruntime.model.DependencyFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexruntime.model.DependencyFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexruntime.model.DependencyFailedException dependencyFailedException = new com.amazonaws.services.lexruntime.model.DependencyFailedException(
                 null);
 

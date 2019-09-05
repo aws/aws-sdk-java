@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3KeyPrefixException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3KeyPrefixExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidS3KeyPrefixException> {
+public class InvalidS3KeyPrefixExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3KeyPrefixExceptionUnmarshaller() {
-        super("InvalidS3KeyPrefixException");
+        super(com.amazonaws.services.config.model.InvalidS3KeyPrefixException.class, "InvalidS3KeyPrefixException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidS3KeyPrefixException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidS3KeyPrefixException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidS3KeyPrefixException invalidS3KeyPrefixException = new com.amazonaws.services.config.model.InvalidS3KeyPrefixException(
                 null);
 

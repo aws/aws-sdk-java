@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidComputePlatformException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidComputePlatformExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidComputePlatformException> {
+public class InvalidComputePlatformExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidComputePlatformExceptionUnmarshaller() {
-        super("InvalidComputePlatformException");
+        super(com.amazonaws.services.codedeploy.model.InvalidComputePlatformException.class, "InvalidComputePlatformException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidComputePlatformException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidComputePlatformException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidComputePlatformException invalidComputePlatformException = new com.amazonaws.services.codedeploy.model.InvalidComputePlatformException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.AccessDeniedException> {
+public class AccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccessDeniedExceptionUnmarshaller() {
-        super("AccessDeniedFault");
+        super(com.amazonaws.services.databasemigrationservice.model.AccessDeniedException.class, "AccessDeniedFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.AccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.AccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.databasemigrationservice.model.AccessDeniedException accessDeniedException = new com.amazonaws.services.databasemigrationservice.model.AccessDeniedException(
                 null);
 

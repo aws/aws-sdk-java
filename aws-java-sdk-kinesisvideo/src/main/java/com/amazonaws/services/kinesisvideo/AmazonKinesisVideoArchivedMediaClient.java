@@ -100,10 +100,7 @@ public class AmazonKinesisVideoArchivedMediaClient extends AmazonWebServiceClien
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("MissingCodecPrivateDataException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.MissingCodecPrivateDataExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException>(
-                                            com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class));
 
     public static AmazonKinesisVideoArchivedMediaClientBuilder builder() {
         return AmazonKinesisVideoArchivedMediaClientBuilder.standard();

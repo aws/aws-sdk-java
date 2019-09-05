@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTargetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTargetExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException> {
+public class InvalidTargetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTargetExceptionUnmarshaller() {
-        super("InvalidTarget");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException.class, "InvalidTarget");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException invalidTargetException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidTargetException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTagException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTagExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidTagException> {
+public class InvalidTagExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTagExceptionUnmarshaller() {
-        super("InvalidTagException");
+        super(com.amazonaws.services.codedeploy.model.InvalidTagException.class, "InvalidTagException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidTagException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidTagException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidTagException invalidTagException = new com.amazonaws.services.codedeploy.model.InvalidTagException(null);
 
         int originalDepth = context.getCurrentDepth();

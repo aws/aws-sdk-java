@@ -20,6 +20,7 @@ import static org.junit.Assert.assertThat;
 
 import com.amazonaws.transform.JsonErrorUnmarshaller;
 import com.amazonaws.transform.JsonUnmarshallerContext;
+import com.fasterxml.jackson.databind.JsonNode;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.util.LinkedList;
@@ -137,7 +138,7 @@ public class SdkStructuredIonFactoryTest {
     }
 
     private AmazonServiceException handleError(HttpResponse error) throws Exception {
-        List<JsonErrorUnmarshaller<?>> unmarshallers = new LinkedList<JsonErrorUnmarshaller<?>>();
+        List<JsonErrorUnmarshaller> unmarshallers = new LinkedList<JsonErrorUnmarshaller>();
         unmarshallers.add(new InvalidParameterExceptionUnmarshaller(ERROR_TYPE));
 
         JsonErrorResponseHandler handler = SdkStructuredIonFactory.SDK_ION_BINARY_FACTORY.createErrorResponseHandler(unmarshallers, NO_CUSTOM_ERROR_CODE_FIELD_NAME);
@@ -152,14 +153,14 @@ public class SdkStructuredIonFactoryTest {
         }
     }
 
-    private static class InvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<InvalidParameterException> {
+    private static class InvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller {
 
         public InvalidParameterExceptionUnmarshaller(String handledErrorCode) {
-            super(handledErrorCode);
+            super(InvalidParameterException.class, handledErrorCode);
         }
 
         @Override
-        public InvalidParameterException unmarshall(JsonUnmarshallerContext in) throws Exception {
+        public InvalidParameterException unmarshall(JsonNode in) throws Exception {
             return new InvalidParameterException(null);
         }
     }

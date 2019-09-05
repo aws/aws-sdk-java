@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TransferConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransferConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.TransferConflictException> {
+public class TransferConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TransferConflictExceptionUnmarshaller() {
-        super("TransferConflictException");
+        super(com.amazonaws.services.iot.model.TransferConflictException.class, "TransferConflictException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.TransferConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.TransferConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.TransferConflictException transferConflictException = new com.amazonaws.services.iot.model.TransferConflictException(
                 null);
 

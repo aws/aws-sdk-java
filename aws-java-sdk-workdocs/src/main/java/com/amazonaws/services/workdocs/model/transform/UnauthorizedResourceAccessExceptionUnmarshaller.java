@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnauthorizedResourceAccessException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnauthorizedResourceAccessExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException> {
+public class UnauthorizedResourceAccessExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnauthorizedResourceAccessExceptionUnmarshaller() {
-        super("UnauthorizedResourceAccessException");
+        super(com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException.class, "UnauthorizedResourceAccessException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException unauthorizedResourceAccessException = new com.amazonaws.services.workdocs.model.UnauthorizedResourceAccessException(
                 null);
 

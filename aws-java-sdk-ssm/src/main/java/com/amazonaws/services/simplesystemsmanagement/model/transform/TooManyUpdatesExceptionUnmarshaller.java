@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyUpdatesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyUpdatesExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException> {
+public class TooManyUpdatesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyUpdatesExceptionUnmarshaller() {
-        super("TooManyUpdates");
+        super(com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException.class, "TooManyUpdates");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException tooManyUpdatesException = new com.amazonaws.services.simplesystemsmanagement.model.TooManyUpdatesException(
                 null);
 

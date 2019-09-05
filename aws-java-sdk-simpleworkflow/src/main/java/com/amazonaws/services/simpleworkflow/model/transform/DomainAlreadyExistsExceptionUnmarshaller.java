@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DomainAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException> {
+public class DomainAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DomainAlreadyExistsExceptionUnmarshaller() {
-        super("DomainAlreadyExistsFault");
+        super(com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException.class, "DomainAlreadyExistsFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException domainAlreadyExistsException = new com.amazonaws.services.simpleworkflow.model.DomainAlreadyExistsException(
                 null);
 

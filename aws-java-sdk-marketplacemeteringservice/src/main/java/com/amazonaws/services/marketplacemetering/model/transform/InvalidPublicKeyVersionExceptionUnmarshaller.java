@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPublicKeyVersionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPublicKeyVersionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException> {
+public class InvalidPublicKeyVersionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPublicKeyVersionExceptionUnmarshaller() {
-        super("InvalidPublicKeyVersionException");
+        super(com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException.class, "InvalidPublicKeyVersionException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException invalidPublicKeyVersionException = new com.amazonaws.services.marketplacemetering.model.InvalidPublicKeyVersionException(
                 null);
 

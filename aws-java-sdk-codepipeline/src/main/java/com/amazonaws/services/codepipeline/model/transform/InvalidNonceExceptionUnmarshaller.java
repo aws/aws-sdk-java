@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidNonceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidNonceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidNonceException> {
+public class InvalidNonceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidNonceExceptionUnmarshaller() {
-        super("InvalidNonceException");
+        super(com.amazonaws.services.codepipeline.model.InvalidNonceException.class, "InvalidNonceException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidNonceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidNonceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidNonceException invalidNonceException = new com.amazonaws.services.codepipeline.model.InvalidNonceException(
                 null);
 

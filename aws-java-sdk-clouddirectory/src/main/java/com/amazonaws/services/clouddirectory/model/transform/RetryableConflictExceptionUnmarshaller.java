@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RetryableConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RetryableConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.RetryableConflictException> {
+public class RetryableConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RetryableConflictExceptionUnmarshaller() {
-        super("RetryableConflictException");
+        super(com.amazonaws.services.clouddirectory.model.RetryableConflictException.class, "RetryableConflictException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.RetryableConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.RetryableConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.RetryableConflictException retryableConflictException = new com.amazonaws.services.clouddirectory.model.RetryableConflictException(
                 null);
 

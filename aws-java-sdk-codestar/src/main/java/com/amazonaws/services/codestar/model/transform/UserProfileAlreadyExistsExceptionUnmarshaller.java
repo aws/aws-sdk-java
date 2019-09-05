@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserProfileAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserProfileAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException> {
+public class UserProfileAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserProfileAlreadyExistsExceptionUnmarshaller() {
-        super("UserProfileAlreadyExistsException");
+        super(com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException.class, "UserProfileAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException userProfileAlreadyExistsException = new com.amazonaws.services.codestar.model.UserProfileAlreadyExistsException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.DuplicateRequestException> {
+public class DuplicateRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateRequestExceptionUnmarshaller() {
-        super("DuplicateRequest");
+        super(com.amazonaws.services.servicediscovery.model.DuplicateRequestException.class, "DuplicateRequest");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.DuplicateRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.DuplicateRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.DuplicateRequestException duplicateRequestException = new com.amazonaws.services.servicediscovery.model.DuplicateRequestException(
                 null);
 

@@ -103,10 +103,7 @@ public class AmazonAthenaClient extends AmazonWebServiceClient implements Amazon
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.athena.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.athena.model.AmazonAthenaException>(
-                                            com.amazonaws.services.athena.model.AmazonAthenaException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.athena.model.AmazonAthenaException.class));
 
     public static AmazonAthenaClientBuilder builder() {
         return AmazonAthenaClientBuilder.standard();

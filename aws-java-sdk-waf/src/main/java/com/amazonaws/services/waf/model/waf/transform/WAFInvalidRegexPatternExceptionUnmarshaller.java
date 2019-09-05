@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInvalidRegexPatternException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInvalidRegexPatternExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInvalidRegexPatternException> {
+public class WAFInvalidRegexPatternExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInvalidRegexPatternExceptionUnmarshaller() {
-        super("WAFInvalidRegexPatternException");
+        super(com.amazonaws.services.waf.model.WAFInvalidRegexPatternException.class, "WAFInvalidRegexPatternException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInvalidRegexPatternException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInvalidRegexPatternException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInvalidRegexPatternException wAFInvalidRegexPatternException = new com.amazonaws.services.waf.model.WAFInvalidRegexPatternException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MultipleIamArnsProvidedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MultipleIamArnsProvidedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException> {
+public class MultipleIamArnsProvidedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MultipleIamArnsProvidedExceptionUnmarshaller() {
-        super("MultipleIamArnsProvidedException");
+        super(com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException.class, "MultipleIamArnsProvidedException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException multipleIamArnsProvidedException = new com.amazonaws.services.codedeploy.model.MultipleIamArnsProvidedException(
                 null);
 

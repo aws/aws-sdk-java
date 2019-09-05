@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DataUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DataUnavailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.costexplorer.model.DataUnavailableException> {
+public class DataUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DataUnavailableExceptionUnmarshaller() {
-        super("DataUnavailableException");
+        super(com.amazonaws.services.costexplorer.model.DataUnavailableException.class, "DataUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.costexplorer.model.DataUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costexplorer.model.DataUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costexplorer.model.DataUnavailableException dataUnavailableException = new com.amazonaws.services.costexplorer.model.DataUnavailableException(
                 null);
 

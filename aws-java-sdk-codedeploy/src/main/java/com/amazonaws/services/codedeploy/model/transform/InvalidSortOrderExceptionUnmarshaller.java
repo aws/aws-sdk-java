@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSortOrderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSortOrderExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidSortOrderException> {
+public class InvalidSortOrderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSortOrderExceptionUnmarshaller() {
-        super("InvalidSortOrderException");
+        super(com.amazonaws.services.codedeploy.model.InvalidSortOrderException.class, "InvalidSortOrderException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidSortOrderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidSortOrderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidSortOrderException invalidSortOrderException = new com.amazonaws.services.codedeploy.model.InvalidSortOrderException(
                 null);
 

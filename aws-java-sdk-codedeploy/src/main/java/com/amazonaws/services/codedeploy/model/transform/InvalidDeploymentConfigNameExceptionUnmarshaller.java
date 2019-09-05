@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeploymentConfigNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeploymentConfigNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException> {
+public class InvalidDeploymentConfigNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeploymentConfigNameExceptionUnmarshaller() {
-        super("InvalidDeploymentConfigNameException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException.class, "InvalidDeploymentConfigNameException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException invalidDeploymentConfigNameException = new com.amazonaws.services.codedeploy.model.InvalidDeploymentConfigNameException(
                 null);
 

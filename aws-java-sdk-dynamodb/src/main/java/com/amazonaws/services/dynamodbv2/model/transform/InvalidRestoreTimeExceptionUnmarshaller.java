@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRestoreTimeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRestoreTimeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException> {
+public class InvalidRestoreTimeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRestoreTimeExceptionUnmarshaller() {
-        super("InvalidRestoreTimeException");
+        super(com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException.class, "InvalidRestoreTimeException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException invalidRestoreTimeException = new com.amazonaws.services.dynamodbv2.model.InvalidRestoreTimeException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyRequestsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyRequestsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloud9.model.TooManyRequestsException> {
+public class TooManyRequestsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyRequestsExceptionUnmarshaller() {
-        super("TooManyRequestsException");
+        super(com.amazonaws.services.cloud9.model.TooManyRequestsException.class, "TooManyRequestsException");
     }
 
     @Override
-    public com.amazonaws.services.cloud9.model.TooManyRequestsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloud9.model.TooManyRequestsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloud9.model.TooManyRequestsException tooManyRequestsException = new com.amazonaws.services.cloud9.model.TooManyRequestsException(
                 null);
 

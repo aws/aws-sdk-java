@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedIdentityProviderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedIdentityProviderExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException> {
+public class UnsupportedIdentityProviderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedIdentityProviderExceptionUnmarshaller() {
-        super("UnsupportedIdentityProviderException");
+        super(com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException.class, "UnsupportedIdentityProviderException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException unsupportedIdentityProviderException = new com.amazonaws.services.cognitoidp.model.UnsupportedIdentityProviderException(
                 null);
 

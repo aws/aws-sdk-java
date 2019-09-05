@@ -101,10 +101,7 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PredictorNotMountedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.machinelearning.model.transform.PredictorNotMountedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.machinelearning.model.AmazonMachineLearningException>(
-                                            com.amazonaws.services.machinelearning.model.AmazonMachineLearningException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.machinelearning.model.AmazonMachineLearningException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Machine Learning. A credentials provider chain will

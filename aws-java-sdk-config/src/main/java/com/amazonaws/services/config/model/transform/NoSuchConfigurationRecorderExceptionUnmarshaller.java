@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchConfigurationRecorderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchConfigurationRecorderExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchConfigurationRecorderException> {
+public class NoSuchConfigurationRecorderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchConfigurationRecorderExceptionUnmarshaller() {
-        super("NoSuchConfigurationRecorderException");
+        super(com.amazonaws.services.config.model.NoSuchConfigurationRecorderException.class, "NoSuchConfigurationRecorderException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchConfigurationRecorderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchConfigurationRecorderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchConfigurationRecorderException noSuchConfigurationRecorderException = new com.amazonaws.services.config.model.NoSuchConfigurationRecorderException(
                 null);
 

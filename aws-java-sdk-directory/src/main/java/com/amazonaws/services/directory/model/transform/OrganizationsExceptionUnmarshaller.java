@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.OrganizationsException> {
+public class OrganizationsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationsExceptionUnmarshaller() {
-        super("OrganizationsException");
+        super(com.amazonaws.services.directory.model.OrganizationsException.class, "OrganizationsException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.OrganizationsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.OrganizationsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.OrganizationsException organizationsException = new com.amazonaws.services.directory.model.OrganizationsException(
                 null);
 

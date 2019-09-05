@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ModelErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ModelErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.sagemakerruntime.model.ModelErrorException> {
+public class ModelErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ModelErrorExceptionUnmarshaller() {
-        super("ModelError");
+        super(com.amazonaws.services.sagemakerruntime.model.ModelErrorException.class, "ModelError");
     }
 
     @Override
-    public com.amazonaws.services.sagemakerruntime.model.ModelErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.sagemakerruntime.model.ModelErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.sagemakerruntime.model.ModelErrorException modelErrorException = new com.amazonaws.services.sagemakerruntime.model.ModelErrorException(
                 null);
 

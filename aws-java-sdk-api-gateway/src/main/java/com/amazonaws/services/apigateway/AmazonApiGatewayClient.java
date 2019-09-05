@@ -101,10 +101,7 @@ public class AmazonApiGatewayClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.apigateway.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.apigateway.model.AmazonApiGatewayException>(
-                                            com.amazonaws.services.apigateway.model.AmazonApiGatewayException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.apigateway.model.AmazonApiGatewayException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon API Gateway. A credentials provider chain will be

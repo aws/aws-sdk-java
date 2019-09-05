@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterGroupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterGroupNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ParameterGroupNotFoundException> {
+public class ParameterGroupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterGroupNotFoundExceptionUnmarshaller() {
-        super("ParameterGroupNotFoundFault");
+        super(com.amazonaws.services.dax.model.ParameterGroupNotFoundException.class, "ParameterGroupNotFoundFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ParameterGroupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ParameterGroupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ParameterGroupNotFoundException parameterGroupNotFoundException = new com.amazonaws.services.dax.model.ParameterGroupNotFoundException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationNotInAllFeaturesModeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationNotInAllFeaturesModeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException> {
+public class OrganizationNotInAllFeaturesModeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationNotInAllFeaturesModeExceptionUnmarshaller() {
-        super("OrganizationNotInAllFeaturesModeException");
+        super(com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException.class, "OrganizationNotInAllFeaturesModeException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException organizationNotInAllFeaturesModeException = new com.amazonaws.services.servicequotas.model.OrganizationNotInAllFeaturesModeException(
                 null);
 

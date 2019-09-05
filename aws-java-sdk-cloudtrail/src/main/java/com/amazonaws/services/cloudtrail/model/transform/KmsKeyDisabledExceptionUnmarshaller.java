@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KmsKeyDisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KmsKeyDisabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException> {
+public class KmsKeyDisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KmsKeyDisabledExceptionUnmarshaller() {
-        super("KmsKeyDisabledException");
+        super(com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException.class, "KmsKeyDisabledException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException kmsKeyDisabledException = new com.amazonaws.services.cloudtrail.model.KmsKeyDisabledException(
                 null);
 

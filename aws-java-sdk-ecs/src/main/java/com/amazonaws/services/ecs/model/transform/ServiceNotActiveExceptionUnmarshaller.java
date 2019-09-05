@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceNotActiveException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceNotActiveExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.ServiceNotActiveException> {
+public class ServiceNotActiveExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceNotActiveExceptionUnmarshaller() {
-        super("ServiceNotActiveException");
+        super(com.amazonaws.services.ecs.model.ServiceNotActiveException.class, "ServiceNotActiveException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.ServiceNotActiveException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.ServiceNotActiveException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.ServiceNotActiveException serviceNotActiveException = new com.amazonaws.services.ecs.model.ServiceNotActiveException(
                 null);
 

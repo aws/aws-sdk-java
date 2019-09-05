@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetAlreadyInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetAlreadyInUseExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException> {
+public class SubnetAlreadyInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetAlreadyInUseExceptionUnmarshaller() {
-        super("SubnetAlreadyInUse");
+        super(com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException.class, "SubnetAlreadyInUse");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException subnetAlreadyInUseException = new com.amazonaws.services.databasemigrationservice.model.SubnetAlreadyInUseException(
                 null);
 

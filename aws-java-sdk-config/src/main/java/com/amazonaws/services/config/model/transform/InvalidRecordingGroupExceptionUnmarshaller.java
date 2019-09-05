@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRecordingGroupException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRecordingGroupExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidRecordingGroupException> {
+public class InvalidRecordingGroupExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRecordingGroupExceptionUnmarshaller() {
-        super("InvalidRecordingGroupException");
+        super(com.amazonaws.services.config.model.InvalidRecordingGroupException.class, "InvalidRecordingGroupException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidRecordingGroupException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidRecordingGroupException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidRecordingGroupException invalidRecordingGroupException = new com.amazonaws.services.config.model.InvalidRecordingGroupException(
                 null);
 

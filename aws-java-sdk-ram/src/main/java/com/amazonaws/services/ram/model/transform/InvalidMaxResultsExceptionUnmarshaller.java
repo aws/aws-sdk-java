@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMaxResultsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMaxResultsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ram.model.InvalidMaxResultsException> {
+public class InvalidMaxResultsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMaxResultsExceptionUnmarshaller() {
-        super("InvalidMaxResultsException");
+        super(com.amazonaws.services.ram.model.InvalidMaxResultsException.class, "InvalidMaxResultsException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.InvalidMaxResultsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.InvalidMaxResultsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.InvalidMaxResultsException invalidMaxResultsException = new com.amazonaws.services.ram.model.InvalidMaxResultsException(
                 null);
 

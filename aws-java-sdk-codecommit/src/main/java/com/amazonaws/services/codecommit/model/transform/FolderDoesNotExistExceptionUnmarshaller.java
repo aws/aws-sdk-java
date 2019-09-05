@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FolderDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FolderDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FolderDoesNotExistException> {
+public class FolderDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FolderDoesNotExistExceptionUnmarshaller() {
-        super("FolderDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.FolderDoesNotExistException.class, "FolderDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FolderDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FolderDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FolderDoesNotExistException folderDoesNotExistException = new com.amazonaws.services.codecommit.model.FolderDoesNotExistException(
                 null);
 

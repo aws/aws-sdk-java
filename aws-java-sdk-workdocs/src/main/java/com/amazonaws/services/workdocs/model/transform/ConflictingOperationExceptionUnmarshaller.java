@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConflictingOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConflictingOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.ConflictingOperationException> {
+public class ConflictingOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConflictingOperationExceptionUnmarshaller() {
-        super("ConflictingOperationException");
+        super(com.amazonaws.services.workdocs.model.ConflictingOperationException.class, "ConflictingOperationException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.ConflictingOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.ConflictingOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.ConflictingOperationException conflictingOperationException = new com.amazonaws.services.workdocs.model.ConflictingOperationException(
                 null);
 

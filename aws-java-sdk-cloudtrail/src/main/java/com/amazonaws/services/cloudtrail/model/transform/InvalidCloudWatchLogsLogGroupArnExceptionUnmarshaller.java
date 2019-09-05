@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCloudWatchLogsLogGroupArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException> {
+public class InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCloudWatchLogsLogGroupArnExceptionUnmarshaller() {
-        super("InvalidCloudWatchLogsLogGroupArnException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException.class, "InvalidCloudWatchLogsLogGroupArnException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException invalidCloudWatchLogsLogGroupArnException = new com.amazonaws.services.cloudtrail.model.InvalidCloudWatchLogsLogGroupArnException(
                 null);
 

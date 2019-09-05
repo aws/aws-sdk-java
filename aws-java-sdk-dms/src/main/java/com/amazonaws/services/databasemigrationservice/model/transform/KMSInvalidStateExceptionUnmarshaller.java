@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSInvalidStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSInvalidStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException> {
+public class KMSInvalidStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSInvalidStateExceptionUnmarshaller() {
-        super("KMSInvalidStateFault");
+        super(com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException.class, "KMSInvalidStateFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException kMSInvalidStateException = new com.amazonaws.services.databasemigrationservice.model.KMSInvalidStateException(
                 null);
 

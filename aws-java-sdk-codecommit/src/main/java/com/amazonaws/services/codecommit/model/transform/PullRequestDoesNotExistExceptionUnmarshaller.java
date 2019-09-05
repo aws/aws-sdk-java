@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PullRequestDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PullRequestDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException> {
+public class PullRequestDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PullRequestDoesNotExistExceptionUnmarshaller() {
-        super("PullRequestDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException.class, "PullRequestDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException pullRequestDoesNotExistException = new com.amazonaws.services.codecommit.model.PullRequestDoesNotExistException(
                 null);
 

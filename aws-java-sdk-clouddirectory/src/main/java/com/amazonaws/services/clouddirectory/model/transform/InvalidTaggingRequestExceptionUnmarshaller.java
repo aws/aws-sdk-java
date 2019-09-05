@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTaggingRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTaggingRequestExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException> {
+public class InvalidTaggingRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTaggingRequestExceptionUnmarshaller() {
-        super("InvalidTaggingRequestException");
+        super(com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException.class, "InvalidTaggingRequestException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException invalidTaggingRequestException = new com.amazonaws.services.clouddirectory.model.InvalidTaggingRequestException(
                 null);
 

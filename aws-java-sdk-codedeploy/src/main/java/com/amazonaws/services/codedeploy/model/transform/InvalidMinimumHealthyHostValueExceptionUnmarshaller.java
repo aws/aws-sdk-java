@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMinimumHealthyHostValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMinimumHealthyHostValueExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException> {
+public class InvalidMinimumHealthyHostValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMinimumHealthyHostValueExceptionUnmarshaller() {
-        super("InvalidMinimumHealthyHostValueException");
+        super(com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException.class, "InvalidMinimumHealthyHostValueException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException invalidMinimumHealthyHostValueException = new com.amazonaws.services.codedeploy.model.InvalidMinimumHealthyHostValueException(
                 null);
 

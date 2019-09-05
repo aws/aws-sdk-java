@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceNumberLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceNumberLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.glue.model.ResourceNumberLimitExceededException> {
+public class ResourceNumberLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceNumberLimitExceededExceptionUnmarshaller() {
-        super("ResourceNumberLimitExceededException");
+        super(com.amazonaws.services.glue.model.ResourceNumberLimitExceededException.class, "ResourceNumberLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.ResourceNumberLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.ResourceNumberLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.ResourceNumberLimitExceededException resourceNumberLimitExceededException = new com.amazonaws.services.glue.model.ResourceNumberLimitExceededException(
                 null);
 

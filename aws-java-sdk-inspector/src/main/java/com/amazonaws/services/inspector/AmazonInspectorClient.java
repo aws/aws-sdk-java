@@ -113,10 +113,7 @@ public class AmazonInspectorClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.inspector.model.transform.InternalExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.inspector.model.AmazonInspectorException>(
-                                            com.amazonaws.services.inspector.model.AmazonInspectorException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.inspector.model.AmazonInspectorException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Inspector. A credentials provider chain will be used

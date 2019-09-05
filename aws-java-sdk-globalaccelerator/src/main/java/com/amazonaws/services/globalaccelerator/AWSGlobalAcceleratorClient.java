@@ -201,10 +201,7 @@ public class AWSGlobalAcceleratorClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.globalaccelerator.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException>(
-                                            com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.globalaccelerator.model.AWSGlobalAcceleratorException.class));
 
     public static AWSGlobalAcceleratorClientBuilder builder() {
         return AWSGlobalAcceleratorClientBuilder.standard();

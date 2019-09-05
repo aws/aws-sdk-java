@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagOptionNotMigratedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagOptionNotMigratedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException> {
+public class TagOptionNotMigratedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagOptionNotMigratedExceptionUnmarshaller() {
-        super("TagOptionNotMigratedException");
+        super(com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException.class, "TagOptionNotMigratedException");
     }
 
     @Override
-    public com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException tagOptionNotMigratedException = new com.amazonaws.services.servicecatalog.model.TagOptionNotMigratedException(
                 null);
 

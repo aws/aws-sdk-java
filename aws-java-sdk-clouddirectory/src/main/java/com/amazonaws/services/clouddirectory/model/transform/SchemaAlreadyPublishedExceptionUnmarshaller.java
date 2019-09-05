@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SchemaAlreadyPublishedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SchemaAlreadyPublishedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException> {
+public class SchemaAlreadyPublishedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SchemaAlreadyPublishedExceptionUnmarshaller() {
-        super("SchemaAlreadyPublishedException");
+        super(com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException.class, "SchemaAlreadyPublishedException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException schemaAlreadyPublishedException = new com.amazonaws.services.clouddirectory.model.SchemaAlreadyPublishedException(
                 null);
 

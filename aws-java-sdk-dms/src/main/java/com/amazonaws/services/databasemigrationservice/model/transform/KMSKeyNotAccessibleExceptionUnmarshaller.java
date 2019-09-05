@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSKeyNotAccessibleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSKeyNotAccessibleExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException> {
+public class KMSKeyNotAccessibleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSKeyNotAccessibleExceptionUnmarshaller() {
-        super("KMSKeyNotAccessibleFault");
+        super(com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException.class, "KMSKeyNotAccessibleFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException kMSKeyNotAccessibleException = new com.amazonaws.services.databasemigrationservice.model.KMSKeyNotAccessibleException(
                 null);
 

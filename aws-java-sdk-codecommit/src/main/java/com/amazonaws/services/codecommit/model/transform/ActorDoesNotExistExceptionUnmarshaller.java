@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActorDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActorDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ActorDoesNotExistException> {
+public class ActorDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActorDoesNotExistExceptionUnmarshaller() {
-        super("ActorDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.ActorDoesNotExistException.class, "ActorDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ActorDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ActorDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ActorDoesNotExistException actorDoesNotExistException = new com.amazonaws.services.codecommit.model.ActorDoesNotExistException(
                 null);
 

@@ -95,10 +95,7 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidEncodingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehendmedical.model.transform.InvalidEncodingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.comprehendmedical.model.AWSComprehendMedicalException>(
-                                            com.amazonaws.services.comprehendmedical.model.AWSComprehendMedicalException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.comprehendmedical.model.AWSComprehendMedicalException.class));
 
     public static AWSComprehendMedicalClientBuilder builder() {
         return AWSComprehendMedicalClientBuilder.standard();

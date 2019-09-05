@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApprovalAlreadyCompletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApprovalAlreadyCompletedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException> {
+public class ApprovalAlreadyCompletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApprovalAlreadyCompletedExceptionUnmarshaller() {
-        super("ApprovalAlreadyCompletedException");
+        super(com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException.class, "ApprovalAlreadyCompletedException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException approvalAlreadyCompletedException = new com.amazonaws.services.codepipeline.model.ApprovalAlreadyCompletedException(
                 null);
 

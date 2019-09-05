@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCommentOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCommentOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.InvalidCommentOperationException> {
+public class InvalidCommentOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCommentOperationExceptionUnmarshaller() {
-        super("InvalidCommentOperationException");
+        super(com.amazonaws.services.workdocs.model.InvalidCommentOperationException.class, "InvalidCommentOperationException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.InvalidCommentOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.InvalidCommentOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.InvalidCommentOperationException invalidCommentOperationException = new com.amazonaws.services.workdocs.model.InvalidCommentOperationException(
                 null);
 

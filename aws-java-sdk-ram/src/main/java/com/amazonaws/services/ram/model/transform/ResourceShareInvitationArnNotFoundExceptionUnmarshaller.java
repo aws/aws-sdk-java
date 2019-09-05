@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceShareInvitationArnNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceShareInvitationArnNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException> {
+public class ResourceShareInvitationArnNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceShareInvitationArnNotFoundExceptionUnmarshaller() {
-        super("ResourceShareInvitationArnNotFoundException");
+        super(com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException.class, "ResourceShareInvitationArnNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException resourceShareInvitationArnNotFoundException = new com.amazonaws.services.ram.model.ResourceShareInvitationArnNotFoundException(
                 null);
 

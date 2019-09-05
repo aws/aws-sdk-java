@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CannotListParentOfRootException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CannotListParentOfRootExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException> {
+public class CannotListParentOfRootExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CannotListParentOfRootExceptionUnmarshaller() {
-        super("CannotListParentOfRootException");
+        super(com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException.class, "CannotListParentOfRootException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException cannotListParentOfRootException = new com.amazonaws.services.clouddirectory.model.CannotListParentOfRootException(
                 null);
 

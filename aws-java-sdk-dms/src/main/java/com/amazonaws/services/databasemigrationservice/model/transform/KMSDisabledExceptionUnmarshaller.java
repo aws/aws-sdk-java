@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSDisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSDisabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.KMSDisabledException> {
+public class KMSDisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSDisabledExceptionUnmarshaller() {
-        super("KMSDisabledFault");
+        super(com.amazonaws.services.databasemigrationservice.model.KMSDisabledException.class, "KMSDisabledFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.KMSDisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.KMSDisabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.databasemigrationservice.model.KMSDisabledException kMSDisabledException = new com.amazonaws.services.databasemigrationservice.model.KMSDisabledException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidJobIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidJobIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.textract.model.InvalidJobIdException> {
+public class InvalidJobIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidJobIdExceptionUnmarshaller() {
-        super("InvalidJobIdException");
+        super(com.amazonaws.services.textract.model.InvalidJobIdException.class, "InvalidJobIdException");
     }
 
     @Override
-    public com.amazonaws.services.textract.model.InvalidJobIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.textract.model.InvalidJobIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.textract.model.InvalidJobIdException invalidJobIdException = new com.amazonaws.services.textract.model.InvalidJobIdException(
                 null);
 

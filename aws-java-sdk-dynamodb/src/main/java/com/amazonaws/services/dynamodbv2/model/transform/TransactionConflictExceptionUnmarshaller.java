@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TransactionConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransactionConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TransactionConflictException> {
+public class TransactionConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TransactionConflictExceptionUnmarshaller() {
-        super("TransactionConflictException");
+        super(com.amazonaws.services.dynamodbv2.model.TransactionConflictException.class, "TransactionConflictException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TransactionConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TransactionConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TransactionConflictException transactionConflictException = new com.amazonaws.services.dynamodbv2.model.TransactionConflictException(
                 null);
 

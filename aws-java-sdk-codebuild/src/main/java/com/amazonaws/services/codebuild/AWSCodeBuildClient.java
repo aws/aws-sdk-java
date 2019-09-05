@@ -205,10 +205,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codebuild.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codebuild.model.AWSCodeBuildException>(
-                                            com.amazonaws.services.codebuild.model.AWSCodeBuildException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codebuild.model.AWSCodeBuildException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS CodeBuild. A credentials provider chain will be used

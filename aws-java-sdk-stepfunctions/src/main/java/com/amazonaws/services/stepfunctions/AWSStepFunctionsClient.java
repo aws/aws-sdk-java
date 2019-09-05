@@ -154,10 +154,7 @@ public class AWSStepFunctionsClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("StateMachineDoesNotExist").withExceptionUnmarshaller(
                                     com.amazonaws.services.stepfunctions.model.transform.StateMachineDoesNotExistExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException>(
-                                            com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.stepfunctions.model.AWSStepFunctionsException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS SFN. A credentials provider chain will be used that

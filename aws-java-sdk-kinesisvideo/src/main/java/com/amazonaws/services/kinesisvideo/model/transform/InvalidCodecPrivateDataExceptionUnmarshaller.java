@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCodecPrivateDataException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCodecPrivateDataExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException> {
+public class InvalidCodecPrivateDataExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCodecPrivateDataExceptionUnmarshaller() {
-        super("InvalidCodecPrivateDataException");
+        super(com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException.class, "InvalidCodecPrivateDataException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException invalidCodecPrivateDataException = new com.amazonaws.services.kinesisvideo.model.InvalidCodecPrivateDataException(
                 null);
 

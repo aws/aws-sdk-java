@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryNotAssociatedWithPullRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryNotAssociatedWithPullRequestExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException> {
+public class RepositoryNotAssociatedWithPullRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryNotAssociatedWithPullRequestExceptionUnmarshaller() {
-        super("RepositoryNotAssociatedWithPullRequestException");
+        super(com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException.class, "RepositoryNotAssociatedWithPullRequestException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException repositoryNotAssociatedWithPullRequestException = new com.amazonaws.services.codecommit.model.RepositoryNotAssociatedWithPullRequestException(
                 null);
 

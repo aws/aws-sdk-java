@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SqlParseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SqlParseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.SqlParseException> {
+public class SqlParseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SqlParseExceptionUnmarshaller() {
-        super("SqlParseException");
+        super(com.amazonaws.services.iot.model.SqlParseException.class, "SqlParseException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.SqlParseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.SqlParseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.SqlParseException sqlParseException = new com.amazonaws.services.iot.model.SqlParseException(null);
 
         int originalDepth = context.getCurrentDepth();

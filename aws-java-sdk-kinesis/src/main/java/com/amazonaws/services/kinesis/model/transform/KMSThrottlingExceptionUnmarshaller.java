@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSThrottlingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSThrottlingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesis.model.KMSThrottlingException> {
+public class KMSThrottlingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSThrottlingExceptionUnmarshaller() {
-        super("KMSThrottlingException");
+        super(com.amazonaws.services.kinesis.model.KMSThrottlingException.class, "KMSThrottlingException");
     }
 
     @Override
-    public com.amazonaws.services.kinesis.model.KMSThrottlingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesis.model.KMSThrottlingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesis.model.KMSThrottlingException kMSThrottlingException = new com.amazonaws.services.kinesis.model.KMSThrottlingException(
                 null);
 

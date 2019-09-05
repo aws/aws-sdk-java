@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InternalFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InternalFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.InternalFailureException> {
+public class InternalFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InternalFailureExceptionUnmarshaller() {
-        super("InternalFailureException");
+        super(com.amazonaws.services.quicksight.model.InternalFailureException.class, "InternalFailureException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.InternalFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.InternalFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.quicksight.model.InternalFailureException internalFailureException = new com.amazonaws.services.quicksight.model.InternalFailureException(
                 null);
 

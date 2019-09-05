@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParameterCombinationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterCombinationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidParameterCombinationException> {
+public class InvalidParameterCombinationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterCombinationExceptionUnmarshaller() {
-        super("InvalidParameterCombinationException");
+        super(com.amazonaws.services.dax.model.InvalidParameterCombinationException.class, "InvalidParameterCombinationException");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidParameterCombinationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidParameterCombinationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidParameterCombinationException invalidParameterCombinationException = new com.amazonaws.services.dax.model.InvalidParameterCombinationException(
                 null);
 

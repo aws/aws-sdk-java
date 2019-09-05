@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SsmlMarksNotSupportedForTextTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SsmlMarksNotSupportedForTextTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException> {
+public class SsmlMarksNotSupportedForTextTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SsmlMarksNotSupportedForTextTypeExceptionUnmarshaller() {
-        super("SsmlMarksNotSupportedForTextTypeException");
+        super(com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException.class, "SsmlMarksNotSupportedForTextTypeException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException ssmlMarksNotSupportedForTextTypeException = new com.amazonaws.services.polly.model.SsmlMarksNotSupportedForTextTypeException(
                 null);
 

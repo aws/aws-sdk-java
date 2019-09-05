@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExpiredImportTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpiredImportTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.ExpiredImportTokenException> {
+public class ExpiredImportTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExpiredImportTokenExceptionUnmarshaller() {
-        super("ExpiredImportTokenException");
+        super(com.amazonaws.services.kms.model.ExpiredImportTokenException.class, "ExpiredImportTokenException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.ExpiredImportTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.ExpiredImportTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.ExpiredImportTokenException expiredImportTokenException = new com.amazonaws.services.kms.model.ExpiredImportTokenException(
                 null);
 

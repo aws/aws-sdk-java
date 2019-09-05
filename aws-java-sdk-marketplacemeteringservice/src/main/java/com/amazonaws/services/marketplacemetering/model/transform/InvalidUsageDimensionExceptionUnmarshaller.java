@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidUsageDimensionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidUsageDimensionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException> {
+public class InvalidUsageDimensionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidUsageDimensionExceptionUnmarshaller() {
-        super("InvalidUsageDimensionException");
+        super(com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException.class, "InvalidUsageDimensionException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException invalidUsageDimensionException = new com.amazonaws.services.marketplacemetering.model.InvalidUsageDimensionException(
                 null);
 

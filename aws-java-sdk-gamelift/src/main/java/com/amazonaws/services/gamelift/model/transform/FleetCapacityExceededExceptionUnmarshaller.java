@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FleetCapacityExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FleetCapacityExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.FleetCapacityExceededException> {
+public class FleetCapacityExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FleetCapacityExceededExceptionUnmarshaller() {
-        super("FleetCapacityExceededException");
+        super(com.amazonaws.services.gamelift.model.FleetCapacityExceededException.class, "FleetCapacityExceededException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.FleetCapacityExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.FleetCapacityExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.FleetCapacityExceededException fleetCapacityExceededException = new com.amazonaws.services.gamelift.model.FleetCapacityExceededException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInputCombinationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInputCombinationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.InvalidInputCombinationException> {
+public class InvalidInputCombinationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInputCombinationExceptionUnmarshaller() {
-        super("InvalidInputCombinationException");
+        super(com.amazonaws.services.snowball.model.InvalidInputCombinationException.class, "InvalidInputCombinationException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.InvalidInputCombinationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.InvalidInputCombinationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.InvalidInputCombinationException invalidInputCombinationException = new com.amazonaws.services.snowball.model.InvalidInputCombinationException(
                 null);
 

@@ -108,10 +108,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.managedblockchain.model.AmazonManagedBlockchainException>(
-                                            com.amazonaws.services.managedblockchain.model.AmazonManagedBlockchainException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.managedblockchain.model.AmazonManagedBlockchainException.class));
 
     public static AmazonManagedBlockchainClientBuilder builder() {
         return AmazonManagedBlockchainClientBuilder.standard();

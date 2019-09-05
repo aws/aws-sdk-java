@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReferenceDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReferenceDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException> {
+public class ReferenceDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReferenceDoesNotExistExceptionUnmarshaller() {
-        super("ReferenceDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException.class, "ReferenceDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException referenceDoesNotExistException = new com.amazonaws.services.codecommit.model.ReferenceDoesNotExistException(
                 null);
 

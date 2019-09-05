@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BlobIdRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BlobIdRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BlobIdRequiredException> {
+public class BlobIdRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BlobIdRequiredExceptionUnmarshaller() {
-        super("BlobIdRequiredException");
+        super(com.amazonaws.services.codecommit.model.BlobIdRequiredException.class, "BlobIdRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BlobIdRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BlobIdRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.BlobIdRequiredException blobIdRequiredException = new com.amazonaws.services.codecommit.model.BlobIdRequiredException(
                 null);
 

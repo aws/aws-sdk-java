@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEmailRoleAccessPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEmailRoleAccessPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException> {
+public class InvalidEmailRoleAccessPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEmailRoleAccessPolicyExceptionUnmarshaller() {
-        super("InvalidEmailRoleAccessPolicyException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException.class, "InvalidEmailRoleAccessPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException invalidEmailRoleAccessPolicyException = new com.amazonaws.services.cognitoidp.model.InvalidEmailRoleAccessPolicyException(
                 null);
 

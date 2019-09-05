@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileContentAndSourceFileSpecifiedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileContentAndSourceFileSpecifiedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException> {
+public class FileContentAndSourceFileSpecifiedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileContentAndSourceFileSpecifiedExceptionUnmarshaller() {
-        super("FileContentAndSourceFileSpecifiedException");
+        super(com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException.class, "FileContentAndSourceFileSpecifiedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException fileContentAndSourceFileSpecifiedException = new com.amazonaws.services.codecommit.model.FileContentAndSourceFileSpecifiedException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.TagNotFoundException> {
+public class TagNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagNotFoundExceptionUnmarshaller() {
-        super("TagNotFoundFault");
+        super(com.amazonaws.services.dax.model.TagNotFoundException.class, "TagNotFoundFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.TagNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.TagNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.TagNotFoundException tagNotFoundException = new com.amazonaws.services.dax.model.TagNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

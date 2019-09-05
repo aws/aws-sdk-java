@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PullRequestAlreadyClosedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PullRequestAlreadyClosedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException> {
+public class PullRequestAlreadyClosedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PullRequestAlreadyClosedExceptionUnmarshaller() {
-        super("PullRequestAlreadyClosedException");
+        super(com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException.class, "PullRequestAlreadyClosedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException pullRequestAlreadyClosedException = new com.amazonaws.services.codecommit.model.PullRequestAlreadyClosedException(
                 null);
 

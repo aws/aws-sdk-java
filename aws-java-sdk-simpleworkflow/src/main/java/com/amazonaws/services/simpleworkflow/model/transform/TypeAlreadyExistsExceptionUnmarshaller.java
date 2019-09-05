@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TypeAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TypeAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException> {
+public class TypeAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TypeAlreadyExistsExceptionUnmarshaller() {
-        super("TypeAlreadyExistsFault");
+        super(com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException.class, "TypeAlreadyExistsFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException typeAlreadyExistsException = new com.amazonaws.services.simpleworkflow.model.TypeAlreadyExistsException(
                 null);
 

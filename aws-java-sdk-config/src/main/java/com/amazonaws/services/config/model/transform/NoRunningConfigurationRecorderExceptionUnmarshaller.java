@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoRunningConfigurationRecorderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoRunningConfigurationRecorderExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoRunningConfigurationRecorderException> {
+public class NoRunningConfigurationRecorderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoRunningConfigurationRecorderExceptionUnmarshaller() {
-        super("NoRunningConfigurationRecorderException");
+        super(com.amazonaws.services.config.model.NoRunningConfigurationRecorderException.class, "NoRunningConfigurationRecorderException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoRunningConfigurationRecorderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoRunningConfigurationRecorderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoRunningConfigurationRecorderException noRunningConfigurationRecorderException = new com.amazonaws.services.config.model.NoRunningConfigurationRecorderException(
                 null);
 

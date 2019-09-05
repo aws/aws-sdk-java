@@ -27,15 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicationSubnetGroupDoesNotCoverEnoughAZsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicationSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException> {
+public class ReplicationSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicationSubnetGroupDoesNotCoverEnoughAZsExceptionUnmarshaller() {
-        super("ReplicationSubnetGroupDoesNotCoverEnoughAZs");
+        super(com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException.class,
+                "ReplicationSubnetGroupDoesNotCoverEnoughAZs");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException unmarshallFromContext(
+            JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException replicationSubnetGroupDoesNotCoverEnoughAZsException = new com.amazonaws.services.databasemigrationservice.model.ReplicationSubnetGroupDoesNotCoverEnoughAZsException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.migrationhub.model.PolicyErrorException> {
+public class PolicyErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyErrorExceptionUnmarshaller() {
-        super("PolicyErrorException");
+        super(com.amazonaws.services.migrationhub.model.PolicyErrorException.class, "PolicyErrorException");
     }
 
     @Override
-    public com.amazonaws.services.migrationhub.model.PolicyErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.migrationhub.model.PolicyErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.migrationhub.model.PolicyErrorException policyErrorException = new com.amazonaws.services.migrationhub.model.PolicyErrorException(
                 null);
 

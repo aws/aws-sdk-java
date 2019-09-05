@@ -37,7 +37,11 @@ public class PutAggregationAuthorizationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private String authorizedAwsRegion;
-
+    /**
+     * <p>
+     * An array of tag object.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
@@ -121,7 +125,11 @@ public class PutAggregationAuthorizationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
-     * @return
+     * <p>
+     * An array of tag object.
+     * </p>
+     * 
+     * @return An array of tag object.
      */
 
     public java.util.List<Tag> getTags() {
@@ -132,7 +140,12 @@ public class PutAggregationAuthorizationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An array of tag object.
+     * </p>
+     * 
      * @param tags
+     *        An array of tag object.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -146,12 +159,16 @@ public class PutAggregationAuthorizationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
+     * An array of tag object.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
+     *        An array of tag object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -166,7 +183,12 @@ public class PutAggregationAuthorizationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * An array of tag object.
+     * </p>
+     * 
      * @param tags
+     *        An array of tag object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GitHubAccountTokenDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GitHubAccountTokenDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException> {
+public class GitHubAccountTokenDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GitHubAccountTokenDoesNotExistExceptionUnmarshaller() {
-        super("GitHubAccountTokenDoesNotExistException");
+        super(com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException.class, "GitHubAccountTokenDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException gitHubAccountTokenDoesNotExistException = new com.amazonaws.services.codedeploy.model.GitHubAccountTokenDoesNotExistException(
                 null);
 

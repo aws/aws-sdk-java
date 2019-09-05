@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentGroupDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentGroupDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException> {
+public class DeploymentGroupDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentGroupDoesNotExistExceptionUnmarshaller() {
-        super("DeploymentGroupDoesNotExistException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException.class, "DeploymentGroupDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException deploymentGroupDoesNotExistException = new com.amazonaws.services.codedeploy.model.DeploymentGroupDoesNotExistException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MailDomainStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MailDomainStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.MailDomainStateException> {
+public class MailDomainStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MailDomainStateExceptionUnmarshaller() {
-        super("MailDomainStateException");
+        super(com.amazonaws.services.workmail.model.MailDomainStateException.class, "MailDomainStateException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.MailDomainStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.MailDomainStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.MailDomainStateException mailDomainStateException = new com.amazonaws.services.workmail.model.MailDomainStateException(
                 null);
 

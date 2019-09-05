@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFileLocationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFileLocationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidFileLocationException> {
+public class InvalidFileLocationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFileLocationExceptionUnmarshaller() {
-        super("InvalidFileLocationException");
+        super(com.amazonaws.services.codecommit.model.InvalidFileLocationException.class, "InvalidFileLocationException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidFileLocationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidFileLocationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidFileLocationException invalidFileLocationException = new com.amazonaws.services.codecommit.model.InvalidFileLocationException(
                 null);
 

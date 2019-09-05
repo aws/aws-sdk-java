@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotEligibleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotEligibleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.NotEligibleException> {
+public class NotEligibleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotEligibleExceptionUnmarshaller() {
-        super("NotEligibleException");
+        super(com.amazonaws.services.devicefarm.model.NotEligibleException.class, "NotEligibleException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.NotEligibleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.NotEligibleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.NotEligibleException notEligibleException = new com.amazonaws.services.devicefarm.model.NotEligibleException(
                 null);
 

@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidScheduleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidScheduleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException> {
+public class InvalidScheduleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidScheduleExceptionUnmarshaller() {
-        super("InvalidSchedule");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException.class, "InvalidSchedule");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException invalidScheduleException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidScheduleException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StateMachineAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StateMachineAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException> {
+public class StateMachineAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StateMachineAlreadyExistsExceptionUnmarshaller() {
-        super("StateMachineAlreadyExists");
+        super(com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException.class, "StateMachineAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException stateMachineAlreadyExistsException = new com.amazonaws.services.stepfunctions.model.StateMachineAlreadyExistsException(
                 null);
 

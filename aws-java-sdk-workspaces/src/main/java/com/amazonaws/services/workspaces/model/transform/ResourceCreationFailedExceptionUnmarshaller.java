@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceCreationFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceCreationFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workspaces.model.ResourceCreationFailedException> {
+public class ResourceCreationFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceCreationFailedExceptionUnmarshaller() {
-        super("ResourceCreationFailedException");
+        super(com.amazonaws.services.workspaces.model.ResourceCreationFailedException.class, "ResourceCreationFailedException");
     }
 
     @Override
-    public com.amazonaws.services.workspaces.model.ResourceCreationFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workspaces.model.ResourceCreationFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workspaces.model.ResourceCreationFailedException resourceCreationFailedException = new com.amazonaws.services.workspaces.model.ResourceCreationFailedException(
                 null);
 

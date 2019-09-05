@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NodeNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NodeNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.NodeNotFoundException> {
+public class NodeNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NodeNotFoundExceptionUnmarshaller() {
-        super("NodeNotFoundFault");
+        super(com.amazonaws.services.dax.model.NodeNotFoundException.class, "NodeNotFoundFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.NodeNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.NodeNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.NodeNotFoundException nodeNotFoundException = new com.amazonaws.services.dax.model.NodeNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

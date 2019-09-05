@@ -15,7 +15,10 @@ package com.amazonaws.services.config.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * Remediation action is in progress. You can either cancel execution in AWS Systems Manager or wait and try again
+ * later.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RemediationInProgressException extends com.amazonaws.services.config.model.AmazonConfigException {

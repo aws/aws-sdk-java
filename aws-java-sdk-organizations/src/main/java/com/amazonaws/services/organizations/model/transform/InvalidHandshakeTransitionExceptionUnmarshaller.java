@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidHandshakeTransitionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidHandshakeTransitionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException> {
+public class InvalidHandshakeTransitionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidHandshakeTransitionExceptionUnmarshaller() {
-        super("InvalidHandshakeTransitionException");
+        super(com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException.class, "InvalidHandshakeTransitionException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException invalidHandshakeTransitionException = new com.amazonaws.services.organizations.model.InvalidHandshakeTransitionException(
                 null);
 

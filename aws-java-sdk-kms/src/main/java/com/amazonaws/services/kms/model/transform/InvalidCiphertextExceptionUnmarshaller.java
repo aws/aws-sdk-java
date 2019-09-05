@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCiphertextException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCiphertextExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidCiphertextException> {
+public class InvalidCiphertextExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCiphertextExceptionUnmarshaller() {
-        super("InvalidCiphertextException");
+        super(com.amazonaws.services.kms.model.InvalidCiphertextException.class, "InvalidCiphertextException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidCiphertextException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidCiphertextException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidCiphertextException invalidCiphertextException = new com.amazonaws.services.kms.model.InvalidCiphertextException(
                 null);
 

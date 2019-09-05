@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LockedSubscriptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LockedSubscriptionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.shield.model.LockedSubscriptionException> {
+public class LockedSubscriptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LockedSubscriptionExceptionUnmarshaller() {
-        super("LockedSubscriptionException");
+        super(com.amazonaws.services.shield.model.LockedSubscriptionException.class, "LockedSubscriptionException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.LockedSubscriptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.LockedSubscriptionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.LockedSubscriptionException lockedSubscriptionException = new com.amazonaws.services.shield.model.LockedSubscriptionException(
                 null);
 

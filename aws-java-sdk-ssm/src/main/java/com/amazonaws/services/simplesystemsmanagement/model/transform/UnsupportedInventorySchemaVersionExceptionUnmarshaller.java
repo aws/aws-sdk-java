@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedInventorySchemaVersionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedInventorySchemaVersionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException> {
+public class UnsupportedInventorySchemaVersionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedInventorySchemaVersionExceptionUnmarshaller() {
-        super("UnsupportedInventorySchemaVersionException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException.class,
+                "UnsupportedInventorySchemaVersionException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException unsupportedInventorySchemaVersionException = new com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventorySchemaVersionException(
                 null);

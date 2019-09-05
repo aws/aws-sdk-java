@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotConfiguredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotConfiguredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.NotConfiguredException> {
+public class NotConfiguredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotConfiguredExceptionUnmarshaller() {
-        super("NotConfiguredException");
+        super(com.amazonaws.services.iot.model.NotConfiguredException.class, "NotConfiguredException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.NotConfiguredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.NotConfiguredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.NotConfiguredException notConfiguredException = new com.amazonaws.services.iot.model.NotConfiguredException(null);
 
         int originalDepth = context.getCurrentDepth();

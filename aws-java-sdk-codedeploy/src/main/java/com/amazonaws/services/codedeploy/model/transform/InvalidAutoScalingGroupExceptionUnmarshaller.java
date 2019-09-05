@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAutoScalingGroupException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAutoScalingGroupExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException> {
+public class InvalidAutoScalingGroupExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAutoScalingGroupExceptionUnmarshaller() {
-        super("InvalidAutoScalingGroupException");
+        super(com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException.class, "InvalidAutoScalingGroupException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException invalidAutoScalingGroupException = new com.amazonaws.services.codedeploy.model.InvalidAutoScalingGroupException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncompatibleImageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatibleImageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appstream.model.IncompatibleImageException> {
+public class IncompatibleImageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncompatibleImageExceptionUnmarshaller() {
-        super("IncompatibleImageException");
+        super(com.amazonaws.services.appstream.model.IncompatibleImageException.class, "IncompatibleImageException");
     }
 
     @Override
-    public com.amazonaws.services.appstream.model.IncompatibleImageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appstream.model.IncompatibleImageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appstream.model.IncompatibleImageException incompatibleImageException = new com.amazonaws.services.appstream.model.IncompatibleImageException(
                 null);
 

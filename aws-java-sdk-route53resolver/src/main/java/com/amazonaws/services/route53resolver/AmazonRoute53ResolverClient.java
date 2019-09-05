@@ -170,10 +170,7 @@ public class AmazonRoute53ResolverClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53resolver.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException>(
-                                            com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.route53resolver.model.AmazonRoute53ResolverException.class));
 
     public static AmazonRoute53ResolverClientBuilder builder() {
         return AmazonRoute53ResolverClientBuilder.standard();

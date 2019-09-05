@@ -27,15 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceDataSyncInvalidConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceDataSyncInvalidConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException> {
+public class ResourceDataSyncInvalidConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceDataSyncInvalidConfigurationExceptionUnmarshaller() {
-        super("ResourceDataSyncInvalidConfigurationException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException.class,
+                "ResourceDataSyncInvalidConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException unmarshallFromContext(
+            JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException resourceDataSyncInvalidConfigurationException = new com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncInvalidConfigurationException(
                 null);
 

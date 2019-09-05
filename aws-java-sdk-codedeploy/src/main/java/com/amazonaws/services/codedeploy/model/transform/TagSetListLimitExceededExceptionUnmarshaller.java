@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagSetListLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagSetListLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException> {
+public class TagSetListLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagSetListLimitExceededExceptionUnmarshaller() {
-        super("TagSetListLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException.class, "TagSetListLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException tagSetListLimitExceededException = new com.amazonaws.services.codedeploy.model.TagSetListLimitExceededException(
                 null);
 

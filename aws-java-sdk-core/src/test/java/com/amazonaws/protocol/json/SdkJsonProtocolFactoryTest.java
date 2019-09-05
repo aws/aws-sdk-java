@@ -16,7 +16,14 @@ package com.amazonaws.protocol.json;
 
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.atLeastOnce;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.never;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
+import com.amazonaws.transform.JsonErrorUnmarshaller;
+import java.util.Collections;
 import org.junit.Test;
 
 public class SdkJsonProtocolFactoryTest {
@@ -48,6 +55,56 @@ public class SdkJsonProtocolFactoryTest {
     public void ionBinaryDisabledUsesIonTextContentType() {
         SdkJsonProtocolFactory protocolFactory = protocolFactory(IonEnabled.YES, IonBinaryEnabled.NO);
         assertEquals("text/x-amz-ion-1.0", protocolFactory.getContentType());
+    }
+
+    @Test
+    public void errorShapeMetadata_hasCustomUnmarshaller_doesNotUseExceptionClass() {
+        JsonErrorUnmarshaller customUnmarshaller = mock(JsonErrorUnmarshaller.class);
+
+        JsonErrorShapeMetadata mockErrorMetadata = mock(JsonErrorShapeMetadata.class);
+        when(mockErrorMetadata.getErrorCode()).thenReturn("SomeError");
+        when(mockErrorMetadata.getModeledClass()).thenReturn((Class) RuntimeException.class);
+        when(mockErrorMetadata.getExceptionUnmarshaller()).thenReturn(customUnmarshaller);
+
+        JsonClientMetadata metadata = new JsonClientMetadata()
+                .withSupportsIon(false)
+                .withProtocolVersion("1.0")
+                .addErrorMetadata(mockErrorMetadata);
+
+        new SdkJsonProtocolFactory(metadata).createErrorResponseHandler(new JsonErrorResponseMetadata());
+
+        verify(mockErrorMetadata, atLeastOnce()).getExceptionUnmarshaller();
+        verify(mockErrorMetadata, never()).getErrorCode();
+        verify(mockErrorMetadata, never()).getModeledClass();
+    }
+
+    @Test
+    public void errorShapeMetadata_noCustomUnmarshaller_usesExceptionClass() {
+        JsonErrorShapeMetadata mockErrorMetadata = mock(JsonErrorShapeMetadata.class);
+        when(mockErrorMetadata.getErrorCode()).thenReturn("SomeError");
+        when(mockErrorMetadata.getModeledClass()).thenReturn((Class) RuntimeException.class);
+
+        JsonClientMetadata metadata = new JsonClientMetadata()
+                .withSupportsIon(false)
+                .withProtocolVersion("1.0")
+                .addErrorMetadata(mockErrorMetadata);
+
+        new SdkJsonProtocolFactory(metadata).createErrorResponseHandler(new JsonErrorResponseMetadata());
+
+        verify(mockErrorMetadata).getExceptionUnmarshaller();
+        verify(mockErrorMetadata, atLeastOnce()).getErrorCode();
+        verify(mockErrorMetadata, atLeastOnce()).getModeledClass();
+    }
+
+    @Test
+    public void errorShapeMetadata_baseExceptionGiven_usesBaseException() {
+        JsonClientMetadata metadata = mock(JsonClientMetadata.class);
+        when(metadata.getBaseServiceExceptionClass()).thenReturn((Class) RuntimeException.class);
+        when(metadata.getErrorShapeMetadata()).thenReturn(Collections.<JsonErrorShapeMetadata>emptyList());
+
+        new SdkJsonProtocolFactory(metadata).createErrorResponseHandler(new JsonErrorResponseMetadata());
+
+        verify(metadata, atLeastOnce()).getBaseServiceExceptionClass();
     }
 
     private SdkJsonProtocolFactory protocolFactory(IonEnabled ionEnabled, final IonBinaryEnabled ionBinaryEnabled) {

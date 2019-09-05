@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeletionParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeletionParameterExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidDeletionParameterException> {
+public class InvalidDeletionParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeletionParameterExceptionUnmarshaller() {
-        super("InvalidDeletionParameterException");
+        super(com.amazonaws.services.codecommit.model.InvalidDeletionParameterException.class, "InvalidDeletionParameterException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidDeletionParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidDeletionParameterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidDeletionParameterException invalidDeletionParameterException = new com.amazonaws.services.codecommit.model.InvalidDeletionParameterException(
                 null);
 

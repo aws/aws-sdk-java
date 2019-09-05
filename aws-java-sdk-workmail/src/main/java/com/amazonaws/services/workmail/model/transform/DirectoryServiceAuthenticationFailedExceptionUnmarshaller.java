@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryServiceAuthenticationFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryServiceAuthenticationFailedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException> {
+public class DirectoryServiceAuthenticationFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryServiceAuthenticationFailedExceptionUnmarshaller() {
-        super("DirectoryServiceAuthenticationFailedException");
+        super(com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException.class, "DirectoryServiceAuthenticationFailedException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException directoryServiceAuthenticationFailedException = new com.amazonaws.services.workmail.model.DirectoryServiceAuthenticationFailedException(
                 null);
 

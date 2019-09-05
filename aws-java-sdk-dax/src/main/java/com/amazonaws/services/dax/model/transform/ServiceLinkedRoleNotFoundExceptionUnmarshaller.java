@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceLinkedRoleNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceLinkedRoleNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException> {
+public class ServiceLinkedRoleNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceLinkedRoleNotFoundExceptionUnmarshaller() {
-        super("ServiceLinkedRoleNotFoundFault");
+        super(com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException.class, "ServiceLinkedRoleNotFoundFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException serviceLinkedRoleNotFoundException = new com.amazonaws.services.dax.model.ServiceLinkedRoleNotFoundException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedDocumentEncodingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedDocumentEncodingExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException> {
+public class UnsupportedDocumentEncodingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedDocumentEncodingExceptionUnmarshaller() {
-        super("UnsupportedDocumentEncodingException");
+        super(com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException.class, "UnsupportedDocumentEncodingException");
     }
 
     @Override
-    public com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException unsupportedDocumentEncodingException = new com.amazonaws.services.iotdata.model.UnsupportedDocumentEncodingException(
                 null);
 

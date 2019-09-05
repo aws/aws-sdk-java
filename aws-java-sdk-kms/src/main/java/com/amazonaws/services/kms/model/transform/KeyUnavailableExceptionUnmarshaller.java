@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KeyUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KeyUnavailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.KeyUnavailableException> {
+public class KeyUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KeyUnavailableExceptionUnmarshaller() {
-        super("KeyUnavailableException");
+        super(com.amazonaws.services.kms.model.KeyUnavailableException.class, "KeyUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.KeyUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.KeyUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.KeyUnavailableException keyUnavailableException = new com.amazonaws.services.kms.model.KeyUnavailableException(null);
 
         int originalDepth = context.getCurrentDepth();

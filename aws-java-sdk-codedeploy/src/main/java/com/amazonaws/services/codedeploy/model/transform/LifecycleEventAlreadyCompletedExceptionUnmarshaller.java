@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LifecycleEventAlreadyCompletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LifecycleEventAlreadyCompletedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException> {
+public class LifecycleEventAlreadyCompletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LifecycleEventAlreadyCompletedExceptionUnmarshaller() {
-        super("LifecycleEventAlreadyCompletedException");
+        super(com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException.class, "LifecycleEventAlreadyCompletedException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException lifecycleEventAlreadyCompletedException = new com.amazonaws.services.codedeploy.model.LifecycleEventAlreadyCompletedException(
                 null);
 

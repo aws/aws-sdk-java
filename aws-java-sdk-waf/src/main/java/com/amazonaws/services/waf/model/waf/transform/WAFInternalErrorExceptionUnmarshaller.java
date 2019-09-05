@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInternalErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInternalErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInternalErrorException> {
+public class WAFInternalErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInternalErrorExceptionUnmarshaller() {
-        super("WAFInternalErrorException");
+        super(com.amazonaws.services.waf.model.WAFInternalErrorException.class, "WAFInternalErrorException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInternalErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInternalErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInternalErrorException wAFInternalErrorException = new com.amazonaws.services.waf.model.WAFInternalErrorException(
                 null);
 

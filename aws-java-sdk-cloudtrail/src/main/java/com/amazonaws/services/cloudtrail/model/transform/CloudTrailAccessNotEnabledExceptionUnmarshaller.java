@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudTrailAccessNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudTrailAccessNotEnabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException> {
+public class CloudTrailAccessNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudTrailAccessNotEnabledExceptionUnmarshaller() {
-        super("CloudTrailAccessNotEnabledException");
+        super(com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException.class, "CloudTrailAccessNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException cloudTrailAccessNotEnabledException = new com.amazonaws.services.cloudtrail.model.CloudTrailAccessNotEnabledException(
                 null);
 

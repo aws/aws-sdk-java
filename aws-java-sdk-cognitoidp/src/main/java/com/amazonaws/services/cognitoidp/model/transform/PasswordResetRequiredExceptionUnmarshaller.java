@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PasswordResetRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PasswordResetRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException> {
+public class PasswordResetRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PasswordResetRequiredExceptionUnmarshaller() {
-        super("PasswordResetRequiredException");
+        super(com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException.class, "PasswordResetRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException passwordResetRequiredException = new com.amazonaws.services.cognitoidp.model.PasswordResetRequiredException(
                 null);
 

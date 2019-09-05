@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidBucketNameFilterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidBucketNameFilterExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException> {
+public class InvalidBucketNameFilterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidBucketNameFilterExceptionUnmarshaller() {
-        super("InvalidBucketNameFilterException");
+        super(com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException.class, "InvalidBucketNameFilterException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException invalidBucketNameFilterException = new com.amazonaws.services.codedeploy.model.InvalidBucketNameFilterException(
                 null);
 

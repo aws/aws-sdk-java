@@ -124,10 +124,7 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.appmesh.model.AWSAppMeshException>(
-                                            com.amazonaws.services.appmesh.model.AWSAppMeshException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.appmesh.model.AWSAppMeshException.class));
 
     public static AWSAppMeshClientBuilder builder() {
         return AWSAppMeshClientBuilder.standard();

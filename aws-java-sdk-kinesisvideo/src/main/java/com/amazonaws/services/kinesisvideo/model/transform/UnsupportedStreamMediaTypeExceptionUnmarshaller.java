@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedStreamMediaTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedStreamMediaTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException> {
+public class UnsupportedStreamMediaTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedStreamMediaTypeExceptionUnmarshaller() {
-        super("UnsupportedStreamMediaTypeException");
+        super(com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException.class, "UnsupportedStreamMediaTypeException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException unsupportedStreamMediaTypeException = new com.amazonaws.services.kinesisvideo.model.UnsupportedStreamMediaTypeException(
                 null);
 

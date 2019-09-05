@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RootNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RootNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.RootNotFoundException> {
+public class RootNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RootNotFoundExceptionUnmarshaller() {
-        super("RootNotFoundException");
+        super(com.amazonaws.services.organizations.model.RootNotFoundException.class, "RootNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.RootNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.RootNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.RootNotFoundException rootNotFoundException = new com.amazonaws.services.organizations.model.RootNotFoundException(
                 null);
 

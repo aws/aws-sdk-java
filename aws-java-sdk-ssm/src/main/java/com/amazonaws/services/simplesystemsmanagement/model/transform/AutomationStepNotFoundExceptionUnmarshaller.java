@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AutomationStepNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutomationStepNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException> {
+public class AutomationStepNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AutomationStepNotFoundExceptionUnmarshaller() {
-        super("AutomationStepNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException.class, "AutomationStepNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException automationStepNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.AutomationStepNotFoundException(
                 null);
 

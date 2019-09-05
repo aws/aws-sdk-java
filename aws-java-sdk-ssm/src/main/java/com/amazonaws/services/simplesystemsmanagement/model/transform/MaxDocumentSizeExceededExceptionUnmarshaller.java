@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxDocumentSizeExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxDocumentSizeExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException> {
+public class MaxDocumentSizeExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxDocumentSizeExceededExceptionUnmarshaller() {
-        super("MaxDocumentSizeExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException.class, "MaxDocumentSizeExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException maxDocumentSizeExceededException = new com.amazonaws.services.simplesystemsmanagement.model.MaxDocumentSizeExceededException(
                 null);
 

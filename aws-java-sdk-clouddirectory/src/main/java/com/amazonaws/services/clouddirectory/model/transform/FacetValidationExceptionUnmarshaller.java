@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FacetValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FacetValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.FacetValidationException> {
+public class FacetValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FacetValidationExceptionUnmarshaller() {
-        super("FacetValidationException");
+        super(com.amazonaws.services.clouddirectory.model.FacetValidationException.class, "FacetValidationException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.FacetValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.FacetValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.FacetValidationException facetValidationException = new com.amazonaws.services.clouddirectory.model.FacetValidationException(
                 null);
 

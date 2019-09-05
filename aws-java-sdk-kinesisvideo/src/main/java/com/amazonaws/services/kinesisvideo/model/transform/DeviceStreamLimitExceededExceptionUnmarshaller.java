@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeviceStreamLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeviceStreamLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException> {
+public class DeviceStreamLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeviceStreamLimitExceededExceptionUnmarshaller() {
-        super("DeviceStreamLimitExceededException");
+        super(com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException.class, "DeviceStreamLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException deviceStreamLimitExceededException = new com.amazonaws.services.kinesisvideo.model.DeviceStreamLimitExceededException(
                 null);
 

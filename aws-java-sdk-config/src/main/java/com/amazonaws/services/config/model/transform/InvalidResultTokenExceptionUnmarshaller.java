@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResultTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResultTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidResultTokenException> {
+public class InvalidResultTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResultTokenExceptionUnmarshaller() {
-        super("InvalidResultTokenException");
+        super(com.amazonaws.services.config.model.InvalidResultTokenException.class, "InvalidResultTokenException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidResultTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidResultTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidResultTokenException invalidResultTokenException = new com.amazonaws.services.config.model.InvalidResultTokenException(
                 null);
 

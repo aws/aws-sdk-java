@@ -14,36 +14,58 @@
  */
 package com.amazonaws.transform;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import com.amazonaws.AmazonServiceException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class JsonErrorUnmarshallerTest {
 
     private static final String ERROR_TYPE = "CustomException";
 
-    private CustomExceptionUnmarshaller unmarshaller;
+    private static final JsonNode JSON = new ObjectMapper().createObjectNode().put("message", "Some error message")
+            .put("__type", "apiVersion#" + ERROR_TYPE).put("CustomField", "This is a customField").put("CustomInt", 42);
+
+    private static final JsonNode INVALID_CASE_JSON = new ObjectMapper().createObjectNode()
+            .put("message", "Some error message").put("__type", "apiVersion#" + ERROR_TYPE)
+            .put("customField", "This is a customField").put("customInt", 42);
+
+    private JsonErrorUnmarshaller unmarshaller;
 
     @Before
     public void setup() {
-        unmarshaller = new CustomExceptionUnmarshaller();
+        unmarshaller = new JsonErrorUnmarshaller(CustomException.class, ERROR_TYPE);
+    }
+
+    @Test
+    public void unmarshall_ValidJsonContent_UnmarshallsCorrectly() throws Exception {
+        CustomException ase = (CustomException) unmarshaller.unmarshall(JSON);
+        assertEquals("Some error message", ase.getErrorMessage());
+        assertEquals("This is a customField", ase.getCustomField());
+        assertEquals(Integer.valueOf(42), ase.getCustomInt());
+    }
+
+    @Test
+    public void unmarshall_InvalidCaseJsonContent_DoesNotUnmarshallCustomFields() throws Exception {
+        CustomException ase = (CustomException) unmarshaller.unmarshall(INVALID_CASE_JSON);
+        assertEquals("Some error message", ase.getErrorMessage());
+        assertNull(ase.getCustomField());
+        assertNull(ase.getCustomInt());
     }
 
     @Test
     public void match_DefaultUnmarshaller_MatchesEverything() {
-        JsonErrorUnmarshaller<?> anyErrorUnmarshaller = new JsonErrorUnmarshaller<AmazonServiceException>(null) {
-            @Override
-            public AmazonServiceException unmarshall(JsonUnmarshallerContext in) throws Exception {
-                return null;
-            }
-        };
-        assertTrue(anyErrorUnmarshaller.matchErrorCode(null));
-        assertTrue(anyErrorUnmarshaller.matchErrorCode(""));
-        assertTrue(anyErrorUnmarshaller.matchErrorCode("someErrorCode"));
+        unmarshaller = JsonErrorUnmarshaller.DEFAULT_UNMARSHALLER;
+        assertTrue(unmarshaller.matchErrorCode(null));
+        assertTrue(unmarshaller.matchErrorCode(""));
+        assertTrue(unmarshaller.matchErrorCode("someErrorCode"));
     }
 
     @Test
@@ -61,24 +83,31 @@ public class JsonErrorUnmarshallerTest {
         assertFalse(unmarshaller.matchErrorCode(null));
     }
 
-    private static class CustomExceptionUnmarshaller extends JsonErrorUnmarshaller<CustomException> {
-
-        public CustomExceptionUnmarshaller() {
-            super(ERROR_TYPE);
-        }
-
-        @Override
-        public CustomException unmarshall(JsonUnmarshallerContext in) throws Exception {
-            return null;
-        }
-    }
-
     private static class CustomException extends AmazonServiceException {
 
         private static final long serialVersionUID = 4140670458615826397L;
 
+        private String customField;
+        private Integer customInt;
+
         public CustomException(String errorMessage) {
             super(errorMessage);
+        }
+
+        public String getCustomField() {
+            return customField;
+        }
+
+        public void setCustomField(String customField) {
+            this.customField = customField;
+        }
+
+        public Integer getCustomInt() {
+            return customInt;
+        }
+
+        public void setCustomInt(Integer customInt) {
+            this.customInt = customInt;
         }
 
     }

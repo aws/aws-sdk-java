@@ -119,10 +119,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception>(
-                                            com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisanalyticsv2.model.AmazonKinesisAnalyticsV2Exception.class));
 
     public static AmazonKinesisAnalyticsV2ClientBuilder builder() {
         return AmazonKinesisAnalyticsV2ClientBuilder.standard();

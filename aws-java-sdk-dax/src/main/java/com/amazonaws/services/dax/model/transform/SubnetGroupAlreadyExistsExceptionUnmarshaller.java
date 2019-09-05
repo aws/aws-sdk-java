@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetGroupAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetGroupAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException> {
+public class SubnetGroupAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetGroupAlreadyExistsExceptionUnmarshaller() {
-        super("SubnetGroupAlreadyExistsFault");
+        super(com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException.class, "SubnetGroupAlreadyExistsFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException subnetGroupAlreadyExistsException = new com.amazonaws.services.dax.model.SubnetGroupAlreadyExistsException(
                 null);
 

@@ -17,20 +17,50 @@ package com.amazonaws.transform;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy.PascalCaseStrategy;
 
+/**
+ * Unmarshaller for JSON error responses from AWS services.
+ */
 @SdkInternalApi
 @ThreadSafe
-public abstract class JsonErrorUnmarshaller<T extends AmazonServiceException> implements Unmarshaller<T, JsonUnmarshallerContext> {
+public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
+
+    public static final JsonErrorUnmarshaller DEFAULT_UNMARSHALLER = new JsonErrorUnmarshaller(
+            AmazonServiceException.class, null);
+
+    private static final ObjectMapper MAPPER = new ObjectMapper().configure(
+            DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).setPropertyNamingStrategy(
+            new PascalCaseStrategy());
+
     private final String handledErrorCode;
 
-    public JsonErrorUnmarshaller(String handledErrorCode) {
+    /**
+     * @param exceptionClass   Exception class this unmarshaller will attempt to deserialize error response into
+     * @param handledErrorCode AWS error code that this unmarshaller handles. Pass null to handle all exceptions
+     */
+    public JsonErrorUnmarshaller(Class<? extends AmazonServiceException> exceptionClass, String handledErrorCode) {
+        super(exceptionClass);
         this.handledErrorCode = handledErrorCode;
     }
 
-    public boolean matchErrorCode(String errorCode) {
+    @Override
+    public AmazonServiceException unmarshall(JsonNode jsonContent) throws Exception {
+        return MAPPER.treeToValue(jsonContent, exceptionClass);
+    }
+
+    /**
+     * @param actualErrorCode Actual AWS error code found in the error response.
+     * @return True if the actualErrorCode can be handled by this unmarshaller, false otherwise
+     */
+    public boolean matchErrorCode(String actualErrorCode) {
         if (handledErrorCode == null) {
             return true;
         }
-        return handledErrorCode.equals(errorCode);
+        return handledErrorCode.equals(actualErrorCode);
     }
+
 }

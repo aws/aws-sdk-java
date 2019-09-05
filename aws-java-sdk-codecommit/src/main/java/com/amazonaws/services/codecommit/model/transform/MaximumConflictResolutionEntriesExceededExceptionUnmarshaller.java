@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumConflictResolutionEntriesExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumConflictResolutionEntriesExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException> {
+public class MaximumConflictResolutionEntriesExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumConflictResolutionEntriesExceededExceptionUnmarshaller() {
-        super("MaximumConflictResolutionEntriesExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException.class,
+                "MaximumConflictResolutionEntriesExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException maximumConflictResolutionEntriesExceededException = new com.amazonaws.services.codecommit.model.MaximumConflictResolutionEntriesExceededException(
                 null);

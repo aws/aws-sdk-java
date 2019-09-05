@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConcurrentModificationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConcurrentModificationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException> {
+public class ConcurrentModificationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConcurrentModificationExceptionUnmarshaller() {
-        super("ConcurrentModificationException");
+        super(com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException.class, "ConcurrentModificationException");
     }
 
     @Override
-    public com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException concurrentModificationException = new com.amazonaws.services.cloudwatchevents.model.ConcurrentModificationException(
                 null);
 

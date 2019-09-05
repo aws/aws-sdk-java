@@ -27,14 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxNumberOfOrganizationConfigRulesExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxNumberOfOrganizationConfigRulesExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException> {
+public class MaxNumberOfOrganizationConfigRulesExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxNumberOfOrganizationConfigRulesExceededExceptionUnmarshaller() {
-        super("MaxNumberOfOrganizationConfigRulesExceededException");
+        super(com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException.class,
+                "MaxNumberOfOrganizationConfigRulesExceededException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException maxNumberOfOrganizationConfigRulesExceededException = new com.amazonaws.services.config.model.MaxNumberOfOrganizationConfigRulesExceededException(
                 null);
 

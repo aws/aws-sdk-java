@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ImageAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.ImageAlreadyExistsException> {
+public class ImageAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ImageAlreadyExistsExceptionUnmarshaller() {
-        super("ImageAlreadyExistsException");
+        super(com.amazonaws.services.ecr.model.ImageAlreadyExistsException.class, "ImageAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.ImageAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.ImageAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.ImageAlreadyExistsException imageAlreadyExistsException = new com.amazonaws.services.ecr.model.ImageAlreadyExistsException(
                 null);
 

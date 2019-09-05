@@ -167,10 +167,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EntityAlreadyRegisteredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.workmail.model.transform.EntityAlreadyRegisteredExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.workmail.model.AmazonWorkMailException>(
-                                            com.amazonaws.services.workmail.model.AmazonWorkMailException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.workmail.model.AmazonWorkMailException.class));
 
     public static AmazonWorkMailClientBuilder builder() {
         return AmazonWorkMailClientBuilder.standard();

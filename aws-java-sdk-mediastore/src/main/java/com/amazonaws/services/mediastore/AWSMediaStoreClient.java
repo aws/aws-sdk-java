@@ -95,10 +95,7 @@ public class AWSMediaStoreClient extends AmazonWebServiceClient implements AWSMe
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediastore.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediastore.model.AWSMediaStoreException>(
-                                            com.amazonaws.services.mediastore.model.AWSMediaStoreException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediastore.model.AWSMediaStoreException.class));
 
     public static AWSMediaStoreClientBuilder builder() {
         return AWSMediaStoreClientBuilder.standard();

@@ -93,10 +93,7 @@ public class AWSMediaPackageClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediapackage.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediapackage.model.AWSMediaPackageException>(
-                                            com.amazonaws.services.mediapackage.model.AWSMediaPackageException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediapackage.model.AWSMediaPackageException.class));
 
     public static AWSMediaPackageClientBuilder builder() {
         return AWSMediaPackageClientBuilder.standard();

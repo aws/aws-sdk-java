@@ -125,10 +125,7 @@ public class AmazonKinesisAnalyticsClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalytics.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException>(
-                                            com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisanalytics.model.AmazonKinesisAnalyticsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Kinesis Analytics. A credentials provider chain will be used

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GroupExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GroupExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.GroupExistsException> {
+public class GroupExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GroupExistsExceptionUnmarshaller() {
-        super("GroupExistsException");
+        super(com.amazonaws.services.cognitoidp.model.GroupExistsException.class, "GroupExistsException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.GroupExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.GroupExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.GroupExistsException groupExistsException = new com.amazonaws.services.cognitoidp.model.GroupExistsException(
                 null);
 

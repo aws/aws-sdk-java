@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumBranchesExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumBranchesExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumBranchesExceededException> {
+public class MaximumBranchesExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumBranchesExceededExceptionUnmarshaller() {
-        super("MaximumBranchesExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumBranchesExceededException.class, "MaximumBranchesExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumBranchesExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MaximumBranchesExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.MaximumBranchesExceededException maximumBranchesExceededException = new com.amazonaws.services.codecommit.model.MaximumBranchesExceededException(
                 null);
 

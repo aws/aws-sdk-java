@@ -132,10 +132,7 @@ public class AWSServerMigrationClient extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoConnectorsAvailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.servermigration.model.transform.NoConnectorsAvailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servermigration.model.AWSServerMigrationException>(
-                                            com.amazonaws.services.servermigration.model.AWSServerMigrationException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.servermigration.model.AWSServerMigrationException.class));
 
     /**
      * Constructs a new client to invoke service methods on SMS. A credentials provider chain will be used that searches

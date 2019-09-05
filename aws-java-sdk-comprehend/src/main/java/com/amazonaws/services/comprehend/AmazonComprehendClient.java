@@ -126,10 +126,7 @@ public class AmazonComprehendClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.comprehend.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.comprehend.model.AmazonComprehendException>(
-                                            com.amazonaws.services.comprehend.model.AmazonComprehendException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.comprehend.model.AmazonComprehendException.class));
 
     public static AmazonComprehendClientBuilder builder() {
         return AmazonComprehendClientBuilder.standard();

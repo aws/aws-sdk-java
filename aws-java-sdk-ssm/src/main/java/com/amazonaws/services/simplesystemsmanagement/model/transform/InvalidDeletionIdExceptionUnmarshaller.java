@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeletionIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeletionIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException> {
+public class InvalidDeletionIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeletionIdExceptionUnmarshaller() {
-        super("InvalidDeletionIdException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException.class, "InvalidDeletionIdException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException invalidDeletionIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidDeletionIdException(
                 null);
 

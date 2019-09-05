@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInstanceStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInstanceStatusExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException> {
+public class InvalidInstanceStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInstanceStatusExceptionUnmarshaller() {
-        super("InvalidInstanceStatusException");
+        super(com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException.class, "InvalidInstanceStatusException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException invalidInstanceStatusException = new com.amazonaws.services.codedeploy.model.InvalidInstanceStatusException(
                 null);
 

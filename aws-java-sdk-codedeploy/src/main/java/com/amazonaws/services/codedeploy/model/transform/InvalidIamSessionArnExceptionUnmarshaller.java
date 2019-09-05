@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidIamSessionArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidIamSessionArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException> {
+public class InvalidIamSessionArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidIamSessionArnExceptionUnmarshaller() {
-        super("InvalidIamSessionArnException");
+        super(com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException.class, "InvalidIamSessionArnException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException invalidIamSessionArnException = new com.amazonaws.services.codedeploy.model.InvalidIamSessionArnException(
                 null);
 

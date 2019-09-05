@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSmsRoleAccessPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSmsRoleAccessPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException> {
+public class InvalidSmsRoleAccessPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSmsRoleAccessPolicyExceptionUnmarshaller() {
-        super("InvalidSmsRoleAccessPolicyException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException.class, "InvalidSmsRoleAccessPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException invalidSmsRoleAccessPolicyException = new com.amazonaws.services.cognitoidp.model.InvalidSmsRoleAccessPolicyException(
                 null);
 

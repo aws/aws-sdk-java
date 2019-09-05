@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApiKeyLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApiKeyLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appsync.model.ApiKeyLimitExceededException> {
+public class ApiKeyLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApiKeyLimitExceededExceptionUnmarshaller() {
-        super("ApiKeyLimitExceededException");
+        super(com.amazonaws.services.appsync.model.ApiKeyLimitExceededException.class, "ApiKeyLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.appsync.model.ApiKeyLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appsync.model.ApiKeyLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appsync.model.ApiKeyLimitExceededException apiKeyLimitExceededException = new com.amazonaws.services.appsync.model.ApiKeyLimitExceededException(
                 null);
 

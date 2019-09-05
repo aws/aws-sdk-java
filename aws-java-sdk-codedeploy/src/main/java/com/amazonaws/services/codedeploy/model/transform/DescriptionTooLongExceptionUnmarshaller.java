@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DescriptionTooLongException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DescriptionTooLongExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DescriptionTooLongException> {
+public class DescriptionTooLongExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DescriptionTooLongExceptionUnmarshaller() {
-        super("DescriptionTooLongException");
+        super(com.amazonaws.services.codedeploy.model.DescriptionTooLongException.class, "DescriptionTooLongException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DescriptionTooLongException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DescriptionTooLongException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DescriptionTooLongException descriptionTooLongException = new com.amazonaws.services.codedeploy.model.DescriptionTooLongException(
                 null);
 

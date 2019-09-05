@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommitMessageLengthExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommitMessageLengthExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException> {
+public class CommitMessageLengthExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommitMessageLengthExceededExceptionUnmarshaller() {
-        super("CommitMessageLengthExceededException");
+        super(com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException.class, "CommitMessageLengthExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException commitMessageLengthExceededException = new com.amazonaws.services.codecommit.model.CommitMessageLengthExceededException(
                 null);
 

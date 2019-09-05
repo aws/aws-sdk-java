@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApplicationDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException> {
+public class ApplicationDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApplicationDoesNotExistExceptionUnmarshaller() {
-        super("ApplicationDoesNotExistException");
+        super(com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException.class, "ApplicationDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException applicationDoesNotExistException = new com.amazonaws.services.codedeploy.model.ApplicationDoesNotExistException(
                 null);
 

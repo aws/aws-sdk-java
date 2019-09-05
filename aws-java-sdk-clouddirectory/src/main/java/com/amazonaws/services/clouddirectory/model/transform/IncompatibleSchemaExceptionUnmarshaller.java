@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncompatibleSchemaException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatibleSchemaExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException> {
+public class IncompatibleSchemaExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncompatibleSchemaExceptionUnmarshaller() {
-        super("IncompatibleSchemaException");
+        super(com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException.class, "IncompatibleSchemaException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException incompatibleSchemaException = new com.amazonaws.services.clouddirectory.model.IncompatibleSchemaException(
                 null);
 

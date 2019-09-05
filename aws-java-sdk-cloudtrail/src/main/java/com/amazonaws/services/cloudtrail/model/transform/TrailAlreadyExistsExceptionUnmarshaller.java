@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TrailAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TrailAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException> {
+public class TrailAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TrailAlreadyExistsExceptionUnmarshaller() {
-        super("TrailAlreadyExistsException");
+        super(com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException.class, "TrailAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException trailAlreadyExistsException = new com.amazonaws.services.cloudtrail.model.TrailAlreadyExistsException(
                 null);
 

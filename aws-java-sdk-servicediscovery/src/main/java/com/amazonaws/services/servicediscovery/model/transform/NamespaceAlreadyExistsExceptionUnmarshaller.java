@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NamespaceAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NamespaceAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException> {
+public class NamespaceAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NamespaceAlreadyExistsExceptionUnmarshaller() {
-        super("NamespaceAlreadyExists");
+        super(com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException.class, "NamespaceAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException namespaceAlreadyExistsException = new com.amazonaws.services.servicediscovery.model.NamespaceAlreadyExistsException(
                 null);
 

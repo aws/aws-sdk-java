@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotServiceResourceErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotServiceResourceErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.NotServiceResourceErrorException> {
+public class NotServiceResourceErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotServiceResourceErrorExceptionUnmarshaller() {
-        super("NotServiceResourceError");
+        super(com.amazonaws.services.fsx.model.NotServiceResourceErrorException.class, "NotServiceResourceError");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.NotServiceResourceErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.NotServiceResourceErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.NotServiceResourceErrorException notServiceResourceErrorException = new com.amazonaws.services.fsx.model.NotServiceResourceErrorException(
                 null);
 

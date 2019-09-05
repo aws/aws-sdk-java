@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudWatchLogsDeliveryUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException> {
+public class CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudWatchLogsDeliveryUnavailableExceptionUnmarshaller() {
-        super("CloudWatchLogsDeliveryUnavailableException");
+        super(com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException.class, "CloudWatchLogsDeliveryUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException cloudWatchLogsDeliveryUnavailableException = new com.amazonaws.services.cloudtrail.model.CloudWatchLogsDeliveryUnavailableException(
                 null);
 

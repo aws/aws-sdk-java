@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientThroughputCapacityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientThroughputCapacityExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException> {
+public class InsufficientThroughputCapacityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientThroughputCapacityExceptionUnmarshaller() {
-        super("InsufficientThroughputCapacity");
+        super(com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException.class, "InsufficientThroughputCapacity");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException insufficientThroughputCapacityException = new com.amazonaws.services.elasticfilesystem.model.InsufficientThroughputCapacityException(
                 null);
 

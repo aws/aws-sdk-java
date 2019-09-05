@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMaxMergeHunksException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMaxMergeHunksExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException> {
+public class InvalidMaxMergeHunksExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMaxMergeHunksExceptionUnmarshaller() {
-        super("InvalidMaxMergeHunksException");
+        super(com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException.class, "InvalidMaxMergeHunksException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException invalidMaxMergeHunksException = new com.amazonaws.services.codecommit.model.InvalidMaxMergeHunksException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MessageRejectedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MessageRejectedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.MessageRejectedException> {
+public class MessageRejectedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MessageRejectedExceptionUnmarshaller() {
-        super("MessageRejected");
+        super(com.amazonaws.services.pinpointemail.model.MessageRejectedException.class, "MessageRejected");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.MessageRejectedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.MessageRejectedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointemail.model.MessageRejectedException messageRejectedException = new com.amazonaws.services.pinpointemail.model.MessageRejectedException(
                 null);
 

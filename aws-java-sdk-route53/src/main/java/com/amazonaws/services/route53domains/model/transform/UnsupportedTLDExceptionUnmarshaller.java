@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedTLDException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedTLDExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.route53domains.model.UnsupportedTLDException> {
+public class UnsupportedTLDExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedTLDExceptionUnmarshaller() {
-        super("UnsupportedTLD");
+        super(com.amazonaws.services.route53domains.model.UnsupportedTLDException.class, "UnsupportedTLD");
     }
 
     @Override
-    public com.amazonaws.services.route53domains.model.UnsupportedTLDException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.route53domains.model.UnsupportedTLDException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.route53domains.model.UnsupportedTLDException unsupportedTLDException = new com.amazonaws.services.route53domains.model.UnsupportedTLDException(
                 null);
 

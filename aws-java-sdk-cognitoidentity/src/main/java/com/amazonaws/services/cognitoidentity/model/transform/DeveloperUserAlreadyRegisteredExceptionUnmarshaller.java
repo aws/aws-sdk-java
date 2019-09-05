@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeveloperUserAlreadyRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeveloperUserAlreadyRegisteredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException> {
+public class DeveloperUserAlreadyRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeveloperUserAlreadyRegisteredExceptionUnmarshaller() {
-        super("DeveloperUserAlreadyRegisteredException");
+        super(com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException.class, "DeveloperUserAlreadyRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException developerUserAlreadyRegisteredException = new com.amazonaws.services.cognitoidentity.model.DeveloperUserAlreadyRegisteredException(
                 null);
 

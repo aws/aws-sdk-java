@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TargetNotConnectedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TargetNotConnectedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException> {
+public class TargetNotConnectedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TargetNotConnectedExceptionUnmarshaller() {
-        super("TargetNotConnected");
+        super(com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException.class, "TargetNotConnected");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException targetNotConnectedException = new com.amazonaws.services.simplesystemsmanagement.model.TargetNotConnectedException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSAccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSAccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.KMSAccessDeniedException> {
+public class KMSAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSAccessDeniedExceptionUnmarshaller() {
-        super("KMSAccessDeniedException");
+        super(com.amazonaws.services.lambda.model.KMSAccessDeniedException.class, "KMSAccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.KMSAccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.KMSAccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.KMSAccessDeniedException kMSAccessDeniedException = new com.amazonaws.services.lambda.model.KMSAccessDeniedException(
                 null);
 

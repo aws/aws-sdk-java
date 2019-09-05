@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTagParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTagParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.InvalidTagParameterException> {
+public class InvalidTagParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTagParameterExceptionUnmarshaller() {
-        super("InvalidTagParameterException");
+        super(com.amazonaws.services.ecr.model.InvalidTagParameterException.class, "InvalidTagParameterException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.InvalidTagParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.InvalidTagParameterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.InvalidTagParameterException invalidTagParameterException = new com.amazonaws.services.ecr.model.InvalidTagParameterException(
                 null);
 

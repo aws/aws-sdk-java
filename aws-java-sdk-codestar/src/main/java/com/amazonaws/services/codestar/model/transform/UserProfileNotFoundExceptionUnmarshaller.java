@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserProfileNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserProfileNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.UserProfileNotFoundException> {
+public class UserProfileNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserProfileNotFoundExceptionUnmarshaller() {
-        super("UserProfileNotFoundException");
+        super(com.amazonaws.services.codestar.model.UserProfileNotFoundException.class, "UserProfileNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.UserProfileNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.UserProfileNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.UserProfileNotFoundException userProfileNotFoundException = new com.amazonaws.services.codestar.model.UserProfileNotFoundException(
                 null);
 

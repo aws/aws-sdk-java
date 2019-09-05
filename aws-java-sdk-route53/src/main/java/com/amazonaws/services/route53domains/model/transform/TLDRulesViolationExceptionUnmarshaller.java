@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TLDRulesViolationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TLDRulesViolationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.route53domains.model.TLDRulesViolationException> {
+public class TLDRulesViolationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TLDRulesViolationExceptionUnmarshaller() {
-        super("TLDRulesViolation");
+        super(com.amazonaws.services.route53domains.model.TLDRulesViolationException.class, "TLDRulesViolation");
     }
 
     @Override
-    public com.amazonaws.services.route53domains.model.TLDRulesViolationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.route53domains.model.TLDRulesViolationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.route53domains.model.TLDRulesViolationException tLDRulesViolationException = new com.amazonaws.services.route53domains.model.TLDRulesViolationException(
                 null);
 

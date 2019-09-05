@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceDoesNotSupportTaggingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceDoesNotSupportTaggingExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException> {
+public class ResourceDoesNotSupportTaggingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceDoesNotSupportTaggingExceptionUnmarshaller() {
-        super("ResourceDoesNotSupportTagging");
+        super(com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException.class, "ResourceDoesNotSupportTagging");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException resourceDoesNotSupportTaggingException = new com.amazonaws.services.fsx.model.ResourceDoesNotSupportTaggingException(
                 null);
 

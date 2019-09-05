@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociatedInstancesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociatedInstancesExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException> {
+public class AssociatedInstancesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociatedInstancesExceptionUnmarshaller() {
-        super("AssociatedInstances");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException.class, "AssociatedInstances");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException associatedInstancesException = new com.amazonaws.services.simplesystemsmanagement.model.AssociatedInstancesException(
                 null);
 

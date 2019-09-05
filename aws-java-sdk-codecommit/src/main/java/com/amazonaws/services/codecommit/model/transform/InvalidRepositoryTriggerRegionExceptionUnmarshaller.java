@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryTriggerRegionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryTriggerRegionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException> {
+public class InvalidRepositoryTriggerRegionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryTriggerRegionExceptionUnmarshaller() {
-        super("InvalidRepositoryTriggerRegionException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException.class, "InvalidRepositoryTriggerRegionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException invalidRepositoryTriggerRegionException = new com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerRegionException(
                 null);
 

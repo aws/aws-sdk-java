@@ -23,10 +23,20 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutOrganizationConfigRuleResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an organization config rule.
+     * </p>
+     */
     private String organizationConfigRuleArn;
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleArn
+     *        The Amazon Resource Name (ARN) of an organization config rule.
      */
 
     public void setOrganizationConfigRuleArn(String organizationConfigRuleArn) {
@@ -34,7 +44,11 @@ public class PutOrganizationConfigRuleResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * The Amazon Resource Name (ARN) of an organization config rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an organization config rule.
      */
 
     public String getOrganizationConfigRuleArn() {
@@ -42,7 +56,12 @@ public class PutOrganizationConfigRuleResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleArn
+     *        The Amazon Resource Name (ARN) of an organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

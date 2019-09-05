@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeploymentWaitTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeploymentWaitTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException> {
+public class InvalidDeploymentWaitTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeploymentWaitTypeExceptionUnmarshaller() {
-        super("InvalidDeploymentWaitTypeException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException.class, "InvalidDeploymentWaitTypeException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException invalidDeploymentWaitTypeException = new com.amazonaws.services.codedeploy.model.InvalidDeploymentWaitTypeException(
                 null);
 

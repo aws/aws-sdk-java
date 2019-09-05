@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateOrganizationalUnitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateOrganizationalUnitExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException> {
+public class DuplicateOrganizationalUnitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateOrganizationalUnitExceptionUnmarshaller() {
-        super("DuplicateOrganizationalUnitException");
+        super(com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException.class, "DuplicateOrganizationalUnitException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException duplicateOrganizationalUnitException = new com.amazonaws.services.organizations.model.DuplicateOrganizationalUnitException(
                 null);
 

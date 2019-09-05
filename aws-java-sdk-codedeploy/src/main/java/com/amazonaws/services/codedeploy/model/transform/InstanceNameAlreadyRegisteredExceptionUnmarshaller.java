@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InstanceNameAlreadyRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceNameAlreadyRegisteredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException> {
+public class InstanceNameAlreadyRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InstanceNameAlreadyRegisteredExceptionUnmarshaller() {
-        super("InstanceNameAlreadyRegisteredException");
+        super(com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException.class, "InstanceNameAlreadyRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException instanceNameAlreadyRegisteredException = new com.amazonaws.services.codedeploy.model.InstanceNameAlreadyRegisteredException(
                 null);
 

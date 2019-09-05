@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResourceTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResourceTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ram.model.InvalidResourceTypeException> {
+public class InvalidResourceTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResourceTypeExceptionUnmarshaller() {
-        super("InvalidResourceTypeException");
+        super(com.amazonaws.services.ram.model.InvalidResourceTypeException.class, "InvalidResourceTypeException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.InvalidResourceTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.InvalidResourceTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.InvalidResourceTypeException invalidResourceTypeException = new com.amazonaws.services.ram.model.InvalidResourceTypeException(
                 null);
 

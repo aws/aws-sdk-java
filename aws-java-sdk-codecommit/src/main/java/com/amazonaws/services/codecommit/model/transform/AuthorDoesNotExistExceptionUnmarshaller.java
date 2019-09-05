@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AuthorDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AuthorDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.AuthorDoesNotExistException> {
+public class AuthorDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AuthorDoesNotExistExceptionUnmarshaller() {
-        super("AuthorDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.AuthorDoesNotExistException.class, "AuthorDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.AuthorDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.AuthorDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.AuthorDoesNotExistException authorDoesNotExistException = new com.amazonaws.services.codecommit.model.AuthorDoesNotExistException(
                 null);
 

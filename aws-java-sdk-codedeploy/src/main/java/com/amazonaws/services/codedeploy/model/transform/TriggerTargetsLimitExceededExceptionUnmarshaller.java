@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TriggerTargetsLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TriggerTargetsLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException> {
+public class TriggerTargetsLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TriggerTargetsLimitExceededExceptionUnmarshaller() {
-        super("TriggerTargetsLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException.class, "TriggerTargetsLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException triggerTargetsLimitExceededException = new com.amazonaws.services.codedeploy.model.TriggerTargetsLimitExceededException(
                 null);
 

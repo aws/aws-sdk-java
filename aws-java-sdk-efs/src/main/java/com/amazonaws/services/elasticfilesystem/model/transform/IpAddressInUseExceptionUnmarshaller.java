@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IpAddressInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IpAddressInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException> {
+public class IpAddressInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IpAddressInUseExceptionUnmarshaller() {
-        super("IpAddressInUse");
+        super(com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException.class, "IpAddressInUse");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException ipAddressInUseException = new com.amazonaws.services.elasticfilesystem.model.IpAddressInUseException(
                 null);
 

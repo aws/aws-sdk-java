@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MountTargetNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MountTargetNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException> {
+public class MountTargetNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MountTargetNotFoundExceptionUnmarshaller() {
-        super("MountTargetNotFound");
+        super(com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException.class, "MountTargetNotFound");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException mountTargetNotFoundException = new com.amazonaws.services.elasticfilesystem.model.MountTargetNotFoundException(
                 null);
 

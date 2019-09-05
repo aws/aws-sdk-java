@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPaginationTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPaginationTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.shield.model.InvalidPaginationTokenException> {
+public class InvalidPaginationTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPaginationTokenExceptionUnmarshaller() {
-        super("InvalidPaginationTokenException");
+        super(com.amazonaws.services.shield.model.InvalidPaginationTokenException.class, "InvalidPaginationTokenException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.InvalidPaginationTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.InvalidPaginationTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.InvalidPaginationTokenException invalidPaginationTokenException = new com.amazonaws.services.shield.model.InvalidPaginationTokenException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UploadNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UploadNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.UploadNotFoundException> {
+public class UploadNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UploadNotFoundExceptionUnmarshaller() {
-        super("UploadNotFoundException");
+        super(com.amazonaws.services.ecr.model.UploadNotFoundException.class, "UploadNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.UploadNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.UploadNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.UploadNotFoundException uploadNotFoundException = new com.amazonaws.services.ecr.model.UploadNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

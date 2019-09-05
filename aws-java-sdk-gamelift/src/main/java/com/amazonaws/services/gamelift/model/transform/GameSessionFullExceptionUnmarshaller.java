@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GameSessionFullException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GameSessionFullExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.GameSessionFullException> {
+public class GameSessionFullExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GameSessionFullExceptionUnmarshaller() {
-        super("GameSessionFullException");
+        super(com.amazonaws.services.gamelift.model.GameSessionFullException.class, "GameSessionFullException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.GameSessionFullException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.GameSessionFullException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.GameSessionFullException gameSessionFullException = new com.amazonaws.services.gamelift.model.GameSessionFullException(
                 null);
 

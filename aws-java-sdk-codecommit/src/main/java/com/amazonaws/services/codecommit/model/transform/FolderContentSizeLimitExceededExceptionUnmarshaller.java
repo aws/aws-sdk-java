@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FolderContentSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FolderContentSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException> {
+public class FolderContentSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FolderContentSizeLimitExceededExceptionUnmarshaller() {
-        super("FolderContentSizeLimitExceededException");
+        super(com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException.class, "FolderContentSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException folderContentSizeLimitExceededException = new com.amazonaws.services.codecommit.model.FolderContentSizeLimitExceededException(
                 null);
 

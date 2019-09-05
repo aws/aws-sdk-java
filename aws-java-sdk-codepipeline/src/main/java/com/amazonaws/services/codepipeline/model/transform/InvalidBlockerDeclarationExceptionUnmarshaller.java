@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidBlockerDeclarationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidBlockerDeclarationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException> {
+public class InvalidBlockerDeclarationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidBlockerDeclarationExceptionUnmarshaller() {
-        super("InvalidBlockerDeclarationException");
+        super(com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException.class, "InvalidBlockerDeclarationException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException invalidBlockerDeclarationException = new com.amazonaws.services.codepipeline.model.InvalidBlockerDeclarationException(
                 null);
 

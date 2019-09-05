@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClientRequestTokenRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClientRequestTokenRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException> {
+public class ClientRequestTokenRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClientRequestTokenRequiredExceptionUnmarshaller() {
-        super("ClientRequestTokenRequiredException");
+        super(com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException.class, "ClientRequestTokenRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException clientRequestTokenRequiredException = new com.amazonaws.services.codecommit.model.ClientRequestTokenRequiredException(
                 null);
 

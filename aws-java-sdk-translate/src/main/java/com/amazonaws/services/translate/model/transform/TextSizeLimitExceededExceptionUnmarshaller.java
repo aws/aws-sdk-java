@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TextSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TextSizeLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.translate.model.TextSizeLimitExceededException> {
+public class TextSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TextSizeLimitExceededExceptionUnmarshaller() {
-        super("TextSizeLimitExceededException");
+        super(com.amazonaws.services.translate.model.TextSizeLimitExceededException.class, "TextSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.translate.model.TextSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.translate.model.TextSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.translate.model.TextSizeLimitExceededException textSizeLimitExceededException = new com.amazonaws.services.translate.model.TextSizeLimitExceededException(
                 null);
 

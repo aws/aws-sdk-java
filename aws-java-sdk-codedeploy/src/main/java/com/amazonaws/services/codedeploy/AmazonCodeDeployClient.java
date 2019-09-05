@@ -498,10 +498,7 @@ public class AmazonCodeDeployClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTrafficRoutingConfigurationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codedeploy.model.transform.InvalidTrafficRoutingConfigurationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codedeploy.model.AmazonCodeDeployException>(
-                                            com.amazonaws.services.codedeploy.model.AmazonCodeDeployException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codedeploy.model.AmazonCodeDeployException.class));
 
     /**
      * Constructs a new client to invoke service methods on CodeDeploy. A credentials provider chain will be used that

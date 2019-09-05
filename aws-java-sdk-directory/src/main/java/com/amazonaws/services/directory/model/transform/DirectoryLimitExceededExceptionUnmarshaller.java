@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.DirectoryLimitExceededException> {
+public class DirectoryLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryLimitExceededExceptionUnmarshaller() {
-        super("DirectoryLimitExceededException");
+        super(com.amazonaws.services.directory.model.DirectoryLimitExceededException.class, "DirectoryLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.DirectoryLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.DirectoryLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.DirectoryLimitExceededException directoryLimitExceededException = new com.amazonaws.services.directory.model.DirectoryLimitExceededException(
                 null);
 

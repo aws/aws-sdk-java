@@ -14,7 +14,6 @@
  */
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.http.JsonErrorResponseHandler;
 import com.amazonaws.http.JsonResponseHandler;
 import com.amazonaws.internal.http.ErrorCodeParser;
@@ -66,7 +65,7 @@ public abstract class SdkStructuredJsonFactoryImpl implements SdkStructuredJsonF
 
     @Override
     public JsonErrorResponseHandler createErrorResponseHandler(
-            final List<JsonErrorUnmarshaller<? extends AmazonServiceException>> errorUnmarshallers, String customErrorCodeFieldName) {
+            final List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName) {
         return new JsonErrorResponseHandler(errorUnmarshallers,
                                             unmarshallers,
                                             customTypeUnmarshallers,

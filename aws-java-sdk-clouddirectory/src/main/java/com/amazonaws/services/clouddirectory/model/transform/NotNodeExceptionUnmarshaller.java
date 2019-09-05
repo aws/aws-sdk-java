@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotNodeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotNodeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.NotNodeException> {
+public class NotNodeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotNodeExceptionUnmarshaller() {
-        super("NotNodeException");
+        super(com.amazonaws.services.clouddirectory.model.NotNodeException.class, "NotNodeException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.NotNodeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.NotNodeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.NotNodeException notNodeException = new com.amazonaws.services.clouddirectory.model.NotNodeException(null);
 
         int originalDepth = context.getCurrentDepth();

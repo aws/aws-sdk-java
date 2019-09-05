@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityAlreadyRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityAlreadyRegisteredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException> {
+public class EntityAlreadyRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityAlreadyRegisteredExceptionUnmarshaller() {
-        super("EntityAlreadyRegisteredException");
+        super(com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException.class, "EntityAlreadyRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException entityAlreadyRegisteredException = new com.amazonaws.services.workmail.model.EntityAlreadyRegisteredException(
                 null);
 

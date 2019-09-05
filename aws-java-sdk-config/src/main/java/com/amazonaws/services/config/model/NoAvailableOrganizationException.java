@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Organization does is no longer available.
+ * Organization is no longer available.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -88,10 +88,7 @@ public class AWSGroundStationClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DependencyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.groundstation.model.transform.DependencyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.groundstation.model.AWSGroundStationException>(
-                                            com.amazonaws.services.groundstation.model.AWSGroundStationException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.groundstation.model.AWSGroundStationException.class));
 
     public static AWSGroundStationClientBuilder builder() {
         return AWSGroundStationClientBuilder.standard();

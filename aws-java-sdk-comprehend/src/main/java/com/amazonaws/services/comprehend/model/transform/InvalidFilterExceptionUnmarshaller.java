@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFilterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFilterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.InvalidFilterException> {
+public class InvalidFilterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFilterExceptionUnmarshaller() {
-        super("InvalidFilterException");
+        super(com.amazonaws.services.comprehend.model.InvalidFilterException.class, "InvalidFilterException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.InvalidFilterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.InvalidFilterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.InvalidFilterException invalidFilterException = new com.amazonaws.services.comprehend.model.InvalidFilterException(
                 null);
 

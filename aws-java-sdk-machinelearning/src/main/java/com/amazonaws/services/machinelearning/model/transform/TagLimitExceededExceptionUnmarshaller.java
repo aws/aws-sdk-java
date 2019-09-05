@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.machinelearning.model.TagLimitExceededException> {
+public class TagLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagLimitExceededExceptionUnmarshaller() {
-        super("TagLimitExceededException");
+        super(com.amazonaws.services.machinelearning.model.TagLimitExceededException.class, "TagLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.machinelearning.model.TagLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.machinelearning.model.TagLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.machinelearning.model.TagLimitExceededException tagLimitExceededException = new com.amazonaws.services.machinelearning.model.TagLimitExceededException(
                 null);
 

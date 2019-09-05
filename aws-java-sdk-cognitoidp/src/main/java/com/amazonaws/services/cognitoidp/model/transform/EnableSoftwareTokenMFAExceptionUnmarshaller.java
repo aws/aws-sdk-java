@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EnableSoftwareTokenMFAException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EnableSoftwareTokenMFAExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException> {
+public class EnableSoftwareTokenMFAExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EnableSoftwareTokenMFAExceptionUnmarshaller() {
-        super("EnableSoftwareTokenMFAException");
+        super(com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException.class, "EnableSoftwareTokenMFAException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException enableSoftwareTokenMFAException = new com.amazonaws.services.cognitoidp.model.EnableSoftwareTokenMFAException(
                 null);
 

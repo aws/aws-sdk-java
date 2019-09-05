@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTargetInstancesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTargetInstancesExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException> {
+public class InvalidTargetInstancesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTargetInstancesExceptionUnmarshaller() {
-        super("InvalidTargetInstancesException");
+        super(com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException.class, "InvalidTargetInstancesException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException invalidTargetInstancesException = new com.amazonaws.services.codedeploy.model.InvalidTargetInstancesException(
                 null);
 

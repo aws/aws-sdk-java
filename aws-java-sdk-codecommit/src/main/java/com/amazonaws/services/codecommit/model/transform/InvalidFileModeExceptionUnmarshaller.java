@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFileModeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFileModeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidFileModeException> {
+public class InvalidFileModeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFileModeExceptionUnmarshaller() {
-        super("InvalidFileModeException");
+        super(com.amazonaws.services.codecommit.model.InvalidFileModeException.class, "InvalidFileModeException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidFileModeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidFileModeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidFileModeException invalidFileModeException = new com.amazonaws.services.codecommit.model.InvalidFileModeException(
                 null);
 

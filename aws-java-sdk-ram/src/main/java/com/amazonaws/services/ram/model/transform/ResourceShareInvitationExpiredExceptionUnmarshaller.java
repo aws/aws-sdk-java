@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceShareInvitationExpiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceShareInvitationExpiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException> {
+public class ResourceShareInvitationExpiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceShareInvitationExpiredExceptionUnmarshaller() {
-        super("ResourceShareInvitationExpiredException");
+        super(com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException.class, "ResourceShareInvitationExpiredException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException resourceShareInvitationExpiredException = new com.amazonaws.services.ram.model.ResourceShareInvitationExpiredException(
                 null);
 

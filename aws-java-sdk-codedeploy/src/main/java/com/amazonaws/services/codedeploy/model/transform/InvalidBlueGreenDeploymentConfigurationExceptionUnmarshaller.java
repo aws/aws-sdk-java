@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidBlueGreenDeploymentConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidBlueGreenDeploymentConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException> {
+public class InvalidBlueGreenDeploymentConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidBlueGreenDeploymentConfigurationExceptionUnmarshaller() {
-        super("InvalidBlueGreenDeploymentConfigurationException");
+        super(com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException.class,
+                "InvalidBlueGreenDeploymentConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException invalidBlueGreenDeploymentConfigurationException = new com.amazonaws.services.codedeploy.model.InvalidBlueGreenDeploymentConfigurationException(
                 null);

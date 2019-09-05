@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LifecyclePolicyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LifecyclePolicyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException> {
+public class LifecyclePolicyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LifecyclePolicyNotFoundExceptionUnmarshaller() {
-        super("LifecyclePolicyNotFoundException");
+        super(com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException.class, "LifecyclePolicyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException lifecyclePolicyNotFoundException = new com.amazonaws.services.ecr.model.LifecyclePolicyNotFoundException(
                 null);
 

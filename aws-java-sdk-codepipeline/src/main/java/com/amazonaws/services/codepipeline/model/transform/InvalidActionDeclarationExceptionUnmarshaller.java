@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidActionDeclarationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidActionDeclarationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException> {
+public class InvalidActionDeclarationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidActionDeclarationExceptionUnmarshaller() {
-        super("InvalidActionDeclarationException");
+        super(com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException.class, "InvalidActionDeclarationException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException invalidActionDeclarationException = new com.amazonaws.services.codepipeline.model.InvalidActionDeclarationException(
                 null);
 

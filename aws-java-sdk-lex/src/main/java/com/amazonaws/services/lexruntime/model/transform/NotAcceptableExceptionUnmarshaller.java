@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotAcceptableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotAcceptableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexruntime.model.NotAcceptableException> {
+public class NotAcceptableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotAcceptableExceptionUnmarshaller() {
-        super("NotAcceptableException");
+        super(com.amazonaws.services.lexruntime.model.NotAcceptableException.class, "NotAcceptableException");
     }
 
     @Override
-    public com.amazonaws.services.lexruntime.model.NotAcceptableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexruntime.model.NotAcceptableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexruntime.model.NotAcceptableException notAcceptableException = new com.amazonaws.services.lexruntime.model.NotAcceptableException(
                 null);
 

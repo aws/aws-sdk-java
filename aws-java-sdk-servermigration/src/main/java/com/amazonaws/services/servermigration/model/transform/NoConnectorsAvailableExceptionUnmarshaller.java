@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoConnectorsAvailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoConnectorsAvailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servermigration.model.NoConnectorsAvailableException> {
+public class NoConnectorsAvailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoConnectorsAvailableExceptionUnmarshaller() {
-        super("NoConnectorsAvailableException");
+        super(com.amazonaws.services.servermigration.model.NoConnectorsAvailableException.class, "NoConnectorsAvailableException");
     }
 
     @Override
-    public com.amazonaws.services.servermigration.model.NoConnectorsAvailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servermigration.model.NoConnectorsAvailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servermigration.model.NoConnectorsAvailableException noConnectorsAvailableException = new com.amazonaws.services.servermigration.model.NoConnectorsAvailableException(
                 null);
 

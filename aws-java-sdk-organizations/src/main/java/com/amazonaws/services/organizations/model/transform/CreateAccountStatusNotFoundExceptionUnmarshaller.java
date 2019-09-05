@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CreateAccountStatusNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateAccountStatusNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException> {
+public class CreateAccountStatusNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CreateAccountStatusNotFoundExceptionUnmarshaller() {
-        super("CreateAccountStatusNotFoundException");
+        super(com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException.class, "CreateAccountStatusNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException createAccountStatusNotFoundException = new com.amazonaws.services.organizations.model.CreateAccountStatusNotFoundException(
                 null);
 

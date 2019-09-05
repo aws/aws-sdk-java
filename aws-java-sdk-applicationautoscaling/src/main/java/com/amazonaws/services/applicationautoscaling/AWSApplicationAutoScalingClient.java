@@ -174,10 +174,7 @@ public class AWSApplicationAutoScalingClient extends AmazonWebServiceClient impl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentUpdateException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationautoscaling.model.transform.ConcurrentUpdateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException>(
-                                            com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationautoscaling.model.AWSApplicationAutoScalingException.class));
 
     /**
      * Constructs a new client to invoke service methods on Application Auto Scaling. A credentials provider chain will

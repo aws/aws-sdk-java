@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitosync.model.InvalidParameterException> {
+public class InvalidParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterExceptionUnmarshaller() {
-        super("InvalidParameter");
+        super(com.amazonaws.services.cognitosync.model.InvalidParameterException.class, "InvalidParameter");
     }
 
     @Override
-    public com.amazonaws.services.cognitosync.model.InvalidParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitosync.model.InvalidParameterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitosync.model.InvalidParameterException invalidParameterException = new com.amazonaws.services.cognitosync.model.InvalidParameterException(
                 null);
 

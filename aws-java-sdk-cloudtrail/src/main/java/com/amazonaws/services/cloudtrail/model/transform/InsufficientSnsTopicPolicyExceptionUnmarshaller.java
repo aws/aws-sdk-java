@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientSnsTopicPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientSnsTopicPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException> {
+public class InsufficientSnsTopicPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientSnsTopicPolicyExceptionUnmarshaller() {
-        super("InsufficientSnsTopicPolicyException");
+        super(com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException.class, "InsufficientSnsTopicPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException insufficientSnsTopicPolicyException = new com.amazonaws.services.cloudtrail.model.InsufficientSnsTopicPolicyException(
                 null);
 

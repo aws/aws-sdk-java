@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PreconditionNotMetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PreconditionNotMetExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.secretsmanager.model.PreconditionNotMetException> {
+public class PreconditionNotMetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PreconditionNotMetExceptionUnmarshaller() {
-        super("PreconditionNotMetException");
+        super(com.amazonaws.services.secretsmanager.model.PreconditionNotMetException.class, "PreconditionNotMetException");
     }
 
     @Override
-    public com.amazonaws.services.secretsmanager.model.PreconditionNotMetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.secretsmanager.model.PreconditionNotMetException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.secretsmanager.model.PreconditionNotMetException preconditionNotMetException = new com.amazonaws.services.secretsmanager.model.PreconditionNotMetException(
                 null);
 

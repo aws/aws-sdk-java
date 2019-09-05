@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TrailNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TrailNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.TrailNotFoundException> {
+public class TrailNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TrailNotFoundExceptionUnmarshaller() {
-        super("TrailNotFoundException");
+        super(com.amazonaws.services.cloudtrail.model.TrailNotFoundException.class, "TrailNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.TrailNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.TrailNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.TrailNotFoundException trailNotFoundException = new com.amazonaws.services.cloudtrail.model.TrailNotFoundException(
                 null);
 

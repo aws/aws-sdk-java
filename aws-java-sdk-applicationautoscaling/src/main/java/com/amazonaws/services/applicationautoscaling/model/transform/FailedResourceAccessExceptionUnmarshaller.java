@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FailedResourceAccessException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FailedResourceAccessExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException> {
+public class FailedResourceAccessExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FailedResourceAccessExceptionUnmarshaller() {
-        super("FailedResourceAccessException");
+        super(com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException.class, "FailedResourceAccessException");
     }
 
     @Override
-    public com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException failedResourceAccessException = new com.amazonaws.services.applicationautoscaling.model.FailedResourceAccessException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationAllFeaturesNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationAllFeaturesNotEnabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException> {
+public class OrganizationAllFeaturesNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationAllFeaturesNotEnabledExceptionUnmarshaller() {
-        super("OrganizationAllFeaturesNotEnabledException");
+        super(com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException.class, "OrganizationAllFeaturesNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException organizationAllFeaturesNotEnabledException = new com.amazonaws.services.config.model.OrganizationAllFeaturesNotEnabledException(
                 null);
 

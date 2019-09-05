@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SourceAndDestinationAreSameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SourceAndDestinationAreSameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException> {
+public class SourceAndDestinationAreSameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SourceAndDestinationAreSameExceptionUnmarshaller() {
-        super("SourceAndDestinationAreSameException");
+        super(com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException.class, "SourceAndDestinationAreSameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException sourceAndDestinationAreSameException = new com.amazonaws.services.codecommit.model.SourceAndDestinationAreSameException(
                 null);
 

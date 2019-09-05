@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommitIdDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommitIdDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException> {
+public class CommitIdDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommitIdDoesNotExistExceptionUnmarshaller() {
-        super("CommitIdDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException.class, "CommitIdDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException commitIdDoesNotExistException = new com.amazonaws.services.codecommit.model.CommitIdDoesNotExistException(
                 null);
 

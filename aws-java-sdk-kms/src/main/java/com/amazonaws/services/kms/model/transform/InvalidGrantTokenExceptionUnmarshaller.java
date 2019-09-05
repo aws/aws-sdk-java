@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidGrantTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidGrantTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidGrantTokenException> {
+public class InvalidGrantTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidGrantTokenExceptionUnmarshaller() {
-        super("InvalidGrantTokenException");
+        super(com.amazonaws.services.kms.model.InvalidGrantTokenException.class, "InvalidGrantTokenException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidGrantTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidGrantTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidGrantTokenException invalidGrantTokenException = new com.amazonaws.services.kms.model.InvalidGrantTokenException(
                 null);
 

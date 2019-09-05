@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnknownResourceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnknownResourceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ram.model.UnknownResourceException> {
+public class UnknownResourceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnknownResourceExceptionUnmarshaller() {
-        super("UnknownResourceException");
+        super(com.amazonaws.services.ram.model.UnknownResourceException.class, "UnknownResourceException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.UnknownResourceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.UnknownResourceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.UnknownResourceException unknownResourceException = new com.amazonaws.services.ram.model.UnknownResourceException(null);
 
         int originalDepth = context.getCurrentDepth();

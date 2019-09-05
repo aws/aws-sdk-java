@@ -176,10 +176,7 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidProductCodeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.marketplacemetering.model.transform.InvalidProductCodeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException>(
-                                            com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.marketplacemetering.model.AWSMarketplaceMeteringException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWSMarketplace Metering. A credentials provider chain will

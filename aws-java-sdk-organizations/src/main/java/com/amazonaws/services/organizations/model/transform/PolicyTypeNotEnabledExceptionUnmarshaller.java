@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyTypeNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyTypeNotEnabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException> {
+public class PolicyTypeNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyTypeNotEnabledExceptionUnmarshaller() {
-        super("PolicyTypeNotEnabledException");
+        super(com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException.class, "PolicyTypeNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException policyTypeNotEnabledException = new com.amazonaws.services.organizations.model.PolicyTypeNotEnabledException(
                 null);
 

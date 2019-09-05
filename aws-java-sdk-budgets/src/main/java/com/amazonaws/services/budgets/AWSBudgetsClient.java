@@ -171,10 +171,7 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.budgets.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.budgets.model.AWSBudgetsException>(
-                                            com.amazonaws.services.budgets.model.AWSBudgetsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.budgets.model.AWSBudgetsException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWSBudgets. A credentials provider chain will be used that

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException> {
+public class RepositoryAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryAlreadyExistsExceptionUnmarshaller() {
-        super("RepositoryAlreadyExistsException");
+        super(com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException.class, "RepositoryAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException repositoryAlreadyExistsException = new com.amazonaws.services.ecr.model.RepositoryAlreadyExistsException(
                 null);
 

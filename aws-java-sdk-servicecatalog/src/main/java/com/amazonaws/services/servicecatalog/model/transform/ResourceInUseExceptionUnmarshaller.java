@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicecatalog.model.ResourceInUseException> {
+public class ResourceInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceInUseExceptionUnmarshaller() {
-        super("ResourceInUseException");
+        super(com.amazonaws.services.servicecatalog.model.ResourceInUseException.class, "ResourceInUseException");
     }
 
     @Override
-    public com.amazonaws.services.servicecatalog.model.ResourceInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicecatalog.model.ResourceInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicecatalog.model.ResourceInUseException resourceInUseException = new com.amazonaws.services.servicecatalog.model.ResourceInUseException(
                 null);
 

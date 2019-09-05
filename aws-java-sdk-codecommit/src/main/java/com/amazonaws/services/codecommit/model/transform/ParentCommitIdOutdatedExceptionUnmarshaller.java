@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParentCommitIdOutdatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParentCommitIdOutdatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException> {
+public class ParentCommitIdOutdatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParentCommitIdOutdatedExceptionUnmarshaller() {
-        super("ParentCommitIdOutdatedException");
+        super(com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException.class, "ParentCommitIdOutdatedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException parentCommitIdOutdatedException = new com.amazonaws.services.codecommit.model.ParentCommitIdOutdatedException(
                 null);
 

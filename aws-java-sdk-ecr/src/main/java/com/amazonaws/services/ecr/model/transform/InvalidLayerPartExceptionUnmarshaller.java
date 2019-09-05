@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLayerPartException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLayerPartExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.InvalidLayerPartException> {
+public class InvalidLayerPartExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLayerPartExceptionUnmarshaller() {
-        super("InvalidLayerPartException");
+        super(com.amazonaws.services.ecr.model.InvalidLayerPartException.class, "InvalidLayerPartException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.InvalidLayerPartException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.InvalidLayerPartException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.InvalidLayerPartException invalidLayerPartException = new com.amazonaws.services.ecr.model.InvalidLayerPartException(
                 null);
 

@@ -110,10 +110,7 @@ public class AWSAppSyncClient extends AmazonWebServiceClient implements AWSAppSy
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appsync.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.appsync.model.AWSAppSyncException>(
-                                            com.amazonaws.services.appsync.model.AWSAppSyncException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.appsync.model.AWSAppSyncException.class));
 
     public static AWSAppSyncClientBuilder builder() {
         return AWSAppSyncClientBuilder.standard();

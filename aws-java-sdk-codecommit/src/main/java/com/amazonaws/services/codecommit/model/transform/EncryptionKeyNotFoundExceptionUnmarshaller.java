@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionKeyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionKeyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException> {
+public class EncryptionKeyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionKeyNotFoundExceptionUnmarshaller() {
-        super("EncryptionKeyNotFoundException");
+        super(com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException.class, "EncryptionKeyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException encryptionKeyNotFoundException = new com.amazonaws.services.codecommit.model.EncryptionKeyNotFoundException(
                 null);
 

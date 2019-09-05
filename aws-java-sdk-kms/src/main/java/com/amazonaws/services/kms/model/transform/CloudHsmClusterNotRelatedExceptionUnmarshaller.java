@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmClusterNotRelatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmClusterNotRelatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException> {
+public class CloudHsmClusterNotRelatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmClusterNotRelatedExceptionUnmarshaller() {
-        super("CloudHsmClusterNotRelatedException");
+        super(com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException.class, "CloudHsmClusterNotRelatedException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException cloudHsmClusterNotRelatedException = new com.amazonaws.services.kms.model.CloudHsmClusterNotRelatedException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchOrganizationConfigRuleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchOrganizationConfigRuleExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException> {
+public class NoSuchOrganizationConfigRuleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchOrganizationConfigRuleExceptionUnmarshaller() {
-        super("NoSuchOrganizationConfigRuleException");
+        super(com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException.class, "NoSuchOrganizationConfigRuleException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException noSuchOrganizationConfigRuleException = new com.amazonaws.services.config.model.NoSuchOrganizationConfigRuleException(
                 null);
 

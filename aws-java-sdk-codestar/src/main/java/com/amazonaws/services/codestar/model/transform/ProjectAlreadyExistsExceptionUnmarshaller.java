@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProjectAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProjectAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.ProjectAlreadyExistsException> {
+public class ProjectAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProjectAlreadyExistsExceptionUnmarshaller() {
-        super("ProjectAlreadyExistsException");
+        super(com.amazonaws.services.codestar.model.ProjectAlreadyExistsException.class, "ProjectAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.ProjectAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.ProjectAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.ProjectAlreadyExistsException projectAlreadyExistsException = new com.amazonaws.services.codestar.model.ProjectAlreadyExistsException(
                 null);
 

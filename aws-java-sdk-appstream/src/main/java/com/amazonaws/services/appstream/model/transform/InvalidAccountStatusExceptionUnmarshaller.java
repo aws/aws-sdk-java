@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAccountStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAccountStatusExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appstream.model.InvalidAccountStatusException> {
+public class InvalidAccountStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAccountStatusExceptionUnmarshaller() {
-        super("InvalidAccountStatusException");
+        super(com.amazonaws.services.appstream.model.InvalidAccountStatusException.class, "InvalidAccountStatusException");
     }
 
     @Override
-    public com.amazonaws.services.appstream.model.InvalidAccountStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appstream.model.InvalidAccountStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appstream.model.InvalidAccountStatusException invalidAccountStatusException = new com.amazonaws.services.appstream.model.InvalidAccountStatusException(
                 null);
 

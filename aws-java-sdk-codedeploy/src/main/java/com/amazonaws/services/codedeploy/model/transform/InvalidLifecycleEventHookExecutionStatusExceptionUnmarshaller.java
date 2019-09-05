@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLifecycleEventHookExecutionStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLifecycleEventHookExecutionStatusExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException> {
+public class InvalidLifecycleEventHookExecutionStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLifecycleEventHookExecutionStatusExceptionUnmarshaller() {
-        super("InvalidLifecycleEventHookExecutionStatusException");
+        super(com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException.class,
+                "InvalidLifecycleEventHookExecutionStatusException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException invalidLifecycleEventHookExecutionStatusException = new com.amazonaws.services.codedeploy.model.InvalidLifecycleEventHookExecutionStatusException(
                 null);

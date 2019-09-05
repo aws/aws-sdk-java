@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidBlobIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidBlobIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidBlobIdException> {
+public class InvalidBlobIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidBlobIdExceptionUnmarshaller() {
-        super("InvalidBlobIdException");
+        super(com.amazonaws.services.codecommit.model.InvalidBlobIdException.class, "InvalidBlobIdException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidBlobIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidBlobIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidBlobIdException invalidBlobIdException = new com.amazonaws.services.codecommit.model.InvalidBlobIdException(
                 null);
 

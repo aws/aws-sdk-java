@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TransferAlreadyCompletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransferAlreadyCompletedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.TransferAlreadyCompletedException> {
+public class TransferAlreadyCompletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TransferAlreadyCompletedExceptionUnmarshaller() {
-        super("TransferAlreadyCompletedException");
+        super(com.amazonaws.services.iot.model.TransferAlreadyCompletedException.class, "TransferAlreadyCompletedException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.TransferAlreadyCompletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.TransferAlreadyCompletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.TransferAlreadyCompletedException transferAlreadyCompletedException = new com.amazonaws.services.iot.model.TransferAlreadyCompletedException(
                 null);
 

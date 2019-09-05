@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResourceFormatException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResourceFormatExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException> {
+public class InvalidResourceFormatExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResourceFormatExceptionUnmarshaller() {
-        super("InvalidResourceFormatException");
+        super(com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException.class, "InvalidResourceFormatException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException invalidResourceFormatException = new com.amazonaws.services.kinesisvideo.model.InvalidResourceFormatException(
                 null);
 

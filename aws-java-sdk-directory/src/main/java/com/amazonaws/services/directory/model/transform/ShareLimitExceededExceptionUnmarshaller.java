@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ShareLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ShareLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.ShareLimitExceededException> {
+public class ShareLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ShareLimitExceededExceptionUnmarshaller() {
-        super("ShareLimitExceededException");
+        super(com.amazonaws.services.directory.model.ShareLimitExceededException.class, "ShareLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.ShareLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.ShareLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.ShareLimitExceededException shareLimitExceededException = new com.amazonaws.services.directory.model.ShareLimitExceededException(
                 null);
 

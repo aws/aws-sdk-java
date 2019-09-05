@@ -108,10 +108,7 @@ public class AWSElasticsearchClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticsearch.model.transform.InternalExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.elasticsearch.model.AWSElasticsearchException>(
-                                            com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elasticsearch.model.AWSElasticsearchException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elasticsearch Service. A credentials provider chain

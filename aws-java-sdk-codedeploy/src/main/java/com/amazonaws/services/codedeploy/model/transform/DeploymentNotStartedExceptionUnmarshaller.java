@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentNotStartedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentNotStartedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentNotStartedException> {
+public class DeploymentNotStartedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentNotStartedExceptionUnmarshaller() {
-        super("DeploymentNotStartedException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentNotStartedException.class, "DeploymentNotStartedException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentNotStartedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentNotStartedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentNotStartedException deploymentNotStartedException = new com.amazonaws.services.codedeploy.model.DeploymentNotStartedException(
                 null);
 

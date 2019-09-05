@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTargetGroupPairException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTargetGroupPairExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException> {
+public class InvalidTargetGroupPairExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTargetGroupPairExceptionUnmarshaller() {
-        super("InvalidTargetGroupPairException");
+        super(com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException.class, "InvalidTargetGroupPairException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException invalidTargetGroupPairException = new com.amazonaws.services.codedeploy.model.InvalidTargetGroupPairException(
                 null);
 

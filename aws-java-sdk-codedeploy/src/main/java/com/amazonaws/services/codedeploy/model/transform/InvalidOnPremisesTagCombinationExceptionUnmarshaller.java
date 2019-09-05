@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOnPremisesTagCombinationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOnPremisesTagCombinationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException> {
+public class InvalidOnPremisesTagCombinationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOnPremisesTagCombinationExceptionUnmarshaller() {
-        super("InvalidOnPremisesTagCombinationException");
+        super(com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException.class, "InvalidOnPremisesTagCombinationException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException invalidOnPremisesTagCombinationException = new com.amazonaws.services.codedeploy.model.InvalidOnPremisesTagCombinationException(
                 null);
 

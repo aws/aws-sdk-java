@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityNotExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityNotExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.EntityNotExistsException> {
+public class EntityNotExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityNotExistsExceptionUnmarshaller() {
-        super("EntityNotExistsException");
+        super(com.amazonaws.services.workdocs.model.EntityNotExistsException.class, "EntityNotExistsException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.EntityNotExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.EntityNotExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.EntityNotExistsException entityNotExistsException = new com.amazonaws.services.workdocs.model.EntityNotExistsException(
                 null);
 

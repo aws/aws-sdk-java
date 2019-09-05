@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.ServiceException> {
+public class ServiceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceExceptionUnmarshaller() {
-        super("ServiceException");
+        super(com.amazonaws.services.ec2instanceconnect.model.ServiceException.class, "ServiceException");
     }
 
     @Override
-    public com.amazonaws.services.ec2instanceconnect.model.ServiceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ec2instanceconnect.model.ServiceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ec2instanceconnect.model.ServiceException serviceException = new com.amazonaws.services.ec2instanceconnect.model.ServiceException(
                 null);
 

@@ -160,10 +160,7 @@ public class AWSCloud9Client extends AmazonWebServiceClient implements AWSCloud9
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloud9.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloud9.model.AWSCloud9Exception>(
-                                            com.amazonaws.services.cloud9.model.AWSCloud9Exception.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloud9.model.AWSCloud9Exception.class));
 
     public static AWSCloud9ClientBuilder builder() {
         return AWSCloud9ClientBuilder.standard();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicatePolicyAttachmentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicatePolicyAttachmentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException> {
+public class DuplicatePolicyAttachmentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicatePolicyAttachmentExceptionUnmarshaller() {
-        super("DuplicatePolicyAttachmentException");
+        super(com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException.class, "DuplicatePolicyAttachmentException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException duplicatePolicyAttachmentException = new com.amazonaws.services.organizations.model.DuplicatePolicyAttachmentException(
                 null);
 

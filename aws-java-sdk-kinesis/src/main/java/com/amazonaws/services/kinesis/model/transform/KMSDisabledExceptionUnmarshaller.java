@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSDisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSDisabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesis.model.KMSDisabledException> {
+public class KMSDisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSDisabledExceptionUnmarshaller() {
-        super("KMSDisabledException");
+        super(com.amazonaws.services.kinesis.model.KMSDisabledException.class, "KMSDisabledException");
     }
 
     @Override
-    public com.amazonaws.services.kinesis.model.KMSDisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesis.model.KMSDisabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesis.model.KMSDisabledException kMSDisabledException = new com.amazonaws.services.kinesis.model.KMSDisabledException(null);
 
         int originalDepth = context.getCurrentDepth();

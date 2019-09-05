@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidKeyPrefixFilterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidKeyPrefixFilterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException> {
+public class InvalidKeyPrefixFilterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidKeyPrefixFilterExceptionUnmarshaller() {
-        super("InvalidKeyPrefixFilterException");
+        super(com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException.class, "InvalidKeyPrefixFilterException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException invalidKeyPrefixFilterException = new com.amazonaws.services.codedeploy.model.InvalidKeyPrefixFilterException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StatementTimeoutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StatementTimeoutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rdsdata.model.StatementTimeoutException> {
+public class StatementTimeoutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StatementTimeoutExceptionUnmarshaller() {
-        super("StatementTimeoutException");
+        super(com.amazonaws.services.rdsdata.model.StatementTimeoutException.class, "StatementTimeoutException");
     }
 
     @Override
-    public com.amazonaws.services.rdsdata.model.StatementTimeoutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rdsdata.model.StatementTimeoutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rdsdata.model.StatementTimeoutException statementTimeoutException = new com.amazonaws.services.rdsdata.model.StatementTimeoutException(
                 null);
 

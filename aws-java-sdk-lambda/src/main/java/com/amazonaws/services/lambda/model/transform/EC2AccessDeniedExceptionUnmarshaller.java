@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EC2AccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EC2AccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.EC2AccessDeniedException> {
+public class EC2AccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EC2AccessDeniedExceptionUnmarshaller() {
-        super("EC2AccessDeniedException");
+        super(com.amazonaws.services.lambda.model.EC2AccessDeniedException.class, "EC2AccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.EC2AccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.EC2AccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.EC2AccessDeniedException eC2AccessDeniedException = new com.amazonaws.services.lambda.model.EC2AccessDeniedException(
                 null);
 

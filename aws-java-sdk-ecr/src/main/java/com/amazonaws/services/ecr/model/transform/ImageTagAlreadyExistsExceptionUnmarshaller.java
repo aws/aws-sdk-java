@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ImageTagAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageTagAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException> {
+public class ImageTagAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ImageTagAlreadyExistsExceptionUnmarshaller() {
-        super("ImageTagAlreadyExistsException");
+        super(com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException.class, "ImageTagAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException imageTagAlreadyExistsException = new com.amazonaws.services.ecr.model.ImageTagAlreadyExistsException(
                 null);
 

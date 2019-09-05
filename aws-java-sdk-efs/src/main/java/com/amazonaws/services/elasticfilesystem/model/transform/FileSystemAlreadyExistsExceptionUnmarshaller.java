@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileSystemAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileSystemAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException> {
+public class FileSystemAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileSystemAlreadyExistsExceptionUnmarshaller() {
-        super("FileSystemAlreadyExists");
+        super(com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException.class, "FileSystemAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException fileSystemAlreadyExistsException = new com.amazonaws.services.elasticfilesystem.model.FileSystemAlreadyExistsException(
                 null);
 

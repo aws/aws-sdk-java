@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountSuspendedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountSuspendedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.AccountSuspendedException> {
+public class AccountSuspendedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountSuspendedExceptionUnmarshaller() {
-        super("AccountSuspendedException");
+        super(com.amazonaws.services.pinpointemail.model.AccountSuspendedException.class, "AccountSuspendedException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.AccountSuspendedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.AccountSuspendedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointemail.model.AccountSuspendedException accountSuspendedException = new com.amazonaws.services.pinpointemail.model.AccountSuspendedException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomHealthNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomHealthNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException> {
+public class CustomHealthNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomHealthNotFoundExceptionUnmarshaller() {
-        super("CustomHealthNotFound");
+        super(com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException.class, "CustomHealthNotFound");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException customHealthNotFoundException = new com.amazonaws.services.servicediscovery.model.CustomHealthNotFoundException(
                 null);
 

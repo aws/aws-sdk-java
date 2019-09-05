@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestedRangeNotSatisfiableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestedRangeNotSatisfiableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException> {
+public class RequestedRangeNotSatisfiableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestedRangeNotSatisfiableExceptionUnmarshaller() {
-        super("RequestedRangeNotSatisfiableException");
+        super(com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException.class, "RequestedRangeNotSatisfiableException");
     }
 
     @Override
-    public com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException requestedRangeNotSatisfiableException = new com.amazonaws.services.mediastoredata.model.RequestedRangeNotSatisfiableException(
                 null);
 

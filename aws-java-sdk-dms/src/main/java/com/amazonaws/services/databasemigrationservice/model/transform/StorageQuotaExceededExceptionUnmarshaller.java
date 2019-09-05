@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StorageQuotaExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StorageQuotaExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException> {
+public class StorageQuotaExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StorageQuotaExceededExceptionUnmarshaller() {
-        super("StorageQuotaExceededFault");
+        super(com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException.class, "StorageQuotaExceededFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException storageQuotaExceededException = new com.amazonaws.services.databasemigrationservice.model.StorageQuotaExceededException(
                 null);
 

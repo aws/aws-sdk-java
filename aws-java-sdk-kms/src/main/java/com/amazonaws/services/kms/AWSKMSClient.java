@@ -270,10 +270,7 @@ public class AWSKMSClient extends AmazonWebServiceClient implements AWSKMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmClusterNotActiveException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kms.model.transform.CloudHsmClusterNotActiveExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kms.model.AWSKMSException>(
-                                            com.amazonaws.services.kms.model.AWSKMSException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kms.model.AWSKMSException.class));
 
     /**
      * Constructs a new client to invoke service methods on KMS. A credentials provider chain will be used that searches

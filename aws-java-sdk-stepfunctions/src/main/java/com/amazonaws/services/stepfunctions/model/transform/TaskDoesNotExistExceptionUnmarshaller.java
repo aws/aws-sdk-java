@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TaskDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException> {
+public class TaskDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TaskDoesNotExistExceptionUnmarshaller() {
-        super("TaskDoesNotExist");
+        super(com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException.class, "TaskDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException taskDoesNotExistException = new com.amazonaws.services.stepfunctions.model.TaskDoesNotExistException(
                 null);
 

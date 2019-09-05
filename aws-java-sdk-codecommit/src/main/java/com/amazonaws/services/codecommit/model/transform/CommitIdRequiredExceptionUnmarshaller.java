@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommitIdRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommitIdRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommitIdRequiredException> {
+public class CommitIdRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommitIdRequiredExceptionUnmarshaller() {
-        super("CommitIdRequiredException");
+        super(com.amazonaws.services.codecommit.model.CommitIdRequiredException.class, "CommitIdRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommitIdRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommitIdRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommitIdRequiredException commitIdRequiredException = new com.amazonaws.services.codecommit.model.CommitIdRequiredException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentGroupLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentGroupLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException> {
+public class DeploymentGroupLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentGroupLimitExceededExceptionUnmarshaller() {
-        super("DeploymentGroupLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException.class, "DeploymentGroupLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException deploymentGroupLimitExceededException = new com.amazonaws.services.codedeploy.model.DeploymentGroupLimitExceededException(
                 null);
 

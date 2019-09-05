@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationTimeoutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationTimeoutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.OperationTimeoutException> {
+public class OperationTimeoutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationTimeoutExceptionUnmarshaller() {
-        super("OperationTimeoutException");
+        super(com.amazonaws.services.glue.model.OperationTimeoutException.class, "OperationTimeoutException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.OperationTimeoutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.OperationTimeoutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.OperationTimeoutException operationTimeoutException = new com.amazonaws.services.glue.model.OperationTimeoutException(
                 null);
 

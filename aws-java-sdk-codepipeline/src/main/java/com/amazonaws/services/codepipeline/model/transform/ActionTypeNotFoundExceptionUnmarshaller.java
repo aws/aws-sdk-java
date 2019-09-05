@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActionTypeNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActionTypeNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException> {
+public class ActionTypeNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActionTypeNotFoundExceptionUnmarshaller() {
-        super("ActionTypeNotFoundException");
+        super(com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException.class, "ActionTypeNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException actionTypeNotFoundException = new com.amazonaws.services.codepipeline.model.ActionTypeNotFoundException(
                 null);
 

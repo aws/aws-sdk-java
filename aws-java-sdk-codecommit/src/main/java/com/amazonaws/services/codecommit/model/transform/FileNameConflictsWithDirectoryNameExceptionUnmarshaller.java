@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileNameConflictsWithDirectoryNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileNameConflictsWithDirectoryNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException> {
+public class FileNameConflictsWithDirectoryNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileNameConflictsWithDirectoryNameExceptionUnmarshaller() {
-        super("FileNameConflictsWithDirectoryNameException");
+        super(com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException.class, "FileNameConflictsWithDirectoryNameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException fileNameConflictsWithDirectoryNameException = new com.amazonaws.services.codecommit.model.FileNameConflictsWithDirectoryNameException(
                 null);
 

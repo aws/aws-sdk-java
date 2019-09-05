@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAuthorArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAuthorArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidAuthorArnException> {
+public class InvalidAuthorArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAuthorArnExceptionUnmarshaller() {
-        super("InvalidAuthorArnException");
+        super(com.amazonaws.services.codecommit.model.InvalidAuthorArnException.class, "InvalidAuthorArnException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidAuthorArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidAuthorArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidAuthorArnException invalidAuthorArnException = new com.amazonaws.services.codecommit.model.InvalidAuthorArnException(
                 null);
 

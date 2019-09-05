@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PipelineVersionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineVersionNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException> {
+public class PipelineVersionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PipelineVersionNotFoundExceptionUnmarshaller() {
-        super("PipelineVersionNotFoundException");
+        super(com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException.class, "PipelineVersionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException pipelineVersionNotFoundException = new com.amazonaws.services.codepipeline.model.PipelineVersionNotFoundException(
                 null);
 

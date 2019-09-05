@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FacetNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FacetNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.FacetNotFoundException> {
+public class FacetNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FacetNotFoundExceptionUnmarshaller() {
-        super("FacetNotFoundException");
+        super(com.amazonaws.services.clouddirectory.model.FacetNotFoundException.class, "FacetNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.FacetNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.FacetNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.FacetNotFoundException facetNotFoundException = new com.amazonaws.services.clouddirectory.model.FacetNotFoundException(
                 null);
 

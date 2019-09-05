@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MissingVersionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MissingVersionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.MissingVersionException> {
+public class MissingVersionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MissingVersionExceptionUnmarshaller() {
-        super("MissingVersionException");
+        super(com.amazonaws.services.ecs.model.MissingVersionException.class, "MissingVersionException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.MissingVersionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.MissingVersionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.MissingVersionException missingVersionException = new com.amazonaws.services.ecs.model.MissingVersionException(null);
 
         int originalDepth = context.getCurrentDepth();

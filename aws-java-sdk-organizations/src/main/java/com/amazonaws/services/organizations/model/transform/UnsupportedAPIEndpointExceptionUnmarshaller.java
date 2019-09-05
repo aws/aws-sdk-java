@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedAPIEndpointException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedAPIEndpointExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException> {
+public class UnsupportedAPIEndpointExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedAPIEndpointExceptionUnmarshaller() {
-        super("UnsupportedAPIEndpointException");
+        super(com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException.class, "UnsupportedAPIEndpointException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException unsupportedAPIEndpointException = new com.amazonaws.services.organizations.model.UnsupportedAPIEndpointException(
                 null);
 

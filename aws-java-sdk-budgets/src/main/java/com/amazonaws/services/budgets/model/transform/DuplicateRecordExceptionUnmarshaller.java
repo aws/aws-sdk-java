@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateRecordException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateRecordExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.budgets.model.DuplicateRecordException> {
+public class DuplicateRecordExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateRecordExceptionUnmarshaller() {
-        super("DuplicateRecordException");
+        super(com.amazonaws.services.budgets.model.DuplicateRecordException.class, "DuplicateRecordException");
     }
 
     @Override
-    public com.amazonaws.services.budgets.model.DuplicateRecordException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.budgets.model.DuplicateRecordException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.budgets.model.DuplicateRecordException duplicateRecordException = new com.amazonaws.services.budgets.model.DuplicateRecordException(
                 null);
 

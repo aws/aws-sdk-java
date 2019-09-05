@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientCapacityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientCapacityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glacier.model.InsufficientCapacityException> {
+public class InsufficientCapacityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientCapacityExceptionUnmarshaller() {
-        super("InsufficientCapacityException");
+        super(com.amazonaws.services.glacier.model.InsufficientCapacityException.class, "InsufficientCapacityException");
     }
 
     @Override
-    public com.amazonaws.services.glacier.model.InsufficientCapacityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glacier.model.InsufficientCapacityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glacier.model.InsufficientCapacityException insufficientCapacityException = new com.amazonaws.services.glacier.model.InsufficientCapacityException(
                 null);
 

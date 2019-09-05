@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PlatformUnknownException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PlatformUnknownExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.PlatformUnknownException> {
+public class PlatformUnknownExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PlatformUnknownExceptionUnmarshaller() {
-        super("PlatformUnknownException");
+        super(com.amazonaws.services.ecs.model.PlatformUnknownException.class, "PlatformUnknownException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.PlatformUnknownException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.PlatformUnknownException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.PlatformUnknownException platformUnknownException = new com.amazonaws.services.ecs.model.PlatformUnknownException(null);
 
         int originalDepth = context.getCurrentDepth();

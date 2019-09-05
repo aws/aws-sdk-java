@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceAssociatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceAssociatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workspaces.model.ResourceAssociatedException> {
+public class ResourceAssociatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceAssociatedExceptionUnmarshaller() {
-        super("ResourceAssociatedException");
+        super(com.amazonaws.services.workspaces.model.ResourceAssociatedException.class, "ResourceAssociatedException");
     }
 
     @Override
-    public com.amazonaws.services.workspaces.model.ResourceAssociatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workspaces.model.ResourceAssociatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workspaces.model.ResourceAssociatedException resourceAssociatedException = new com.amazonaws.services.workspaces.model.ResourceAssociatedException(
                 null);
 

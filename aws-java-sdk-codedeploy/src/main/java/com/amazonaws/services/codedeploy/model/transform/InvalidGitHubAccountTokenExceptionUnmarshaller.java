@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidGitHubAccountTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidGitHubAccountTokenExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException> {
+public class InvalidGitHubAccountTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidGitHubAccountTokenExceptionUnmarshaller() {
-        super("InvalidGitHubAccountTokenException");
+        super(com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException.class, "InvalidGitHubAccountTokenException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException invalidGitHubAccountTokenException = new com.amazonaws.services.codedeploy.model.InvalidGitHubAccountTokenException(
                 null);
 

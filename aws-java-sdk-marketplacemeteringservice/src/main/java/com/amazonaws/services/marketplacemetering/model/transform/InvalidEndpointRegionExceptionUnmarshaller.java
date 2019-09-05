@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEndpointRegionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEndpointRegionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException> {
+public class InvalidEndpointRegionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEndpointRegionExceptionUnmarshaller() {
-        super("InvalidEndpointRegionException");
+        super(com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException.class, "InvalidEndpointRegionException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException invalidEndpointRegionException = new com.amazonaws.services.marketplacemetering.model.InvalidEndpointRegionException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSourceCommitSpecifierException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSourceCommitSpecifierExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException> {
+public class InvalidSourceCommitSpecifierExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSourceCommitSpecifierExceptionUnmarshaller() {
-        super("InvalidSourceCommitSpecifierException");
+        super(com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException.class, "InvalidSourceCommitSpecifierException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException invalidSourceCommitSpecifierException = new com.amazonaws.services.codecommit.model.InvalidSourceCommitSpecifierException(
                 null);
 

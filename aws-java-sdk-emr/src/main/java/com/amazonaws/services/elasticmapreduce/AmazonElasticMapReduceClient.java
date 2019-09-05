@@ -90,10 +90,7 @@ public class AmazonElasticMapReduceClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.elasticmapreduce.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException>(
-                                            com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elasticmapreduce.model.AmazonElasticMapReduceException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon EMR. A credentials provider chain will be used that

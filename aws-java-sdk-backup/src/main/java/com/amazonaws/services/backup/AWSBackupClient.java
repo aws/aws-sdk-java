@@ -104,10 +104,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.backup.model.AWSBackupException>(
-                                            com.amazonaws.services.backup.model.AWSBackupException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.backup.model.AWSBackupException.class));
 
     public static AWSBackupClientBuilder builder() {
         return AWSBackupClientBuilder.standard();

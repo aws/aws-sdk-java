@@ -135,10 +135,7 @@ public class AmazonCognitoSyncClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyStreamed").withExceptionUnmarshaller(
                                     com.amazonaws.services.cognitosync.model.transform.AlreadyStreamedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException>(
-                                            com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cognitosync.model.AmazonCognitoSyncException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Cognito Sync. A credentials provider chain will be

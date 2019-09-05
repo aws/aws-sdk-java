@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PutFileEntryConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PutFileEntryConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PutFileEntryConflictException> {
+public class PutFileEntryConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PutFileEntryConflictExceptionUnmarshaller() {
-        super("PutFileEntryConflictException");
+        super(com.amazonaws.services.codecommit.model.PutFileEntryConflictException.class, "PutFileEntryConflictException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PutFileEntryConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PutFileEntryConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PutFileEntryConflictException putFileEntryConflictException = new com.amazonaws.services.codecommit.model.PutFileEntryConflictException(
                 null);
 

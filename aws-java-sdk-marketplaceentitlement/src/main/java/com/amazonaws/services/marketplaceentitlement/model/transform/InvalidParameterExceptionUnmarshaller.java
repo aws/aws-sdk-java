@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException> {
+public class InvalidParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterExceptionUnmarshaller() {
-        super("InvalidParameterException");
+        super(com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException.class, "InvalidParameterException");
     }
 
     @Override
-    public com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException invalidParameterException = new com.amazonaws.services.marketplaceentitlement.model.InvalidParameterException(
                 null);
 

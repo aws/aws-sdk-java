@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserNotConfirmedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserNotConfirmedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserNotConfirmedException> {
+public class UserNotConfirmedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserNotConfirmedExceptionUnmarshaller() {
-        super("UserNotConfirmedException");
+        super(com.amazonaws.services.cognitoidp.model.UserNotConfirmedException.class, "UserNotConfirmedException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserNotConfirmedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserNotConfirmedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserNotConfirmedException userNotConfirmedException = new com.amazonaws.services.cognitoidp.model.UserNotConfirmedException(
                 null);
 

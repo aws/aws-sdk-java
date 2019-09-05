@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExternalServiceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExternalServiceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidentity.model.ExternalServiceException> {
+public class ExternalServiceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExternalServiceExceptionUnmarshaller() {
-        super("ExternalServiceException");
+        super(com.amazonaws.services.cognitoidentity.model.ExternalServiceException.class, "ExternalServiceException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidentity.model.ExternalServiceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidentity.model.ExternalServiceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidentity.model.ExternalServiceException externalServiceException = new com.amazonaws.services.cognitoidentity.model.ExternalServiceException(
                 null);
 

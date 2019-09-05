@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SameFileContentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SameFileContentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.SameFileContentException> {
+public class SameFileContentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SameFileContentExceptionUnmarshaller() {
-        super("SameFileContentException");
+        super(com.amazonaws.services.codecommit.model.SameFileContentException.class, "SameFileContentException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.SameFileContentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.SameFileContentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.SameFileContentException sameFileContentException = new com.amazonaws.services.codecommit.model.SameFileContentException(
                 null);
 

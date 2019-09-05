@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LicenseUsageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LicenseUsageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.licensemanager.model.LicenseUsageException> {
+public class LicenseUsageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LicenseUsageExceptionUnmarshaller() {
-        super("LicenseUsageException");
+        super(com.amazonaws.services.licensemanager.model.LicenseUsageException.class, "LicenseUsageException");
     }
 
     @Override
-    public com.amazonaws.services.licensemanager.model.LicenseUsageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.licensemanager.model.LicenseUsageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.licensemanager.model.LicenseUsageException licenseUsageException = new com.amazonaws.services.licensemanager.model.LicenseUsageException(
                 null);
 

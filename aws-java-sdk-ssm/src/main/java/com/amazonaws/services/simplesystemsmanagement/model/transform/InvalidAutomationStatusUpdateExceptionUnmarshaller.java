@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAutomationStatusUpdateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAutomationStatusUpdateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException> {
+public class InvalidAutomationStatusUpdateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAutomationStatusUpdateExceptionUnmarshaller() {
-        super("InvalidAutomationStatusUpdateException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException.class, "InvalidAutomationStatusUpdateException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException invalidAutomationStatusUpdateException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationStatusUpdateException(
                 null);

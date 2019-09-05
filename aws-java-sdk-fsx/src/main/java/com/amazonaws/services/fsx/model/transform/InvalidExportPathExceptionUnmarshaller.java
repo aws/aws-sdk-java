@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidExportPathException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidExportPathExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.InvalidExportPathException> {
+public class InvalidExportPathExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidExportPathExceptionUnmarshaller() {
-        super("InvalidExportPath");
+        super(com.amazonaws.services.fsx.model.InvalidExportPathException.class, "InvalidExportPath");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.InvalidExportPathException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.InvalidExportPathException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.InvalidExportPathException invalidExportPathException = new com.amazonaws.services.fsx.model.InvalidExportPathException(
                 null);
 

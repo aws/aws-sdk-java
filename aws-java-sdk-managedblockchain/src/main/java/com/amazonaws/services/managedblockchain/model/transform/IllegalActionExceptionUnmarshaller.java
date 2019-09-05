@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IllegalActionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IllegalActionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.managedblockchain.model.IllegalActionException> {
+public class IllegalActionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IllegalActionExceptionUnmarshaller() {
-        super("IllegalActionException");
+        super(com.amazonaws.services.managedblockchain.model.IllegalActionException.class, "IllegalActionException");
     }
 
     @Override
-    public com.amazonaws.services.managedblockchain.model.IllegalActionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.managedblockchain.model.IllegalActionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.managedblockchain.model.IllegalActionException illegalActionException = new com.amazonaws.services.managedblockchain.model.IllegalActionException(
                 null);
 

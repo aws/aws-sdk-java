@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.LimitExceededException> {
+public class LimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LimitExceededExceptionUnmarshaller() {
-        super("LimitExceededException");
+        super(com.amazonaws.services.iot.model.LimitExceededException.class, "LimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.LimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.LimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.LimitExceededException limitExceededException = new com.amazonaws.services.iot.model.LimitExceededException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BeforeCommitIdAndAfterCommitIdAreSameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BeforeCommitIdAndAfterCommitIdAreSameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException> {
+public class BeforeCommitIdAndAfterCommitIdAreSameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BeforeCommitIdAndAfterCommitIdAreSameExceptionUnmarshaller() {
-        super("BeforeCommitIdAndAfterCommitIdAreSameException");
+        super(com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException.class, "BeforeCommitIdAndAfterCommitIdAreSameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException beforeCommitIdAndAfterCommitIdAreSameException = new com.amazonaws.services.codecommit.model.BeforeCommitIdAndAfterCommitIdAreSameException(
                 null);
 

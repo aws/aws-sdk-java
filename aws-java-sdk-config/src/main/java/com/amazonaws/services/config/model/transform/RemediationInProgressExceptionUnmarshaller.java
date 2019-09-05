@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RemediationInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RemediationInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.RemediationInProgressException> {
+public class RemediationInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RemediationInProgressExceptionUnmarshaller() {
-        super("RemediationInProgressException");
+        super(com.amazonaws.services.config.model.RemediationInProgressException.class, "RemediationInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.RemediationInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.RemediationInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.RemediationInProgressException remediationInProgressException = new com.amazonaws.services.config.model.RemediationInProgressException(
                 null);
 

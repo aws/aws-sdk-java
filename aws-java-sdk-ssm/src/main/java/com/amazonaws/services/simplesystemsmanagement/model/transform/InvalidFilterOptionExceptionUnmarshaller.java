@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFilterOptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFilterOptionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException> {
+public class InvalidFilterOptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFilterOptionExceptionUnmarshaller() {
-        super("InvalidFilterOption");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException.class, "InvalidFilterOption");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException invalidFilterOptionException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterOptionException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationNotPermittedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationNotPermittedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appstream.model.OperationNotPermittedException> {
+public class OperationNotPermittedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationNotPermittedExceptionUnmarshaller() {
-        super("OperationNotPermittedException");
+        super(com.amazonaws.services.appstream.model.OperationNotPermittedException.class, "OperationNotPermittedException");
     }
 
     @Override
-    public com.amazonaws.services.appstream.model.OperationNotPermittedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appstream.model.OperationNotPermittedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appstream.model.OperationNotPermittedException operationNotPermittedException = new com.amazonaws.services.appstream.model.OperationNotPermittedException(
                 null);
 

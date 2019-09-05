@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TaskNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.datapipeline.model.TaskNotFoundException> {
+public class TaskNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TaskNotFoundExceptionUnmarshaller() {
-        super("TaskNotFoundException");
+        super(com.amazonaws.services.datapipeline.model.TaskNotFoundException.class, "TaskNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.datapipeline.model.TaskNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.datapipeline.model.TaskNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.datapipeline.model.TaskNotFoundException taskNotFoundException = new com.amazonaws.services.datapipeline.model.TaskNotFoundException(
                 null);
 

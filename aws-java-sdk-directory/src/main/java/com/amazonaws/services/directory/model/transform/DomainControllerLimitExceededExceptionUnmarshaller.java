@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DomainControllerLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainControllerLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.directory.model.DomainControllerLimitExceededException> {
+public class DomainControllerLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DomainControllerLimitExceededExceptionUnmarshaller() {
-        super("DomainControllerLimitExceededException");
+        super(com.amazonaws.services.directory.model.DomainControllerLimitExceededException.class, "DomainControllerLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.DomainControllerLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.DomainControllerLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.directory.model.DomainControllerLimitExceededException domainControllerLimitExceededException = new com.amazonaws.services.directory.model.DomainControllerLimitExceededException(
                 null);
 

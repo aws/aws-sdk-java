@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFBadRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFBadRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFBadRequestException> {
+public class WAFBadRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFBadRequestExceptionUnmarshaller() {
-        super("WAFBadRequestException");
+        super(com.amazonaws.services.waf.model.WAFBadRequestException.class, "WAFBadRequestException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFBadRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFBadRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFBadRequestException wAFBadRequestException = new com.amazonaws.services.waf.model.WAFBadRequestException(null);
 
         int originalDepth = context.getCurrentDepth();

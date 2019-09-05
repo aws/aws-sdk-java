@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AlarmsLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AlarmsLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException> {
+public class AlarmsLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AlarmsLimitExceededExceptionUnmarshaller() {
-        super("AlarmsLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException.class, "AlarmsLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException alarmsLimitExceededException = new com.amazonaws.services.codedeploy.model.AlarmsLimitExceededException(
                 null);
 

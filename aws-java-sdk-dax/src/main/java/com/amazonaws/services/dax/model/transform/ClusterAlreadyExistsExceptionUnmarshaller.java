@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ClusterAlreadyExistsException> {
+public class ClusterAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterAlreadyExistsExceptionUnmarshaller() {
-        super("ClusterAlreadyExistsFault");
+        super(com.amazonaws.services.dax.model.ClusterAlreadyExistsException.class, "ClusterAlreadyExistsFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ClusterAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ClusterAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ClusterAlreadyExistsException clusterAlreadyExistsException = new com.amazonaws.services.dax.model.ClusterAlreadyExistsException(
                 null);
 

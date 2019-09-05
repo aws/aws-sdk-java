@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidUpdateOutdatedInstancesOnlyValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException> {
+public class InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidUpdateOutdatedInstancesOnlyValueExceptionUnmarshaller() {
-        super("InvalidUpdateOutdatedInstancesOnlyValueException");
+        super(com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException.class,
+                "InvalidUpdateOutdatedInstancesOnlyValueException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException invalidUpdateOutdatedInstancesOnlyValueException = new com.amazonaws.services.codedeploy.model.InvalidUpdateOutdatedInstancesOnlyValueException(
                 null);

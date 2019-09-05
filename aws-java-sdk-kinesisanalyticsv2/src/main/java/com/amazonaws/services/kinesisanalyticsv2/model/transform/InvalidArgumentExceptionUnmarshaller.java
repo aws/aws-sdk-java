@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidArgumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidArgumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException> {
+public class InvalidArgumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidArgumentExceptionUnmarshaller() {
-        super("InvalidArgumentException");
+        super(com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException.class, "InvalidArgumentException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException invalidArgumentException = new com.amazonaws.services.kinesisanalyticsv2.model.InvalidArgumentException(
                 null);
 

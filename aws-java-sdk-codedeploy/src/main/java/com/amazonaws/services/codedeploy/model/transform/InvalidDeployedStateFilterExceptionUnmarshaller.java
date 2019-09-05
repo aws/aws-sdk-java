@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeployedStateFilterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeployedStateFilterExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException> {
+public class InvalidDeployedStateFilterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeployedStateFilterExceptionUnmarshaller() {
-        super("InvalidDeployedStateFilterException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException.class, "InvalidDeployedStateFilterException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException invalidDeployedStateFilterException = new com.amazonaws.services.codedeploy.model.InvalidDeployedStateFilterException(
                 null);
 

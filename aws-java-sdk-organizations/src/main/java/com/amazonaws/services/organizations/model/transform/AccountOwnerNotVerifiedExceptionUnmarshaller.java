@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountOwnerNotVerifiedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountOwnerNotVerifiedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException> {
+public class AccountOwnerNotVerifiedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountOwnerNotVerifiedExceptionUnmarshaller() {
-        super("AccountOwnerNotVerifiedException");
+        super(com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException.class, "AccountOwnerNotVerifiedException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException accountOwnerNotVerifiedException = new com.amazonaws.services.organizations.model.AccountOwnerNotVerifiedException(
                 null);
 

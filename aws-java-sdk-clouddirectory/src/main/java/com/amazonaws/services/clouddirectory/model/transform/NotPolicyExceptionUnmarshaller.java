@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotPolicyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.NotPolicyException> {
+public class NotPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotPolicyExceptionUnmarshaller() {
-        super("NotPolicyException");
+        super(com.amazonaws.services.clouddirectory.model.NotPolicyException.class, "NotPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.NotPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.NotPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.NotPolicyException notPolicyException = new com.amazonaws.services.clouddirectory.model.NotPolicyException(
                 null);
 

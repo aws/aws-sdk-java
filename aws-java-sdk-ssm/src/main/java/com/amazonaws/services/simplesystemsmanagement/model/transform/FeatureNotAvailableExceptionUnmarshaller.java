@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FeatureNotAvailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FeatureNotAvailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException> {
+public class FeatureNotAvailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FeatureNotAvailableExceptionUnmarshaller() {
-        super("FeatureNotAvailableException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException.class, "FeatureNotAvailableException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException featureNotAvailableException = new com.amazonaws.services.simplesystemsmanagement.model.FeatureNotAvailableException(
                 null);
 

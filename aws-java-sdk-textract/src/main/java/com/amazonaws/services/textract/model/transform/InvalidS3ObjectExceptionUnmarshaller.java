@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3ObjectException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3ObjectExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.textract.model.InvalidS3ObjectException> {
+public class InvalidS3ObjectExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3ObjectExceptionUnmarshaller() {
-        super("InvalidS3ObjectException");
+        super(com.amazonaws.services.textract.model.InvalidS3ObjectException.class, "InvalidS3ObjectException");
     }
 
     @Override
-    public com.amazonaws.services.textract.model.InvalidS3ObjectException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.textract.model.InvalidS3ObjectException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.textract.model.InvalidS3ObjectException invalidS3ObjectException = new com.amazonaws.services.textract.model.InvalidS3ObjectException(
                 null);
 

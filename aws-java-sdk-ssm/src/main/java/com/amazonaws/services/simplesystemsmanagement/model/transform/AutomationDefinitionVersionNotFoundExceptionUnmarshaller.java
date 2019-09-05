@@ -27,15 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AutomationDefinitionVersionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutomationDefinitionVersionNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException> {
+public class AutomationDefinitionVersionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AutomationDefinitionVersionNotFoundExceptionUnmarshaller() {
-        super("AutomationDefinitionVersionNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException.class,
+                "AutomationDefinitionVersionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException unmarshallFromContext(
+            JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException automationDefinitionVersionNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionVersionNotFoundException(
                 null);
 

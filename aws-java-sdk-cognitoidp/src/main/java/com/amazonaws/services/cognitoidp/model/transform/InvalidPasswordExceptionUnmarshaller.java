@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPasswordException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPasswordExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidPasswordException> {
+public class InvalidPasswordExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPasswordExceptionUnmarshaller() {
-        super("InvalidPasswordException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidPasswordException.class, "InvalidPasswordException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidPasswordException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidPasswordException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidPasswordException invalidPasswordException = new com.amazonaws.services.cognitoidp.model.InvalidPasswordException(
                 null);
 

@@ -88,10 +88,7 @@ public class AmazonSageMakerClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUse").withExceptionUnmarshaller(
                                     com.amazonaws.services.sagemaker.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.sagemaker.model.AmazonSageMakerException>(
-                                            com.amazonaws.services.sagemaker.model.AmazonSageMakerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.sagemaker.model.AmazonSageMakerException.class));
 
     public static AmazonSageMakerClientBuilder builder() {
         return AmazonSageMakerClientBuilder.standard();

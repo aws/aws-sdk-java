@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedQueryException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedQueryExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.MalformedQueryException> {
+public class MalformedQueryExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedQueryExceptionUnmarshaller() {
-        super("MalformedQueryException");
+        super(com.amazonaws.services.logs.model.MalformedQueryException.class, "MalformedQueryException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.MalformedQueryException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.MalformedQueryException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.MalformedQueryException malformedQueryException = new com.amazonaws.services.logs.model.MalformedQueryException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidUpdateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidUpdateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException> {
+public class InvalidUpdateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidUpdateExceptionUnmarshaller() {
-        super("InvalidUpdate");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException.class, "InvalidUpdate");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException invalidUpdateException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidUpdateException(
                 null);
 

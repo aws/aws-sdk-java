@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagKeysListRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagKeysListRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TagKeysListRequiredException> {
+public class TagKeysListRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagKeysListRequiredExceptionUnmarshaller() {
-        super("TagKeysListRequiredException");
+        super(com.amazonaws.services.codecommit.model.TagKeysListRequiredException.class, "TagKeysListRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TagKeysListRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TagKeysListRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.TagKeysListRequiredException tagKeysListRequiredException = new com.amazonaws.services.codecommit.model.TagKeysListRequiredException(
                 null);
 

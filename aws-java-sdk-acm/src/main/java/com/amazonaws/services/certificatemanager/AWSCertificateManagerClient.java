@@ -117,10 +117,7 @@ public class AWSCertificateManagerClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.certificatemanager.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException>(
-                                            com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.certificatemanager.model.AWSCertificateManagerException.class));
 
     /**
      * Constructs a new client to invoke service methods on ACM. A credentials provider chain will be used that searches

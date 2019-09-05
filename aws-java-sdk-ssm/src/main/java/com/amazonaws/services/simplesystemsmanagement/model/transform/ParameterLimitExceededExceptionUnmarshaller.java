@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException> {
+public class ParameterLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterLimitExceededExceptionUnmarshaller() {
-        super("ParameterLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException.class, "ParameterLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException parameterLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterLimitExceededException(
                 null);
 

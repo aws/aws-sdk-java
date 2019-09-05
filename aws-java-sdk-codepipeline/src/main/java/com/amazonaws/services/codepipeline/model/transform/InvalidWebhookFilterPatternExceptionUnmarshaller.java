@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidWebhookFilterPatternException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidWebhookFilterPatternExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException> {
+public class InvalidWebhookFilterPatternExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidWebhookFilterPatternExceptionUnmarshaller() {
-        super("InvalidWebhookFilterPatternException");
+        super(com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException.class, "InvalidWebhookFilterPatternException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException invalidWebhookFilterPatternException = new com.amazonaws.services.codepipeline.model.InvalidWebhookFilterPatternException(
                 null);
 

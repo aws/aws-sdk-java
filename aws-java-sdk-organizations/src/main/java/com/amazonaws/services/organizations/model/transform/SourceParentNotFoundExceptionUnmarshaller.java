@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SourceParentNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SourceParentNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.SourceParentNotFoundException> {
+public class SourceParentNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SourceParentNotFoundExceptionUnmarshaller() {
-        super("SourceParentNotFoundException");
+        super(com.amazonaws.services.organizations.model.SourceParentNotFoundException.class, "SourceParentNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.SourceParentNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.SourceParentNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.SourceParentNotFoundException sourceParentNotFoundException = new com.amazonaws.services.organizations.model.SourceParentNotFoundException(
                 null);
 

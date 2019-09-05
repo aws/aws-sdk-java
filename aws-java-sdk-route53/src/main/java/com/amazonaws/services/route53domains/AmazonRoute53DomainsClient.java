@@ -94,10 +94,7 @@ public class AmazonRoute53DomainsClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.route53domains.model.transform.OperationLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException>(
-                                            com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.route53domains.model.AmazonRoute53DomainsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Route 53 Domains. A credentials provider chain will

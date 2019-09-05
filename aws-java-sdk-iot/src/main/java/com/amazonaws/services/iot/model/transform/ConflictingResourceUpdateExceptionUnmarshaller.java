@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConflictingResourceUpdateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConflictingResourceUpdateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.ConflictingResourceUpdateException> {
+public class ConflictingResourceUpdateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConflictingResourceUpdateExceptionUnmarshaller() {
-        super("ConflictingResourceUpdateException");
+        super(com.amazonaws.services.iot.model.ConflictingResourceUpdateException.class, "ConflictingResourceUpdateException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.ConflictingResourceUpdateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.ConflictingResourceUpdateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.ConflictingResourceUpdateException conflictingResourceUpdateException = new com.amazonaws.services.iot.model.ConflictingResourceUpdateException(
                 null);
 

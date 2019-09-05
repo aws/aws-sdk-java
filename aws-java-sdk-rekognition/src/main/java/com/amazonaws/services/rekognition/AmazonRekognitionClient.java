@@ -121,10 +121,7 @@ public class AmazonRekognitionClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.rekognition.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.rekognition.model.AmazonRekognitionException>(
-                                            com.amazonaws.services.rekognition.model.AmazonRekognitionException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.rekognition.model.AmazonRekognitionException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Rekognition. A credentials provider chain will be

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedActionForDeploymentTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedActionForDeploymentTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException> {
+public class UnsupportedActionForDeploymentTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedActionForDeploymentTypeExceptionUnmarshaller() {
-        super("UnsupportedActionForDeploymentTypeException");
+        super(com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException.class, "UnsupportedActionForDeploymentTypeException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException unsupportedActionForDeploymentTypeException = new com.amazonaws.services.codedeploy.model.UnsupportedActionForDeploymentTypeException(
                 null);
 

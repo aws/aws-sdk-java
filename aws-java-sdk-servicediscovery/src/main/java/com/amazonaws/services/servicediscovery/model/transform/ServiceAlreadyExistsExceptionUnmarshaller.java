@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException> {
+public class ServiceAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceAlreadyExistsExceptionUnmarshaller() {
-        super("ServiceAlreadyExists");
+        super(com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException.class, "ServiceAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException serviceAlreadyExistsException = new com.amazonaws.services.servicediscovery.model.ServiceAlreadyExistsException(
                 null);
 

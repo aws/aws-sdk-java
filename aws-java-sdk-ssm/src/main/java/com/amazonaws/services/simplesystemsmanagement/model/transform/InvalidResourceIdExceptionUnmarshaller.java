@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResourceIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResourceIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException> {
+public class InvalidResourceIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResourceIdExceptionUnmarshaller() {
-        super("InvalidResourceId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException.class, "InvalidResourceId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException invalidResourceIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidResourceIdException(
                 null);
 

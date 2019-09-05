@@ -147,10 +147,7 @@ public class AWSACMPCAClient extends AmazonWebServiceClient implements AWSACMPCA
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.acmpca.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.acmpca.model.AWSACMPCAException>(
-                                            com.amazonaws.services.acmpca.model.AWSACMPCAException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.acmpca.model.AWSACMPCAException.class));
 
     public static AWSACMPCAClientBuilder builder() {
         return AWSACMPCAClientBuilder.standard();

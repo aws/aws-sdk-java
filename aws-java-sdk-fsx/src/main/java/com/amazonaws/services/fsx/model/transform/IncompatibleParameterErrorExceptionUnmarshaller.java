@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncompatibleParameterErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatibleParameterErrorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.IncompatibleParameterErrorException> {
+public class IncompatibleParameterErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncompatibleParameterErrorExceptionUnmarshaller() {
-        super("IncompatibleParameterError");
+        super(com.amazonaws.services.fsx.model.IncompatibleParameterErrorException.class, "IncompatibleParameterError");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.IncompatibleParameterErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.IncompatibleParameterErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.IncompatibleParameterErrorException incompatibleParameterErrorException = new com.amazonaws.services.fsx.model.IncompatibleParameterErrorException(
                 null);
 

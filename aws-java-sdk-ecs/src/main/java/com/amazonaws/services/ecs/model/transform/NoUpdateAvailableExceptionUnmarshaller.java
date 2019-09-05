@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoUpdateAvailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoUpdateAvailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.NoUpdateAvailableException> {
+public class NoUpdateAvailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoUpdateAvailableExceptionUnmarshaller() {
-        super("NoUpdateAvailableException");
+        super(com.amazonaws.services.ecs.model.NoUpdateAvailableException.class, "NoUpdateAvailableException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.NoUpdateAvailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.NoUpdateAvailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.NoUpdateAvailableException noUpdateAvailableException = new com.amazonaws.services.ecs.model.NoUpdateAvailableException(
                 null);
 

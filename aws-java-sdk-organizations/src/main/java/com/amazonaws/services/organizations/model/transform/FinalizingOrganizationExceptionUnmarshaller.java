@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FinalizingOrganizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FinalizingOrganizationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.FinalizingOrganizationException> {
+public class FinalizingOrganizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FinalizingOrganizationExceptionUnmarshaller() {
-        super("FinalizingOrganizationException");
+        super(com.amazonaws.services.organizations.model.FinalizingOrganizationException.class, "FinalizingOrganizationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.FinalizingOrganizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.FinalizingOrganizationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.FinalizingOrganizationException finalizingOrganizationException = new com.amazonaws.services.organizations.model.FinalizingOrganizationException(
                 null);
 

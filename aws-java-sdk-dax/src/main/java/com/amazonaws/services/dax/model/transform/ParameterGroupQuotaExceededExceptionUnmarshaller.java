@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterGroupQuotaExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterGroupQuotaExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException> {
+public class ParameterGroupQuotaExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterGroupQuotaExceededExceptionUnmarshaller() {
-        super("ParameterGroupQuotaExceededFault");
+        super(com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException.class, "ParameterGroupQuotaExceededFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException parameterGroupQuotaExceededException = new com.amazonaws.services.dax.model.ParameterGroupQuotaExceededException(
                 null);
 

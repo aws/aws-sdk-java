@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * HierarchyLevelLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HierarchyLevelLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException> {
+public class HierarchyLevelLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private HierarchyLevelLimitExceededExceptionUnmarshaller() {
-        super("HierarchyLevelLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException.class, "HierarchyLevelLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException hierarchyLevelLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.HierarchyLevelLimitExceededException(
                 null);

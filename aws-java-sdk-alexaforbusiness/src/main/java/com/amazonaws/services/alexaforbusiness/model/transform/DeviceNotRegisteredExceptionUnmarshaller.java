@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeviceNotRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeviceNotRegisteredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException> {
+public class DeviceNotRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeviceNotRegisteredExceptionUnmarshaller() {
-        super("DeviceNotRegisteredException");
+        super(com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException.class, "DeviceNotRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException deviceNotRegisteredException = new com.amazonaws.services.alexaforbusiness.model.DeviceNotRegisteredException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEncodingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEncodingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehendmedical.model.InvalidEncodingException> {
+public class InvalidEncodingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEncodingExceptionUnmarshaller() {
-        super("InvalidEncodingException");
+        super(com.amazonaws.services.comprehendmedical.model.InvalidEncodingException.class, "InvalidEncodingException");
     }
 
     @Override
-    public com.amazonaws.services.comprehendmedical.model.InvalidEncodingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehendmedical.model.InvalidEncodingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehendmedical.model.InvalidEncodingException invalidEncodingException = new com.amazonaws.services.comprehendmedical.model.InvalidEncodingException(
                 null);
 

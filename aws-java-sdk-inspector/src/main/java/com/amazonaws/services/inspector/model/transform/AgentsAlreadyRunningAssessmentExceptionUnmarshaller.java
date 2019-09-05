@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AgentsAlreadyRunningAssessmentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AgentsAlreadyRunningAssessmentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException> {
+public class AgentsAlreadyRunningAssessmentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AgentsAlreadyRunningAssessmentExceptionUnmarshaller() {
-        super("AgentsAlreadyRunningAssessmentException");
+        super(com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException.class, "AgentsAlreadyRunningAssessmentException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException agentsAlreadyRunningAssessmentException = new com.amazonaws.services.inspector.model.AgentsAlreadyRunningAssessmentException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPullRequestStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPullRequestStatusExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException> {
+public class InvalidPullRequestStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPullRequestStatusExceptionUnmarshaller() {
-        super("InvalidPullRequestStatusException");
+        super(com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException.class, "InvalidPullRequestStatusException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException invalidPullRequestStatusException = new com.amazonaws.services.codecommit.model.InvalidPullRequestStatusException(
                 null);
 

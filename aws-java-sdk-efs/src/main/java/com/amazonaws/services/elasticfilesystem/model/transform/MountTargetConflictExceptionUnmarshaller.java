@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MountTargetConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MountTargetConflictExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException> {
+public class MountTargetConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MountTargetConflictExceptionUnmarshaller() {
-        super("MountTargetConflict");
+        super(com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException.class, "MountTargetConflict");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException mountTargetConflictException = new com.amazonaws.services.elasticfilesystem.model.MountTargetConflictException(
                 null);
 

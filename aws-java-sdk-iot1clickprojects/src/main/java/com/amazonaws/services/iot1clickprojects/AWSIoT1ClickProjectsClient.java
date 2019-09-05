@@ -92,10 +92,7 @@ public class AWSIoT1ClickProjectsClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot1clickprojects.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iot1clickprojects.model.AWSIoT1ClickProjectsException>(
-                                            com.amazonaws.services.iot1clickprojects.model.AWSIoT1ClickProjectsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iot1clickprojects.model.AWSIoT1ClickProjectsException.class));
 
     public static AWSIoT1ClickProjectsClientBuilder builder() {
         return AWSIoT1ClickProjectsClientBuilder.standard();

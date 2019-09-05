@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomSchemaCountLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomSchemaCountLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException> {
+public class CustomSchemaCountLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomSchemaCountLimitExceededExceptionUnmarshaller() {
-        super("CustomSchemaCountLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException.class, "CustomSchemaCountLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException customSchemaCountLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.CustomSchemaCountLimitExceededException(
                 null);

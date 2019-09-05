@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationNotEmptyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationNotEmptyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.OrganizationNotEmptyException> {
+public class OrganizationNotEmptyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationNotEmptyExceptionUnmarshaller() {
-        super("OrganizationNotEmptyException");
+        super(com.amazonaws.services.organizations.model.OrganizationNotEmptyException.class, "OrganizationNotEmptyException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.OrganizationNotEmptyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.OrganizationNotEmptyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.OrganizationNotEmptyException organizationNotEmptyException = new com.amazonaws.services.organizations.model.OrganizationNotEmptyException(
                 null);
 

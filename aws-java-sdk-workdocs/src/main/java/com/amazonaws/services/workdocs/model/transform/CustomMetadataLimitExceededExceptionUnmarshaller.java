@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomMetadataLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomMetadataLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException> {
+public class CustomMetadataLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomMetadataLimitExceededExceptionUnmarshaller() {
-        super("CustomMetadataLimitExceededException");
+        super(com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException.class, "CustomMetadataLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException customMetadataLimitExceededException = new com.amazonaws.services.workdocs.model.CustomMetadataLimitExceededException(
                 null);
 

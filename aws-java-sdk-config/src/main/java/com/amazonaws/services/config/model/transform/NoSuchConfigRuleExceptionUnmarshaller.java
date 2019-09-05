@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchConfigRuleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchConfigRuleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchConfigRuleException> {
+public class NoSuchConfigRuleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchConfigRuleExceptionUnmarshaller() {
-        super("NoSuchConfigRuleException");
+        super(com.amazonaws.services.config.model.NoSuchConfigRuleException.class, "NoSuchConfigRuleException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchConfigRuleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchConfigRuleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchConfigRuleException noSuchConfigRuleException = new com.amazonaws.services.config.model.NoSuchConfigRuleException(
                 null);
 

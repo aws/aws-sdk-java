@@ -113,10 +113,7 @@ public class AWSServiceDiscoveryClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.servicediscovery.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.servicediscovery.model.AWSServiceDiscoveryException>(
-                                            com.amazonaws.services.servicediscovery.model.AWSServiceDiscoveryException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.servicediscovery.model.AWSServiceDiscoveryException.class));
 
     public static AWSServiceDiscoveryClientBuilder builder() {
         return AWSServiceDiscoveryClientBuilder.standard();

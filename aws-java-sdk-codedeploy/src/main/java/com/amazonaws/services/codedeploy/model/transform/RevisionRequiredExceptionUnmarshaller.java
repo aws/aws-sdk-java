@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RevisionRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RevisionRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.RevisionRequiredException> {
+public class RevisionRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RevisionRequiredExceptionUnmarshaller() {
-        super("RevisionRequiredException");
+        super(com.amazonaws.services.codedeploy.model.RevisionRequiredException.class, "RevisionRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.RevisionRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.RevisionRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.RevisionRequiredException revisionRequiredException = new com.amazonaws.services.codedeploy.model.RevisionRequiredException(
                 null);
 

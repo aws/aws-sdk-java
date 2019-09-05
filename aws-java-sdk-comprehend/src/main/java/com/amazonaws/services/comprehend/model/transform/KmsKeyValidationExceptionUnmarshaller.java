@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KmsKeyValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KmsKeyValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.KmsKeyValidationException> {
+public class KmsKeyValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KmsKeyValidationExceptionUnmarshaller() {
-        super("KmsKeyValidationException");
+        super(com.amazonaws.services.comprehend.model.KmsKeyValidationException.class, "KmsKeyValidationException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.KmsKeyValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.KmsKeyValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.KmsKeyValidationException kmsKeyValidationException = new com.amazonaws.services.comprehend.model.KmsKeyValidationException(
                 null);
 

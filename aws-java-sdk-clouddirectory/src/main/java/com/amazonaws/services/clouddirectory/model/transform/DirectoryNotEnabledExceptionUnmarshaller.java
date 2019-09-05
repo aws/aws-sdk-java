@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryNotEnabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException> {
+public class DirectoryNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryNotEnabledExceptionUnmarshaller() {
-        super("DirectoryNotEnabledException");
+        super(com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException.class, "DirectoryNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException directoryNotEnabledException = new com.amazonaws.services.clouddirectory.model.DirectoryNotEnabledException(
                 null);
 

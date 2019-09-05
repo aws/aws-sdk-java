@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyFailedAttemptsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyFailedAttemptsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException> {
+public class TooManyFailedAttemptsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyFailedAttemptsExceptionUnmarshaller() {
-        super("TooManyFailedAttemptsException");
+        super(com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException.class, "TooManyFailedAttemptsException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException tooManyFailedAttemptsException = new com.amazonaws.services.cognitoidp.model.TooManyFailedAttemptsException(
                 null);
 

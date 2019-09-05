@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAggregationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAggregationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.InvalidAggregationException> {
+public class InvalidAggregationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAggregationExceptionUnmarshaller() {
-        super("InvalidAggregationException");
+        super(com.amazonaws.services.iot.model.InvalidAggregationException.class, "InvalidAggregationException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.InvalidAggregationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.InvalidAggregationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.InvalidAggregationException invalidAggregationException = new com.amazonaws.services.iot.model.InvalidAggregationException(
                 null);
 

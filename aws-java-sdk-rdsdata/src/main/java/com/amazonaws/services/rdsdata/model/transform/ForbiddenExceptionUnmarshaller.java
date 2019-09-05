@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ForbiddenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ForbiddenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rdsdata.model.ForbiddenException> {
+public class ForbiddenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ForbiddenExceptionUnmarshaller() {
-        super("ForbiddenException");
+        super(com.amazonaws.services.rdsdata.model.ForbiddenException.class, "ForbiddenException");
     }
 
     @Override
-    public com.amazonaws.services.rdsdata.model.ForbiddenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rdsdata.model.ForbiddenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rdsdata.model.ForbiddenException forbiddenException = new com.amazonaws.services.rdsdata.model.ForbiddenException(null);
 
         int originalDepth = context.getCurrentDepth();

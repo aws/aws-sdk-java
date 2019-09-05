@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException> {
+public class DoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DoesNotExistExceptionUnmarshaller() {
-        super("DoesNotExistException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException.class, "DoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException doesNotExistException = new com.amazonaws.services.simplesystemsmanagement.model.DoesNotExistException(
                 null);
 

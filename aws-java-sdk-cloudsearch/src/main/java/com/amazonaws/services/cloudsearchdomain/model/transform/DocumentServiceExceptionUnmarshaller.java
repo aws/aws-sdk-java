@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentServiceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentServiceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException> {
+public class DocumentServiceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentServiceExceptionUnmarshaller() {
-        super("DocumentServiceException");
+        super(com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException.class, "DocumentServiceException");
     }
 
     @Override
-    public com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException documentServiceException = new com.amazonaws.services.cloudsearchdomain.model.DocumentServiceException(
                 null);
 

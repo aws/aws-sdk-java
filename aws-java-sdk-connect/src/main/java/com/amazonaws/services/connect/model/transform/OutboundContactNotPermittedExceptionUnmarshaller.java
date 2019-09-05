@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OutboundContactNotPermittedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OutboundContactNotPermittedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.connect.model.OutboundContactNotPermittedException> {
+public class OutboundContactNotPermittedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OutboundContactNotPermittedExceptionUnmarshaller() {
-        super("OutboundContactNotPermittedException");
+        super(com.amazonaws.services.connect.model.OutboundContactNotPermittedException.class, "OutboundContactNotPermittedException");
     }
 
     @Override
-    public com.amazonaws.services.connect.model.OutboundContactNotPermittedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.connect.model.OutboundContactNotPermittedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.connect.model.OutboundContactNotPermittedException outboundContactNotPermittedException = new com.amazonaws.services.connect.model.OutboundContactNotPermittedException(
                 null);
 

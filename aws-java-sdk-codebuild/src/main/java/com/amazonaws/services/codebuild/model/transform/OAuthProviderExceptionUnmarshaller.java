@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OAuthProviderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OAuthProviderExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codebuild.model.OAuthProviderException> {
+public class OAuthProviderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OAuthProviderExceptionUnmarshaller() {
-        super("OAuthProviderException");
+        super(com.amazonaws.services.codebuild.model.OAuthProviderException.class, "OAuthProviderException");
     }
 
     @Override
-    public com.amazonaws.services.codebuild.model.OAuthProviderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codebuild.model.OAuthProviderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codebuild.model.OAuthProviderException oAuthProviderException = new com.amazonaws.services.codebuild.model.OAuthProviderException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BackupInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackupInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.BackupInUseException> {
+public class BackupInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BackupInUseExceptionUnmarshaller() {
-        super("BackupInUseException");
+        super(com.amazonaws.services.dynamodbv2.model.BackupInUseException.class, "BackupInUseException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.BackupInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.BackupInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.BackupInUseException backupInUseException = new com.amazonaws.services.dynamodbv2.model.BackupInUseException(
                 null);
 

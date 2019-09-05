@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DisabledApiException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisabledApiExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.DisabledApiException> {
+public class DisabledApiExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DisabledApiExceptionUnmarshaller() {
-        super("DisabledApiException");
+        super(com.amazonaws.services.marketplacemetering.model.DisabledApiException.class, "DisabledApiException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.DisabledApiException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.DisabledApiException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.marketplacemetering.model.DisabledApiException disabledApiException = new com.amazonaws.services.marketplacemetering.model.DisabledApiException(
                 null);
 

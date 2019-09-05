@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidKeyIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidKeyIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException> {
+public class InvalidKeyIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidKeyIdExceptionUnmarshaller() {
-        super("InvalidKeyId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException.class, "InvalidKeyId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException invalidKeyIdException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidKeyIdException(
                 null);
 

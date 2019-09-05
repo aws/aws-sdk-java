@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResourceStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResourceStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workspaces.model.InvalidResourceStateException> {
+public class InvalidResourceStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResourceStateExceptionUnmarshaller() {
-        super("InvalidResourceStateException");
+        super(com.amazonaws.services.workspaces.model.InvalidResourceStateException.class, "InvalidResourceStateException");
     }
 
     @Override
-    public com.amazonaws.services.workspaces.model.InvalidResourceStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workspaces.model.InvalidResourceStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workspaces.model.InvalidResourceStateException invalidResourceStateException = new com.amazonaws.services.workspaces.model.InvalidResourceStateException(
                 null);
 

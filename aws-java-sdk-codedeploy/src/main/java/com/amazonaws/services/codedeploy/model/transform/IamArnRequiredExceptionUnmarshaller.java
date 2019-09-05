@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IamArnRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IamArnRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.IamArnRequiredException> {
+public class IamArnRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IamArnRequiredExceptionUnmarshaller() {
-        super("IamArnRequiredException");
+        super(com.amazonaws.services.codedeploy.model.IamArnRequiredException.class, "IamArnRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.IamArnRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.IamArnRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.IamArnRequiredException iamArnRequiredException = new com.amazonaws.services.codedeploy.model.IamArnRequiredException(
                 null);
 

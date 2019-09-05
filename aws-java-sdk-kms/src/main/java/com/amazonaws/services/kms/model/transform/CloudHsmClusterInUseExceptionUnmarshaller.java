@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmClusterInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmClusterInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CloudHsmClusterInUseException> {
+public class CloudHsmClusterInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmClusterInUseExceptionUnmarshaller() {
-        super("CloudHsmClusterInUseException");
+        super(com.amazonaws.services.kms.model.CloudHsmClusterInUseException.class, "CloudHsmClusterInUseException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CloudHsmClusterInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CloudHsmClusterInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CloudHsmClusterInUseException cloudHsmClusterInUseException = new com.amazonaws.services.kms.model.CloudHsmClusterInUseException(
                 null);
 

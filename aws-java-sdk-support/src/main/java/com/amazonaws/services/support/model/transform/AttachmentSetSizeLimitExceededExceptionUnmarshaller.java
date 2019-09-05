@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AttachmentSetSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachmentSetSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException> {
+public class AttachmentSetSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AttachmentSetSizeLimitExceededExceptionUnmarshaller() {
-        super("AttachmentSetSizeLimitExceeded");
+        super(com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException.class, "AttachmentSetSizeLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException attachmentSetSizeLimitExceededException = new com.amazonaws.services.support.model.AttachmentSetSizeLimitExceededException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidConflictResolutionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidConflictResolutionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidConflictResolutionException> {
+public class InvalidConflictResolutionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConflictResolutionExceptionUnmarshaller() {
-        super("InvalidConflictResolutionException");
+        super(com.amazonaws.services.codecommit.model.InvalidConflictResolutionException.class, "InvalidConflictResolutionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidConflictResolutionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidConflictResolutionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidConflictResolutionException invalidConflictResolutionException = new com.amazonaws.services.codecommit.model.InvalidConflictResolutionException(
                 null);
 

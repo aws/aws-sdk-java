@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeploymentTargetIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeploymentTargetIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException> {
+public class InvalidDeploymentTargetIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeploymentTargetIdExceptionUnmarshaller() {
-        super("InvalidDeploymentTargetIdException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException.class, "InvalidDeploymentTargetIdException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException invalidDeploymentTargetIdException = new com.amazonaws.services.codedeploy.model.InvalidDeploymentTargetIdException(
                 null);
 

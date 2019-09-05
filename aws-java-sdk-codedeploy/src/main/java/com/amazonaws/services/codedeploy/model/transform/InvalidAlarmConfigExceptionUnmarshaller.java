@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAlarmConfigException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAlarmConfigExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException> {
+public class InvalidAlarmConfigExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAlarmConfigExceptionUnmarshaller() {
-        super("InvalidAlarmConfigException");
+        super(com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException.class, "InvalidAlarmConfigException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException invalidAlarmConfigException = new com.amazonaws.services.codedeploy.model.InvalidAlarmConfigException(
                 null);
 

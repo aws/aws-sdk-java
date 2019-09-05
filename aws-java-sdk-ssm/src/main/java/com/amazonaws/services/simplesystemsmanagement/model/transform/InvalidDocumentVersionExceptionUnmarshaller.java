@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDocumentVersionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDocumentVersionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException> {
+public class InvalidDocumentVersionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDocumentVersionExceptionUnmarshaller() {
-        super("InvalidDocumentVersion");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException.class, "InvalidDocumentVersion");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException invalidDocumentVersionException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentVersionException(
                 null);
 

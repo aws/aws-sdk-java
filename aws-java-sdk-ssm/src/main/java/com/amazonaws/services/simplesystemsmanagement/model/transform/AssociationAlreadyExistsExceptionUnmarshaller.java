@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociationAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociationAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException> {
+public class AssociationAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociationAlreadyExistsExceptionUnmarshaller() {
-        super("AssociationAlreadyExists");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException.class, "AssociationAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException associationAlreadyExistsException = new com.amazonaws.services.simplesystemsmanagement.model.AssociationAlreadyExistsException(
                 null);
 

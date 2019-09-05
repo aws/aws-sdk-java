@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TimestampOutOfBoundsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TimestampOutOfBoundsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException> {
+public class TimestampOutOfBoundsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TimestampOutOfBoundsExceptionUnmarshaller() {
-        super("TimestampOutOfBoundsException");
+        super(com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException.class, "TimestampOutOfBoundsException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException timestampOutOfBoundsException = new com.amazonaws.services.marketplacemetering.model.TimestampOutOfBoundsException(
                 null);
 

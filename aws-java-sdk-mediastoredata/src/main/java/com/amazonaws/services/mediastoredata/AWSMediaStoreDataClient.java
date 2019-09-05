@@ -90,10 +90,7 @@ public class AWSMediaStoreDataClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ContainerNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediastoredata.model.transform.ContainerNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException>(
-                                            com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediastoredata.model.AWSMediaStoreDataException.class));
 
     public static AWSMediaStoreDataClientBuilder builder() {
         return AWSMediaStoreDataClientBuilder.standard();

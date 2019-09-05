@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AuthException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AuthExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.AuthException> {
+public class AuthExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AuthExceptionUnmarshaller() {
-        super("AuthException");
+        super(com.amazonaws.services.ec2instanceconnect.model.AuthException.class, "AuthException");
     }
 
     @Override
-    public com.amazonaws.services.ec2instanceconnect.model.AuthException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ec2instanceconnect.model.AuthException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ec2instanceconnect.model.AuthException authException = new com.amazonaws.services.ec2instanceconnect.model.AuthException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -92,12 +92,7 @@ public class AmazonApiGatewayManagementApiClient extends AmazonWebServiceClient 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("GoneException").withExceptionUnmarshaller(
                                     com.amazonaws.services.apigatewaymanagementapi.model.transform.GoneExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException>(
-                                                    com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.apigatewaymanagementapi.model.AmazonApiGatewayManagementApiException.class));
 
     public static AmazonApiGatewayManagementApiClientBuilder builder() {
         return AmazonApiGatewayManagementApiClientBuilder.standard();

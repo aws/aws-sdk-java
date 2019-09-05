@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidImageFormatException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidImageFormatExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rekognition.model.InvalidImageFormatException> {
+public class InvalidImageFormatExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidImageFormatExceptionUnmarshaller() {
-        super("InvalidImageFormatException");
+        super(com.amazonaws.services.rekognition.model.InvalidImageFormatException.class, "InvalidImageFormatException");
     }
 
     @Override
-    public com.amazonaws.services.rekognition.model.InvalidImageFormatException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rekognition.model.InvalidImageFormatException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rekognition.model.InvalidImageFormatException invalidImageFormatException = new com.amazonaws.services.rekognition.model.InvalidImageFormatException(
                 null);
 

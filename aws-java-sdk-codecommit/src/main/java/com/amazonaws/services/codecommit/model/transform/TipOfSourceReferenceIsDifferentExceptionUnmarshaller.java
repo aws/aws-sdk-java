@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TipOfSourceReferenceIsDifferentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TipOfSourceReferenceIsDifferentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException> {
+public class TipOfSourceReferenceIsDifferentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TipOfSourceReferenceIsDifferentExceptionUnmarshaller() {
-        super("TipOfSourceReferenceIsDifferentException");
+        super(com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException.class, "TipOfSourceReferenceIsDifferentException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException tipOfSourceReferenceIsDifferentException = new com.amazonaws.services.codecommit.model.TipOfSourceReferenceIsDifferentException(
                 null);
 

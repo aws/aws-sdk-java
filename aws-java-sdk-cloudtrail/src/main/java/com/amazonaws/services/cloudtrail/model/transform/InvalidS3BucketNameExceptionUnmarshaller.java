@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3BucketNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3BucketNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException> {
+public class InvalidS3BucketNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3BucketNameExceptionUnmarshaller() {
-        super("InvalidS3BucketNameException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException.class, "InvalidS3BucketNameException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException invalidS3BucketNameException = new com.amazonaws.services.cloudtrail.model.InvalidS3BucketNameException(
                 null);
 

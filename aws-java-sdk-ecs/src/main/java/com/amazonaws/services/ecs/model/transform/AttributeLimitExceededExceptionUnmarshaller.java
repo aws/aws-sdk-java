@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AttributeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttributeLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.AttributeLimitExceededException> {
+public class AttributeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AttributeLimitExceededExceptionUnmarshaller() {
-        super("AttributeLimitExceededException");
+        super(com.amazonaws.services.ecs.model.AttributeLimitExceededException.class, "AttributeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.AttributeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.AttributeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.AttributeLimitExceededException attributeLimitExceededException = new com.amazonaws.services.ecs.model.AttributeLimitExceededException(
                 null);
 

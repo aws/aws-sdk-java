@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInvalidAccountException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInvalidAccountExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInvalidAccountException> {
+public class WAFInvalidAccountExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInvalidAccountExceptionUnmarshaller() {
-        super("WAFInvalidAccountException");
+        super(com.amazonaws.services.waf.model.WAFInvalidAccountException.class, "WAFInvalidAccountException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInvalidAccountException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInvalidAccountException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInvalidAccountException wAFInvalidAccountException = new com.amazonaws.services.waf.model.WAFInvalidAccountException(
                 null);
 

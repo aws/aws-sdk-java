@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BackupInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackupInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.BackupInProgressException> {
+public class BackupInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BackupInProgressExceptionUnmarshaller() {
-        super("BackupInProgress");
+        super(com.amazonaws.services.fsx.model.BackupInProgressException.class, "BackupInProgress");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.BackupInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.BackupInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.BackupInProgressException backupInProgressException = new com.amazonaws.services.fsx.model.BackupInProgressException(
                 null);
 

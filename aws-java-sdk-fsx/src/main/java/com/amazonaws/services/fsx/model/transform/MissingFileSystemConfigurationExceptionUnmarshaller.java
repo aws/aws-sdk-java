@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MissingFileSystemConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MissingFileSystemConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException> {
+public class MissingFileSystemConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MissingFileSystemConfigurationExceptionUnmarshaller() {
-        super("MissingFileSystemConfiguration");
+        super(com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException.class, "MissingFileSystemConfiguration");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException missingFileSystemConfigurationException = new com.amazonaws.services.fsx.model.MissingFileSystemConfigurationException(
                 null);
 

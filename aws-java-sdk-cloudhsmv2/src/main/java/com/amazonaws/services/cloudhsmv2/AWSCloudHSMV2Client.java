@@ -92,10 +92,7 @@ public class AWSCloudHSMV2Client extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmInvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudhsmv2.model.transform.CloudHsmInvalidRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception>(
-                                            com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsmv2.model.AWSCloudHSMV2Exception.class));
 
     public static AWSCloudHSMV2ClientBuilder builder() {
         return AWSCloudHSMV2ClientBuilder.standard();

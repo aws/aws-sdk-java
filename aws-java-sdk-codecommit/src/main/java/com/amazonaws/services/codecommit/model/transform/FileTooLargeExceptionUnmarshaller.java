@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileTooLargeException> {
+public class FileTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileTooLargeExceptionUnmarshaller() {
-        super("FileTooLargeException");
+        super(com.amazonaws.services.codecommit.model.FileTooLargeException.class, "FileTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileTooLargeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FileTooLargeException fileTooLargeException = new com.amazonaws.services.codecommit.model.FileTooLargeException(
                 null);
 

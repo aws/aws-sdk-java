@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionKeyDisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionKeyDisabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException> {
+public class EncryptionKeyDisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionKeyDisabledExceptionUnmarshaller() {
-        super("EncryptionKeyDisabledException");
+        super(com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException.class, "EncryptionKeyDisabledException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException encryptionKeyDisabledException = new com.amazonaws.services.codecommit.model.EncryptionKeyDisabledException(
                 null);
 

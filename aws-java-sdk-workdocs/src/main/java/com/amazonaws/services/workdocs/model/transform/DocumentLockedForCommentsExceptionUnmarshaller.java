@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentLockedForCommentsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentLockedForCommentsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException> {
+public class DocumentLockedForCommentsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentLockedForCommentsExceptionUnmarshaller() {
-        super("DocumentLockedForCommentsException");
+        super(com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException.class, "DocumentLockedForCommentsException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException documentLockedForCommentsException = new com.amazonaws.services.workdocs.model.DocumentLockedForCommentsException(
                 null);
 

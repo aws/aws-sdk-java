@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedParameterTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedParameterTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException> {
+public class UnsupportedParameterTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedParameterTypeExceptionUnmarshaller() {
-        super("UnsupportedParameterType");
+        super(com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException.class, "UnsupportedParameterType");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException unsupportedParameterTypeException = new com.amazonaws.services.simplesystemsmanagement.model.UnsupportedParameterTypeException(
                 null);
 

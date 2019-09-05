@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3KeyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3KeyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidS3KeyException> {
+public class InvalidS3KeyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3KeyExceptionUnmarshaller() {
-        super("InvalidS3KeyException");
+        super(com.amazonaws.services.polly.model.InvalidS3KeyException.class, "InvalidS3KeyException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidS3KeyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidS3KeyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidS3KeyException invalidS3KeyException = new com.amazonaws.services.polly.model.InvalidS3KeyException(null);
 
         int originalDepth = context.getCurrentDepth();

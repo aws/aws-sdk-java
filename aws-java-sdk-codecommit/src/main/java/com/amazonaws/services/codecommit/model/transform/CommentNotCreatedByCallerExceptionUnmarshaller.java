@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommentNotCreatedByCallerException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommentNotCreatedByCallerExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException> {
+public class CommentNotCreatedByCallerExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommentNotCreatedByCallerExceptionUnmarshaller() {
-        super("CommentNotCreatedByCallerException");
+        super(com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException.class, "CommentNotCreatedByCallerException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException commentNotCreatedByCallerException = new com.amazonaws.services.codecommit.model.CommentNotCreatedByCallerException(
                 null);
 

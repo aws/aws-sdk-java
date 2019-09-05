@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnexpectedLambdaException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnexpectedLambdaExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException> {
+public class UnexpectedLambdaExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnexpectedLambdaExceptionUnmarshaller() {
-        super("UnexpectedLambdaException");
+        super(com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException.class, "UnexpectedLambdaException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException unexpectedLambdaException = new com.amazonaws.services.cognitoidp.model.UnexpectedLambdaException(
                 null);
 

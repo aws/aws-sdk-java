@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * VersionsLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VersionsLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.VersionsLimitExceededException> {
+public class VersionsLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private VersionsLimitExceededExceptionUnmarshaller() {
-        super("VersionsLimitExceededException");
+        super(com.amazonaws.services.iot.model.VersionsLimitExceededException.class, "VersionsLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.VersionsLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.VersionsLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.VersionsLimitExceededException versionsLimitExceededException = new com.amazonaws.services.iot.model.VersionsLimitExceededException(
                 null);
 

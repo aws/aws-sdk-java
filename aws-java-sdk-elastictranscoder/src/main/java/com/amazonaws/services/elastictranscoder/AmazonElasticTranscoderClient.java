@@ -102,10 +102,7 @@ public class AmazonElasticTranscoderClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.elastictranscoder.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException>(
-                                            com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.elastictranscoder.model.AmazonElasticTranscoderException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Elastic Transcoder. A credentials provider chain will

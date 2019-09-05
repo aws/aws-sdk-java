@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRuleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRuleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.InvalidRuleException> {
+public class InvalidRuleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRuleExceptionUnmarshaller() {
-        super("InvalidRuleException");
+        super(com.amazonaws.services.clouddirectory.model.InvalidRuleException.class, "InvalidRuleException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.InvalidRuleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.InvalidRuleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.InvalidRuleException invalidRuleException = new com.amazonaws.services.clouddirectory.model.InvalidRuleException(
                 null);
 

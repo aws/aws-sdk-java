@@ -327,10 +327,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OrganizationalUnitNotEmptyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.organizations.model.transform.OrganizationalUnitNotEmptyExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.organizations.model.AWSOrganizationsException>(
-                                            com.amazonaws.services.organizations.model.AWSOrganizationsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.organizations.model.AWSOrganizationsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Organizations. A credentials provider chain will be used

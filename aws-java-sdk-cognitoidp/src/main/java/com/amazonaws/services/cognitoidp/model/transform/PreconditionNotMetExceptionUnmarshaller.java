@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PreconditionNotMetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PreconditionNotMetExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.PreconditionNotMetException> {
+public class PreconditionNotMetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PreconditionNotMetExceptionUnmarshaller() {
-        super("PreconditionNotMetException");
+        super(com.amazonaws.services.cognitoidp.model.PreconditionNotMetException.class, "PreconditionNotMetException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.PreconditionNotMetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.PreconditionNotMetException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.PreconditionNotMetException preconditionNotMetException = new com.amazonaws.services.cognitoidp.model.PreconditionNotMetException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TransactionInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransactionInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TransactionInProgressException> {
+public class TransactionInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TransactionInProgressExceptionUnmarshaller() {
-        super("TransactionInProgressException");
+        super(com.amazonaws.services.dynamodbv2.model.TransactionInProgressException.class, "TransactionInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TransactionInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TransactionInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TransactionInProgressException transactionInProgressException = new com.amazonaws.services.dynamodbv2.model.TransactionInProgressException(
                 null);
 

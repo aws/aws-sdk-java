@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BaseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BaseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticsearch.model.BaseException> {
+public class BaseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BaseExceptionUnmarshaller() {
-        super("BaseException");
+        super(com.amazonaws.services.elasticsearch.model.BaseException.class, "BaseException");
     }
 
     @Override
-    public com.amazonaws.services.elasticsearch.model.BaseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticsearch.model.BaseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticsearch.model.BaseException baseException = new com.amazonaws.services.elasticsearch.model.BaseException(null);
 
         int originalDepth = context.getCurrentDepth();

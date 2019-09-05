@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEndpointException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEndpointExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.InvalidEndpointException> {
+public class InvalidEndpointExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEndpointExceptionUnmarshaller() {
-        super("InvalidEndpointException");
+        super(com.amazonaws.services.kinesisvideo.model.InvalidEndpointException.class, "InvalidEndpointException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.InvalidEndpointException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.InvalidEndpointException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.InvalidEndpointException invalidEndpointException = new com.amazonaws.services.kinesisvideo.model.InvalidEndpointException(
                 null);
 

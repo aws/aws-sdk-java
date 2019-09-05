@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchConfigurationAggregatorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchConfigurationAggregatorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException> {
+public class NoSuchConfigurationAggregatorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchConfigurationAggregatorExceptionUnmarshaller() {
-        super("NoSuchConfigurationAggregatorException");
+        super(com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException.class, "NoSuchConfigurationAggregatorException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException noSuchConfigurationAggregatorException = new com.amazonaws.services.config.model.NoSuchConfigurationAggregatorException(
                 null);
 

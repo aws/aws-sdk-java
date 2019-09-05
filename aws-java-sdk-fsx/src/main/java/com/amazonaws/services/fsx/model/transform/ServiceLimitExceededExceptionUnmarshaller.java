@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.ServiceLimitExceededException> {
+public class ServiceLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceLimitExceededExceptionUnmarshaller() {
-        super("ServiceLimitExceeded");
+        super(com.amazonaws.services.fsx.model.ServiceLimitExceededException.class, "ServiceLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.ServiceLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.ServiceLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.ServiceLimitExceededException serviceLimitExceededException = new com.amazonaws.services.fsx.model.ServiceLimitExceededException(
                 null);
 

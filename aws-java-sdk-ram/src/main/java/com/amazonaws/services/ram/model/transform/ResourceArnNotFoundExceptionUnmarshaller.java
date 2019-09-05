@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceArnNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceArnNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ram.model.ResourceArnNotFoundException> {
+public class ResourceArnNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceArnNotFoundExceptionUnmarshaller() {
-        super("ResourceArnNotFoundException");
+        super(com.amazonaws.services.ram.model.ResourceArnNotFoundException.class, "ResourceArnNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.ResourceArnNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.ResourceArnNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.ResourceArnNotFoundException resourceArnNotFoundException = new com.amazonaws.services.ram.model.ResourceArnNotFoundException(
                 null);
 

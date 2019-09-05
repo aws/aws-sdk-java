@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConcurrentDeploymentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConcurrentDeploymentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.robomaker.model.ConcurrentDeploymentException> {
+public class ConcurrentDeploymentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConcurrentDeploymentExceptionUnmarshaller() {
-        super("ConcurrentDeploymentException");
+        super(com.amazonaws.services.robomaker.model.ConcurrentDeploymentException.class, "ConcurrentDeploymentException");
     }
 
     @Override
-    public com.amazonaws.services.robomaker.model.ConcurrentDeploymentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.robomaker.model.ConcurrentDeploymentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.robomaker.model.ConcurrentDeploymentException concurrentDeploymentException = new com.amazonaws.services.robomaker.model.ConcurrentDeploymentException(
                 null);
 

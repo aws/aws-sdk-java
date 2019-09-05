@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceSettingNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceSettingNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException> {
+public class ServiceSettingNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceSettingNotFoundExceptionUnmarshaller() {
-        super("ServiceSettingNotFound");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException.class, "ServiceSettingNotFound");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException serviceSettingNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.ServiceSettingNotFoundException(
                 null);
 

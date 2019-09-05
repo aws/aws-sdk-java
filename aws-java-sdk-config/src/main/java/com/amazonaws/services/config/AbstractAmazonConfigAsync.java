@@ -175,6 +175,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRemediationExceptionsResult> deleteRemediationExceptionsAsync(DeleteRemediationExceptionsRequest request) {
+
+        return deleteRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemediationExceptionsResult> deleteRemediationExceptionsAsync(DeleteRemediationExceptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteRemediationExceptionsRequest, DeleteRemediationExceptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRetentionConfigurationResult> deleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request) {
 
         return deleteRetentionConfigurationAsync(request, null);
@@ -618,6 +631,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeRemediationExceptionsResult> describeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request) {
+
+        return describeRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRemediationExceptionsResult> describeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeRemediationExceptionsRequest, DescribeRemediationExceptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRemediationExecutionStatusResult> describeRemediationExecutionStatusAsync(
             DescribeRemediationExecutionStatusRequest request) {
 
@@ -993,6 +1019,19 @@ public class AbstractAmazonConfigAsync extends AbstractAmazonConfig implements A
     @Override
     public java.util.concurrent.Future<PutRemediationConfigurationsResult> putRemediationConfigurationsAsync(PutRemediationConfigurationsRequest request,
             com.amazonaws.handlers.AsyncHandler<PutRemediationConfigurationsRequest, PutRemediationConfigurationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRemediationExceptionsResult> putRemediationExceptionsAsync(PutRemediationExceptionsRequest request) {
+
+        return putRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRemediationExceptionsResult> putRemediationExceptionsAsync(PutRemediationExceptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutRemediationExceptionsRequest, PutRemediationExceptionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

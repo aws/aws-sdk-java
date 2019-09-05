@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyEnforcedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyEnforcedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glacier.model.PolicyEnforcedException> {
+public class PolicyEnforcedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyEnforcedExceptionUnmarshaller() {
-        super("PolicyEnforcedException");
+        super(com.amazonaws.services.glacier.model.PolicyEnforcedException.class, "PolicyEnforcedException");
     }
 
     @Override
-    public com.amazonaws.services.glacier.model.PolicyEnforcedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glacier.model.PolicyEnforcedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glacier.model.PolicyEnforcedException policyEnforcedException = new com.amazonaws.services.glacier.model.PolicyEnforcedException(
                 null);
 

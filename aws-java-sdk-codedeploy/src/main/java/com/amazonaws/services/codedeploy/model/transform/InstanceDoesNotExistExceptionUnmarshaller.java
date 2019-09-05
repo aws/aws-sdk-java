@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InstanceDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException> {
+public class InstanceDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InstanceDoesNotExistExceptionUnmarshaller() {
-        super("InstanceDoesNotExistException");
+        super(com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException.class, "InstanceDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException instanceDoesNotExistException = new com.amazonaws.services.codedeploy.model.InstanceDoesNotExistException(
                 null);
 

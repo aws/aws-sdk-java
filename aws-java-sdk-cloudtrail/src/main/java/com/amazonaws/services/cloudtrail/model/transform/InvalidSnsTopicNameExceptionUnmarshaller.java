@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSnsTopicNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSnsTopicNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException> {
+public class InvalidSnsTopicNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSnsTopicNameExceptionUnmarshaller() {
-        super("InvalidSnsTopicNameException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException.class, "InvalidSnsTopicNameException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException invalidSnsTopicNameException = new com.amazonaws.services.cloudtrail.model.InvalidSnsTopicNameException(
                 null);
 

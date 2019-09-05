@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidGameSessionStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidGameSessionStatusExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException> {
+public class InvalidGameSessionStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidGameSessionStatusExceptionUnmarshaller() {
-        super("InvalidGameSessionStatusException");
+        super(com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException.class, "InvalidGameSessionStatusException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException invalidGameSessionStatusException = new com.amazonaws.services.gamelift.model.InvalidGameSessionStatusException(
                 null);
 

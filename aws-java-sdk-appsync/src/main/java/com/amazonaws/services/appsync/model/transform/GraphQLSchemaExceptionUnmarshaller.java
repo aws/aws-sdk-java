@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GraphQLSchemaException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GraphQLSchemaExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appsync.model.GraphQLSchemaException> {
+public class GraphQLSchemaExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GraphQLSchemaExceptionUnmarshaller() {
-        super("GraphQLSchemaException");
+        super(com.amazonaws.services.appsync.model.GraphQLSchemaException.class, "GraphQLSchemaException");
     }
 
     @Override
-    public com.amazonaws.services.appsync.model.GraphQLSchemaException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appsync.model.GraphQLSchemaException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appsync.model.GraphQLSchemaException graphQLSchemaException = new com.amazonaws.services.appsync.model.GraphQLSchemaException(
                 null);
 

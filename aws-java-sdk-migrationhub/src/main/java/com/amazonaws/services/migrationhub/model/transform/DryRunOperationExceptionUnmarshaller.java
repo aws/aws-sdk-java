@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DryRunOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DryRunOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.migrationhub.model.DryRunOperationException> {
+public class DryRunOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DryRunOperationExceptionUnmarshaller() {
-        super("DryRunOperation");
+        super(com.amazonaws.services.migrationhub.model.DryRunOperationException.class, "DryRunOperation");
     }
 
     @Override
-    public com.amazonaws.services.migrationhub.model.DryRunOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.migrationhub.model.DryRunOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.migrationhub.model.DryRunOperationException dryRunOperationException = new com.amazonaws.services.migrationhub.model.DryRunOperationException(
                 null);
 

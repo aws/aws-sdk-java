@@ -188,10 +188,7 @@ public class AmazonCloudDirectoryClient extends AmazonWebServiceClient implement
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedIndexTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.clouddirectory.model.transform.UnsupportedIndexTypeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.clouddirectory.model.AmazonCloudDirectoryException>(
-                                            com.amazonaws.services.clouddirectory.model.AmazonCloudDirectoryException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.clouddirectory.model.AmazonCloudDirectoryException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudDirectory. A credentials provider chain will be

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyRequestsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyRequestsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.TooManyRequestsException> {
+public class TooManyRequestsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyRequestsExceptionUnmarshaller() {
-        super("TooManyRequestsException");
+        super(com.amazonaws.services.pinpointemail.model.TooManyRequestsException.class, "TooManyRequestsException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.TooManyRequestsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.TooManyRequestsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointemail.model.TooManyRequestsException tooManyRequestsException = new com.amazonaws.services.pinpointemail.model.TooManyRequestsException(
                 null);
 

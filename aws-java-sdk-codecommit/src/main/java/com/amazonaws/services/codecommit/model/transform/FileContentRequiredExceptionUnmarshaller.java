@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileContentRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileContentRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileContentRequiredException> {
+public class FileContentRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileContentRequiredExceptionUnmarshaller() {
-        super("FileContentRequiredException");
+        super(com.amazonaws.services.codecommit.model.FileContentRequiredException.class, "FileContentRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileContentRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileContentRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FileContentRequiredException fileContentRequiredException = new com.amazonaws.services.codecommit.model.FileContentRequiredException(
                 null);
 

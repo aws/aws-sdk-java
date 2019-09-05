@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.InvalidOperationException> {
+public class InvalidOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOperationExceptionUnmarshaller() {
-        super("InvalidOperationException");
+        super(com.amazonaws.services.devicefarm.model.InvalidOperationException.class, "InvalidOperationException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.InvalidOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.InvalidOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.InvalidOperationException invalidOperationException = new com.amazonaws.services.devicefarm.model.InvalidOperationException(
                 null);
 

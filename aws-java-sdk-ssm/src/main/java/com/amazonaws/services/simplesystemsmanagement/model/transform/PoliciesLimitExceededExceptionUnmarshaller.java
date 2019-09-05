@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PoliciesLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PoliciesLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException> {
+public class PoliciesLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PoliciesLimitExceededExceptionUnmarshaller() {
-        super("PoliciesLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException.class, "PoliciesLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException policiesLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.PoliciesLimitExceededException(
                 null);
 

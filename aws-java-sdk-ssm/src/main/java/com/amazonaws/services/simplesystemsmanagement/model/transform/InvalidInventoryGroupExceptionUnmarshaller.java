@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInventoryGroupException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInventoryGroupExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException> {
+public class InvalidInventoryGroupExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInventoryGroupExceptionUnmarshaller() {
-        super("InvalidInventoryGroupException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException.class, "InvalidInventoryGroupException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException invalidInventoryGroupException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidInventoryGroupException(
                 null);
 

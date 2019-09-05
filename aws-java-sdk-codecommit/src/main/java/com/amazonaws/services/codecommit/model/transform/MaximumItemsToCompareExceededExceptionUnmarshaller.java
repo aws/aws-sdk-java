@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumItemsToCompareExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumItemsToCompareExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException> {
+public class MaximumItemsToCompareExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumItemsToCompareExceededExceptionUnmarshaller() {
-        super("MaximumItemsToCompareExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException.class, "MaximumItemsToCompareExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException maximumItemsToCompareExceededException = new com.amazonaws.services.codecommit.model.MaximumItemsToCompareExceededException(
                 null);
 

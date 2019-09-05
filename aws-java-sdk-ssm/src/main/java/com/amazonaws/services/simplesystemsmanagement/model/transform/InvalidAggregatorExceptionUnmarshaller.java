@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAggregatorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAggregatorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException> {
+public class InvalidAggregatorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAggregatorExceptionUnmarshaller() {
-        super("InvalidAggregatorException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException.class, "InvalidAggregatorException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException invalidAggregatorException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAggregatorException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.EntityNotFoundException> {
+public class EntityNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityNotFoundExceptionUnmarshaller() {
-        super("EntityNotFoundException");
+        super(com.amazonaws.services.workmail.model.EntityNotFoundException.class, "EntityNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.EntityNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.EntityNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.EntityNotFoundException entityNotFoundException = new com.amazonaws.services.workmail.model.EntityNotFoundException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FacetAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FacetAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException> {
+public class FacetAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FacetAlreadyExistsExceptionUnmarshaller() {
-        super("FacetAlreadyExistsException");
+        super(com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException.class, "FacetAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException facetAlreadyExistsException = new com.amazonaws.services.clouddirectory.model.FacetAlreadyExistsException(
                 null);
 

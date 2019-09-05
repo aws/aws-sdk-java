@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidStructureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidStructureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidStructureException> {
+public class InvalidStructureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidStructureExceptionUnmarshaller() {
-        super("InvalidStructureException");
+        super(com.amazonaws.services.codepipeline.model.InvalidStructureException.class, "InvalidStructureException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidStructureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidStructureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidStructureException invalidStructureException = new com.amazonaws.services.codepipeline.model.InvalidStructureException(
                 null);
 

@@ -18,6 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * Returns the status for an organization config rule in an organization.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationConfigRuleStatus"
  *      target="_top">AWS API Documentation</a>
@@ -25,18 +28,105 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrganizationConfigRuleStatus implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     */
     private String organizationConfigRuleName;
-
+    /**
+     * <p>
+     * Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule
+     * action for the first time, config rule status is created in all the member accounts. When master account calls
+     * PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts.
+     * Additionally, config rule status is updated when one or more member accounts join or leave an organization.
+     * Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts
+     * and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * AWS Config sets the state of the rule to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String organizationRuleStatus;
-
+    /**
+     * <p>
+     * An error code that is returned when organization config rule creation or deletion has failed.
+     * </p>
+     */
     private String errorCode;
-
+    /**
+     * <p>
+     * An error message indicating that organization config rule creation or deletion failed due to an error.
+     * </p>
+     */
     private String errorMessage;
-
+    /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     */
     private java.util.Date lastUpdateTime;
 
     /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to organization config rule.
      */
 
     public void setOrganizationConfigRuleName(String organizationConfigRuleName) {
@@ -44,7 +134,11 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
+     * @return The name that you assign to organization config rule.
      */
 
     public String getOrganizationConfigRuleName() {
@@ -52,7 +146,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The name that you assign to organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -62,7 +161,134 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule
+     * action for the first time, config rule status is created in all the member accounts. When master account calls
+     * PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts.
+     * Additionally, config rule status is updated when one or more member accounts join or leave an organization.
+     * Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts
+     * and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * AWS Config sets the state of the rule to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param organizationRuleStatus
+     *        Indicates deployment status of an organization config rule. When master account calls
+     *        PutOrganizationConfigRule action for the first time, config rule status is created in all the member
+     *        accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule
+     *        status is updated in all the member accounts. Additionally, config rule status is updated when one or more
+     *        member accounts join or leave an organization. Config rule status is deleted when the master account
+     *        deletes OrganizationConfigRule in all the member accounts and disables service access for
+     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        <p>
+     *        AWS Config sets the state of the rule to:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
      * @see OrganizationRuleStatus
      */
 
@@ -71,7 +297,133 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule
+     * action for the first time, config rule status is created in all the member accounts. When master account calls
+     * PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts.
+     * Additionally, config rule status is updated when one or more member accounts join or leave an organization.
+     * Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts
+     * and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * AWS Config sets the state of the rule to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Indicates deployment status of an organization config rule. When master account calls
+     *         PutOrganizationConfigRule action for the first time, config rule status is created in all the member
+     *         accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule
+     *         status is updated in all the member accounts. Additionally, config rule status is updated when one or
+     *         more member accounts join or leave an organization. Config rule status is deleted when the master account
+     *         deletes OrganizationConfigRule in all the member accounts and disables service access for
+     *         <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *         <p>
+     *         AWS Config sets the state of the rule to:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the
+     *         member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member
+     *         accounts within that organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member
+     *         accounts within that organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all
+     *         the member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the
+     *         member accounts.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts
+     *         within that organization.
+     *         </p>
+     *         </li>
      * @see OrganizationRuleStatus
      */
 
@@ -80,7 +432,134 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule
+     * action for the first time, config rule status is created in all the member accounts. When master account calls
+     * PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts.
+     * Additionally, config rule status is updated when one or more member accounts join or leave an organization.
+     * Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts
+     * and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * AWS Config sets the state of the rule to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param organizationRuleStatus
+     *        Indicates deployment status of an organization config rule. When master account calls
+     *        PutOrganizationConfigRule action for the first time, config rule status is created in all the member
+     *        accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule
+     *        status is updated in all the member accounts. Additionally, config rule status is updated when one or more
+     *        member accounts join or leave an organization. Config rule status is deleted when the master account
+     *        deletes OrganizationConfigRule in all the member accounts and disables service access for
+     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        <p>
+     *        AWS Config sets the state of the rule to:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationRuleStatus
      */
@@ -91,7 +570,134 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Indicates deployment status of an organization config rule. When master account calls PutOrganizationConfigRule
+     * action for the first time, config rule status is created in all the member accounts. When master account calls
+     * PutOrganizationConfigRule action for the second time, config rule status is updated in all the member accounts.
+     * Additionally, config rule status is updated when one or more member accounts join or leave an organization.
+     * Config rule status is deleted when the master account deletes OrganizationConfigRule in all the member accounts
+     * and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
+     * </p>
+     * <p>
+     * AWS Config sets the state of the rule to:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the member
+     * accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts within
+     * that organization.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param organizationRuleStatus
+     *        Indicates deployment status of an organization config rule. When master account calls
+     *        PutOrganizationConfigRule action for the first time, config rule status is created in all the member
+     *        accounts. When master account calls PutOrganizationConfigRule action for the second time, config rule
+     *        status is updated in all the member accounts. Additionally, config rule status is updated when one or more
+     *        member accounts join or leave an organization. Config rule status is deleted when the master account
+     *        deletes OrganizationConfigRule in all the member accounts and disables service access for
+     *        <code>config-multiaccountsetup.amazonaws.com</code>.</p>
+     *        <p>
+     *        AWS Config sets the state of the rule to:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_SUCCESSFUL</code> when an organization config rule has been successfully created in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> when an organization config rule creation is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_FAILED</code> when an organization config rule creation failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_FAILED</code> when an organization config rule deletion failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_IN_PROGRESS</code> when an organization config rule deletion is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETE_SUCCESSFUL</code> when an organization config rule has been successfully deleted from all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_SUCCESSFUL</code> when an organization config rule has been successfully updated in all the
+     *        member accounts.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_IN_PROGRESS</code> when an organization config rule update is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FAILED</code> when an organization config rule update failed in one or more member accounts
+     *        within that organization.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OrganizationRuleStatus
      */
@@ -102,7 +708,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An error code that is returned when organization config rule creation or deletion has failed.
+     * </p>
+     * 
      * @param errorCode
+     *        An error code that is returned when organization config rule creation or deletion has failed.
      */
 
     public void setErrorCode(String errorCode) {
@@ -110,7 +721,11 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * An error code that is returned when organization config rule creation or deletion has failed.
+     * </p>
+     * 
+     * @return An error code that is returned when organization config rule creation or deletion has failed.
      */
 
     public String getErrorCode() {
@@ -118,7 +733,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An error code that is returned when organization config rule creation or deletion has failed.
+     * </p>
+     * 
      * @param errorCode
+     *        An error code that is returned when organization config rule creation or deletion has failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -128,7 +748,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An error message indicating that organization config rule creation or deletion failed due to an error.
+     * </p>
+     * 
      * @param errorMessage
+     *        An error message indicating that organization config rule creation or deletion failed due to an error.
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -136,7 +761,11 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * An error message indicating that organization config rule creation or deletion failed due to an error.
+     * </p>
+     * 
+     * @return An error message indicating that organization config rule creation or deletion failed due to an error.
      */
 
     public String getErrorMessage() {
@@ -144,7 +773,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * An error message indicating that organization config rule creation or deletion failed due to an error.
+     * </p>
+     * 
      * @param errorMessage
+     *        An error message indicating that organization config rule creation or deletion failed due to an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,7 +788,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
      * @param lastUpdateTime
+     *        The timestamp of the last update.
      */
 
     public void setLastUpdateTime(java.util.Date lastUpdateTime) {
@@ -162,7 +801,11 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
-     * @return
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
+     * @return The timestamp of the last update.
      */
 
     public java.util.Date getLastUpdateTime() {
@@ -170,7 +813,12 @@ public class OrganizationConfigRuleStatus implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * The timestamp of the last update.
+     * </p>
+     * 
      * @param lastUpdateTime
+     *        The timestamp of the last update.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

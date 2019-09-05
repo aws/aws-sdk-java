@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicationJobNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicationJobNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException> {
+public class ReplicationJobNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicationJobNotFoundExceptionUnmarshaller() {
-        super("ReplicationJobNotFoundException");
+        super(com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException.class, "ReplicationJobNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException replicationJobNotFoundException = new com.amazonaws.services.servermigration.model.ReplicationJobNotFoundException(
                 null);
 

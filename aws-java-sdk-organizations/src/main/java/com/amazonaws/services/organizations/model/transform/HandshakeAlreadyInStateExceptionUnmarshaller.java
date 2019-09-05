@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * HandshakeAlreadyInStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HandshakeAlreadyInStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException> {
+public class HandshakeAlreadyInStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private HandshakeAlreadyInStateExceptionUnmarshaller() {
-        super("HandshakeAlreadyInStateException");
+        super(com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException.class, "HandshakeAlreadyInStateException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException handshakeAlreadyInStateException = new com.amazonaws.services.organizations.model.HandshakeAlreadyInStateException(
                 null);
 

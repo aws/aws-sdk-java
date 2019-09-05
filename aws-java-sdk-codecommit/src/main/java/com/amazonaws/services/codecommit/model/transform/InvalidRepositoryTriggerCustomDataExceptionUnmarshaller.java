@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryTriggerCustomDataException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryTriggerCustomDataExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException> {
+public class InvalidRepositoryTriggerCustomDataExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryTriggerCustomDataExceptionUnmarshaller() {
-        super("InvalidRepositoryTriggerCustomDataException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException.class, "InvalidRepositoryTriggerCustomDataException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException invalidRepositoryTriggerCustomDataException = new com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerCustomDataException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnprocessableEntityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnprocessableEntityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException> {
+public class UnprocessableEntityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnprocessableEntityExceptionUnmarshaller() {
-        super("UnprocessableEntityException");
+        super(com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException.class, "UnprocessableEntityException");
     }
 
     @Override
-    public com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException unprocessableEntityException = new com.amazonaws.services.mediapackagevod.model.UnprocessableEntityException(
                 null);
 

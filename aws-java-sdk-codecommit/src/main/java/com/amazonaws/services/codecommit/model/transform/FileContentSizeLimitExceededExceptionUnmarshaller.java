@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileContentSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileContentSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException> {
+public class FileContentSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileContentSizeLimitExceededExceptionUnmarshaller() {
-        super("FileContentSizeLimitExceededException");
+        super(com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException.class, "FileContentSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException fileContentSizeLimitExceededException = new com.amazonaws.services.codecommit.model.FileContentSizeLimitExceededException(
                 null);
 

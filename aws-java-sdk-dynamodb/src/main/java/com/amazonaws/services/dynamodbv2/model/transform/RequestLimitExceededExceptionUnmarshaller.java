@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException> {
+public class RequestLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestLimitExceededExceptionUnmarshaller() {
-        super("RequestLimitExceeded");
+        super(com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException.class, "RequestLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException requestLimitExceededException = new com.amazonaws.services.dynamodbv2.model.RequestLimitExceededException(
                 null);
 

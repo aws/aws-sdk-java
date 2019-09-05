@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceProvisionedThroughputExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceProvisionedThroughputExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException> {
+public class ResourceProvisionedThroughputExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceProvisionedThroughputExceededExceptionUnmarshaller() {
-        super("ResourceProvisionedThroughputExceededException");
+        super(com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException.class,
+                "ResourceProvisionedThroughputExceededException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException resourceProvisionedThroughputExceededException = new com.amazonaws.services.kinesisanalyticsv2.model.ResourceProvisionedThroughputExceededException(
                 null);

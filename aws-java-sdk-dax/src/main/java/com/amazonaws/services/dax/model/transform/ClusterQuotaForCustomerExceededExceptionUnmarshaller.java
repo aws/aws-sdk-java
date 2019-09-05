@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterQuotaForCustomerExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterQuotaForCustomerExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException> {
+public class ClusterQuotaForCustomerExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterQuotaForCustomerExceededExceptionUnmarshaller() {
-        super("ClusterQuotaForCustomerExceededFault");
+        super(com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException.class, "ClusterQuotaForCustomerExceededFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException clusterQuotaForCustomerExceededException = new com.amazonaws.services.dax.model.ClusterQuotaForCustomerExceededException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidReplacementTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidReplacementTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidReplacementTypeException> {
+public class InvalidReplacementTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidReplacementTypeExceptionUnmarshaller() {
-        super("InvalidReplacementTypeException");
+        super(com.amazonaws.services.codecommit.model.InvalidReplacementTypeException.class, "InvalidReplacementTypeException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidReplacementTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidReplacementTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidReplacementTypeException invalidReplacementTypeException = new com.amazonaws.services.codecommit.model.InvalidReplacementTypeException(
                 null);
 

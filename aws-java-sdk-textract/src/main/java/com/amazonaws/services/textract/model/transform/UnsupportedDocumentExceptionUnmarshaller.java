@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedDocumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedDocumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.textract.model.UnsupportedDocumentException> {
+public class UnsupportedDocumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedDocumentExceptionUnmarshaller() {
-        super("UnsupportedDocumentException");
+        super(com.amazonaws.services.textract.model.UnsupportedDocumentException.class, "UnsupportedDocumentException");
     }
 
     @Override
-    public com.amazonaws.services.textract.model.UnsupportedDocumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.textract.model.UnsupportedDocumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.textract.model.UnsupportedDocumentException unsupportedDocumentException = new com.amazonaws.services.textract.model.UnsupportedDocumentException(
                 null);
 

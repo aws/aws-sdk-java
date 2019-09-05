@@ -129,10 +129,7 @@ public class AmazonCloudWatchEventsClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ManagedRuleException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudwatchevents.model.transform.ManagedRuleExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException>(
-                                            com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudwatchevents.model.AmazonCloudWatchEventsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Events. A credentials provider chain will

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.opsworkscm.model.InvalidStateException> {
+public class InvalidStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidStateExceptionUnmarshaller() {
-        super("InvalidStateException");
+        super(com.amazonaws.services.opsworkscm.model.InvalidStateException.class, "InvalidStateException");
     }
 
     @Override
-    public com.amazonaws.services.opsworkscm.model.InvalidStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.opsworkscm.model.InvalidStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.opsworkscm.model.InvalidStateException invalidStateException = new com.amazonaws.services.opsworkscm.model.InvalidStateException(
                 null);
 

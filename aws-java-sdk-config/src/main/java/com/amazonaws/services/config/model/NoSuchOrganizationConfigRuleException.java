@@ -15,7 +15,9 @@ package com.amazonaws.services.config.model;
 import javax.annotation.Generated;
 
 /**
- * 
+ * <p>
+ * You specified one or more organization config rules that do not exist.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class NoSuchOrganizationConfigRuleException extends com.amazonaws.services.config.model.AmazonConfigException {

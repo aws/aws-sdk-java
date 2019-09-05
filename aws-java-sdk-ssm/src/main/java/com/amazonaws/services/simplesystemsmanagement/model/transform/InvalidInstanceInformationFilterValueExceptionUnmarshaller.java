@@ -27,15 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInstanceInformationFilterValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInstanceInformationFilterValueExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException> {
+public class InvalidInstanceInformationFilterValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInstanceInformationFilterValueExceptionUnmarshaller() {
-        super("InvalidInstanceInformationFilterValue");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException.class,
+                "InvalidInstanceInformationFilterValue");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException unmarshallFromContext(
+            JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException invalidInstanceInformationFilterValueException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidInstanceInformationFilterValueException(
                 null);
 

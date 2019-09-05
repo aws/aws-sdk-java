@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidS3BucketException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidS3BucketExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidS3BucketException> {
+public class InvalidS3BucketExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidS3BucketExceptionUnmarshaller() {
-        super("InvalidS3BucketException");
+        super(com.amazonaws.services.polly.model.InvalidS3BucketException.class, "InvalidS3BucketException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidS3BucketException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidS3BucketException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidS3BucketException invalidS3BucketException = new com.amazonaws.services.polly.model.InvalidS3BucketException(
                 null);
 

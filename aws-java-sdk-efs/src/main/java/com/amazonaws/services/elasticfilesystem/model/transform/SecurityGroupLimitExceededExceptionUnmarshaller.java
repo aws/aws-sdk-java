@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SecurityGroupLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SecurityGroupLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException> {
+public class SecurityGroupLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SecurityGroupLimitExceededExceptionUnmarshaller() {
-        super("SecurityGroupLimitExceeded");
+        super(com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException.class, "SecurityGroupLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException securityGroupLimitExceededException = new com.amazonaws.services.elasticfilesystem.model.SecurityGroupLimitExceededException(
                 null);
 

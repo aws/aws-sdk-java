@@ -94,10 +94,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.forecast.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.forecast.model.AmazonForecastException>(
-                                            com.amazonaws.services.forecast.model.AmazonForecastException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.forecast.model.AmazonForecastException.class));
 
     public static AmazonForecastClientBuilder builder() {
         return AmazonForecastClientBuilder.standard();

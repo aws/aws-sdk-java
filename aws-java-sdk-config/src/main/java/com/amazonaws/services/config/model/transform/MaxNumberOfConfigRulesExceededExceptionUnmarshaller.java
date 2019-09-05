@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxNumberOfConfigRulesExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxNumberOfConfigRulesExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException> {
+public class MaxNumberOfConfigRulesExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxNumberOfConfigRulesExceededExceptionUnmarshaller() {
-        super("MaxNumberOfConfigRulesExceededException");
+        super(com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException.class, "MaxNumberOfConfigRulesExceededException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException maxNumberOfConfigRulesExceededException = new com.amazonaws.services.config.model.MaxNumberOfConfigRulesExceededException(
                 null);
 

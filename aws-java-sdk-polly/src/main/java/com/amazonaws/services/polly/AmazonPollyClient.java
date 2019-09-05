@@ -145,10 +145,7 @@ public class AmazonPollyClient extends AmazonWebServiceClient implements AmazonP
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.polly.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.polly.model.AmazonPollyException>(
-                                            com.amazonaws.services.polly.model.AmazonPollyException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.polly.model.AmazonPollyException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Polly. A credentials provider chain will be used that

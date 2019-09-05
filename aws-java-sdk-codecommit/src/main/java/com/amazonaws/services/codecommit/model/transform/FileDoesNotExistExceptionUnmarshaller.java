@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileDoesNotExistException> {
+public class FileDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileDoesNotExistExceptionUnmarshaller() {
-        super("FileDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.FileDoesNotExistException.class, "FileDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FileDoesNotExistException fileDoesNotExistException = new com.amazonaws.services.codecommit.model.FileDoesNotExistException(
                 null);
 

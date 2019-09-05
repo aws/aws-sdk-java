@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SearchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SearchExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudsearchdomain.model.SearchException> {
+public class SearchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SearchExceptionUnmarshaller() {
-        super("SearchException");
+        super(com.amazonaws.services.cloudsearchdomain.model.SearchException.class, "SearchException");
     }
 
     @Override
-    public com.amazonaws.services.cloudsearchdomain.model.SearchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudsearchdomain.model.SearchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudsearchdomain.model.SearchException searchException = new com.amazonaws.services.cloudsearchdomain.model.SearchException(
                 null);
 

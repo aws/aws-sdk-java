@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryTriggerDestinationArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryTriggerDestinationArnExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException> {
+public class InvalidRepositoryTriggerDestinationArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryTriggerDestinationArnExceptionUnmarshaller() {
-        super("InvalidRepositoryTriggerDestinationArnException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException.class, "InvalidRepositoryTriggerDestinationArnException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException invalidRepositoryTriggerDestinationArnException = new com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerDestinationArnException(
                 null);
 

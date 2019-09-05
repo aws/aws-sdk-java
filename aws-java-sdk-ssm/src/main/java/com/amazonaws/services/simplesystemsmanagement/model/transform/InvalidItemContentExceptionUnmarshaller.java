@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidItemContentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidItemContentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException> {
+public class InvalidItemContentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidItemContentExceptionUnmarshaller() {
-        super("InvalidItemContentException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException.class, "InvalidItemContentException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException invalidItemContentException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidItemContentException(
                 null);
 

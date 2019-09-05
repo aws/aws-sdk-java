@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ThroughputLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThroughputLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException> {
+public class ThroughputLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ThroughputLimitExceededExceptionUnmarshaller() {
-        super("ThroughputLimitExceeded");
+        super(com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException.class, "ThroughputLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException throughputLimitExceededException = new com.amazonaws.services.elasticfilesystem.model.ThroughputLimitExceededException(
                 null);
 

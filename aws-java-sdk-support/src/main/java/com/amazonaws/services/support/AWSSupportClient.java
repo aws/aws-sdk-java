@@ -176,10 +176,7 @@ public class AWSSupportClient extends AmazonWebServiceClient implements AWSSuppo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AttachmentSetSizeLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.support.model.transform.AttachmentSetSizeLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.support.model.AWSSupportException>(
-                                            com.amazonaws.services.support.model.AWSSupportException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.support.model.AWSSupportException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Support. A credentials provider chain will be used that

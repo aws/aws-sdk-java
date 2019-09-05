@@ -459,12 +459,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException>(
-                                                    com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.simplesystemsmanagement.model.AWSSimpleSystemsManagementException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon SSM. A credentials provider chain will be used that

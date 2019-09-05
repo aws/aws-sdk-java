@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterContainsTasksException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterContainsTasksExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.ClusterContainsTasksException> {
+public class ClusterContainsTasksExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterContainsTasksExceptionUnmarshaller() {
-        super("ClusterContainsTasksException");
+        super(com.amazonaws.services.ecs.model.ClusterContainsTasksException.class, "ClusterContainsTasksException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.ClusterContainsTasksException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.ClusterContainsTasksException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.ClusterContainsTasksException clusterContainsTasksException = new com.amazonaws.services.ecs.model.ClusterContainsTasksException(
                 null);
 

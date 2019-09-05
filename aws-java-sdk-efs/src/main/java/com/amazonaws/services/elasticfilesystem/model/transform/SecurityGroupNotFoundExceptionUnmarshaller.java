@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SecurityGroupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SecurityGroupNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException> {
+public class SecurityGroupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SecurityGroupNotFoundExceptionUnmarshaller() {
-        super("SecurityGroupNotFound");
+        super(com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException.class, "SecurityGroupNotFound");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException securityGroupNotFoundException = new com.amazonaws.services.elasticfilesystem.model.SecurityGroupNotFoundException(
                 null);
 

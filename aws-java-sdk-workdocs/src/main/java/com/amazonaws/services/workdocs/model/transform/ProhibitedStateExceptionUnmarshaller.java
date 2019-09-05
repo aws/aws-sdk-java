@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProhibitedStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProhibitedStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.ProhibitedStateException> {
+public class ProhibitedStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProhibitedStateExceptionUnmarshaller() {
-        super("ProhibitedStateException");
+        super(com.amazonaws.services.workdocs.model.ProhibitedStateException.class, "ProhibitedStateException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.ProhibitedStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.ProhibitedStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.ProhibitedStateException prohibitedStateException = new com.amazonaws.services.workdocs.model.ProhibitedStateException(
                 null);
 

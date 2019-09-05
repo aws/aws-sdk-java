@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MailDomainNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MailDomainNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.MailDomainNotFoundException> {
+public class MailDomainNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MailDomainNotFoundExceptionUnmarshaller() {
-        super("MailDomainNotFoundException");
+        super(com.amazonaws.services.workmail.model.MailDomainNotFoundException.class, "MailDomainNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.MailDomainNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.MailDomainNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.MailDomainNotFoundException mailDomainNotFoundException = new com.amazonaws.services.workmail.model.MailDomainNotFoundException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ArnNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ArnNotSupportedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ArnNotSupportedException> {
+public class ArnNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ArnNotSupportedExceptionUnmarshaller() {
-        super("ArnNotSupportedException");
+        super(com.amazonaws.services.codedeploy.model.ArnNotSupportedException.class, "ArnNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ArnNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ArnNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.ArnNotSupportedException arnNotSupportedException = new com.amazonaws.services.codedeploy.model.ArnNotSupportedException(
                 null);
 

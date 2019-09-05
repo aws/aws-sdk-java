@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TargetInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TargetInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException> {
+public class TargetInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TargetInUseExceptionUnmarshaller() {
-        super("TargetInUseException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException.class, "TargetInUseException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException targetInUseException = new com.amazonaws.services.simplesystemsmanagement.model.TargetInUseException(
                 null);
 

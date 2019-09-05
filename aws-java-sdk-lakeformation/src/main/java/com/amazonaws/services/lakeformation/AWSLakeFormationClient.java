@@ -95,10 +95,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lakeformation.model.transform.InternalServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lakeformation.model.AWSLakeFormationException>(
-                                            com.amazonaws.services.lakeformation.model.AWSLakeFormationException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.lakeformation.model.AWSLakeFormationException.class));
 
     public static AWSLakeFormationClientBuilder builder() {
         return AWSLakeFormationClientBuilder.standard();

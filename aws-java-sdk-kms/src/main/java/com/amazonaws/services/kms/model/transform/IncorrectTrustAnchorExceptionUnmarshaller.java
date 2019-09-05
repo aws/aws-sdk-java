@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncorrectTrustAnchorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncorrectTrustAnchorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.IncorrectTrustAnchorException> {
+public class IncorrectTrustAnchorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncorrectTrustAnchorExceptionUnmarshaller() {
-        super("IncorrectTrustAnchorException");
+        super(com.amazonaws.services.kms.model.IncorrectTrustAnchorException.class, "IncorrectTrustAnchorException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.IncorrectTrustAnchorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.IncorrectTrustAnchorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.IncorrectTrustAnchorException incorrectTrustAnchorException = new com.amazonaws.services.kms.model.IncorrectTrustAnchorException(
                 null);
 

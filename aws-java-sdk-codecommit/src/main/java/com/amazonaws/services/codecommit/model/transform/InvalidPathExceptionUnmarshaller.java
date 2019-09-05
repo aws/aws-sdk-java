@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPathException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPathExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidPathException> {
+public class InvalidPathExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPathExceptionUnmarshaller() {
-        super("InvalidPathException");
+        super(com.amazonaws.services.codecommit.model.InvalidPathException.class, "InvalidPathException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidPathException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidPathException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidPathException invalidPathException = new com.amazonaws.services.codecommit.model.InvalidPathException(
                 null);
 

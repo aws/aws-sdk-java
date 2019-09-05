@@ -152,10 +152,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.chime.model.AmazonChimeException>(
-                                            com.amazonaws.services.chime.model.AmazonChimeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.chime.model.AmazonChimeException.class));
 
     public static AmazonChimeClientBuilder builder() {
         return AmazonChimeClientBuilder.standard();

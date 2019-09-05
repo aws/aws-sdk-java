@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * VersionConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VersionConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.VersionConflictException> {
+public class VersionConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private VersionConflictExceptionUnmarshaller() {
-        super("VersionConflictException");
+        super(com.amazonaws.services.iot.model.VersionConflictException.class, "VersionConflictException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.VersionConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.VersionConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.VersionConflictException versionConflictException = new com.amazonaws.services.iot.model.VersionConflictException(null);
 
         int originalDepth = context.getCurrentDepth();

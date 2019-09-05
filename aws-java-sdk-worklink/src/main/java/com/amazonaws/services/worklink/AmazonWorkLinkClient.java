@@ -100,10 +100,7 @@ public class AmazonWorkLinkClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.worklink.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.worklink.model.AmazonWorkLinkException>(
-                                            com.amazonaws.services.worklink.model.AmazonWorkLinkException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.worklink.model.AmazonWorkLinkException.class));
 
     public static AmazonWorkLinkClientBuilder builder() {
         return AmazonWorkLinkClientBuilder.standard();

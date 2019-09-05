@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LayerInaccessibleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LayerInaccessibleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LayerInaccessibleException> {
+public class LayerInaccessibleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LayerInaccessibleExceptionUnmarshaller() {
-        super("LayerInaccessibleException");
+        super(com.amazonaws.services.ecr.model.LayerInaccessibleException.class, "LayerInaccessibleException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LayerInaccessibleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LayerInaccessibleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LayerInaccessibleException layerInaccessibleException = new com.amazonaws.services.ecr.model.LayerInaccessibleException(
                 null);
 

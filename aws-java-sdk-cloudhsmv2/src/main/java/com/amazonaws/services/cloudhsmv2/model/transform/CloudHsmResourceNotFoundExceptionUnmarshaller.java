@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmResourceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmResourceNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException> {
+public class CloudHsmResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmResourceNotFoundExceptionUnmarshaller() {
-        super("CloudHsmResourceNotFoundException");
+        super(com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException.class, "CloudHsmResourceNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException cloudHsmResourceNotFoundException = new com.amazonaws.services.cloudhsmv2.model.CloudHsmResourceNotFoundException(
                 null);
 

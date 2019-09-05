@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceQuotaTemplateNotInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceQuotaTemplateNotInUseExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException> {
+public class ServiceQuotaTemplateNotInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceQuotaTemplateNotInUseExceptionUnmarshaller() {
-        super("ServiceQuotaTemplateNotInUseException");
+        super(com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException.class, "ServiceQuotaTemplateNotInUseException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException serviceQuotaTemplateNotInUseException = new com.amazonaws.services.servicequotas.model.ServiceQuotaTemplateNotInUseException(
                 null);
 

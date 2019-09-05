@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MFAMethodNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MFAMethodNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException> {
+public class MFAMethodNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MFAMethodNotFoundExceptionUnmarshaller() {
-        super("MFAMethodNotFoundException");
+        super(com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException.class, "MFAMethodNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException mFAMethodNotFoundException = new com.amazonaws.services.cognitoidp.model.MFAMethodNotFoundException(
                 null);
 

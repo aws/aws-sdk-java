@@ -127,10 +127,7 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeviceNotRegisteredException").withExceptionUnmarshaller(
                                     com.amazonaws.services.alexaforbusiness.model.transform.DeviceNotRegisteredExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException>(
-                                            com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.alexaforbusiness.model.AmazonAlexaForBusinessException.class));
 
     public static AmazonAlexaForBusinessClientBuilder builder() {
         return AmazonAlexaForBusinessClientBuilder.standard();

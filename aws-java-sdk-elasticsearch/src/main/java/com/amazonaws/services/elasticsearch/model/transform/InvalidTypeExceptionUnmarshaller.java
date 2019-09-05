@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticsearch.model.InvalidTypeException> {
+public class InvalidTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTypeExceptionUnmarshaller() {
-        super("InvalidTypeException");
+        super(com.amazonaws.services.elasticsearch.model.InvalidTypeException.class, "InvalidTypeException");
     }
 
     @Override
-    public com.amazonaws.services.elasticsearch.model.InvalidTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticsearch.model.InvalidTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticsearch.model.InvalidTypeException invalidTypeException = new com.amazonaws.services.elasticsearch.model.InvalidTypeException(
                 null);
 

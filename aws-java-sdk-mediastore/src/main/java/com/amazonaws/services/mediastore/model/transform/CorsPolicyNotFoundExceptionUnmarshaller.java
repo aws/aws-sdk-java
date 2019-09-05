@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CorsPolicyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CorsPolicyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException> {
+public class CorsPolicyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CorsPolicyNotFoundExceptionUnmarshaller() {
-        super("CorsPolicyNotFoundException");
+        super(com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException.class, "CorsPolicyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException corsPolicyNotFoundException = new com.amazonaws.services.mediastore.model.CorsPolicyNotFoundException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoFreeAddressesInSubnetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoFreeAddressesInSubnetExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException> {
+public class NoFreeAddressesInSubnetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoFreeAddressesInSubnetExceptionUnmarshaller() {
-        super("NoFreeAddressesInSubnet");
+        super(com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException.class, "NoFreeAddressesInSubnet");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException noFreeAddressesInSubnetException = new com.amazonaws.services.elasticfilesystem.model.NoFreeAddressesInSubnetException(
                 null);
 

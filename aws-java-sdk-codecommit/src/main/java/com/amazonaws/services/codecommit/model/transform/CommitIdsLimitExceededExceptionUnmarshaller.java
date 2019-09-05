@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommitIdsLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommitIdsLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException> {
+public class CommitIdsLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommitIdsLimitExceededExceptionUnmarshaller() {
-        super("CommitIdsLimitExceededException");
+        super(com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException.class, "CommitIdsLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException commitIdsLimitExceededException = new com.amazonaws.services.codecommit.model.CommitIdsLimitExceededException(
                 null);
 

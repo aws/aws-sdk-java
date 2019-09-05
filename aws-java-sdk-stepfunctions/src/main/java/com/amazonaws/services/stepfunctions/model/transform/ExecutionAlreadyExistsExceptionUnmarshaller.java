@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExecutionAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExecutionAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException> {
+public class ExecutionAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExecutionAlreadyExistsExceptionUnmarshaller() {
-        super("ExecutionAlreadyExists");
+        super(com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException.class, "ExecutionAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException executionAlreadyExistsException = new com.amazonaws.services.stepfunctions.model.ExecutionAlreadyExistsException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileSystemInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileSystemInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException> {
+public class FileSystemInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileSystemInUseExceptionUnmarshaller() {
-        super("FileSystemInUse");
+        super(com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException.class, "FileSystemInUse");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException fileSystemInUseException = new com.amazonaws.services.elasticfilesystem.model.FileSystemInUseException(
                 null);
 

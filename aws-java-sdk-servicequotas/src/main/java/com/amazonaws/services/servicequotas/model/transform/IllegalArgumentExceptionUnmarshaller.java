@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IllegalArgumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IllegalArgumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.IllegalArgumentException> {
+public class IllegalArgumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IllegalArgumentExceptionUnmarshaller() {
-        super("IllegalArgumentException");
+        super(com.amazonaws.services.servicequotas.model.IllegalArgumentException.class, "IllegalArgumentException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.IllegalArgumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.IllegalArgumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicequotas.model.IllegalArgumentException illegalArgumentException = new com.amazonaws.services.servicequotas.model.IllegalArgumentException(
                 null);
 

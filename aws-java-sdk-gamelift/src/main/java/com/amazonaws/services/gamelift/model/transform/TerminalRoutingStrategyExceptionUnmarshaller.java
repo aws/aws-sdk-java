@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TerminalRoutingStrategyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TerminalRoutingStrategyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException> {
+public class TerminalRoutingStrategyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TerminalRoutingStrategyExceptionUnmarshaller() {
-        super("TerminalRoutingStrategyException");
+        super(com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException.class, "TerminalRoutingStrategyException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException terminalRoutingStrategyException = new com.amazonaws.services.gamelift.model.TerminalRoutingStrategyException(
                 null);
 

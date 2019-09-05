@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAddressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAddressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.InvalidAddressException> {
+public class InvalidAddressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAddressExceptionUnmarshaller() {
-        super("InvalidAddressException");
+        super(com.amazonaws.services.snowball.model.InvalidAddressException.class, "InvalidAddressException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.InvalidAddressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.InvalidAddressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.InvalidAddressException invalidAddressException = new com.amazonaws.services.snowball.model.InvalidAddressException(
                 null);
 

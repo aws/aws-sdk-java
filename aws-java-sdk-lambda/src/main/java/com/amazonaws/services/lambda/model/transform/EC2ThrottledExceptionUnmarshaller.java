@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EC2ThrottledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EC2ThrottledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.EC2ThrottledException> {
+public class EC2ThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EC2ThrottledExceptionUnmarshaller() {
-        super("EC2ThrottledException");
+        super(com.amazonaws.services.lambda.model.EC2ThrottledException.class, "EC2ThrottledException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.EC2ThrottledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.EC2ThrottledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.EC2ThrottledException eC2ThrottledException = new com.amazonaws.services.lambda.model.EC2ThrottledException(null);
 
         int originalDepth = context.getCurrentDepth();

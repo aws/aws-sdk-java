@@ -127,10 +127,7 @@ public class AmazonConnectClient extends AmazonWebServiceClient implements Amazo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.connect.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.connect.model.AmazonConnectException>(
-                                            com.amazonaws.services.connect.model.AmazonConnectException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.connect.model.AmazonConnectException.class));
 
     public static AmazonConnectClientBuilder builder() {
         return AmazonConnectClientBuilder.standard();

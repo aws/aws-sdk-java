@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentConfigAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentConfigAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException> {
+public class DeploymentConfigAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentConfigAlreadyExistsExceptionUnmarshaller() {
-        super("DeploymentConfigAlreadyExistsException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException.class, "DeploymentConfigAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException deploymentConfigAlreadyExistsException = new com.amazonaws.services.codedeploy.model.DeploymentConfigAlreadyExistsException(
                 null);
 

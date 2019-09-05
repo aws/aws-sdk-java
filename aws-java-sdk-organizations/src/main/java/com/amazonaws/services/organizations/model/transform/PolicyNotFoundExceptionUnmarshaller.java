@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyNotFoundException> {
+public class PolicyNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyNotFoundExceptionUnmarshaller() {
-        super("PolicyNotFoundException");
+        super(com.amazonaws.services.organizations.model.PolicyNotFoundException.class, "PolicyNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.PolicyNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.PolicyNotFoundException policyNotFoundException = new com.amazonaws.services.organizations.model.PolicyNotFoundException(
                 null);
 

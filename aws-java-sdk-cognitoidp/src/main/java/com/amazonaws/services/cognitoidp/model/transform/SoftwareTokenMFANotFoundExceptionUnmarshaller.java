@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SoftwareTokenMFANotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SoftwareTokenMFANotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException> {
+public class SoftwareTokenMFANotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SoftwareTokenMFANotFoundExceptionUnmarshaller() {
-        super("SoftwareTokenMFANotFoundException");
+        super(com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException.class, "SoftwareTokenMFANotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException softwareTokenMFANotFoundException = new com.amazonaws.services.cognitoidp.model.SoftwareTokenMFANotFoundException(
                 null);
 

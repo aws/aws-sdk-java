@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CodeMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CodeMismatchExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.CodeMismatchException> {
+public class CodeMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CodeMismatchExceptionUnmarshaller() {
-        super("CodeMismatchException");
+        super(com.amazonaws.services.cognitoidp.model.CodeMismatchException.class, "CodeMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.CodeMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.CodeMismatchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.CodeMismatchException codeMismatchException = new com.amazonaws.services.cognitoidp.model.CodeMismatchException(
                 null);
 

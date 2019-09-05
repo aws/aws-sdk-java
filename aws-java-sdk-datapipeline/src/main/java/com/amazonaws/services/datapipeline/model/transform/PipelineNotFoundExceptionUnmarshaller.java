@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PipelineNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.datapipeline.model.PipelineNotFoundException> {
+public class PipelineNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PipelineNotFoundExceptionUnmarshaller() {
-        super("PipelineNotFoundException");
+        super(com.amazonaws.services.datapipeline.model.PipelineNotFoundException.class, "PipelineNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.datapipeline.model.PipelineNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.datapipeline.model.PipelineNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.datapipeline.model.PipelineNotFoundException pipelineNotFoundException = new com.amazonaws.services.datapipeline.model.PipelineNotFoundException(
                 null);
 

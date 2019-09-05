@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TransactionCanceledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TransactionCanceledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TransactionCanceledException> {
+public class TransactionCanceledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TransactionCanceledExceptionUnmarshaller() {
-        super("TransactionCanceledException");
+        super(com.amazonaws.services.dynamodbv2.model.TransactionCanceledException.class, "TransactionCanceledException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TransactionCanceledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TransactionCanceledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TransactionCanceledException transactionCanceledException = new com.amazonaws.services.dynamodbv2.model.TransactionCanceledException(
                 null);
 

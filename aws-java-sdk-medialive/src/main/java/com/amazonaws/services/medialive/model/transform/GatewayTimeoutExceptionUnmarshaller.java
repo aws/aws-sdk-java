@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GatewayTimeoutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GatewayTimeoutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.medialive.model.GatewayTimeoutException> {
+public class GatewayTimeoutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GatewayTimeoutExceptionUnmarshaller() {
-        super("GatewayTimeoutException");
+        super(com.amazonaws.services.medialive.model.GatewayTimeoutException.class, "GatewayTimeoutException");
     }
 
     @Override
-    public com.amazonaws.services.medialive.model.GatewayTimeoutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.medialive.model.GatewayTimeoutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.medialive.model.GatewayTimeoutException gatewayTimeoutException = new com.amazonaws.services.medialive.model.GatewayTimeoutException(
                 null);
 

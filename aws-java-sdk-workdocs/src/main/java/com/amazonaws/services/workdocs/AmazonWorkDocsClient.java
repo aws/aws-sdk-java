@@ -185,10 +185,7 @@ public class AmazonWorkDocsClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DeactivatingLastSystemUserException").withExceptionUnmarshaller(
                                     com.amazonaws.services.workdocs.model.transform.DeactivatingLastSystemUserExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.workdocs.model.AmazonWorkDocsException>(
-                                            com.amazonaws.services.workdocs.model.AmazonWorkDocsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.workdocs.model.AmazonWorkDocsException.class));
 
     public static AmazonWorkDocsClientBuilder builder() {
         return AmazonWorkDocsClientBuilder.standard();

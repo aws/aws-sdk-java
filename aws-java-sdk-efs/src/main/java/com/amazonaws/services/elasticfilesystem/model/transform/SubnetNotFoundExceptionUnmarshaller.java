@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException> {
+public class SubnetNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetNotFoundExceptionUnmarshaller() {
-        super("SubnetNotFound");
+        super(com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException.class, "SubnetNotFound");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException subnetNotFoundException = new com.amazonaws.services.elasticfilesystem.model.SubnetNotFoundException(
                 null);
 

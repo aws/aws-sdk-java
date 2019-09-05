@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BadRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BadRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.BadRequestException> {
+public class BadRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BadRequestExceptionUnmarshaller() {
-        super("BadRequest");
+        super(com.amazonaws.services.elasticfilesystem.model.BadRequestException.class, "BadRequest");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.BadRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.BadRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elasticfilesystem.model.BadRequestException badRequestException = new com.amazonaws.services.elasticfilesystem.model.BadRequestException(
                 null);
 

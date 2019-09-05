@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CodeDeliveryFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CodeDeliveryFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException> {
+public class CodeDeliveryFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CodeDeliveryFailureExceptionUnmarshaller() {
-        super("CodeDeliveryFailureException");
+        super(com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException.class, "CodeDeliveryFailureException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException codeDeliveryFailureException = new com.amazonaws.services.cognitoidp.model.CodeDeliveryFailureException(
                 null);
 

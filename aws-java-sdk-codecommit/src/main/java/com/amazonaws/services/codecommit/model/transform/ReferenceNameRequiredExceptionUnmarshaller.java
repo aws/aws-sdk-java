@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReferenceNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReferenceNameRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ReferenceNameRequiredException> {
+public class ReferenceNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReferenceNameRequiredExceptionUnmarshaller() {
-        super("ReferenceNameRequiredException");
+        super(com.amazonaws.services.codecommit.model.ReferenceNameRequiredException.class, "ReferenceNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ReferenceNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ReferenceNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ReferenceNameRequiredException referenceNameRequiredException = new com.amazonaws.services.codecommit.model.ReferenceNameRequiredException(
                 null);
 

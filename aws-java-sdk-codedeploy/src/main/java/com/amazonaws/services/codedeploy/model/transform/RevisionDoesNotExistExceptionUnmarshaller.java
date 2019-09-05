@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RevisionDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RevisionDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException> {
+public class RevisionDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RevisionDoesNotExistExceptionUnmarshaller() {
-        super("RevisionDoesNotExistException");
+        super(com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException.class, "RevisionDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException revisionDoesNotExistException = new com.amazonaws.services.codedeploy.model.RevisionDoesNotExistException(
                 null);
 

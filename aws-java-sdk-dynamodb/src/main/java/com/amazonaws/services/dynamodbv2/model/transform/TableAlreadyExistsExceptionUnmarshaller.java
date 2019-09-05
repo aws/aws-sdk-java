@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TableAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TableAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException> {
+public class TableAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TableAlreadyExistsExceptionUnmarshaller() {
-        super("TableAlreadyExistsException");
+        super(com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException.class, "TableAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException tableAlreadyExistsException = new com.amazonaws.services.dynamodbv2.model.TableAlreadyExistsException(
                 null);
 

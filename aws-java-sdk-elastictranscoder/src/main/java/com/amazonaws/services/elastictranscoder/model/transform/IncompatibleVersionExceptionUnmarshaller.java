@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncompatibleVersionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncompatibleVersionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException> {
+public class IncompatibleVersionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncompatibleVersionExceptionUnmarshaller() {
-        super("IncompatibleVersionException");
+        super(com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException.class, "IncompatibleVersionException");
     }
 
     @Override
-    public com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException incompatibleVersionException = new com.amazonaws.services.elastictranscoder.model.IncompatibleVersionException(
                 null);
 

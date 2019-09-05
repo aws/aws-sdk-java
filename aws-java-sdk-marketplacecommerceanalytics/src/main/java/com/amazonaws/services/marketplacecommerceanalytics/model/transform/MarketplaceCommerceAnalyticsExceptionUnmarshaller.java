@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MarketplaceCommerceAnalyticsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MarketplaceCommerceAnalyticsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException> {
+public class MarketplaceCommerceAnalyticsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MarketplaceCommerceAnalyticsExceptionUnmarshaller() {
-        super("MarketplaceCommerceAnalyticsException");
+        super(com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException.class, "MarketplaceCommerceAnalyticsException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException marketplaceCommerceAnalyticsException = new com.amazonaws.services.marketplacecommerceanalytics.model.MarketplaceCommerceAnalyticsException(
                 null);

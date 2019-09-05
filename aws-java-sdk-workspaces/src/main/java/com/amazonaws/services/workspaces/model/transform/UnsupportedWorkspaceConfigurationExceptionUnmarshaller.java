@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedWorkspaceConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedWorkspaceConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException> {
+public class UnsupportedWorkspaceConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedWorkspaceConfigurationExceptionUnmarshaller() {
-        super("UnsupportedWorkspaceConfigurationException");
+        super(com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException.class, "UnsupportedWorkspaceConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException unsupportedWorkspaceConfigurationException = new com.amazonaws.services.workspaces.model.UnsupportedWorkspaceConfigurationException(
                 null);
 

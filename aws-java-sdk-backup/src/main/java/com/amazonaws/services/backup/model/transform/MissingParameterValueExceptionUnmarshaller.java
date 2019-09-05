@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MissingParameterValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MissingParameterValueExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.backup.model.MissingParameterValueException> {
+public class MissingParameterValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MissingParameterValueExceptionUnmarshaller() {
-        super("MissingParameterValueException");
+        super(com.amazonaws.services.backup.model.MissingParameterValueException.class, "MissingParameterValueException");
     }
 
     @Override
-    public com.amazonaws.services.backup.model.MissingParameterValueException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.backup.model.MissingParameterValueException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.backup.model.MissingParameterValueException missingParameterValueException = new com.amazonaws.services.backup.model.MissingParameterValueException(
                 null);
 

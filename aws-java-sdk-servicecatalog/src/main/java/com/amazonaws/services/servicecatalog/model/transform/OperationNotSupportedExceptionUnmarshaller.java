@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationNotSupportedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicecatalog.model.OperationNotSupportedException> {
+public class OperationNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationNotSupportedExceptionUnmarshaller() {
-        super("OperationNotSupportedException");
+        super(com.amazonaws.services.servicecatalog.model.OperationNotSupportedException.class, "OperationNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.servicecatalog.model.OperationNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicecatalog.model.OperationNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicecatalog.model.OperationNotSupportedException operationNotSupportedException = new com.amazonaws.services.servicecatalog.model.OperationNotSupportedException(
                 null);
 

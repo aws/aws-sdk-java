@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEventSelectorsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEventSelectorsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException> {
+public class InvalidEventSelectorsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEventSelectorsExceptionUnmarshaller() {
-        super("InvalidEventSelectorsException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException.class, "InvalidEventSelectorsException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException invalidEventSelectorsException = new com.amazonaws.services.cloudtrail.model.InvalidEventSelectorsException(
                 null);
 

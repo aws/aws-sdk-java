@@ -157,10 +157,7 @@ public class AmazonDaxClient extends AmazonWebServiceClient implements AmazonDax
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubnetGroupAlreadyExistsFault").withExceptionUnmarshaller(
                                     com.amazonaws.services.dax.model.transform.SubnetGroupAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dax.model.AmazonDaxException>(
-                                            com.amazonaws.services.dax.model.AmazonDaxException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.dax.model.AmazonDaxException.class));
 
     public static AmazonDaxClientBuilder builder() {
         return AmazonDaxClientBuilder.standard();

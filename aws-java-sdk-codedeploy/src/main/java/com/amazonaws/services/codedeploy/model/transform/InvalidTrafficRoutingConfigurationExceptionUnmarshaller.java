@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTrafficRoutingConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTrafficRoutingConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException> {
+public class InvalidTrafficRoutingConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTrafficRoutingConfigurationExceptionUnmarshaller() {
-        super("InvalidTrafficRoutingConfigurationException");
+        super(com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException.class, "InvalidTrafficRoutingConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException invalidTrafficRoutingConfigurationException = new com.amazonaws.services.codedeploy.model.InvalidTrafficRoutingConfigurationException(
                 null);
 

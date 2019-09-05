@@ -115,10 +115,7 @@ public class AWSIoTAnalyticsClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotanalytics.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iotanalytics.model.AWSIoTAnalyticsException>(
-                                            com.amazonaws.services.iotanalytics.model.AWSIoTAnalyticsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotanalytics.model.AWSIoTAnalyticsException.class));
 
     public static AWSIoTAnalyticsClientBuilder builder() {
         return AWSIoTAnalyticsClientBuilder.standard();

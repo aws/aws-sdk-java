@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PermissionAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PermissionAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException> {
+public class PermissionAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PermissionAlreadyExistsExceptionUnmarshaller() {
-        super("PermissionAlreadyExistsException");
+        super(com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException.class, "PermissionAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException permissionAlreadyExistsException = new com.amazonaws.services.acmpca.model.PermissionAlreadyExistsException(
                 null);
 

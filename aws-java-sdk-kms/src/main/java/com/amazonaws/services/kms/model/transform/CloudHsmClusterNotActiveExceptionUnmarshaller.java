@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmClusterNotActiveException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmClusterNotActiveExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException> {
+public class CloudHsmClusterNotActiveExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmClusterNotActiveExceptionUnmarshaller() {
-        super("CloudHsmClusterNotActiveException");
+        super(com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException.class, "CloudHsmClusterNotActiveException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException cloudHsmClusterNotActiveException = new com.amazonaws.services.kms.model.CloudHsmClusterNotActiveException(
                 null);
 

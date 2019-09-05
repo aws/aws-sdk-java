@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResponseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResponseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.InvalidResponseException> {
+public class InvalidResponseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResponseExceptionUnmarshaller() {
-        super("InvalidResponseException");
+        super(com.amazonaws.services.iot.model.InvalidResponseException.class, "InvalidResponseException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.InvalidResponseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.InvalidResponseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.InvalidResponseException invalidResponseException = new com.amazonaws.services.iot.model.InvalidResponseException(null);
 
         int originalDepth = context.getCurrentDepth();

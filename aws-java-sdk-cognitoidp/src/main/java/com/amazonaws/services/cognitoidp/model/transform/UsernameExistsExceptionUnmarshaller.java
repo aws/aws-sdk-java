@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UsernameExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UsernameExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UsernameExistsException> {
+public class UsernameExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UsernameExistsExceptionUnmarshaller() {
-        super("UsernameExistsException");
+        super(com.amazonaws.services.cognitoidp.model.UsernameExistsException.class, "UsernameExistsException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UsernameExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UsernameExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UsernameExistsException usernameExistsException = new com.amazonaws.services.cognitoidp.model.UsernameExistsException(
                 null);
 

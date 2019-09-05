@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterContainsServicesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterContainsServicesExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.ClusterContainsServicesException> {
+public class ClusterContainsServicesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterContainsServicesExceptionUnmarshaller() {
-        super("ClusterContainsServicesException");
+        super(com.amazonaws.services.ecs.model.ClusterContainsServicesException.class, "ClusterContainsServicesException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.ClusterContainsServicesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.ClusterContainsServicesException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.ClusterContainsServicesException clusterContainsServicesException = new com.amazonaws.services.ecs.model.ClusterContainsServicesException(
                 null);
 

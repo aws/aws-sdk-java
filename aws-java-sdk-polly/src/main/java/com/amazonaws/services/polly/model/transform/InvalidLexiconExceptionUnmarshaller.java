@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLexiconException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLexiconExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidLexiconException> {
+public class InvalidLexiconExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLexiconExceptionUnmarshaller() {
-        super("InvalidLexiconException");
+        super(com.amazonaws.services.polly.model.InvalidLexiconException.class, "InvalidLexiconException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidLexiconException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidLexiconException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidLexiconException invalidLexiconException = new com.amazonaws.services.polly.model.InvalidLexiconException(
                 null);
 

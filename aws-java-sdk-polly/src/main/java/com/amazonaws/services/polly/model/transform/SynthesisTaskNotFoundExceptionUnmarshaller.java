@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SynthesisTaskNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SynthesisTaskNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.SynthesisTaskNotFoundException> {
+public class SynthesisTaskNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SynthesisTaskNotFoundExceptionUnmarshaller() {
-        super("SynthesisTaskNotFoundException");
+        super(com.amazonaws.services.polly.model.SynthesisTaskNotFoundException.class, "SynthesisTaskNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.SynthesisTaskNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.SynthesisTaskNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.SynthesisTaskNotFoundException synthesisTaskNotFoundException = new com.amazonaws.services.polly.model.SynthesisTaskNotFoundException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codebuild.model.AccountLimitExceededException> {
+public class AccountLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountLimitExceededExceptionUnmarshaller() {
-        super("AccountLimitExceededException");
+        super(com.amazonaws.services.codebuild.model.AccountLimitExceededException.class, "AccountLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codebuild.model.AccountLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codebuild.model.AccountLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codebuild.model.AccountLimitExceededException accountLimitExceededException = new com.amazonaws.services.codebuild.model.AccountLimitExceededException(
                 null);
 

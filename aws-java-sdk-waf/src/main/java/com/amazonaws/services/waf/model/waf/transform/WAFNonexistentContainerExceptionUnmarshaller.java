@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFNonexistentContainerException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFNonexistentContainerExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFNonexistentContainerException> {
+public class WAFNonexistentContainerExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFNonexistentContainerExceptionUnmarshaller() {
-        super("WAFNonexistentContainerException");
+        super(com.amazonaws.services.waf.model.WAFNonexistentContainerException.class, "WAFNonexistentContainerException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFNonexistentContainerException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFNonexistentContainerException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFNonexistentContainerException wAFNonexistentContainerException = new com.amazonaws.services.waf.model.WAFNonexistentContainerException(
                 null);
 

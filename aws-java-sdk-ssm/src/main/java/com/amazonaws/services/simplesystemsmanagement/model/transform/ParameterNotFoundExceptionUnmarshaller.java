@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException> {
+public class ParameterNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterNotFoundExceptionUnmarshaller() {
-        super("ParameterNotFound");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException.class, "ParameterNotFound");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException parameterNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterNotFoundException(
                 null);
 

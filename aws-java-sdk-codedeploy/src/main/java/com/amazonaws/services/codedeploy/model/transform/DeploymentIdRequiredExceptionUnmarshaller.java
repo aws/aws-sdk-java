@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentIdRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentIdRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException> {
+public class DeploymentIdRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentIdRequiredExceptionUnmarshaller() {
-        super("DeploymentIdRequiredException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException.class, "DeploymentIdRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException deploymentIdRequiredException = new com.amazonaws.services.codedeploy.model.DeploymentIdRequiredException(
                 null);
 

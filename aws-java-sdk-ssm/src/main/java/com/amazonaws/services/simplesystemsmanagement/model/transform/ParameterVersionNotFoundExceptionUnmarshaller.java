@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterVersionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterVersionNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException> {
+public class ParameterVersionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterVersionNotFoundExceptionUnmarshaller() {
-        super("ParameterVersionNotFound");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException.class, "ParameterVersionNotFound");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException parameterVersionNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterVersionNotFoundException(
                 null);
 

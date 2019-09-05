@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInvalidParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInvalidParameterExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInvalidParameterException> {
+public class WAFInvalidParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInvalidParameterExceptionUnmarshaller() {
-        super("WAFInvalidParameterException");
+        super(com.amazonaws.services.waf.model.WAFInvalidParameterException.class, "WAFInvalidParameterException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInvalidParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInvalidParameterException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInvalidParameterException wAFInvalidParameterException = new com.amazonaws.services.waf.model.WAFInvalidParameterException(
                 null);
 

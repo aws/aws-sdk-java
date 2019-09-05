@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MethodNotAllowedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MethodNotAllowedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.resourcegroups.model.MethodNotAllowedException> {
+public class MethodNotAllowedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MethodNotAllowedExceptionUnmarshaller() {
-        super("MethodNotAllowedException");
+        super(com.amazonaws.services.resourcegroups.model.MethodNotAllowedException.class, "MethodNotAllowedException");
     }
 
     @Override
-    public com.amazonaws.services.resourcegroups.model.MethodNotAllowedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.resourcegroups.model.MethodNotAllowedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.resourcegroups.model.MethodNotAllowedException methodNotAllowedException = new com.amazonaws.services.resourcegroups.model.MethodNotAllowedException(
                 null);
 

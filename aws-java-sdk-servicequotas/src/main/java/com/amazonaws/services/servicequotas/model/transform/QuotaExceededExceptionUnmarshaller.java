@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * QuotaExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class QuotaExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.QuotaExceededException> {
+public class QuotaExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private QuotaExceededExceptionUnmarshaller() {
-        super("QuotaExceededException");
+        super(com.amazonaws.services.servicequotas.model.QuotaExceededException.class, "QuotaExceededException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.QuotaExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.QuotaExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicequotas.model.QuotaExceededException quotaExceededException = new com.amazonaws.services.servicequotas.model.QuotaExceededException(
                 null);
 

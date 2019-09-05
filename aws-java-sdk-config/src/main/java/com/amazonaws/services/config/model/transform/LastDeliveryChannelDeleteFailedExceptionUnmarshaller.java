@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LastDeliveryChannelDeleteFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LastDeliveryChannelDeleteFailedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException> {
+public class LastDeliveryChannelDeleteFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LastDeliveryChannelDeleteFailedExceptionUnmarshaller() {
-        super("LastDeliveryChannelDeleteFailedException");
+        super(com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException.class, "LastDeliveryChannelDeleteFailedException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException lastDeliveryChannelDeleteFailedException = new com.amazonaws.services.config.model.LastDeliveryChannelDeleteFailedException(
                 null);
 

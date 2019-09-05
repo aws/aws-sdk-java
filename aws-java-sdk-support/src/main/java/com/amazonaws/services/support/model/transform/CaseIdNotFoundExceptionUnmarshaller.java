@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CaseIdNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CaseIdNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.support.model.CaseIdNotFoundException> {
+public class CaseIdNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CaseIdNotFoundExceptionUnmarshaller() {
-        super("CaseIdNotFound");
+        super(com.amazonaws.services.support.model.CaseIdNotFoundException.class, "CaseIdNotFound");
     }
 
     @Override
-    public com.amazonaws.services.support.model.CaseIdNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.support.model.CaseIdNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.support.model.CaseIdNotFoundException caseIdNotFoundException = new com.amazonaws.services.support.model.CaseIdNotFoundException(
                 null);
 

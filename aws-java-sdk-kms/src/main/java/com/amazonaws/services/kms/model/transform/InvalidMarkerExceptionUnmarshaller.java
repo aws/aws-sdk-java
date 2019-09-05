@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMarkerException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMarkerExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidMarkerException> {
+public class InvalidMarkerExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMarkerExceptionUnmarshaller() {
-        super("InvalidMarkerException");
+        super(com.amazonaws.services.kms.model.InvalidMarkerException.class, "InvalidMarkerException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidMarkerException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidMarkerException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidMarkerException invalidMarkerException = new com.amazonaws.services.kms.model.InvalidMarkerException(null);
 
         int originalDepth = context.getCurrentDepth();

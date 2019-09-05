@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.EntityDoesNotExistException> {
+public class EntityDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityDoesNotExistExceptionUnmarshaller() {
-        super("EntityDoesNotExistException");
+        super(com.amazonaws.services.directory.model.EntityDoesNotExistException.class, "EntityDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.EntityDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.EntityDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.EntityDoesNotExistException entityDoesNotExistException = new com.amazonaws.services.directory.model.EntityDoesNotExistException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFServiceLinkedRoleErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFServiceLinkedRoleErrorExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException> {
+public class WAFServiceLinkedRoleErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFServiceLinkedRoleErrorExceptionUnmarshaller() {
-        super("WAFServiceLinkedRoleErrorException");
+        super(com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException.class, "WAFServiceLinkedRoleErrorException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException wAFServiceLinkedRoleErrorException = new com.amazonaws.services.waf.model.WAFServiceLinkedRoleErrorException(
                 null);
 

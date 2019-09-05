@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * S3BucketDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class S3BucketDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException> {
+public class S3BucketDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private S3BucketDoesNotExistExceptionUnmarshaller() {
-        super("S3BucketDoesNotExistException");
+        super(com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException.class, "S3BucketDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException s3BucketDoesNotExistException = new com.amazonaws.services.cloudtrail.model.S3BucketDoesNotExistException(
                 null);
 

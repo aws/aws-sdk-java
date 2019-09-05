@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.RequestFailedException> {
+public class RequestFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestFailedExceptionUnmarshaller() {
-        super("RequestFailedException");
+        super(com.amazonaws.services.acmpca.model.RequestFailedException.class, "RequestFailedException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.RequestFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.RequestFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.RequestFailedException requestFailedException = new com.amazonaws.services.acmpca.model.RequestFailedException(null);
 
         int originalDepth = context.getCurrentDepth();

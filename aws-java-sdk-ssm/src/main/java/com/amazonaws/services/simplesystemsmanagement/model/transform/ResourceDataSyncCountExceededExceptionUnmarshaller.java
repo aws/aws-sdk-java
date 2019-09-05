@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceDataSyncCountExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceDataSyncCountExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException> {
+public class ResourceDataSyncCountExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceDataSyncCountExceededExceptionUnmarshaller() {
-        super("ResourceDataSyncCountExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException.class, "ResourceDataSyncCountExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException resourceDataSyncCountExceededException = new com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncCountExceededException(
                 null);

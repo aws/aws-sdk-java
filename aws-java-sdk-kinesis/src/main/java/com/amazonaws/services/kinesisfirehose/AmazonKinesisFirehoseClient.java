@@ -96,10 +96,7 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisfirehose.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException>(
-                                            com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisfirehose.model.AmazonKinesisFirehoseException.class));
 
     /**
      * Constructs a new client to invoke service methods on Firehose. A credentials provider chain will be used that

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateInstanceIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateInstanceIdExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException> {
+public class DuplicateInstanceIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateInstanceIdExceptionUnmarshaller() {
-        super("DuplicateInstanceId");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException.class, "DuplicateInstanceId");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException duplicateInstanceIdException = new com.amazonaws.services.simplesystemsmanagement.model.DuplicateInstanceIdException(
                 null);
 

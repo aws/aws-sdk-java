@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyLengthExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyLengthExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.eventbridge.model.PolicyLengthExceededException> {
+public class PolicyLengthExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyLengthExceededExceptionUnmarshaller() {
-        super("PolicyLengthExceededException");
+        super(com.amazonaws.services.eventbridge.model.PolicyLengthExceededException.class, "PolicyLengthExceededException");
     }
 
     @Override
-    public com.amazonaws.services.eventbridge.model.PolicyLengthExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.eventbridge.model.PolicyLengthExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.eventbridge.model.PolicyLengthExceededException policyLengthExceededException = new com.amazonaws.services.eventbridge.model.PolicyLengthExceededException(
                 null);
 

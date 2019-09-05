@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParametersException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParametersExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException> {
+public class InvalidParametersExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParametersExceptionUnmarshaller() {
-        super("InvalidParameters");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException.class, "InvalidParameters");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException invalidParametersException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidParametersException(
                 null);
 

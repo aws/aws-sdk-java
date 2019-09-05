@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AttachmentIdNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachmentIdNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.support.model.AttachmentIdNotFoundException> {
+public class AttachmentIdNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AttachmentIdNotFoundExceptionUnmarshaller() {
-        super("AttachmentIdNotFound");
+        super(com.amazonaws.services.support.model.AttachmentIdNotFoundException.class, "AttachmentIdNotFound");
     }
 
     @Override
-    public com.amazonaws.services.support.model.AttachmentIdNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.support.model.AttachmentIdNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.support.model.AttachmentIdNotFoundException attachmentIdNotFoundException = new com.amazonaws.services.support.model.AttachmentIdNotFoundException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryUnavailableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.DirectoryUnavailableException> {
+public class DirectoryUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryUnavailableExceptionUnmarshaller() {
-        super("DirectoryUnavailableException");
+        super(com.amazonaws.services.workmail.model.DirectoryUnavailableException.class, "DirectoryUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.DirectoryUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.DirectoryUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.DirectoryUnavailableException directoryUnavailableException = new com.amazonaws.services.workmail.model.DirectoryUnavailableException(
                 null);
 

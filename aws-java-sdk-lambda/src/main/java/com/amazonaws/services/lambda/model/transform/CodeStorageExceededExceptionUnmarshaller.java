@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CodeStorageExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CodeStorageExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.CodeStorageExceededException> {
+public class CodeStorageExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CodeStorageExceededExceptionUnmarshaller() {
-        super("CodeStorageExceededException");
+        super(com.amazonaws.services.lambda.model.CodeStorageExceededException.class, "CodeStorageExceededException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.CodeStorageExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.CodeStorageExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.CodeStorageExceededException codeStorageExceededException = new com.amazonaws.services.lambda.model.CodeStorageExceededException(
                 null);
 

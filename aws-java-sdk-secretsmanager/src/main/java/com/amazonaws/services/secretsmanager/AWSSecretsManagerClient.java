@@ -177,10 +177,7 @@ public class AWSSecretsManagerClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
                                     com.amazonaws.services.secretsmanager.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException>(
-                                            com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.secretsmanager.model.AWSSecretsManagerException.class));
 
     public static AWSSecretsManagerClientBuilder builder() {
         return AWSSecretsManagerClientBuilder.standard();

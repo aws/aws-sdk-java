@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedInventoryItemContextException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedInventoryItemContextExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException> {
+public class UnsupportedInventoryItemContextExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedInventoryItemContextExceptionUnmarshaller() {
-        super("UnsupportedInventoryItemContextException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException.class, "UnsupportedInventoryItemContextException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException unsupportedInventoryItemContextException = new com.amazonaws.services.simplesystemsmanagement.model.UnsupportedInventoryItemContextException(
                 null);

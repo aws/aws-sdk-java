@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DraftUploadOutOfSyncException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DraftUploadOutOfSyncExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException> {
+public class DraftUploadOutOfSyncExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DraftUploadOutOfSyncExceptionUnmarshaller() {
-        super("DraftUploadOutOfSyncException");
+        super(com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException.class, "DraftUploadOutOfSyncException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException draftUploadOutOfSyncException = new com.amazonaws.services.workdocs.model.DraftUploadOutOfSyncException(
                 null);
 

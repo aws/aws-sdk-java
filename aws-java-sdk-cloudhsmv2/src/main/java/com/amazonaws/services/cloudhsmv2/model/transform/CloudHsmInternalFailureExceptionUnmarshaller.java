@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmInternalFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmInternalFailureExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException> {
+public class CloudHsmInternalFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmInternalFailureExceptionUnmarshaller() {
-        super("CloudHsmInternalFailureException");
+        super(com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException.class, "CloudHsmInternalFailureException");
     }
 
     @Override
-    public com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException cloudHsmInternalFailureException = new com.amazonaws.services.cloudhsmv2.model.CloudHsmInternalFailureException(
                 null);
 

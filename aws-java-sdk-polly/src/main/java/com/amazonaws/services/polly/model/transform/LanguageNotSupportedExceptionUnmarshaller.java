@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LanguageNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LanguageNotSupportedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.LanguageNotSupportedException> {
+public class LanguageNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LanguageNotSupportedExceptionUnmarshaller() {
-        super("LanguageNotSupportedException");
+        super(com.amazonaws.services.polly.model.LanguageNotSupportedException.class, "LanguageNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.LanguageNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.LanguageNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.LanguageNotSupportedException languageNotSupportedException = new com.amazonaws.services.polly.model.LanguageNotSupportedException(
                 null);
 

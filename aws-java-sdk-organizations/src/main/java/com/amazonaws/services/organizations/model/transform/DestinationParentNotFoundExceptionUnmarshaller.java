@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DestinationParentNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DestinationParentNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.DestinationParentNotFoundException> {
+public class DestinationParentNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DestinationParentNotFoundExceptionUnmarshaller() {
-        super("DestinationParentNotFoundException");
+        super(com.amazonaws.services.organizations.model.DestinationParentNotFoundException.class, "DestinationParentNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.DestinationParentNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.DestinationParentNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.DestinationParentNotFoundException destinationParentNotFoundException = new com.amazonaws.services.organizations.model.DestinationParentNotFoundException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionKeyAccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionKeyAccessDeniedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException> {
+public class EncryptionKeyAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionKeyAccessDeniedExceptionUnmarshaller() {
-        super("EncryptionKeyAccessDeniedException");
+        super(com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException.class, "EncryptionKeyAccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException encryptionKeyAccessDeniedException = new com.amazonaws.services.codecommit.model.EncryptionKeyAccessDeniedException(
                 null);
 

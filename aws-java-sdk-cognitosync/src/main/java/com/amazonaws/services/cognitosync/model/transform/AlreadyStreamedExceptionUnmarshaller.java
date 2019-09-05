@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AlreadyStreamedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AlreadyStreamedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitosync.model.AlreadyStreamedException> {
+public class AlreadyStreamedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AlreadyStreamedExceptionUnmarshaller() {
-        super("AlreadyStreamed");
+        super(com.amazonaws.services.cognitosync.model.AlreadyStreamedException.class, "AlreadyStreamed");
     }
 
     @Override
-    public com.amazonaws.services.cognitosync.model.AlreadyStreamedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitosync.model.AlreadyStreamedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitosync.model.AlreadyStreamedException alreadyStreamedException = new com.amazonaws.services.cognitosync.model.AlreadyStreamedException(
                 null);
 

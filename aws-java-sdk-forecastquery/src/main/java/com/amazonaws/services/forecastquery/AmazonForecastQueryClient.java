@@ -91,10 +91,7 @@ public class AmazonForecastQueryClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.forecastquery.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.forecastquery.model.AmazonForecastQueryException>(
-                                            com.amazonaws.services.forecastquery.model.AmazonForecastQueryException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.forecastquery.model.AmazonForecastQueryException.class));
 
     public static AmazonForecastQueryClientBuilder builder() {
         return AmazonForecastQueryClientBuilder.standard();

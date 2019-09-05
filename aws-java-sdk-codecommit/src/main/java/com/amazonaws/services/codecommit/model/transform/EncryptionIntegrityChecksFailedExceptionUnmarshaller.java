@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionIntegrityChecksFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionIntegrityChecksFailedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException> {
+public class EncryptionIntegrityChecksFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionIntegrityChecksFailedExceptionUnmarshaller() {
-        super("EncryptionIntegrityChecksFailedException");
+        super(com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException.class, "EncryptionIntegrityChecksFailedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException encryptionIntegrityChecksFailedException = new com.amazonaws.services.codecommit.model.EncryptionIntegrityChecksFailedException(
                 null);
 

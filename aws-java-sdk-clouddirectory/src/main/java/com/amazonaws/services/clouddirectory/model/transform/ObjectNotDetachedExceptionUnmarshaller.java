@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ObjectNotDetachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ObjectNotDetachedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException> {
+public class ObjectNotDetachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ObjectNotDetachedExceptionUnmarshaller() {
-        super("ObjectNotDetachedException");
+        super(com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException.class, "ObjectNotDetachedException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException objectNotDetachedException = new com.amazonaws.services.clouddirectory.model.ObjectNotDetachedException(
                 null);
 

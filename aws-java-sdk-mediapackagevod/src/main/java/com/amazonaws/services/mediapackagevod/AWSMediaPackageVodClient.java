@@ -93,10 +93,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediapackagevod.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediapackagevod.model.AWSMediaPackageVodException>(
-                                            com.amazonaws.services.mediapackagevod.model.AWSMediaPackageVodException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediapackagevod.model.AWSMediaPackageVodException.class));
 
     public static AWSMediaPackageVodClientBuilder builder() {
         return AWSMediaPackageVodClientBuilder.standard();

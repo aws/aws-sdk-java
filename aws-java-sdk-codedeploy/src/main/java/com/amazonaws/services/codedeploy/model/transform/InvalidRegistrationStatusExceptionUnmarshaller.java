@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRegistrationStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRegistrationStatusExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException> {
+public class InvalidRegistrationStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRegistrationStatusExceptionUnmarshaller() {
-        super("InvalidRegistrationStatusException");
+        super(com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException.class, "InvalidRegistrationStatusException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException invalidRegistrationStatusException = new com.amazonaws.services.codedeploy.model.InvalidRegistrationStatusException(
                 null);
 

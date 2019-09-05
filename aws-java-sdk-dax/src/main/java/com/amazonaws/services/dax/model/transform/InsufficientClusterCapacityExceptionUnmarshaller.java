@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientClusterCapacityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientClusterCapacityExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InsufficientClusterCapacityException> {
+public class InsufficientClusterCapacityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientClusterCapacityExceptionUnmarshaller() {
-        super("InsufficientClusterCapacityFault");
+        super(com.amazonaws.services.dax.model.InsufficientClusterCapacityException.class, "InsufficientClusterCapacityFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InsufficientClusterCapacityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InsufficientClusterCapacityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InsufficientClusterCapacityException insufficientClusterCapacityException = new com.amazonaws.services.dax.model.InsufficientClusterCapacityException(
                 null);
 

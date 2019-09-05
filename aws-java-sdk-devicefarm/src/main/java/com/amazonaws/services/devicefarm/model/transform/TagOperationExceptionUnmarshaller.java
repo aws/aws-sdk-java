@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.TagOperationException> {
+public class TagOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagOperationExceptionUnmarshaller() {
-        super("TagOperationException");
+        super(com.amazonaws.services.devicefarm.model.TagOperationException.class, "TagOperationException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.TagOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.TagOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.TagOperationException tagOperationException = new com.amazonaws.services.devicefarm.model.TagOperationException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BatchSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchSizeLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException> {
+public class BatchSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BatchSizeLimitExceededExceptionUnmarshaller() {
-        super("BatchSizeLimitExceededException");
+        super(com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException.class, "BatchSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException batchSizeLimitExceededException = new com.amazonaws.services.comprehend.model.BatchSizeLimitExceededException(
                 null);
 

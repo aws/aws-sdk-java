@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumRepositoryTriggersExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumRepositoryTriggersExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException> {
+public class MaximumRepositoryTriggersExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumRepositoryTriggersExceededExceptionUnmarshaller() {
-        super("MaximumRepositoryTriggersExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException.class, "MaximumRepositoryTriggersExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException maximumRepositoryTriggersExceededException = new com.amazonaws.services.codecommit.model.MaximumRepositoryTriggersExceededException(
                 null);
 

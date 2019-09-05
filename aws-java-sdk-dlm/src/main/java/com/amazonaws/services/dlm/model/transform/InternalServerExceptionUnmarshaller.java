@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InternalServerException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InternalServerExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dlm.model.InternalServerException> {
+public class InternalServerExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InternalServerExceptionUnmarshaller() {
-        super("InternalServerException");
+        super(com.amazonaws.services.dlm.model.InternalServerException.class, "InternalServerException");
     }
 
     @Override
-    public com.amazonaws.services.dlm.model.InternalServerException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dlm.model.InternalServerException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dlm.model.InternalServerException internalServerException = new com.amazonaws.services.dlm.model.InternalServerException(null);
 
         int originalDepth = context.getCurrentDepth();

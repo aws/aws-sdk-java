@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SkillNotLinkedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SkillNotLinkedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException> {
+public class SkillNotLinkedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SkillNotLinkedExceptionUnmarshaller() {
-        super("SkillNotLinkedException");
+        super(com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException.class, "SkillNotLinkedException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException skillNotLinkedException = new com.amazonaws.services.alexaforbusiness.model.SkillNotLinkedException(
                 null);
 

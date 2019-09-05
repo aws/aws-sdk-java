@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTargetsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTargetsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidTargetsException> {
+public class InvalidTargetsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTargetsExceptionUnmarshaller() {
-        super("InvalidTargetsException");
+        super(com.amazonaws.services.codecommit.model.InvalidTargetsException.class, "InvalidTargetsException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidTargetsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidTargetsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidTargetsException invalidTargetsException = new com.amazonaws.services.codecommit.model.InvalidTargetsException(
                 null);
 

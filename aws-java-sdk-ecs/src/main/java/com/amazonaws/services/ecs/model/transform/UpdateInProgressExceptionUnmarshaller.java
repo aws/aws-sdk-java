@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UpdateInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpdateInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.UpdateInProgressException> {
+public class UpdateInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UpdateInProgressExceptionUnmarshaller() {
-        super("UpdateInProgressException");
+        super(com.amazonaws.services.ecs.model.UpdateInProgressException.class, "UpdateInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.UpdateInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.UpdateInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.UpdateInProgressException updateInProgressException = new com.amazonaws.services.ecs.model.UpdateInProgressException(
                 null);
 

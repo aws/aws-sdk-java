@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidExecutionInputException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidExecutionInputExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException> {
+public class InvalidExecutionInputExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidExecutionInputExceptionUnmarshaller() {
-        super("InvalidExecutionInput");
+        super(com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException.class, "InvalidExecutionInput");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException invalidExecutionInputException = new com.amazonaws.services.stepfunctions.model.InvalidExecutionInputException(
                 null);
 

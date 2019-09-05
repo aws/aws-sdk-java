@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFilePositionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFilePositionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidFilePositionException> {
+public class InvalidFilePositionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFilePositionExceptionUnmarshaller() {
-        super("InvalidFilePositionException");
+        super(com.amazonaws.services.codecommit.model.InvalidFilePositionException.class, "InvalidFilePositionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidFilePositionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidFilePositionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidFilePositionException invalidFilePositionException = new com.amazonaws.services.codecommit.model.InvalidFilePositionException(
                 null);
 

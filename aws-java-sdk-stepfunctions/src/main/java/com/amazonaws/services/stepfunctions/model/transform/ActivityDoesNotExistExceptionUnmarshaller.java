@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ActivityDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ActivityDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException> {
+public class ActivityDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ActivityDoesNotExistExceptionUnmarshaller() {
-        super("ActivityDoesNotExist");
+        super(com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException.class, "ActivityDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException activityDoesNotExistException = new com.amazonaws.services.stepfunctions.model.ActivityDoesNotExistException(
                 null);
 

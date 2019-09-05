@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoChangeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoChangeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.NoChangeException> {
+public class NoChangeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoChangeExceptionUnmarshaller() {
-        super("NoChangeException");
+        super(com.amazonaws.services.codecommit.model.NoChangeException.class, "NoChangeException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.NoChangeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.NoChangeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.NoChangeException noChangeException = new com.amazonaws.services.codecommit.model.NoChangeException(null);
 
         int originalDepth = context.getCurrentDepth();

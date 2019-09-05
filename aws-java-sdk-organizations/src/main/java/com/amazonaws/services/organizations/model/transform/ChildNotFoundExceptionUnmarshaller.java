@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ChildNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ChildNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.ChildNotFoundException> {
+public class ChildNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ChildNotFoundExceptionUnmarshaller() {
-        super("ChildNotFoundException");
+        super(com.amazonaws.services.organizations.model.ChildNotFoundException.class, "ChildNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.ChildNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.ChildNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.ChildNotFoundException childNotFoundException = new com.amazonaws.services.organizations.model.ChildNotFoundException(
                 null);
 

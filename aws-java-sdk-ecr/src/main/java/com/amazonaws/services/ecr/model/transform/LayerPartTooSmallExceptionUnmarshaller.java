@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LayerPartTooSmallException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LayerPartTooSmallExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LayerPartTooSmallException> {
+public class LayerPartTooSmallExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LayerPartTooSmallExceptionUnmarshaller() {
-        super("LayerPartTooSmallException");
+        super(com.amazonaws.services.ecr.model.LayerPartTooSmallException.class, "LayerPartTooSmallException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LayerPartTooSmallException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LayerPartTooSmallException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LayerPartTooSmallException layerPartTooSmallException = new com.amazonaws.services.ecr.model.LayerPartTooSmallException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidECSServiceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidECSServiceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidECSServiceException> {
+public class InvalidECSServiceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidECSServiceExceptionUnmarshaller() {
-        super("InvalidECSServiceException");
+        super(com.amazonaws.services.codedeploy.model.InvalidECSServiceException.class, "InvalidECSServiceException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidECSServiceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidECSServiceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidECSServiceException invalidECSServiceException = new com.amazonaws.services.codedeploy.model.InvalidECSServiceException(
                 null);
 

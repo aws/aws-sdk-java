@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NameInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NameInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.NameInUseException> {
+public class NameInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NameInUseExceptionUnmarshaller() {
-        super("NameInUseException");
+        super(com.amazonaws.services.alexaforbusiness.model.NameInUseException.class, "NameInUseException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.NameInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.NameInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.alexaforbusiness.model.NameInUseException nameInUseException = new com.amazonaws.services.alexaforbusiness.model.NameInUseException(
                 null);
 

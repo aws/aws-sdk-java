@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDocumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDocumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException> {
+public class InvalidDocumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDocumentExceptionUnmarshaller() {
-        super("InvalidDocument");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException.class, "InvalidDocument");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException invalidDocumentException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidDocumentException(
                 null);
 

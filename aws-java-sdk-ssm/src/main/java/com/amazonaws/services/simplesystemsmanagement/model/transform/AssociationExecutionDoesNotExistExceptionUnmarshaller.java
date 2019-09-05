@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociationExecutionDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociationExecutionDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException> {
+public class AssociationExecutionDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociationExecutionDoesNotExistExceptionUnmarshaller() {
-        super("AssociationExecutionDoesNotExist");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException.class, "AssociationExecutionDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException associationExecutionDoesNotExistException = new com.amazonaws.services.simplesystemsmanagement.model.AssociationExecutionDoesNotExistException(
                 null);

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TeamMemberAlreadyAssociatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TeamMemberAlreadyAssociatedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException> {
+public class TeamMemberAlreadyAssociatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TeamMemberAlreadyAssociatedExceptionUnmarshaller() {
-        super("TeamMemberAlreadyAssociatedException");
+        super(com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException.class, "TeamMemberAlreadyAssociatedException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException teamMemberAlreadyAssociatedException = new com.amazonaws.services.codestar.model.TeamMemberAlreadyAssociatedException(
                 null);
 

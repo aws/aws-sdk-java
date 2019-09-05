@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumNumberOfTrailsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumNumberOfTrailsExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException> {
+public class MaximumNumberOfTrailsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumNumberOfTrailsExceededExceptionUnmarshaller() {
-        super("MaximumNumberOfTrailsExceededException");
+        super(com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException.class, "MaximumNumberOfTrailsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException maximumNumberOfTrailsExceededException = new com.amazonaws.services.cloudtrail.model.MaximumNumberOfTrailsExceededException(
                 null);
 

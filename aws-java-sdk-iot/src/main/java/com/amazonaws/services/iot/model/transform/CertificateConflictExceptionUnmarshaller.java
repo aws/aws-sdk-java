@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CertificateConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CertificateConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.CertificateConflictException> {
+public class CertificateConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CertificateConflictExceptionUnmarshaller() {
-        super("CertificateConflictException");
+        super(com.amazonaws.services.iot.model.CertificateConflictException.class, "CertificateConflictException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.CertificateConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.CertificateConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.CertificateConflictException certificateConflictException = new com.amazonaws.services.iot.model.CertificateConflictException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException> {
+public class DocumentAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentAlreadyExistsExceptionUnmarshaller() {
-        super("DocumentAlreadyExists");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException.class, "DocumentAlreadyExists");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException documentAlreadyExistsException = new com.amazonaws.services.simplesystemsmanagement.model.DocumentAlreadyExistsException(
                 null);
 

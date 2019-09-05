@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OpsItemAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OpsItemAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException> {
+public class OpsItemAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OpsItemAlreadyExistsExceptionUnmarshaller() {
-        super("OpsItemAlreadyExistsException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException.class, "OpsItemAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException opsItemAlreadyExistsException = new com.amazonaws.services.simplesystemsmanagement.model.OpsItemAlreadyExistsException(
                 null);
 

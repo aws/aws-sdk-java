@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLookupAttributesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLookupAttributesExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException> {
+public class InvalidLookupAttributesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLookupAttributesExceptionUnmarshaller() {
-        super("InvalidLookupAttributesException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException.class, "InvalidLookupAttributesException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException invalidLookupAttributesException = new com.amazonaws.services.cloudtrail.model.InvalidLookupAttributesException(
                 null);
 

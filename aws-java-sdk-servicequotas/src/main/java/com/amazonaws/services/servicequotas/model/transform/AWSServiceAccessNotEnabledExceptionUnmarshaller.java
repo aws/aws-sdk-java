@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AWSServiceAccessNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AWSServiceAccessNotEnabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException> {
+public class AWSServiceAccessNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AWSServiceAccessNotEnabledExceptionUnmarshaller() {
-        super("AWSServiceAccessNotEnabledException");
+        super(com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException.class, "AWSServiceAccessNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException aWSServiceAccessNotEnabledException = new com.amazonaws.services.servicequotas.model.AWSServiceAccessNotEnabledException(
                 null);
 

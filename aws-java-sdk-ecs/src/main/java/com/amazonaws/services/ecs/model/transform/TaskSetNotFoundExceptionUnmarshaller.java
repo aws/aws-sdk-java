@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TaskSetNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskSetNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.TaskSetNotFoundException> {
+public class TaskSetNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TaskSetNotFoundExceptionUnmarshaller() {
-        super("TaskSetNotFoundException");
+        super(com.amazonaws.services.ecs.model.TaskSetNotFoundException.class, "TaskSetNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.TaskSetNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.TaskSetNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.TaskSetNotFoundException taskSetNotFoundException = new com.amazonaws.services.ecs.model.TaskSetNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

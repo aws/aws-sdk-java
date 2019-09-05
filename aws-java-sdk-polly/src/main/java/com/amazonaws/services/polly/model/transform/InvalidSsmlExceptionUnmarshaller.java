@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSsmlException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSsmlExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidSsmlException> {
+public class InvalidSsmlExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSsmlExceptionUnmarshaller() {
-        super("InvalidSsmlException");
+        super(com.amazonaws.services.polly.model.InvalidSsmlException.class, "InvalidSsmlException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidSsmlException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidSsmlException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidSsmlException invalidSsmlException = new com.amazonaws.services.polly.model.InvalidSsmlException(null);
 
         int originalDepth = context.getCurrentDepth();

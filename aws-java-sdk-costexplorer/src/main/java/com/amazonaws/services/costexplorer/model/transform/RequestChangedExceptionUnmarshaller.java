@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestChangedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestChangedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.costexplorer.model.RequestChangedException> {
+public class RequestChangedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestChangedExceptionUnmarshaller() {
-        super("RequestChangedException");
+        super(com.amazonaws.services.costexplorer.model.RequestChangedException.class, "RequestChangedException");
     }
 
     @Override
-    public com.amazonaws.services.costexplorer.model.RequestChangedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costexplorer.model.RequestChangedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costexplorer.model.RequestChangedException requestChangedException = new com.amazonaws.services.costexplorer.model.RequestChangedException(
                 null);
 

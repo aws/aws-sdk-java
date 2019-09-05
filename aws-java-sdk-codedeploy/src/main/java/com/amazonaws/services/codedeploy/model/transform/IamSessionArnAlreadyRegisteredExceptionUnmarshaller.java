@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IamSessionArnAlreadyRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IamSessionArnAlreadyRegisteredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException> {
+public class IamSessionArnAlreadyRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IamSessionArnAlreadyRegisteredExceptionUnmarshaller() {
-        super("IamSessionArnAlreadyRegisteredException");
+        super(com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException.class, "IamSessionArnAlreadyRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException iamSessionArnAlreadyRegisteredException = new com.amazonaws.services.codedeploy.model.IamSessionArnAlreadyRegisteredException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.KMSNotFoundException> {
+public class KMSNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSNotFoundExceptionUnmarshaller() {
-        super("KMSNotFoundException");
+        super(com.amazonaws.services.lambda.model.KMSNotFoundException.class, "KMSNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.KMSNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.KMSNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.KMSNotFoundException kMSNotFoundException = new com.amazonaws.services.lambda.model.KMSNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

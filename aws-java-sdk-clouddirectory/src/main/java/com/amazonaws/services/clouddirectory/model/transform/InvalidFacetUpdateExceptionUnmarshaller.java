@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFacetUpdateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFacetUpdateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException> {
+public class InvalidFacetUpdateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFacetUpdateExceptionUnmarshaller() {
-        super("InvalidFacetUpdateException");
+        super(com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException.class, "InvalidFacetUpdateException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException invalidFacetUpdateException = new com.amazonaws.services.clouddirectory.model.InvalidFacetUpdateException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSecurityGroupIDException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSecurityGroupIDExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException> {
+public class InvalidSecurityGroupIDExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSecurityGroupIDExceptionUnmarshaller() {
-        super("InvalidSecurityGroupIDException");
+        super(com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException.class, "InvalidSecurityGroupIDException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException invalidSecurityGroupIDException = new com.amazonaws.services.lambda.model.InvalidSecurityGroupIDException(
                 null);
 

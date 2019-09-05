@@ -16,7 +16,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * No permission to call the EnableAWSServiceAccess API.
+ * For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+ * </p>
+ * <p>
+ * For all OrganizationConfigRule APIs, AWS Config throws an exception if APIs are called from member accounts. All APIs
+ * must be called from organization master account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

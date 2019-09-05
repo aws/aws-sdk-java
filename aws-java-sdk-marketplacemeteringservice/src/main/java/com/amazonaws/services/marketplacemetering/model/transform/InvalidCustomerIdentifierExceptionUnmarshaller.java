@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCustomerIdentifierException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCustomerIdentifierExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException> {
+public class InvalidCustomerIdentifierExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCustomerIdentifierExceptionUnmarshaller() {
-        super("InvalidCustomerIdentifierException");
+        super(com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException.class, "InvalidCustomerIdentifierException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException invalidCustomerIdentifierException = new com.amazonaws.services.marketplacemetering.model.InvalidCustomerIdentifierException(
                 null);
 

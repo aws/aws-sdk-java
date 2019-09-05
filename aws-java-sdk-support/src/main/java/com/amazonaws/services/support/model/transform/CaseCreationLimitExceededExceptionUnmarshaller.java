@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CaseCreationLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CaseCreationLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.support.model.CaseCreationLimitExceededException> {
+public class CaseCreationLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CaseCreationLimitExceededExceptionUnmarshaller() {
-        super("CaseCreationLimitExceeded");
+        super(com.amazonaws.services.support.model.CaseCreationLimitExceededException.class, "CaseCreationLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.support.model.CaseCreationLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.support.model.CaseCreationLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.support.model.CaseCreationLimitExceededException caseCreationLimitExceededException = new com.amazonaws.services.support.model.CaseCreationLimitExceededException(
                 null);
 

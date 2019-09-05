@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedOperatingSystemException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedOperatingSystemExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException> {
+public class UnsupportedOperatingSystemExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedOperatingSystemExceptionUnmarshaller() {
-        super("UnsupportedOperatingSystem");
+        super(com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException.class, "UnsupportedOperatingSystem");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException unsupportedOperatingSystemException = new com.amazonaws.services.simplesystemsmanagement.model.UnsupportedOperatingSystemException(
                 null);

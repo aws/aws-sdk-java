@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AutomationExecutionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutomationExecutionNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException> {
+public class AutomationExecutionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AutomationExecutionNotFoundExceptionUnmarshaller() {
-        super("AutomationExecutionNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException.class, "AutomationExecutionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException automationExecutionNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionNotFoundException(
                 null);

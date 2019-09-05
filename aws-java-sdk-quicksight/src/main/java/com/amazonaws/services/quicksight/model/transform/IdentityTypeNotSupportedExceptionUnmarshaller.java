@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IdentityTypeNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IdentityTypeNotSupportedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException> {
+public class IdentityTypeNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IdentityTypeNotSupportedExceptionUnmarshaller() {
-        super("IdentityTypeNotSupportedException");
+        super(com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException.class, "IdentityTypeNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException identityTypeNotSupportedException = new com.amazonaws.services.quicksight.model.IdentityTypeNotSupportedException(
                 null);
 

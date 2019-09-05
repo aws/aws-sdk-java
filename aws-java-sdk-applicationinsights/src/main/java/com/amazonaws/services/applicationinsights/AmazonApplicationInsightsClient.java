@@ -103,10 +103,7 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationinsights.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.applicationinsights.model.AmazonApplicationInsightsException>(
-                                            com.amazonaws.services.applicationinsights.model.AmazonApplicationInsightsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationinsights.model.AmazonApplicationInsightsException.class));
 
     public static AmazonApplicationInsightsClientBuilder builder() {
         return AmazonApplicationInsightsClientBuilder.standard();

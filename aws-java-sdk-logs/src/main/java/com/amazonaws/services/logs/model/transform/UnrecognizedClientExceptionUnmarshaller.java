@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnrecognizedClientException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnrecognizedClientExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.UnrecognizedClientException> {
+public class UnrecognizedClientExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnrecognizedClientExceptionUnmarshaller() {
-        super("UnrecognizedClientException");
+        super(com.amazonaws.services.logs.model.UnrecognizedClientException.class, "UnrecognizedClientException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.UnrecognizedClientException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.UnrecognizedClientException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.UnrecognizedClientException unrecognizedClientException = new com.amazonaws.services.logs.model.UnrecognizedClientException(
                 null);
 

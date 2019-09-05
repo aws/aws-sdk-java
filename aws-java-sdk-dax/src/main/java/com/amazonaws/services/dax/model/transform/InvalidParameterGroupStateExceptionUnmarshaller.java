@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParameterGroupStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterGroupStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidParameterGroupStateException> {
+public class InvalidParameterGroupStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterGroupStateExceptionUnmarshaller() {
-        super("InvalidParameterGroupStateFault");
+        super(com.amazonaws.services.dax.model.InvalidParameterGroupStateException.class, "InvalidParameterGroupStateFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidParameterGroupStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidParameterGroupStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidParameterGroupStateException invalidParameterGroupStateException = new com.amazonaws.services.dax.model.InvalidParameterGroupStateException(
                 null);
 

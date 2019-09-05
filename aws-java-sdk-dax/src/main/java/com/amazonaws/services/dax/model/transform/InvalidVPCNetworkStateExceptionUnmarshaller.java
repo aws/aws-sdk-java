@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidVPCNetworkStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidVPCNetworkStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidVPCNetworkStateException> {
+public class InvalidVPCNetworkStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidVPCNetworkStateExceptionUnmarshaller() {
-        super("InvalidVPCNetworkStateFault");
+        super(com.amazonaws.services.dax.model.InvalidVPCNetworkStateException.class, "InvalidVPCNetworkStateFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidVPCNetworkStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidVPCNetworkStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidVPCNetworkStateException invalidVPCNetworkStateException = new com.amazonaws.services.dax.model.InvalidVPCNetworkStateException(
                 null);
 

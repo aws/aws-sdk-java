@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmAccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmAccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException> {
+public class CloudHsmAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmAccessDeniedExceptionUnmarshaller() {
-        super("CloudHsmAccessDeniedException");
+        super(com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException.class, "CloudHsmAccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException cloudHsmAccessDeniedException = new com.amazonaws.services.cloudhsmv2.model.CloudHsmAccessDeniedException(
                 null);
 

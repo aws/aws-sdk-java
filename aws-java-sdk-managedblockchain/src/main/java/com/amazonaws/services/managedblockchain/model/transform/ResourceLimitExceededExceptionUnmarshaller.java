@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException> {
+public class ResourceLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceLimitExceededExceptionUnmarshaller() {
-        super("ResourceLimitExceededException");
+        super(com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException.class, "ResourceLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException resourceLimitExceededException = new com.amazonaws.services.managedblockchain.model.ResourceLimitExceededException(
                 null);
 

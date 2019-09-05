@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEventPatternException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEventPatternExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException> {
+public class InvalidEventPatternExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEventPatternExceptionUnmarshaller() {
-        super("InvalidEventPatternException");
+        super(com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException.class, "InvalidEventPatternException");
     }
 
     @Override
-    public com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException invalidEventPatternException = new com.amazonaws.services.cloudwatchevents.model.InvalidEventPatternException(
                 null);
 

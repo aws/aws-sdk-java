@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDefinitionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDefinitionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.InvalidDefinitionException> {
+public class InvalidDefinitionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDefinitionExceptionUnmarshaller() {
-        super("InvalidDefinition");
+        super(com.amazonaws.services.stepfunctions.model.InvalidDefinitionException.class, "InvalidDefinition");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.InvalidDefinitionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.InvalidDefinitionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.InvalidDefinitionException invalidDefinitionException = new com.amazonaws.services.stepfunctions.model.InvalidDefinitionException(
                 null);
 

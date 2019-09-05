@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConditionCheckFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConditionCheckFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.ConditionCheckFailureException> {
+public class ConditionCheckFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConditionCheckFailureExceptionUnmarshaller() {
-        super("ConditionCheckFailureException");
+        super(com.amazonaws.services.glue.model.ConditionCheckFailureException.class, "ConditionCheckFailureException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.ConditionCheckFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.ConditionCheckFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.ConditionCheckFailureException conditionCheckFailureException = new com.amazonaws.services.glue.model.ConditionCheckFailureException(
                 null);
 

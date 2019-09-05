@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.ResourceNotFoundException> {
+public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceNotFoundExceptionUnmarshaller() {
-        super("ResourceNotFoundException");
+        super(com.amazonaws.services.logs.model.ResourceNotFoundException.class, "ResourceNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.ResourceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.ResourceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.ResourceNotFoundException resourceNotFoundException = new com.amazonaws.services.logs.model.ResourceNotFoundException(
                 null);
 

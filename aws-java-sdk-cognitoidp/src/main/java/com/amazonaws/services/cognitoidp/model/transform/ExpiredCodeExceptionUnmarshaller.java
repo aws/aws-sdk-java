@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExpiredCodeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpiredCodeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.ExpiredCodeException> {
+public class ExpiredCodeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExpiredCodeExceptionUnmarshaller() {
-        super("ExpiredCodeException");
+        super(com.amazonaws.services.cognitoidp.model.ExpiredCodeException.class, "ExpiredCodeException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.ExpiredCodeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.ExpiredCodeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.ExpiredCodeException expiredCodeException = new com.amazonaws.services.cognitoidp.model.ExpiredCodeException(
                 null);
 

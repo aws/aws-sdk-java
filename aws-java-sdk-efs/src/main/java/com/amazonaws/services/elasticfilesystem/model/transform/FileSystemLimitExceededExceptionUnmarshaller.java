@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileSystemLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileSystemLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException> {
+public class FileSystemLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileSystemLimitExceededExceptionUnmarshaller() {
-        super("FileSystemLimitExceeded");
+        super(com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException.class, "FileSystemLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException fileSystemLimitExceededException = new com.amazonaws.services.elasticfilesystem.model.FileSystemLimitExceededException(
                 null);
 

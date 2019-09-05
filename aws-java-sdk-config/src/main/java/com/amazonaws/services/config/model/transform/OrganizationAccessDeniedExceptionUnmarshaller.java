@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationAccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationAccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.OrganizationAccessDeniedException> {
+public class OrganizationAccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationAccessDeniedExceptionUnmarshaller() {
-        super("OrganizationAccessDeniedException");
+        super(com.amazonaws.services.config.model.OrganizationAccessDeniedException.class, "OrganizationAccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.OrganizationAccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.OrganizationAccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.OrganizationAccessDeniedException organizationAccessDeniedException = new com.amazonaws.services.config.model.OrganizationAccessDeniedException(
                 null);
 

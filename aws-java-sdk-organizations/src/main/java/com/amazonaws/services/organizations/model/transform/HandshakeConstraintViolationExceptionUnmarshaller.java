@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * HandshakeConstraintViolationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HandshakeConstraintViolationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.HandshakeConstraintViolationException> {
+public class HandshakeConstraintViolationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private HandshakeConstraintViolationExceptionUnmarshaller() {
-        super("HandshakeConstraintViolationException");
+        super(com.amazonaws.services.organizations.model.HandshakeConstraintViolationException.class, "HandshakeConstraintViolationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.HandshakeConstraintViolationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.HandshakeConstraintViolationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.HandshakeConstraintViolationException handshakeConstraintViolationException = new com.amazonaws.services.organizations.model.HandshakeConstraintViolationException(
                 null);
 

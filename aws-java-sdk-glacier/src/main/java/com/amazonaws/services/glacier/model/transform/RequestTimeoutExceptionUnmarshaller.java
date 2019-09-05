@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestTimeoutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestTimeoutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glacier.model.RequestTimeoutException> {
+public class RequestTimeoutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestTimeoutExceptionUnmarshaller() {
-        super("RequestTimeoutException");
+        super(com.amazonaws.services.glacier.model.RequestTimeoutException.class, "RequestTimeoutException");
     }
 
     @Override
-    public com.amazonaws.services.glacier.model.RequestTimeoutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glacier.model.RequestTimeoutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glacier.model.RequestTimeoutException requestTimeoutException = new com.amazonaws.services.glacier.model.RequestTimeoutException(
                 null);
 

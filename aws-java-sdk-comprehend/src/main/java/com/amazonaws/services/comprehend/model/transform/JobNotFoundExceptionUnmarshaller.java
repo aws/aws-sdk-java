@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * JobNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class JobNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.JobNotFoundException> {
+public class JobNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private JobNotFoundExceptionUnmarshaller() {
-        super("JobNotFoundException");
+        super(com.amazonaws.services.comprehend.model.JobNotFoundException.class, "JobNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.JobNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.JobNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.JobNotFoundException jobNotFoundException = new com.amazonaws.services.comprehend.model.JobNotFoundException(
                 null);
 

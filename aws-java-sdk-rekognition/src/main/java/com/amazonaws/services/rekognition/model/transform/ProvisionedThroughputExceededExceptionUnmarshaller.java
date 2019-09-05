@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProvisionedThroughputExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProvisionedThroughputExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException> {
+public class ProvisionedThroughputExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProvisionedThroughputExceededExceptionUnmarshaller() {
-        super("ProvisionedThroughputExceededException");
+        super(com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException.class, "ProvisionedThroughputExceededException");
     }
 
     @Override
-    public com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException provisionedThroughputExceededException = new com.amazonaws.services.rekognition.model.ProvisionedThroughputExceededException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryTriggerDestinationArnRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryTriggerDestinationArnRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException> {
+public class RepositoryTriggerDestinationArnRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryTriggerDestinationArnRequiredExceptionUnmarshaller() {
-        super("RepositoryTriggerDestinationArnRequiredException");
+        super(com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException.class,
+                "RepositoryTriggerDestinationArnRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException repositoryTriggerDestinationArnRequiredException = new com.amazonaws.services.codecommit.model.RepositoryTriggerDestinationArnRequiredException(
                 null);

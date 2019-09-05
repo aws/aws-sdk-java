@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SchemaAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SchemaAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException> {
+public class SchemaAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SchemaAlreadyExistsExceptionUnmarshaller() {
-        super("SchemaAlreadyExistsException");
+        super(com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException.class, "SchemaAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException schemaAlreadyExistsException = new com.amazonaws.services.clouddirectory.model.SchemaAlreadyExistsException(
                 null);
 

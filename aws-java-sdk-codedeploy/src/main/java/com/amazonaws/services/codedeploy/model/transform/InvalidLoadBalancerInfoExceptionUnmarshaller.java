@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLoadBalancerInfoException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLoadBalancerInfoExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException> {
+public class InvalidLoadBalancerInfoExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLoadBalancerInfoExceptionUnmarshaller() {
-        super("InvalidLoadBalancerInfoException");
+        super(com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException.class, "InvalidLoadBalancerInfoException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException invalidLoadBalancerInfoException = new com.amazonaws.services.codedeploy.model.InvalidLoadBalancerInfoException(
                 null);
 

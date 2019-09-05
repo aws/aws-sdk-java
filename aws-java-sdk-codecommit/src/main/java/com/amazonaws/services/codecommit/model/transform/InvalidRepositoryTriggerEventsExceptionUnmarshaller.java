@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryTriggerEventsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryTriggerEventsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException> {
+public class InvalidRepositoryTriggerEventsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryTriggerEventsExceptionUnmarshaller() {
-        super("InvalidRepositoryTriggerEventsException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException.class, "InvalidRepositoryTriggerEventsException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException invalidRepositoryTriggerEventsException = new com.amazonaws.services.codecommit.model.InvalidRepositoryTriggerEventsException(
                 null);
 

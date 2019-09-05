@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceShareLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceShareLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ram.model.ResourceShareLimitExceededException> {
+public class ResourceShareLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceShareLimitExceededExceptionUnmarshaller() {
-        super("ResourceShareLimitExceededException");
+        super(com.amazonaws.services.ram.model.ResourceShareLimitExceededException.class, "ResourceShareLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.ResourceShareLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.ResourceShareLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.ResourceShareLimitExceededException resourceShareLimitExceededException = new com.amazonaws.services.ram.model.ResourceShareLimitExceededException(
                 null);
 

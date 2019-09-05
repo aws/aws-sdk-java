@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryTriggerBranchNameListRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryTriggerBranchNameListRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException> {
+public class RepositoryTriggerBranchNameListRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryTriggerBranchNameListRequiredExceptionUnmarshaller() {
-        super("RepositoryTriggerBranchNameListRequiredException");
+        super(com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException.class,
+                "RepositoryTriggerBranchNameListRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException repositoryTriggerBranchNameListRequiredException = new com.amazonaws.services.codecommit.model.RepositoryTriggerBranchNameListRequiredException(
                 null);

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTypeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fms.model.InvalidTypeException> {
+public class InvalidTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTypeExceptionUnmarshaller() {
-        super("InvalidTypeException");
+        super(com.amazonaws.services.fms.model.InvalidTypeException.class, "InvalidTypeException");
     }
 
     @Override
-    public com.amazonaws.services.fms.model.InvalidTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fms.model.InvalidTypeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fms.model.InvalidTypeException invalidTypeException = new com.amazonaws.services.fms.model.InvalidTypeException(null);
 
         int originalDepth = context.getCurrentDepth();

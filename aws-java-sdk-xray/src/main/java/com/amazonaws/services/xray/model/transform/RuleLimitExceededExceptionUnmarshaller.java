@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RuleLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RuleLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.xray.model.RuleLimitExceededException> {
+public class RuleLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RuleLimitExceededExceptionUnmarshaller() {
-        super("RuleLimitExceededException");
+        super(com.amazonaws.services.xray.model.RuleLimitExceededException.class, "RuleLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.xray.model.RuleLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.xray.model.RuleLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.xray.model.RuleLimitExceededException ruleLimitExceededException = new com.amazonaws.services.xray.model.RuleLimitExceededException(
                 null);
 

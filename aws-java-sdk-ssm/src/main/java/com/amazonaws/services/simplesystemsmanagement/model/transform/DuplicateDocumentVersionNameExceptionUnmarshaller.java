@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateDocumentVersionNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateDocumentVersionNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException> {
+public class DuplicateDocumentVersionNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateDocumentVersionNameExceptionUnmarshaller() {
-        super("DuplicateDocumentVersionName");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException.class, "DuplicateDocumentVersionName");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException duplicateDocumentVersionNameException = new com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentVersionNameException(
                 null);

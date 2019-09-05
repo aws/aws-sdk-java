@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ECSServiceMappingLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ECSServiceMappingLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException> {
+public class ECSServiceMappingLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ECSServiceMappingLimitExceededExceptionUnmarshaller() {
-        super("ECSServiceMappingLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException.class, "ECSServiceMappingLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException eCSServiceMappingLimitExceededException = new com.amazonaws.services.codedeploy.model.ECSServiceMappingLimitExceededException(
                 null);
 

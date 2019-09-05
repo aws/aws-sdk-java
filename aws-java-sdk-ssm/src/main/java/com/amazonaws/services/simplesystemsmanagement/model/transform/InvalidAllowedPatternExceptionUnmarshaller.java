@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAllowedPatternException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAllowedPatternExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException> {
+public class InvalidAllowedPatternExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAllowedPatternExceptionUnmarshaller() {
-        super("InvalidAllowedPatternException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException.class, "InvalidAllowedPatternException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException invalidAllowedPatternException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAllowedPatternException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSequenceTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSequenceTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.InvalidSequenceTokenException> {
+public class InvalidSequenceTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSequenceTokenExceptionUnmarshaller() {
-        super("InvalidSequenceTokenException");
+        super(com.amazonaws.services.logs.model.InvalidSequenceTokenException.class, "InvalidSequenceTokenException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.InvalidSequenceTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.InvalidSequenceTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.InvalidSequenceTokenException invalidSequenceTokenException = new com.amazonaws.services.logs.model.InvalidSequenceTokenException(
                 null);
 

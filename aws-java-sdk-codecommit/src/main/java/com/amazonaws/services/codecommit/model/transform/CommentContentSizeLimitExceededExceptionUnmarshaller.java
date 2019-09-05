@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommentContentSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommentContentSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException> {
+public class CommentContentSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommentContentSizeLimitExceededExceptionUnmarshaller() {
-        super("CommentContentSizeLimitExceededException");
+        super(com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException.class, "CommentContentSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException commentContentSizeLimitExceededException = new com.amazonaws.services.codecommit.model.CommentContentSizeLimitExceededException(
                 null);
 

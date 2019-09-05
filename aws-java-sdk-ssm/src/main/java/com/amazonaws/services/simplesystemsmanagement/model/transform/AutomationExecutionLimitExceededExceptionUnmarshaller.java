@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AutomationExecutionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutomationExecutionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException> {
+public class AutomationExecutionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AutomationExecutionLimitExceededExceptionUnmarshaller() {
-        super("AutomationExecutionLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException.class, "AutomationExecutionLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException automationExecutionLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.AutomationExecutionLimitExceededException(
                 null);

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MultipleConflictResolutionEntriesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MultipleConflictResolutionEntriesExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException> {
+public class MultipleConflictResolutionEntriesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MultipleConflictResolutionEntriesExceptionUnmarshaller() {
-        super("MultipleConflictResolutionEntriesException");
+        super(com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException.class, "MultipleConflictResolutionEntriesException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException multipleConflictResolutionEntriesException = new com.amazonaws.services.codecommit.model.MultipleConflictResolutionEntriesException(
                 null);
 

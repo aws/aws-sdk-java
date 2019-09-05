@@ -102,10 +102,7 @@ public class AWSMediaConnectClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediaconnect.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediaconnect.model.AWSMediaConnectException>(
-                                            com.amazonaws.services.mediaconnect.model.AWSMediaConnectException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediaconnect.model.AWSMediaConnectException.class));
 
     public static AWSMediaConnectClientBuilder builder() {
         return AWSMediaConnectClientBuilder.standard();

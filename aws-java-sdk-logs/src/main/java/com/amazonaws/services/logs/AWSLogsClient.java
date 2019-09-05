@@ -141,10 +141,7 @@ public class AWSLogsClient extends AmazonWebServiceClient implements AWSLogs {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.logs.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.logs.model.AWSLogsException>(
-                                            com.amazonaws.services.logs.model.AWSLogsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.logs.model.AWSLogsException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudWatch Logs. A credentials provider chain will be

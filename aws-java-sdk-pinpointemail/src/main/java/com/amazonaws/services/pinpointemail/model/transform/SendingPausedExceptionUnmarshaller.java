@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SendingPausedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SendingPausedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.SendingPausedException> {
+public class SendingPausedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SendingPausedExceptionUnmarshaller() {
-        super("SendingPausedException");
+        super(com.amazonaws.services.pinpointemail.model.SendingPausedException.class, "SendingPausedException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.SendingPausedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.SendingPausedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointemail.model.SendingPausedException sendingPausedException = new com.amazonaws.services.pinpointemail.model.SendingPausedException(
                 null);
 

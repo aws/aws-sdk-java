@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidGatewayRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidGatewayRequestExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException> {
+public class InvalidGatewayRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidGatewayRequestExceptionUnmarshaller() {
-        super("InvalidGatewayRequestException");
+        super(com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException.class, "InvalidGatewayRequestException");
     }
 
     @Override
-    public com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException invalidGatewayRequestException = new com.amazonaws.services.storagegateway.model.InvalidGatewayRequestException(
                 null);
 

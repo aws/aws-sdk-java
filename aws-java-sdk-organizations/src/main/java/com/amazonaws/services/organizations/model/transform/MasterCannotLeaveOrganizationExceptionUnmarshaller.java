@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MasterCannotLeaveOrganizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MasterCannotLeaveOrganizationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException> {
+public class MasterCannotLeaveOrganizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MasterCannotLeaveOrganizationExceptionUnmarshaller() {
-        super("MasterCannotLeaveOrganizationException");
+        super(com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException.class, "MasterCannotLeaveOrganizationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException masterCannotLeaveOrganizationException = new com.amazonaws.services.organizations.model.MasterCannotLeaveOrganizationException(
                 null);
 

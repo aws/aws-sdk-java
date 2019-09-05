@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EndpointGroupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointGroupNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException> {
+public class EndpointGroupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EndpointGroupNotFoundExceptionUnmarshaller() {
-        super("EndpointGroupNotFoundException");
+        super(com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException.class, "EndpointGroupNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException endpointGroupNotFoundException = new com.amazonaws.services.globalaccelerator.model.EndpointGroupNotFoundException(
                 null);
 

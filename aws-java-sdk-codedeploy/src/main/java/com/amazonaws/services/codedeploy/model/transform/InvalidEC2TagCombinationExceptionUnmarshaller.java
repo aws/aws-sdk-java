@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEC2TagCombinationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEC2TagCombinationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException> {
+public class InvalidEC2TagCombinationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEC2TagCombinationExceptionUnmarshaller() {
-        super("InvalidEC2TagCombinationException");
+        super(com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException.class, "InvalidEC2TagCombinationException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException invalidEC2TagCombinationException = new com.amazonaws.services.codedeploy.model.InvalidEC2TagCombinationException(
                 null);
 

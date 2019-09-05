@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.chime.model.ServiceFailureException> {
+public class ServiceFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceFailureExceptionUnmarshaller() {
-        super("ServiceFailureException");
+        super(com.amazonaws.services.chime.model.ServiceFailureException.class, "ServiceFailureException");
     }
 
     @Override
-    public com.amazonaws.services.chime.model.ServiceFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.chime.model.ServiceFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.chime.model.ServiceFailureException serviceFailureException = new com.amazonaws.services.chime.model.ServiceFailureException(
                 null);
 

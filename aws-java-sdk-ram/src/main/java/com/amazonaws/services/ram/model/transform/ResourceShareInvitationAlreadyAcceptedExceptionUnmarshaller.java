@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceShareInvitationAlreadyAcceptedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceShareInvitationAlreadyAcceptedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException> {
+public class ResourceShareInvitationAlreadyAcceptedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceShareInvitationAlreadyAcceptedExceptionUnmarshaller() {
-        super("ResourceShareInvitationAlreadyAcceptedException");
+        super(com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException.class, "ResourceShareInvitationAlreadyAcceptedException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException resourceShareInvitationAlreadyAcceptedException = new com.amazonaws.services.ram.model.ResourceShareInvitationAlreadyAcceptedException(
                 null);
 

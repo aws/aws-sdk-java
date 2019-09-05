@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApiLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApiLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.appsync.model.ApiLimitExceededException> {
+public class ApiLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApiLimitExceededExceptionUnmarshaller() {
-        super("ApiLimitExceededException");
+        super(com.amazonaws.services.appsync.model.ApiLimitExceededException.class, "ApiLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.appsync.model.ApiLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.appsync.model.ApiLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.appsync.model.ApiLimitExceededException apiLimitExceededException = new com.amazonaws.services.appsync.model.ApiLimitExceededException(
                 null);
 

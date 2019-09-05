@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KmsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KmsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.KmsException> {
+public class KmsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KmsExceptionUnmarshaller() {
-        super("KmsException");
+        super(com.amazonaws.services.cloudtrail.model.KmsException.class, "KmsException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.KmsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.KmsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.KmsException kmsException = new com.amazonaws.services.cloudtrail.model.KmsException(null);
 
         int originalDepth = context.getCurrentDepth();

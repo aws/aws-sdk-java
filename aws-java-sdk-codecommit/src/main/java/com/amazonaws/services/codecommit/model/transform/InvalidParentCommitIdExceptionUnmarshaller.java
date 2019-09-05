@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParentCommitIdException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParentCommitIdExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidParentCommitIdException> {
+public class InvalidParentCommitIdExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParentCommitIdExceptionUnmarshaller() {
-        super("InvalidParentCommitIdException");
+        super(com.amazonaws.services.codecommit.model.InvalidParentCommitIdException.class, "InvalidParentCommitIdException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidParentCommitIdException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidParentCommitIdException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidParentCommitIdException invalidParentCommitIdException = new com.amazonaws.services.codecommit.model.InvalidParentCommitIdException(
                 null);
 

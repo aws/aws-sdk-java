@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.RepositoryNotFoundException> {
+public class RepositoryNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryNotFoundExceptionUnmarshaller() {
-        super("RepositoryNotFoundException");
+        super(com.amazonaws.services.ecr.model.RepositoryNotFoundException.class, "RepositoryNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.RepositoryNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.RepositoryNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.RepositoryNotFoundException repositoryNotFoundException = new com.amazonaws.services.ecr.model.RepositoryNotFoundException(
                 null);
 

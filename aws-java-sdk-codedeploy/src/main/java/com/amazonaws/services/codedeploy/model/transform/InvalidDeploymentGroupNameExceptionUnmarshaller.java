@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeploymentGroupNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeploymentGroupNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException> {
+public class InvalidDeploymentGroupNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeploymentGroupNameExceptionUnmarshaller() {
-        super("InvalidDeploymentGroupNameException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException.class, "InvalidDeploymentGroupNameException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException invalidDeploymentGroupNameException = new com.amazonaws.services.codedeploy.model.InvalidDeploymentGroupNameException(
                 null);
 

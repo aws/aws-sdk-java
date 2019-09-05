@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeleteInventoryParametersException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeleteInventoryParametersExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException> {
+public class InvalidDeleteInventoryParametersExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeleteInventoryParametersExceptionUnmarshaller() {
-        super("InvalidDeleteInventoryParametersException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException.class, "InvalidDeleteInventoryParametersException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException invalidDeleteInventoryParametersException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidDeleteInventoryParametersException(
                 null);

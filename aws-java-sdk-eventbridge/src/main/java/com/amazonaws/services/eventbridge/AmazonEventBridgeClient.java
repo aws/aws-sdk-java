@@ -129,10 +129,7 @@ public class AmazonEventBridgeClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ManagedRuleException").withExceptionUnmarshaller(
                                     com.amazonaws.services.eventbridge.model.transform.ManagedRuleExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.eventbridge.model.AmazonEventBridgeException>(
-                                            com.amazonaws.services.eventbridge.model.AmazonEventBridgeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.eventbridge.model.AmazonEventBridgeException.class));
 
     public static AmazonEventBridgeClientBuilder builder() {
         return AmazonEventBridgeClientBuilder.standard();

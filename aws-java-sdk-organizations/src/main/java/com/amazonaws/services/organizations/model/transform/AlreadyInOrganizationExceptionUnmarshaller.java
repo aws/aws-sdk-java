@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AlreadyInOrganizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AlreadyInOrganizationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.AlreadyInOrganizationException> {
+public class AlreadyInOrganizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AlreadyInOrganizationExceptionUnmarshaller() {
-        super("AlreadyInOrganizationException");
+        super(com.amazonaws.services.organizations.model.AlreadyInOrganizationException.class, "AlreadyInOrganizationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.AlreadyInOrganizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.AlreadyInOrganizationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.AlreadyInOrganizationException alreadyInOrganizationException = new com.amazonaws.services.organizations.model.AlreadyInOrganizationException(
                 null);
 

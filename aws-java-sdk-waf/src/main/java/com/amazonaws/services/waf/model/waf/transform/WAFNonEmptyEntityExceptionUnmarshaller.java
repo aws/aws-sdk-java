@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFNonEmptyEntityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFNonEmptyEntityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFNonEmptyEntityException> {
+public class WAFNonEmptyEntityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFNonEmptyEntityExceptionUnmarshaller() {
-        super("WAFNonEmptyEntityException");
+        super(com.amazonaws.services.waf.model.WAFNonEmptyEntityException.class, "WAFNonEmptyEntityException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFNonEmptyEntityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFNonEmptyEntityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFNonEmptyEntityException wAFNonEmptyEntityException = new com.amazonaws.services.waf.model.WAFNonEmptyEntityException(
                 null);
 

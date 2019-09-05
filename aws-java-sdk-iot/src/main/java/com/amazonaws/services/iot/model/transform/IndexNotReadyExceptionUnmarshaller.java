@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IndexNotReadyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IndexNotReadyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.IndexNotReadyException> {
+public class IndexNotReadyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IndexNotReadyExceptionUnmarshaller() {
-        super("IndexNotReadyException");
+        super(com.amazonaws.services.iot.model.IndexNotReadyException.class, "IndexNotReadyException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.IndexNotReadyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.IndexNotReadyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.IndexNotReadyException indexNotReadyException = new com.amazonaws.services.iot.model.IndexNotReadyException(null);
 
         int originalDepth = context.getCurrentDepth();

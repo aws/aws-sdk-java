@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceAlreadyCheckedOutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceAlreadyCheckedOutExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException> {
+public class ResourceAlreadyCheckedOutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceAlreadyCheckedOutExceptionUnmarshaller() {
-        super("ResourceAlreadyCheckedOutException");
+        super(com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException.class, "ResourceAlreadyCheckedOutException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException resourceAlreadyCheckedOutException = new com.amazonaws.services.workdocs.model.ResourceAlreadyCheckedOutException(
                 null);
 

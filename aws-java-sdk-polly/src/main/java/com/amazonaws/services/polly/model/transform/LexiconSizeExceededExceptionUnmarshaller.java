@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LexiconSizeExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LexiconSizeExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.LexiconSizeExceededException> {
+public class LexiconSizeExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LexiconSizeExceededExceptionUnmarshaller() {
-        super("LexiconSizeExceededException");
+        super(com.amazonaws.services.polly.model.LexiconSizeExceededException.class, "LexiconSizeExceededException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.LexiconSizeExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.LexiconSizeExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.LexiconSizeExceededException lexiconSizeExceededException = new com.amazonaws.services.polly.model.LexiconSizeExceededException(
                 null);
 

@@ -18,6 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
+ * <p>
+ * An object that specifies organization managed rule metadata such as resource type and ID of AWS resource along with
+ * the rule identifier. It also provides the frequency with which you want AWS Config to run evaluations for the rule if
+ * the trigger type is periodic.
+ * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationManagedRuleMetadata"
  *      target="_top">AWS API Documentation</a>
@@ -25,24 +30,74 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OrganizationManagedRuleMetadata implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The description that you provide for organization config rule.
+     * </p>
+     */
     private String description;
-
+    /**
+     * <p>
+     * For organization config managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * Managed Config Rules</a>.
+     * </p>
+     */
     private String ruleIdentifier;
-
+    /**
+     * <p>
+     * A string, in JSON format, that is passed to organization config rule Lambda function.
+     * </p>
+     */
     private String inputParameters;
-
+    /**
+     * <p>
+     * The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that
+     * is triggered at a periodic frequency.
+     * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * </note>
+     */
     private String maximumExecutionFrequency;
-
+    /**
+     * <p>
+     * The type of the AWS resource that was evaluated.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> resourceTypesScope;
-
+    /**
+     * <p>
+     * The ID of the AWS resource that was evaluated.
+     * </p>
+     */
     private String resourceIdScope;
-
+    /**
+     * <p>
+     * One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more
+     * specific tag values.
+     * </p>
+     */
     private String tagKeyScope;
-
+    /**
+     * <p>
+     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
+     * (key).
+     * </p>
+     */
     private String tagValueScope;
 
     /**
+     * <p>
+     * The description that you provide for organization config rule.
+     * </p>
+     * 
      * @param description
+     *        The description that you provide for organization config rule.
      */
 
     public void setDescription(String description) {
@@ -50,7 +105,11 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The description that you provide for organization config rule.
+     * </p>
+     * 
+     * @return The description that you provide for organization config rule.
      */
 
     public String getDescription() {
@@ -58,7 +117,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The description that you provide for organization config rule.
+     * </p>
+     * 
      * @param description
+     *        The description that you provide for organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +132,18 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * For organization config managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * Managed Config Rules</a>.
+     * </p>
+     * 
      * @param ruleIdentifier
+     *        For organization config managed rules, a predefined identifier from a list. For example,
+     *        <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
+     *        >Using AWS Managed Config Rules</a>.
      */
 
     public void setRuleIdentifier(String ruleIdentifier) {
@@ -76,7 +151,17 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * For organization config managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * Managed Config Rules</a>.
+     * </p>
+     * 
+     * @return For organization config managed rules, a predefined identifier from a list. For example,
+     *         <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     *         href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
+     *         >Using AWS Managed Config Rules</a>.
      */
 
     public String getRuleIdentifier() {
@@ -84,7 +169,18 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * For organization config managed rules, a predefined identifier from a list. For example,
+     * <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using AWS
+     * Managed Config Rules</a>.
+     * </p>
+     * 
      * @param ruleIdentifier
+     *        For organization config managed rules, a predefined identifier from a list. For example,
+     *        <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see <a
+     *        href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html"
+     *        >Using AWS Managed Config Rules</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,7 +190,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * A string, in JSON format, that is passed to organization config rule Lambda function.
+     * </p>
+     * 
      * @param inputParameters
+     *        A string, in JSON format, that is passed to organization config rule Lambda function.
      */
 
     public void setInputParameters(String inputParameters) {
@@ -102,7 +203,11 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * A string, in JSON format, that is passed to organization config rule Lambda function.
+     * </p>
+     * 
+     * @return A string, in JSON format, that is passed to organization config rule Lambda function.
      */
 
     public String getInputParameters() {
@@ -110,7 +215,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * A string, in JSON format, that is passed to organization config rule Lambda function.
+     * </p>
+     * 
      * @param inputParameters
+     *        A string, in JSON format, that is passed to organization config rule Lambda function.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -120,7 +230,24 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that
+     * is triggered at a periodic frequency.
+     * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * </note>
+     * 
      * @param maximumExecutionFrequency
+     *        The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule
+     *        that is triggered at a periodic frequency.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -129,7 +256,23 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that
+     * is triggered at a periodic frequency.
+     * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * </note>
+     * 
+     * @return The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed
+     *         rule that is triggered at a periodic frequency.</p> <note>
+     *         <p>
+     *         By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify
+     *         a valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *         </p>
      * @see MaximumExecutionFrequency
      */
 
@@ -138,7 +281,24 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that
+     * is triggered at a periodic frequency.
+     * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * </note>
+     * 
      * @param maximumExecutionFrequency
+     *        The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule
+     *        that is triggered at a periodic frequency.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -149,7 +309,24 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule that
+     * is triggered at a periodic frequency.
+     * </p>
+     * <note>
+     * <p>
+     * By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a valid
+     * value for the <code>MaximumExecutionFrequency</code> parameter.
+     * </p>
+     * </note>
+     * 
      * @param maximumExecutionFrequency
+     *        The maximum frequency with which AWS Config runs evaluations for a rule. You are using an AWS managed rule
+     *        that is triggered at a periodic frequency.</p> <note>
+     *        <p>
+     *        By default, rules with a periodic trigger are evaluated every 24 hours. To change the frequency, specify a
+     *        valid value for the <code>MaximumExecutionFrequency</code> parameter.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MaximumExecutionFrequency
      */
@@ -160,7 +337,11 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The type of the AWS resource that was evaluated.
+     * </p>
+     * 
+     * @return The type of the AWS resource that was evaluated.
      */
 
     public java.util.List<String> getResourceTypesScope() {
@@ -171,7 +352,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The type of the AWS resource that was evaluated.
+     * </p>
+     * 
      * @param resourceTypesScope
+     *        The type of the AWS resource that was evaluated.
      */
 
     public void setResourceTypesScope(java.util.Collection<String> resourceTypesScope) {
@@ -185,12 +371,16 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
 
     /**
      * <p>
+     * The type of the AWS resource that was evaluated.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setResourceTypesScope(java.util.Collection)} or {@link #withResourceTypesScope(java.util.Collection)} if
      * you want to override the existing values.
      * </p>
      * 
      * @param resourceTypesScope
+     *        The type of the AWS resource that was evaluated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,7 +395,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The type of the AWS resource that was evaluated.
+     * </p>
+     * 
      * @param resourceTypesScope
+     *        The type of the AWS resource that was evaluated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,7 +410,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The ID of the AWS resource that was evaluated.
+     * </p>
+     * 
      * @param resourceIdScope
+     *        The ID of the AWS resource that was evaluated.
      */
 
     public void setResourceIdScope(String resourceIdScope) {
@@ -223,7 +423,11 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the AWS resource that was evaluated.
+     * </p>
+     * 
+     * @return The ID of the AWS resource that was evaluated.
      */
 
     public String getResourceIdScope() {
@@ -231,7 +435,12 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The ID of the AWS resource that was evaluated.
+     * </p>
+     * 
      * @param resourceIdScope
+     *        The ID of the AWS resource that was evaluated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,7 +450,14 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more
+     * specific tag values.
+     * </p>
+     * 
      * @param tagKeyScope
+     *        One part of a key-value pair that make up a tag. A key is a general label that acts like a category for
+     *        more specific tag values.
      */
 
     public void setTagKeyScope(String tagKeyScope) {
@@ -249,7 +465,13 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more
+     * specific tag values.
+     * </p>
+     * 
+     * @return One part of a key-value pair that make up a tag. A key is a general label that acts like a category for
+     *         more specific tag values.
      */
 
     public String getTagKeyScope() {
@@ -257,7 +479,14 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * One part of a key-value pair that make up a tag. A key is a general label that acts like a category for more
+     * specific tag values.
+     * </p>
+     * 
      * @param tagKeyScope
+     *        One part of a key-value pair that make up a tag. A key is a general label that acts like a category for
+     *        more specific tag values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,7 +496,14 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
+     * (key).
+     * </p>
+     * 
      * @param tagValueScope
+     *        The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
+     *        category (key).
      */
 
     public void setTagValueScope(String tagValueScope) {
@@ -275,7 +511,13 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
-     * @return
+     * <p>
+     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
+     * (key).
+     * </p>
+     * 
+     * @return The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
+     *         category (key).
      */
 
     public String getTagValueScope() {
@@ -283,7 +525,14 @@ public class OrganizationManagedRuleMetadata implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category
+     * (key).
+     * </p>
+     * 
      * @param tagValueScope
+     *        The optional part of a key-value pair that make up a tag. A value acts as a descriptor within a tag
+     *        category (key).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFInvalidPermissionPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFInvalidPermissionPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException> {
+public class WAFInvalidPermissionPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFInvalidPermissionPolicyExceptionUnmarshaller() {
-        super("WAFInvalidPermissionPolicyException");
+        super(com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException.class, "WAFInvalidPermissionPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException wAFInvalidPermissionPolicyException = new com.amazonaws.services.waf.model.WAFInvalidPermissionPolicyException(
                 null);
 

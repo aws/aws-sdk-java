@@ -874,10 +874,7 @@ public class AWSCodeCommitClient extends AmazonWebServiceClient implements AWSCo
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidBranchNameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codecommit.model.transform.InvalidBranchNameExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codecommit.model.AWSCodeCommitException>(
-                                            com.amazonaws.services.codecommit.model.AWSCodeCommitException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codecommit.model.AWSCodeCommitException.class));
 
     /**
      * Constructs a new client to invoke service methods on CodeCommit. A credentials provider chain will be used that

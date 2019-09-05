@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidZipFileException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidZipFileExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidZipFileException> {
+public class InvalidZipFileExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidZipFileExceptionUnmarshaller() {
-        super("InvalidZipFileException");
+        super(com.amazonaws.services.lambda.model.InvalidZipFileException.class, "InvalidZipFileException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidZipFileException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidZipFileException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidZipFileException invalidZipFileException = new com.amazonaws.services.lambda.model.InvalidZipFileException(
                 null);
 

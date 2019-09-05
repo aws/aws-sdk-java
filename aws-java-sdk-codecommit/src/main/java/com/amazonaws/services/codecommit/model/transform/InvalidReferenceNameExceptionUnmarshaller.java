@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidReferenceNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidReferenceNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidReferenceNameException> {
+public class InvalidReferenceNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidReferenceNameExceptionUnmarshaller() {
-        super("InvalidReferenceNameException");
+        super(com.amazonaws.services.codecommit.model.InvalidReferenceNameException.class, "InvalidReferenceNameException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidReferenceNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidReferenceNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidReferenceNameException invalidReferenceNameException = new com.amazonaws.services.codecommit.model.InvalidReferenceNameException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ManualMergeRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ManualMergeRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ManualMergeRequiredException> {
+public class ManualMergeRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ManualMergeRequiredExceptionUnmarshaller() {
-        super("ManualMergeRequiredException");
+        super(com.amazonaws.services.codecommit.model.ManualMergeRequiredException.class, "ManualMergeRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ManualMergeRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ManualMergeRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ManualMergeRequiredException manualMergeRequiredException = new com.amazonaws.services.codecommit.model.ManualMergeRequiredException(
                 null);
 

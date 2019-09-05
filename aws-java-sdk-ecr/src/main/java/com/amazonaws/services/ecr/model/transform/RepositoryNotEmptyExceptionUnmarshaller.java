@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryNotEmptyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryNotEmptyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.RepositoryNotEmptyException> {
+public class RepositoryNotEmptyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryNotEmptyExceptionUnmarshaller() {
-        super("RepositoryNotEmptyException");
+        super(com.amazonaws.services.ecr.model.RepositoryNotEmptyException.class, "RepositoryNotEmptyException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.RepositoryNotEmptyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.RepositoryNotEmptyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.RepositoryNotEmptyException repositoryNotEmptyException = new com.amazonaws.services.ecr.model.RepositoryNotEmptyException(
                 null);
 

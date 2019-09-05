@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * HandshakeNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HandshakeNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.HandshakeNotFoundException> {
+public class HandshakeNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private HandshakeNotFoundExceptionUnmarshaller() {
-        super("HandshakeNotFoundException");
+        super(com.amazonaws.services.organizations.model.HandshakeNotFoundException.class, "HandshakeNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.HandshakeNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.HandshakeNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.HandshakeNotFoundException handshakeNotFoundException = new com.amazonaws.services.organizations.model.HandshakeNotFoundException(
                 null);
 

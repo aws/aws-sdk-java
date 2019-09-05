@@ -18,13 +18,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
 * ${shape.shapeName} JSON Unmarshaller
 */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ${shape.shapeName}Unmarshaller extends JsonErrorUnmarshaller<${metadata.packageName}.model.${shape.shapeName}> {
+public class ${shape.shapeName}Unmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ${shape.shapeName}Unmarshaller() {
-        super("${shape.errorCode}");
+        super(${metadata.packageName}.model.${shape.shapeName}.class, "${shape.errorCode}");
     }
 
     @Override
-    public ${metadata.packageName}.model.${shape.shapeName} unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public ${metadata.packageName}.model.${shape.shapeName} unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         ${metadata.packageName}.model.${shape.shapeName} ${shape.variable.variableName} = new ${metadata.packageName}.model.${shape.shapeName}(null);
 
 

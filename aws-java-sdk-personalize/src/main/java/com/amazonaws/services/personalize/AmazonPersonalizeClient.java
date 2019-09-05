@@ -95,10 +95,7 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.personalize.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.personalize.model.AmazonPersonalizeException>(
-                                            com.amazonaws.services.personalize.model.AmazonPersonalizeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.personalize.model.AmazonPersonalizeException.class));
 
     public static AmazonPersonalizeClientBuilder builder() {
         return AmazonPersonalizeClientBuilder.standard();

@@ -25,16 +25,38 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name that you assign to an organization config rule.
+     * </p>
+     */
     private String organizationConfigRuleName;
-
+    /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     */
     private OrganizationManagedRuleMetadata organizationManagedRuleMetadata;
-
+    /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     */
     private OrganizationCustomRuleMetadata organizationCustomRuleMetadata;
-
+    /**
+     * <p>
+     * A comma-separated list of accounts that you want to exclude from an organization config rule.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> excludedAccounts;
 
     /**
+     * <p>
+     * The name that you assign to an organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to an organization config rule.
      */
 
     public void setOrganizationConfigRuleName(String organizationConfigRuleName) {
@@ -42,7 +64,11 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * The name that you assign to an organization config rule.
+     * </p>
+     * 
+     * @return The name that you assign to an organization config rule.
      */
 
     public String getOrganizationConfigRuleName() {
@@ -50,7 +76,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The name that you assign to an organization config rule.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name that you assign to an organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +91,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationManagedRuleMetadata
+     *        An <code>OrganizationManagedRuleMetadata</code> object.
      */
 
     public void setOrganizationManagedRuleMetadata(OrganizationManagedRuleMetadata organizationManagedRuleMetadata) {
@@ -68,7 +104,11 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
+     * @return An <code>OrganizationManagedRuleMetadata</code> object.
      */
 
     public OrganizationManagedRuleMetadata getOrganizationManagedRuleMetadata() {
@@ -76,7 +116,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An <code>OrganizationManagedRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationManagedRuleMetadata
+     *        An <code>OrganizationManagedRuleMetadata</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +131,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationCustomRuleMetadata
+     *        An <code>OrganizationCustomRuleMetadata</code> object.
      */
 
     public void setOrganizationCustomRuleMetadata(OrganizationCustomRuleMetadata organizationCustomRuleMetadata) {
@@ -94,7 +144,11 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
+     * @return An <code>OrganizationCustomRuleMetadata</code> object.
      */
 
     public OrganizationCustomRuleMetadata getOrganizationCustomRuleMetadata() {
@@ -102,7 +156,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * An <code>OrganizationCustomRuleMetadata</code> object.
+     * </p>
+     * 
      * @param organizationCustomRuleMetadata
+     *        An <code>OrganizationCustomRuleMetadata</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +171,11 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
-     * @return
+     * <p>
+     * A comma-separated list of accounts that you want to exclude from an organization config rule.
+     * </p>
+     * 
+     * @return A comma-separated list of accounts that you want to exclude from an organization config rule.
      */
 
     public java.util.List<String> getExcludedAccounts() {
@@ -123,7 +186,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * A comma-separated list of accounts that you want to exclude from an organization config rule.
+     * </p>
+     * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts that you want to exclude from an organization config rule.
      */
 
     public void setExcludedAccounts(java.util.Collection<String> excludedAccounts) {
@@ -137,12 +205,16 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
+     * A comma-separated list of accounts that you want to exclude from an organization config rule.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExcludedAccounts(java.util.Collection)} or {@link #withExcludedAccounts(java.util.Collection)} if you
      * want to override the existing values.
      * </p>
      * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts that you want to exclude from an organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -157,7 +229,12 @@ public class PutOrganizationConfigRuleRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * A comma-separated list of accounts that you want to exclude from an organization config rule.
+     * </p>
+     * 
      * @param excludedAccounts
+     *        A comma-separated list of accounts that you want to exclude from an organization config rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

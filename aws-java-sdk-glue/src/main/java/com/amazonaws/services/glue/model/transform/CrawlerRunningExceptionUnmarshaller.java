@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CrawlerRunningException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CrawlerRunningExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.CrawlerRunningException> {
+public class CrawlerRunningExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CrawlerRunningExceptionUnmarshaller() {
-        super("CrawlerRunningException");
+        super(com.amazonaws.services.glue.model.CrawlerRunningException.class, "CrawlerRunningException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.CrawlerRunningException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.CrawlerRunningException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.CrawlerRunningException crawlerRunningException = new com.amazonaws.services.glue.model.CrawlerRunningException(null);
 
         int originalDepth = context.getCurrentDepth();

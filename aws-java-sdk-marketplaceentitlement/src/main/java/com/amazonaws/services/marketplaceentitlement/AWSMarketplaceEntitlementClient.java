@@ -101,10 +101,7 @@ public class AWSMarketplaceEntitlementClient extends AmazonWebServiceClient impl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.marketplaceentitlement.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException>(
-                                            com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.marketplaceentitlement.model.AWSMarketplaceEntitlementException.class));
 
     public static AWSMarketplaceEntitlementClientBuilder builder() {
         return AWSMarketplaceEntitlementClientBuilder.standard();

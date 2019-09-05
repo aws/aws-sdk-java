@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterMaxVersionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterMaxVersionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException> {
+public class ParameterMaxVersionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterMaxVersionLimitExceededExceptionUnmarshaller() {
-        super("ParameterMaxVersionLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException.class, "ParameterMaxVersionLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException parameterMaxVersionLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterMaxVersionLimitExceededException(
                 null);

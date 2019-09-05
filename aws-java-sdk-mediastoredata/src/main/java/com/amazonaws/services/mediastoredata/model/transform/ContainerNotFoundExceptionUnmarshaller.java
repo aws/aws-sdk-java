@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ContainerNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContainerNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mediastoredata.model.ContainerNotFoundException> {
+public class ContainerNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ContainerNotFoundExceptionUnmarshaller() {
-        super("ContainerNotFoundException");
+        super(com.amazonaws.services.mediastoredata.model.ContainerNotFoundException.class, "ContainerNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.mediastoredata.model.ContainerNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediastoredata.model.ContainerNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediastoredata.model.ContainerNotFoundException containerNotFoundException = new com.amazonaws.services.mediastoredata.model.ContainerNotFoundException(
                 null);
 

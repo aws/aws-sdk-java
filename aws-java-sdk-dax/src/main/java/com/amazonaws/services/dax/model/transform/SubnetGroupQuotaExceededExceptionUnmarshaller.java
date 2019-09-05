@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetGroupQuotaExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetGroupQuotaExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException> {
+public class SubnetGroupQuotaExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetGroupQuotaExceededExceptionUnmarshaller() {
-        super("SubnetGroupQuotaExceededFault");
+        super(com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException.class, "SubnetGroupQuotaExceededFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException subnetGroupQuotaExceededException = new com.amazonaws.services.dax.model.SubnetGroupQuotaExceededException(
                 null);
 

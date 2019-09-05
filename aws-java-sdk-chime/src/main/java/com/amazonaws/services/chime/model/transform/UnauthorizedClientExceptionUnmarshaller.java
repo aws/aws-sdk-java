@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnauthorizedClientException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnauthorizedClientExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.chime.model.UnauthorizedClientException> {
+public class UnauthorizedClientExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnauthorizedClientExceptionUnmarshaller() {
-        super("UnauthorizedClientException");
+        super(com.amazonaws.services.chime.model.UnauthorizedClientException.class, "UnauthorizedClientException");
     }
 
     @Override
-    public com.amazonaws.services.chime.model.UnauthorizedClientException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.chime.model.UnauthorizedClientException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.chime.model.UnauthorizedClientException unauthorizedClientException = new com.amazonaws.services.chime.model.UnauthorizedClientException(
                 null);
 

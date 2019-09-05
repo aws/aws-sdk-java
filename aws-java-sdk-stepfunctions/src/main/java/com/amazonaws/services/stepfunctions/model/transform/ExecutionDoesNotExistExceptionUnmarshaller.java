@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExecutionDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExecutionDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException> {
+public class ExecutionDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExecutionDoesNotExistExceptionUnmarshaller() {
-        super("ExecutionDoesNotExist");
+        super(com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException.class, "ExecutionDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException executionDoesNotExistException = new com.amazonaws.services.stepfunctions.model.ExecutionDoesNotExistException(
                 null);
 

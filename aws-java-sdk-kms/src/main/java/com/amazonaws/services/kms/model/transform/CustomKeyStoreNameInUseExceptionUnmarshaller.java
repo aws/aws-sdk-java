@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomKeyStoreNameInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomKeyStoreNameInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException> {
+public class CustomKeyStoreNameInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomKeyStoreNameInUseExceptionUnmarshaller() {
-        super("CustomKeyStoreNameInUseException");
+        super(com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException.class, "CustomKeyStoreNameInUseException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException customKeyStoreNameInUseException = new com.amazonaws.services.kms.model.CustomKeyStoreNameInUseException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DetectedLanguageLowConfidenceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DetectedLanguageLowConfidenceExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException> {
+public class DetectedLanguageLowConfidenceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DetectedLanguageLowConfidenceExceptionUnmarshaller() {
-        super("DetectedLanguageLowConfidenceException");
+        super(com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException.class, "DetectedLanguageLowConfidenceException");
     }
 
     @Override
-    public com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException detectedLanguageLowConfidenceException = new com.amazonaws.services.translate.model.DetectedLanguageLowConfidenceException(
                 null);
 

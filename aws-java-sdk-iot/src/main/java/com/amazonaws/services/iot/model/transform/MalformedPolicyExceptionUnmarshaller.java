@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedPolicyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.MalformedPolicyException> {
+public class MalformedPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedPolicyExceptionUnmarshaller() {
-        super("MalformedPolicyException");
+        super(com.amazonaws.services.iot.model.MalformedPolicyException.class, "MalformedPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.MalformedPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.MalformedPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.MalformedPolicyException malformedPolicyException = new com.amazonaws.services.iot.model.MalformedPolicyException(null);
 
         int originalDepth = context.getCurrentDepth();

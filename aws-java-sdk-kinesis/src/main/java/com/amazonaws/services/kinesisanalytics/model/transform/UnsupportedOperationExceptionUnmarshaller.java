@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedOperationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException> {
+public class UnsupportedOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedOperationExceptionUnmarshaller() {
-        super("UnsupportedOperationException");
+        super(com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException.class, "UnsupportedOperationException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException unsupportedOperationException = new com.amazonaws.services.kinesisanalytics.model.UnsupportedOperationException(
                 null);
 

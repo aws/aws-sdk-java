@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SessionLifetimeInMinutesInvalidException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SessionLifetimeInMinutesInvalidExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException> {
+public class SessionLifetimeInMinutesInvalidExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SessionLifetimeInMinutesInvalidExceptionUnmarshaller() {
-        super("SessionLifetimeInMinutesInvalidException");
+        super(com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException.class, "SessionLifetimeInMinutesInvalidException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException sessionLifetimeInMinutesInvalidException = new com.amazonaws.services.quicksight.model.SessionLifetimeInMinutesInvalidException(
                 null);
 

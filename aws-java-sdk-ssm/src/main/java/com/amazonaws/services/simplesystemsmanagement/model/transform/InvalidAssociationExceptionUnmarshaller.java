@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAssociationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAssociationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException> {
+public class InvalidAssociationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAssociationExceptionUnmarshaller() {
-        super("InvalidAssociation");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException.class, "InvalidAssociation");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException invalidAssociationException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAssociationException(
                 null);
 

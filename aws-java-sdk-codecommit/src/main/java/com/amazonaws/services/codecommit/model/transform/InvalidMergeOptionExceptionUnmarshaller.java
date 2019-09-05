@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMergeOptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMergeOptionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidMergeOptionException> {
+public class InvalidMergeOptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMergeOptionExceptionUnmarshaller() {
-        super("InvalidMergeOptionException");
+        super(com.amazonaws.services.codecommit.model.InvalidMergeOptionException.class, "InvalidMergeOptionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidMergeOptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidMergeOptionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidMergeOptionException invalidMergeOptionException = new com.amazonaws.services.codecommit.model.InvalidMergeOptionException(
                 null);
 

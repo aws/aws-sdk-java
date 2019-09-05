@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AuthenticationFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AuthenticationFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.AuthenticationFailedException> {
+public class AuthenticationFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AuthenticationFailedExceptionUnmarshaller() {
-        super("AuthenticationFailedException");
+        super(com.amazonaws.services.directory.model.AuthenticationFailedException.class, "AuthenticationFailedException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.AuthenticationFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.AuthenticationFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.AuthenticationFailedException authenticationFailedException = new com.amazonaws.services.directory.model.AuthenticationFailedException(
                 null);
 

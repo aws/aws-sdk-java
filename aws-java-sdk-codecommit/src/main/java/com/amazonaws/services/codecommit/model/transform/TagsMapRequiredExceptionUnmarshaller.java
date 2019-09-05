@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagsMapRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagsMapRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TagsMapRequiredException> {
+public class TagsMapRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagsMapRequiredExceptionUnmarshaller() {
-        super("TagsMapRequiredException");
+        super(com.amazonaws.services.codecommit.model.TagsMapRequiredException.class, "TagsMapRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TagsMapRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TagsMapRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.TagsMapRequiredException tagsMapRequiredException = new com.amazonaws.services.codecommit.model.TagsMapRequiredException(
                 null);
 

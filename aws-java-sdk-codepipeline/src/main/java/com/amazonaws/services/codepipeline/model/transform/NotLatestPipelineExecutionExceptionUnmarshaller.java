@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotLatestPipelineExecutionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotLatestPipelineExecutionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException> {
+public class NotLatestPipelineExecutionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotLatestPipelineExecutionExceptionUnmarshaller() {
-        super("NotLatestPipelineExecutionException");
+        super(com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException.class, "NotLatestPipelineExecutionException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException notLatestPipelineExecutionException = new com.amazonaws.services.codepipeline.model.NotLatestPipelineExecutionException(
                 null);
 

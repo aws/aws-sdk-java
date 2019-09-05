@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidWebhookAuthenticationParametersException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidWebhookAuthenticationParametersExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException> {
+public class InvalidWebhookAuthenticationParametersExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidWebhookAuthenticationParametersExceptionUnmarshaller() {
-        super("InvalidWebhookAuthenticationParametersException");
+        super(com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException.class,
+                "InvalidWebhookAuthenticationParametersException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException invalidWebhookAuthenticationParametersException = new com.amazonaws.services.codepipeline.model.InvalidWebhookAuthenticationParametersException(
                 null);

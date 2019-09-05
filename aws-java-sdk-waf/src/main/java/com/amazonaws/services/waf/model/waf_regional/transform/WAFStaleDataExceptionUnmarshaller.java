@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFStaleDataException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFStaleDataExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFStaleDataException> {
+public class WAFStaleDataExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFStaleDataExceptionUnmarshaller() {
-        super("WAFStaleDataException");
+        super(com.amazonaws.services.waf.model.WAFStaleDataException.class, "WAFStaleDataException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFStaleDataException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFStaleDataException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFStaleDataException wAFStaleDataException = new com.amazonaws.services.waf.model.WAFStaleDataException(null);
 
         int originalDepth = context.getCurrentDepth();

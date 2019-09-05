@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxLexemeLengthExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxLexemeLengthExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.MaxLexemeLengthExceededException> {
+public class MaxLexemeLengthExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxLexemeLengthExceededExceptionUnmarshaller() {
-        super("MaxLexemeLengthExceededException");
+        super(com.amazonaws.services.polly.model.MaxLexemeLengthExceededException.class, "MaxLexemeLengthExceededException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.MaxLexemeLengthExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.MaxLexemeLengthExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.MaxLexemeLengthExceededException maxLexemeLengthExceededException = new com.amazonaws.services.polly.model.MaxLexemeLengthExceededException(
                 null);
 

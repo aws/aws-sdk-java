@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryNameExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryNameExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryNameExistsException> {
+public class RepositoryNameExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryNameExistsExceptionUnmarshaller() {
-        super("RepositoryNameExistsException");
+        super(com.amazonaws.services.codecommit.model.RepositoryNameExistsException.class, "RepositoryNameExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryNameExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryNameExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryNameExistsException repositoryNameExistsException = new com.amazonaws.services.codecommit.model.RepositoryNameExistsException(
                 null);
 

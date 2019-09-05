@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AcceleratorNotDisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AcceleratorNotDisabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException> {
+public class AcceleratorNotDisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AcceleratorNotDisabledExceptionUnmarshaller() {
-        super("AcceleratorNotDisabledException");
+        super(com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException.class, "AcceleratorNotDisabledException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException acceleratorNotDisabledException = new com.amazonaws.services.globalaccelerator.model.AcceleratorNotDisabledException(
                 null);
 

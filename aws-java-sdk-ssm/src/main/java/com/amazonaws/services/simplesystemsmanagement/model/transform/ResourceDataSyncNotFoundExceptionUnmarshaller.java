@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceDataSyncNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceDataSyncNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException> {
+public class ResourceDataSyncNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceDataSyncNotFoundExceptionUnmarshaller() {
-        super("ResourceDataSyncNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException.class, "ResourceDataSyncNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException resourceDataSyncNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncNotFoundException(
                 null);
 

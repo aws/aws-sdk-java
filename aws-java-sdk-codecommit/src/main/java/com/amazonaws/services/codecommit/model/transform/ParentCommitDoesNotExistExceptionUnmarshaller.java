@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParentCommitDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParentCommitDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException> {
+public class ParentCommitDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParentCommitDoesNotExistExceptionUnmarshaller() {
-        super("ParentCommitDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException.class, "ParentCommitDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException parentCommitDoesNotExistException = new com.amazonaws.services.codecommit.model.ParentCommitDoesNotExistException(
                 null);
 

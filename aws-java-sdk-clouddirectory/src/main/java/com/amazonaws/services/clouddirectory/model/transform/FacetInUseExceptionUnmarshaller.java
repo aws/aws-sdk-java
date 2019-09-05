@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FacetInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FacetInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.FacetInUseException> {
+public class FacetInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FacetInUseExceptionUnmarshaller() {
-        super("FacetInUseException");
+        super(com.amazonaws.services.clouddirectory.model.FacetInUseException.class, "FacetInUseException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.FacetInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.FacetInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.FacetInUseException facetInUseException = new com.amazonaws.services.clouddirectory.model.FacetInUseException(
                 null);
 

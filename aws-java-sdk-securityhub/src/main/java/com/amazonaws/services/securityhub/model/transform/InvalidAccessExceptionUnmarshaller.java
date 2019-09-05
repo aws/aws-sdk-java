@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAccessException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAccessExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.securityhub.model.InvalidAccessException> {
+public class InvalidAccessExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAccessExceptionUnmarshaller() {
-        super("InvalidAccessException");
+        super(com.amazonaws.services.securityhub.model.InvalidAccessException.class, "InvalidAccessException");
     }
 
     @Override
-    public com.amazonaws.services.securityhub.model.InvalidAccessException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.securityhub.model.InvalidAccessException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.securityhub.model.InvalidAccessException invalidAccessException = new com.amazonaws.services.securityhub.model.InvalidAccessException(
                 null);
 

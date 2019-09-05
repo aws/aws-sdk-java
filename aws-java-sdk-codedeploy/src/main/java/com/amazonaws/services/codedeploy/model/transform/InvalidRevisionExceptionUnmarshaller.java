@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRevisionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRevisionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidRevisionException> {
+public class InvalidRevisionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRevisionExceptionUnmarshaller() {
-        super("InvalidRevisionException");
+        super(com.amazonaws.services.codedeploy.model.InvalidRevisionException.class, "InvalidRevisionException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidRevisionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidRevisionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidRevisionException invalidRevisionException = new com.amazonaws.services.codedeploy.model.InvalidRevisionException(
                 null);
 

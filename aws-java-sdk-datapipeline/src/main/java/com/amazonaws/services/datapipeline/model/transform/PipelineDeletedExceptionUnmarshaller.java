@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PipelineDeletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PipelineDeletedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.datapipeline.model.PipelineDeletedException> {
+public class PipelineDeletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PipelineDeletedExceptionUnmarshaller() {
-        super("PipelineDeletedException");
+        super(com.amazonaws.services.datapipeline.model.PipelineDeletedException.class, "PipelineDeletedException");
     }
 
     @Override
-    public com.amazonaws.services.datapipeline.model.PipelineDeletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.datapipeline.model.PipelineDeletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.datapipeline.model.PipelineDeletedException pipelineDeletedException = new com.amazonaws.services.datapipeline.model.PipelineDeletedException(
                 null);
 

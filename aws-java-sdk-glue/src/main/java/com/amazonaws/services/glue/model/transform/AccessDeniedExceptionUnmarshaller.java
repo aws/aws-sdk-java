@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.AccessDeniedException> {
+public class AccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccessDeniedExceptionUnmarshaller() {
-        super("AccessDeniedException");
+        super(com.amazonaws.services.glue.model.AccessDeniedException.class, "AccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.AccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.AccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.AccessDeniedException accessDeniedException = new com.amazonaws.services.glue.model.AccessDeniedException(null);
 
         int originalDepth = context.getCurrentDepth();

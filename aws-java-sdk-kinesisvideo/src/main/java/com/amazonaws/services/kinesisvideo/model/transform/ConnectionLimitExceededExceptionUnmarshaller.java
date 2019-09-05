@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConnectionLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConnectionLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException> {
+public class ConnectionLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConnectionLimitExceededExceptionUnmarshaller() {
-        super("ConnectionLimitExceededException");
+        super(com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException.class, "ConnectionLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException connectionLimitExceededException = new com.amazonaws.services.kinesisvideo.model.ConnectionLimitExceededException(
                 null);
 

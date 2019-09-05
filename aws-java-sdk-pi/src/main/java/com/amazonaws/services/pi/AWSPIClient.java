@@ -98,10 +98,7 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withExceptionUnmarshaller(
                                     com.amazonaws.services.pi.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pi.model.AWSPIException>(
-                                            com.amazonaws.services.pi.model.AWSPIException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pi.model.AWSPIException.class));
 
     public static AWSPIClientBuilder builder() {
         return AWSPIClientBuilder.standard();

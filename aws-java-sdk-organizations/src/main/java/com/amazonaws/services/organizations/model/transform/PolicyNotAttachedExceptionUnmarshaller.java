@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyNotAttachedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyNotAttachedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyNotAttachedException> {
+public class PolicyNotAttachedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyNotAttachedExceptionUnmarshaller() {
-        super("PolicyNotAttachedException");
+        super(com.amazonaws.services.organizations.model.PolicyNotAttachedException.class, "PolicyNotAttachedException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyNotAttachedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.PolicyNotAttachedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.PolicyNotAttachedException policyNotAttachedException = new com.amazonaws.services.organizations.model.PolicyNotAttachedException(
                 null);
 

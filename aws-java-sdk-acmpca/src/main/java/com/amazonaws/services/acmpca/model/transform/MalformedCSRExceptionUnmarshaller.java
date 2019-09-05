@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedCSRException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedCSRExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.MalformedCSRException> {
+public class MalformedCSRExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedCSRExceptionUnmarshaller() {
-        super("MalformedCSRException");
+        super(com.amazonaws.services.acmpca.model.MalformedCSRException.class, "MalformedCSRException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.MalformedCSRException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.MalformedCSRException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.MalformedCSRException malformedCSRException = new com.amazonaws.services.acmpca.model.MalformedCSRException(null);
 
         int originalDepth = context.getCurrentDepth();

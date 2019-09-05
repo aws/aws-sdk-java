@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLayerException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLayerExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.InvalidLayerException> {
+public class InvalidLayerExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLayerExceptionUnmarshaller() {
-        super("InvalidLayerException");
+        super(com.amazonaws.services.ecr.model.InvalidLayerException.class, "InvalidLayerException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.InvalidLayerException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.InvalidLayerException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.InvalidLayerException invalidLayerException = new com.amazonaws.services.ecr.model.InvalidLayerException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidTokenException> {
+public class InvalidTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTokenExceptionUnmarshaller() {
-        super("InvalidTokenException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidTokenException.class, "InvalidTokenException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidTokenException invalidTokenException = new com.amazonaws.services.cloudtrail.model.InvalidTokenException(
                 null);
 

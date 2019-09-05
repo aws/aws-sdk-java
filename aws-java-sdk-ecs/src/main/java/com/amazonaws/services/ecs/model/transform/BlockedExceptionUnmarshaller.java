@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BlockedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BlockedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.BlockedException> {
+public class BlockedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BlockedExceptionUnmarshaller() {
-        super("BlockedException");
+        super(com.amazonaws.services.ecs.model.BlockedException.class, "BlockedException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.BlockedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.BlockedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.BlockedException blockedException = new com.amazonaws.services.ecs.model.BlockedException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTimeRangeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTimeRangeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException> {
+public class InvalidTimeRangeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTimeRangeExceptionUnmarshaller() {
-        super("InvalidTimeRangeException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException.class, "InvalidTimeRangeException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException invalidTimeRangeException = new com.amazonaws.services.cloudtrail.model.InvalidTimeRangeException(
                 null);
 

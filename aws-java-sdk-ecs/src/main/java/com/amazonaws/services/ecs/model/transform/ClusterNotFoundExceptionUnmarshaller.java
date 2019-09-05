@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.ClusterNotFoundException> {
+public class ClusterNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterNotFoundExceptionUnmarshaller() {
-        super("ClusterNotFoundException");
+        super(com.amazonaws.services.ecs.model.ClusterNotFoundException.class, "ClusterNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.ClusterNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.ClusterNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.ClusterNotFoundException clusterNotFoundException = new com.amazonaws.services.ecs.model.ClusterNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

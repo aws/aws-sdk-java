@@ -108,10 +108,7 @@ public class AWSCostAndUsageReportClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateReportNameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costandusagereport.model.transform.DuplicateReportNameExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException>(
-                                            com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.costandusagereport.model.AWSCostAndUsageReportException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Cost and Usage Report Service. A credentials provider

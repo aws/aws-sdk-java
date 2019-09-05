@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoAssociatedRoleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoAssociatedRoleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.shield.model.NoAssociatedRoleException> {
+public class NoAssociatedRoleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoAssociatedRoleExceptionUnmarshaller() {
-        super("NoAssociatedRoleException");
+        super(com.amazonaws.services.shield.model.NoAssociatedRoleException.class, "NoAssociatedRoleException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.NoAssociatedRoleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.NoAssociatedRoleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.NoAssociatedRoleException noAssociatedRoleException = new com.amazonaws.services.shield.model.NoAssociatedRoleException(
                 null);
 

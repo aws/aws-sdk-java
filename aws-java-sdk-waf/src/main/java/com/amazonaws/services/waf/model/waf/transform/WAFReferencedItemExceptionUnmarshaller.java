@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFReferencedItemException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFReferencedItemExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFReferencedItemException> {
+public class WAFReferencedItemExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFReferencedItemExceptionUnmarshaller() {
-        super("WAFReferencedItemException");
+        super(com.amazonaws.services.waf.model.WAFReferencedItemException.class, "WAFReferencedItemException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFReferencedItemException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFReferencedItemException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFReferencedItemException wAFReferencedItemException = new com.amazonaws.services.waf.model.WAFReferencedItemException(
                 null);
 

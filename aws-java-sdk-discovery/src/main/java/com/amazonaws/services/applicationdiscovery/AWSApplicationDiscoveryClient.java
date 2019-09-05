@@ -158,10 +158,7 @@ public class AWSApplicationDiscoveryClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AuthorizationErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationdiscovery.model.transform.AuthorizationErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException>(
-                                            com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.applicationdiscovery.model.AWSApplicationDiscoveryException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Application Discovery Service. A credentials provider

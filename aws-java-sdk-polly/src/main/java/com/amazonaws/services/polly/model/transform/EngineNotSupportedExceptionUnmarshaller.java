@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EngineNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EngineNotSupportedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.EngineNotSupportedException> {
+public class EngineNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EngineNotSupportedExceptionUnmarshaller() {
-        super("EngineNotSupportedException");
+        super(com.amazonaws.services.polly.model.EngineNotSupportedException.class, "EngineNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.EngineNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.EngineNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.EngineNotSupportedException engineNotSupportedException = new com.amazonaws.services.polly.model.EngineNotSupportedException(
                 null);
 

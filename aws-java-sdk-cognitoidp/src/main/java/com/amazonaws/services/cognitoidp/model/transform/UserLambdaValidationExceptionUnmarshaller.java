@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserLambdaValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserLambdaValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserLambdaValidationException> {
+public class UserLambdaValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserLambdaValidationExceptionUnmarshaller() {
-        super("UserLambdaValidationException");
+        super(com.amazonaws.services.cognitoidp.model.UserLambdaValidationException.class, "UserLambdaValidationException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserLambdaValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserLambdaValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserLambdaValidationException userLambdaValidationException = new com.amazonaws.services.cognitoidp.model.UserLambdaValidationException(
                 null);
 

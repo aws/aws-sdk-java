@@ -55,6 +55,6 @@ public interface SdkStructuredJsonFactory {
      * @param errorUnmarshallers Response unmarshallers to unamrshall the error responses.
      */
     JsonErrorResponseHandler createErrorResponseHandler(
-            List<JsonErrorUnmarshaller<? extends AmazonServiceException>> errorUnmarshallers, String customErrorCodeFieldName);
+            List<JsonErrorUnmarshaller> errorUnmarshallers, String customErrorCodeFieldName);
 
 }

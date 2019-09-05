@@ -93,10 +93,7 @@ public class AmazonCloudSearchDomainClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudsearchdomain.model.transform.DocumentServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException>(
-                                            com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudsearchdomain.model.AmazonCloudSearchDomainException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon CloudSearch Domain. A credentials provider chain will

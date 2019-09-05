@@ -94,10 +94,7 @@ public class AmazonKinesisVideoMediaClient extends AmazonWebServiceClient implem
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisvideo.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException>(
-                                            com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.kinesisvideo.model.AmazonKinesisVideoException.class));
 
     public static AmazonKinesisVideoMediaClientBuilder builder() {
         return AmazonKinesisVideoMediaClientBuilder.standard();

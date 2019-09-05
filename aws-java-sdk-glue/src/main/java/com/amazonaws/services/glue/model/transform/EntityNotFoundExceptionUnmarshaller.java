@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.EntityNotFoundException> {
+public class EntityNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityNotFoundExceptionUnmarshaller() {
-        super("EntityNotFoundException");
+        super(com.amazonaws.services.glue.model.EntityNotFoundException.class, "EntityNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.EntityNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.EntityNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.EntityNotFoundException entityNotFoundException = new com.amazonaws.services.glue.model.EntityNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

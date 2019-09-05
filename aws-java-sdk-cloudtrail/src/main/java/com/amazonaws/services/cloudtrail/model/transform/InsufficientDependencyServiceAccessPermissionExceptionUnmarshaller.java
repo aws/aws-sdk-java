@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientDependencyServiceAccessPermissionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientDependencyServiceAccessPermissionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException> {
+public class InsufficientDependencyServiceAccessPermissionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientDependencyServiceAccessPermissionExceptionUnmarshaller() {
-        super("InsufficientDependencyServiceAccessPermissionException");
+        super(com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException.class,
+                "InsufficientDependencyServiceAccessPermissionException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException insufficientDependencyServiceAccessPermissionException = new com.amazonaws.services.cloudtrail.model.InsufficientDependencyServiceAccessPermissionException(
                 null);

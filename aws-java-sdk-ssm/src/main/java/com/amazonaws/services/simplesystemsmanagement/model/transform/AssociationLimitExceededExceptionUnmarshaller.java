@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociationLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociationLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException> {
+public class AssociationLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociationLimitExceededExceptionUnmarshaller() {
-        super("AssociationLimitExceeded");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException.class, "AssociationLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException associationLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.AssociationLimitExceededException(
                 null);
 

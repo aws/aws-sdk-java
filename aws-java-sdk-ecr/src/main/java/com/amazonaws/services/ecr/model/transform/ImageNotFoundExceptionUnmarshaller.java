@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ImageNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ImageNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.ImageNotFoundException> {
+public class ImageNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ImageNotFoundExceptionUnmarshaller() {
-        super("ImageNotFoundException");
+        super(com.amazonaws.services.ecr.model.ImageNotFoundException.class, "ImageNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.ImageNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.ImageNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.ImageNotFoundException imageNotFoundException = new com.amazonaws.services.ecr.model.ImageNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

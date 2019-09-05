@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AWSOrganizationsNotInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AWSOrganizationsNotInUseExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException> {
+public class AWSOrganizationsNotInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AWSOrganizationsNotInUseExceptionUnmarshaller() {
-        super("AWSOrganizationsNotInUseException");
+        super(com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException.class, "AWSOrganizationsNotInUseException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException aWSOrganizationsNotInUseException = new com.amazonaws.services.organizations.model.AWSOrganizationsNotInUseException(
                 null);
 

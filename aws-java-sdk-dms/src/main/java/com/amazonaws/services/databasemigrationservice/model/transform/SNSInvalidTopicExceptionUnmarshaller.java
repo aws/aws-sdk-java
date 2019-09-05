@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SNSInvalidTopicException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SNSInvalidTopicExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException> {
+public class SNSInvalidTopicExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SNSInvalidTopicExceptionUnmarshaller() {
-        super("SNSInvalidTopicFault");
+        super(com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException.class, "SNSInvalidTopicFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException sNSInvalidTopicException = new com.amazonaws.services.databasemigrationservice.model.SNSInvalidTopicException(
                 null);
 

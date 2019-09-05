@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateDocumentContentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateDocumentContentExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException> {
+public class DuplicateDocumentContentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateDocumentContentExceptionUnmarshaller() {
-        super("DuplicateDocumentContent");
+        super(com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException.class, "DuplicateDocumentContent");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException duplicateDocumentContentException = new com.amazonaws.services.simplesystemsmanagement.model.DuplicateDocumentContentException(
                 null);
 

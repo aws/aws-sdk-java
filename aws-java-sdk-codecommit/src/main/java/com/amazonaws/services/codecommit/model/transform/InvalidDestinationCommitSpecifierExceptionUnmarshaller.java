@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDestinationCommitSpecifierException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDestinationCommitSpecifierExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException> {
+public class InvalidDestinationCommitSpecifierExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDestinationCommitSpecifierExceptionUnmarshaller() {
-        super("InvalidDestinationCommitSpecifierException");
+        super(com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException.class, "InvalidDestinationCommitSpecifierException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException invalidDestinationCommitSpecifierException = new com.amazonaws.services.codecommit.model.InvalidDestinationCommitSpecifierException(
                 null);
 

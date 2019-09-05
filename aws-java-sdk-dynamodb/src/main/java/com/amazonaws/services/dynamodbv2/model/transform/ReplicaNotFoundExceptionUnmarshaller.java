@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicaNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicaNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException> {
+public class ReplicaNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicaNotFoundExceptionUnmarshaller() {
-        super("ReplicaNotFoundException");
+        super(com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException.class, "ReplicaNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException replicaNotFoundException = new com.amazonaws.services.dynamodbv2.model.ReplicaNotFoundException(
                 null);
 

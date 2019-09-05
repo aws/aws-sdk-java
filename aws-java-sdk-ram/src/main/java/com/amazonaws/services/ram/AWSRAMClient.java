@@ -162,10 +162,7 @@ public class AWSRAMClient extends AmazonWebServiceClient implements AWSRAM {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ram.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ram.model.AWSRAMException>(
-                                            com.amazonaws.services.ram.model.AWSRAMException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ram.model.AWSRAMException.class));
 
     public static AWSRAMClientBuilder builder() {
         return AWSRAMClientBuilder.standard();

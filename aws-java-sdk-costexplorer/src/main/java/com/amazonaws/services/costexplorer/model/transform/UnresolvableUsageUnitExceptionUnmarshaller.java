@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnresolvableUsageUnitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnresolvableUsageUnitExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException> {
+public class UnresolvableUsageUnitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnresolvableUsageUnitExceptionUnmarshaller() {
-        super("UnresolvableUsageUnitException");
+        super(com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException.class, "UnresolvableUsageUnitException");
     }
 
     @Override
-    public com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException unresolvableUsageUnitException = new com.amazonaws.services.costexplorer.model.UnresolvableUsageUnitException(
                 null);
 

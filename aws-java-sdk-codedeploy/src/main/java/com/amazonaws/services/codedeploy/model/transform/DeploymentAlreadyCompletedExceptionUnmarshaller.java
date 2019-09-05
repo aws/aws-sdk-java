@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentAlreadyCompletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentAlreadyCompletedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException> {
+public class DeploymentAlreadyCompletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentAlreadyCompletedExceptionUnmarshaller() {
-        super("DeploymentAlreadyCompletedException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException.class, "DeploymentAlreadyCompletedException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException deploymentAlreadyCompletedException = new com.amazonaws.services.codedeploy.model.DeploymentAlreadyCompletedException(
                 null);
 

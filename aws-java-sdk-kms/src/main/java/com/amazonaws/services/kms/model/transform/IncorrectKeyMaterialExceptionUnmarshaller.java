@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncorrectKeyMaterialException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncorrectKeyMaterialExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.IncorrectKeyMaterialException> {
+public class IncorrectKeyMaterialExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncorrectKeyMaterialExceptionUnmarshaller() {
-        super("IncorrectKeyMaterialException");
+        super(com.amazonaws.services.kms.model.IncorrectKeyMaterialException.class, "IncorrectKeyMaterialException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.IncorrectKeyMaterialException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.IncorrectKeyMaterialException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.IncorrectKeyMaterialException incorrectKeyMaterialException = new com.amazonaws.services.kms.model.IncorrectKeyMaterialException(
                 null);
 

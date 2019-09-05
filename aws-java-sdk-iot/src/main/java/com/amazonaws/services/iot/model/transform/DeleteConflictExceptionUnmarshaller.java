@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeleteConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeleteConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.DeleteConflictException> {
+public class DeleteConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeleteConflictExceptionUnmarshaller() {
-        super("DeleteConflictException");
+        super(com.amazonaws.services.iot.model.DeleteConflictException.class, "DeleteConflictException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.DeleteConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.DeleteConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.DeleteConflictException deleteConflictException = new com.amazonaws.services.iot.model.DeleteConflictException(null);
 
         int originalDepth = context.getCurrentDepth();

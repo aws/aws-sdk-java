@@ -113,10 +113,7 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.textract.model.AmazonTextractException>(
-                                            com.amazonaws.services.textract.model.AmazonTextractException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.textract.model.AmazonTextractException.class));
 
     public static AmazonTextractClientBuilder builder() {
         return AmazonTextractClientBuilder.standard();

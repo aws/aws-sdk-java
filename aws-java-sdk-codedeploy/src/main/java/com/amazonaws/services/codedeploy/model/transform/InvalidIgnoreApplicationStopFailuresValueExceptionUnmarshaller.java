@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidIgnoreApplicationStopFailuresValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException> {
+public class InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidIgnoreApplicationStopFailuresValueExceptionUnmarshaller() {
-        super("InvalidIgnoreApplicationStopFailuresValueException");
+        super(com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException.class,
+                "InvalidIgnoreApplicationStopFailuresValueException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException invalidIgnoreApplicationStopFailuresValueException = new com.amazonaws.services.codedeploy.model.InvalidIgnoreApplicationStopFailuresValueException(
                 null);

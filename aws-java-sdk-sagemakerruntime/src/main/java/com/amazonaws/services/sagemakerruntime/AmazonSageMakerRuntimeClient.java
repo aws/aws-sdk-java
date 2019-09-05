@@ -89,10 +89,7 @@ public class AmazonSageMakerRuntimeClient extends AmazonWebServiceClient impleme
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailable").withExceptionUnmarshaller(
                                     com.amazonaws.services.sagemakerruntime.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException>(
-                                            com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.sagemakerruntime.model.AmazonSageMakerRuntimeException.class));
 
     public static AmazonSageMakerRuntimeClientBuilder builder() {
         return AmazonSageMakerRuntimeClientBuilder.standard();

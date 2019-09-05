@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociatedEndpointGroupFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociatedEndpointGroupFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException> {
+public class AssociatedEndpointGroupFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociatedEndpointGroupFoundExceptionUnmarshaller() {
-        super("AssociatedEndpointGroupFoundException");
+        super(com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException.class, "AssociatedEndpointGroupFoundException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException associatedEndpointGroupFoundException = new com.amazonaws.services.globalaccelerator.model.AssociatedEndpointGroupFoundException(
                 null);
 

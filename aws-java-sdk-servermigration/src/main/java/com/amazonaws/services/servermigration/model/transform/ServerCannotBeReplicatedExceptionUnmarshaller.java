@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServerCannotBeReplicatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServerCannotBeReplicatedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException> {
+public class ServerCannotBeReplicatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServerCannotBeReplicatedExceptionUnmarshaller() {
-        super("ServerCannotBeReplicatedException");
+        super(com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException.class, "ServerCannotBeReplicatedException");
     }
 
     @Override
-    public com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException serverCannotBeReplicatedException = new com.amazonaws.services.servermigration.model.ServerCannotBeReplicatedException(
                 null);
 

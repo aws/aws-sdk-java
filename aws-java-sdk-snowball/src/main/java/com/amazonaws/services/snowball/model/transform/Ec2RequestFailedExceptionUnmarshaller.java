@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * Ec2RequestFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class Ec2RequestFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.Ec2RequestFailedException> {
+public class Ec2RequestFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private Ec2RequestFailedExceptionUnmarshaller() {
-        super("Ec2RequestFailedException");
+        super(com.amazonaws.services.snowball.model.Ec2RequestFailedException.class, "Ec2RequestFailedException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.Ec2RequestFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.Ec2RequestFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.Ec2RequestFailedException ec2RequestFailedException = new com.amazonaws.services.snowball.model.Ec2RequestFailedException(
                 null);
 

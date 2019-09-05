@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCommitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCommitExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidCommitException> {
+public class InvalidCommitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCommitExceptionUnmarshaller() {
-        super("InvalidCommitException");
+        super(com.amazonaws.services.codecommit.model.InvalidCommitException.class, "InvalidCommitException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidCommitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidCommitException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidCommitException invalidCommitException = new com.amazonaws.services.codecommit.model.InvalidCommitException(
                 null);
 

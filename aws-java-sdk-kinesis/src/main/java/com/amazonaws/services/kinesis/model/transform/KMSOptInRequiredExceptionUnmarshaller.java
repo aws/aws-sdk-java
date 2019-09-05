@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSOptInRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSOptInRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesis.model.KMSOptInRequiredException> {
+public class KMSOptInRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSOptInRequiredExceptionUnmarshaller() {
-        super("KMSOptInRequired");
+        super(com.amazonaws.services.kinesis.model.KMSOptInRequiredException.class, "KMSOptInRequired");
     }
 
     @Override
-    public com.amazonaws.services.kinesis.model.KMSOptInRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesis.model.KMSOptInRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesis.model.KMSOptInRequiredException kMSOptInRequiredException = new com.amazonaws.services.kinesis.model.KMSOptInRequiredException(
                 null);
 

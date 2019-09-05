@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidConfigurationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.InvalidConfigurationException> {
+public class InvalidConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidConfigurationExceptionUnmarshaller() {
-        super("InvalidConfigurationException");
+        super(com.amazonaws.services.workmail.model.InvalidConfigurationException.class, "InvalidConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.InvalidConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.InvalidConfigurationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.InvalidConfigurationException invalidConfigurationException = new com.amazonaws.services.workmail.model.InvalidConfigurationException(
                 null);
 

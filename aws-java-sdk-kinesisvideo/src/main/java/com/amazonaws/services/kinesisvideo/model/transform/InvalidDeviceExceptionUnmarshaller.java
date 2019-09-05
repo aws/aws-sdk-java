@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeviceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeviceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.InvalidDeviceException> {
+public class InvalidDeviceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeviceExceptionUnmarshaller() {
-        super("InvalidDeviceException");
+        super(com.amazonaws.services.kinesisvideo.model.InvalidDeviceException.class, "InvalidDeviceException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.InvalidDeviceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.InvalidDeviceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.InvalidDeviceException invalidDeviceException = new com.amazonaws.services.kinesisvideo.model.InvalidDeviceException(
                 null);
 

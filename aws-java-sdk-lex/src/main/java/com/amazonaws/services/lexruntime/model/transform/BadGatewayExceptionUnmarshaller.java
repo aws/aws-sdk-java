@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BadGatewayException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BadGatewayExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexruntime.model.BadGatewayException> {
+public class BadGatewayExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BadGatewayExceptionUnmarshaller() {
-        super("BadGatewayException");
+        super(com.amazonaws.services.lexruntime.model.BadGatewayException.class, "BadGatewayException");
     }
 
     @Override
-    public com.amazonaws.services.lexruntime.model.BadGatewayException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexruntime.model.BadGatewayException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexruntime.model.BadGatewayException badGatewayException = new com.amazonaws.services.lexruntime.model.BadGatewayException(null);
 
         int originalDepth = context.getCurrentDepth();

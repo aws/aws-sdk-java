@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicationJobAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicationJobAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException> {
+public class ReplicationJobAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicationJobAlreadyExistsExceptionUnmarshaller() {
-        super("ReplicationJobAlreadyExistsException");
+        super(com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException.class, "ReplicationJobAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException replicationJobAlreadyExistsException = new com.amazonaws.services.servermigration.model.ReplicationJobAlreadyExistsException(
                 null);
 

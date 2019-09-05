@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ThrottlingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThrottlingExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iotthingsgraph.model.ThrottlingException> {
+public class ThrottlingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ThrottlingExceptionUnmarshaller() {
-        super("ThrottlingException");
+        super(com.amazonaws.services.iotthingsgraph.model.ThrottlingException.class, "ThrottlingException");
     }
 
     @Override
-    public com.amazonaws.services.iotthingsgraph.model.ThrottlingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotthingsgraph.model.ThrottlingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotthingsgraph.model.ThrottlingException throttlingException = new com.amazonaws.services.iotthingsgraph.model.ThrottlingException(
                 null);
 

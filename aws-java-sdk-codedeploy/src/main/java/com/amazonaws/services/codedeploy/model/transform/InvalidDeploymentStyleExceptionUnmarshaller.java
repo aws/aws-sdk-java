@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDeploymentStyleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDeploymentStyleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException> {
+public class InvalidDeploymentStyleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDeploymentStyleExceptionUnmarshaller() {
-        super("InvalidDeploymentStyleException");
+        super(com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException.class, "InvalidDeploymentStyleException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException invalidDeploymentStyleException = new com.amazonaws.services.codedeploy.model.InvalidDeploymentStyleException(
                 null);
 

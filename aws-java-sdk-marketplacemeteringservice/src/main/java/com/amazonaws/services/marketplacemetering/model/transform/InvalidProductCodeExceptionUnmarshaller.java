@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidProductCodeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidProductCodeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException> {
+public class InvalidProductCodeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidProductCodeExceptionUnmarshaller() {
-        super("InvalidProductCodeException");
+        super(com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException.class, "InvalidProductCodeException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException invalidProductCodeException = new com.amazonaws.services.marketplacemetering.model.InvalidProductCodeException(
                 null);
 

@@ -387,10 +387,7 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.NotLatestPipelineExecutionExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.codepipeline.model.AWSCodePipelineException>(
-                                            com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on CodePipeline. A credentials provider chain will be used that

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccessDeniedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccessDeniedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.managedblockchain.model.AccessDeniedException> {
+public class AccessDeniedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccessDeniedExceptionUnmarshaller() {
-        super("AccessDeniedException");
+        super(com.amazonaws.services.managedblockchain.model.AccessDeniedException.class, "AccessDeniedException");
     }
 
     @Override
-    public com.amazonaws.services.managedblockchain.model.AccessDeniedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.managedblockchain.model.AccessDeniedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.managedblockchain.model.AccessDeniedException accessDeniedException = new com.amazonaws.services.managedblockchain.model.AccessDeniedException(
                 null);
 

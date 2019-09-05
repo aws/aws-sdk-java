@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ManagedRuleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ManagedRuleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.eventbridge.model.ManagedRuleException> {
+public class ManagedRuleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ManagedRuleExceptionUnmarshaller() {
-        super("ManagedRuleException");
+        super(com.amazonaws.services.eventbridge.model.ManagedRuleException.class, "ManagedRuleException");
     }
 
     @Override
-    public com.amazonaws.services.eventbridge.model.ManagedRuleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.eventbridge.model.ManagedRuleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.eventbridge.model.ManagedRuleException managedRuleException = new com.amazonaws.services.eventbridge.model.ManagedRuleException(
                 null);
 

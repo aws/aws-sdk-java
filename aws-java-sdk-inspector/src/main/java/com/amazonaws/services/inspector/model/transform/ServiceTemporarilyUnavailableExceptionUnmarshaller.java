@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceTemporarilyUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceTemporarilyUnavailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException> {
+public class ServiceTemporarilyUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceTemporarilyUnavailableExceptionUnmarshaller() {
-        super("ServiceTemporarilyUnavailableException");
+        super(com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException.class, "ServiceTemporarilyUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException serviceTemporarilyUnavailableException = new com.amazonaws.services.inspector.model.ServiceTemporarilyUnavailableException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncorrectMountTargetStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncorrectMountTargetStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException> {
+public class IncorrectMountTargetStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncorrectMountTargetStateExceptionUnmarshaller() {
-        super("IncorrectMountTargetState");
+        super(com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException.class, "IncorrectMountTargetState");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException incorrectMountTargetStateException = new com.amazonaws.services.elasticfilesystem.model.IncorrectMountTargetStateException(
                 null);
 

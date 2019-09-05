@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceDataSyncAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceDataSyncAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException> {
+public class ResourceDataSyncAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceDataSyncAlreadyExistsExceptionUnmarshaller() {
-        super("ResourceDataSyncAlreadyExistsException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException.class, "ResourceDataSyncAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException resourceDataSyncAlreadyExistsException = new com.amazonaws.services.simplesystemsmanagement.model.ResourceDataSyncAlreadyExistsException(
                 null);

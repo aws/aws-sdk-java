@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateReportNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateReportNameExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.costandusagereport.model.DuplicateReportNameException> {
+public class DuplicateReportNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateReportNameExceptionUnmarshaller() {
-        super("DuplicateReportNameException");
+        super(com.amazonaws.services.costandusagereport.model.DuplicateReportNameException.class, "DuplicateReportNameException");
     }
 
     @Override
-    public com.amazonaws.services.costandusagereport.model.DuplicateReportNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.costandusagereport.model.DuplicateReportNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.costandusagereport.model.DuplicateReportNameException duplicateReportNameException = new com.amazonaws.services.costandusagereport.model.DuplicateReportNameException(
                 null);
 

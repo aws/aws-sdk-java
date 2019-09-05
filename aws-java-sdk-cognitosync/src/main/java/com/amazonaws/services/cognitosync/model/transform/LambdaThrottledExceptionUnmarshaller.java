@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LambdaThrottledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LambdaThrottledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitosync.model.LambdaThrottledException> {
+public class LambdaThrottledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LambdaThrottledExceptionUnmarshaller() {
-        super("LambdaThrottled");
+        super(com.amazonaws.services.cognitosync.model.LambdaThrottledException.class, "LambdaThrottled");
     }
 
     @Override
-    public com.amazonaws.services.cognitosync.model.LambdaThrottledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitosync.model.LambdaThrottledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitosync.model.LambdaThrottledException lambdaThrottledException = new com.amazonaws.services.cognitosync.model.LambdaThrottledException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPolicyTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPolicyTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException> {
+public class InvalidPolicyTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPolicyTypeExceptionUnmarshaller() {
-        super("InvalidPolicyTypeException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException.class, "InvalidPolicyTypeException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException invalidPolicyTypeException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidPolicyTypeException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.TagException> {
+public class TagExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagExceptionUnmarshaller() {
-        super("TagException");
+        super(com.amazonaws.services.kms.model.TagException.class, "TagException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.TagException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.TagException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.TagException tagException = new com.amazonaws.services.kms.model.TagException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientResourceCapacityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientResourceCapacityExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException> {
+public class InsufficientResourceCapacityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientResourceCapacityExceptionUnmarshaller() {
-        super("InsufficientResourceCapacityFault");
+        super(com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException.class, "InsufficientResourceCapacityFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException insufficientResourceCapacityException = new com.amazonaws.services.databasemigrationservice.model.InsufficientResourceCapacityException(
                 null);

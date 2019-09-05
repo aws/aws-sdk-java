@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DisabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DisabledExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.DisabledException> {
+public class DisabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DisabledExceptionUnmarshaller() {
-        super("DisabledException");
+        super(com.amazonaws.services.kms.model.DisabledException.class, "DisabledException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.DisabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.DisabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.DisabledException disabledException = new com.amazonaws.services.kms.model.DisabledException(null);
 
         int originalDepth = context.getCurrentDepth();

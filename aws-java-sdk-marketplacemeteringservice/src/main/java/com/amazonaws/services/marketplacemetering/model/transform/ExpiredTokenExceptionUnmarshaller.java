@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExpiredTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpiredTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.ExpiredTokenException> {
+public class ExpiredTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExpiredTokenExceptionUnmarshaller() {
-        super("ExpiredTokenException");
+        super(com.amazonaws.services.marketplacemetering.model.ExpiredTokenException.class, "ExpiredTokenException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.ExpiredTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.ExpiredTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.marketplacemetering.model.ExpiredTokenException expiredTokenException = new com.amazonaws.services.marketplacemetering.model.ExpiredTokenException(
                 null);
 

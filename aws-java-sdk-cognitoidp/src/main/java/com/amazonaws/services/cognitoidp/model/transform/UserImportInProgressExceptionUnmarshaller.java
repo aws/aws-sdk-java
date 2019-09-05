@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserImportInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserImportInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserImportInProgressException> {
+public class UserImportInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserImportInProgressExceptionUnmarshaller() {
-        super("UserImportInProgressException");
+        super(com.amazonaws.services.cognitoidp.model.UserImportInProgressException.class, "UserImportInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserImportInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserImportInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserImportInProgressException userImportInProgressException = new com.amazonaws.services.cognitoidp.model.UserImportInProgressException(
                 null);
 

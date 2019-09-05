@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryAlreadySharedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryAlreadySharedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.DirectoryAlreadySharedException> {
+public class DirectoryAlreadySharedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryAlreadySharedExceptionUnmarshaller() {
-        super("DirectoryAlreadySharedException");
+        super(com.amazonaws.services.directory.model.DirectoryAlreadySharedException.class, "DirectoryAlreadySharedException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.DirectoryAlreadySharedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.DirectoryAlreadySharedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.DirectoryAlreadySharedException directoryAlreadySharedException = new com.amazonaws.services.directory.model.DirectoryAlreadySharedException(
                 null);
 

@@ -94,10 +94,7 @@ public class AWSCloudHSMClient extends AmazonWebServiceClient implements AWSClou
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CloudHsmServiceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudhsm.model.transform.CloudHsmServiceExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudhsm.model.AWSCloudHSMException>(
-                                            com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudhsm.model.AWSCloudHSMException.class));
 
     /**
      * Constructs a new client to invoke service methods on CloudHSM. A credentials provider chain will be used that

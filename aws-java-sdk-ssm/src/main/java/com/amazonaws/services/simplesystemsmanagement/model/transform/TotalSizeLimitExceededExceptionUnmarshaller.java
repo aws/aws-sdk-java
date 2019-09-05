@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TotalSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TotalSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException> {
+public class TotalSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TotalSizeLimitExceededExceptionUnmarshaller() {
-        super("TotalSizeLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException.class, "TotalSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException totalSizeLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.TotalSizeLimitExceededException(
                 null);
 

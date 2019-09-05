@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DomainLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.route53domains.model.DomainLimitExceededException> {
+public class DomainLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DomainLimitExceededExceptionUnmarshaller() {
-        super("DomainLimitExceeded");
+        super(com.amazonaws.services.route53domains.model.DomainLimitExceededException.class, "DomainLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.route53domains.model.DomainLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.route53domains.model.DomainLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.route53domains.model.DomainLimitExceededException domainLimitExceededException = new com.amazonaws.services.route53domains.model.DomainLimitExceededException(
                 null);
 

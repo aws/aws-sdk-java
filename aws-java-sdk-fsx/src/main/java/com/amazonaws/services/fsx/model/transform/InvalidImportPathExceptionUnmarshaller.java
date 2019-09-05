@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidImportPathException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidImportPathExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.InvalidImportPathException> {
+public class InvalidImportPathExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidImportPathExceptionUnmarshaller() {
-        super("InvalidImportPath");
+        super(com.amazonaws.services.fsx.model.InvalidImportPathException.class, "InvalidImportPath");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.InvalidImportPathException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.InvalidImportPathException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.InvalidImportPathException invalidImportPathException = new com.amazonaws.services.fsx.model.InvalidImportPathException(
                 null);
 

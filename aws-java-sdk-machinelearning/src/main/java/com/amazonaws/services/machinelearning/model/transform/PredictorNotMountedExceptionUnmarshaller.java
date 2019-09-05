@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PredictorNotMountedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PredictorNotMountedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.machinelearning.model.PredictorNotMountedException> {
+public class PredictorNotMountedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PredictorNotMountedExceptionUnmarshaller() {
-        super("PredictorNotMountedException");
+        super(com.amazonaws.services.machinelearning.model.PredictorNotMountedException.class, "PredictorNotMountedException");
     }
 
     @Override
-    public com.amazonaws.services.machinelearning.model.PredictorNotMountedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.machinelearning.model.PredictorNotMountedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.machinelearning.model.PredictorNotMountedException predictorNotMountedException = new com.amazonaws.services.machinelearning.model.PredictorNotMountedException(
                 null);
 

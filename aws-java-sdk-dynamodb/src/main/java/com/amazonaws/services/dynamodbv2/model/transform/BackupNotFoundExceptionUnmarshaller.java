@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BackupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackupNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.BackupNotFoundException> {
+public class BackupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BackupNotFoundExceptionUnmarshaller() {
-        super("BackupNotFoundException");
+        super(com.amazonaws.services.dynamodbv2.model.BackupNotFoundException.class, "BackupNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.BackupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.BackupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.BackupNotFoundException backupNotFoundException = new com.amazonaws.services.dynamodbv2.model.BackupNotFoundException(
                 null);
 

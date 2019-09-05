@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidNetworkSettingsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidNetworkSettingsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.InvalidNetworkSettingsException> {
+public class InvalidNetworkSettingsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidNetworkSettingsExceptionUnmarshaller() {
-        super("InvalidNetworkSettings");
+        super(com.amazonaws.services.fsx.model.InvalidNetworkSettingsException.class, "InvalidNetworkSettings");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.InvalidNetworkSettingsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.InvalidNetworkSettingsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.InvalidNetworkSettingsException invalidNetworkSettingsException = new com.amazonaws.services.fsx.model.InvalidNetworkSettingsException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSInvalidStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSInvalidStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesis.model.KMSInvalidStateException> {
+public class KMSInvalidStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSInvalidStateExceptionUnmarshaller() {
-        super("KMSInvalidStateException");
+        super(com.amazonaws.services.kinesis.model.KMSInvalidStateException.class, "KMSInvalidStateException");
     }
 
     @Override
-    public com.amazonaws.services.kinesis.model.KMSInvalidStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesis.model.KMSInvalidStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesis.model.KMSInvalidStateException kMSInvalidStateException = new com.amazonaws.services.kinesis.model.KMSInvalidStateException(
                 null);
 

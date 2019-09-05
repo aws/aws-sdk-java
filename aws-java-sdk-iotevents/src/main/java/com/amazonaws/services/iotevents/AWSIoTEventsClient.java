@@ -106,10 +106,7 @@ public class AWSIoTEventsClient extends AmazonWebServiceClient implements AWSIoT
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotevents.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iotevents.model.AWSIoTEventsException>(
-                                            com.amazonaws.services.iotevents.model.AWSIoTEventsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotevents.model.AWSIoTEventsException.class));
 
     public static AWSIoTEventsClientBuilder builder() {
         return AWSIoTEventsClientBuilder.standard();

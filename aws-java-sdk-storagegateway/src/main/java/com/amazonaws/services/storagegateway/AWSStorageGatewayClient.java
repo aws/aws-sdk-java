@@ -158,10 +158,7 @@ public class AWSStorageGatewayClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.storagegateway.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.storagegateway.model.AWSStorageGatewayException>(
-                                            com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.storagegateway.model.AWSStorageGatewayException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Storage Gateway. A credentials provider chain will be

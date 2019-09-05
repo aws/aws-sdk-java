@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedFeatureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedFeatureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.UnsupportedFeatureException> {
+public class UnsupportedFeatureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedFeatureExceptionUnmarshaller() {
-        super("UnsupportedFeatureException");
+        super(com.amazonaws.services.ecs.model.UnsupportedFeatureException.class, "UnsupportedFeatureException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.UnsupportedFeatureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.UnsupportedFeatureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.UnsupportedFeatureException unsupportedFeatureException = new com.amazonaws.services.ecs.model.UnsupportedFeatureException(
                 null);
 

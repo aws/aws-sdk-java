@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException> {
+public class ResourceAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceAlreadyExistsExceptionUnmarshaller() {
-        super("ResourceAlreadyExistsException");
+        super(com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException.class, "ResourceAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException resourceAlreadyExistsException = new com.amazonaws.services.iotevents.model.ResourceAlreadyExistsException(
                 null);
 

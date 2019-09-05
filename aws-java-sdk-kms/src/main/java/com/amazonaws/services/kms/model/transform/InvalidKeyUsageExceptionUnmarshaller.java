@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidKeyUsageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidKeyUsageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidKeyUsageException> {
+public class InvalidKeyUsageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidKeyUsageExceptionUnmarshaller() {
-        super("InvalidKeyUsageException");
+        super(com.amazonaws.services.kms.model.InvalidKeyUsageException.class, "InvalidKeyUsageException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidKeyUsageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidKeyUsageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidKeyUsageException invalidKeyUsageException = new com.amazonaws.services.kms.model.InvalidKeyUsageException(null);
 
         int originalDepth = context.getCurrentDepth();

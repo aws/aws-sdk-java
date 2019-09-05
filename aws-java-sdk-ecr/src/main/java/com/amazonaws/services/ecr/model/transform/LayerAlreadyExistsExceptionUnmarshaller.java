@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LayerAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LayerAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LayerAlreadyExistsException> {
+public class LayerAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LayerAlreadyExistsExceptionUnmarshaller() {
-        super("LayerAlreadyExistsException");
+        super(com.amazonaws.services.ecr.model.LayerAlreadyExistsException.class, "LayerAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LayerAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LayerAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LayerAlreadyExistsException layerAlreadyExistsException = new com.amazonaws.services.ecr.model.LayerAlreadyExistsException(
                 null);
 

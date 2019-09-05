@@ -113,10 +113,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.InternalExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.securityhub.model.AWSSecurityHubException>(
-                                            com.amazonaws.services.securityhub.model.AWSSecurityHubException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.securityhub.model.AWSSecurityHubException.class));
 
     public static AWSSecurityHubClientBuilder builder() {
         return AWSSecurityHubClientBuilder.standard();

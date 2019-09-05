@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchEntityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchEntityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.NoSuchEntityException> {
+public class NoSuchEntityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchEntityExceptionUnmarshaller() {
-        super("NoSuchEntityException");
+        super(com.amazonaws.services.inspector.model.NoSuchEntityException.class, "NoSuchEntityException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.NoSuchEntityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.NoSuchEntityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.inspector.model.NoSuchEntityException noSuchEntityException = new com.amazonaws.services.inspector.model.NoSuchEntityException(
                 null);
 

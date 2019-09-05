@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTriggerConfigException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTriggerConfigExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException> {
+public class InvalidTriggerConfigExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTriggerConfigExceptionUnmarshaller() {
-        super("InvalidTriggerConfigException");
+        super(com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException.class, "InvalidTriggerConfigException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException invalidTriggerConfigException = new com.amazonaws.services.codedeploy.model.InvalidTriggerConfigException(
                 null);
 

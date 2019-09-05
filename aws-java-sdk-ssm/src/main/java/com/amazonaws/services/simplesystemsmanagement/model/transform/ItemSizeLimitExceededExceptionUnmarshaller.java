@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ItemSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ItemSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException> {
+public class ItemSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ItemSizeLimitExceededExceptionUnmarshaller() {
-        super("ItemSizeLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException.class, "ItemSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException itemSizeLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.ItemSizeLimitExceededException(
                 null);
 

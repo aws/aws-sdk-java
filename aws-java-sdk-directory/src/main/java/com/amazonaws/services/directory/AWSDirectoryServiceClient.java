@@ -159,10 +159,7 @@ public class AWSDirectoryServiceClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OrganizationsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.directory.model.transform.OrganizationsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.directory.model.AWSDirectoryServiceException>(
-                                            com.amazonaws.services.directory.model.AWSDirectoryServiceException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.directory.model.AWSDirectoryServiceException.class));
 
     /**
      * Constructs a new client to invoke service methods on Directory Service. A credentials provider chain will be used

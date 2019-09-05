@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.ServiceFailureException> {
+public class ServiceFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceFailureExceptionUnmarshaller() {
-        super("ServiceFailureException");
+        super(com.amazonaws.services.polly.model.ServiceFailureException.class, "ServiceFailureException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.ServiceFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.ServiceFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.ServiceFailureException serviceFailureException = new com.amazonaws.services.polly.model.ServiceFailureException(
                 null);
 

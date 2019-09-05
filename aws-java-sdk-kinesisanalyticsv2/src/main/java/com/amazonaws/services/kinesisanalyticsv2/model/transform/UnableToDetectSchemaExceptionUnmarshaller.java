@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnableToDetectSchemaException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnableToDetectSchemaExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException> {
+public class UnableToDetectSchemaExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnableToDetectSchemaExceptionUnmarshaller() {
-        super("UnableToDetectSchemaException");
+        super(com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException.class, "UnableToDetectSchemaException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException unableToDetectSchemaException = new com.amazonaws.services.kinesisanalyticsv2.model.UnableToDetectSchemaException(
                 null);
 

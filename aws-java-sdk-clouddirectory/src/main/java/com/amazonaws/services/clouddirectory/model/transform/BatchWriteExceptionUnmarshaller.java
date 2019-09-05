@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BatchWriteException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BatchWriteExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.BatchWriteException> {
+public class BatchWriteExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BatchWriteExceptionUnmarshaller() {
-        super("BatchWriteException");
+        super(com.amazonaws.services.clouddirectory.model.BatchWriteException.class, "BatchWriteException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.BatchWriteException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.BatchWriteException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.BatchWriteException batchWriteException = new com.amazonaws.services.clouddirectory.model.BatchWriteException(
                 null);
 

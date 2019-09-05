@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnauthenticatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnauthenticatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lightsail.model.UnauthenticatedException> {
+public class UnauthenticatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnauthenticatedExceptionUnmarshaller() {
-        super("UnauthenticatedException");
+        super(com.amazonaws.services.lightsail.model.UnauthenticatedException.class, "UnauthenticatedException");
     }
 
     @Override
-    public com.amazonaws.services.lightsail.model.UnauthenticatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lightsail.model.UnauthenticatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lightsail.model.UnauthenticatedException unauthenticatedException = new com.amazonaws.services.lightsail.model.UnauthenticatedException(
                 null);
 

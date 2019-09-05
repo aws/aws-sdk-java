@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LayersNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LayersNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LayersNotFoundException> {
+public class LayersNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LayersNotFoundExceptionUnmarshaller() {
-        super("LayersNotFoundException");
+        super(com.amazonaws.services.ecr.model.LayersNotFoundException.class, "LayersNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LayersNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LayersNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LayersNotFoundException layersNotFoundException = new com.amazonaws.services.ecr.model.LayersNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

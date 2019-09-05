@@ -214,10 +214,7 @@ public class AWSCloudTrailClient extends AmazonWebServiceClient implements AWSCl
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("KmsKeyDisabledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.cloudtrail.model.transform.KmsKeyDisabledExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.cloudtrail.model.AWSCloudTrailException>(
-                                            com.amazonaws.services.cloudtrail.model.AWSCloudTrailException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.cloudtrail.model.AWSCloudTrailException.class));
 
     /**
      * Constructs a new client to invoke service methods on CloudTrail. A credentials provider chain will be used that

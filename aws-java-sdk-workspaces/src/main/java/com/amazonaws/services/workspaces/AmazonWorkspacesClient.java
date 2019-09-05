@@ -114,10 +114,7 @@ public class AmazonWorkspacesClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.workspaces.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.workspaces.model.AmazonWorkspacesException>(
-                                            com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.workspaces.model.AmazonWorkspacesException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon WorkSpaces. A credentials provider chain will be used

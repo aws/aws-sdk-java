@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceArnRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceArnRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ResourceArnRequiredException> {
+public class ResourceArnRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceArnRequiredExceptionUnmarshaller() {
-        super("ResourceArnRequiredException");
+        super(com.amazonaws.services.codecommit.model.ResourceArnRequiredException.class, "ResourceArnRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ResourceArnRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ResourceArnRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ResourceArnRequiredException resourceArnRequiredException = new com.amazonaws.services.codecommit.model.ResourceArnRequiredException(
                 null);
 

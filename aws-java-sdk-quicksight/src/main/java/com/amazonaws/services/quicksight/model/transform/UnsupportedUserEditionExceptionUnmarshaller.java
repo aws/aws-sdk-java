@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedUserEditionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedUserEditionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.UnsupportedUserEditionException> {
+public class UnsupportedUserEditionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedUserEditionExceptionUnmarshaller() {
-        super("UnsupportedUserEditionException");
+        super(com.amazonaws.services.quicksight.model.UnsupportedUserEditionException.class, "UnsupportedUserEditionException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.UnsupportedUserEditionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.UnsupportedUserEditionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.quicksight.model.UnsupportedUserEditionException unsupportedUserEditionException = new com.amazonaws.services.quicksight.model.UnsupportedUserEditionException(
                 null);
 

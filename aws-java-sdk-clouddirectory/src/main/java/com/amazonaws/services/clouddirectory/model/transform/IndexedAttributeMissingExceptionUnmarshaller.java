@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IndexedAttributeMissingException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IndexedAttributeMissingExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException> {
+public class IndexedAttributeMissingExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IndexedAttributeMissingExceptionUnmarshaller() {
-        super("IndexedAttributeMissingException");
+        super(com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException.class, "IndexedAttributeMissingException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException indexedAttributeMissingException = new com.amazonaws.services.clouddirectory.model.IndexedAttributeMissingException(
                 null);
 

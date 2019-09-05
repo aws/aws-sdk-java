@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EC2UnexpectedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EC2UnexpectedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.EC2UnexpectedException> {
+public class EC2UnexpectedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EC2UnexpectedExceptionUnmarshaller() {
-        super("EC2UnexpectedException");
+        super(com.amazonaws.services.lambda.model.EC2UnexpectedException.class, "EC2UnexpectedException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.EC2UnexpectedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.EC2UnexpectedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.EC2UnexpectedException eC2UnexpectedException = new com.amazonaws.services.lambda.model.EC2UnexpectedException(null);
 
         int originalDepth = context.getCurrentDepth();

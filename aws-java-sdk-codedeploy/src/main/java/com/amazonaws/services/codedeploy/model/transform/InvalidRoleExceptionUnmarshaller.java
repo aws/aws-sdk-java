@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRoleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRoleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidRoleException> {
+public class InvalidRoleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRoleExceptionUnmarshaller() {
-        super("InvalidRoleException");
+        super(com.amazonaws.services.codedeploy.model.InvalidRoleException.class, "InvalidRoleException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidRoleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidRoleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidRoleException invalidRoleException = new com.amazonaws.services.codedeploy.model.InvalidRoleException(
                 null);
 

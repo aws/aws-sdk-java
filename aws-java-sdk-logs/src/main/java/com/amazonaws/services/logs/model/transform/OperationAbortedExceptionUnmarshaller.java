@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationAbortedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationAbortedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.OperationAbortedException> {
+public class OperationAbortedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationAbortedExceptionUnmarshaller() {
-        super("OperationAbortedException");
+        super(com.amazonaws.services.logs.model.OperationAbortedException.class, "OperationAbortedException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.OperationAbortedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.OperationAbortedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.OperationAbortedException operationAbortedException = new com.amazonaws.services.logs.model.OperationAbortedException(
                 null);
 

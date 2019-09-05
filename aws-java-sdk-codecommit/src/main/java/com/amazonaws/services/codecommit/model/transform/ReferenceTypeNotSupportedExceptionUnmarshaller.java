@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReferenceTypeNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReferenceTypeNotSupportedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException> {
+public class ReferenceTypeNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReferenceTypeNotSupportedExceptionUnmarshaller() {
-        super("ReferenceTypeNotSupportedException");
+        super(com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException.class, "ReferenceTypeNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException referenceTypeNotSupportedException = new com.amazonaws.services.codecommit.model.ReferenceTypeNotSupportedException(
                 null);
 

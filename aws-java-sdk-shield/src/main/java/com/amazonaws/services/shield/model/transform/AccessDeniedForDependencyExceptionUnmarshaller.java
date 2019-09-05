@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccessDeniedForDependencyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccessDeniedForDependencyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.shield.model.AccessDeniedForDependencyException> {
+public class AccessDeniedForDependencyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccessDeniedForDependencyExceptionUnmarshaller() {
-        super("AccessDeniedForDependencyException");
+        super(com.amazonaws.services.shield.model.AccessDeniedForDependencyException.class, "AccessDeniedForDependencyException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.AccessDeniedForDependencyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.AccessDeniedForDependencyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.AccessDeniedForDependencyException accessDeniedForDependencyException = new com.amazonaws.services.shield.model.AccessDeniedForDependencyException(
                 null);
 

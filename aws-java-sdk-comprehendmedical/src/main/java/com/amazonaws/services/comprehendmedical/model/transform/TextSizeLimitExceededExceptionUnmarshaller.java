@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TextSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TextSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException> {
+public class TextSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TextSizeLimitExceededExceptionUnmarshaller() {
-        super("TextSizeLimitExceededException");
+        super(com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException.class, "TextSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException textSizeLimitExceededException = new com.amazonaws.services.comprehendmedical.model.TextSizeLimitExceededException(
                 null);
 

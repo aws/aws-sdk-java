@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LifecyclePolicyPreviewInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LifecyclePolicyPreviewInProgressExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException> {
+public class LifecyclePolicyPreviewInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LifecyclePolicyPreviewInProgressExceptionUnmarshaller() {
-        super("LifecyclePolicyPreviewInProgressException");
+        super(com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException.class, "LifecyclePolicyPreviewInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException lifecyclePolicyPreviewInProgressException = new com.amazonaws.services.ecr.model.LifecyclePolicyPreviewInProgressException(
                 null);
 

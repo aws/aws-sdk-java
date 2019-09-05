@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PullRequestStatusRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PullRequestStatusRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException> {
+public class PullRequestStatusRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PullRequestStatusRequiredExceptionUnmarshaller() {
-        super("PullRequestStatusRequiredException");
+        super(com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException.class, "PullRequestStatusRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException pullRequestStatusRequiredException = new com.amazonaws.services.codecommit.model.PullRequestStatusRequiredException(
                 null);
 

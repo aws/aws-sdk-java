@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmServiceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmServiceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException> {
+public class CloudHsmServiceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmServiceExceptionUnmarshaller() {
-        super("CloudHsmServiceException");
+        super(com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException.class, "CloudHsmServiceException");
     }
 
     @Override
-    public com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException cloudHsmServiceException = new com.amazonaws.services.cloudhsmv2.model.CloudHsmServiceException(
                 null);
 

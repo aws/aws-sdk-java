@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SamePathRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SamePathRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.SamePathRequestException> {
+public class SamePathRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SamePathRequestExceptionUnmarshaller() {
-        super("SamePathRequestException");
+        super(com.amazonaws.services.codecommit.model.SamePathRequestException.class, "SamePathRequestException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.SamePathRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.SamePathRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.SamePathRequestException samePathRequestException = new com.amazonaws.services.codecommit.model.SamePathRequestException(
                 null);
 

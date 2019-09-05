@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OpsItemInvalidParameterException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OpsItemInvalidParameterExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException> {
+public class OpsItemInvalidParameterExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OpsItemInvalidParameterExceptionUnmarshaller() {
-        super("OpsItemInvalidParameterException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException.class, "OpsItemInvalidParameterException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException opsItemInvalidParameterException = new com.amazonaws.services.simplesystemsmanagement.model.OpsItemInvalidParameterException(
                 null);
 

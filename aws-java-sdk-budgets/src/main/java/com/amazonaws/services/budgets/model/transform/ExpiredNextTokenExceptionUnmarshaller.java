@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ExpiredNextTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ExpiredNextTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.budgets.model.ExpiredNextTokenException> {
+public class ExpiredNextTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ExpiredNextTokenExceptionUnmarshaller() {
-        super("ExpiredNextTokenException");
+        super(com.amazonaws.services.budgets.model.ExpiredNextTokenException.class, "ExpiredNextTokenException");
     }
 
     @Override
-    public com.amazonaws.services.budgets.model.ExpiredNextTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.budgets.model.ExpiredNextTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.budgets.model.ExpiredNextTokenException expiredNextTokenException = new com.amazonaws.services.budgets.model.ExpiredNextTokenException(
                 null);
 

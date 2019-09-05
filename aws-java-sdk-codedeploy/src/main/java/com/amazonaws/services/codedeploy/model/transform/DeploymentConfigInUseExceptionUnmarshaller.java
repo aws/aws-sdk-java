@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentConfigInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentConfigInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException> {
+public class DeploymentConfigInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentConfigInUseExceptionUnmarshaller() {
-        super("DeploymentConfigInUseException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException.class, "DeploymentConfigInUseException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException deploymentConfigInUseException = new com.amazonaws.services.codedeploy.model.DeploymentConfigInUseException(
                 null);
 

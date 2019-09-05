@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentGroupNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentGroupNameRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException> {
+public class DeploymentGroupNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentGroupNameRequiredExceptionUnmarshaller() {
-        super("DeploymentGroupNameRequiredException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException.class, "DeploymentGroupNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException deploymentGroupNameRequiredException = new com.amazonaws.services.codedeploy.model.DeploymentGroupNameRequiredException(
                 null);
 

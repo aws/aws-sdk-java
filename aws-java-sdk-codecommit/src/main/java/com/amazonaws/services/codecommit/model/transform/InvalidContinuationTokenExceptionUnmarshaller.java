@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidContinuationTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidContinuationTokenExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidContinuationTokenException> {
+public class InvalidContinuationTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidContinuationTokenExceptionUnmarshaller() {
-        super("InvalidContinuationTokenException");
+        super(com.amazonaws.services.codecommit.model.InvalidContinuationTokenException.class, "InvalidContinuationTokenException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidContinuationTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidContinuationTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidContinuationTokenException invalidContinuationTokenException = new com.amazonaws.services.codecommit.model.InvalidContinuationTokenException(
                 null);
 

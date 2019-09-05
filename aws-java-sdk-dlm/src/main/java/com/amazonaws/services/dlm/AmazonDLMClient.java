@@ -96,10 +96,7 @@ public class AmazonDLMClient extends AmazonWebServiceClient implements AmazonDLM
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dlm.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.dlm.model.AmazonDLMException>(
-                                            com.amazonaws.services.dlm.model.AmazonDLMException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.dlm.model.AmazonDLMException.class));
 
     public static AmazonDLMClientBuilder builder() {
         return AmazonDLMClientBuilder.standard();

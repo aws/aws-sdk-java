@@ -101,10 +101,7 @@ public class AWSMigrationHubClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DryRunOperation").withExceptionUnmarshaller(
                                     com.amazonaws.services.migrationhub.model.transform.DryRunOperationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.migrationhub.model.AWSMigrationHubException>(
-                                            com.amazonaws.services.migrationhub.model.AWSMigrationHubException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.migrationhub.model.AWSMigrationHubException.class));
 
     public static AWSMigrationHubClientBuilder builder() {
         return AWSMigrationHubClientBuilder.standard();

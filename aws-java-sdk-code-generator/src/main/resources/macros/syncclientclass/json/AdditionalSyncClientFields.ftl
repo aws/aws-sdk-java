@@ -16,9 +16,6 @@
                     .withExceptionUnmarshaller(${serviceModelRoot.transformPackage}.${shapeModel.shapeName}Unmarshaller.getInstance()))
             </#if>
         </#list>
-        .addErrorMetadata(new JsonErrorShapeMetadata()
-            .withErrorCode(null)
-            .withExceptionUnmarshaller(new
-            JsonBaseExceptionUnmarshaller<${serviceModelRoot.sdkModeledExceptionBaseFqcn}>(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)))
+        .withBaseServiceExceptionClass(${serviceModelRoot.sdkModeledExceptionBaseFqcn}.class)
         );
 </#macro>

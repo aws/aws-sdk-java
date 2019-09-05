@@ -1,3 +1,8 @@
+# __1.11.626__ __2019-09-05__
+## __AWS Config__
+  - ### Features
+    - AWS Config now includes the option for marking RemediationConfigurations as automatic, removing the need to call the StartRemediationExecution API. Manual control over resource execution rate is also included, and RemediationConfigurations are now ARN addressable. Exceptions to exclude account resources from being remediated can be configured with the new PutRemediationExceptions, DescribeRemediationExceptions, and DeleteRemediationExceptions APIs.
+
 # __1.11.625__ __2019-09-04__
 ## __AWS Step Functions__
   - ### Features

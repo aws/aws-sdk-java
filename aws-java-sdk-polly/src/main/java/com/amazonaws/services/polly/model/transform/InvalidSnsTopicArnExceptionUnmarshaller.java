@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSnsTopicArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSnsTopicArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.InvalidSnsTopicArnException> {
+public class InvalidSnsTopicArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSnsTopicArnExceptionUnmarshaller() {
-        super("InvalidSnsTopicArnException");
+        super(com.amazonaws.services.polly.model.InvalidSnsTopicArnException.class, "InvalidSnsTopicArnException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.InvalidSnsTopicArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.InvalidSnsTopicArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.InvalidSnsTopicArnException invalidSnsTopicArnException = new com.amazonaws.services.polly.model.InvalidSnsTopicArnException(
                 null);
 

@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException> {
+public class NotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotFoundExceptionUnmarshaller() {
-        super("NotFoundException");
+        super(com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException.class, "NotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException notFoundException = new com.amazonaws.services.serverlessapplicationrepository.model.NotFoundException(
                 null);
 

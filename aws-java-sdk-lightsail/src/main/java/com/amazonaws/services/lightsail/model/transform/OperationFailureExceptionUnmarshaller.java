@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lightsail.model.OperationFailureException> {
+public class OperationFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationFailureExceptionUnmarshaller() {
-        super("OperationFailureException");
+        super(com.amazonaws.services.lightsail.model.OperationFailureException.class, "OperationFailureException");
     }
 
     @Override
-    public com.amazonaws.services.lightsail.model.OperationFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lightsail.model.OperationFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lightsail.model.OperationFailureException operationFailureException = new com.amazonaws.services.lightsail.model.OperationFailureException(
                 null);
 

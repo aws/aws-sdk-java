@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidArgsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidArgsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.InvalidArgsException> {
+public class InvalidArgsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidArgsExceptionUnmarshaller() {
-        super("InvalidArgsException");
+        super(com.amazonaws.services.acmpca.model.InvalidArgsException.class, "InvalidArgsException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.InvalidArgsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.InvalidArgsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.InvalidArgsException invalidArgsException = new com.amazonaws.services.acmpca.model.InvalidArgsException(null);
 
         int originalDepth = context.getCurrentDepth();

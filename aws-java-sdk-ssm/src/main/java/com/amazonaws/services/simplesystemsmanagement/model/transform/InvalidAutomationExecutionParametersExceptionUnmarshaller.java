@@ -27,15 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAutomationExecutionParametersException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAutomationExecutionParametersExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException> {
+public class InvalidAutomationExecutionParametersExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAutomationExecutionParametersExceptionUnmarshaller() {
-        super("InvalidAutomationExecutionParametersException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException.class,
+                "InvalidAutomationExecutionParametersException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException unmarshall(JsonUnmarshallerContext context)
-            throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException unmarshallFromContext(
+            JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException invalidAutomationExecutionParametersException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationExecutionParametersException(
                 null);
 

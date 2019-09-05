@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientDeliveryPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientDeliveryPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.InsufficientDeliveryPolicyException> {
+public class InsufficientDeliveryPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientDeliveryPolicyExceptionUnmarshaller() {
-        super("InsufficientDeliveryPolicyException");
+        super(com.amazonaws.services.config.model.InsufficientDeliveryPolicyException.class, "InsufficientDeliveryPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InsufficientDeliveryPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InsufficientDeliveryPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InsufficientDeliveryPolicyException insufficientDeliveryPolicyException = new com.amazonaws.services.config.model.InsufficientDeliveryPolicyException(
                 null);
 

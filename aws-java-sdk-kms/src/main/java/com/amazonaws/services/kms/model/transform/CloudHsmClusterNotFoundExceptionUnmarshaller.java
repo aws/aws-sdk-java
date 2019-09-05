@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmClusterNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmClusterNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException> {
+public class CloudHsmClusterNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmClusterNotFoundExceptionUnmarshaller() {
-        super("CloudHsmClusterNotFoundException");
+        super(com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException.class, "CloudHsmClusterNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException cloudHsmClusterNotFoundException = new com.amazonaws.services.kms.model.CloudHsmClusterNotFoundException(
                 null);
 

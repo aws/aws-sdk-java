@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.DuplicateRequestException> {
+public class DuplicateRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateRequestExceptionUnmarshaller() {
-        super("DuplicateRequestException");
+        super(com.amazonaws.services.marketplacemetering.model.DuplicateRequestException.class, "DuplicateRequestException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.DuplicateRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.DuplicateRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.marketplacemetering.model.DuplicateRequestException duplicateRequestException = new com.amazonaws.services.marketplacemetering.model.DuplicateRequestException(
                 null);
 

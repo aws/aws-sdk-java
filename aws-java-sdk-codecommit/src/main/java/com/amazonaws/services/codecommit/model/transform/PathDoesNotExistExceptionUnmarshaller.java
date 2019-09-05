@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PathDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PathDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PathDoesNotExistException> {
+public class PathDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PathDoesNotExistExceptionUnmarshaller() {
-        super("PathDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.PathDoesNotExistException.class, "PathDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PathDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PathDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PathDoesNotExistException pathDoesNotExistException = new com.amazonaws.services.codecommit.model.PathDoesNotExistException(
                 null);
 

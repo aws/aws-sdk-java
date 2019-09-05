@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.route53domains.model.OperationLimitExceededException> {
+public class OperationLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationLimitExceededExceptionUnmarshaller() {
-        super("OperationLimitExceeded");
+        super(com.amazonaws.services.route53domains.model.OperationLimitExceededException.class, "OperationLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.route53domains.model.OperationLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.route53domains.model.OperationLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.route53domains.model.OperationLimitExceededException operationLimitExceededException = new com.amazonaws.services.route53domains.model.OperationLimitExceededException(
                 null);
 

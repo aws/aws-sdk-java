@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSchemaDocException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSchemaDocExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException> {
+public class InvalidSchemaDocExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSchemaDocExceptionUnmarshaller() {
-        super("InvalidSchemaDocException");
+        super(com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException.class, "InvalidSchemaDocException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException invalidSchemaDocException = new com.amazonaws.services.clouddirectory.model.InvalidSchemaDocException(
                 null);
 

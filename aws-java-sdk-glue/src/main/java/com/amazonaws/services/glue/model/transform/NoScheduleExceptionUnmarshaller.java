@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoScheduleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoScheduleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.NoScheduleException> {
+public class NoScheduleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoScheduleExceptionUnmarshaller() {
-        super("NoScheduleException");
+        super(com.amazonaws.services.glue.model.NoScheduleException.class, "NoScheduleException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.NoScheduleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.NoScheduleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.NoScheduleException noScheduleException = new com.amazonaws.services.glue.model.NoScheduleException(null);
 
         int originalDepth = context.getCurrentDepth();

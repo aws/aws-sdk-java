@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTagsMapException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTagsMapExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidTagsMapException> {
+public class InvalidTagsMapExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTagsMapExceptionUnmarshaller() {
-        super("InvalidTagsMapException");
+        super(com.amazonaws.services.codecommit.model.InvalidTagsMapException.class, "InvalidTagsMapException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidTagsMapException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidTagsMapException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidTagsMapException invalidTagsMapException = new com.amazonaws.services.codecommit.model.InvalidTagsMapException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomerNotEntitledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomerNotEntitledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException> {
+public class CustomerNotEntitledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomerNotEntitledExceptionUnmarshaller() {
-        super("CustomerNotEntitledException");
+        super(com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException.class, "CustomerNotEntitledException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException customerNotEntitledException = new com.amazonaws.services.marketplacemetering.model.CustomerNotEntitledException(
                 null);
 

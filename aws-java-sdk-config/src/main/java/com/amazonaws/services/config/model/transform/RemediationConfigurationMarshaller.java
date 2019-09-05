@@ -41,6 +41,18 @@ public class RemediationConfigurationMarshaller {
             .marshallLocationName("Parameters").build();
     private static final MarshallingInfo<String> RESOURCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
+    private static final MarshallingInfo<Boolean> AUTOMATIC_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Automatic").build();
+    private static final MarshallingInfo<StructuredPojo> EXECUTIONCONTROLS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionControls").build();
+    private static final MarshallingInfo<Integer> MAXIMUMAUTOMATICATTEMPTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaximumAutomaticAttempts").build();
+    private static final MarshallingInfo<Long> RETRYATTEMPTSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetryAttemptSeconds").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
+    private static final MarshallingInfo<String> CREATEDBYSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedByService").build();
 
     private static final RemediationConfigurationMarshaller instance = new RemediationConfigurationMarshaller();
 
@@ -64,6 +76,12 @@ public class RemediationConfigurationMarshaller {
             protocolMarshaller.marshall(remediationConfiguration.getTargetVersion(), TARGETVERSION_BINDING);
             protocolMarshaller.marshall(remediationConfiguration.getParameters(), PARAMETERS_BINDING);
             protocolMarshaller.marshall(remediationConfiguration.getResourceType(), RESOURCETYPE_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getAutomatic(), AUTOMATIC_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getExecutionControls(), EXECUTIONCONTROLS_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getMaximumAutomaticAttempts(), MAXIMUMAUTOMATICATTEMPTS_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getRetryAttemptSeconds(), RETRYATTEMPTSECONDS_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(remediationConfiguration.getCreatedByService(), CREATEDBYSERVICE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

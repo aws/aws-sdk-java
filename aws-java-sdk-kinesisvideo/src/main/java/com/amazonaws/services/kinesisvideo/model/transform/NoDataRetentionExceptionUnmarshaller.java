@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoDataRetentionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoDataRetentionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.NoDataRetentionException> {
+public class NoDataRetentionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoDataRetentionExceptionUnmarshaller() {
-        super("NoDataRetentionException");
+        super(com.amazonaws.services.kinesisvideo.model.NoDataRetentionException.class, "NoDataRetentionException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.NoDataRetentionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.NoDataRetentionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.NoDataRetentionException noDataRetentionException = new com.amazonaws.services.kinesisvideo.model.NoDataRetentionException(
                 null);
 

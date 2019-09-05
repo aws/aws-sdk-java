@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DomainDeprecatedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DomainDeprecatedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException> {
+public class DomainDeprecatedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DomainDeprecatedExceptionUnmarshaller() {
-        super("DomainDeprecatedFault");
+        super(com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException.class, "DomainDeprecatedFault");
     }
 
     @Override
-    public com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException domainDeprecatedException = new com.amazonaws.services.simpleworkflow.model.DomainDeprecatedException(
                 null);
 

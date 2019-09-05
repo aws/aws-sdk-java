@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnauthorizedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnauthorizedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iotdata.model.UnauthorizedException> {
+public class UnauthorizedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnauthorizedExceptionUnmarshaller() {
-        super("UnauthorizedException");
+        super(com.amazonaws.services.iotdata.model.UnauthorizedException.class, "UnauthorizedException");
     }
 
     @Override
-    public com.amazonaws.services.iotdata.model.UnauthorizedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotdata.model.UnauthorizedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotdata.model.UnauthorizedException unauthorizedException = new com.amazonaws.services.iotdata.model.UnauthorizedException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FilePathConflictsWithSubmodulePathException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FilePathConflictsWithSubmodulePathExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException> {
+public class FilePathConflictsWithSubmodulePathExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FilePathConflictsWithSubmodulePathExceptionUnmarshaller() {
-        super("FilePathConflictsWithSubmodulePathException");
+        super(com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException.class, "FilePathConflictsWithSubmodulePathException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException filePathConflictsWithSubmodulePathException = new com.amazonaws.services.codecommit.model.FilePathConflictsWithSubmodulePathException(
                 null);
 

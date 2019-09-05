@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClientException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClientExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.ClientException> {
+public class ClientExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClientExceptionUnmarshaller() {
-        super("ClientException");
+        super(com.amazonaws.services.directory.model.ClientException.class, "ClientException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.ClientException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.ClientException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.ClientException clientException = new com.amazonaws.services.directory.model.ClientException(null);
 
         int originalDepth = context.getCurrentDepth();

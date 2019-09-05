@@ -27,14 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxNumberOfRetentionConfigurationsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxNumberOfRetentionConfigurationsExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException> {
+public class MaxNumberOfRetentionConfigurationsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxNumberOfRetentionConfigurationsExceededExceptionUnmarshaller() {
-        super("MaxNumberOfRetentionConfigurationsExceededException");
+        super(com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException.class,
+                "MaxNumberOfRetentionConfigurationsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException maxNumberOfRetentionConfigurationsExceededException = new com.amazonaws.services.config.model.MaxNumberOfRetentionConfigurationsExceededException(
                 null);
 

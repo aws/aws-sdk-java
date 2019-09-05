@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BackupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BackupNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.BackupNotFoundException> {
+public class BackupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BackupNotFoundExceptionUnmarshaller() {
-        super("BackupNotFound");
+        super(com.amazonaws.services.fsx.model.BackupNotFoundException.class, "BackupNotFound");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.BackupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.BackupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.BackupNotFoundException backupNotFoundException = new com.amazonaws.services.fsx.model.BackupNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointsmsvoice.model.NotFoundException> {
+public class NotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NotFoundExceptionUnmarshaller() {
-        super("NotFoundException");
+        super(com.amazonaws.services.pinpointsmsvoice.model.NotFoundException.class, "NotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointsmsvoice.model.NotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointsmsvoice.model.NotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointsmsvoice.model.NotFoundException notFoundException = new com.amazonaws.services.pinpointsmsvoice.model.NotFoundException(
                 null);
 

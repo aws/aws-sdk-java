@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFTagOperationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFTagOperationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFTagOperationException> {
+public class WAFTagOperationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFTagOperationExceptionUnmarshaller() {
-        super("WAFTagOperationException");
+        super(com.amazonaws.services.waf.model.WAFTagOperationException.class, "WAFTagOperationException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFTagOperationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFTagOperationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFTagOperationException wAFTagOperationException = new com.amazonaws.services.waf.model.WAFTagOperationException(null);
 
         int originalDepth = context.getCurrentDepth();

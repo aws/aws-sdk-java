@@ -95,10 +95,7 @@ public class AmazonMQClient extends AmazonWebServiceClient implements AmazonMQ {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mq.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mq.model.AmazonMQException>(
-                                            com.amazonaws.services.mq.model.AmazonMQException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mq.model.AmazonMQException.class));
 
     public static AmazonMQClientBuilder builder() {
         return AmazonMQClientBuilder.standard();

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssessmentRunInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssessmentRunInProgressExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.AssessmentRunInProgressException> {
+public class AssessmentRunInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssessmentRunInProgressExceptionUnmarshaller() {
-        super("AssessmentRunInProgressException");
+        super(com.amazonaws.services.inspector.model.AssessmentRunInProgressException.class, "AssessmentRunInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.AssessmentRunInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.AssessmentRunInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.inspector.model.AssessmentRunInProgressException assessmentRunInProgressException = new com.amazonaws.services.inspector.model.AssessmentRunInProgressException(
                 null);
 

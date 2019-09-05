@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApplicationAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException> {
+public class ApplicationAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApplicationAlreadyExistsExceptionUnmarshaller() {
-        super("ApplicationAlreadyExistsException");
+        super(com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException.class, "ApplicationAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException applicationAlreadyExistsException = new com.amazonaws.services.codedeploy.model.ApplicationAlreadyExistsException(
                 null);
 

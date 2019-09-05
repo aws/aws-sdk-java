@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DependencyTimeoutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DependencyTimeoutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.DependencyTimeoutException> {
+public class DependencyTimeoutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DependencyTimeoutExceptionUnmarshaller() {
-        super("DependencyTimeoutException");
+        super(com.amazonaws.services.kms.model.DependencyTimeoutException.class, "DependencyTimeoutException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.DependencyTimeoutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.DependencyTimeoutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.DependencyTimeoutException dependencyTimeoutException = new com.amazonaws.services.kms.model.DependencyTimeoutException(
                 null);
 

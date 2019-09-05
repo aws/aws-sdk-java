@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * QuickSightUserNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class QuickSightUserNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException> {
+public class QuickSightUserNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private QuickSightUserNotFoundExceptionUnmarshaller() {
-        super("QuickSightUserNotFoundException");
+        super(com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException.class, "QuickSightUserNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException quickSightUserNotFoundException = new com.amazonaws.services.quicksight.model.QuickSightUserNotFoundException(
                 null);
 

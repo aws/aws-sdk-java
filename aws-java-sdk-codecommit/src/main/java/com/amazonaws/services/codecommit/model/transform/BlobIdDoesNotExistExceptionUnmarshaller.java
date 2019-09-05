@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BlobIdDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BlobIdDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException> {
+public class BlobIdDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BlobIdDoesNotExistExceptionUnmarshaller() {
-        super("BlobIdDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException.class, "BlobIdDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException blobIdDoesNotExistException = new com.amazonaws.services.codecommit.model.BlobIdDoesNotExistException(
                 null);
 

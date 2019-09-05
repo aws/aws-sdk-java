@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AssociatedListenerFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AssociatedListenerFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException> {
+public class AssociatedListenerFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AssociatedListenerFoundExceptionUnmarshaller() {
-        super("AssociatedListenerFoundException");
+        super(com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException.class, "AssociatedListenerFoundException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException associatedListenerFoundException = new com.amazonaws.services.globalaccelerator.model.AssociatedListenerFoundException(
                 null);
 

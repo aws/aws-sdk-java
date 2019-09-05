@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ComplianceTypeCountLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ComplianceTypeCountLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException> {
+public class ComplianceTypeCountLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ComplianceTypeCountLimitExceededExceptionUnmarshaller() {
-        super("ComplianceTypeCountLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException.class, "ComplianceTypeCountLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException complianceTypeCountLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.ComplianceTypeCountLimitExceededException(
                 null);

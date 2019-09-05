@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ObjectNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ObjectNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException> {
+public class ObjectNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ObjectNotFoundExceptionUnmarshaller() {
-        super("ObjectNotFoundException");
+        super(com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException.class, "ObjectNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException objectNotFoundException = new com.amazonaws.services.autoscalingplans.model.ObjectNotFoundException(
                 null);
 

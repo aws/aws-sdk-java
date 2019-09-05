@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedLanguageException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedLanguageExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.comprehend.model.UnsupportedLanguageException> {
+public class UnsupportedLanguageExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedLanguageExceptionUnmarshaller() {
-        super("UnsupportedLanguageException");
+        super(com.amazonaws.services.comprehend.model.UnsupportedLanguageException.class, "UnsupportedLanguageException");
     }
 
     @Override
-    public com.amazonaws.services.comprehend.model.UnsupportedLanguageException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.comprehend.model.UnsupportedLanguageException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.comprehend.model.UnsupportedLanguageException unsupportedLanguageException = new com.amazonaws.services.comprehend.model.UnsupportedLanguageException(
                 null);
 

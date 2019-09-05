@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.EntityAlreadyExistsException> {
+public class EntityAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityAlreadyExistsExceptionUnmarshaller() {
-        super("EntityAlreadyExistsException");
+        super(com.amazonaws.services.directory.model.EntityAlreadyExistsException.class, "EntityAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.EntityAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.EntityAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.EntityAlreadyExistsException entityAlreadyExistsException = new com.amazonaws.services.directory.model.EntityAlreadyExistsException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StateMachineDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StateMachineDoesNotExistExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException> {
+public class StateMachineDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StateMachineDoesNotExistExceptionUnmarshaller() {
-        super("StateMachineDoesNotExist");
+        super(com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException.class, "StateMachineDoesNotExist");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException stateMachineDoesNotExistException = new com.amazonaws.services.stepfunctions.model.StateMachineDoesNotExistException(
                 null);
 

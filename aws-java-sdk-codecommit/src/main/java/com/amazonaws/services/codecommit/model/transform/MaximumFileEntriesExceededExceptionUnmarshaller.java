@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumFileEntriesExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumFileEntriesExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException> {
+public class MaximumFileEntriesExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumFileEntriesExceededExceptionUnmarshaller() {
-        super("MaximumFileEntriesExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException.class, "MaximumFileEntriesExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException maximumFileEntriesExceededException = new com.amazonaws.services.codecommit.model.MaximumFileEntriesExceededException(
                 null);
 

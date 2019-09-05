@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lexmodelbuilding.model.ConflictException> {
+public class ConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConflictExceptionUnmarshaller() {
-        super("ConflictException");
+        super(com.amazonaws.services.lexmodelbuilding.model.ConflictException.class, "ConflictException");
     }
 
     @Override
-    public com.amazonaws.services.lexmodelbuilding.model.ConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lexmodelbuilding.model.ConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lexmodelbuilding.model.ConflictException conflictException = new com.amazonaws.services.lexmodelbuilding.model.ConflictException(
                 null);
 

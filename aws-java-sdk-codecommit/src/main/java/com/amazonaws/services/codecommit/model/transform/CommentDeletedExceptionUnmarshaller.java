@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CommentDeletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CommentDeletedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.CommentDeletedException> {
+public class CommentDeletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CommentDeletedExceptionUnmarshaller() {
-        super("CommentDeletedException");
+        super(com.amazonaws.services.codecommit.model.CommentDeletedException.class, "CommentDeletedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.CommentDeletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.CommentDeletedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.CommentDeletedException commentDeletedException = new com.amazonaws.services.codecommit.model.CommentDeletedException(
                 null);
 

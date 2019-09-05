@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ThrottledClientException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ThrottledClientExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.chime.model.ThrottledClientException> {
+public class ThrottledClientExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ThrottledClientExceptionUnmarshaller() {
-        super("ThrottledClientException");
+        super(com.amazonaws.services.chime.model.ThrottledClientException.class, "ThrottledClientException");
     }
 
     @Override
-    public com.amazonaws.services.chime.model.ThrottledClientException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.chime.model.ThrottledClientException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.chime.model.ThrottledClientException throttledClientException = new com.amazonaws.services.chime.model.ThrottledClientException(
                 null);
 

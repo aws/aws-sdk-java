@@ -105,10 +105,7 @@ public class AWSIoTThingsGraphClient extends AmazonWebServiceClient implements A
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iotthingsgraph.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iotthingsgraph.model.AWSIoTThingsGraphException>(
-                                            com.amazonaws.services.iotthingsgraph.model.AWSIoTThingsGraphException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iotthingsgraph.model.AWSIoTThingsGraphException.class));
 
     public static AWSIoTThingsGraphClientBuilder builder() {
         return AWSIoTThingsGraphClientBuilder.standard();

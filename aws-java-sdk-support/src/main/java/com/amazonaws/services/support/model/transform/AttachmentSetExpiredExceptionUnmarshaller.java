@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AttachmentSetExpiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AttachmentSetExpiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.support.model.AttachmentSetExpiredException> {
+public class AttachmentSetExpiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AttachmentSetExpiredExceptionUnmarshaller() {
-        super("AttachmentSetExpired");
+        super(com.amazonaws.services.support.model.AttachmentSetExpiredException.class, "AttachmentSetExpired");
     }
 
     @Override
-    public com.amazonaws.services.support.model.AttachmentSetExpiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.support.model.AttachmentSetExpiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.support.model.AttachmentSetExpiredException attachmentSetExpiredException = new com.amazonaws.services.support.model.AttachmentSetExpiredException(
                 null);
 

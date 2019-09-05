@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.ServiceNotFoundException> {
+public class ServiceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceNotFoundExceptionUnmarshaller() {
-        super("ServiceNotFound");
+        super(com.amazonaws.services.servicediscovery.model.ServiceNotFoundException.class, "ServiceNotFound");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.ServiceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.ServiceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.ServiceNotFoundException serviceNotFoundException = new com.amazonaws.services.servicediscovery.model.ServiceNotFoundException(
                 null);
 

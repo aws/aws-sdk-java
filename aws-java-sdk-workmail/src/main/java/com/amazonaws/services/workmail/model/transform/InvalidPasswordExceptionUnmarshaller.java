@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPasswordException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPasswordExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.InvalidPasswordException> {
+public class InvalidPasswordExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPasswordExceptionUnmarshaller() {
-        super("InvalidPasswordException");
+        super(com.amazonaws.services.workmail.model.InvalidPasswordException.class, "InvalidPasswordException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.InvalidPasswordException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.InvalidPasswordException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.InvalidPasswordException invalidPasswordException = new com.amazonaws.services.workmail.model.InvalidPasswordException(
                 null);
 

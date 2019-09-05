@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedPlatformTypeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedPlatformTypeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException> {
+public class UnsupportedPlatformTypeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedPlatformTypeExceptionUnmarshaller() {
-        super("UnsupportedPlatformType");
+        super(com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException.class, "UnsupportedPlatformType");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException unsupportedPlatformTypeException = new com.amazonaws.services.simplesystemsmanagement.model.UnsupportedPlatformTypeException(
                 null);
 

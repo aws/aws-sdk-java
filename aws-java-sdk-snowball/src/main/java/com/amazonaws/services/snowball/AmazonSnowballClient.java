@@ -107,10 +107,7 @@ public class AmazonSnowballClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAddressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.snowball.model.transform.InvalidAddressExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.snowball.model.AmazonSnowballException>(
-                                            com.amazonaws.services.snowball.model.AmazonSnowballException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.snowball.model.AmazonSnowballException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon Snowball. A credentials provider chain will be used

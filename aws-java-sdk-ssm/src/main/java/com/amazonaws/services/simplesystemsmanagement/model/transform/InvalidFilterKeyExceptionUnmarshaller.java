@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFilterKeyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFilterKeyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException> {
+public class InvalidFilterKeyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFilterKeyExceptionUnmarshaller() {
-        super("InvalidFilterKey");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException.class, "InvalidFilterKey");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException invalidFilterKeyException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidFilterKeyException(
                 null);
 

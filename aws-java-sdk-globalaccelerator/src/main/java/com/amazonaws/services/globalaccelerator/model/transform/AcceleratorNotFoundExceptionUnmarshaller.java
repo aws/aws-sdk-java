@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AcceleratorNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AcceleratorNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException> {
+public class AcceleratorNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AcceleratorNotFoundExceptionUnmarshaller() {
-        super("AcceleratorNotFoundException");
+        super(com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException.class, "AcceleratorNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException acceleratorNotFoundException = new com.amazonaws.services.globalaccelerator.model.AcceleratorNotFoundException(
                 null);
 

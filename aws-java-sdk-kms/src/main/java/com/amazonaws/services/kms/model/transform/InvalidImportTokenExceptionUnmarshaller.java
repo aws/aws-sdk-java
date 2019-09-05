@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidImportTokenException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidImportTokenExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidImportTokenException> {
+public class InvalidImportTokenExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidImportTokenExceptionUnmarshaller() {
-        super("InvalidImportTokenException");
+        super(com.amazonaws.services.kms.model.InvalidImportTokenException.class, "InvalidImportTokenException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidImportTokenException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidImportTokenException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidImportTokenException invalidImportTokenException = new com.amazonaws.services.kms.model.InvalidImportTokenException(
                 null);
 

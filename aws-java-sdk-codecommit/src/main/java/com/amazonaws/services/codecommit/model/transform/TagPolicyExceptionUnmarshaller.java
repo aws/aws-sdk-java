@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagPolicyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TagPolicyException> {
+public class TagPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagPolicyExceptionUnmarshaller() {
-        super("TagPolicyException");
+        super(com.amazonaws.services.codecommit.model.TagPolicyException.class, "TagPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TagPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TagPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.TagPolicyException tagPolicyException = new com.amazonaws.services.codecommit.model.TagPolicyException(null);
 
         int originalDepth = context.getCurrentDepth();

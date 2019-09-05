@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ParameterPatternMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ParameterPatternMismatchExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException> {
+public class ParameterPatternMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ParameterPatternMismatchExceptionUnmarshaller() {
-        super("ParameterPatternMismatchException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException.class, "ParameterPatternMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException parameterPatternMismatchException = new com.amazonaws.services.simplesystemsmanagement.model.ParameterPatternMismatchException(
                 null);
 

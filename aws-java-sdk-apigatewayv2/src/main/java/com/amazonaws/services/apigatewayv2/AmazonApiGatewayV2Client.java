@@ -89,10 +89,7 @@ public class AmazonApiGatewayV2Client extends AmazonWebServiceClient implements 
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.apigatewayv2.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.apigatewayv2.model.AmazonApiGatewayV2Exception>(
-                                            com.amazonaws.services.apigatewayv2.model.AmazonApiGatewayV2Exception.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.apigatewayv2.model.AmazonApiGatewayV2Exception.class));
 
     public static AmazonApiGatewayV2ClientBuilder builder() {
         return AmazonApiGatewayV2ClientBuilder.standard();

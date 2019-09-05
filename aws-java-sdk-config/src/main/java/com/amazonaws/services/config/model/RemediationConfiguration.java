@@ -65,6 +65,51 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The remediation is triggered automatically.
+     * </p>
+     */
+    private Boolean automatic;
+    /**
+     * <p>
+     * An ExecutionControls object.
+     * </p>
+     */
+    private ExecutionControls executionControls;
+    /**
+     * <p>
+     * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
+     * </p>
+     * <p>
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
+     * throws an exception after the 5th failed attempt within 50 seconds.
+     * </p>
+     */
+    private Integer maximumAutomaticAttempts;
+    /**
+     * <p>
+     * Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60
+     * seconds.
+     * </p>
+     * <p>
+     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * run auto-remediations 5 times within 50 seconds before throwing an exception.
+     * </p>
+     */
+    private Long retryAttemptSeconds;
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of remediation configuration.
+     * </p>
+     */
+    private String arn;
+    /**
+     * <p>
+     * Name of the service that owns the service linked rule, if applicable.
+     * </p>
+     */
+    private String createdByService;
 
     /**
      * <p>
@@ -347,6 +392,309 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The remediation is triggered automatically.
+     * </p>
+     * 
+     * @param automatic
+     *        The remediation is triggered automatically.
+     */
+
+    public void setAutomatic(Boolean automatic) {
+        this.automatic = automatic;
+    }
+
+    /**
+     * <p>
+     * The remediation is triggered automatically.
+     * </p>
+     * 
+     * @return The remediation is triggered automatically.
+     */
+
+    public Boolean getAutomatic() {
+        return this.automatic;
+    }
+
+    /**
+     * <p>
+     * The remediation is triggered automatically.
+     * </p>
+     * 
+     * @param automatic
+     *        The remediation is triggered automatically.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withAutomatic(Boolean automatic) {
+        setAutomatic(automatic);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The remediation is triggered automatically.
+     * </p>
+     * 
+     * @return The remediation is triggered automatically.
+     */
+
+    public Boolean isAutomatic() {
+        return this.automatic;
+    }
+
+    /**
+     * <p>
+     * An ExecutionControls object.
+     * </p>
+     * 
+     * @param executionControls
+     *        An ExecutionControls object.
+     */
+
+    public void setExecutionControls(ExecutionControls executionControls) {
+        this.executionControls = executionControls;
+    }
+
+    /**
+     * <p>
+     * An ExecutionControls object.
+     * </p>
+     * 
+     * @return An ExecutionControls object.
+     */
+
+    public ExecutionControls getExecutionControls() {
+        return this.executionControls;
+    }
+
+    /**
+     * <p>
+     * An ExecutionControls object.
+     * </p>
+     * 
+     * @param executionControls
+     *        An ExecutionControls object.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withExecutionControls(ExecutionControls executionControls) {
+        setExecutionControls(executionControls);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
+     * </p>
+     * <p>
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
+     * throws an exception after the 5th failed attempt within 50 seconds.
+     * </p>
+     * 
+     * @param maximumAutomaticAttempts
+     *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
+     *        5.</p>
+     *        <p>
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *        Config throws an exception after the 5th failed attempt within 50 seconds.
+     */
+
+    public void setMaximumAutomaticAttempts(Integer maximumAutomaticAttempts) {
+        this.maximumAutomaticAttempts = maximumAutomaticAttempts;
+    }
+
+    /**
+     * <p>
+     * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
+     * </p>
+     * <p>
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
+     * throws an exception after the 5th failed attempt within 50 seconds.
+     * </p>
+     * 
+     * @return The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
+     *         5.</p>
+     *         <p>
+     *         For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *         Config throws an exception after the 5th failed attempt within 50 seconds.
+     */
+
+    public Integer getMaximumAutomaticAttempts() {
+        return this.maximumAutomaticAttempts;
+    }
+
+    /**
+     * <p>
+     * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
+     * </p>
+     * <p>
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
+     * throws an exception after the 5th failed attempt within 50 seconds.
+     * </p>
+     * 
+     * @param maximumAutomaticAttempts
+     *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
+     *        5.</p>
+     *        <p>
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
+     *        Config throws an exception after the 5th failed attempt within 50 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withMaximumAutomaticAttempts(Integer maximumAutomaticAttempts) {
+        setMaximumAutomaticAttempts(maximumAutomaticAttempts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60
+     * seconds.
+     * </p>
+     * <p>
+     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * run auto-remediations 5 times within 50 seconds before throwing an exception.
+     * </p>
+     * 
+     * @param retryAttemptSeconds
+     *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
+     *        is 60 seconds. </p>
+     *        <p>
+     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     */
+
+    public void setRetryAttemptSeconds(Long retryAttemptSeconds) {
+        this.retryAttemptSeconds = retryAttemptSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60
+     * seconds.
+     * </p>
+     * <p>
+     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * run auto-remediations 5 times within 50 seconds before throwing an exception.
+     * </p>
+     * 
+     * @return Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
+     *         is 60 seconds. </p>
+     *         <p>
+     *         For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *         Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     */
+
+    public Long getRetryAttemptSeconds() {
+        return this.retryAttemptSeconds;
+    }
+
+    /**
+     * <p>
+     * Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default is 60
+     * seconds.
+     * </p>
+     * <p>
+     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * run auto-remediations 5 times within 50 seconds before throwing an exception.
+     * </p>
+     * 
+     * @param retryAttemptSeconds
+     *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
+     *        is 60 seconds. </p>
+     *        <p>
+     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withRetryAttemptSeconds(Long retryAttemptSeconds) {
+        setRetryAttemptSeconds(retryAttemptSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of remediation configuration.
+     * </p>
+     * 
+     * @param arn
+     *        Amazon Resource Name (ARN) of remediation configuration.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of remediation configuration.
+     * </p>
+     * 
+     * @return Amazon Resource Name (ARN) of remediation configuration.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * Amazon Resource Name (ARN) of remediation configuration.
+     * </p>
+     * 
+     * @param arn
+     *        Amazon Resource Name (ARN) of remediation configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Name of the service that owns the service linked rule, if applicable.
+     * </p>
+     * 
+     * @param createdByService
+     *        Name of the service that owns the service linked rule, if applicable.
+     */
+
+    public void setCreatedByService(String createdByService) {
+        this.createdByService = createdByService;
+    }
+
+    /**
+     * <p>
+     * Name of the service that owns the service linked rule, if applicable.
+     * </p>
+     * 
+     * @return Name of the service that owns the service linked rule, if applicable.
+     */
+
+    public String getCreatedByService() {
+        return this.createdByService;
+    }
+
+    /**
+     * <p>
+     * Name of the service that owns the service linked rule, if applicable.
+     * </p>
+     * 
+     * @param createdByService
+     *        Name of the service that owns the service linked rule, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemediationConfiguration withCreatedByService(String createdByService) {
+        setCreatedByService(createdByService);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -369,7 +717,19 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
         if (getParameters() != null)
             sb.append("Parameters: ").append(getParameters()).append(",");
         if (getResourceType() != null)
-            sb.append("ResourceType: ").append(getResourceType());
+            sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getAutomatic() != null)
+            sb.append("Automatic: ").append(getAutomatic()).append(",");
+        if (getExecutionControls() != null)
+            sb.append("ExecutionControls: ").append(getExecutionControls()).append(",");
+        if (getMaximumAutomaticAttempts() != null)
+            sb.append("MaximumAutomaticAttempts: ").append(getMaximumAutomaticAttempts()).append(",");
+        if (getRetryAttemptSeconds() != null)
+            sb.append("RetryAttemptSeconds: ").append(getRetryAttemptSeconds()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn()).append(",");
+        if (getCreatedByService() != null)
+            sb.append("CreatedByService: ").append(getCreatedByService());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +768,30 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getAutomatic() == null ^ this.getAutomatic() == null)
+            return false;
+        if (other.getAutomatic() != null && other.getAutomatic().equals(this.getAutomatic()) == false)
+            return false;
+        if (other.getExecutionControls() == null ^ this.getExecutionControls() == null)
+            return false;
+        if (other.getExecutionControls() != null && other.getExecutionControls().equals(this.getExecutionControls()) == false)
+            return false;
+        if (other.getMaximumAutomaticAttempts() == null ^ this.getMaximumAutomaticAttempts() == null)
+            return false;
+        if (other.getMaximumAutomaticAttempts() != null && other.getMaximumAutomaticAttempts().equals(this.getMaximumAutomaticAttempts()) == false)
+            return false;
+        if (other.getRetryAttemptSeconds() == null ^ this.getRetryAttemptSeconds() == null)
+            return false;
+        if (other.getRetryAttemptSeconds() != null && other.getRetryAttemptSeconds().equals(this.getRetryAttemptSeconds()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCreatedByService() == null ^ this.getCreatedByService() == null)
+            return false;
+        if (other.getCreatedByService() != null && other.getCreatedByService().equals(this.getCreatedByService()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +806,12 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getTargetVersion() == null) ? 0 : getTargetVersion().hashCode());
         hashCode = prime * hashCode + ((getParameters() == null) ? 0 : getParameters().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getAutomatic() == null) ? 0 : getAutomatic().hashCode());
+        hashCode = prime * hashCode + ((getExecutionControls() == null) ? 0 : getExecutionControls().hashCode());
+        hashCode = prime * hashCode + ((getMaximumAutomaticAttempts() == null) ? 0 : getMaximumAutomaticAttempts().hashCode());
+        hashCode = prime * hashCode + ((getRetryAttemptSeconds() == null) ? 0 : getRetryAttemptSeconds().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCreatedByService() == null) ? 0 : getCreatedByService().hashCode());
         return hashCode;
     }
 

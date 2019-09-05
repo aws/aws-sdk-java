@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RangeNotSatisfiableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RangeNotSatisfiableExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException> {
+public class RangeNotSatisfiableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RangeNotSatisfiableExceptionUnmarshaller() {
-        super("RangeNotSatisfiableException");
+        super(com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException.class, "RangeNotSatisfiableException");
     }
 
     @Override
-    public com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException rangeNotSatisfiableException = new com.amazonaws.services.iot1clickdevices.model.RangeNotSatisfiableException(
                 null);
 

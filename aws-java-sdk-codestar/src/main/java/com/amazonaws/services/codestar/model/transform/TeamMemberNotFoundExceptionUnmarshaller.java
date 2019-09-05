@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TeamMemberNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TeamMemberNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.TeamMemberNotFoundException> {
+public class TeamMemberNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TeamMemberNotFoundExceptionUnmarshaller() {
-        super("TeamMemberNotFoundException");
+        super(com.amazonaws.services.codestar.model.TeamMemberNotFoundException.class, "TeamMemberNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.TeamMemberNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.TeamMemberNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.TeamMemberNotFoundException teamMemberNotFoundException = new com.amazonaws.services.codestar.model.TeamMemberNotFoundException(
                 null);
 

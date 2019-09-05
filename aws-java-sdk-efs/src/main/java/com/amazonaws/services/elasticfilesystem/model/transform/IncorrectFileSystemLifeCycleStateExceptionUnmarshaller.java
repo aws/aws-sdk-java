@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IncorrectFileSystemLifeCycleStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IncorrectFileSystemLifeCycleStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException> {
+public class IncorrectFileSystemLifeCycleStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IncorrectFileSystemLifeCycleStateExceptionUnmarshaller() {
-        super("IncorrectFileSystemLifeCycleState");
+        super(com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException.class, "IncorrectFileSystemLifeCycleState");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException incorrectFileSystemLifeCycleStateException = new com.amazonaws.services.elasticfilesystem.model.IncorrectFileSystemLifeCycleStateException(
                 null);

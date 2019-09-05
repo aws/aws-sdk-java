@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidArgsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidArgsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException> {
+public class InvalidArgsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidArgsExceptionUnmarshaller() {
-        super("InvalidArgsException");
+        super(com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException.class, "InvalidArgsException");
     }
 
     @Override
-    public com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException invalidArgsException = new com.amazonaws.services.ec2instanceconnect.model.InvalidArgsException(
                 null);
 

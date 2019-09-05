@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IdempotentParameterMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IdempotentParameterMismatchExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException> {
+public class IdempotentParameterMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IdempotentParameterMismatchExceptionUnmarshaller() {
-        super("IdempotentParameterMismatchException");
+        super(com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException.class, "IdempotentParameterMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException idempotentParameterMismatchException = new com.amazonaws.services.robomaker.model.IdempotentParameterMismatchException(
                 null);
 

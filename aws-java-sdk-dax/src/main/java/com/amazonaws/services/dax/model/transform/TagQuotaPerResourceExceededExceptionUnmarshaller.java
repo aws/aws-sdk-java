@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagQuotaPerResourceExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagQuotaPerResourceExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException> {
+public class TagQuotaPerResourceExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagQuotaPerResourceExceededExceptionUnmarshaller() {
-        super("TagQuotaPerResourceExceeded");
+        super(com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException.class, "TagQuotaPerResourceExceeded");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException tagQuotaPerResourceExceededException = new com.amazonaws.services.dax.model.TagQuotaPerResourceExceededException(
                 null);
 

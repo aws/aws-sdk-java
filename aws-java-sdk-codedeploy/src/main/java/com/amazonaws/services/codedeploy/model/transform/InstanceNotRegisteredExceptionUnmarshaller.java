@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InstanceNotRegisteredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InstanceNotRegisteredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException> {
+public class InstanceNotRegisteredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InstanceNotRegisteredExceptionUnmarshaller() {
-        super("InstanceNotRegisteredException");
+        super(com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException.class, "InstanceNotRegisteredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException instanceNotRegisteredException = new com.amazonaws.services.codedeploy.model.InstanceNotRegisteredException(
                 null);
 

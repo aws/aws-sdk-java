@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoAvailableOrganizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoAvailableOrganizationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoAvailableOrganizationException> {
+public class NoAvailableOrganizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoAvailableOrganizationExceptionUnmarshaller() {
-        super("NoAvailableOrganizationException");
+        super(com.amazonaws.services.config.model.NoAvailableOrganizationException.class, "NoAvailableOrganizationException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoAvailableOrganizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoAvailableOrganizationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoAvailableOrganizationException noAvailableOrganizationException = new com.amazonaws.services.config.model.NoAvailableOrganizationException(
                 null);
 

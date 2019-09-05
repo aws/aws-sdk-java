@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyTypeNotAvailableForOrganizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyTypeNotAvailableForOrganizationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException> {
+public class PolicyTypeNotAvailableForOrganizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyTypeNotAvailableForOrganizationExceptionUnmarshaller() {
-        super("PolicyTypeNotAvailableForOrganizationException");
+        super(com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException.class, "PolicyTypeNotAvailableForOrganizationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException policyTypeNotAvailableForOrganizationException = new com.amazonaws.services.organizations.model.PolicyTypeNotAvailableForOrganizationException(
                 null);

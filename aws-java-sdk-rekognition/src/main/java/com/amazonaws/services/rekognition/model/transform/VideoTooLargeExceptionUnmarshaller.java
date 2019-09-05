@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * VideoTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VideoTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.rekognition.model.VideoTooLargeException> {
+public class VideoTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private VideoTooLargeExceptionUnmarshaller() {
-        super("VideoTooLargeException");
+        super(com.amazonaws.services.rekognition.model.VideoTooLargeException.class, "VideoTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.rekognition.model.VideoTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.rekognition.model.VideoTooLargeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.rekognition.model.VideoTooLargeException videoTooLargeException = new com.amazonaws.services.rekognition.model.VideoTooLargeException(
                 null);
 

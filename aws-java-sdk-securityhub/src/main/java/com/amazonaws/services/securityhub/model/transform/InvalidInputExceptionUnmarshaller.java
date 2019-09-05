@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInputException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInputExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.securityhub.model.InvalidInputException> {
+public class InvalidInputExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInputExceptionUnmarshaller() {
-        super("InvalidInputException");
+        super(com.amazonaws.services.securityhub.model.InvalidInputException.class, "InvalidInputException");
     }
 
     @Override
-    public com.amazonaws.services.securityhub.model.InvalidInputException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.securityhub.model.InvalidInputException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.securityhub.model.InvalidInputException invalidInputException = new com.amazonaws.services.securityhub.model.InvalidInputException(
                 null);
 

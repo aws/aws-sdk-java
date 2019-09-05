@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileSystemNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileSystemNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.fsx.model.FileSystemNotFoundException> {
+public class FileSystemNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileSystemNotFoundExceptionUnmarshaller() {
-        super("FileSystemNotFound");
+        super(com.amazonaws.services.fsx.model.FileSystemNotFoundException.class, "FileSystemNotFound");
     }
 
     @Override
-    public com.amazonaws.services.fsx.model.FileSystemNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.fsx.model.FileSystemNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.fsx.model.FileSystemNotFoundException fileSystemNotFoundException = new com.amazonaws.services.fsx.model.FileSystemNotFoundException(
                 null);
 

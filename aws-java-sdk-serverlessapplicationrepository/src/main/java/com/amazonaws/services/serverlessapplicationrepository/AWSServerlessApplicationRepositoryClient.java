@@ -128,12 +128,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.serverlessapplicationrepository.model.transform.InternalServerErrorExceptionUnmarshaller
                                             .getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException>(
-                                                    com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException.class))));
+                    .withBaseServiceExceptionClass(
+                            com.amazonaws.services.serverlessapplicationrepository.model.AWSServerlessApplicationRepositoryException.class));
 
     public static AWSServerlessApplicationRepositoryClientBuilder builder() {
         return AWSServerlessApplicationRepositoryClientBuilder.standard();

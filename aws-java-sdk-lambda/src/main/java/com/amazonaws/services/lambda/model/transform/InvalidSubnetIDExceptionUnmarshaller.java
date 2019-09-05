@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSubnetIDException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSubnetIDExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidSubnetIDException> {
+public class InvalidSubnetIDExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSubnetIDExceptionUnmarshaller() {
-        super("InvalidSubnetIDException");
+        super(com.amazonaws.services.lambda.model.InvalidSubnetIDException.class, "InvalidSubnetIDException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidSubnetIDException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidSubnetIDException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidSubnetIDException invalidSubnetIDException = new com.amazonaws.services.lambda.model.InvalidSubnetIDException(
                 null);
 

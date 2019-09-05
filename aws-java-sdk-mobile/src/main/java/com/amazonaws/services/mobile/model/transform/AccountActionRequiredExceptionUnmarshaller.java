@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountActionRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountActionRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mobile.model.AccountActionRequiredException> {
+public class AccountActionRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountActionRequiredExceptionUnmarshaller() {
-        super("AccountActionRequiredException");
+        super(com.amazonaws.services.mobile.model.AccountActionRequiredException.class, "AccountActionRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.mobile.model.AccountActionRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mobile.model.AccountActionRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mobile.model.AccountActionRequiredException accountActionRequiredException = new com.amazonaws.services.mobile.model.AccountActionRequiredException(
                 null);
 

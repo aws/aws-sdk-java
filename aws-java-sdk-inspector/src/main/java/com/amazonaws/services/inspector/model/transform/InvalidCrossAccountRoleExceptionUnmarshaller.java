@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCrossAccountRoleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCrossAccountRoleExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException> {
+public class InvalidCrossAccountRoleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCrossAccountRoleExceptionUnmarshaller() {
-        super("InvalidCrossAccountRoleException");
+        super(com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException.class, "InvalidCrossAccountRoleException");
     }
 
     @Override
-    public com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException invalidCrossAccountRoleException = new com.amazonaws.services.inspector.model.InvalidCrossAccountRoleException(
                 null);
 

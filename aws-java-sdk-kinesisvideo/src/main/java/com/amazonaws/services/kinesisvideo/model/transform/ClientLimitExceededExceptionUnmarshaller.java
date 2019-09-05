@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClientLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClientLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException> {
+public class ClientLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClientLimitExceededExceptionUnmarshaller() {
-        super("ClientLimitExceededException");
+        super(com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException.class, "ClientLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException clientLimitExceededException = new com.amazonaws.services.kinesisvideo.model.ClientLimitExceededException(
                 null);
 

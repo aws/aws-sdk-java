@@ -99,10 +99,7 @@ public class AWSIoT1ClickDevicesClient extends AmazonWebServiceClient implements
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot1clickdevices.model.transform.ResourceConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException>(
-                                            com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iot1clickdevices.model.AWSIoT1ClickDevicesException.class));
 
     public static AWSIoT1ClickDevicesClientBuilder builder() {
         return AWSIoT1ClickDevicesClientBuilder.standard();

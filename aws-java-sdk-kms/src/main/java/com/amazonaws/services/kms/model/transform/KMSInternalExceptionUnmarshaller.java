@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * KMSInternalException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class KMSInternalExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.KMSInternalException> {
+public class KMSInternalExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private KMSInternalExceptionUnmarshaller() {
-        super("KMSInternalException");
+        super(com.amazonaws.services.kms.model.KMSInternalException.class, "KMSInternalException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.KMSInternalException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.KMSInternalException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.KMSInternalException kMSInternalException = new com.amazonaws.services.kms.model.KMSInternalException(null);
 
         int originalDepth = context.getCurrentDepth();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAttachmentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAttachmentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.InvalidAttachmentException> {
+public class InvalidAttachmentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAttachmentExceptionUnmarshaller() {
-        super("InvalidAttachmentException");
+        super(com.amazonaws.services.clouddirectory.model.InvalidAttachmentException.class, "InvalidAttachmentException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.InvalidAttachmentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.InvalidAttachmentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.InvalidAttachmentException invalidAttachmentException = new com.amazonaws.services.clouddirectory.model.InvalidAttachmentException(
                 null);
 

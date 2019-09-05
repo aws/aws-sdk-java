@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EndpointGroupAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EndpointGroupAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException> {
+public class EndpointGroupAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EndpointGroupAlreadyExistsExceptionUnmarshaller() {
-        super("EndpointGroupAlreadyExistsException");
+        super(com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException.class, "EndpointGroupAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException endpointGroupAlreadyExistsException = new com.amazonaws.services.globalaccelerator.model.EndpointGroupAlreadyExistsException(
                 null);
 

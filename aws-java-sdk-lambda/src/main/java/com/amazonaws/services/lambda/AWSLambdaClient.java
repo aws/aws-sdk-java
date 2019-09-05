@@ -163,10 +163,7 @@ public class AWSLambdaClient extends AmazonWebServiceClient implements AWSLambda
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("UnsupportedMediaTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lambda.model.transform.UnsupportedMediaTypeExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.lambda.model.AWSLambdaException>(
-                                            com.amazonaws.services.lambda.model.AWSLambdaException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.lambda.model.AWSLambdaException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Lambda. A credentials provider chain will be used that

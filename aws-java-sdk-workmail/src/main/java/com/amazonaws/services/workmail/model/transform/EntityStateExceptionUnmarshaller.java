@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EntityStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EntityStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.EntityStateException> {
+public class EntityStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EntityStateExceptionUnmarshaller() {
-        super("EntityStateException");
+        super(com.amazonaws.services.workmail.model.EntityStateException.class, "EntityStateException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.EntityStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.EntityStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.EntityStateException entityStateException = new com.amazonaws.services.workmail.model.EntityStateException(null);
 
         int originalDepth = context.getCurrentDepth();

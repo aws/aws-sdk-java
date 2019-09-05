@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidTrailNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidTrailNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InvalidTrailNameException> {
+public class InvalidTrailNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidTrailNameExceptionUnmarshaller() {
-        super("InvalidTrailNameException");
+        super(com.amazonaws.services.cloudtrail.model.InvalidTrailNameException.class, "InvalidTrailNameException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InvalidTrailNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InvalidTrailNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InvalidTrailNameException invalidTrailNameException = new com.amazonaws.services.cloudtrail.model.InvalidTrailNameException(
                 null);
 

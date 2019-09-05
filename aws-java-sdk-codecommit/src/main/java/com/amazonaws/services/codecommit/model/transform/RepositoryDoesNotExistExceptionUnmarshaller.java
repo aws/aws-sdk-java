@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException> {
+public class RepositoryDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryDoesNotExistExceptionUnmarshaller() {
-        super("RepositoryDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException.class, "RepositoryDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException repositoryDoesNotExistException = new com.amazonaws.services.codecommit.model.RepositoryDoesNotExistException(
                 null);
 

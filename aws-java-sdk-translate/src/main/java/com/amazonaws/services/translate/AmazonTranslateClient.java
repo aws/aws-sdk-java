@@ -106,10 +106,7 @@ public class AmazonTranslateClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.translate.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.translate.model.AmazonTranslateException>(
-                                            com.amazonaws.services.translate.model.AmazonTranslateException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.translate.model.AmazonTranslateException.class));
 
     public static AmazonTranslateClientBuilder builder() {
         return AmazonTranslateClientBuilder.standard();

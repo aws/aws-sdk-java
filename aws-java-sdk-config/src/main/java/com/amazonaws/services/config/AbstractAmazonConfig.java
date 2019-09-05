@@ -93,6 +93,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteRemediationExceptionsResult deleteRemediationExceptions(DeleteRemediationExceptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteRetentionConfigurationResult deleteRetentionConfiguration(DeleteRetentionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -224,6 +229,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DescribeRemediationExceptionsResult describeRemediationExceptions(DescribeRemediationExceptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeRemediationExecutionStatusResult describeRemediationExecutionStatus(DescribeRemediationExecutionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -350,6 +360,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutRemediationConfigurationsResult putRemediationConfigurations(PutRemediationConfigurationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutRemediationExceptionsResult putRemediationExceptions(PutRemediationExceptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

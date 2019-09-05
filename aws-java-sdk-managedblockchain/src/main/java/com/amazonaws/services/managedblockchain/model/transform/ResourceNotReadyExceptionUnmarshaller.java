@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceNotReadyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceNotReadyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.managedblockchain.model.ResourceNotReadyException> {
+public class ResourceNotReadyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceNotReadyExceptionUnmarshaller() {
-        super("ResourceNotReadyException");
+        super(com.amazonaws.services.managedblockchain.model.ResourceNotReadyException.class, "ResourceNotReadyException");
     }
 
     @Override
-    public com.amazonaws.services.managedblockchain.model.ResourceNotReadyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.managedblockchain.model.ResourceNotReadyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.managedblockchain.model.ResourceNotReadyException resourceNotReadyException = new com.amazonaws.services.managedblockchain.model.ResourceNotReadyException(
                 null);
 

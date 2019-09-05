@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserPoolAddOnNotEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserPoolAddOnNotEnabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException> {
+public class UserPoolAddOnNotEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserPoolAddOnNotEnabledExceptionUnmarshaller() {
-        super("UserPoolAddOnNotEnabledException");
+        super(com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException.class, "UserPoolAddOnNotEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException userPoolAddOnNotEnabledException = new com.amazonaws.services.cognitoidp.model.UserPoolAddOnNotEnabledException(
                 null);
 

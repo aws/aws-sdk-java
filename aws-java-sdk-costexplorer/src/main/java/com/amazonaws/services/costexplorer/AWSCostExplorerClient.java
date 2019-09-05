@@ -113,10 +113,7 @@ public class AWSCostExplorerClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.costexplorer.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.costexplorer.model.AWSCostExplorerException>(
-                                            com.amazonaws.services.costexplorer.model.AWSCostExplorerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.costexplorer.model.AWSCostExplorerException.class));
 
     public static AWSCostExplorerClientBuilder builder() {
         return AWSCostExplorerClientBuilder.standard();

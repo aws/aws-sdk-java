@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DestinationNotAllowedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DestinationNotAllowedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.connect.model.DestinationNotAllowedException> {
+public class DestinationNotAllowedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DestinationNotAllowedExceptionUnmarshaller() {
-        super("DestinationNotAllowedException");
+        super(com.amazonaws.services.connect.model.DestinationNotAllowedException.class, "DestinationNotAllowedException");
     }
 
     @Override
-    public com.amazonaws.services.connect.model.DestinationNotAllowedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.connect.model.DestinationNotAllowedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.connect.model.DestinationNotAllowedException destinationNotAllowedException = new com.amazonaws.services.connect.model.DestinationNotAllowedException(
                 null);
 

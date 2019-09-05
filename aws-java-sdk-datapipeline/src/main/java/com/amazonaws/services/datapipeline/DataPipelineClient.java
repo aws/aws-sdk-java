@@ -108,10 +108,7 @@ public class DataPipelineClient extends AmazonWebServiceClient implements DataPi
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceError").withExceptionUnmarshaller(
                                     com.amazonaws.services.datapipeline.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.datapipeline.model.DataPipelineException>(
-                                            com.amazonaws.services.datapipeline.model.DataPipelineException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.datapipeline.model.DataPipelineException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Data Pipeline. A credentials provider chain will be used

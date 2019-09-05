@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryAlreadyExistsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException> {
+public class DirectoryAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryAlreadyExistsExceptionUnmarshaller() {
-        super("DirectoryAlreadyExistsException");
+        super(com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException.class, "DirectoryAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException directoryAlreadyExistsException = new com.amazonaws.services.clouddirectory.model.DirectoryAlreadyExistsException(
                 null);
 

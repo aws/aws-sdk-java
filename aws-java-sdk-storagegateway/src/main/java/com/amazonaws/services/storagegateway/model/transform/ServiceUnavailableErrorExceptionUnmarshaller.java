@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceUnavailableErrorException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceUnavailableErrorExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException> {
+public class ServiceUnavailableErrorExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceUnavailableErrorExceptionUnmarshaller() {
-        super("ServiceUnavailableError");
+        super(com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException.class, "ServiceUnavailableError");
     }
 
     @Override
-    public com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException serviceUnavailableErrorException = new com.amazonaws.services.storagegateway.model.ServiceUnavailableErrorException(
                 null);
 

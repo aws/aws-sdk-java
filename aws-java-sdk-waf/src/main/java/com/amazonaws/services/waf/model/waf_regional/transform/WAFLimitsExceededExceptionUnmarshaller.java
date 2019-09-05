@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFLimitsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFLimitsExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFLimitsExceededException> {
+public class WAFLimitsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFLimitsExceededExceptionUnmarshaller() {
-        super("WAFLimitsExceededException");
+        super(com.amazonaws.services.waf.model.WAFLimitsExceededException.class, "WAFLimitsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFLimitsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFLimitsExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFLimitsExceededException wAFLimitsExceededException = new com.amazonaws.services.waf.model.WAFLimitsExceededException(
                 null);
 

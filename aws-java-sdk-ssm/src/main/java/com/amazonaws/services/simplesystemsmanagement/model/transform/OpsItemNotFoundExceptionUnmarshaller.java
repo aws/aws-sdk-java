@@ -27,13 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OpsItemNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OpsItemNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException> {
+public class OpsItemNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OpsItemNotFoundExceptionUnmarshaller() {
-        super("OpsItemNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException.class, "OpsItemNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException opsItemNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.OpsItemNotFoundException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResourceArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResourceArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidResourceArnException> {
+public class InvalidResourceArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResourceArnExceptionUnmarshaller() {
-        super("InvalidResourceArnException");
+        super(com.amazonaws.services.codecommit.model.InvalidResourceArnException.class, "InvalidResourceArnException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidResourceArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidResourceArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidResourceArnException invalidResourceArnException = new com.amazonaws.services.codecommit.model.InvalidResourceArnException(
                 null);
 

@@ -178,10 +178,7 @@ public class AWSIotClient extends AmazonWebServiceClient implements AWSIot {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("CertificateValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.iot.model.transform.CertificateValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.iot.model.AWSIotException>(
-                                            com.amazonaws.services.iot.model.AWSIotException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.iot.model.AWSIotException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS IoT. A credentials provider chain will be used that

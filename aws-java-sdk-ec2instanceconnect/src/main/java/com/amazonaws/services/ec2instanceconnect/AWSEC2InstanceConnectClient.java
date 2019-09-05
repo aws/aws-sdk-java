@@ -92,10 +92,7 @@ public class AWSEC2InstanceConnectClient extends AmazonWebServiceClient implemen
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.ec2instanceconnect.model.transform.InvalidArgsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException>(
-                                            com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.ec2instanceconnect.model.AWSEC2InstanceConnectException.class));
 
     public static AWSEC2InstanceConnectClientBuilder builder() {
         return AWSEC2InstanceConnectClientBuilder.standard();

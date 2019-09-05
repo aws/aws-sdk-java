@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StorageLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StorageLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.StorageLimitExceededException> {
+public class StorageLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StorageLimitExceededExceptionUnmarshaller() {
-        super("StorageLimitExceededException");
+        super(com.amazonaws.services.workdocs.model.StorageLimitExceededException.class, "StorageLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.StorageLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.StorageLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.StorageLimitExceededException storageLimitExceededException = new com.amazonaws.services.workdocs.model.StorageLimitExceededException(
                 null);
 

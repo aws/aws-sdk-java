@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GrantFlowEntitlements420Exception JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GrantFlowEntitlements420ExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception> {
+public class GrantFlowEntitlements420ExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GrantFlowEntitlements420ExceptionUnmarshaller() {
-        super("GrantFlowEntitlements420Exception");
+        super(com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception.class, "GrantFlowEntitlements420Exception");
     }
 
     @Override
-    public com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception grantFlowEntitlements420Exception = new com.amazonaws.services.mediaconnect.model.GrantFlowEntitlements420Exception(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConcurrentUpdateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConcurrentUpdateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException> {
+public class ConcurrentUpdateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConcurrentUpdateExceptionUnmarshaller() {
-        super("ConcurrentUpdateException");
+        super(com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException.class, "ConcurrentUpdateException");
     }
 
     @Override
-    public com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException concurrentUpdateException = new com.amazonaws.services.autoscalingplans.model.ConcurrentUpdateException(
                 null);
 

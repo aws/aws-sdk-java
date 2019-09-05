@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SchedulerTransitioningException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SchedulerTransitioningExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.SchedulerTransitioningException> {
+public class SchedulerTransitioningExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SchedulerTransitioningExceptionUnmarshaller() {
-        super("SchedulerTransitioningException");
+        super(com.amazonaws.services.glue.model.SchedulerTransitioningException.class, "SchedulerTransitioningException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.SchedulerTransitioningException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.SchedulerTransitioningException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.SchedulerTransitioningException schedulerTransitioningException = new com.amazonaws.services.glue.model.SchedulerTransitioningException(
                 null);
 

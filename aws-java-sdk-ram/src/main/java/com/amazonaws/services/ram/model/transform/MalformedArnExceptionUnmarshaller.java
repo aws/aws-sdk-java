@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedArnException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedArnExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ram.model.MalformedArnException> {
+public class MalformedArnExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedArnExceptionUnmarshaller() {
-        super("MalformedArnException");
+        super(com.amazonaws.services.ram.model.MalformedArnException.class, "MalformedArnException");
     }
 
     @Override
-    public com.amazonaws.services.ram.model.MalformedArnException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ram.model.MalformedArnException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ram.model.MalformedArnException malformedArnException = new com.amazonaws.services.ram.model.MalformedArnException(null);
 
         int originalDepth = context.getCurrentDepth();

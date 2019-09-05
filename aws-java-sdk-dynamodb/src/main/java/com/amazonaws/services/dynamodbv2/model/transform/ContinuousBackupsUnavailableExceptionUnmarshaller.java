@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ContinuousBackupsUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContinuousBackupsUnavailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException> {
+public class ContinuousBackupsUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ContinuousBackupsUnavailableExceptionUnmarshaller() {
-        super("ContinuousBackupsUnavailableException");
+        super(com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException.class, "ContinuousBackupsUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException continuousBackupsUnavailableException = new com.amazonaws.services.dynamodbv2.model.ContinuousBackupsUnavailableException(
                 null);
 

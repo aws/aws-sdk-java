@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetGroupInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetGroupInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.SubnetGroupInUseException> {
+public class SubnetGroupInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetGroupInUseExceptionUnmarshaller() {
-        super("SubnetGroupInUseFault");
+        super(com.amazonaws.services.dax.model.SubnetGroupInUseException.class, "SubnetGroupInUseFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.SubnetGroupInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.SubnetGroupInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.SubnetGroupInUseException subnetGroupInUseException = new com.amazonaws.services.dax.model.SubnetGroupInUseException(
                 null);
 

@@ -73,6 +73,30 @@ public class RemediationConfigurationJsonUnmarshaller implements Unmarshaller<Re
                     context.nextToken();
                     remediationConfiguration.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Automatic", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setAutomatic(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("ExecutionControls", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setExecutionControls(ExecutionControlsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MaximumAutomaticAttempts", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setMaximumAutomaticAttempts(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("RetryAttemptSeconds", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setRetryAttemptSeconds(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("Arn", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CreatedByService", targetDepth)) {
+                    context.nextToken();
+                    remediationConfiguration.setCreatedByService(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

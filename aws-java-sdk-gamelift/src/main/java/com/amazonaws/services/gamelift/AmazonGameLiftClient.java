@@ -159,10 +159,7 @@ public class AmazonGameLiftClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.gamelift.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.gamelift.model.AmazonGameLiftException>(
-                                            com.amazonaws.services.gamelift.model.AmazonGameLiftException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.gamelift.model.AmazonGameLiftException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon GameLift. A credentials provider chain will be used

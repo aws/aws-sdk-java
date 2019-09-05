@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConstraintViolationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConstraintViolationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.ConstraintViolationException> {
+public class ConstraintViolationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConstraintViolationExceptionUnmarshaller() {
-        super("ConstraintViolationException");
+        super(com.amazonaws.services.organizations.model.ConstraintViolationException.class, "ConstraintViolationException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.ConstraintViolationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.ConstraintViolationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.ConstraintViolationException constraintViolationException = new com.amazonaws.services.organizations.model.ConstraintViolationException(
                 null);
 

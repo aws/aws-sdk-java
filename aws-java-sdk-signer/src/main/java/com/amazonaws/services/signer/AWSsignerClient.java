@@ -101,10 +101,7 @@ public class AWSsignerClient extends AmazonWebServiceClient implements AWSsigner
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.signer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.signer.model.AWSsignerException>(
-                                            com.amazonaws.services.signer.model.AWSsignerException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.signer.model.AWSsignerException.class));
 
     public static AWSsignerClientBuilder builder() {
         return AWSsignerClientBuilder.standard();

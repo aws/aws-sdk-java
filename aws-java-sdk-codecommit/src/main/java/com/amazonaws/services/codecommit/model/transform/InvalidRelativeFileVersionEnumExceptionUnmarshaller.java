@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRelativeFileVersionEnumException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRelativeFileVersionEnumExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException> {
+public class InvalidRelativeFileVersionEnumExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRelativeFileVersionEnumExceptionUnmarshaller() {
-        super("InvalidRelativeFileVersionEnumException");
+        super(com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException.class, "InvalidRelativeFileVersionEnumException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException invalidRelativeFileVersionEnumException = new com.amazonaws.services.codecommit.model.InvalidRelativeFileVersionEnumException(
                 null);
 

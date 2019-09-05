@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountSetupInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountSetupInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lightsail.model.AccountSetupInProgressException> {
+public class AccountSetupInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountSetupInProgressExceptionUnmarshaller() {
-        super("AccountSetupInProgressException");
+        super(com.amazonaws.services.lightsail.model.AccountSetupInProgressException.class, "AccountSetupInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.lightsail.model.AccountSetupInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lightsail.model.AccountSetupInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lightsail.model.AccountSetupInProgressException accountSetupInProgressException = new com.amazonaws.services.lightsail.model.AccountSetupInProgressException(
                 null);
 

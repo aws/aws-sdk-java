@@ -27,14 +27,15 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxNumberOfConfigurationRecordersExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException> {
+public class MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxNumberOfConfigurationRecordersExceededExceptionUnmarshaller() {
-        super("MaxNumberOfConfigurationRecordersExceededException");
+        super(com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException.class,
+                "MaxNumberOfConfigurationRecordersExceededException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException maxNumberOfConfigurationRecordersExceededException = new com.amazonaws.services.config.model.MaxNumberOfConfigurationRecordersExceededException(
                 null);
 

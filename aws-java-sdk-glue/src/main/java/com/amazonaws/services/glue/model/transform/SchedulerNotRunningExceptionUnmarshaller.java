@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SchedulerNotRunningException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SchedulerNotRunningExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.SchedulerNotRunningException> {
+public class SchedulerNotRunningExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SchedulerNotRunningExceptionUnmarshaller() {
-        super("SchedulerNotRunningException");
+        super(com.amazonaws.services.glue.model.SchedulerNotRunningException.class, "SchedulerNotRunningException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.SchedulerNotRunningException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.SchedulerNotRunningException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.SchedulerNotRunningException schedulerNotRunningException = new com.amazonaws.services.glue.model.SchedulerNotRunningException(
                 null);
 

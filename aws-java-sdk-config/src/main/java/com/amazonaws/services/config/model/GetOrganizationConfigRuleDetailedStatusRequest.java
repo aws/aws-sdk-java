@@ -25,16 +25,40 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The name of organization config rule for which you want status details for member accounts.
+     * </p>
+     */
     private String organizationConfigRuleName;
-
+    /**
+     * <p>
+     * A <code>StatusDetailFilters</code> object.
+     * </p>
+     */
     private StatusDetailFilters filters;
-
+    /**
+     * <p>
+     * The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not
+     * specify a number, AWS Config uses the default. The default is 100.
+     * </p>
+     */
     private Integer limit;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     */
     private String nextToken;
 
     /**
+     * <p>
+     * The name of organization config rule for which you want status details for member accounts.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name of organization config rule for which you want status details for member accounts.
      */
 
     public void setOrganizationConfigRuleName(String organizationConfigRuleName) {
@@ -42,7 +66,11 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
-     * @return
+     * <p>
+     * The name of organization config rule for which you want status details for member accounts.
+     * </p>
+     * 
+     * @return The name of organization config rule for which you want status details for member accounts.
      */
 
     public String getOrganizationConfigRuleName() {
@@ -50,7 +78,12 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The name of organization config rule for which you want status details for member accounts.
+     * </p>
+     * 
      * @param organizationConfigRuleName
+     *        The name of organization config rule for which you want status details for member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -60,7 +93,12 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * A <code>StatusDetailFilters</code> object.
+     * </p>
+     * 
      * @param filters
+     *        A <code>StatusDetailFilters</code> object.
      */
 
     public void setFilters(StatusDetailFilters filters) {
@@ -68,7 +106,11 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
-     * @return
+     * <p>
+     * A <code>StatusDetailFilters</code> object.
+     * </p>
+     * 
+     * @return A <code>StatusDetailFilters</code> object.
      */
 
     public StatusDetailFilters getFilters() {
@@ -76,7 +118,12 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * A <code>StatusDetailFilters</code> object.
+     * </p>
+     * 
      * @param filters
+     *        A <code>StatusDetailFilters</code> object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +133,14 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not
+     * specify a number, AWS Config uses the default. The default is 100.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do
+     *        not specify a number, AWS Config uses the default. The default is 100.
      */
 
     public void setLimit(Integer limit) {
@@ -94,7 +148,13 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not
+     * specify a number, AWS Config uses the default. The default is 100.
+     * </p>
+     * 
+     * @return The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do
+     *         not specify a number, AWS Config uses the default. The default is 100.
      */
 
     public Integer getLimit() {
@@ -102,7 +162,14 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do not
+     * specify a number, AWS Config uses the default. The default is 100.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of <code>OrganizationConfigRuleDetailedStatus</code> returned on each page. If you do
+     *        not specify a number, AWS Config uses the default. The default is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,7 +179,14 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -120,7 +194,13 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -128,7 +208,14 @@ public class GetOrganizationConfigRuleDetailedStatusRequest extends com.amazonaw
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

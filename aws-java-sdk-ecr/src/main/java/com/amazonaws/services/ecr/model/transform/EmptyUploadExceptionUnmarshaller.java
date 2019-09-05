@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EmptyUploadException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EmptyUploadExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecr.model.EmptyUploadException> {
+public class EmptyUploadExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EmptyUploadExceptionUnmarshaller() {
-        super("EmptyUploadException");
+        super(com.amazonaws.services.ecr.model.EmptyUploadException.class, "EmptyUploadException");
     }
 
     @Override
-    public com.amazonaws.services.ecr.model.EmptyUploadException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecr.model.EmptyUploadException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecr.model.EmptyUploadException emptyUploadException = new com.amazonaws.services.ecr.model.EmptyUploadException(null);
 
         int originalDepth = context.getCurrentDepth();

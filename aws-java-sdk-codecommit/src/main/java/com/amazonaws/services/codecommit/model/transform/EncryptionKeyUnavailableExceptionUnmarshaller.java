@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionKeyUnavailableException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionKeyUnavailableExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException> {
+public class EncryptionKeyUnavailableExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionKeyUnavailableExceptionUnmarshaller() {
-        super("EncryptionKeyUnavailableException");
+        super(com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException.class, "EncryptionKeyUnavailableException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException encryptionKeyUnavailableException = new com.amazonaws.services.codecommit.model.EncryptionKeyUnavailableException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidARNException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidARNExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.InvalidARNException> {
+public class InvalidARNExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidARNExceptionUnmarshaller() {
-        super("InvalidARNFault");
+        super(com.amazonaws.services.dax.model.InvalidARNException.class, "InvalidARNFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.InvalidARNException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.InvalidARNException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.InvalidARNException invalidARNException = new com.amazonaws.services.dax.model.InvalidARNException(null);
 
         int originalDepth = context.getCurrentDepth();

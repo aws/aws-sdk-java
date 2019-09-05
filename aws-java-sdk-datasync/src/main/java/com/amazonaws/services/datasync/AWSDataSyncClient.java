@@ -88,10 +88,7 @@ public class AWSDataSyncClient extends AmazonWebServiceClient implements AWSData
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalException").withExceptionUnmarshaller(
                                     com.amazonaws.services.datasync.model.transform.InternalExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.datasync.model.AWSDataSyncException>(
-                                            com.amazonaws.services.datasync.model.AWSDataSyncException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.datasync.model.AWSDataSyncException.class));
 
     public static AWSDataSyncClientBuilder builder() {
         return AWSDataSyncClientBuilder.standard();

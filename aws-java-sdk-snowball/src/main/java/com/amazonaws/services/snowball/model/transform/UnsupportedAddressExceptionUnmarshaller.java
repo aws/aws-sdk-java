@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedAddressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedAddressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.UnsupportedAddressException> {
+public class UnsupportedAddressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedAddressExceptionUnmarshaller() {
-        super("UnsupportedAddressException");
+        super(com.amazonaws.services.snowball.model.UnsupportedAddressException.class, "UnsupportedAddressException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.UnsupportedAddressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.UnsupportedAddressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.UnsupportedAddressException unsupportedAddressException = new com.amazonaws.services.snowball.model.UnsupportedAddressException(
                 null);
 

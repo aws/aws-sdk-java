@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ScopeDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ScopeDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException> {
+public class ScopeDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ScopeDoesNotExistExceptionUnmarshaller() {
-        super("ScopeDoesNotExistException");
+        super(com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException.class, "ScopeDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException scopeDoesNotExistException = new com.amazonaws.services.cognitoidp.model.ScopeDoesNotExistException(
                 null);
 

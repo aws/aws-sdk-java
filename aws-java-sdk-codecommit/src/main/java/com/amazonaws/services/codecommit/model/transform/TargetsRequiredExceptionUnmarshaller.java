@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TargetsRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TargetsRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.TargetsRequiredException> {
+public class TargetsRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TargetsRequiredExceptionUnmarshaller() {
-        super("TargetsRequiredException");
+        super(com.amazonaws.services.codecommit.model.TargetsRequiredException.class, "TargetsRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.TargetsRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.TargetsRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.TargetsRequiredException targetsRequiredException = new com.amazonaws.services.codecommit.model.TargetsRequiredException(
                 null);
 

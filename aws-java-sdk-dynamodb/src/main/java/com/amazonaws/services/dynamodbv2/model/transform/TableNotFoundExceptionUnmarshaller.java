@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TableNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TableNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.TableNotFoundException> {
+public class TableNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TableNotFoundExceptionUnmarshaller() {
-        super("TableNotFoundException");
+        super(com.amazonaws.services.dynamodbv2.model.TableNotFoundException.class, "TableNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.TableNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.TableNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.TableNotFoundException tableNotFoundException = new com.amazonaws.services.dynamodbv2.model.TableNotFoundException(
                 null);
 

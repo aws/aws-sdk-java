@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidStageDeclarationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidStageDeclarationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException> {
+public class InvalidStageDeclarationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidStageDeclarationExceptionUnmarshaller() {
-        super("InvalidStageDeclarationException");
+        super(com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException.class, "InvalidStageDeclarationException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException invalidStageDeclarationException = new com.amazonaws.services.codepipeline.model.InvalidStageDeclarationException(
                 null);
 

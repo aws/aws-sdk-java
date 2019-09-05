@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchRemediationConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchRemediationConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchRemediationConfigurationException> {
+public class NoSuchRemediationConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchRemediationConfigurationExceptionUnmarshaller() {
-        super("NoSuchRemediationConfigurationException");
+        super(com.amazonaws.services.config.model.NoSuchRemediationConfigurationException.class, "NoSuchRemediationConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchRemediationConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchRemediationConfigurationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchRemediationConfigurationException noSuchRemediationConfigurationException = new com.amazonaws.services.config.model.NoSuchRemediationConfigurationException(
                 null);
 

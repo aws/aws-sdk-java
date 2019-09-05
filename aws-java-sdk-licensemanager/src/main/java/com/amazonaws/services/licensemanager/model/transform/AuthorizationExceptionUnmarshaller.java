@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AuthorizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AuthorizationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.licensemanager.model.AuthorizationException> {
+public class AuthorizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AuthorizationExceptionUnmarshaller() {
-        super("AuthorizationException");
+        super(com.amazonaws.services.licensemanager.model.AuthorizationException.class, "AuthorizationException");
     }
 
     @Override
-    public com.amazonaws.services.licensemanager.model.AuthorizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.licensemanager.model.AuthorizationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.licensemanager.model.AuthorizationException authorizationException = new com.amazonaws.services.licensemanager.model.AuthorizationException(
                 null);
 

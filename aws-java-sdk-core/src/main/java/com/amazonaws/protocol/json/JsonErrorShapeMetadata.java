@@ -14,7 +14,6 @@
  */
 package com.amazonaws.protocol.json;
 
-import com.amazonaws.AmazonServiceException;
 import com.amazonaws.annotation.NotThreadSafe;
 import com.amazonaws.annotation.SdkProtectedApi;
 import com.amazonaws.transform.JsonErrorUnmarshaller;
@@ -33,7 +32,7 @@ public class JsonErrorShapeMetadata {
 
     private Class<? extends RuntimeException> modeledClass;
 
-    private JsonErrorUnmarshaller<? extends AmazonServiceException> exceptionUnmarshaller;
+    private JsonErrorUnmarshaller exceptionUnmarshaller;
 
 
     public String getErrorCode() {
@@ -63,12 +62,12 @@ public class JsonErrorShapeMetadata {
         return this;
     }
 
-    public JsonErrorShapeMetadata withExceptionUnmarshaller(JsonErrorUnmarshaller<? extends AmazonServiceException> exceptionUnmarshaller) {
+    public JsonErrorShapeMetadata withExceptionUnmarshaller(JsonErrorUnmarshaller exceptionUnmarshaller) {
         this.exceptionUnmarshaller = exceptionUnmarshaller;
         return this;
     }
 
-    public JsonErrorUnmarshaller<? extends AmazonServiceException> getExceptionUnmarshaller() {
+    public JsonErrorUnmarshaller getExceptionUnmarshaller() {
         return exceptionUnmarshaller;
     }
 }

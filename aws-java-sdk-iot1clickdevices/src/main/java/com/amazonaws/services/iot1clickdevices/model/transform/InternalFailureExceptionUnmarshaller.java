@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InternalFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InternalFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot1clickdevices.model.InternalFailureException> {
+public class InternalFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InternalFailureExceptionUnmarshaller() {
-        super("InternalFailureException");
+        super(com.amazonaws.services.iot1clickdevices.model.InternalFailureException.class, "InternalFailureException");
     }
 
     @Override
-    public com.amazonaws.services.iot1clickdevices.model.InternalFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot1clickdevices.model.InternalFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot1clickdevices.model.InternalFailureException internalFailureException = new com.amazonaws.services.iot1clickdevices.model.InternalFailureException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * HierarchyTypeMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class HierarchyTypeMismatchExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException> {
+public class HierarchyTypeMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private HierarchyTypeMismatchExceptionUnmarshaller() {
-        super("HierarchyTypeMismatchException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException.class, "HierarchyTypeMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException hierarchyTypeMismatchException = new com.amazonaws.services.simplesystemsmanagement.model.HierarchyTypeMismatchException(
                 null);
 

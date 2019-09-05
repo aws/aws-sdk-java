@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyLabelsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyLabelsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.TooManyLabelsException> {
+public class TooManyLabelsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyLabelsExceptionUnmarshaller() {
-        super("TooManyLabelsException");
+        super(com.amazonaws.services.workdocs.model.TooManyLabelsException.class, "TooManyLabelsException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.TooManyLabelsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.TooManyLabelsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.TooManyLabelsException tooManyLabelsException = new com.amazonaws.services.workdocs.model.TooManyLabelsException(
                 null);
 

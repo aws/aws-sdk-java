@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomKeyStoreHasCMKsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomKeyStoreHasCMKsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException> {
+public class CustomKeyStoreHasCMKsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomKeyStoreHasCMKsExceptionUnmarshaller() {
-        super("CustomKeyStoreHasCMKsException");
+        super(com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException.class, "CustomKeyStoreHasCMKsException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException customKeyStoreHasCMKsException = new com.amazonaws.services.kms.model.CustomKeyStoreHasCMKsException(
                 null);
 

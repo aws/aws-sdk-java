@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoAvailableConfigurationRecorderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoAvailableConfigurationRecorderExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException> {
+public class NoAvailableConfigurationRecorderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoAvailableConfigurationRecorderExceptionUnmarshaller() {
-        super("NoAvailableConfigurationRecorderException");
+        super(com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException.class, "NoAvailableConfigurationRecorderException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException noAvailableConfigurationRecorderException = new com.amazonaws.services.config.model.NoAvailableConfigurationRecorderException(
                 null);
 

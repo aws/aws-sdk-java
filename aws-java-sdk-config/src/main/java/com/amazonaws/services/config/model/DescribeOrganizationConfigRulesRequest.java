@@ -25,14 +25,36 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The names of organization config rules for which you want details. If you do not specify any names, AWS Config
+     * returns details for all your organization config rules.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<String> organizationConfigRuleNames;
-
+    /**
+     * <p>
+     * The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config
+     * uses the default. The default is 100.
+     * </p>
+     */
     private Integer limit;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * The names of organization config rules for which you want details. If you do not specify any names, AWS Config
+     * returns details for all your organization config rules.
+     * </p>
+     * 
+     * @return The names of organization config rules for which you want details. If you do not specify any names, AWS
+     *         Config returns details for all your organization config rules.
      */
 
     public java.util.List<String> getOrganizationConfigRuleNames() {
@@ -43,7 +65,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The names of organization config rules for which you want details. If you do not specify any names, AWS Config
+     * returns details for all your organization config rules.
+     * </p>
+     * 
      * @param organizationConfigRuleNames
+     *        The names of organization config rules for which you want details. If you do not specify any names, AWS
+     *        Config returns details for all your organization config rules.
      */
 
     public void setOrganizationConfigRuleNames(java.util.Collection<String> organizationConfigRuleNames) {
@@ -57,12 +86,18 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
+     * The names of organization config rules for which you want details. If you do not specify any names, AWS Config
+     * returns details for all your organization config rules.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOrganizationConfigRuleNames(java.util.Collection)} or
      * {@link #withOrganizationConfigRuleNames(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param organizationConfigRuleNames
+     *        The names of organization config rules for which you want details. If you do not specify any names, AWS
+     *        Config returns details for all your organization config rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -77,7 +112,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The names of organization config rules for which you want details. If you do not specify any names, AWS Config
+     * returns details for all your organization config rules.
+     * </p>
+     * 
      * @param organizationConfigRuleNames
+     *        The names of organization config rules for which you want details. If you do not specify any names, AWS
+     *        Config returns details for all your organization config rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,7 +129,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config
+     * uses the default. The default is 100.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of organization config rules returned on each page. If you do no specify a number, AWS
+     *        Config uses the default. The default is 100.
      */
 
     public void setLimit(Integer limit) {
@@ -95,7 +144,13 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config
+     * uses the default. The default is 100.
+     * </p>
+     * 
+     * @return The maximum number of organization config rules returned on each page. If you do no specify a number, AWS
+     *         Config uses the default. The default is 100.
      */
 
     public Integer getLimit() {
@@ -103,7 +158,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The maximum number of organization config rules returned on each page. If you do no specify a number, AWS Config
+     * uses the default. The default is 100.
+     * </p>
+     * 
      * @param limit
+     *        The maximum number of organization config rules returned on each page. If you do no specify a number, AWS
+     *        Config uses the default. The default is 100.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,7 +175,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,7 +190,13 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -129,7 +204,14 @@ public class DescribeOrganizationConfigRulesRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

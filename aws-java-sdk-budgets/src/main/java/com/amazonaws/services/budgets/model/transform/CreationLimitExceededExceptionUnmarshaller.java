@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CreationLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreationLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.budgets.model.CreationLimitExceededException> {
+public class CreationLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CreationLimitExceededExceptionUnmarshaller() {
-        super("CreationLimitExceededException");
+        super(com.amazonaws.services.budgets.model.CreationLimitExceededException.class, "CreationLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.budgets.model.CreationLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.budgets.model.CreationLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.budgets.model.CreationLimitExceededException creationLimitExceededException = new com.amazonaws.services.budgets.model.CreationLimitExceededException(
                 null);
 

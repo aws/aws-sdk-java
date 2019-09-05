@@ -125,10 +125,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PreconditionNotMetException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.PreconditionNotMetExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.quicksight.model.AmazonQuickSightException>(
-                                            com.amazonaws.services.quicksight.model.AmazonQuickSightException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.quicksight.model.AmazonQuickSightException.class));
 
     public static AmazonQuickSightClientBuilder builder() {
         return AmazonQuickSightClientBuilder.standard();

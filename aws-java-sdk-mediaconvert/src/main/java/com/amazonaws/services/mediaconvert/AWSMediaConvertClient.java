@@ -93,10 +93,7 @@ public class AWSMediaConvertClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.mediaconvert.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.mediaconvert.model.AWSMediaConvertException>(
-                                            com.amazonaws.services.mediaconvert.model.AWSMediaConvertException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.mediaconvert.model.AWSMediaConvertException.class));
 
     public static AWSMediaConvertClientBuilder builder() {
         return AWSMediaConvertClientBuilder.standard();

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOutputLocationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOutputLocationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException> {
+public class InvalidOutputLocationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOutputLocationExceptionUnmarshaller() {
-        super("InvalidOutputLocation");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException.class, "InvalidOutputLocation");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException invalidOutputLocationException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidOutputLocationException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientS3BucketPolicyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientS3BucketPolicyExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException> {
+public class InsufficientS3BucketPolicyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientS3BucketPolicyExceptionUnmarshaller() {
-        super("InsufficientS3BucketPolicyException");
+        super(com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException.class, "InsufficientS3BucketPolicyException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException insufficientS3BucketPolicyException = new com.amazonaws.services.cloudtrail.model.InsufficientS3BucketPolicyException(
                 null);
 

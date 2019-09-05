@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CreateFlow420Exception JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CreateFlow420ExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mediaconnect.model.CreateFlow420Exception> {
+public class CreateFlow420ExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CreateFlow420ExceptionUnmarshaller() {
-        super("CreateFlow420Exception");
+        super(com.amazonaws.services.mediaconnect.model.CreateFlow420Exception.class, "CreateFlow420Exception");
     }
 
     @Override
-    public com.amazonaws.services.mediaconnect.model.CreateFlow420Exception unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediaconnect.model.CreateFlow420Exception unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediaconnect.model.CreateFlow420Exception createFlow420Exception = new com.amazonaws.services.mediaconnect.model.CreateFlow420Exception(
                 null);
 

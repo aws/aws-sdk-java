@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TooManyTagsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TooManyTagsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.certificatemanager.model.TooManyTagsException> {
+public class TooManyTagsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TooManyTagsExceptionUnmarshaller() {
-        super("TooManyTagsException");
+        super(com.amazonaws.services.certificatemanager.model.TooManyTagsException.class, "TooManyTagsException");
     }
 
     @Override
-    public com.amazonaws.services.certificatemanager.model.TooManyTagsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.certificatemanager.model.TooManyTagsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.certificatemanager.model.TooManyTagsException tooManyTagsException = new com.amazonaws.services.certificatemanager.model.TooManyTagsException(
                 null);
 

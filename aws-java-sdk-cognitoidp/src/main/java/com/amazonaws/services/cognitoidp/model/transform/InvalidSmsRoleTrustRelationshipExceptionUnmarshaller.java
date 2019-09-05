@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSmsRoleTrustRelationshipException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSmsRoleTrustRelationshipExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException> {
+public class InvalidSmsRoleTrustRelationshipExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSmsRoleTrustRelationshipExceptionUnmarshaller() {
-        super("InvalidSmsRoleTrustRelationshipException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException.class, "InvalidSmsRoleTrustRelationshipException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException invalidSmsRoleTrustRelationshipException = new com.amazonaws.services.cognitoidp.model.InvalidSmsRoleTrustRelationshipException(
                 null);
 

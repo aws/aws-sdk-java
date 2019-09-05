@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectoryNotSharedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectoryNotSharedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.DirectoryNotSharedException> {
+public class DirectoryNotSharedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectoryNotSharedExceptionUnmarshaller() {
-        super("DirectoryNotSharedException");
+        super(com.amazonaws.services.directory.model.DirectoryNotSharedException.class, "DirectoryNotSharedException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.DirectoryNotSharedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.DirectoryNotSharedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.DirectoryNotSharedException directoryNotSharedException = new com.amazonaws.services.directory.model.DirectoryNotSharedException(
                 null);
 

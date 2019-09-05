@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * EncryptionFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class EncryptionFailureExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.secretsmanager.model.EncryptionFailureException> {
+public class EncryptionFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private EncryptionFailureExceptionUnmarshaller() {
-        super("EncryptionFailure");
+        super(com.amazonaws.services.secretsmanager.model.EncryptionFailureException.class, "EncryptionFailure");
     }
 
     @Override
-    public com.amazonaws.services.secretsmanager.model.EncryptionFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.secretsmanager.model.EncryptionFailureException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.secretsmanager.model.EncryptionFailureException encryptionFailureException = new com.amazonaws.services.secretsmanager.model.EncryptionFailureException(
                 null);
 

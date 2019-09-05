@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeactivatingLastSystemUserException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeactivatingLastSystemUserExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException> {
+public class DeactivatingLastSystemUserExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeactivatingLastSystemUserExceptionUnmarshaller() {
-        super("DeactivatingLastSystemUserException");
+        super(com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException.class, "DeactivatingLastSystemUserException");
     }
 
     @Override
-    public com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException deactivatingLastSystemUserException = new com.amazonaws.services.workdocs.model.DeactivatingLastSystemUserException(
                 null);
 

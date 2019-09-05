@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidFleetStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidFleetStatusExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.InvalidFleetStatusException> {
+public class InvalidFleetStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidFleetStatusExceptionUnmarshaller() {
-        super("InvalidFleetStatusException");
+        super(com.amazonaws.services.gamelift.model.InvalidFleetStatusException.class, "InvalidFleetStatusException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.InvalidFleetStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.InvalidFleetStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.InvalidFleetStatusException invalidFleetStatusException = new com.amazonaws.services.gamelift.model.InvalidFleetStatusException(
                 null);
 

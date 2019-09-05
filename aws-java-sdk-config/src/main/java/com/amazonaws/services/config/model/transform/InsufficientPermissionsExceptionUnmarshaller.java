@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InsufficientPermissionsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InsufficientPermissionsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InsufficientPermissionsException> {
+public class InsufficientPermissionsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InsufficientPermissionsExceptionUnmarshaller() {
-        super("InsufficientPermissionsException");
+        super(com.amazonaws.services.config.model.InsufficientPermissionsException.class, "InsufficientPermissionsException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InsufficientPermissionsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InsufficientPermissionsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InsufficientPermissionsException insufficientPermissionsException = new com.amazonaws.services.config.model.InsufficientPermissionsException(
                 null);
 

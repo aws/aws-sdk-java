@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RateLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RateLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.licensemanager.model.RateLimitExceededException> {
+public class RateLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RateLimitExceededExceptionUnmarshaller() {
-        super("RateLimitExceededException");
+        super(com.amazonaws.services.licensemanager.model.RateLimitExceededException.class, "RateLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.licensemanager.model.RateLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.licensemanager.model.RateLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.licensemanager.model.RateLimitExceededException rateLimitExceededException = new com.amazonaws.services.licensemanager.model.RateLimitExceededException(
                 null);
 

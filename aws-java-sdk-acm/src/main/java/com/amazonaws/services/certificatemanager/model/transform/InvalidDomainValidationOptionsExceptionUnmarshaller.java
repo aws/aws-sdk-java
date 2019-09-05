@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidDomainValidationOptionsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidDomainValidationOptionsExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException> {
+public class InvalidDomainValidationOptionsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidDomainValidationOptionsExceptionUnmarshaller() {
-        super("InvalidDomainValidationOptionsException");
+        super(com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException.class, "InvalidDomainValidationOptionsException");
     }
 
     @Override
-    public com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException invalidDomainValidationOptionsException = new com.amazonaws.services.certificatemanager.model.InvalidDomainValidationOptionsException(
                 null);
 

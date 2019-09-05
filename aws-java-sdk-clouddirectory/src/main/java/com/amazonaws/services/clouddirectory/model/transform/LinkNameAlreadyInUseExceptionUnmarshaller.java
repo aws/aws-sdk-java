@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LinkNameAlreadyInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LinkNameAlreadyInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException> {
+public class LinkNameAlreadyInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LinkNameAlreadyInUseExceptionUnmarshaller() {
-        super("LinkNameAlreadyInUseException");
+        super(com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException.class, "LinkNameAlreadyInUseException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException linkNameAlreadyInUseException = new com.amazonaws.services.clouddirectory.model.LinkNameAlreadyInUseException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReservedNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReservedNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.ReservedNameException> {
+public class ReservedNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReservedNameExceptionUnmarshaller() {
-        super("ReservedNameException");
+        super(com.amazonaws.services.workmail.model.ReservedNameException.class, "ReservedNameException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.ReservedNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.ReservedNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.ReservedNameException reservedNameException = new com.amazonaws.services.workmail.model.ReservedNameException(
                 null);
 

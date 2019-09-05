@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagsPerResourceExceededLimitException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagsPerResourceExceededLimitExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException> {
+public class TagsPerResourceExceededLimitExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagsPerResourceExceededLimitExceptionUnmarshaller() {
-        super("TagsPerResourceExceededLimitException");
+        super(com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException.class, "TagsPerResourceExceededLimitException");
     }
 
     @Override
-    public com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException tagsPerResourceExceededLimitException = new com.amazonaws.services.kinesisvideo.model.TagsPerResourceExceededLimitException(
                 null);
 

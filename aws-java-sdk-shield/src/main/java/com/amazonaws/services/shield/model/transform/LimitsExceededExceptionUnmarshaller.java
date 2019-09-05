@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LimitsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LimitsExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.shield.model.LimitsExceededException> {
+public class LimitsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LimitsExceededExceptionUnmarshaller() {
-        super("LimitsExceededException");
+        super(com.amazonaws.services.shield.model.LimitsExceededException.class, "LimitsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.shield.model.LimitsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.shield.model.LimitsExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.shield.model.LimitsExceededException limitsExceededException = new com.amazonaws.services.shield.model.LimitsExceededException(
                 null);
 

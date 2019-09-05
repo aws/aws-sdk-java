@@ -16,8 +16,36 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The rule is currently being deleted or the rule is deleting your evaluation results. Try your request again later.
+ * You see this exception in the following cases:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * For DeleteConfigRule API, AWS Config is deleting this rule. Try your request again later.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For DeleteConfigRule API, the rule is deleting your evaluation results. Try your request again later.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For DeleteConfigRule API, a remediation action is associated with the rule and AWS Config cannot delete this rule.
+ * Delete the remediation action associated with the rule before deleting the rule and try your request again later.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For PutConfigOrganizationRule, organization config rule deletion is in progress. Try your request again later.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For DeleteOrganizationConfigRule, organization config rule creation is in progress. Try your request again later.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceInUseException extends com.amazonaws.services.config.model.AmazonConfigException {

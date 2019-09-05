@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SNSNoAuthorizationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SNSNoAuthorizationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException> {
+public class SNSNoAuthorizationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SNSNoAuthorizationExceptionUnmarshaller() {
-        super("SNSNoAuthorizationFault");
+        super(com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException.class, "SNSNoAuthorizationFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException sNSNoAuthorizationException = new com.amazonaws.services.databasemigrationservice.model.SNSNoAuthorizationException(
                 null);
 

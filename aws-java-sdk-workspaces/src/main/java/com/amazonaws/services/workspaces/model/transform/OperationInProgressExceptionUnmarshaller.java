@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationInProgressException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationInProgressExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workspaces.model.OperationInProgressException> {
+public class OperationInProgressExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationInProgressExceptionUnmarshaller() {
-        super("OperationInProgressException");
+        super(com.amazonaws.services.workspaces.model.OperationInProgressException.class, "OperationInProgressException");
     }
 
     @Override
-    public com.amazonaws.services.workspaces.model.OperationInProgressException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workspaces.model.OperationInProgressException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workspaces.model.OperationInProgressException operationInProgressException = new com.amazonaws.services.workspaces.model.OperationInProgressException(
                 null);
 

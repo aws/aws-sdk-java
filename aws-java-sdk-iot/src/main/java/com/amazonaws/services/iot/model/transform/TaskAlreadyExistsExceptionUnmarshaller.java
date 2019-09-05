@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TaskAlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskAlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.TaskAlreadyExistsException> {
+public class TaskAlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TaskAlreadyExistsExceptionUnmarshaller() {
-        super("TaskAlreadyExistsException");
+        super(com.amazonaws.services.iot.model.TaskAlreadyExistsException.class, "TaskAlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.TaskAlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.TaskAlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.TaskAlreadyExistsException taskAlreadyExistsException = new com.amazonaws.services.iot.model.TaskAlreadyExistsException(
                 null);
 

@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AutomationDefinitionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AutomationDefinitionNotFoundExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException> {
+public class AutomationDefinitionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AutomationDefinitionNotFoundExceptionUnmarshaller() {
-        super("AutomationDefinitionNotFoundException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException.class, "AutomationDefinitionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException unmarshall(JsonUnmarshallerContext context)
+    public com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context)
             throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException automationDefinitionNotFoundException = new com.amazonaws.services.simplesystemsmanagement.model.AutomationDefinitionNotFoundException(
                 null);

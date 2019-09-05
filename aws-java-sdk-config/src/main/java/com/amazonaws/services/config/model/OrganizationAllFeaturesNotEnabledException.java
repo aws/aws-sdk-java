@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The configuration aggregator cannot be created because organization does not have all features enabled.
+ * AWS Config resource cannot be created because your organization does not have all features enabled.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

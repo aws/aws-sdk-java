@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidMaxConflictFilesException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidMaxConflictFilesExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException> {
+public class InvalidMaxConflictFilesExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidMaxConflictFilesExceptionUnmarshaller() {
-        super("InvalidMaxConflictFilesException");
+        super(com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException.class, "InvalidMaxConflictFilesException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException invalidMaxConflictFilesException = new com.amazonaws.services.codecommit.model.InvalidMaxConflictFilesException(
                 null);
 

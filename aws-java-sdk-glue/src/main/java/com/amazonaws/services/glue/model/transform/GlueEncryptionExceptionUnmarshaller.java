@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GlueEncryptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GlueEncryptionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.GlueEncryptionException> {
+public class GlueEncryptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GlueEncryptionExceptionUnmarshaller() {
-        super("GlueEncryptionException");
+        super(com.amazonaws.services.glue.model.GlueEncryptionException.class, "GlueEncryptionException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.GlueEncryptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.GlueEncryptionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.GlueEncryptionException glueEncryptionException = new com.amazonaws.services.glue.model.GlueEncryptionException(null);
 
         int originalDepth = context.getCurrentDepth();

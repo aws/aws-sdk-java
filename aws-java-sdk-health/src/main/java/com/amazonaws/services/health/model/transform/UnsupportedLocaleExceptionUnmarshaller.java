@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedLocaleException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedLocaleExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.health.model.UnsupportedLocaleException> {
+public class UnsupportedLocaleExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedLocaleExceptionUnmarshaller() {
-        super("UnsupportedLocale");
+        super(com.amazonaws.services.health.model.UnsupportedLocaleException.class, "UnsupportedLocale");
     }
 
     @Override
-    public com.amazonaws.services.health.model.UnsupportedLocaleException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.health.model.UnsupportedLocaleException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.health.model.UnsupportedLocaleException unsupportedLocaleException = new com.amazonaws.services.health.model.UnsupportedLocaleException(
                 null);
 

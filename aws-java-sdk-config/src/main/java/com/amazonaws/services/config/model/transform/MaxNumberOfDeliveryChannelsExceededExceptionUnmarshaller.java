@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaxNumberOfDeliveryChannelsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException> {
+public class MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller() {
-        super("MaxNumberOfDeliveryChannelsExceededException");
+        super(com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException.class, "MaxNumberOfDeliveryChannelsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException maxNumberOfDeliveryChannelsExceededException = new com.amazonaws.services.config.model.MaxNumberOfDeliveryChannelsExceededException(
                 null);
 

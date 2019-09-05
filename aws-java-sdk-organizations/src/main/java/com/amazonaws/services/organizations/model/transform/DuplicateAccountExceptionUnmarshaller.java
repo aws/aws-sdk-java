@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateAccountException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateAccountExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.DuplicateAccountException> {
+public class DuplicateAccountExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateAccountExceptionUnmarshaller() {
-        super("DuplicateAccountException");
+        super(com.amazonaws.services.organizations.model.DuplicateAccountException.class, "DuplicateAccountException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.DuplicateAccountException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.DuplicateAccountException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.DuplicateAccountException duplicateAccountException = new com.amazonaws.services.organizations.model.DuplicateAccountException(
                 null);
 

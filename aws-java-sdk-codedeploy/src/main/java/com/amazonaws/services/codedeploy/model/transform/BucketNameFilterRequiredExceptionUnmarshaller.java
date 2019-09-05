@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BucketNameFilterRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BucketNameFilterRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException> {
+public class BucketNameFilterRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BucketNameFilterRequiredExceptionUnmarshaller() {
-        super("BucketNameFilterRequiredException");
+        super(com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException.class, "BucketNameFilterRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException bucketNameFilterRequiredException = new com.amazonaws.services.codedeploy.model.BucketNameFilterRequiredException(
                 null);
 

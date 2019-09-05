@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAutomationSignalException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAutomationSignalExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException> {
+public class InvalidAutomationSignalExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAutomationSignalExceptionUnmarshaller() {
-        super("InvalidAutomationSignalException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException.class, "InvalidAutomationSignalException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException invalidAutomationSignalException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidAutomationSignalException(
                 null);
 

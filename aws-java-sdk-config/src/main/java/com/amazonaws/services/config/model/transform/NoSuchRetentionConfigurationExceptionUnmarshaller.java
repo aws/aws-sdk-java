@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchRetentionConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchRetentionConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchRetentionConfigurationException> {
+public class NoSuchRetentionConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchRetentionConfigurationExceptionUnmarshaller() {
-        super("NoSuchRetentionConfigurationException");
+        super(com.amazonaws.services.config.model.NoSuchRetentionConfigurationException.class, "NoSuchRetentionConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchRetentionConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchRetentionConfigurationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchRetentionConfigurationException noSuchRetentionConfigurationException = new com.amazonaws.services.config.model.NoSuchRetentionConfigurationException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationsNotInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationsNotInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException> {
+public class OrganizationsNotInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationsNotInUseExceptionUnmarshaller() {
-        super("OrganizationsNotInUseException");
+        super(com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException.class, "OrganizationsNotInUseException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException organizationsNotInUseException = new com.amazonaws.services.cloudtrail.model.OrganizationsNotInUseException(
                 null);
 

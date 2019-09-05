@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * BranchDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class BranchDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.BranchDoesNotExistException> {
+public class BranchDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private BranchDoesNotExistExceptionUnmarshaller() {
-        super("BranchDoesNotExistException");
+        super(com.amazonaws.services.codecommit.model.BranchDoesNotExistException.class, "BranchDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.BranchDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.BranchDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.BranchDoesNotExistException branchDoesNotExistException = new com.amazonaws.services.codecommit.model.BranchDoesNotExistException(
                 null);
 

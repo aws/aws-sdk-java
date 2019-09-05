@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileEntryRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileEntryRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileEntryRequiredException> {
+public class FileEntryRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileEntryRequiredExceptionUnmarshaller() {
-        super("FileEntryRequiredException");
+        super(com.amazonaws.services.codecommit.model.FileEntryRequiredException.class, "FileEntryRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileEntryRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileEntryRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FileEntryRequiredException fileEntryRequiredException = new com.amazonaws.services.codecommit.model.FileEntryRequiredException(
                 null);
 

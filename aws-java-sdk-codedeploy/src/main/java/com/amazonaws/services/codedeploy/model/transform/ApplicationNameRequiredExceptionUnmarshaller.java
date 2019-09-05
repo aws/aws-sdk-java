@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ApplicationNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ApplicationNameRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException> {
+public class ApplicationNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ApplicationNameRequiredExceptionUnmarshaller() {
-        super("ApplicationNameRequiredException");
+        super(com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException.class, "ApplicationNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException applicationNameRequiredException = new com.amazonaws.services.codedeploy.model.ApplicationNameRequiredException(
                 null);
 

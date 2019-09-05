@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AlreadyExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AlreadyExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.pinpointemail.model.AlreadyExistsException> {
+public class AlreadyExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AlreadyExistsExceptionUnmarshaller() {
-        super("AlreadyExistsException");
+        super(com.amazonaws.services.pinpointemail.model.AlreadyExistsException.class, "AlreadyExistsException");
     }
 
     @Override
-    public com.amazonaws.services.pinpointemail.model.AlreadyExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.pinpointemail.model.AlreadyExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.pinpointemail.model.AlreadyExistsException alreadyExistsException = new com.amazonaws.services.pinpointemail.model.AlreadyExistsException(
                 null);
 

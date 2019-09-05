@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AccountNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AccountNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.AccountNotFoundException> {
+public class AccountNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AccountNotFoundExceptionUnmarshaller() {
-        super("AccountNotFoundException");
+        super(com.amazonaws.services.organizations.model.AccountNotFoundException.class, "AccountNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.AccountNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.AccountNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.AccountNotFoundException accountNotFoundException = new com.amazonaws.services.organizations.model.AccountNotFoundException(
                 null);
 

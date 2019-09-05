@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ListenerNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ListenerNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException> {
+public class ListenerNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ListenerNotFoundExceptionUnmarshaller() {
-        super("ListenerNotFoundException");
+        super(com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException.class, "ListenerNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException listenerNotFoundException = new com.amazonaws.services.globalaccelerator.model.ListenerNotFoundException(
                 null);
 

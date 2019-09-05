@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LexiconNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LexiconNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.LexiconNotFoundException> {
+public class LexiconNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LexiconNotFoundExceptionUnmarshaller() {
-        super("LexiconNotFoundException");
+        super(com.amazonaws.services.polly.model.LexiconNotFoundException.class, "LexiconNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.LexiconNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.LexiconNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.LexiconNotFoundException lexiconNotFoundException = new com.amazonaws.services.polly.model.LexiconNotFoundException(
                 null);
 

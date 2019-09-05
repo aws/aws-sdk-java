@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidEmailException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidEmailExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidEmailException> {
+public class InvalidEmailExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidEmailExceptionUnmarshaller() {
-        super("InvalidEmailException");
+        super(com.amazonaws.services.codecommit.model.InvalidEmailException.class, "InvalidEmailException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidEmailException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidEmailException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidEmailException invalidEmailException = new com.amazonaws.services.codecommit.model.InvalidEmailException(
                 null);
 

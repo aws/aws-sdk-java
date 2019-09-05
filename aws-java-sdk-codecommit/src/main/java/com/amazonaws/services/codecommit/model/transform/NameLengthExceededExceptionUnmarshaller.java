@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NameLengthExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NameLengthExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.NameLengthExceededException> {
+public class NameLengthExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NameLengthExceededExceptionUnmarshaller() {
-        super("NameLengthExceededException");
+        super(com.amazonaws.services.codecommit.model.NameLengthExceededException.class, "NameLengthExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.NameLengthExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.NameLengthExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.NameLengthExceededException nameLengthExceededException = new com.amazonaws.services.codecommit.model.NameLengthExceededException(
                 null);
 

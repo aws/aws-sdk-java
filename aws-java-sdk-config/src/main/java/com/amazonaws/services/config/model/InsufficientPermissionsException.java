@@ -21,13 +21,20 @@ import javax.annotation.Generated;
  * <ul>
  * <li>
  * <p>
- * The rule cannot be created because the IAM role assigned to AWS Config lacks permissions to perform the config:Put*
- * action.
+ * For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks permissions to
+ * perform the config:Put* action.
  * </p>
  * </li>
  * <li>
  * <p>
- * The AWS Lambda function cannot be invoked. Check the function ARN, and check the function's permissions.
+ * For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the function's
+ * permissions.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For OrganizationConfigRule, organization config rule cannot be created because you do not have permissions to call
+ * IAM <code>GetRole</code> action or create service linked role.
  * </p>
  * </li>
  * </ul>

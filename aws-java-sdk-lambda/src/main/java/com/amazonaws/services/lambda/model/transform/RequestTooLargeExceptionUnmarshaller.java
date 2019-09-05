@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RequestTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RequestTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.RequestTooLargeException> {
+public class RequestTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RequestTooLargeExceptionUnmarshaller() {
-        super("RequestTooLargeException");
+        super(com.amazonaws.services.lambda.model.RequestTooLargeException.class, "RequestTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.RequestTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.RequestTooLargeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.RequestTooLargeException requestTooLargeException = new com.amazonaws.services.lambda.model.RequestTooLargeException(
                 null);
 

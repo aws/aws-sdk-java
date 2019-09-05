@@ -122,10 +122,7 @@ public class AWSPricingClient extends AmazonWebServiceClient implements AWSPrici
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ExpiredNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.pricing.model.transform.ExpiredNextTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.pricing.model.AWSPricingException>(
-                                            com.amazonaws.services.pricing.model.AWSPricingException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.pricing.model.AWSPricingException.class));
 
     public static AWSPricingClientBuilder builder() {
         return AWSPricingClientBuilder.standard();

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidSNSTopicARNException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidSNSTopicARNExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.InvalidSNSTopicARNException> {
+public class InvalidSNSTopicARNExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidSNSTopicARNExceptionUnmarshaller() {
-        super("InvalidSNSTopicARNException");
+        super(com.amazonaws.services.config.model.InvalidSNSTopicARNException.class, "InvalidSNSTopicARNException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.InvalidSNSTopicARNException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.InvalidSNSTopicARNException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.InvalidSNSTopicARNException invalidSNSTopicARNException = new com.amazonaws.services.config.model.InvalidSNSTopicARNException(
                 null);
 

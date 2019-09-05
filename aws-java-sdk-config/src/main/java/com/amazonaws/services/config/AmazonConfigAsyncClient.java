@@ -632,6 +632,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRemediationExceptionsResult> deleteRemediationExceptionsAsync(DeleteRemediationExceptionsRequest request) {
+
+        return deleteRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRemediationExceptionsResult> deleteRemediationExceptionsAsync(final DeleteRemediationExceptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRemediationExceptionsRequest, DeleteRemediationExceptionsResult> asyncHandler) {
+        final DeleteRemediationExceptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRemediationExceptionsResult>() {
+            @Override
+            public DeleteRemediationExceptionsResult call() throws Exception {
+                DeleteRemediationExceptionsResult result = null;
+
+                try {
+                    result = executeDeleteRemediationExceptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRetentionConfigurationResult> deleteRetentionConfigurationAsync(DeleteRetentionConfigurationRequest request) {
 
         return deleteRetentionConfigurationAsync(request, null);
@@ -1422,6 +1455,40 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executeDescribeRemediationConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRemediationExceptionsResult> describeRemediationExceptionsAsync(DescribeRemediationExceptionsRequest request) {
+
+        return describeRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRemediationExceptionsResult> describeRemediationExceptionsAsync(
+            final DescribeRemediationExceptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRemediationExceptionsRequest, DescribeRemediationExceptionsResult> asyncHandler) {
+        final DescribeRemediationExceptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRemediationExceptionsResult>() {
+            @Override
+            public DescribeRemediationExceptionsResult call() throws Exception {
+                DescribeRemediationExceptionsResult result = null;
+
+                try {
+                    result = executeDescribeRemediationExceptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2283,6 +2350,39 @@ public class AmazonConfigAsyncClient extends AmazonConfigClient implements Amazo
 
                 try {
                     result = executePutRemediationConfigurations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRemediationExceptionsResult> putRemediationExceptionsAsync(PutRemediationExceptionsRequest request) {
+
+        return putRemediationExceptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRemediationExceptionsResult> putRemediationExceptionsAsync(final PutRemediationExceptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRemediationExceptionsRequest, PutRemediationExceptionsResult> asyncHandler) {
+        final PutRemediationExceptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRemediationExceptionsResult>() {
+            @Override
+            public PutRemediationExceptionsResult call() throws Exception {
+                PutRemediationExceptionsResult result = null;
+
+                try {
+                    result = executePutRemediationExceptions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

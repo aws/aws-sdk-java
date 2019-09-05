@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DuplicateResourceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DuplicateResourceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.connect.model.DuplicateResourceException> {
+public class DuplicateResourceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DuplicateResourceExceptionUnmarshaller() {
-        super("DuplicateResourceException");
+        super(com.amazonaws.services.connect.model.DuplicateResourceException.class, "DuplicateResourceException");
     }
 
     @Override
-    public com.amazonaws.services.connect.model.DuplicateResourceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.connect.model.DuplicateResourceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.connect.model.DuplicateResourceException duplicateResourceException = new com.amazonaws.services.connect.model.DuplicateResourceException(
                 null);
 

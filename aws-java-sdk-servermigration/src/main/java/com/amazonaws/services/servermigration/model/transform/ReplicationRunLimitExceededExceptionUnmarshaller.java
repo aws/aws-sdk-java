@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ReplicationRunLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ReplicationRunLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException> {
+public class ReplicationRunLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ReplicationRunLimitExceededExceptionUnmarshaller() {
-        super("ReplicationRunLimitExceededException");
+        super(com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException.class, "ReplicationRunLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException replicationRunLimitExceededException = new com.amazonaws.services.servermigration.model.ReplicationRunLimitExceededException(
                 null);
 

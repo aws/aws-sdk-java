@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchBucketException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchBucketExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchBucketException> {
+public class NoSuchBucketExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchBucketExceptionUnmarshaller() {
-        super("NoSuchBucketException");
+        super(com.amazonaws.services.config.model.NoSuchBucketException.class, "NoSuchBucketException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchBucketException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchBucketException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchBucketException noSuchBucketException = new com.amazonaws.services.config.model.NoSuchBucketException(null);
 
         int originalDepth = context.getCurrentDepth();

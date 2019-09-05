@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException> {
+public class ResourceNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceNotFoundExceptionUnmarshaller() {
-        super("ResourceNotFoundException");
+        super(com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException.class, "ResourceNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException resourceNotFoundException = new com.amazonaws.services.iotthingsgraph.model.ResourceNotFoundException(
                 null);
 

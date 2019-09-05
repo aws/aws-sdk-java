@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CloudHsmInvalidRequestException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CloudHsmInvalidRequestExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException> {
+public class CloudHsmInvalidRequestExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CloudHsmInvalidRequestExceptionUnmarshaller() {
-        super("CloudHsmInvalidRequestException");
+        super(com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException.class, "CloudHsmInvalidRequestException");
     }
 
     @Override
-    public com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException cloudHsmInvalidRequestException = new com.amazonaws.services.cloudhsmv2.model.CloudHsmInvalidRequestException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StillContainsLinksException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StillContainsLinksExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.clouddirectory.model.StillContainsLinksException> {
+public class StillContainsLinksExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StillContainsLinksExceptionUnmarshaller() {
-        super("StillContainsLinksException");
+        super(com.amazonaws.services.clouddirectory.model.StillContainsLinksException.class, "StillContainsLinksException");
     }
 
     @Override
-    public com.amazonaws.services.clouddirectory.model.StillContainsLinksException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.clouddirectory.model.StillContainsLinksException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.clouddirectory.model.StillContainsLinksException stillContainsLinksException = new com.amazonaws.services.clouddirectory.model.StillContainsLinksException(
                 null);
 

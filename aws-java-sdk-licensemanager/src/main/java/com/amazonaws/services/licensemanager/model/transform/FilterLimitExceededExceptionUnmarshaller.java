@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FilterLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FilterLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.licensemanager.model.FilterLimitExceededException> {
+public class FilterLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FilterLimitExceededExceptionUnmarshaller() {
-        super("FilterLimitExceededException");
+        super(com.amazonaws.services.licensemanager.model.FilterLimitExceededException.class, "FilterLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.licensemanager.model.FilterLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.licensemanager.model.FilterLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.licensemanager.model.FilterLimitExceededException filterLimitExceededException = new com.amazonaws.services.licensemanager.model.FilterLimitExceededException(
                 null);
 

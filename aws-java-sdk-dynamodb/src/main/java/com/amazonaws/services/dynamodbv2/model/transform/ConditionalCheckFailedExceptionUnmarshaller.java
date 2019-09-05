@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ConditionalCheckFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ConditionalCheckFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException> {
+public class ConditionalCheckFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ConditionalCheckFailedExceptionUnmarshaller() {
-        super("ConditionalCheckFailedException");
+        super(com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException.class, "ConditionalCheckFailedException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException conditionalCheckFailedException = new com.amazonaws.services.dynamodbv2.model.ConditionalCheckFailedException(
                 null);
 

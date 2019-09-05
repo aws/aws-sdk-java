@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ContainerInUseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ContainerInUseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.mediastore.model.ContainerInUseException> {
+public class ContainerInUseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ContainerInUseExceptionUnmarshaller() {
-        super("ContainerInUseException");
+        super(com.amazonaws.services.mediastore.model.ContainerInUseException.class, "ContainerInUseException");
     }
 
     @Override
-    public com.amazonaws.services.mediastore.model.ContainerInUseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.mediastore.model.ContainerInUseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.mediastore.model.ContainerInUseException containerInUseException = new com.amazonaws.services.mediastore.model.ContainerInUseException(
                 null);
 

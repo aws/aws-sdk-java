@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PolicyTypeAlreadyEnabledException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PolicyTypeAlreadyEnabledExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException> {
+public class PolicyTypeAlreadyEnabledExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PolicyTypeAlreadyEnabledExceptionUnmarshaller() {
-        super("PolicyTypeAlreadyEnabledException");
+        super(com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException.class, "PolicyTypeAlreadyEnabledException");
     }
 
     @Override
-    public com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException policyTypeAlreadyEnabledException = new com.amazonaws.services.organizations.model.PolicyTypeAlreadyEnabledException(
                 null);
 

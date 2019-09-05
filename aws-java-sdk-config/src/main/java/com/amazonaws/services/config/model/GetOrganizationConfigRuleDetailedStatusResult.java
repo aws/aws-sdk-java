@@ -24,12 +24,26 @@ import javax.annotation.Generated;
 public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements
         Serializable, Cloneable {
 
+    /**
+     * <p>
+     * A list of <code>MemberAccountStatus</code> objects.
+     * </p>
+     */
     private com.amazonaws.internal.SdkInternalList<MemberAccountStatus> organizationConfigRuleDetailedStatus;
-
+    /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     */
     private String nextToken;
 
     /**
-     * @return
+     * <p>
+     * A list of <code>MemberAccountStatus</code> objects.
+     * </p>
+     * 
+     * @return A list of <code>MemberAccountStatus</code> objects.
      */
 
     public java.util.List<MemberAccountStatus> getOrganizationConfigRuleDetailedStatus() {
@@ -40,7 +54,12 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * A list of <code>MemberAccountStatus</code> objects.
+     * </p>
+     * 
      * @param organizationConfigRuleDetailedStatus
+     *        A list of <code>MemberAccountStatus</code> objects.
      */
 
     public void setOrganizationConfigRuleDetailedStatus(java.util.Collection<MemberAccountStatus> organizationConfigRuleDetailedStatus) {
@@ -54,6 +73,9 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
 
     /**
      * <p>
+     * A list of <code>MemberAccountStatus</code> objects.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setOrganizationConfigRuleDetailedStatus(java.util.Collection)} or
      * {@link #withOrganizationConfigRuleDetailedStatus(java.util.Collection)} if you want to override the existing
@@ -61,6 +83,7 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
      * </p>
      * 
      * @param organizationConfigRuleDetailedStatus
+     *        A list of <code>MemberAccountStatus</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -75,7 +98,12 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * A list of <code>MemberAccountStatus</code> objects.
+     * </p>
+     * 
      * @param organizationConfigRuleDetailedStatus
+     *        A list of <code>MemberAccountStatus</code> objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,7 +114,14 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,7 +129,13 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
     }
 
     /**
-     * @return
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -102,7 +143,14 @@ public class GetOrganizationConfigRuleDetailedStatusResult extends com.amazonaws
     }
 
     /**
+     * <p>
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
+     * </p>
+     * 
      * @param nextToken
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

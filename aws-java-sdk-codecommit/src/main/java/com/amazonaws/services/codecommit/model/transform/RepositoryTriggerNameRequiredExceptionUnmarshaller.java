@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryTriggerNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryTriggerNameRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException> {
+public class RepositoryTriggerNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryTriggerNameRequiredExceptionUnmarshaller() {
-        super("RepositoryTriggerNameRequiredException");
+        super(com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException.class, "RepositoryTriggerNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException repositoryTriggerNameRequiredException = new com.amazonaws.services.codecommit.model.RepositoryTriggerNameRequiredException(
                 null);
 

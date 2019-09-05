@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidCertificateAuthorityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidCertificateAuthorityExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException> {
+public class InvalidCertificateAuthorityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidCertificateAuthorityExceptionUnmarshaller() {
-        super("InvalidCertificateAuthorityException");
+        super(com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException.class, "InvalidCertificateAuthorityException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException invalidCertificateAuthorityException = new com.amazonaws.services.alexaforbusiness.model.InvalidCertificateAuthorityException(
                 null);
 

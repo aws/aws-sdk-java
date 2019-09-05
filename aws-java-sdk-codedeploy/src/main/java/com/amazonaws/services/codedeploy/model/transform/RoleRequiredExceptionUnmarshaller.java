@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RoleRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RoleRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.RoleRequiredException> {
+public class RoleRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RoleRequiredExceptionUnmarshaller() {
-        super("RoleRequiredException");
+        super(com.amazonaws.services.codedeploy.model.RoleRequiredException.class, "RoleRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.RoleRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.RoleRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.RoleRequiredException roleRequiredException = new com.amazonaws.services.codedeploy.model.RoleRequiredException(
                 null);
 

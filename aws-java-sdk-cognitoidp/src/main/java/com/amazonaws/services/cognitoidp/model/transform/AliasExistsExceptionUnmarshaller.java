@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * AliasExistsException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class AliasExistsExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.AliasExistsException> {
+public class AliasExistsExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private AliasExistsExceptionUnmarshaller() {
-        super("AliasExistsException");
+        super(com.amazonaws.services.cognitoidp.model.AliasExistsException.class, "AliasExistsException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.AliasExistsException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.AliasExistsException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.AliasExistsException aliasExistsException = new com.amazonaws.services.cognitoidp.model.AliasExistsException(
                 null);
 

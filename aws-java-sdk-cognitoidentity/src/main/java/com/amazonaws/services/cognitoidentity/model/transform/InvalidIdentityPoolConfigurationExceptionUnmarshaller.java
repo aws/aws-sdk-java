@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidIdentityPoolConfigurationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidIdentityPoolConfigurationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException> {
+public class InvalidIdentityPoolConfigurationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidIdentityPoolConfigurationExceptionUnmarshaller() {
-        super("InvalidIdentityPoolConfigurationException");
+        super(com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException.class, "InvalidIdentityPoolConfigurationException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException invalidIdentityPoolConfigurationException = new com.amazonaws.services.cognitoidentity.model.InvalidIdentityPoolConfigurationException(
                 null);
 

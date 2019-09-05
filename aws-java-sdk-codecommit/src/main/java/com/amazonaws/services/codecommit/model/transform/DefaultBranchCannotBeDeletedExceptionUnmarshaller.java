@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DefaultBranchCannotBeDeletedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DefaultBranchCannotBeDeletedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException> {
+public class DefaultBranchCannotBeDeletedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DefaultBranchCannotBeDeletedExceptionUnmarshaller() {
-        super("DefaultBranchCannotBeDeletedException");
+        super(com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException.class, "DefaultBranchCannotBeDeletedException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException defaultBranchCannotBeDeletedException = new com.amazonaws.services.codecommit.model.DefaultBranchCannotBeDeletedException(
                 null);
 

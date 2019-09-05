@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NameAvailabilityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NameAvailabilityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.NameAvailabilityException> {
+public class NameAvailabilityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NameAvailabilityExceptionUnmarshaller() {
-        super("NameAvailabilityException");
+        super(com.amazonaws.services.workmail.model.NameAvailabilityException.class, "NameAvailabilityException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.NameAvailabilityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.NameAvailabilityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.NameAvailabilityException nameAvailabilityException = new com.amazonaws.services.workmail.model.NameAvailabilityException(
                 null);
 

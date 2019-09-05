@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedRegionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedRegionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.gamelift.model.UnsupportedRegionException> {
+public class UnsupportedRegionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedRegionExceptionUnmarshaller() {
-        super("UnsupportedRegionException");
+        super(com.amazonaws.services.gamelift.model.UnsupportedRegionException.class, "UnsupportedRegionException");
     }
 
     @Override
-    public com.amazonaws.services.gamelift.model.UnsupportedRegionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.gamelift.model.UnsupportedRegionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.gamelift.model.UnsupportedRegionException unsupportedRegionException = new com.amazonaws.services.gamelift.model.UnsupportedRegionException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NetworkInterfaceLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NetworkInterfaceLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException> {
+public class NetworkInterfaceLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NetworkInterfaceLimitExceededExceptionUnmarshaller() {
-        super("NetworkInterfaceLimitExceeded");
+        super(com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException.class, "NetworkInterfaceLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException networkInterfaceLimitExceededException = new com.amazonaws.services.elasticfilesystem.model.NetworkInterfaceLimitExceededException(
                 null);
 

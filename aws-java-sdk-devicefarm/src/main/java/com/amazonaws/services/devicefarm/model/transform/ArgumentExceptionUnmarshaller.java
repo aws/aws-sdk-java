@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ArgumentException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ArgumentExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.ArgumentException> {
+public class ArgumentExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ArgumentExceptionUnmarshaller() {
-        super("ArgumentException");
+        super(com.amazonaws.services.devicefarm.model.ArgumentException.class, "ArgumentException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.ArgumentException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.ArgumentException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.ArgumentException argumentException = new com.amazonaws.services.devicefarm.model.ArgumentException(null);
 
         int originalDepth = context.getCurrentDepth();

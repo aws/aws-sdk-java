@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UserDoesNotExistException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UserDoesNotExistExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.UserDoesNotExistException> {
+public class UserDoesNotExistExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UserDoesNotExistExceptionUnmarshaller() {
-        super("UserDoesNotExistException");
+        super(com.amazonaws.services.directory.model.UserDoesNotExistException.class, "UserDoesNotExistException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.UserDoesNotExistException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.UserDoesNotExistException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.UserDoesNotExistException userDoesNotExistException = new com.amazonaws.services.directory.model.UserDoesNotExistException(
                 null);
 

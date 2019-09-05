@@ -95,10 +95,7 @@ public class AWSBatchClient extends AmazonWebServiceClient implements AWSBatch {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.batch.model.transform.ClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.batch.model.AWSBatchException>(
-                                            com.amazonaws.services.batch.model.AWSBatchException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.batch.model.AWSBatchException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Batch. A credentials provider chain will be used that

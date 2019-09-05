@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * LifecycleHookLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class LifecycleHookLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException> {
+public class LifecycleHookLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private LifecycleHookLimitExceededExceptionUnmarshaller() {
-        super("LifecycleHookLimitExceededException");
+        super(com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException.class, "LifecycleHookLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException lifecycleHookLimitExceededException = new com.amazonaws.services.codedeploy.model.LifecycleHookLimitExceededException(
                 null);
 

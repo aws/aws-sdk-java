@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IpRouteLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IpRouteLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directory.model.IpRouteLimitExceededException> {
+public class IpRouteLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IpRouteLimitExceededExceptionUnmarshaller() {
-        super("IpRouteLimitExceededException");
+        super(com.amazonaws.services.directory.model.IpRouteLimitExceededException.class, "IpRouteLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.directory.model.IpRouteLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directory.model.IpRouteLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directory.model.IpRouteLimitExceededException ipRouteLimitExceededException = new com.amazonaws.services.directory.model.IpRouteLimitExceededException(
                 null);
 

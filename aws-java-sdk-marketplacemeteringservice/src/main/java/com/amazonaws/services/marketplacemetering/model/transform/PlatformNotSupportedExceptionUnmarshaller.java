@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PlatformNotSupportedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PlatformNotSupportedExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException> {
+public class PlatformNotSupportedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PlatformNotSupportedExceptionUnmarshaller() {
-        super("PlatformNotSupportedException");
+        super(com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException.class, "PlatformNotSupportedException");
     }
 
     @Override
-    public com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException platformNotSupportedException = new com.amazonaws.services.marketplacemetering.model.PlatformNotSupportedException(
                 null);
 

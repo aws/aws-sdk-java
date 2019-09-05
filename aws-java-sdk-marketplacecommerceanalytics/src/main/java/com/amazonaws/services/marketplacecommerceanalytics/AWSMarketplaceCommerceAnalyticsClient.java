@@ -78,12 +78,7 @@ public class AWSMarketplaceCommerceAnalyticsClient extends AmazonWebServiceClien
                             new JsonErrorShapeMetadata().withErrorCode("MarketplaceCommerceAnalyticsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.marketplacecommerceanalytics.model.transform.MarketplaceCommerceAnalyticsExceptionUnmarshaller
                                             .getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata()
-                                    .withErrorCode(null)
-                                    .withExceptionUnmarshaller(
-                                            new JsonBaseExceptionUnmarshaller<com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException>(
-                                                    com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.marketplacecommerceanalytics.model.AWSMarketplaceCommerceAnalyticsException.class));
 
     /**
      * Constructs a new client to invoke service methods on AWS Marketplace Commerce Analytics. A credentials provider

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TaskTimedOutException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TaskTimedOutExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.TaskTimedOutException> {
+public class TaskTimedOutExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TaskTimedOutExceptionUnmarshaller() {
-        super("TaskTimedOut");
+        super(com.amazonaws.services.stepfunctions.model.TaskTimedOutException.class, "TaskTimedOut");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.TaskTimedOutException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.TaskTimedOutException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.stepfunctions.model.TaskTimedOutException taskTimedOutException = new com.amazonaws.services.stepfunctions.model.TaskTimedOutException(
                 null);
 

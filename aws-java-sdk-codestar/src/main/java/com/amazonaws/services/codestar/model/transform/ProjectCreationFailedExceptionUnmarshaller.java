@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ProjectCreationFailedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ProjectCreationFailedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codestar.model.ProjectCreationFailedException> {
+public class ProjectCreationFailedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ProjectCreationFailedExceptionUnmarshaller() {
-        super("ProjectCreationFailedException");
+        super(com.amazonaws.services.codestar.model.ProjectCreationFailedException.class, "ProjectCreationFailedException");
     }
 
     @Override
-    public com.amazonaws.services.codestar.model.ProjectCreationFailedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codestar.model.ProjectCreationFailedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codestar.model.ProjectCreationFailedException projectCreationFailedException = new com.amazonaws.services.codestar.model.ProjectCreationFailedException(
                 null);
 

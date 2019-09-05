@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GoneException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GoneExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.apigatewaymanagementapi.model.GoneException> {
+public class GoneExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GoneExceptionUnmarshaller() {
-        super("GoneException");
+        super(com.amazonaws.services.apigatewaymanagementapi.model.GoneException.class, "GoneException");
     }
 
     @Override
-    public com.amazonaws.services.apigatewaymanagementapi.model.GoneException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.apigatewaymanagementapi.model.GoneException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.apigatewaymanagementapi.model.GoneException goneException = new com.amazonaws.services.apigatewaymanagementapi.model.GoneException(
                 null);
 

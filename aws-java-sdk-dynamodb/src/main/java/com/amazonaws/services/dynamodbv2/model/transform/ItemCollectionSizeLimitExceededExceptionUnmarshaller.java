@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ItemCollectionSizeLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ItemCollectionSizeLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException> {
+public class ItemCollectionSizeLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ItemCollectionSizeLimitExceededExceptionUnmarshaller() {
-        super("ItemCollectionSizeLimitExceededException");
+        super(com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException.class, "ItemCollectionSizeLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException itemCollectionSizeLimitExceededException = new com.amazonaws.services.dynamodbv2.model.ItemCollectionSizeLimitExceededException(
                 null);
 

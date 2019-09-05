@@ -128,10 +128,7 @@ public class AmazonFSxClient extends AmazonWebServiceClient implements AmazonFSx
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.fsx.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.fsx.model.AmazonFSxException>(
-                                            com.amazonaws.services.fsx.model.AmazonFSxException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.fsx.model.AmazonFSxException.class));
 
     public static AmazonFSxClientBuilder builder() {
         return AmazonFSxClientBuilder.standard();

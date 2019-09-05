@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * VersionMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class VersionMismatchExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.VersionMismatchException> {
+public class VersionMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private VersionMismatchExceptionUnmarshaller() {
-        super("VersionMismatchException");
+        super(com.amazonaws.services.glue.model.VersionMismatchException.class, "VersionMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.VersionMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.VersionMismatchException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.VersionMismatchException versionMismatchException = new com.amazonaws.services.glue.model.VersionMismatchException(
                 null);
 

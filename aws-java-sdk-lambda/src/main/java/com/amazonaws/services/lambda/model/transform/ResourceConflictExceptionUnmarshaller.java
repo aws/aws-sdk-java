@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ResourceConflictException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ResourceConflictExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.ResourceConflictException> {
+public class ResourceConflictExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ResourceConflictExceptionUnmarshaller() {
-        super("ResourceConflictException");
+        super(com.amazonaws.services.lambda.model.ResourceConflictException.class, "ResourceConflictException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.ResourceConflictException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.ResourceConflictException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.ResourceConflictException resourceConflictException = new com.amazonaws.services.lambda.model.ResourceConflictException(
                 null);
 

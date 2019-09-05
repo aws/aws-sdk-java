@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OpsItemLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OpsItemLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException> {
+public class OpsItemLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OpsItemLimitExceededExceptionUnmarshaller() {
-        super("OpsItemLimitExceededException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException.class, "OpsItemLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException opsItemLimitExceededException = new com.amazonaws.services.simplesystemsmanagement.model.OpsItemLimitExceededException(
                 null);
 

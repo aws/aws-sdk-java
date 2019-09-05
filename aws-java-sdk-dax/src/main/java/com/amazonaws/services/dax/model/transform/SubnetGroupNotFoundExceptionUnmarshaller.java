@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * SubnetGroupNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class SubnetGroupNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.dax.model.SubnetGroupNotFoundException> {
+public class SubnetGroupNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private SubnetGroupNotFoundExceptionUnmarshaller() {
-        super("SubnetGroupNotFoundFault");
+        super(com.amazonaws.services.dax.model.SubnetGroupNotFoundException.class, "SubnetGroupNotFoundFault");
     }
 
     @Override
-    public com.amazonaws.services.dax.model.SubnetGroupNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.dax.model.SubnetGroupNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.dax.model.SubnetGroupNotFoundException subnetGroupNotFoundException = new com.amazonaws.services.dax.model.SubnetGroupNotFoundException(
                 null);
 

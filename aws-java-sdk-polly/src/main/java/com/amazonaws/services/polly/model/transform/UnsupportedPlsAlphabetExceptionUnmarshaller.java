@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UnsupportedPlsAlphabetException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UnsupportedPlsAlphabetExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException> {
+public class UnsupportedPlsAlphabetExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UnsupportedPlsAlphabetExceptionUnmarshaller() {
-        super("UnsupportedPlsAlphabetException");
+        super(com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException.class, "UnsupportedPlsAlphabetException");
     }
 
     @Override
-    public com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException unsupportedPlsAlphabetException = new com.amazonaws.services.polly.model.UnsupportedPlsAlphabetException(
                 null);
 

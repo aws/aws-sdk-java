@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidUserStatusException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidUserStatusExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException> {
+public class InvalidUserStatusExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidUserStatusExceptionUnmarshaller() {
-        super("InvalidUserStatusException");
+        super(com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException.class, "InvalidUserStatusException");
     }
 
     @Override
-    public com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException invalidUserStatusException = new com.amazonaws.services.alexaforbusiness.model.InvalidUserStatusException(
                 null);
 

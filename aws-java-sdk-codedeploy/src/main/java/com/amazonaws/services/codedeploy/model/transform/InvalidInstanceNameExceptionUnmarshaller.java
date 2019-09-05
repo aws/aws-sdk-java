@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidInstanceNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidInstanceNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.InvalidInstanceNameException> {
+public class InvalidInstanceNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidInstanceNameExceptionUnmarshaller() {
-        super("InvalidInstanceNameException");
+        super(com.amazonaws.services.codedeploy.model.InvalidInstanceNameException.class, "InvalidInstanceNameException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.InvalidInstanceNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.InvalidInstanceNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codedeploy.model.InvalidInstanceNameException invalidInstanceNameException = new com.amazonaws.services.codedeploy.model.InvalidInstanceNameException(
                 null);
 

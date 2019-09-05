@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRuntimeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRuntimeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidRuntimeException> {
+public class InvalidRuntimeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRuntimeExceptionUnmarshaller() {
-        super("InvalidRuntimeException");
+        super(com.amazonaws.services.lambda.model.InvalidRuntimeException.class, "InvalidRuntimeException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidRuntimeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidRuntimeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidRuntimeException invalidRuntimeException = new com.amazonaws.services.lambda.model.InvalidRuntimeException(
                 null);
 

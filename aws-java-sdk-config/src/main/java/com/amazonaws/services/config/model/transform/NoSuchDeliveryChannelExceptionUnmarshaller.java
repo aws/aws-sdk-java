@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchDeliveryChannelException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchDeliveryChannelExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.config.model.NoSuchDeliveryChannelException> {
+public class NoSuchDeliveryChannelExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchDeliveryChannelExceptionUnmarshaller() {
-        super("NoSuchDeliveryChannelException");
+        super(com.amazonaws.services.config.model.NoSuchDeliveryChannelException.class, "NoSuchDeliveryChannelException");
     }
 
     @Override
-    public com.amazonaws.services.config.model.NoSuchDeliveryChannelException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.config.model.NoSuchDeliveryChannelException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.config.model.NoSuchDeliveryChannelException noSuchDeliveryChannelException = new com.amazonaws.services.config.model.NoSuchDeliveryChannelException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TerminalStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TerminalStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iotjobsdataplane.model.TerminalStateException> {
+public class TerminalStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TerminalStateExceptionUnmarshaller() {
-        super("TerminalStateException");
+        super(com.amazonaws.services.iotjobsdataplane.model.TerminalStateException.class, "TerminalStateException");
     }
 
     @Override
-    public com.amazonaws.services.iotjobsdataplane.model.TerminalStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iotjobsdataplane.model.TerminalStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iotjobsdataplane.model.TerminalStateException terminalStateException = new com.amazonaws.services.iotjobsdataplane.model.TerminalStateException(
                 null);
 

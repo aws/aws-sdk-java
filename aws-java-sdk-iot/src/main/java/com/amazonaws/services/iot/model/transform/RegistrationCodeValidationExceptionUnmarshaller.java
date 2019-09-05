@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RegistrationCodeValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RegistrationCodeValidationExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.iot.model.RegistrationCodeValidationException> {
+public class RegistrationCodeValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RegistrationCodeValidationExceptionUnmarshaller() {
-        super("RegistrationCodeValidationException");
+        super(com.amazonaws.services.iot.model.RegistrationCodeValidationException.class, "RegistrationCodeValidationException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.RegistrationCodeValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.RegistrationCodeValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.RegistrationCodeValidationException registrationCodeValidationException = new com.amazonaws.services.iot.model.RegistrationCodeValidationException(
                 null);
 

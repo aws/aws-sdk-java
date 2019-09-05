@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ServiceAccountException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ServiceAccountExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.ServiceAccountException> {
+public class ServiceAccountExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ServiceAccountExceptionUnmarshaller() {
-        super("ServiceAccountException");
+        super(com.amazonaws.services.devicefarm.model.ServiceAccountException.class, "ServiceAccountException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.ServiceAccountException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.ServiceAccountException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.ServiceAccountException serviceAccountException = new com.amazonaws.services.devicefarm.model.ServiceAccountException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StageNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StageNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codepipeline.model.StageNotFoundException> {
+public class StageNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StageNotFoundExceptionUnmarshaller() {
-        super("StageNotFoundException");
+        super(com.amazonaws.services.codepipeline.model.StageNotFoundException.class, "StageNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.codepipeline.model.StageNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codepipeline.model.StageNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codepipeline.model.StageNotFoundException stageNotFoundException = new com.amazonaws.services.codepipeline.model.StageNotFoundException(
                 null);
 

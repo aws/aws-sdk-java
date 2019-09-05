@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFSubscriptionNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFSubscriptionNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException> {
+public class WAFSubscriptionNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFSubscriptionNotFoundExceptionUnmarshaller() {
-        super("WAFSubscriptionNotFoundException");
+        super(com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException.class, "WAFSubscriptionNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException wAFSubscriptionNotFoundException = new com.amazonaws.services.waf.model.WAFSubscriptionNotFoundException(
                 null);
 

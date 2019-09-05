@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidResultAttributeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidResultAttributeExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException> {
+public class InvalidResultAttributeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidResultAttributeExceptionUnmarshaller() {
-        super("InvalidResultAttributeException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException.class, "InvalidResultAttributeException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException invalidResultAttributeException = new com.amazonaws.services.simplesystemsmanagement.model.InvalidResultAttributeException(
                 null);
 

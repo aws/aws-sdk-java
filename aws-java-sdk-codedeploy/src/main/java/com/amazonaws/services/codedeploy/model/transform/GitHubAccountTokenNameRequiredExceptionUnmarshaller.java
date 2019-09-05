@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * GitHubAccountTokenNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class GitHubAccountTokenNameRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException> {
+public class GitHubAccountTokenNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private GitHubAccountTokenNameRequiredExceptionUnmarshaller() {
-        super("GitHubAccountTokenNameRequiredException");
+        super(com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException.class, "GitHubAccountTokenNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException gitHubAccountTokenNameRequiredException = new com.amazonaws.services.codedeploy.model.GitHubAccountTokenNameRequiredException(
                 null);
 

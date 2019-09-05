@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DeploymentConfigNameRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DeploymentConfigNameRequiredExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException> {
+public class DeploymentConfigNameRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DeploymentConfigNameRequiredExceptionUnmarshaller() {
-        super("DeploymentConfigNameRequiredException");
+        super(com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException.class, "DeploymentConfigNameRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException deploymentConfigNameRequiredException = new com.amazonaws.services.codedeploy.model.DeploymentConfigNameRequiredException(
                 null);
 

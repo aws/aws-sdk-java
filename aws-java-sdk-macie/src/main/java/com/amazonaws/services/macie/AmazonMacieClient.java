@@ -93,10 +93,7 @@ public class AmazonMacieClient extends AmazonWebServiceClient implements AmazonM
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.macie.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.macie.model.AmazonMacieException>(
-                                            com.amazonaws.services.macie.model.AmazonMacieException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.macie.model.AmazonMacieException.class));
 
     public static AmazonMacieClientBuilder builder() {
         return AmazonMacieClientBuilder.standard();

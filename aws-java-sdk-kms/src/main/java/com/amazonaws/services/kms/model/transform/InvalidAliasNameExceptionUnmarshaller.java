@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidAliasNameException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidAliasNameExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.kms.model.InvalidAliasNameException> {
+public class InvalidAliasNameExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidAliasNameExceptionUnmarshaller() {
-        super("InvalidAliasNameException");
+        super(com.amazonaws.services.kms.model.InvalidAliasNameException.class, "InvalidAliasNameException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.InvalidAliasNameException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.InvalidAliasNameException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.InvalidAliasNameException invalidAliasNameException = new com.amazonaws.services.kms.model.InvalidAliasNameException(
                 null);
 

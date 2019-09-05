@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OrganizationStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OrganizationStateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.workmail.model.OrganizationStateException> {
+public class OrganizationStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OrganizationStateExceptionUnmarshaller() {
-        super("OrganizationStateException");
+        super(com.amazonaws.services.workmail.model.OrganizationStateException.class, "OrganizationStateException");
     }
 
     @Override
-    public com.amazonaws.services.workmail.model.OrganizationStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.workmail.model.OrganizationStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.workmail.model.OrganizationStateException organizationStateException = new com.amazonaws.services.workmail.model.OrganizationStateException(
                 null);
 

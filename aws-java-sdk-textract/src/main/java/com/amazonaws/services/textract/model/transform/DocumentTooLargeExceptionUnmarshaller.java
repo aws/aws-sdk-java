@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DocumentTooLargeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DocumentTooLargeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.textract.model.DocumentTooLargeException> {
+public class DocumentTooLargeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DocumentTooLargeExceptionUnmarshaller() {
-        super("DocumentTooLargeException");
+        super(com.amazonaws.services.textract.model.DocumentTooLargeException.class, "DocumentTooLargeException");
     }
 
     @Override
-    public com.amazonaws.services.textract.model.DocumentTooLargeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.textract.model.DocumentTooLargeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.textract.model.DocumentTooLargeException documentTooLargeException = new com.amazonaws.services.textract.model.DocumentTooLargeException(
                 null);
 

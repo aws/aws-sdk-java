@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidStateTransitionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidStateTransitionExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.InvalidStateTransitionException> {
+public class InvalidStateTransitionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidStateTransitionExceptionUnmarshaller() {
-        super("InvalidStateTransitionException");
+        super(com.amazonaws.services.iot.model.InvalidStateTransitionException.class, "InvalidStateTransitionException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.InvalidStateTransitionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.InvalidStateTransitionException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.InvalidStateTransitionException invalidStateTransitionException = new com.amazonaws.services.iot.model.InvalidStateTransitionException(
                 null);
 

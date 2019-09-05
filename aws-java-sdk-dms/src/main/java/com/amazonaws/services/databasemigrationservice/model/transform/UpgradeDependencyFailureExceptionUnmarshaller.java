@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * UpgradeDependencyFailureException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class UpgradeDependencyFailureExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException> {
+public class UpgradeDependencyFailureExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private UpgradeDependencyFailureExceptionUnmarshaller() {
-        super("UpgradeDependencyFailureFault");
+        super(com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException.class, "UpgradeDependencyFailureFault");
     }
 
     @Override
-    public com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException upgradeDependencyFailureException = new com.amazonaws.services.databasemigrationservice.model.UpgradeDependencyFailureException(
                 null);
 

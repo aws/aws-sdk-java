@@ -91,10 +91,7 @@ public class AmazonTranscribeClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.transcribe.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.transcribe.model.AmazonTranscribeException>(
-                                            com.amazonaws.services.transcribe.model.AmazonTranscribeException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.transcribe.model.AmazonTranscribeException.class));
 
     public static AmazonTranscribeClientBuilder builder() {
         return AmazonTranscribeClientBuilder.standard();

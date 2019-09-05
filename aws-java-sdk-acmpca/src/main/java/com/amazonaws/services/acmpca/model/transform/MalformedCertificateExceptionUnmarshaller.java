@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MalformedCertificateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MalformedCertificateExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.acmpca.model.MalformedCertificateException> {
+public class MalformedCertificateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MalformedCertificateExceptionUnmarshaller() {
-        super("MalformedCertificateException");
+        super(com.amazonaws.services.acmpca.model.MalformedCertificateException.class, "MalformedCertificateException");
     }
 
     @Override
-    public com.amazonaws.services.acmpca.model.MalformedCertificateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.acmpca.model.MalformedCertificateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.acmpca.model.MalformedCertificateException malformedCertificateException = new com.amazonaws.services.acmpca.model.MalformedCertificateException(
                 null);
 

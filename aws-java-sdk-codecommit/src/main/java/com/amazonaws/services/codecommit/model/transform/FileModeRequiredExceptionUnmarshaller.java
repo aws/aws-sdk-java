@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * FileModeRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class FileModeRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.FileModeRequiredException> {
+public class FileModeRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private FileModeRequiredExceptionUnmarshaller() {
-        super("FileModeRequiredException");
+        super(com.amazonaws.services.codecommit.model.FileModeRequiredException.class, "FileModeRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.FileModeRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.FileModeRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.FileModeRequiredException fileModeRequiredException = new com.amazonaws.services.codecommit.model.FileModeRequiredException(
                 null);
 

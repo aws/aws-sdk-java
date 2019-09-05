@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CustomKeyStoreInvalidStateException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CustomKeyStoreInvalidStateExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException> {
+public class CustomKeyStoreInvalidStateExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CustomKeyStoreInvalidStateExceptionUnmarshaller() {
-        super("CustomKeyStoreInvalidStateException");
+        super(com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException.class, "CustomKeyStoreInvalidStateException");
     }
 
     @Override
-    public com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException customKeyStoreInvalidStateException = new com.amazonaws.services.kms.model.CustomKeyStoreInvalidStateException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidPortRangeException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidPortRangeExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException> {
+public class InvalidPortRangeExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidPortRangeExceptionUnmarshaller() {
-        super("InvalidPortRangeException");
+        super(com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException.class, "InvalidPortRangeException");
     }
 
     @Override
-    public com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException invalidPortRangeException = new com.amazonaws.services.globalaccelerator.model.InvalidPortRangeException(
                 null);
 

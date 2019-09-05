@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DataAlreadyAcceptedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DataAlreadyAcceptedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.logs.model.DataAlreadyAcceptedException> {
+public class DataAlreadyAcceptedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DataAlreadyAcceptedExceptionUnmarshaller() {
-        super("DataAlreadyAcceptedException");
+        super(com.amazonaws.services.logs.model.DataAlreadyAcceptedException.class, "DataAlreadyAcceptedException");
     }
 
     @Override
-    public com.amazonaws.services.logs.model.DataAlreadyAcceptedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.logs.model.DataAlreadyAcceptedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.logs.model.DataAlreadyAcceptedException dataAlreadyAcceptedException = new com.amazonaws.services.logs.model.DataAlreadyAcceptedException(
                 null);
 

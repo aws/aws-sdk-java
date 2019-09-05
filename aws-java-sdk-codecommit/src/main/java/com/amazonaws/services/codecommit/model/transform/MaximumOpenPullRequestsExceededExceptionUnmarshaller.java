@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MaximumOpenPullRequestsExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MaximumOpenPullRequestsExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException> {
+public class MaximumOpenPullRequestsExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MaximumOpenPullRequestsExceededExceptionUnmarshaller() {
-        super("MaximumOpenPullRequestsExceededException");
+        super(com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException.class, "MaximumOpenPullRequestsExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException maximumOpenPullRequestsExceededException = new com.amazonaws.services.codecommit.model.MaximumOpenPullRequestsExceededException(
                 null);
 

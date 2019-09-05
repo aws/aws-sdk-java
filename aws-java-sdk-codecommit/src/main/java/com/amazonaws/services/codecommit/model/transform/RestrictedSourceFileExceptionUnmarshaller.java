@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RestrictedSourceFileException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RestrictedSourceFileExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RestrictedSourceFileException> {
+public class RestrictedSourceFileExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RestrictedSourceFileExceptionUnmarshaller() {
-        super("RestrictedSourceFileException");
+        super(com.amazonaws.services.codecommit.model.RestrictedSourceFileException.class, "RestrictedSourceFileException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RestrictedSourceFileException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RestrictedSourceFileException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.RestrictedSourceFileException restrictedSourceFileException = new com.amazonaws.services.codecommit.model.RestrictedSourceFileException(
                 null);
 

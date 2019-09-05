@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidRepositoryDescriptionException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidRepositoryDescriptionExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException> {
+public class InvalidRepositoryDescriptionExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidRepositoryDescriptionExceptionUnmarshaller() {
-        super("InvalidRepositoryDescriptionException");
+        super(com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException.class, "InvalidRepositoryDescriptionException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException invalidRepositoryDescriptionException = new com.amazonaws.services.codecommit.model.InvalidRepositoryDescriptionException(
                 null);
 

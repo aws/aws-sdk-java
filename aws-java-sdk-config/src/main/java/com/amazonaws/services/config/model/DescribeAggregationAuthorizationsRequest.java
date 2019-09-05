@@ -34,8 +34,8 @@ public class DescribeAggregationAuthorizationsRequest extends com.amazonaws.Amaz
     private Integer limit;
     /**
      * <p>
-     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      */
     private String nextToken;
@@ -88,13 +88,13 @@ public class DescribeAggregationAuthorizationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The nextToken string returned on a previous page that you use to get the next page of results in a
-     *        paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      */
 
     public void setNextToken(String nextToken) {
@@ -103,12 +103,12 @@ public class DescribeAggregationAuthorizationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
-     * @return The nextToken string returned on a previous page that you use to get the next page of results in a
-     *         paginated response.
+     * @return The <code>nextToken</code> string returned on a previous page that you use to get the next page of
+     *         results in a paginated response.
      */
 
     public String getNextToken() {
@@ -117,13 +117,13 @@ public class DescribeAggregationAuthorizationsRequest extends com.amazonaws.Amaz
 
     /**
      * <p>
-     * The nextToken string returned on a previous page that you use to get the next page of results in a paginated
-     * response.
+     * The <code>nextToken</code> string returned on a previous page that you use to get the next page of results in a
+     * paginated response.
      * </p>
      * 
      * @param nextToken
-     *        The nextToken string returned on a previous page that you use to get the next page of results in a
-     *        paginated response.
+     *        The <code>nextToken</code> string returned on a previous page that you use to get the next page of results
+     *        in a paginated response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

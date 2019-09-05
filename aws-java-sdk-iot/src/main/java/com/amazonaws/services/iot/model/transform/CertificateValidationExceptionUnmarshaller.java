@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * CertificateValidationException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class CertificateValidationExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.iot.model.CertificateValidationException> {
+public class CertificateValidationExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private CertificateValidationExceptionUnmarshaller() {
-        super("CertificateValidationException");
+        super(com.amazonaws.services.iot.model.CertificateValidationException.class, "CertificateValidationException");
     }
 
     @Override
-    public com.amazonaws.services.iot.model.CertificateValidationException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.iot.model.CertificateValidationException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.iot.model.CertificateValidationException certificateValidationException = new com.amazonaws.services.iot.model.CertificateValidationException(
                 null);
 

@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TagsLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TagsLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.TagsLimitExceededException> {
+public class TagsLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TagsLimitExceededExceptionUnmarshaller() {
-        super("TagsLimitExceededException");
+        super(com.amazonaws.services.cloudtrail.model.TagsLimitExceededException.class, "TagsLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.TagsLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.TagsLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.TagsLimitExceededException tagsLimitExceededException = new com.amazonaws.services.cloudtrail.model.TagsLimitExceededException(
                 null);
 

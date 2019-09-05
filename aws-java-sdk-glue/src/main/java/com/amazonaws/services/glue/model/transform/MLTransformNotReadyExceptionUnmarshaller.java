@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * MLTransformNotReadyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class MLTransformNotReadyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.glue.model.MLTransformNotReadyException> {
+public class MLTransformNotReadyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private MLTransformNotReadyExceptionUnmarshaller() {
-        super("MLTransformNotReadyException");
+        super(com.amazonaws.services.glue.model.MLTransformNotReadyException.class, "MLTransformNotReadyException");
     }
 
     @Override
-    public com.amazonaws.services.glue.model.MLTransformNotReadyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.glue.model.MLTransformNotReadyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.glue.model.MLTransformNotReadyException mLTransformNotReadyException = new com.amazonaws.services.glue.model.MLTransformNotReadyException(
                 null);
 

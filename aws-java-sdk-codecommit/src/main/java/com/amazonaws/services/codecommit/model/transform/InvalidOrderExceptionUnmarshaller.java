@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidOrderException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidOrderExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.InvalidOrderException> {
+public class InvalidOrderExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidOrderExceptionUnmarshaller() {
-        super("InvalidOrderException");
+        super(com.amazonaws.services.codecommit.model.InvalidOrderException.class, "InvalidOrderException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.InvalidOrderException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.InvalidOrderException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.InvalidOrderException invalidOrderException = new com.amazonaws.services.codecommit.model.InvalidOrderException(
                 null);
 

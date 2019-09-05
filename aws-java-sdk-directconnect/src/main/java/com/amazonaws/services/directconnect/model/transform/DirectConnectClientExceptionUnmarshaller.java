@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * DirectConnectClientException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class DirectConnectClientExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.directconnect.model.DirectConnectClientException> {
+public class DirectConnectClientExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private DirectConnectClientExceptionUnmarshaller() {
-        super("DirectConnectClientException");
+        super(com.amazonaws.services.directconnect.model.DirectConnectClientException.class, "DirectConnectClientException");
     }
 
     @Override
-    public com.amazonaws.services.directconnect.model.DirectConnectClientException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.directconnect.model.DirectConnectClientException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.directconnect.model.DirectConnectClientException directConnectClientException = new com.amazonaws.services.directconnect.model.DirectConnectClientException(
                 null);
 

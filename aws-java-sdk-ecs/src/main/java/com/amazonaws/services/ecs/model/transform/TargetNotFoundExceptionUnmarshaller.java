@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TargetNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TargetNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.ecs.model.TargetNotFoundException> {
+public class TargetNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TargetNotFoundExceptionUnmarshaller() {
-        super("TargetNotFoundException");
+        super(com.amazonaws.services.ecs.model.TargetNotFoundException.class, "TargetNotFoundException");
     }
 
     @Override
-    public com.amazonaws.services.ecs.model.TargetNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.ecs.model.TargetNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.ecs.model.TargetNotFoundException targetNotFoundException = new com.amazonaws.services.ecs.model.TargetNotFoundException(null);
 
         int originalDepth = context.getCurrentDepth();

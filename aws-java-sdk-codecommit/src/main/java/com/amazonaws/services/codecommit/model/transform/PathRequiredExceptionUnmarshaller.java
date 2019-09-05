@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * PathRequiredException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class PathRequiredExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.PathRequiredException> {
+public class PathRequiredExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private PathRequiredExceptionUnmarshaller() {
-        super("PathRequiredException");
+        super(com.amazonaws.services.codecommit.model.PathRequiredException.class, "PathRequiredException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.PathRequiredException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.PathRequiredException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.PathRequiredException pathRequiredException = new com.amazonaws.services.codecommit.model.PathRequiredException(
                 null);
 

@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ItemContentMismatchException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ItemContentMismatchExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException> {
+public class ItemContentMismatchExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ItemContentMismatchExceptionUnmarshaller() {
-        super("ItemContentMismatchException");
+        super(com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException.class, "ItemContentMismatchException");
     }
 
     @Override
-    public com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException itemContentMismatchException = new com.amazonaws.services.simplesystemsmanagement.model.ItemContentMismatchException(
                 null);
 

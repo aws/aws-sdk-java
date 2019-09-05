@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * WAFUnavailableEntityException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class WAFUnavailableEntityExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.waf.model.WAFUnavailableEntityException> {
+public class WAFUnavailableEntityExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private WAFUnavailableEntityExceptionUnmarshaller() {
-        super("WAFUnavailableEntityException");
+        super(com.amazonaws.services.waf.model.WAFUnavailableEntityException.class, "WAFUnavailableEntityException");
     }
 
     @Override
-    public com.amazonaws.services.waf.model.WAFUnavailableEntityException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.waf.model.WAFUnavailableEntityException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.waf.model.WAFUnavailableEntityException wAFUnavailableEntityException = new com.amazonaws.services.waf.model.WAFUnavailableEntityException(
                 null);
 

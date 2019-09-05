@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidLambdaResponseException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidLambdaResponseExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException> {
+public class InvalidLambdaResponseExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidLambdaResponseExceptionUnmarshaller() {
-        super("InvalidLambdaResponseException");
+        super(com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException.class, "InvalidLambdaResponseException");
     }
 
     @Override
-    public com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException invalidLambdaResponseException = new com.amazonaws.services.cognitoidp.model.InvalidLambdaResponseException(
                 null);
 

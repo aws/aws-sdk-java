@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * InvalidParameterValueException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class InvalidParameterValueExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.lambda.model.InvalidParameterValueException> {
+public class InvalidParameterValueExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private InvalidParameterValueExceptionUnmarshaller() {
-        super("InvalidParameterValueException");
+        super(com.amazonaws.services.lambda.model.InvalidParameterValueException.class, "InvalidParameterValueException");
     }
 
     @Override
-    public com.amazonaws.services.lambda.model.InvalidParameterValueException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.lambda.model.InvalidParameterValueException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.lambda.model.InvalidParameterValueException invalidParameterValueException = new com.amazonaws.services.lambda.model.InvalidParameterValueException(
                 null);
 

@@ -200,10 +200,7 @@ public class AWSOpsWorksCMClient extends AmazonWebServiceClient implements AWSOp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.opsworkscm.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.opsworkscm.model.AWSOpsWorksCMException>(
-                                            com.amazonaws.services.opsworkscm.model.AWSOpsWorksCMException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.opsworkscm.model.AWSOpsWorksCMException.class));
 
     /**
      * Constructs a new client to invoke service methods on OpsWorksCM. A credentials provider chain will be used that

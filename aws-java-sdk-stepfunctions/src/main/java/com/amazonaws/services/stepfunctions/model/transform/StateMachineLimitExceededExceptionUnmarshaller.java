@@ -27,14 +27,14 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * StateMachineLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class StateMachineLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException> {
+public class StateMachineLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private StateMachineLimitExceededExceptionUnmarshaller() {
-        super("StateMachineLimitExceeded");
+        super(com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException.class, "StateMachineLimitExceeded");
     }
 
     @Override
-    public com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context)
+            throws Exception {
         com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException stateMachineLimitExceededException = new com.amazonaws.services.stepfunctions.model.StateMachineLimitExceededException(
                 null);
 

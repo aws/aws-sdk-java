@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * OperationNotFoundException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class OperationNotFoundExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicediscovery.model.OperationNotFoundException> {
+public class OperationNotFoundExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private OperationNotFoundExceptionUnmarshaller() {
-        super("OperationNotFound");
+        super(com.amazonaws.services.servicediscovery.model.OperationNotFoundException.class, "OperationNotFound");
     }
 
     @Override
-    public com.amazonaws.services.servicediscovery.model.OperationNotFoundException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicediscovery.model.OperationNotFoundException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicediscovery.model.OperationNotFoundException operationNotFoundException = new com.amazonaws.services.servicediscovery.model.OperationNotFoundException(
                 null);
 

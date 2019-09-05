@@ -27,14 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * RepositoryLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class RepositoryLimitExceededExceptionUnmarshaller extends
-        JsonErrorUnmarshaller<com.amazonaws.services.codecommit.model.RepositoryLimitExceededException> {
+public class RepositoryLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private RepositoryLimitExceededExceptionUnmarshaller() {
-        super("RepositoryLimitExceededException");
+        super(com.amazonaws.services.codecommit.model.RepositoryLimitExceededException.class, "RepositoryLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.codecommit.model.RepositoryLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.codecommit.model.RepositoryLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.codecommit.model.RepositoryLimitExceededException repositoryLimitExceededException = new com.amazonaws.services.codecommit.model.RepositoryLimitExceededException(
                 null);
 

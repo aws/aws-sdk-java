@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * IdempotencyException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class IdempotencyExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.devicefarm.model.IdempotencyException> {
+public class IdempotencyExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private IdempotencyExceptionUnmarshaller() {
-        super("IdempotencyException");
+        super(com.amazonaws.services.devicefarm.model.IdempotencyException.class, "IdempotencyException");
     }
 
     @Override
-    public com.amazonaws.services.devicefarm.model.IdempotencyException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.devicefarm.model.IdempotencyException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.devicefarm.model.IdempotencyException idempotencyException = new com.amazonaws.services.devicefarm.model.IdempotencyException(
                 null);
 

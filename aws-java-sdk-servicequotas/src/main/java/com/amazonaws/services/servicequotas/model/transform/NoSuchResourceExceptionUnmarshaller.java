@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * NoSuchResourceException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class NoSuchResourceExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.servicequotas.model.NoSuchResourceException> {
+public class NoSuchResourceExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private NoSuchResourceExceptionUnmarshaller() {
-        super("NoSuchResourceException");
+        super(com.amazonaws.services.servicequotas.model.NoSuchResourceException.class, "NoSuchResourceException");
     }
 
     @Override
-    public com.amazonaws.services.servicequotas.model.NoSuchResourceException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.servicequotas.model.NoSuchResourceException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.servicequotas.model.NoSuchResourceException noSuchResourceException = new com.amazonaws.services.servicequotas.model.NoSuchResourceException(
                 null);
 

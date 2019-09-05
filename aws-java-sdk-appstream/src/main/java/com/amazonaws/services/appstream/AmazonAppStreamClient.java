@@ -132,10 +132,7 @@ public class AmazonAppStreamClient extends AmazonWebServiceClient implements Ama
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appstream.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode(null).withExceptionUnmarshaller(
-                                    new JsonBaseExceptionUnmarshaller<com.amazonaws.services.appstream.model.AmazonAppStreamException>(
-                                            com.amazonaws.services.appstream.model.AmazonAppStreamException.class))));
+                    .withBaseServiceExceptionClass(com.amazonaws.services.appstream.model.AmazonAppStreamException.class));
 
     /**
      * Constructs a new client to invoke service methods on Amazon AppStream. A credentials provider chain will be used

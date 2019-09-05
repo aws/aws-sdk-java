@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * ClusterLimitExceededException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class ClusterLimitExceededExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.snowball.model.ClusterLimitExceededException> {
+public class ClusterLimitExceededExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private ClusterLimitExceededExceptionUnmarshaller() {
-        super("ClusterLimitExceededException");
+        super(com.amazonaws.services.snowball.model.ClusterLimitExceededException.class, "ClusterLimitExceededException");
     }
 
     @Override
-    public com.amazonaws.services.snowball.model.ClusterLimitExceededException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.snowball.model.ClusterLimitExceededException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.snowball.model.ClusterLimitExceededException clusterLimitExceededException = new com.amazonaws.services.snowball.model.ClusterLimitExceededException(
                 null);
 

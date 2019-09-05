@@ -27,13 +27,13 @@ import static com.fasterxml.jackson.core.JsonToken.*;
  * TrailNotProvidedException JSON Unmarshaller
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
-public class TrailNotProvidedExceptionUnmarshaller extends JsonErrorUnmarshaller<com.amazonaws.services.cloudtrail.model.TrailNotProvidedException> {
+public class TrailNotProvidedExceptionUnmarshaller extends EnhancedJsonErrorUnmarshaller {
     private TrailNotProvidedExceptionUnmarshaller() {
-        super("TrailNotProvidedException");
+        super(com.amazonaws.services.cloudtrail.model.TrailNotProvidedException.class, "TrailNotProvidedException");
     }
 
     @Override
-    public com.amazonaws.services.cloudtrail.model.TrailNotProvidedException unmarshall(JsonUnmarshallerContext context) throws Exception {
+    public com.amazonaws.services.cloudtrail.model.TrailNotProvidedException unmarshallFromContext(JsonUnmarshallerContext context) throws Exception {
         com.amazonaws.services.cloudtrail.model.TrailNotProvidedException trailNotProvidedException = new com.amazonaws.services.cloudtrail.model.TrailNotProvidedException(
                 null);
 
