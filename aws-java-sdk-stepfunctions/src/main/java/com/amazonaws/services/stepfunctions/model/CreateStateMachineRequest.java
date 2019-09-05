@@ -35,7 +35,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -79,6 +79,16 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Tags to be added when creating a state machine.
      * </p>
+     * <p>
+     * An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     * Tags</a>.
+     * </p>
+     * <p>
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      */
     private java.util.List<Tag> tags;
 
@@ -92,7 +102,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -125,7 +135,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -164,7 +174,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -196,7 +206,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -235,7 +245,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -268,7 +278,7 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -429,8 +439,28 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Tags to be added when creating a state machine.
      * </p>
+     * <p>
+     * An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     * Tags</a>.
+     * </p>
+     * <p>
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
-     * @return Tags to be added when creating a state machine.
+     * @return Tags to be added when creating a state machine.</p>
+     *         <p>
+     *         An array of key-value pairs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     *         Tags</a>.
+     *         </p>
+     *         <p>
+     *         Tags may only contain Unicode letters, digits, white space, or these symbols:
+     *         <code>_ . : / = + - @</code>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -441,9 +471,28 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Tags to be added when creating a state machine.
      * </p>
+     * <p>
+     * An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     * Tags</a>.
+     * </p>
+     * <p>
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
      * @param tags
-     *        Tags to be added when creating a state machine.
+     *        Tags to be added when creating a state machine.</p>
+     *        <p>
+     *        An array of key-value pairs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     *        Tags</a>.
+     *        </p>
+     *        <p>
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -460,13 +509,32 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * Tags to be added when creating a state machine.
      * </p>
      * <p>
+     * An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     * Tags</a>.
+     * </p>
+     * <p>
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
      * existing values.
      * </p>
      * 
      * @param tags
-     *        Tags to be added when creating a state machine.
+     *        Tags to be added when creating a state machine.</p>
+     *        <p>
+     *        An array of key-value pairs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     *        Tags</a>.
+     *        </p>
+     *        <p>
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -484,9 +552,28 @@ public class CreateStateMachineRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Tags to be added when creating a state machine.
      * </p>
+     * <p>
+     * An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
+     * Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     * Tags</a>.
+     * </p>
+     * <p>
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
+     * </p>
      * 
      * @param tags
-     *        Tags to be added when creating a state machine.
+     *        Tags to be added when creating a state machine.</p>
+     *        <p>
+     *        An array of key-value pairs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
+     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>, and <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_iam-tags.html">Controlling Access Using IAM
+     *        Tags</a>.
+     *        </p>
+     *        <p>
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

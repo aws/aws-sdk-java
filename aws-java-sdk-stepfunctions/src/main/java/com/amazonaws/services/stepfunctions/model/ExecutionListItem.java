@@ -50,7 +50,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -185,7 +185,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -218,7 +218,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -257,7 +257,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -289,7 +289,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -328,7 +328,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -361,7 +361,7 @@ public class ExecutionListItem implements Serializable, Cloneable, StructuredPoj
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>

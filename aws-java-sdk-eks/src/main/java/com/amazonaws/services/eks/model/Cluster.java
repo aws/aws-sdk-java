@@ -82,6 +82,12 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     private Logging logging;
     /**
      * <p>
+     * The identity provider information for the cluster.
+     * </p>
+     */
+    private Identity identity;
+    /**
+     * <p>
      * The current status of the cluster.
      * </p>
      */
@@ -459,6 +465,46 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The identity provider information for the cluster.
+     * </p>
+     * 
+     * @param identity
+     *        The identity provider information for the cluster.
+     */
+
+    public void setIdentity(Identity identity) {
+        this.identity = identity;
+    }
+
+    /**
+     * <p>
+     * The identity provider information for the cluster.
+     * </p>
+     * 
+     * @return The identity provider information for the cluster.
+     */
+
+    public Identity getIdentity() {
+        return this.identity;
+    }
+
+    /**
+     * <p>
+     * The identity provider information for the cluster.
+     * </p>
+     * 
+     * @param identity
+     *        The identity provider information for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withIdentity(Identity identity) {
+        setIdentity(identity);
+        return this;
+    }
+
+    /**
+     * <p>
      * The current status of the cluster.
      * </p>
      * 
@@ -676,6 +722,8 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             sb.append("ResourcesVpcConfig: ").append(getResourcesVpcConfig()).append(",");
         if (getLogging() != null)
             sb.append("Logging: ").append(getLogging()).append(",");
+        if (getIdentity() != null)
+            sb.append("Identity: ").append(getIdentity()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCertificateAuthority() != null)
@@ -730,6 +778,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false)
             return false;
+        if (other.getIdentity() == null ^ this.getIdentity() == null)
+            return false;
+        if (other.getIdentity() != null && other.getIdentity().equals(this.getIdentity()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -762,6 +814,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getResourcesVpcConfig() == null) ? 0 : getResourcesVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
+        hashCode = prime * hashCode + ((getIdentity() == null) ? 0 : getIdentity().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCertificateAuthority() == null) ? 0 : getCertificateAuthority().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());

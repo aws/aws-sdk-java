@@ -126,6 +126,36 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     private ExecutionAbortedEventDetails executionAbortedEventDetails;
 
     private ExecutionTimedOutEventDetails executionTimedOutEventDetails;
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     */
+    private MapStateStartedEventDetails mapStateStartedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationStartedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationSucceededEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationFailedEventDetails;
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     */
+    private MapIterationEventDetails mapIterationAbortedEventDetails;
 
     private LambdaFunctionFailedEventDetails lambdaFunctionFailedEventDetails;
 
@@ -965,6 +995,206 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @param mapStateStartedEventDetails
+     *        Contains details about Map state that was started.
+     */
+
+    public void setMapStateStartedEventDetails(MapStateStartedEventDetails mapStateStartedEventDetails) {
+        this.mapStateStartedEventDetails = mapStateStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @return Contains details about Map state that was started.
+     */
+
+    public MapStateStartedEventDetails getMapStateStartedEventDetails() {
+        return this.mapStateStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about Map state that was started.
+     * </p>
+     * 
+     * @param mapStateStartedEventDetails
+     *        Contains details about Map state that was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapStateStartedEventDetails(MapStateStartedEventDetails mapStateStartedEventDetails) {
+        setMapStateStartedEventDetails(mapStateStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @param mapIterationStartedEventDetails
+     *        Contains details about an iteration of a Map state that was started.
+     */
+
+    public void setMapIterationStartedEventDetails(MapIterationEventDetails mapIterationStartedEventDetails) {
+        this.mapIterationStartedEventDetails = mapIterationStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that was started.
+     */
+
+    public MapIterationEventDetails getMapIterationStartedEventDetails() {
+        return this.mapIterationStartedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was started.
+     * </p>
+     * 
+     * @param mapIterationStartedEventDetails
+     *        Contains details about an iteration of a Map state that was started.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationStartedEventDetails(MapIterationEventDetails mapIterationStartedEventDetails) {
+        setMapIterationStartedEventDetails(mapIterationStartedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @param mapIterationSucceededEventDetails
+     *        Contains details about an iteration of a Map state that succeeded.
+     */
+
+    public void setMapIterationSucceededEventDetails(MapIterationEventDetails mapIterationSucceededEventDetails) {
+        this.mapIterationSucceededEventDetails = mapIterationSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that succeeded.
+     */
+
+    public MapIterationEventDetails getMapIterationSucceededEventDetails() {
+        return this.mapIterationSucceededEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that succeeded.
+     * </p>
+     * 
+     * @param mapIterationSucceededEventDetails
+     *        Contains details about an iteration of a Map state that succeeded.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationSucceededEventDetails(MapIterationEventDetails mapIterationSucceededEventDetails) {
+        setMapIterationSucceededEventDetails(mapIterationSucceededEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @param mapIterationFailedEventDetails
+     *        Contains details about an iteration of a Map state that failed.
+     */
+
+    public void setMapIterationFailedEventDetails(MapIterationEventDetails mapIterationFailedEventDetails) {
+        this.mapIterationFailedEventDetails = mapIterationFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that failed.
+     */
+
+    public MapIterationEventDetails getMapIterationFailedEventDetails() {
+        return this.mapIterationFailedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that failed.
+     * </p>
+     * 
+     * @param mapIterationFailedEventDetails
+     *        Contains details about an iteration of a Map state that failed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationFailedEventDetails(MapIterationEventDetails mapIterationFailedEventDetails) {
+        setMapIterationFailedEventDetails(mapIterationFailedEventDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @param mapIterationAbortedEventDetails
+     *        Contains details about an iteration of a Map state that was aborted.
+     */
+
+    public void setMapIterationAbortedEventDetails(MapIterationEventDetails mapIterationAbortedEventDetails) {
+        this.mapIterationAbortedEventDetails = mapIterationAbortedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @return Contains details about an iteration of a Map state that was aborted.
+     */
+
+    public MapIterationEventDetails getMapIterationAbortedEventDetails() {
+        return this.mapIterationAbortedEventDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about an iteration of a Map state that was aborted.
+     * </p>
+     * 
+     * @param mapIterationAbortedEventDetails
+     *        Contains details about an iteration of a Map state that was aborted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HistoryEvent withMapIterationAbortedEventDetails(MapIterationEventDetails mapIterationAbortedEventDetails) {
+        setMapIterationAbortedEventDetails(mapIterationAbortedEventDetails);
+        return this;
+    }
+
+    /**
      * @param lambdaFunctionFailedEventDetails
      */
 
@@ -1258,6 +1488,16 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
             sb.append("ExecutionAbortedEventDetails: ").append(getExecutionAbortedEventDetails()).append(",");
         if (getExecutionTimedOutEventDetails() != null)
             sb.append("ExecutionTimedOutEventDetails: ").append(getExecutionTimedOutEventDetails()).append(",");
+        if (getMapStateStartedEventDetails() != null)
+            sb.append("MapStateStartedEventDetails: ").append(getMapStateStartedEventDetails()).append(",");
+        if (getMapIterationStartedEventDetails() != null)
+            sb.append("MapIterationStartedEventDetails: ").append(getMapIterationStartedEventDetails()).append(",");
+        if (getMapIterationSucceededEventDetails() != null)
+            sb.append("MapIterationSucceededEventDetails: ").append(getMapIterationSucceededEventDetails()).append(",");
+        if (getMapIterationFailedEventDetails() != null)
+            sb.append("MapIterationFailedEventDetails: ").append(getMapIterationFailedEventDetails()).append(",");
+        if (getMapIterationAbortedEventDetails() != null)
+            sb.append("MapIterationAbortedEventDetails: ").append(getMapIterationAbortedEventDetails()).append(",");
         if (getLambdaFunctionFailedEventDetails() != null)
             sb.append("LambdaFunctionFailedEventDetails: ").append(getLambdaFunctionFailedEventDetails()).append(",");
         if (getLambdaFunctionScheduleFailedEventDetails() != null)
@@ -1385,6 +1625,30 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
         if (other.getExecutionTimedOutEventDetails() != null
                 && other.getExecutionTimedOutEventDetails().equals(this.getExecutionTimedOutEventDetails()) == false)
             return false;
+        if (other.getMapStateStartedEventDetails() == null ^ this.getMapStateStartedEventDetails() == null)
+            return false;
+        if (other.getMapStateStartedEventDetails() != null && other.getMapStateStartedEventDetails().equals(this.getMapStateStartedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationStartedEventDetails() == null ^ this.getMapIterationStartedEventDetails() == null)
+            return false;
+        if (other.getMapIterationStartedEventDetails() != null
+                && other.getMapIterationStartedEventDetails().equals(this.getMapIterationStartedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationSucceededEventDetails() == null ^ this.getMapIterationSucceededEventDetails() == null)
+            return false;
+        if (other.getMapIterationSucceededEventDetails() != null
+                && other.getMapIterationSucceededEventDetails().equals(this.getMapIterationSucceededEventDetails()) == false)
+            return false;
+        if (other.getMapIterationFailedEventDetails() == null ^ this.getMapIterationFailedEventDetails() == null)
+            return false;
+        if (other.getMapIterationFailedEventDetails() != null
+                && other.getMapIterationFailedEventDetails().equals(this.getMapIterationFailedEventDetails()) == false)
+            return false;
+        if (other.getMapIterationAbortedEventDetails() == null ^ this.getMapIterationAbortedEventDetails() == null)
+            return false;
+        if (other.getMapIterationAbortedEventDetails() != null
+                && other.getMapIterationAbortedEventDetails().equals(this.getMapIterationAbortedEventDetails()) == false)
+            return false;
         if (other.getLambdaFunctionFailedEventDetails() == null ^ this.getLambdaFunctionFailedEventDetails() == null)
             return false;
         if (other.getLambdaFunctionFailedEventDetails() != null
@@ -1454,6 +1718,11 @@ public class HistoryEvent implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExecutionSucceededEventDetails() == null) ? 0 : getExecutionSucceededEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionAbortedEventDetails() == null) ? 0 : getExecutionAbortedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getExecutionTimedOutEventDetails() == null) ? 0 : getExecutionTimedOutEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapStateStartedEventDetails() == null) ? 0 : getMapStateStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationStartedEventDetails() == null) ? 0 : getMapIterationStartedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationSucceededEventDetails() == null) ? 0 : getMapIterationSucceededEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationFailedEventDetails() == null) ? 0 : getMapIterationFailedEventDetails().hashCode());
+        hashCode = prime * hashCode + ((getMapIterationAbortedEventDetails() == null) ? 0 : getMapIterationAbortedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionFailedEventDetails() == null) ? 0 : getLambdaFunctionFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionScheduleFailedEventDetails() == null) ? 0 : getLambdaFunctionScheduleFailedEventDetails().hashCode());
         hashCode = prime * hashCode + ((getLambdaFunctionScheduledEventDetails() == null) ? 0 : getLambdaFunctionScheduledEventDetails().hashCode());

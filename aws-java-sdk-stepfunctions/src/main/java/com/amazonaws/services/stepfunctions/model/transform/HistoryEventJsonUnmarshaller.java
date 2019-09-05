@@ -140,6 +140,26 @@ public class HistoryEventJsonUnmarshaller implements Unmarshaller<HistoryEvent, 
                     context.nextToken();
                     historyEvent.setExecutionTimedOutEventDetails(ExecutionTimedOutEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("mapStateStartedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapStateStartedEventDetails(MapStateStartedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapIterationStartedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapIterationStartedEventDetails(MapIterationEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapIterationSucceededEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapIterationSucceededEventDetails(MapIterationEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapIterationFailedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapIterationFailedEventDetails(MapIterationEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("mapIterationAbortedEventDetails", targetDepth)) {
+                    context.nextToken();
+                    historyEvent.setMapIterationAbortedEventDetails(MapIterationEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("lambdaFunctionFailedEventDetails", targetDepth)) {
                     context.nextToken();
                     historyEvent.setLambdaFunctionFailedEventDetails(LambdaFunctionFailedEventDetailsJsonUnmarshaller.getInstance().unmarshall(context));

@@ -44,7 +44,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -127,7 +127,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -160,7 +160,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -199,7 +199,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -231,7 +231,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -270,7 +270,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -303,7 +303,7 @@ public class StateMachineListItem implements Serializable, Cloneable, Structured
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>

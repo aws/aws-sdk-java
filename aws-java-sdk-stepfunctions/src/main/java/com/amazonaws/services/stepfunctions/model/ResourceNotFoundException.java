@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Could not fine the referenced resource. Only state machine and activity ARNs are supported.
+ * Could not find the referenced resource. Only state machine and activity ARNs are supported.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

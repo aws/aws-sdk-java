@@ -40,7 +40,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     private String languageCode;
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate of the audio track in the input media file in Hertz.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -52,6 +52,12 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The format of the input media file.
+     * </p>
+     * <p>
+     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
+     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     * <code>InternalFailureException</code> exception.
      * </p>
      */
     private String mediaFormat;
@@ -198,7 +204,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate of the audio track in the input media file in Hertz.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -207,7 +213,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in the input media file. </p>
+     *        The sample rate of the audio track in the input media file in Hertz. </p>
      *        <p>
      *        If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *        the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -221,7 +227,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate of the audio track in the input media file in Hertz.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -229,7 +235,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <code>MediaSampleRateHertz</code> field blank and let Amazon Transcribe determine the sample rate.
      * </p>
      * 
-     * @return The sample rate, in Hertz, of the audio track in the input media file. </p>
+     * @return The sample rate of the audio track in the input media file in Hertz. </p>
      *         <p>
      *         If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *         the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -243,7 +249,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The sample rate, in Hertz, of the audio track in the input media file.
+     * The sample rate of the audio track in the input media file in Hertz.
      * </p>
      * <p>
      * If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify the
@@ -252,7 +258,7 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param mediaSampleRateHertz
-     *        The sample rate, in Hertz, of the audio track in the input media file. </p>
+     *        The sample rate of the audio track in the input media file in Hertz. </p>
      *        <p>
      *        If you do not specify the media sample rate, Amazon Transcribe determines the sample rate. If you specify
      *        the sample rate, it must match the sample rate detected by Amazon Transcribe. In most cases, you should
@@ -270,9 +276,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
+     * <p>
+     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
+     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     * <code>InternalFailureException</code> exception.
+     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.
+     *        The format of the input media file.</p>
+     *        <p>
+     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
+     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
+     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     *        <code>InternalFailureException</code> exception.
      * @see MediaFormat
      */
 
@@ -284,8 +301,19 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
+     * <p>
+     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
+     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     * <code>InternalFailureException</code> exception.
+     * </p>
      * 
-     * @return The format of the input media file.
+     * @return The format of the input media file.</p>
+     *         <p>
+     *         If you do not specify the format of the media file, Amazon Transcribe determines the format. If the
+     *         format is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception.
+     *         If you specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     *         <code>InternalFailureException</code> exception.
      * @see MediaFormat
      */
 
@@ -297,9 +325,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
+     * <p>
+     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
+     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     * <code>InternalFailureException</code> exception.
+     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.
+     *        The format of the input media file.</p>
+     *        <p>
+     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
+     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
+     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     *        <code>InternalFailureException</code> exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */
@@ -313,9 +352,20 @@ public class StartTranscriptionJobRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The format of the input media file.
      * </p>
+     * <p>
+     * If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format is not
+     * recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you specify the
+     * format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     * <code>InternalFailureException</code> exception.
+     * </p>
      * 
      * @param mediaFormat
-     *        The format of the input media file.
+     *        The format of the input media file.</p>
+     *        <p>
+     *        If you do not specify the format of the media file, Amazon Transcribe determines the format. If the format
+     *        is not recognized, Amazon Transcribe returns an <code>InternalFailureException</code> exception. If you
+     *        specify the format, it must match the format detected by Amazon Transcribe, otherwise you get an
+     *        <code>InternalFailureException</code> exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MediaFormat
      */

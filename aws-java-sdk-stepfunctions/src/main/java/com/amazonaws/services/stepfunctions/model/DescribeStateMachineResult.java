@@ -39,7 +39,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -143,7 +143,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -176,7 +176,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -215,7 +215,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -247,7 +247,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -286,7 +286,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -319,7 +319,7 @@ public class DescribeStateMachineResult extends com.amazonaws.AmazonWebServiceRe
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>

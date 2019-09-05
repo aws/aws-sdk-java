@@ -73,6 +73,16 @@ public class HistoryEventMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionAbortedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONTIMEDOUTEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionTimedOutEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPSTATESTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapStateStartedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPITERATIONSTARTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapIterationStartedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPITERATIONSUCCEEDEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapIterationSucceededEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPITERATIONFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapIterationFailedEventDetails").build();
+    private static final MarshallingInfo<StructuredPojo> MAPITERATIONABORTEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mapIterationAbortedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> LAMBDAFUNCTIONFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lambdaFunctionFailedEventDetails").build();
     private static final MarshallingInfo<StructuredPojo> LAMBDAFUNCTIONSCHEDULEFAILEDEVENTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -129,6 +139,11 @@ public class HistoryEventMarshaller {
             protocolMarshaller.marshall(historyEvent.getExecutionSucceededEventDetails(), EXECUTIONSUCCEEDEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionAbortedEventDetails(), EXECUTIONABORTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getExecutionTimedOutEventDetails(), EXECUTIONTIMEDOUTEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapStateStartedEventDetails(), MAPSTATESTARTEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapIterationStartedEventDetails(), MAPITERATIONSTARTEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapIterationSucceededEventDetails(), MAPITERATIONSUCCEEDEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapIterationFailedEventDetails(), MAPITERATIONFAILEDEVENTDETAILS_BINDING);
+            protocolMarshaller.marshall(historyEvent.getMapIterationAbortedEventDetails(), MAPITERATIONABORTEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getLambdaFunctionFailedEventDetails(), LAMBDAFUNCTIONFAILEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getLambdaFunctionScheduleFailedEventDetails(), LAMBDAFUNCTIONSCHEDULEFAILEDEVENTDETAILS_BINDING);
             protocolMarshaller.marshall(historyEvent.getLambdaFunctionScheduledEventDetails(), LAMBDAFUNCTIONSCHEDULEDEVENTDETAILS_BINDING);

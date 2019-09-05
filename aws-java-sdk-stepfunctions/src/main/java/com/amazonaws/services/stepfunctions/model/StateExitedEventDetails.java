@@ -38,7 +38,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -81,7 +81,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -114,7 +114,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -153,7 +153,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -185,7 +185,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -224,7 +224,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -257,7 +257,7 @@ public class StateExitedEventDetails implements Serializable, Cloneable, Structu
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>

@@ -214,6 +214,10 @@
           "shape":"Logging",
           "documentation":"<p>The logging configuration for your cluster.</p>"
         },
+        "identity":{
+          "shape":"Identity",
+          "documentation":"<p>The identity provider information for the cluster.</p>"
+        },
         "status":{
           "shape":"ClusterStatus",
           "documentation":"<p>The current status of the cluster.</p>"
@@ -399,6 +403,16 @@
       "type":"list",
       "member":{"shape":"ErrorDetail"}
     },
+    "Identity":{
+      "type":"structure",
+      "members":{
+        "oidc":{
+          "shape":"OIDC",
+          "documentation":"<p>The <a href=\"https://openid.net/connect/\">OpenID Connect</a> identity provider information for the cluster.</p>"
+        }
+      },
+      "documentation":"<p>An object representing an identity provider for authentication credentials.</p>"
+    },
     "InvalidParameterException":{
       "type":"structure",
       "members":{
@@ -545,6 +559,16 @@
         }
       },
       "documentation":"<p>An object representing the logging configuration for resources in your cluster.</p>"
+    },
+    "OIDC":{
+      "type":"structure",
+      "members":{
+        "issuer":{
+          "shape":"String",
+          "documentation":"<p>The issuer URL for the OpenID Connect identity provider.</p>"
+        }
+      },
+      "documentation":"<p>An object representing the <a href=\"https://openid.net/connect/\">OpenID Connect</a> identity provider information for the cluster.</p>"
     },
     "ResourceInUseException":{
       "type":"structure",

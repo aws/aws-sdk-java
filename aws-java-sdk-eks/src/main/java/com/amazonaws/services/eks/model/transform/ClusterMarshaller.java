@@ -43,6 +43,8 @@ public class ClusterMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourcesVpcConfig").build();
     private static final MarshallingInfo<StructuredPojo> LOGGING_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logging").build();
+    private static final MarshallingInfo<StructuredPojo> IDENTITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identity").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> CERTIFICATEAUTHORITY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -76,6 +78,7 @@ public class ClusterMarshaller {
             protocolMarshaller.marshall(cluster.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(cluster.getResourcesVpcConfig(), RESOURCESVPCCONFIG_BINDING);
             protocolMarshaller.marshall(cluster.getLogging(), LOGGING_BINDING);
+            protocolMarshaller.marshall(cluster.getIdentity(), IDENTITY_BINDING);
             protocolMarshaller.marshall(cluster.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(cluster.getCertificateAuthority(), CERTIFICATEAUTHORITY_BINDING);
             protocolMarshaller.marshall(cluster.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);

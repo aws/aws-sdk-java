@@ -45,7 +45,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -197,7 +197,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -230,7 +230,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>
@@ -269,7 +269,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -301,7 +301,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *         <ul>
      *         <li>
      *         <p>
-     *         whitespace
+     *         white space
      *         </p>
      *         </li>
      *         <li>
@@ -340,7 +340,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      * <ul>
      * <li>
      * <p>
-     * whitespace
+     * white space
      * </p>
      * </li>
      * <li>
@@ -373,7 +373,7 @@ public class DescribeExecutionResult extends com.amazonaws.AmazonWebServiceResul
      *        <ul>
      *        <li>
      *        <p>
-     *        whitespace
+     *        white space
      *        </p>
      *        </li>
      *        <li>

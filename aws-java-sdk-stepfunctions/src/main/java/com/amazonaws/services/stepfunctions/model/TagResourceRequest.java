@@ -36,7 +36,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The list of tags to add to a resource.
      * </p>
      * <p>
-     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -86,12 +86,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The list of tags to add to a resource.
      * </p>
      * <p>
-     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * </p>
      * 
      * @return The list of tags to add to a resource.</p>
      *         <p>
-     *         Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     *         Tags may only contain Unicode letters, digits, white space, or these symbols:
+     *         <code>_ . : / = + - @</code>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -103,13 +104,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The list of tags to add to a resource.
      * </p>
      * <p>
-     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * </p>
      * 
      * @param tags
      *        The list of tags to add to a resource.</p>
      *        <p>
-     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -126,7 +127,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The list of tags to add to a resource.
      * </p>
      * <p>
-     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -137,7 +138,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param tags
      *        The list of tags to add to a resource.</p>
      *        <p>
-     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -156,13 +157,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The list of tags to add to a resource.
      * </p>
      * <p>
-     * Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     * Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * </p>
      * 
      * @param tags
      *        The list of tags to add to a resource.</p>
      *        <p>
-     *        Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_ . : / = + - @</code>.
+     *        Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_ . : / = + - @</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
