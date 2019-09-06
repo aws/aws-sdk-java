@@ -32,7 +32,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function
+     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
      * that is used to preprocess the records in the stream.
      * </p>
      * <note>
@@ -53,7 +53,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function
+     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
      * that is used to preprocess the records in the stream.
      * </p>
      * <note>
@@ -65,7 +65,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * </note>
      * 
      * @param resourceARNUpdate
-     *        The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a>
+     *        The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
      *        function that is used to preprocess the records in the stream.</p> <note>
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version
@@ -80,7 +80,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function
+     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
      * that is used to preprocess the records in the stream.
      * </p>
      * <note>
@@ -91,7 +91,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * </p>
      * </note>
      * 
-     * @return The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a>
+     * @return The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
      *         function that is used to preprocess the records in the stream.</p> <note>
      *         <p>
      *         To specify an earlier version of the Lambda function than the latest, include the Lambda function version
@@ -106,7 +106,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a> function
+     * The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a> function
      * that is used to preprocess the records in the stream.
      * </p>
      * <note>
@@ -118,7 +118,7 @@ public class InputLambdaProcessorUpdate implements Serializable, Cloneable, Stru
      * </note>
      * 
      * @param resourceARNUpdate
-     *        The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/ambda/">AWS Lambda</a>
+     *        The Amazon Resource Name (ARN) of the new <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>
      *        function that is used to preprocess the records in the stream.</p> <note>
      *        <p>
      *        To specify an earlier version of the Lambda function than the latest, include the Lambda function version

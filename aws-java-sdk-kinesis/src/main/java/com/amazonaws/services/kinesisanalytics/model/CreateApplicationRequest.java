@@ -114,8 +114,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      * application. Note that the maximum number of application tags includes system tags. The maximum number of
      * user-defined application tags is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -794,15 +793,13 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      * application. Note that the maximum number of application tags includes system tags. The maximum number of
      * user-defined application tags is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @return A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      *         application. Note that the maximum number of application tags includes system tags. The maximum number of
      *         user-defined application tags is 50. For more information, see <a
-     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *         Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     *         href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -814,16 +811,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      * application. Note that the maximum number of application tags includes system tags. The maximum number of
      * user-defined application tags is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @param tags
      *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      *        application. Note that the maximum number of application tags includes system tags. The maximum number of
      *        user-defined application tags is 50. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -840,8 +835,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      * application. Note that the maximum number of application tags includes system tags. The maximum number of
      * user-defined application tags is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -853,8 +847,7 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      *        application. Note that the maximum number of application tags includes system tags. The maximum number of
      *        user-defined application tags is 50. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -873,16 +866,14 @@ public class CreateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      * application. Note that the maximum number of application tags includes system tags. The maximum number of
      * user-defined application tags is 50. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost Allocation
-     * Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
      * @param tags
      *        A list of one or more tags to assign to the application. A tag is a key-value pair that identifies an
      *        application. Note that the maximum number of application tags includes system tags. The maximum number of
      *        user-defined application tags is 50. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using Cost
-     *        Allocation Tags</a> in the <i>AWS Billing and Cost Management Guide</i>.
+     *        href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

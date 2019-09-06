@@ -1,3 +1,8 @@
+# __1.11.627__ __2019-09-06__
+## __Amazon Kinesis Analytics__
+  - ### Features
+    - Documentation updates for kinesisanalytics
+
 # __1.11.626__ __2019-09-05__
 ## __AWS Config__
   - ### Features
