@@ -157,6 +157,8 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private VPCConfigResponse vpcConfig;
+    /** <p/> */
+    private NetworkInterface networkInterface;
 
     /**
      * <p>
@@ -1201,6 +1203,38 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p/>
+     * 
+     * @param networkInterface
+     */
+
+    public void setNetworkInterface(NetworkInterface networkInterface) {
+        this.networkInterface = networkInterface;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @return
+     */
+
+    public NetworkInterface getNetworkInterface() {
+        return this.networkInterface;
+    }
+
+    /**
+     * <p/>
+     * 
+     * @param networkInterface
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SimulationJob withNetworkInterface(NetworkInterface networkInterface) {
+        setNetworkInterface(networkInterface);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1249,7 +1283,9 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getNetworkInterface() != null)
+            sb.append("NetworkInterface: ").append(getNetworkInterface());
         sb.append("}");
         return sb.toString();
     }
@@ -1340,6 +1376,10 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getNetworkInterface() == null ^ this.getNetworkInterface() == null)
+            return false;
+        if (other.getNetworkInterface() != null && other.getNetworkInterface().equals(this.getNetworkInterface()) == false)
+            return false;
         return true;
     }
 
@@ -1367,6 +1407,7 @@ public class SimulationJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
         return hashCode;
     }
 

@@ -225,6 +225,12 @@ public class DescribeSimulationJobResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private VPCConfigResponse vpcConfig;
+    /**
+     * <p>
+     * The network interface information for the simulation job.
+     * </p>
+     */
+    private NetworkInterface networkInterface;
 
     /**
      * <p>
@@ -1851,6 +1857,46 @@ public class DescribeSimulationJobResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The network interface information for the simulation job.
+     * </p>
+     * 
+     * @param networkInterface
+     *        The network interface information for the simulation job.
+     */
+
+    public void setNetworkInterface(NetworkInterface networkInterface) {
+        this.networkInterface = networkInterface;
+    }
+
+    /**
+     * <p>
+     * The network interface information for the simulation job.
+     * </p>
+     * 
+     * @return The network interface information for the simulation job.
+     */
+
+    public NetworkInterface getNetworkInterface() {
+        return this.networkInterface;
+    }
+
+    /**
+     * <p>
+     * The network interface information for the simulation job.
+     * </p>
+     * 
+     * @param networkInterface
+     *        The network interface information for the simulation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeSimulationJobResult withNetworkInterface(NetworkInterface networkInterface) {
+        setNetworkInterface(networkInterface);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1899,7 +1945,9 @@ public class DescribeSimulationJobResult extends com.amazonaws.AmazonWebServiceR
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVpcConfig() != null)
-            sb.append("VpcConfig: ").append(getVpcConfig());
+            sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getNetworkInterface() != null)
+            sb.append("NetworkInterface: ").append(getNetworkInterface());
         sb.append("}");
         return sb.toString();
     }
@@ -1990,6 +2038,10 @@ public class DescribeSimulationJobResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getNetworkInterface() == null ^ this.getNetworkInterface() == null)
+            return false;
+        if (other.getNetworkInterface() != null && other.getNetworkInterface().equals(this.getNetworkInterface()) == false)
+            return false;
         return true;
     }
 
@@ -2017,6 +2069,7 @@ public class DescribeSimulationJobResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getNetworkInterface() == null) ? 0 : getNetworkInterface().hashCode());
         return hashCode;
     }
 

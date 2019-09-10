@@ -101,8 +101,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
-     * 2.0 only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
      * </p>
      */
     private java.util.List<AccessEndpoint> accessEndpoints;
@@ -669,11 +669,11 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
-     * 2.0 only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
      * </p>
      * 
-     * @return The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     * @return The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
      *         AppStream 2.0 only through the specified endpoints.
      */
 
@@ -683,12 +683,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
-     * 2.0 only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
      *        AppStream 2.0 only through the specified endpoints.
      */
 
@@ -703,8 +703,8 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
-     * 2.0 only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -713,7 +713,7 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
      *        AppStream 2.0 only through the specified endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -730,12 +730,12 @@ public class CreateStackRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to AppStream
-     * 2.0 only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to AppStream 2.0
+     * only through the specified endpoints.
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Users of the stack can connect to
+     *        The list of interface VPC endpoint (interface endpoint) objects. Users of the stack can connect to
      *        AppStream 2.0 only through the specified endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

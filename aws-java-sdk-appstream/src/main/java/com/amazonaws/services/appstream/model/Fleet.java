@@ -30,7 +30,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the fleet.
+     * The Amazon Resource Name (ARN) for the fleet.
      * </p>
      */
     private String arn;
@@ -182,14 +182,22 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Integer idleDisconnectTimeoutInSeconds;
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
+     * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+     * creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
 
     /**
      * <p>
-     * The ARN for the fleet.
+     * The Amazon Resource Name (ARN) for the fleet.
      * </p>
      * 
      * @param arn
-     *        The ARN for the fleet.
+     *        The Amazon Resource Name (ARN) for the fleet.
      */
 
     public void setArn(String arn) {
@@ -198,10 +206,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the fleet.
+     * The Amazon Resource Name (ARN) for the fleet.
      * </p>
      * 
-     * @return The ARN for the fleet.
+     * @return The Amazon Resource Name (ARN) for the fleet.
      */
 
     public String getArn() {
@@ -210,11 +218,11 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN for the fleet.
+     * The Amazon Resource Name (ARN) for the fleet.
      * </p>
      * 
      * @param arn
-     *        The ARN for the fleet.
+     *        The Amazon Resource Name (ARN) for the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1355,6 +1363,58 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
+     * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+     * creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
+     *        Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     *        The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
+     * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+     * creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
+     *         Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     *         The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS Security
+     * Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+     * creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that is applied to the fleet. To assume a role, the fleet instance calls the AWS
+     *        Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     *        The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Fleet withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1401,7 +1461,9 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (getDomainJoinInfo() != null)
             sb.append("DomainJoinInfo: ").append(getDomainJoinInfo()).append(",");
         if (getIdleDisconnectTimeoutInSeconds() != null)
-            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds());
+            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1489,6 +1551,10 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         if (other.getIdleDisconnectTimeoutInSeconds() != null
                 && other.getIdleDisconnectTimeoutInSeconds().equals(this.getIdleDisconnectTimeoutInSeconds()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1515,6 +1581,7 @@ public class Fleet implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         return hashCode;
     }
 

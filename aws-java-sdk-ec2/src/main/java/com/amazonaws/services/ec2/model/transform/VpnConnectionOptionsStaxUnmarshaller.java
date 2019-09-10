@@ -12,6 +12,8 @@
  */
 package com.amazonaws.services.ec2.model.transform;
 
+import java.util.ArrayList;
+
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
 
@@ -47,6 +49,17 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
                     vpnConnectionOptions.setStaticRoutesOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("tunnelOptionSet", targetDepth)) {
+                    vpnConnectionOptions.withTunnelOptions(new ArrayList<TunnelOption>());
+                    continue;
+                }
+
+                if (context.testExpression("tunnelOptionSet/item", targetDepth)) {
+                    vpnConnectionOptions.withTunnelOptions(TunnelOptionStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnConnectionOptions;

@@ -35,6 +35,15 @@ import com.amazonaws.services.appstream.waiters.AmazonAppStreamWaiters;
  * AWS resources that are required to host and run your applications, scales automatically, and provides access to your
  * users on demand.
  * </p>
+ * <note>
+ * <p>
+ * You can call the AppStream 2.0 API operations by using an interface VPC endpoint (interface endpoint). For more
+ * information, see <a href=
+ * "https://docs.aws.amazon.com/appstream2/latest/developerguide/access-api-cli-through-interface-vpc-endpoint.html"
+ * >Access AppStream 2.0 API Operations and CLI Commands Through an Interface VPC Endpoint</a> in the <i>Amazon
+ * AppStream 2.0 Administration Guide</i>.
+ * </p>
+ * </note>
  * <p>
  * To learn more about AppStream 2.0, see the following resources:
  * </p>
@@ -368,6 +377,8 @@ public interface AmazonAppStream {
      * @throws InvalidAccountStatusException
      *         The resource cannot be created because your AWS account is suspended. For assistance, contact AWS
      *         Support.
+     * @throws LimitExceededException
+     *         The requested limit exceeds the permitted limit for an account.
      * @sample AmazonAppStream.CreateUsageReportSubscription
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/CreateUsageReportSubscription"
      *      target="_top">AWS API Documentation</a>
@@ -865,6 +876,8 @@ public interface AmazonAppStream {
      *         An API error occurred. Wait a few minutes and try again.
      * @throws ResourceNotAvailableException
      *         The specified resource exists and is not in use, but isn't available.
+     * @throws InvalidRoleException
+     *         The specified role is invalid.
      * @sample AmazonAppStream.StartFleet
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/StartFleet" target="_top">AWS API
      *      Documentation</a>
@@ -1015,9 +1028,9 @@ public interface AmazonAppStream {
      * <p>
      * If the fleet is in the <code>STOPPED</code> state, you can update any attribute except the fleet name. If the
      * fleet is in the <code>RUNNING</code> state, you can update the <code>DisplayName</code>,
-     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>, and
-     * <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet is in the <code>STARTING</code> or
-     * <code>STOPPING</code> state, you can't update it.
+     * <code>ComputeCapacity</code>, <code>ImageARN</code>, <code>ImageName</code>,
+     * <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code> attributes. If the fleet
+     * is in the <code>STARTING</code> or <code>STOPPING</code> state, you can't update it.
      * </p>
      * 
      * @param updateFleetRequest

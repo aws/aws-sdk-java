@@ -69,6 +69,14 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private VpcConfig vpcConfig;
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
+     * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     * to use. The operation creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
+    /**
+     * <p>
      * Enables or disables default internet access for the image builder.
      * </p>
      */
@@ -111,8 +119,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
-     * builder only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder
+     * only through the specified endpoints.
      * </p>
      */
     private java.util.List<AccessEndpoint> accessEndpoints;
@@ -394,6 +402,58 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateImageBuilderRequest withVpcConfig(VpcConfig vpcConfig) {
         setVpcConfig(vpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
+     * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     * to use. The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
+     *        builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
+     *        ARN of the role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
+     * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     * to use. The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
+     *         builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
+     *         ARN of the role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
+     * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     * to use. The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
+     *        builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
+     *        ARN of the role to use. The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageBuilderRequest withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
         return this;
     }
 
@@ -697,12 +757,12 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
-     * builder only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder
+     * only through the specified endpoints.
      * </p>
      * 
-     * @return The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
-     *         image builder only through the specified endpoints.
+     * @return The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image
+     *         builder only through the specified endpoints.
      */
 
     public java.util.List<AccessEndpoint> getAccessEndpoints() {
@@ -711,13 +771,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
-     * builder only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder
+     * only through the specified endpoints.
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
-     *        image builder only through the specified endpoints.
+     *        The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image
+     *        builder only through the specified endpoints.
      */
 
     public void setAccessEndpoints(java.util.Collection<AccessEndpoint> accessEndpoints) {
@@ -731,8 +791,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
-     * builder only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder
+     * only through the specified endpoints.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -741,8 +801,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
-     *        image builder only through the specified endpoints.
+     *        The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image
+     *        builder only through the specified endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -758,13 +818,13 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the image
-     * builder only through the specified endpoints.
+     * The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image builder
+     * only through the specified endpoints.
      * </p>
      * 
      * @param accessEndpoints
-     *        The list of virtual private cloud (VPC) interface endpoint objects. Administrators can connect to the
-     *        image builder only through the specified endpoints.
+     *        The list of interface VPC endpoint (interface endpoint) objects. Administrators can connect to the image
+     *        builder only through the specified endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -799,6 +859,8 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVpcConfig() != null)
             sb.append("VpcConfig: ").append(getVpcConfig()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getEnableDefaultInternetAccess() != null)
             sb.append("EnableDefaultInternetAccess: ").append(getEnableDefaultInternetAccess()).append(",");
         if (getDomainJoinInfo() != null)
@@ -851,6 +913,10 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getVpcConfig() != null && other.getVpcConfig().equals(this.getVpcConfig()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         if (other.getEnableDefaultInternetAccess() == null ^ this.getEnableDefaultInternetAccess() == null)
             return false;
         if (other.getEnableDefaultInternetAccess() != null && other.getEnableDefaultInternetAccess().equals(this.getEnableDefaultInternetAccess()) == false)
@@ -886,6 +952,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEnableDefaultInternetAccess() == null) ? 0 : getEnableDefaultInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getAppstreamAgentVersion() == null) ? 0 : getAppstreamAgentVersion().hashCode());

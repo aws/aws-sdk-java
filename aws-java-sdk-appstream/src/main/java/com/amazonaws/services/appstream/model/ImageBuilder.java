@@ -78,6 +78,14 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
     private String platform;
     /**
      * <p>
+     * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
+     * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
+    /**
+     * <p>
      * The state of the image builder.
      * </p>
      */
@@ -465,6 +473,58 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
 
     public ImageBuilder withPlatform(PlatformType platform) {
         this.platform = platform.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
+     * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
+     *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     *        to use. The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
+     * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
+     *         the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     *         to use. The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls the AWS
+     * Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use. The
+     * operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The ARN of the IAM role that is applied to the image builder. To assume a role, the image builder calls
+     *        the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
+     *        to use. The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageBuilder withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
         return this;
     }
 
@@ -947,6 +1007,8 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getPlatform() != null)
             sb.append("Platform: ").append(getPlatform()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getStateChangeReason() != null)
@@ -1011,6 +1073,10 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatform() != null && other.getPlatform().equals(this.getPlatform()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -1063,6 +1129,7 @@ public class ImageBuilder implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStateChangeReason() == null) ? 0 : getStateChangeReason().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());

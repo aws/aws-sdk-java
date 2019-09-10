@@ -30,6 +30,8 @@ public enum DataSetType {
     Daily_business_canceled_product_subscribers("daily_business_canceled_product_subscribers"),
     Monthly_revenue_billing_and_revenue_data("monthly_revenue_billing_and_revenue_data"),
     Monthly_revenue_annual_subscriptions("monthly_revenue_annual_subscriptions"),
+    Monthly_revenue_field_demonstration_usage("monthly_revenue_field_demonstration_usage"),
+    Monthly_revenue_flexible_payment_schedule("monthly_revenue_flexible_payment_schedule"),
     Disbursed_amount_by_product("disbursed_amount_by_product"),
     Disbursed_amount_by_product_with_uncollected_funds("disbursed_amount_by_product_with_uncollected_funds"),
     Disbursed_amount_by_instance_hours("disbursed_amount_by_instance_hours"),

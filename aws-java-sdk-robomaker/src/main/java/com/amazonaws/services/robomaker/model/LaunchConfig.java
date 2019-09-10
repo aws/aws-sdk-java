@@ -46,6 +46,12 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
+    /**
+     * <p>
+     * The port forwarding configuration.
+     * </p>
+     */
+    private PortForwardingConfig portForwardingConfig;
 
     /**
      * <p>
@@ -189,6 +195,46 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The port forwarding configuration.
+     * </p>
+     * 
+     * @param portForwardingConfig
+     *        The port forwarding configuration.
+     */
+
+    public void setPortForwardingConfig(PortForwardingConfig portForwardingConfig) {
+        this.portForwardingConfig = portForwardingConfig;
+    }
+
+    /**
+     * <p>
+     * The port forwarding configuration.
+     * </p>
+     * 
+     * @return The port forwarding configuration.
+     */
+
+    public PortForwardingConfig getPortForwardingConfig() {
+        return this.portForwardingConfig;
+    }
+
+    /**
+     * <p>
+     * The port forwarding configuration.
+     * </p>
+     * 
+     * @param portForwardingConfig
+     *        The port forwarding configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LaunchConfig withPortForwardingConfig(PortForwardingConfig portForwardingConfig) {
+        setPortForwardingConfig(portForwardingConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -205,7 +251,9 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
         if (getLaunchFile() != null)
             sb.append("LaunchFile: ").append(getLaunchFile()).append(",");
         if (getEnvironmentVariables() != null)
-            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables());
+            sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
+        if (getPortForwardingConfig() != null)
+            sb.append("PortForwardingConfig: ").append(getPortForwardingConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -232,6 +280,10 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEnvironmentVariables() != null && other.getEnvironmentVariables().equals(this.getEnvironmentVariables()) == false)
             return false;
+        if (other.getPortForwardingConfig() == null ^ this.getPortForwardingConfig() == null)
+            return false;
+        if (other.getPortForwardingConfig() != null && other.getPortForwardingConfig().equals(this.getPortForwardingConfig()) == false)
+            return false;
         return true;
     }
 
@@ -243,6 +295,7 @@ public class LaunchConfig implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPackageName() == null) ? 0 : getPackageName().hashCode());
         hashCode = prime * hashCode + ((getLaunchFile() == null) ? 0 : getLaunchFile().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
+        hashCode = prime * hashCode + ((getPortForwardingConfig() == null) ? 0 : getPortForwardingConfig().hashCode());
         return hashCode;
     }
 

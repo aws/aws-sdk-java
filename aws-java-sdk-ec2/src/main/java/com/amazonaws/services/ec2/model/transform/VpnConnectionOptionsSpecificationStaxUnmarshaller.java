@@ -55,7 +55,7 @@ public class VpnConnectionOptionsSpecificationStaxUnmarshaller implements Unmars
                     continue;
                 }
 
-                if (context.testExpression("TunnelOptions/item", targetDepth)) {
+                if (context.testExpression("TunnelOptions/member", targetDepth)) {
                     vpnConnectionOptionsSpecification.withTunnelOptions(VpnTunnelOptionsSpecificationStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }

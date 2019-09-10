@@ -142,24 +142,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
-     * <dt>WrongRegionS3Output</dt>
-     * <dd>
-     * <p>
-     * S3 output bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionRobotApplication</dt>
-     * <dd>
-     * <p>
-     * RobotApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionSimulationApplication</dt>
-     * <dd>
-     * <p>
-     * SimulationApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
      * </dl>
      */
     private String failureCode;
@@ -558,24 +540,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
-     * <dt>WrongRegionS3Output</dt>
-     * <dd>
-     * <p>
-     * S3 output bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionRobotApplication</dt>
-     * <dd>
-     * <p>
-     * RobotApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionSimulationApplication</dt>
-     * <dd>
-     * <p>
-     * SimulationApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -663,24 +627,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <dd>
      *        <p>
      *        Etag for SimulationApplication does not match value during version creation.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionS3Output</dt>
-     *        <dd>
-     *        <p>
-     *        S3 output bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionRobotApplication</dt>
-     *        <dd>
-     *        <p>
-     *        RobotApplication bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionSimulationApplication</dt>
-     *        <dd>
-     *        <p>
-     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
      *        </p>
      *        </dd>
      * @see SimulationJobErrorCode
@@ -779,24 +725,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
-     * <dt>WrongRegionS3Output</dt>
-     * <dd>
-     * <p>
-     * S3 output bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionRobotApplication</dt>
-     * <dd>
-     * <p>
-     * RobotApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionSimulationApplication</dt>
-     * <dd>
-     * <p>
-     * SimulationApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
      * </dl>
      * 
      * @return The failure code of the simulation job if it failed:</p>
@@ -883,24 +811,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *         <dd>
      *         <p>
      *         Etag for SimulationApplication does not match value during version creation.
-     *         </p>
-     *         </dd>
-     *         <dt>WrongRegionS3Output</dt>
-     *         <dd>
-     *         <p>
-     *         S3 output bucket is in a different region than AWS RoboMaker.
-     *         </p>
-     *         </dd>
-     *         <dt>WrongRegionRobotApplication</dt>
-     *         <dd>
-     *         <p>
-     *         RobotApplication bucket is in a different region than AWS RoboMaker.
-     *         </p>
-     *         </dd>
-     *         <dt>WrongRegionSimulationApplication</dt>
-     *         <dd>
-     *         <p>
-     *         SimulationApplication bucket is in a different region than AWS RoboMaker.
      *         </p>
      *         </dd>
      * @see SimulationJobErrorCode
@@ -999,24 +909,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
-     * <dt>WrongRegionS3Output</dt>
-     * <dd>
-     * <p>
-     * S3 output bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionRobotApplication</dt>
-     * <dd>
-     * <p>
-     * RobotApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionSimulationApplication</dt>
-     * <dd>
-     * <p>
-     * SimulationApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -1104,24 +996,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <dd>
      *        <p>
      *        Etag for SimulationApplication does not match value during version creation.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionS3Output</dt>
-     *        <dd>
-     *        <p>
-     *        S3 output bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionRobotApplication</dt>
-     *        <dd>
-     *        <p>
-     *        RobotApplication bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionSimulationApplication</dt>
-     *        <dd>
-     *        <p>
-     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1222,24 +1096,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      * Etag for SimulationApplication does not match value during version creation.
      * </p>
      * </dd>
-     * <dt>WrongRegionS3Output</dt>
-     * <dd>
-     * <p>
-     * S3 output bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionRobotApplication</dt>
-     * <dd>
-     * <p>
-     * RobotApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
-     * <dt>WrongRegionSimulationApplication</dt>
-     * <dd>
-     * <p>
-     * SimulationApplication bucket is in a different region than AWS RoboMaker.
-     * </p>
-     * </dd>
      * </dl>
      * 
      * @param failureCode
@@ -1327,24 +1183,6 @@ public class CreateSimulationJobResult extends com.amazonaws.AmazonWebServiceRes
      *        <dd>
      *        <p>
      *        Etag for SimulationApplication does not match value during version creation.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionS3Output</dt>
-     *        <dd>
-     *        <p>
-     *        S3 output bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionRobotApplication</dt>
-     *        <dd>
-     *        <p>
-     *        RobotApplication bucket is in a different region than AWS RoboMaker.
-     *        </p>
-     *        </dd>
-     *        <dt>WrongRegionSimulationApplication</dt>
-     *        <dd>
-     *        <p>
-     *        SimulationApplication bucket is in a different region than AWS RoboMaker.
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

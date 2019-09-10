@@ -44,6 +44,8 @@ public class ImageBuilderMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
     private static final MarshallingInfo<String> PLATFORM_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Platform").build();
+    private static final MarshallingInfo<String> IAMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("State").build();
     private static final MarshallingInfo<StructuredPojo> STATECHANGEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -87,6 +89,7 @@ public class ImageBuilderMarshaller {
             protocolMarshaller.marshall(imageBuilder.getVpcConfig(), VPCCONFIG_BINDING);
             protocolMarshaller.marshall(imageBuilder.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(imageBuilder.getPlatform(), PLATFORM_BINDING);
+            protocolMarshaller.marshall(imageBuilder.getIamRoleArn(), IAMROLEARN_BINDING);
             protocolMarshaller.marshall(imageBuilder.getState(), STATE_BINDING);
             protocolMarshaller.marshall(imageBuilder.getStateChangeReason(), STATECHANGEREASON_BINDING);
             protocolMarshaller.marshall(imageBuilder.getCreatedTime(), CREATEDTIME_BINDING);

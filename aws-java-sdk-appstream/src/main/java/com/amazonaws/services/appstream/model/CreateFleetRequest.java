@@ -279,6 +279,14 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </note>
      */
     private Integer idleDisconnectTimeoutInSeconds;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
 
     /**
      * <p>
@@ -1946,6 +1954,58 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *         calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of
+     *         the role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFleetRequest withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1986,7 +2046,9 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getIdleDisconnectTimeoutInSeconds() != null)
-            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds());
+            sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2062,6 +2124,10 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (other.getIdleDisconnectTimeoutInSeconds() != null
                 && other.getIdleDisconnectTimeoutInSeconds().equals(this.getIdleDisconnectTimeoutInSeconds()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -2085,6 +2151,7 @@ public class CreateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         return hashCode;
     }
 

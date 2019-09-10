@@ -2139,7 +2139,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
      * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
-     * be static and may be behind a device performing network address translation (NAT).
+     * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
      * For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System
@@ -2179,7 +2179,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
      * Provides information to AWS about your VPN customer gateway device. The customer gateway is the appliance at your
      * end of the VPN connection. (The device on the AWS side of the VPN connection is the virtual private gateway.) You
      * must provide the Internet-routable IP address of the customer gateway's external interface. The IP address must
-     * be static and may be behind a device performing network address translation (NAT).
+     * be static and can be behind a device performing network address translation (NAT).
      * </p>
      * <p>
      * For devices that use Border Gateway Protocol (BGP), you can also provide the device's BGP Autonomous System
@@ -4630,7 +4630,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection types is <code>ipsec.1</code>.
+     * connection type is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -4666,7 +4666,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
     /**
      * <p>
      * Creates a VPN connection between an existing virtual private gateway and a VPN customer gateway. The supported
-     * connection types is <code>ipsec.1</code>.
+     * connection type is <code>ipsec.1</code>.
      * </p>
      * <p>
      * The response includes information that you need to give to your network administrator to configure your customer
@@ -15200,7 +15200,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration options are available:
+     * Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration options are available:
      * </p>
      * <ul>
      * <li>
@@ -15268,7 +15268,7 @@ public interface AmazonEC2Async extends AmazonEC2 {
 
     /**
      * <p>
-     * Modifies the target gateway of a AWS Site-to-Site VPN connection. The following migration options are available:
+     * Modifies the target gateway of an AWS Site-to-Site VPN connection. The following migration options are available:
      * </p>
      * <ul>
      * <li>
@@ -15371,6 +15371,43 @@ public interface AmazonEC2Async extends AmazonEC2 {
     java.util.concurrent.Future<ModifyVpnTunnelCertificateResult> modifyVpnTunnelCertificateAsync(
             ModifyVpnTunnelCertificateRequest modifyVpnTunnelCertificateRequest,
             com.amazonaws.handlers.AsyncHandler<ModifyVpnTunnelCertificateRequest, ModifyVpnTunnelCertificateResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can modify multiple options for
+     * a tunnel in a single request, but you can only modify one tunnel at a time. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN Tunnel Options for Your
+     * Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+     * </p>
+     * 
+     * @param modifyVpnTunnelOptionsRequest
+     * @return A Java Future containing the result of the ModifyVpnTunnelOptions operation returned by the service.
+     * @sample AmazonEC2Async.ModifyVpnTunnelOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest modifyVpnTunnelOptionsRequest);
+
+    /**
+     * <p>
+     * Modifies the options for a VPN tunnel in an AWS Site-to-Site VPN connection. You can modify multiple options for
+     * a tunnel in a single request, but you can only modify one tunnel at a time. For more information, see <a
+     * href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN Tunnel Options for Your
+     * Site-to-Site VPN Connection</a> in the <i>AWS Site-to-Site VPN User Guide</i>.
+     * </p>
+     * 
+     * @param modifyVpnTunnelOptionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyVpnTunnelOptions operation returned by the service.
+     * @sample AmazonEC2AsyncHandler.ModifyVpnTunnelOptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVpnTunnelOptions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest modifyVpnTunnelOptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpnTunnelOptionsRequest, ModifyVpnTunnelOptionsResult> asyncHandler);
 
     /**
      * <p>

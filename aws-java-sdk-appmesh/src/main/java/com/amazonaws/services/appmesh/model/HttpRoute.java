@@ -40,6 +40,12 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private HttpRouteMatch match;
+    /**
+     * <p>
+     * An object that represents a retry policy.
+     * </p>
+     */
+    private HttpRetryPolicy retryPolicy;
 
     /**
      * <p>
@@ -122,6 +128,46 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents a retry policy.
+     * </p>
+     * 
+     * @param retryPolicy
+     *        An object that represents a retry policy.
+     */
+
+    public void setRetryPolicy(HttpRetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+
+    /**
+     * <p>
+     * An object that represents a retry policy.
+     * </p>
+     * 
+     * @return An object that represents a retry policy.
+     */
+
+    public HttpRetryPolicy getRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    /**
+     * <p>
+     * An object that represents a retry policy.
+     * </p>
+     * 
+     * @param retryPolicy
+     *        An object that represents a retry policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HttpRoute withRetryPolicy(HttpRetryPolicy retryPolicy) {
+        setRetryPolicy(retryPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -136,7 +182,9 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
         if (getAction() != null)
             sb.append("Action: ").append(getAction()).append(",");
         if (getMatch() != null)
-            sb.append("Match: ").append(getMatch());
+            sb.append("Match: ").append(getMatch()).append(",");
+        if (getRetryPolicy() != null)
+            sb.append("RetryPolicy: ").append(getRetryPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -159,6 +207,10 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMatch() != null && other.getMatch().equals(this.getMatch()) == false)
             return false;
+        if (other.getRetryPolicy() == null ^ this.getRetryPolicy() == null)
+            return false;
+        if (other.getRetryPolicy() != null && other.getRetryPolicy().equals(this.getRetryPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -169,6 +221,7 @@ public class HttpRoute implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getMatch() == null) ? 0 : getMatch().hashCode());
+        hashCode = prime * hashCode + ((getRetryPolicy() == null) ? 0 : getRetryPolicy().hashCode());
         return hashCode;
     }
 

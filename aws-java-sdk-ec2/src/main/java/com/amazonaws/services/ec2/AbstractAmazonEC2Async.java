@@ -5459,6 +5459,19 @@ public class AbstractAmazonEC2Async extends AbstractAmazonEC2 implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request) {
+
+        return modifyVpnTunnelOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ModifyVpnTunnelOptionsRequest, ModifyVpnTunnelOptionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<MonitorInstancesResult> monitorInstancesAsync(MonitorInstancesRequest request) {
 
         return monitorInstancesAsync(request, null);

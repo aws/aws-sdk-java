@@ -59,6 +59,8 @@ public class CreateFleetRequestMarshaller {
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<Integer> IDLEDISCONNECTTIMEOUTINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdleDisconnectTimeoutInSeconds").build();
+    private static final MarshallingInfo<String> IAMROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IamRoleArn").build();
 
     private static final CreateFleetRequestMarshaller instance = new CreateFleetRequestMarshaller();
 
@@ -91,6 +93,7 @@ public class CreateFleetRequestMarshaller {
             protocolMarshaller.marshall(createFleetRequest.getDomainJoinInfo(), DOMAINJOININFO_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createFleetRequest.getIdleDisconnectTimeoutInSeconds(), IDLEDISCONNECTTIMEOUTINSECONDS_BINDING);
+            protocolMarshaller.marshall(createFleetRequest.getIamRoleArn(), IAMROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

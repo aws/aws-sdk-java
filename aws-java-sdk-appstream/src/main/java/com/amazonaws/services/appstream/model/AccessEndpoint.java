@@ -19,10 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a virtual private cloud (VPC) interface endpoint that lets you create a private connection between the VPC
- * that you specify and AppStream 2.0. When you specify a VPC interface endpoint for a stack, users of the stack can
- * connect to AppStream 2.0 only through that endpoint. When you specify a VPC interface endpoint for an image builder,
- * administrators can connect to the image builder only through that endpoint.
+ * Describes an interface VPC endpoint (interface endpoint) that lets you create a private connection between the
+ * virtual private cloud (VPC) that you specify and AppStream 2.0. When you specify an interface endpoint for a stack,
+ * users of the stack can connect to AppStream 2.0 only through that endpoint. When you specify an interface endpoint
+ * for an image builder, administrators can connect to the image builder only through that endpoint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/AccessEndpoint" target="_top">AWS API
@@ -33,24 +33,24 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC interface endpoint.
+     * The type of interface endpoint.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The identifier (ID) of the VPC in which the endpoint is used.
+     * The identifier (ID) of the VPC in which the interface endpoint is used.
      * </p>
      */
     private String vpceId;
 
     /**
      * <p>
-     * The type of VPC interface endpoint.
+     * The type of interface endpoint.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC interface endpoint.
+     *        The type of interface endpoint.
      * @see AccessEndpointType
      */
 
@@ -60,10 +60,10 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC interface endpoint.
+     * The type of interface endpoint.
      * </p>
      * 
-     * @return The type of VPC interface endpoint.
+     * @return The type of interface endpoint.
      * @see AccessEndpointType
      */
 
@@ -73,11 +73,11 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC interface endpoint.
+     * The type of interface endpoint.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC interface endpoint.
+     *        The type of interface endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessEndpointType
      */
@@ -89,11 +89,11 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC interface endpoint.
+     * The type of interface endpoint.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC interface endpoint.
+     *        The type of interface endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AccessEndpointType
      */
@@ -105,11 +105,11 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the VPC in which the endpoint is used.
+     * The identifier (ID) of the VPC in which the interface endpoint is used.
      * </p>
      * 
      * @param vpceId
-     *        The identifier (ID) of the VPC in which the endpoint is used.
+     *        The identifier (ID) of the VPC in which the interface endpoint is used.
      */
 
     public void setVpceId(String vpceId) {
@@ -118,10 +118,10 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the VPC in which the endpoint is used.
+     * The identifier (ID) of the VPC in which the interface endpoint is used.
      * </p>
      * 
-     * @return The identifier (ID) of the VPC in which the endpoint is used.
+     * @return The identifier (ID) of the VPC in which the interface endpoint is used.
      */
 
     public String getVpceId() {
@@ -130,11 +130,11 @@ public class AccessEndpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier (ID) of the VPC in which the endpoint is used.
+     * The identifier (ID) of the VPC in which the interface endpoint is used.
      * </p>
      * 
      * @param vpceId
-     *        The identifier (ID) of the VPC in which the endpoint is used.
+     *        The identifier (ID) of the VPC in which the interface endpoint is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -11944,6 +11944,39 @@ public class AmazonEC2AsyncClient extends AmazonEC2Client implements AmazonEC2As
     }
 
     @Override
+    public java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(ModifyVpnTunnelOptionsRequest request) {
+
+        return modifyVpnTunnelOptionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyVpnTunnelOptionsResult> modifyVpnTunnelOptionsAsync(final ModifyVpnTunnelOptionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ModifyVpnTunnelOptionsRequest, ModifyVpnTunnelOptionsResult> asyncHandler) {
+        final ModifyVpnTunnelOptionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ModifyVpnTunnelOptionsResult>() {
+            @Override
+            public ModifyVpnTunnelOptionsResult call() throws Exception {
+                ModifyVpnTunnelOptionsResult result = null;
+
+                try {
+                    result = executeModifyVpnTunnelOptions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<MonitorInstancesResult> monitorInstancesAsync(MonitorInstancesRequest request) {
 
         return monitorInstancesAsync(request, null);

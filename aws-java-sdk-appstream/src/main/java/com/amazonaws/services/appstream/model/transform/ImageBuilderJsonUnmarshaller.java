@@ -80,6 +80,10 @@ public class ImageBuilderJsonUnmarshaller implements Unmarshaller<ImageBuilder, 
                     context.nextToken();
                     imageBuilder.setPlatform(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("IamRoleArn", targetDepth)) {
+                    context.nextToken();
+                    imageBuilder.setIamRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();
                     imageBuilder.setState(context.getUnmarshaller(String.class).unmarshall(context));

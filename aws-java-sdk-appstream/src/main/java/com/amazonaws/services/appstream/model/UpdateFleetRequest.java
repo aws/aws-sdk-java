@@ -248,6 +248,14 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<String> attributesToDelete;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     */
+    private String iamRoleArn;
 
     /**
      * <p>
@@ -1724,6 +1732,58 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public void setIamRoleArn(String iamRoleArn) {
+        this.iamRoleArn = iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *         calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of
+     *         the role to use. The operation creates a new session with temporary credentials.
+     */
+
+    public String getIamRoleArn() {
+        return this.iamRoleArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
+     * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
+     * The operation creates a new session with temporary credentials.
+     * </p>
+     * 
+     * @param iamRoleArn
+     *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
+     *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
+     *        role to use. The operation creates a new session with temporary credentials.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetRequest withIamRoleArn(String iamRoleArn) {
+        setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1764,7 +1824,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getIdleDisconnectTimeoutInSeconds() != null)
             sb.append("IdleDisconnectTimeoutInSeconds: ").append(getIdleDisconnectTimeoutInSeconds()).append(",");
         if (getAttributesToDelete() != null)
-            sb.append("AttributesToDelete: ").append(getAttributesToDelete());
+            sb.append("AttributesToDelete: ").append(getAttributesToDelete()).append(",");
+        if (getIamRoleArn() != null)
+            sb.append("IamRoleArn: ").append(getIamRoleArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1840,6 +1902,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getAttributesToDelete() != null && other.getAttributesToDelete().equals(this.getAttributesToDelete()) == false)
             return false;
+        if (other.getIamRoleArn() == null ^ this.getIamRoleArn() == null)
+            return false;
+        if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
+            return false;
         return true;
     }
 
@@ -1863,6 +1929,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDomainJoinInfo() == null) ? 0 : getDomainJoinInfo().hashCode());
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
+        hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         return hashCode;
     }
 
