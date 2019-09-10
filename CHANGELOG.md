@@ -1,3 +1,8 @@
+# __1.11.629__ __2019-09-10__
+## __AWS Storage Gateway__
+  - ### Features
+    - The CloudWatchLogGroupARN parameter of the UpdateGatewayInformation API allows for configuring the gateway to use a CloudWatch log-group where Storage Gateway health events will be logged. 
+
 # __1.11.628__ __2019-09-09__
 ## __AWS App Mesh__
   - ### Features

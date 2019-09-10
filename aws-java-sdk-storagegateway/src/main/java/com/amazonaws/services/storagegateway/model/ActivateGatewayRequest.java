@@ -96,9 +96,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String gatewayTimezone;
     /**
      * <p>
-     * A value that indicates the region where you want to store your data. The gateway region specified must be the
-     * same region as the region in your <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
+     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
@@ -138,13 +138,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
     private String mediumChangerType;
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      */
@@ -339,9 +339,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store your data. The gateway region specified must be the
-     * same region as the region in your <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
+     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
@@ -351,9 +351,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the region where you want to store your data. The gateway region specified must be
-     *        the same region as the region in your <code>Host</code> header in the request. For more information about
-     *        available regions and endpoints for AWS Storage Gateway, see <a
+     *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
+     *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
+     *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
@@ -367,9 +367,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store your data. The gateway region specified must be the
-     * same region as the region in your <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
+     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
@@ -378,9 +378,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * Gateway Regions and Endpoints</a> in the AWS General Reference.
      * </p>
      * 
-     * @return A value that indicates the region where you want to store your data. The gateway region specified must be
-     *         the same region as the region in your <code>Host</code> header in the request. For more information about
-     *         available regions and endpoints for AWS Storage Gateway, see <a
+     * @return A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
+     *         must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
+     *         information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in
      *         the <i>Amazon Web Services Glossary</i>.</p>
      *         <p>
@@ -394,9 +394,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A value that indicates the region where you want to store your data. The gateway region specified must be the
-     * same region as the region in your <code>Host</code> header in the request. For more information about available
-     * regions and endpoints for AWS Storage Gateway, see <a
+     * A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified must be
+     * the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more information about
+     * available AWS Regions and endpoints for AWS Storage Gateway, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      * <i>Amazon Web Services Glossary</i>.
      * </p>
@@ -406,9 +406,9 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param gatewayRegion
-     *        A value that indicates the region where you want to store your data. The gateway region specified must be
-     *        the same region as the region in your <code>Host</code> header in the request. For more information about
-     *        available regions and endpoints for AWS Storage Gateway, see <a
+     *        A value that indicates the AWS Region where you want to store your data. The gateway AWS Region specified
+     *        must be the same AWS Region as the AWS Region in your <code>Host</code> header in the request. For more
+     *        information about available AWS Regions and endpoints for AWS Storage Gateway, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">Regions and Endpoints</a> in the
      *        <i>Amazon Web Services Glossary</i>.</p>
      *        <p>
@@ -598,21 +598,21 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
-     * @return A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     * @return A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
      *         <p>
-     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
-     *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
-     *         and the maximum length for a tag's value is 256.
+     *         Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8
+     *         format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *         characters, and the maximum length for a tag's value is 256 characters.
      *         </p>
      */
 
@@ -625,22 +625,22 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      */
 
@@ -655,13 +655,13 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * <p>
@@ -671,11 +671,11 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -692,22 +692,22 @@ public class ActivateGatewayRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to the gateway. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to the gateway. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that can be represented in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

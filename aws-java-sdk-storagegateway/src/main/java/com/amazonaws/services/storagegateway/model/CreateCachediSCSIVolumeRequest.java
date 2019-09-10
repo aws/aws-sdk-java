@@ -96,13 +96,13 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
     private String kMSKey;
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      */
@@ -590,21 +590,21 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
-     * @return A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.</p> <note>
+     * @return A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
      *         <p>
-     *         Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and
-     *         the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters,
-     *         and the maximum length for a tag's value is 256.
+     *         Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8
+     *         format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *         characters, and the maximum length for a tag's value is 256 characters.
      *         </p>
      */
 
@@ -617,22 +617,22 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      */
 
@@ -647,13 +647,13 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * <p>
@@ -663,11 +663,11 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -684,22 +684,22 @@ public class CreateCachediSCSIVolumeRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.
+     * A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.
      * </p>
      * <note>
      * <p>
-     * Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     * following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
-     * maximum length for a tag's value is 256.
+     * Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8 format, and
+     * the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and the
+     * maximum length for a tag's value is 256 characters.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of up to 50 tags that can be assigned to a cached volume. Each tag is a key-value pair.</p> <note>
+     *        A list of up to 50 tags that you can assign to a cached volume. Each tag is a key-value pair.</p> <note>
      *        <p>
-     *        Valid characters for key and value are letters, spaces, and numbers representable in UTF-8 format, and the
-     *        following special characters: + - = . _ : / @. The maximum length of a tag's key is 128 characters, and
-     *        the maximum length for a tag's value is 256.
+     *        Valid characters for key and value are letters, spaces, and numbers that you can represent in UTF-8
+     *        format, and the following special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     *        characters, and the maximum length for a tag's value is 256 characters.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

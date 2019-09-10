@@ -68,7 +68,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <li>
  * <p>
  * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
- * Endpoints:</a> Provides a list of each AWS region and endpoints available for use with AWS Storage Gateway.
+ * Endpoints:</a> Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -108,8 +108,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Activates the gateway you previously deployed on your host. In the activation process, you specify information
-     * such as the region you want to use for storing snapshots or tapes, the time zone for scheduled snapshots the
-     * gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
+     * such as the AWS Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots
+     * the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
      * associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
      * <note>
@@ -166,8 +166,8 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
     /**
      * <p>
      * Activates the gateway you previously deployed on your host. In the activation process, you specify information
-     * such as the region you want to use for storing snapshots or tapes, the time zone for scheduled snapshots the
-     * gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
+     * such as the AWS Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots
+     * the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
      * associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
      * </p>
      * <note>
@@ -698,9 +698,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <important>
      * <p>
      * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
-     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
-     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
-     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
+     * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
      * </p>
      * <p>
      * File gateway does not support creating hard or symbolic links on a file share.
@@ -725,9 +725,9 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
      * <important>
      * <p>
      * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you create a file share.
-     * Make sure AWS STS is activated in the region you are creating your file gateway in. If AWS STS is not activated
-     * in the region, activate it. For information about how to activate AWS STS, see Activating and Deactivating AWS
-     * STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
+     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
+     * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
      * </p>
      * <p>
      * File gateway does not support creating hard or symbolic links on a file share.
@@ -2448,7 +2448,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
+     * Lists gateways owned by an AWS account in an AWS Region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
      * <p>
@@ -2483,7 +2483,7 @@ public interface AWSStorageGatewayAsync extends AWSStorageGateway {
 
     /**
      * <p>
-     * Lists gateways owned by an AWS account in a region specified in the request. The returned list is ordered by
+     * Lists gateways owned by an AWS account in an AWS Region specified in the request. The returned list is ordered by
      * gateway Amazon Resource Name (ARN).
      * </p>
      * <p>

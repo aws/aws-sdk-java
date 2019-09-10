@@ -104,6 +104,13 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String vPCEndpoint;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
+     * gateway.
+     * </p>
+     */
+    private String cloudWatchLogGroupARN;
 
     /**
      * @param gatewayARN
@@ -712,6 +719,52 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
+     * gateway.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupARN
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
+     *        in the gateway.
+     */
+
+    public void setCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
+        this.cloudWatchLogGroupARN = cloudWatchLogGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
+     * gateway.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
+     *         in the gateway.
+     */
+
+    public String getCloudWatchLogGroupARN() {
+        return this.cloudWatchLogGroupARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events in the
+     * gateway.
+     * </p>
+     * 
+     * @param cloudWatchLogGroupARN
+     *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that was used to monitor and log events
+     *        in the gateway.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeGatewayInformationResult withCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
+        setCloudWatchLogGroupARN(cloudWatchLogGroupARN);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -748,7 +801,9 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getVPCEndpoint() != null)
-            sb.append("VPCEndpoint: ").append(getVPCEndpoint());
+            sb.append("VPCEndpoint: ").append(getVPCEndpoint()).append(",");
+        if (getCloudWatchLogGroupARN() != null)
+            sb.append("CloudWatchLogGroupARN: ").append(getCloudWatchLogGroupARN());
         sb.append("}");
         return sb.toString();
     }
@@ -815,6 +870,10 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getVPCEndpoint() != null && other.getVPCEndpoint().equals(this.getVPCEndpoint()) == false)
             return false;
+        if (other.getCloudWatchLogGroupARN() == null ^ this.getCloudWatchLogGroupARN() == null)
+            return false;
+        if (other.getCloudWatchLogGroupARN() != null && other.getCloudWatchLogGroupARN().equals(this.getCloudWatchLogGroupARN()) == false)
+            return false;
         return true;
     }
 
@@ -836,6 +895,7 @@ public class DescribeGatewayInformationResult extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getEc2InstanceRegion() == null) ? 0 : getEc2InstanceRegion().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVPCEndpoint() == null) ? 0 : getVPCEndpoint().hashCode());
+        hashCode = prime * hashCode + ((getCloudWatchLogGroupARN() == null) ? 0 : getCloudWatchLogGroupARN().hashCode());
         return hashCode;
     }
 
