@@ -438,7 +438,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, or <code>global</code>.
+     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      */
     private String engineMode;
@@ -3180,12 +3180,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, or <code>global</code>.
+     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, or <code>global</code>.
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      */
 
     public void setEngineMode(String engineMode) {
@@ -3195,11 +3195,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, or <code>global</code>.
+     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, or <code>global</code>.
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      */
 
     public String getEngineMode() {
@@ -3209,12 +3209,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     * <code>parallelquery</code>, or <code>global</code>.
+     * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, or <code>global</code>.
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

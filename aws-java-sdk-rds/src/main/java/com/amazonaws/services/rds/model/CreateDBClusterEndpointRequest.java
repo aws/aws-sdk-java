@@ -40,7 +40,7 @@ public class CreateDBClusterEndpointRequest extends com.amazonaws.AmazonWebServi
     private String dBClusterEndpointIdentifier;
     /**
      * <p>
-     * The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      */
     private String endpointType;
@@ -146,11 +146,11 @@ public class CreateDBClusterEndpointRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     *        The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      */
 
     public void setEndpointType(String endpointType) {
@@ -159,10 +159,10 @@ public class CreateDBClusterEndpointRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
-     * @return The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * @return The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      */
 
     public String getEndpointType() {
@@ -171,11 +171,11 @@ public class CreateDBClusterEndpointRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
      * @param endpointType
-     *        The type of the endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     *        The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

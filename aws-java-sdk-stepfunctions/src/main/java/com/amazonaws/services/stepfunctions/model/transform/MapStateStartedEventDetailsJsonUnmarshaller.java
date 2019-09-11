@@ -48,7 +48,7 @@ public class MapStateStartedEventDetailsJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Length", targetDepth)) {
+                if (context.testExpression("length", targetDepth)) {
                     context.nextToken();
                     mapStateStartedEventDetails.setLength(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }

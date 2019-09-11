@@ -110,6 +110,22 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String logDestination;
+    /**
+     * <p>
+     * The fields to include in the flow log record, in the order in which they should appear. For a list of available
+     * fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     * Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify this
+     * parameter, you must specify at least one field.
+     * </p>
+     * <p>
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
+     * quotation marks (' ') to surround the parameter value.
+     * </p>
+     * <p>
+     * Only applicable to flow logs that are published to an Amazon S3 bucket.
+     * </p>
+     */
+    private String logFormat;
 
     /**
      * <p>
@@ -818,6 +834,106 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
     }
 
     /**
+     * <p>
+     * The fields to include in the flow log record, in the order in which they should appear. For a list of available
+     * fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     * Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify this
+     * parameter, you must specify at least one field.
+     * </p>
+     * <p>
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
+     * quotation marks (' ') to surround the parameter value.
+     * </p>
+     * <p>
+     * Only applicable to flow logs that are published to an Amazon S3 bucket.
+     * </p>
+     * 
+     * @param logFormat
+     *        The fields to include in the flow log record, in the order in which they should appear. For a list of
+     *        available fields, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     *        Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
+     *        this parameter, you must specify at least one field.</p>
+     *        <p>
+     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
+     *        single quotation marks (' ') to surround the parameter value.
+     *        </p>
+     *        <p>
+     *        Only applicable to flow logs that are published to an Amazon S3 bucket.
+     */
+
+    public void setLogFormat(String logFormat) {
+        this.logFormat = logFormat;
+    }
+
+    /**
+     * <p>
+     * The fields to include in the flow log record, in the order in which they should appear. For a list of available
+     * fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     * Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify this
+     * parameter, you must specify at least one field.
+     * </p>
+     * <p>
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
+     * quotation marks (' ') to surround the parameter value.
+     * </p>
+     * <p>
+     * Only applicable to flow logs that are published to an Amazon S3 bucket.
+     * </p>
+     * 
+     * @return The fields to include in the flow log record, in the order in which they should appear. For a list of
+     *         available fields, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     *         Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
+     *         this parameter, you must specify at least one field.</p>
+     *         <p>
+     *         Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
+     *         single quotation marks (' ') to surround the parameter value.
+     *         </p>
+     *         <p>
+     *         Only applicable to flow logs that are published to an Amazon S3 bucket.
+     */
+
+    public String getLogFormat() {
+        return this.logFormat;
+    }
+
+    /**
+     * <p>
+     * The fields to include in the flow log record, in the order in which they should appear. For a list of available
+     * fields, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     * Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify this
+     * parameter, you must specify at least one field.
+     * </p>
+     * <p>
+     * Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use single
+     * quotation marks (' ') to surround the parameter value.
+     * </p>
+     * <p>
+     * Only applicable to flow logs that are published to an Amazon S3 bucket.
+     * </p>
+     * 
+     * @param logFormat
+     *        The fields to include in the flow log record, in the order in which they should appear. For a list of
+     *        available fields, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/flow-logs.html#flow-log-records">Flow Log
+     *        Records</a>. If you omit this parameter, the flow log is created using the default format. If you specify
+     *        this parameter, you must specify at least one field.</p>
+     *        <p>
+     *        Specify the fields using the <code>${field-id}</code> format, separated by spaces. For the AWS CLI, use
+     *        single quotation marks (' ') to surround the parameter value.
+     *        </p>
+     *        <p>
+     *        Only applicable to flow logs that are published to an Amazon S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFlowLogsRequest withLogFormat(String logFormat) {
+        setLogFormat(logFormat);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -855,7 +971,9 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         if (getLogDestinationType() != null)
             sb.append("LogDestinationType: ").append(getLogDestinationType()).append(",");
         if (getLogDestination() != null)
-            sb.append("LogDestination: ").append(getLogDestination());
+            sb.append("LogDestination: ").append(getLogDestination()).append(",");
+        if (getLogFormat() != null)
+            sb.append("LogFormat: ").append(getLogFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -902,6 +1020,10 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getLogDestination() != null && other.getLogDestination().equals(this.getLogDestination()) == false)
             return false;
+        if (other.getLogFormat() == null ^ this.getLogFormat() == null)
+            return false;
+        if (other.getLogFormat() != null && other.getLogFormat().equals(this.getLogFormat()) == false)
+            return false;
         return true;
     }
 
@@ -918,6 +1040,7 @@ public class CreateFlowLogsRequest extends AmazonWebServiceRequest implements Se
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
         hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
         hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
+        hashCode = prime * hashCode + ((getLogFormat() == null) ? 0 : getLogFormat().hashCode());
         return hashCode;
     }
 

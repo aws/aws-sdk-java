@@ -31,15 +31,15 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
      * should be in the form of a Classless Inter-Domain Routing (CIDR) block; for example, 10.0.0.0/16.
      */
     private java.util.List<String> cidrAllowList;
-    /** The smoothing max bitrate for RTP and RTP-FEC streams. */
+    /** The smoothing max bitrate for RIST, RTP, and RTP-FEC streams. */
     private Integer maxBitrate;
-    /** The maximum latency in milliseconds for Zixi-based streams. */
+    /** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
     private Integer maxLatency;
     /** The protocol that is used by the source or output. */
     private String protocol;
     /** The remote ID for the Zixi-pull stream. */
     private String remoteId;
-    /** The smoothing latency in milliseconds for RTP and RTP-FEC streams. */
+    /** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
     private Integer smoothingLatency;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
@@ -119,10 +119,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RTP and RTP-FEC streams.
+     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
 
     public void setMaxBitrate(Integer maxBitrate) {
@@ -130,9 +130,9 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      * 
-     * @return The smoothing max bitrate for RTP and RTP-FEC streams.
+     * @return The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      */
 
     public Integer getMaxBitrate() {
@@ -140,10 +140,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing max bitrate for RTP and RTP-FEC streams.
+     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      * 
      * @param maxBitrate
-     *        The smoothing max bitrate for RTP and RTP-FEC streams.
+     *        The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,10 +153,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      * 
      * @param maxLatency
-     *        The maximum latency in milliseconds for Zixi-based streams.
+     *        The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      */
 
     public void setMaxLatency(Integer maxLatency) {
@@ -164,9 +164,9 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      * 
-     * @return The maximum latency in milliseconds for Zixi-based streams.
+     * @return The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      */
 
     public Integer getMaxLatency() {
@@ -174,10 +174,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The maximum latency in milliseconds for Zixi-based streams.
+     * The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      * 
      * @param maxLatency
-     *        The maximum latency in milliseconds for Zixi-based streams.
+     *        The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -272,10 +272,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
      * @param smoothingLatency
-     *        The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     *        The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
 
     public void setSmoothingLatency(Integer smoothingLatency) {
@@ -283,9 +283,9 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
-     * @return The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * @return The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
 
     public Integer getSmoothingLatency() {
@@ -293,10 +293,10 @@ public class Transport implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
      * @param smoothingLatency
-     *        The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     *        The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

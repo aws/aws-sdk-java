@@ -2045,8 +2045,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      *        Represents a request to list the existing custom verification email templates for your account.</p>
      *        <p>
      *        For more information about custom verification email templates, see <a
-     *        href="ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email
-     *        Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     *        Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * @return A Java Future containing the result of the ListCustomVerificationEmailTemplates operation returned by the
      *         service.
      * @sample AmazonSimpleEmailServiceAsync.ListCustomVerificationEmailTemplates
@@ -2073,8 +2073,8 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      *        Represents a request to list the existing custom verification email templates for your account.</p>
      *        <p>
      *        For more information about custom verification email templates, see <a
-     *        href="ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom Verification Email
-     *        Templates</a> in the <i>Amazon SES Developer Guide</i>.
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/custom-verification-emails.html">Using Custom
+     *        Verification Email Templates</a> in the <i>Amazon SES Developer Guide</i>.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -3085,15 +3085,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * <important>
      * <p>
-     * Do not include these X-headers in the DKIM signature; Amazon SES will remove them before sending the email.
+     * Don't include these X-headers in the DKIM signature. Amazon SES removes these before it sends the email.
      * </p>
      * </important>
      * <p>
-     * For most common sending authorization scenarios, we recommend that you specify the <code>SourceIdentityArn</code>
-     * parameter and not the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters. If you only
-     * specify the <code>SourceIdentityArn</code> parameter, Amazon SES will set the From and Return Path addresses to
-     * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
-     * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
+     * If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets the From and Return-Path
+     * addresses to the same identity that you specified.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
      * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
@@ -3224,15 +3225,16 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
      * </ul>
      * <important>
      * <p>
-     * Do not include these X-headers in the DKIM signature; Amazon SES will remove them before sending the email.
+     * Don't include these X-headers in the DKIM signature. Amazon SES removes these before it sends the email.
      * </p>
      * </important>
      * <p>
-     * For most common sending authorization scenarios, we recommend that you specify the <code>SourceIdentityArn</code>
-     * parameter and not the <code>FromIdentityArn</code> or <code>ReturnPathIdentityArn</code> parameters. If you only
-     * specify the <code>SourceIdentityArn</code> parameter, Amazon SES will set the From and Return Path addresses to
-     * the identity specified in <code>SourceIdentityArn</code>. For more information about sending authorization, see
-     * the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
+     * If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets the From and Return-Path
+     * addresses to the same identity that you specified.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Using Sending
      * Authorization with Amazon SES</a> in the <i>Amazon SES Developer Guide.</i>
      * </p>
      * </li>
@@ -3487,26 +3489,19 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Enables or disables Easy DKIM signing of email sent from an identity:
+     * Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a
+     * domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM
+     * signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * If Easy DKIM signing is enabled for a domain name identity (such as <code>example.com</code>), then Amazon SES
-     * will DKIM-sign all email sent by addresses under that domain name (for example, <code>user@example.com</code>).
+     * For email addresses (for example, <code>user@example.com</code>), you can only enable DKIM signing if the
+     * corresponding domain (in this case, <code>example.com</code>) has been set up to use Easy DKIM.
      * </p>
-     * </li>
-     * <li>
+     * </note>
      * <p>
-     * If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email
-     * address.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For email addresses (for example, <code>user@example.com</code>), you can only enable Easy DKIM signing if the
-     * corresponding domain (in this case, <code>example.com</code>) has been set up for Easy DKIM using the AWS Console
-     * or the <code>VerifyDomainDkim</code> operation.
+     * You can enable DKIM signing for an identity at any time after you start the verification process for the
+     * identity, even if the verification process isn't complete.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.
@@ -3530,26 +3525,19 @@ public interface AmazonSimpleEmailServiceAsync extends AmazonSimpleEmailService 
 
     /**
      * <p>
-     * Enables or disables Easy DKIM signing of email sent from an identity:
+     * Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a
+     * domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM
+     * signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.
      * </p>
-     * <ul>
-     * <li>
+     * <note>
      * <p>
-     * If Easy DKIM signing is enabled for a domain name identity (such as <code>example.com</code>), then Amazon SES
-     * will DKIM-sign all email sent by addresses under that domain name (for example, <code>user@example.com</code>).
+     * For email addresses (for example, <code>user@example.com</code>), you can only enable DKIM signing if the
+     * corresponding domain (in this case, <code>example.com</code>) has been set up to use Easy DKIM.
      * </p>
-     * </li>
-     * <li>
+     * </note>
      * <p>
-     * If Easy DKIM signing is enabled for an email address, then Amazon SES will DKIM-sign all email sent by that email
-     * address.
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * For email addresses (for example, <code>user@example.com</code>), you can only enable Easy DKIM signing if the
-     * corresponding domain (in this case, <code>example.com</code>) has been set up for Easy DKIM using the AWS Console
-     * or the <code>VerifyDomainDkim</code> operation.
+     * You can enable DKIM signing for an identity at any time after you start the verification process for the
+     * identity, even if the verification process isn't complete.
      * </p>
      * <p>
      * You can execute this operation no more than once per second.

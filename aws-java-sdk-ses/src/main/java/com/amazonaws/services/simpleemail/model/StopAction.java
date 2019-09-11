@@ -34,7 +34,7 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      */
     private String scope;
@@ -50,11 +50,11 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      * 
      * @param scope
-     *        The name of the RuleSet that is being stopped.
+     *        The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * @see StopScope
      */
 
@@ -64,10 +64,10 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      * 
-     * @return The name of the RuleSet that is being stopped.
+     * @return The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * @see StopScope
      */
 
@@ -77,11 +77,11 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      * 
      * @param scope
-     *        The name of the RuleSet that is being stopped.
+     *        The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StopScope
      */
@@ -93,11 +93,11 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      * 
      * @param scope
-     *        The name of the RuleSet that is being stopped.
+     *        The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * @see StopScope
      */
 
@@ -107,11 +107,11 @@ public class StopAction implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the RuleSet that is being stopped.
+     * The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * </p>
      * 
      * @param scope
-     *        The name of the RuleSet that is being stopped.
+     *        The scope of the StopAction. The only acceptable value is <code>RuleSet</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StopScope
      */

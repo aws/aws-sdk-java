@@ -707,8 +707,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
+     * used.
      * </p>
      * <p>
      * Constraints:
@@ -5986,8 +5987,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
+     * used.
      * </p>
      * <p>
      * Constraints:
@@ -6011,8 +6013,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     *        <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
+     *        engine is used.</p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -6040,8 +6043,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
+     * used.
      * </p>
      * <p>
      * Constraints:
@@ -6064,8 +6068,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *         default DBParameterGroup for the specified engine is used.</p>
+     * @return The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     *         <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
+     *         engine is used.</p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -6093,8 +6098,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     * <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB engine is
+     * used.
      * </p>
      * <p>
      * Constraints:
@@ -6118,8 +6124,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance. If you do not specify a value for
+     *        <code>DBParameterGroupName</code>, then the default <code>DBParameterGroup</code> for the specified DB
+     *        engine is used.</p>
      *        <p>
      *        Constraints:
      *        </p>

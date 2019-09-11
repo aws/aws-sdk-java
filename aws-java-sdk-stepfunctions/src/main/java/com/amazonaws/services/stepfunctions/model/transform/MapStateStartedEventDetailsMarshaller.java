@@ -28,7 +28,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class MapStateStartedEventDetailsMarshaller {
 
     private static final MarshallingInfo<Integer> LENGTH_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Length").build();
+            .marshallLocationName("length").build();
 
     private static final MapStateStartedEventDetailsMarshaller instance = new MapStateStartedEventDetailsMarshaller();
 

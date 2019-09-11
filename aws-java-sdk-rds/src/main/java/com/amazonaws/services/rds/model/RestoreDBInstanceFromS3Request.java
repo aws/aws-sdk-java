@@ -212,8 +212,11 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * parameter group for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      */
     private String dBParameterGroupName;
@@ -1726,13 +1729,18 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * parameter group for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default parameter group for the specified engine is used.
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *        <code>DBParameterGroup</code> for the specified DB engine is used.
      */
 
     public void setDBParameterGroupName(String dBParameterGroupName) {
@@ -1741,12 +1749,17 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * parameter group for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * 
-     * @return The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *         default parameter group for the specified engine is used.
+     * @return The name of the DB parameter group to associate with this DB instance.</p>
+     *         <p>
+     *         If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *         <code>DBParameterGroup</code> for the specified DB engine is used.
      */
 
     public String getDBParameterGroupName() {
@@ -1755,13 +1768,18 @@ public class RestoreDBInstanceFromS3Request extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * parameter group for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default parameter group for the specified engine is used.
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *        <code>DBParameterGroup</code> for the specified DB engine is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

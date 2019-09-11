@@ -92,7 +92,7 @@ public class ModifyDBClusterEndpointResult extends com.amazonaws.AmazonWebServic
     private String endpointType;
     /**
      * <p>
-     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      */
     private String customEndpointType;
@@ -373,11 +373,12 @@ public class ModifyDBClusterEndpointResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
      * @param customEndpointType
-     *        The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     *        The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     *        <code>ANY</code>.
      */
 
     public void setCustomEndpointType(String customEndpointType) {
@@ -386,10 +387,11 @@ public class ModifyDBClusterEndpointResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
-     * @return The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * @return The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     *         <code>ANY</code>.
      */
 
     public String getCustomEndpointType() {
@@ -398,11 +400,12 @@ public class ModifyDBClusterEndpointResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     * The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
      * </p>
      * 
      * @param customEndpointType
-     *        The type associated with a custom endpoint. One of: <code>READER</code>, <code>ANY</code>.
+     *        The type associated with a custom endpoint. One of: <code>READER</code>, <code>WRITER</code>,
+     *        <code>ANY</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

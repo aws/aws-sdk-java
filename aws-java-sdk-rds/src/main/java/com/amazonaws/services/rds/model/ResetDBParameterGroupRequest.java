@@ -36,7 +36,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBParameterGroup.
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -104,7 +104,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DBParameterGroup.
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -122,7 +122,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBParameterGroup.
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -135,7 +135,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DBParameterGroup.
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -154,7 +154,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBParameterGroup.
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -166,7 +166,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must match the name of an existing DBParameterGroup.
+     *         Must match the name of an existing <code>DBParameterGroup</code>.
      *         </p>
      *         </li>
      */
@@ -185,7 +185,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must match the name of an existing DBParameterGroup.
+     * Must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -198,7 +198,7 @@ public class ResetDBParameterGroupRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must match the name of an existing DBParameterGroup.
+     *        Must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

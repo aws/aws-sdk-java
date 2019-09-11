@@ -160,6 +160,37 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
     private String optionGroupName;
     /**
      * <p>
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     * <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String dBParameterGroupName;
+    /**
+     * <p>
      * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
      * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
      * address. When the DB instance is not publicly accessible, it is an internal instance with a DNS name that
@@ -1352,6 +1383,193 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
 
     public CreateDBInstanceReadReplicaRequest withOptionGroupName(String optionGroupName) {
         setOptionGroupName(optionGroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     * <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBParameterGroupName
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *        <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     *        <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     */
+
+    public void setDBParameterGroupName(String dBParameterGroupName) {
+        this.dBParameterGroupName = dBParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     * <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The name of the DB parameter group to associate with this DB instance.</p>
+     *         <p>
+     *         If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *         <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     *         <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Must be 1 to 255 letters, numbers, or hyphens.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         First character must be a letter
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't end with a hyphen or contain two consecutive hyphens
+     *         </p>
+     *         </li>
+     */
+
+    public String getDBParameterGroupName() {
+        return this.dBParameterGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     * <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     * <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Must be 1 to 255 letters, numbers, or hyphens.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * First character must be a letter
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't end with a hyphen or contain two consecutive hyphens
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param dBParameterGroupName
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then Amazon RDS uses the
+     *        <code>DBParameterGroup</code> of source DB instance for a same region Read Replica, or the default
+     *        <code>DBParameterGroup</code> for the specified DB engine for a cross region Read Replica.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Must be 1 to 255 letters, numbers, or hyphens.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        First character must be a letter
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't end with a hyphen or contain two consecutive hyphens
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceReadReplicaRequest withDBParameterGroupName(String dBParameterGroupName) {
+        setDBParameterGroupName(dBParameterGroupName);
         return this;
     }
 
@@ -3322,6 +3540,8 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
             sb.append("Iops: ").append(getIops()).append(",");
         if (getOptionGroupName() != null)
             sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
+        if (getDBParameterGroupName() != null)
+            sb.append("DBParameterGroupName: ").append(getDBParameterGroupName()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getTags() != null)
@@ -3409,6 +3629,10 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         if (other.getOptionGroupName() == null ^ this.getOptionGroupName() == null)
             return false;
         if (other.getOptionGroupName() != null && other.getOptionGroupName().equals(this.getOptionGroupName()) == false)
+            return false;
+        if (other.getDBParameterGroupName() == null ^ this.getDBParameterGroupName() == null)
+            return false;
+        if (other.getDBParameterGroupName() != null && other.getDBParameterGroupName().equals(this.getDBParameterGroupName()) == false)
             return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
@@ -3505,6 +3729,7 @@ public class CreateDBInstanceReadReplicaRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
+        hashCode = prime * hashCode + ((getDBParameterGroupName() == null) ? 0 : getDBParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDBSubnetGroupName() == null) ? 0 : getDBSubnetGroupName().hashCode());

@@ -28,9 +28,9 @@ import com.amazonaws.annotation.SdkInternalApi;
 public class MapIterationEventDetailsMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Name").build();
+            .marshallLocationName("name").build();
     private static final MarshallingInfo<Integer> INDEX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
-            .marshallLocationName("Index").build();
+            .marshallLocationName("index").build();
 
     private static final MapIterationEventDetailsMarshaller instance = new MapIterationEventDetailsMarshaller();
 

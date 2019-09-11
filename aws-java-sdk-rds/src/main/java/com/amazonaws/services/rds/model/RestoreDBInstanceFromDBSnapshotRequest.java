@@ -373,8 +373,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
     private Boolean useDefaultProcessorFeatures;
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2858,8 +2861,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2888,8 +2894,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *        <code>DBParameterGroup</code> for the specified DB engine is used.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -2922,8 +2931,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -2951,8 +2963,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </li>
      * </ul>
      * 
-     * @return The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *         default DBParameterGroup for the specified engine is used.</p>
+     * @return The name of the DB parameter group to associate with this DB instance.</p>
+     *         <p>
+     *         If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *         <code>DBParameterGroup</code> for the specified DB engine is used.
+     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -2985,8 +3000,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the default
-     * DBParameterGroup for the specified engine is used.
+     * The name of the DB parameter group to associate with this DB instance.
+     * </p>
+     * <p>
+     * If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     * <code>DBParameterGroup</code> for the specified DB engine is used.
      * </p>
      * <p>
      * Constraints:
@@ -3015,8 +3033,11 @@ public class RestoreDBInstanceFromDBSnapshotRequest extends com.amazonaws.Amazon
      * </ul>
      * 
      * @param dBParameterGroupName
-     *        The name of the DB parameter group to associate with this DB instance. If this argument is omitted, the
-     *        default DBParameterGroup for the specified engine is used.</p>
+     *        The name of the DB parameter group to associate with this DB instance.</p>
+     *        <p>
+     *        If you do not specify a value for <code>DBParameterGroupName</code>, then the default
+     *        <code>DBParameterGroup</code> for the specified DB engine is used.
+     *        </p>
      *        <p>
      *        Constraints:
      *        </p>

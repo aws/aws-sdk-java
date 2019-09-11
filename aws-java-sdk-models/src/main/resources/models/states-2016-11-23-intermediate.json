@@ -24174,7 +24174,7 @@
       "hasStreamingMember" : false,
       "marshaller" : null,
       "members" : [ {
-        "c2jName" : "Name",
+        "c2jName" : "name",
         "c2jShape" : "Name",
         "deprecated" : false,
         "documentation" : "<p>The name of the iteration’s parent Map state.</p>",
@@ -24197,11 +24197,11 @@
           "isStreaming" : false,
           "location" : null,
           "marshallLocation" : "PAYLOAD",
-          "marshallLocationName" : "Name",
+          "marshallLocationName" : "name",
           "queryString" : false,
           "requiresLength" : false,
           "statusCode" : false,
-          "unmarshallLocationName" : "Name",
+          "unmarshallLocationName" : "name",
           "uri" : false
         },
         "idempotencyToken" : false,
@@ -24241,7 +24241,7 @@
         },
         "xmlNameSpaceUri" : null
       }, {
-        "c2jName" : "Index",
+        "c2jName" : "index",
         "c2jShape" : "UnsignedInteger",
         "deprecated" : false,
         "documentation" : "<p>The index of the array belonging to the Map state iteration.</p>",
@@ -24264,11 +24264,11 @@
           "isStreaming" : false,
           "location" : null,
           "marshallLocation" : "PAYLOAD",
-          "marshallLocationName" : "Index",
+          "marshallLocationName" : "index",
           "queryString" : false,
           "requiresLength" : false,
           "statusCode" : false,
-          "unmarshallLocationName" : "Index",
+          "unmarshallLocationName" : "index",
           "uri" : false
         },
         "idempotencyToken" : false,
@@ -24310,7 +24310,7 @@
       } ],
       "membersAsMap" : {
         "Index" : {
-          "c2jName" : "Index",
+          "c2jName" : "index",
           "c2jShape" : "UnsignedInteger",
           "deprecated" : false,
           "documentation" : "<p>The index of the array belonging to the Map state iteration.</p>",
@@ -24333,11 +24333,11 @@
             "isStreaming" : false,
             "location" : null,
             "marshallLocation" : "PAYLOAD",
-            "marshallLocationName" : "Index",
+            "marshallLocationName" : "index",
             "queryString" : false,
             "requiresLength" : false,
             "statusCode" : false,
-            "unmarshallLocationName" : "Index",
+            "unmarshallLocationName" : "index",
             "uri" : false
           },
           "idempotencyToken" : false,
@@ -24378,7 +24378,7 @@
           "xmlNameSpaceUri" : null
         },
         "Name" : {
-          "c2jName" : "Name",
+          "c2jName" : "name",
           "c2jShape" : "Name",
           "deprecated" : false,
           "documentation" : "<p>The name of the iteration’s parent Map state.</p>",
@@ -24401,11 +24401,11 @@
             "isStreaming" : false,
             "location" : null,
             "marshallLocation" : "PAYLOAD",
-            "marshallLocationName" : "Name",
+            "marshallLocationName" : "name",
             "queryString" : false,
             "requiresLength" : false,
             "statusCode" : false,
-            "unmarshallLocationName" : "Name",
+            "unmarshallLocationName" : "name",
             "uri" : false
           },
           "idempotencyToken" : false,
@@ -24486,7 +24486,7 @@
       "hasStreamingMember" : false,
       "marshaller" : null,
       "members" : [ {
-        "c2jName" : "Length",
+        "c2jName" : "length",
         "c2jShape" : "UnsignedInteger",
         "deprecated" : false,
         "documentation" : "<p>The size of the array for Map state iterations.</p>",
@@ -24509,11 +24509,11 @@
           "isStreaming" : false,
           "location" : null,
           "marshallLocation" : "PAYLOAD",
-          "marshallLocationName" : "Length",
+          "marshallLocationName" : "length",
           "queryString" : false,
           "requiresLength" : false,
           "statusCode" : false,
-          "unmarshallLocationName" : "Length",
+          "unmarshallLocationName" : "length",
           "uri" : false
         },
         "idempotencyToken" : false,
@@ -24555,7 +24555,7 @@
       } ],
       "membersAsMap" : {
         "Length" : {
-          "c2jName" : "Length",
+          "c2jName" : "length",
           "c2jShape" : "UnsignedInteger",
           "deprecated" : false,
           "documentation" : "<p>The size of the array for Map state iterations.</p>",
@@ -24578,11 +24578,11 @@
             "isStreaming" : false,
             "location" : null,
             "marshallLocation" : "PAYLOAD",
-            "marshallLocationName" : "Length",
+            "marshallLocationName" : "length",
             "queryString" : false,
             "requiresLength" : false,
             "statusCode" : false,
-            "unmarshallLocationName" : "Length",
+            "unmarshallLocationName" : "length",
             "uri" : false
           },
           "idempotencyToken" : false,

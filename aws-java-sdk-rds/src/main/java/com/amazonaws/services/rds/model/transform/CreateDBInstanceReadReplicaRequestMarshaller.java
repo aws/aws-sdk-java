@@ -78,6 +78,10 @@ public class CreateDBInstanceReadReplicaRequestMarshaller implements
             request.addParameter("OptionGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getOptionGroupName()));
         }
 
+        if (createDBInstanceReadReplicaRequest.getDBParameterGroupName() != null) {
+            request.addParameter("DBParameterGroupName", StringUtils.fromString(createDBInstanceReadReplicaRequest.getDBParameterGroupName()));
+        }
+
         if (createDBInstanceReadReplicaRequest.getPubliclyAccessible() != null) {
             request.addParameter("PubliclyAccessible", StringUtils.fromBoolean(createDBInstanceReadReplicaRequest.getPubliclyAccessible()));
         }

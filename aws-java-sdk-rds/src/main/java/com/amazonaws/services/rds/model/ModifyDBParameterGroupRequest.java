@@ -36,7 +36,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBParameterGroup.
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -79,7 +79,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the name of an existing DBParameterGroup.
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @param parameters
@@ -111,7 +111,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBParameterGroup.
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -124,7 +124,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the name of an existing DBParameterGroup.
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      */
@@ -143,7 +143,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBParameterGroup.
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -155,7 +155,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         If supplied, must match the name of an existing DBParameterGroup.
+     *         If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *         </p>
      *         </li>
      */
@@ -174,7 +174,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * If supplied, must match the name of an existing DBParameterGroup.
+     * If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      * </p>
      * </li>
      * </ul>
@@ -187,7 +187,7 @@ public class ModifyDBParameterGroupRequest extends com.amazonaws.AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        If supplied, must match the name of an existing DBParameterGroup.
+     *        If supplied, must match the name of an existing <code>DBParameterGroup</code>.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

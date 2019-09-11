@@ -100,6 +100,12 @@ public class FlowLog implements Serializable, Cloneable {
      * </p>
      */
     private String logDestination;
+    /**
+     * <p>
+     * The format of the flow log record.
+     * </p>
+     */
+    private String logFormat;
 
     /**
      * <p>
@@ -666,6 +672,46 @@ public class FlowLog implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The format of the flow log record.
+     * </p>
+     * 
+     * @param logFormat
+     *        The format of the flow log record.
+     */
+
+    public void setLogFormat(String logFormat) {
+        this.logFormat = logFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the flow log record.
+     * </p>
+     * 
+     * @return The format of the flow log record.
+     */
+
+    public String getLogFormat() {
+        return this.logFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the flow log record.
+     * </p>
+     * 
+     * @param logFormat
+     *        The format of the flow log record.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FlowLog withLogFormat(String logFormat) {
+        setLogFormat(logFormat);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -698,7 +744,9 @@ public class FlowLog implements Serializable, Cloneable {
         if (getLogDestinationType() != null)
             sb.append("LogDestinationType: ").append(getLogDestinationType()).append(",");
         if (getLogDestination() != null)
-            sb.append("LogDestination: ").append(getLogDestination());
+            sb.append("LogDestination: ").append(getLogDestination()).append(",");
+        if (getLogFormat() != null)
+            sb.append("LogFormat: ").append(getLogFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -757,6 +805,10 @@ public class FlowLog implements Serializable, Cloneable {
             return false;
         if (other.getLogDestination() != null && other.getLogDestination().equals(this.getLogDestination()) == false)
             return false;
+        if (other.getLogFormat() == null ^ this.getLogFormat() == null)
+            return false;
+        if (other.getLogFormat() != null && other.getLogFormat().equals(this.getLogFormat()) == false)
+            return false;
         return true;
     }
 
@@ -776,6 +828,7 @@ public class FlowLog implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTrafficType() == null) ? 0 : getTrafficType().hashCode());
         hashCode = prime * hashCode + ((getLogDestinationType() == null) ? 0 : getLogDestinationType().hashCode());
         hashCode = prime * hashCode + ((getLogDestination() == null) ? 0 : getLogDestination().hashCode());
+        hashCode = prime * hashCode + ((getLogFormat() == null) ? 0 : getLogFormat().hashCode());
         return hashCode;
     }
 

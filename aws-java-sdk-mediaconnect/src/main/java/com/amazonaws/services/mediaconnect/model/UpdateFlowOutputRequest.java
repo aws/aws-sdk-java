@@ -55,7 +55,7 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     private String protocol;
     /** The remote ID for the Zixi-pull stream. */
     private String remoteId;
-    /** The smoothing latency in milliseconds for RTP and RTP-FEC streams. */
+    /** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
     private Integer smoothingLatency;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
@@ -470,10 +470,10 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
      * @param smoothingLatency
-     *        The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     *        The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
 
     public void setSmoothingLatency(Integer smoothingLatency) {
@@ -481,9 +481,9 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
-     * @return The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * @return The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      */
 
     public Integer getSmoothingLatency() {
@@ -491,10 +491,10 @@ public class UpdateFlowOutputRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * 
      * @param smoothingLatency
-     *        The smoothing latency in milliseconds for RTP and RTP-FEC streams.
+     *        The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

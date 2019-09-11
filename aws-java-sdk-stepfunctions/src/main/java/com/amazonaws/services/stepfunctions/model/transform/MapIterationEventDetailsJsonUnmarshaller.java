@@ -48,11 +48,11 @@ public class MapIterationEventDetailsJsonUnmarshaller implements Unmarshaller<Ma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
-                if (context.testExpression("Name", targetDepth)) {
+                if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     mapIterationEventDetails.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("Index", targetDepth)) {
+                if (context.testExpression("index", targetDepth)) {
                     context.nextToken();
                     mapIterationEventDetails.setIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }

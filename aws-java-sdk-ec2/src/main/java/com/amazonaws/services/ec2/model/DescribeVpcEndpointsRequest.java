@@ -56,8 +56,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -189,8 +190,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -228,8 +230,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *         </li>
      *         <li>
      *         <p>
-     *         <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> |
-     *         <code>available</code> | <code>deleting</code> | <code>deleted</code>)
+     *         <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *         <code>rejected</code> | <code>failed</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -277,8 +280,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -317,8 +321,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -368,8 +373,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -413,8 +419,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -466,8 +473,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      * </li>
      * <li>
      * <p>
-     * <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code> |
-     * <code>deleting</code> | <code>deleted</code>)
+     * <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     * <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     * <code>rejected</code> | <code>failed</code>).
      * </p>
      * </li>
      * <li>
@@ -506,8 +514,9 @@ public class DescribeVpcEndpointsRequest extends AmazonWebServiceRequest impleme
      *        </li>
      *        <li>
      *        <p>
-     *        <code>vpc-endpoint-state</code>: The state of the endpoint. (<code>pending</code> | <code>available</code>
-     *        | <code>deleting</code> | <code>deleted</code>)
+     *        <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code> |
+     *        <code>rejected</code> | <code>failed</code>).
      *        </p>
      *        </li>
      *        <li>

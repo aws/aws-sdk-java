@@ -47,8 +47,8 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -59,7 +59,12 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be a value from 0 to 8
+     * Must be a value from 0 to 35.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be set to 0 if the DB instance is a source to Read Replicas.
      * </p>
      * </li>
      * </ul>
@@ -221,8 +226,8 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -233,14 +238,19 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be a value from 0 to 8
+     * Must be a value from 0 to 35.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be set to 0 if the DB instance is a source to Read Replicas.
      * </p>
      * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
-     *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
+     *        The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *        enables backups. Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -250,7 +260,12 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be a value from 0 to 8
+     *        Must be a value from 0 to 35.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be set to 0 if the DB instance is a source to Read Replicas.
      *        </p>
      *        </li>
      */
@@ -261,8 +276,8 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -273,13 +288,18 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be a value from 0 to 8
+     * Must be a value from 0 to 35.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be set to 0 if the DB instance is a source to Read Replicas.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *         backups. Setting this parameter to 0 disables automated backups.</p>
+     * @return The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *         enables backups. Setting this parameter to 0 disables automated backups.</p>
      *         <p>
      *         Default: 1
      *         </p>
@@ -289,7 +309,12 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *         <ul>
      *         <li>
      *         <p>
-     *         Must be a value from 0 to 8
+     *         Must be a value from 0 to 35.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can't be set to 0 if the DB instance is a source to Read Replicas.
      *         </p>
      *         </li>
      */
@@ -300,8 +325,8 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The number of days to retain automated backups. Setting this parameter to a positive number enables backups.
-     * Setting this parameter to 0 disables automated backups.
+     * The number of days for which automated backups are retained. Setting this parameter to a positive number enables
+     * backups. Setting this parameter to 0 disables automated backups.
      * </p>
      * <p>
      * Default: 1
@@ -312,14 +337,19 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
-     * Must be a value from 0 to 8
+     * Must be a value from 0 to 35.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can't be set to 0 if the DB instance is a source to Read Replicas.
      * </p>
      * </li>
      * </ul>
      * 
      * @param backupRetentionPeriod
-     *        The number of days to retain automated backups. Setting this parameter to a positive number enables
-     *        backups. Setting this parameter to 0 disables automated backups.</p>
+     *        The number of days for which automated backups are retained. Setting this parameter to a positive number
+     *        enables backups. Setting this parameter to 0 disables automated backups.</p>
      *        <p>
      *        Default: 1
      *        </p>
@@ -329,7 +359,12 @@ public class PromoteReadReplicaRequest extends com.amazonaws.AmazonWebServiceReq
      *        <ul>
      *        <li>
      *        <p>
-     *        Must be a value from 0 to 8
+     *        Must be a value from 0 to 35.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can't be set to 0 if the DB instance is a source to Read Replicas.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

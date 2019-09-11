@@ -1,3 +1,28 @@
+# __1.11.630__ __2019-09-11__
+## __AWS Config__
+  - ### Features
+    - Adding input validation for the OrganizationConfigRuleName string.
+
+## __AWS MediaConnect__
+  - ### Features
+    - This release adds support for the RIST protocol on sources and outputs.
+
+## __AWS Step Functions__
+  - ### Features
+    - Fixing letter case in Map history event details to be small case
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - This release adds support for new data fields and log format in VPC flow logs.
+
+## __Amazon Relational Database Service__
+  - ### Features
+    - This release allows customers to specify a custom parameter group when creating a Read Replica, for DB engines which support this feature.
+
+## __Amazon Simple Email Service__
+  - ### Features
+    - Updated API documentation to correct broken links, and to update content based on customer feedback.
+
 # __1.11.629__ __2019-09-10__
 ## __AWS Storage Gateway__
   - ### Features
