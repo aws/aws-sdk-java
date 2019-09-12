@@ -42,10 +42,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private Integer bitrate;
     /** Percentage of the buffer that should initially be filled (HRD buffer model). */
     private Integer bufFillPct;
-    /** Size of buffer (HRD buffer model) in bits/second. */
+    /** Size of buffer (HRD buffer model) in bits. */
     private Integer bufSize;
     /** Includes colorspace metadata in the output. */
     private String colorMetadata;
+    /** Color Space settings */
+    private H264ColorSpaceSettings colorSpaceSettings;
     /** Entropy encoding mode. Use cabac (must be in Main or High profile) or cavlc. */
     private String entropyEncoding;
     /**
@@ -374,10 +376,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      * 
      * @param bufSize
-     *        Size of buffer (HRD buffer model) in bits/second.
+     *        Size of buffer (HRD buffer model) in bits.
      */
 
     public void setBufSize(Integer bufSize) {
@@ -385,9 +387,9 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      * 
-     * @return Size of buffer (HRD buffer model) in bits/second.
+     * @return Size of buffer (HRD buffer model) in bits.
      */
 
     public Integer getBufSize() {
@@ -395,10 +397,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Size of buffer (HRD buffer model) in bits/second.
+     * Size of buffer (HRD buffer model) in bits.
      * 
      * @param bufSize
-     *        Size of buffer (HRD buffer model) in bits/second.
+     *        Size of buffer (HRD buffer model) in bits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,6 +457,40 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
 
     public H264Settings withColorMetadata(H264ColorMetadata colorMetadata) {
         this.colorMetadata = colorMetadata.toString();
+        return this;
+    }
+
+    /**
+     * Color Space settings
+     * 
+     * @param colorSpaceSettings
+     *        Color Space settings
+     */
+
+    public void setColorSpaceSettings(H264ColorSpaceSettings colorSpaceSettings) {
+        this.colorSpaceSettings = colorSpaceSettings;
+    }
+
+    /**
+     * Color Space settings
+     * 
+     * @return Color Space settings
+     */
+
+    public H264ColorSpaceSettings getColorSpaceSettings() {
+        return this.colorSpaceSettings;
+    }
+
+    /**
+     * Color Space settings
+     * 
+     * @param colorSpaceSettings
+     *        Color Space settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H264Settings withColorSpaceSettings(H264ColorSpaceSettings colorSpaceSettings) {
+        setColorSpaceSettings(colorSpaceSettings);
         return this;
     }
 
@@ -2121,6 +2157,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("BufSize: ").append(getBufSize()).append(",");
         if (getColorMetadata() != null)
             sb.append("ColorMetadata: ").append(getColorMetadata()).append(",");
+        if (getColorSpaceSettings() != null)
+            sb.append("ColorSpaceSettings: ").append(getColorSpaceSettings()).append(",");
         if (getEntropyEncoding() != null)
             sb.append("EntropyEncoding: ").append(getEntropyEncoding()).append(",");
         if (getFixedAfd() != null)
@@ -2220,6 +2258,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getColorMetadata() == null ^ this.getColorMetadata() == null)
             return false;
         if (other.getColorMetadata() != null && other.getColorMetadata().equals(this.getColorMetadata()) == false)
+            return false;
+        if (other.getColorSpaceSettings() == null ^ this.getColorSpaceSettings() == null)
+            return false;
+        if (other.getColorSpaceSettings() != null && other.getColorSpaceSettings().equals(this.getColorSpaceSettings()) == false)
             return false;
         if (other.getEntropyEncoding() == null ^ this.getEntropyEncoding() == null)
             return false;
@@ -2359,6 +2401,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBufFillPct() == null) ? 0 : getBufFillPct().hashCode());
         hashCode = prime * hashCode + ((getBufSize() == null) ? 0 : getBufSize().hashCode());
         hashCode = prime * hashCode + ((getColorMetadata() == null) ? 0 : getColorMetadata().hashCode());
+        hashCode = prime * hashCode + ((getColorSpaceSettings() == null) ? 0 : getColorSpaceSettings().hashCode());
         hashCode = prime * hashCode + ((getEntropyEncoding() == null) ? 0 : getEntropyEncoding().hashCode());
         hashCode = prime * hashCode + ((getFixedAfd() == null) ? 0 : getFixedAfd().hashCode());
         hashCode = prime * hashCode + ((getFlickerAq() == null) ? 0 : getFlickerAq().hashCode());

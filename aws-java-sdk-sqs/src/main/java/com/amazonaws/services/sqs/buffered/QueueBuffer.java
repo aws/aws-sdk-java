@@ -14,6 +14,7 @@
  */
 package com.amazonaws.services.sqs.buffered;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
@@ -27,12 +28,18 @@ import com.amazonaws.handlers.AsyncHandler;
 import com.amazonaws.services.sqs.AmazonSQSAsync;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityRequest;
 import com.amazonaws.services.sqs.model.ChangeMessageVisibilityResult;
+import com.amazonaws.services.sqs.model.DeleteMessageBatchRequest;
+import com.amazonaws.services.sqs.model.DeleteMessageBatchRequestEntry;
+import com.amazonaws.services.sqs.model.DeleteMessageBatchResult;
+import com.amazonaws.services.sqs.model.DeleteMessageBatchResultEntry;
 import com.amazonaws.services.sqs.model.DeleteMessageRequest;
 import com.amazonaws.services.sqs.model.DeleteMessageResult;
 import com.amazonaws.services.sqs.model.ReceiveMessageRequest;
 import com.amazonaws.services.sqs.model.ReceiveMessageResult;
 import com.amazonaws.services.sqs.model.SendMessageRequest;
 import com.amazonaws.services.sqs.model.SendMessageResult;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 /**
  * A buffer to operate on an SQS queue. The buffer batches outbound ( {@code SendMessage},
@@ -52,10 +59,29 @@ import com.amazonaws.services.sqs.model.SendMessageResult;
 
 class QueueBuffer {
 
+    private static final Log log = LogFactory.getLog(QueueBuffer.class);
+
+    private static final AsyncHandler<DeleteMessageRequest, DeleteMessageResult> DEFAULT_BACKGROUND_DELETE_ASYNC_HANDLER
+        = new AsyncHandler<DeleteMessageRequest, DeleteMessageResult>() {
+
+            @Override
+            public void onSuccess(DeleteMessageRequest request, DeleteMessageResult deleteMessageResult) {
+                // No-op
+            }
+
+            @Override
+            public void onError(Exception exception) {
+                log.warn("Failed to delete message in background (config.isDeleteInBackground() is true) - " +
+                         "message will likely be redelivered", exception);
+            }
+        };
+
     private final SendQueueBuffer sendBuffer;
     private final ReceiveQueueBuffer receiveBuffer;
     private final AmazonSQSAsync realSqs;
     QueueBufferConfig config;
+
+    private final AsyncHandler<DeleteMessageRequest, DeleteMessageResult> backgroundDeleteAsyncHandler;
 
     /**
      * This executor that will be shared among all queue buffers. Since a single JVM can access
@@ -66,10 +92,16 @@ class QueueBuffer {
     static ExecutorService executor = Executors.newCachedThreadPool(new DaemonThreadFactory());;
 
     QueueBuffer(QueueBufferConfig paramConfig, String url, AmazonSQSAsync sqs) {
+        this(paramConfig, url, sqs, DEFAULT_BACKGROUND_DELETE_ASYNC_HANDLER);
+    }
+
+    QueueBuffer(QueueBufferConfig paramConfig, String url, AmazonSQSAsync sqs,
+                AsyncHandler<DeleteMessageRequest, DeleteMessageResult> backgroundDeleteAsyncHandler) {
         realSqs = sqs;
         config = paramConfig;
         sendBuffer = new SendQueueBuffer(sqs, executor, paramConfig, url);
         receiveBuffer = new ReceiveQueueBuffer(sqs, executor, paramConfig, url);
+        this.backgroundDeleteAsyncHandler = backgroundDeleteAsyncHandler;
     }
 
     /**
@@ -117,13 +149,49 @@ class QueueBuffer {
     }
 
     /**
-     * Deletes a message from SQS. Does not return until a confirmation from SQS has been received
+     * Deletes a message from SQS. If <tt>config.isDeleteInBackground()</tt> is false, does not return until a confirmation
+     * from SQS has been received. If <tt>config.isDeleteInBackground()</tt> is true, immediately returns a successful result
+     * and uses {@link #deleteMessage} to delete the message in the background. If the background call fails, the
+     * error will be logged since there is no other way to communicate the failure.
      *
      * @return never null
      */
     public DeleteMessageResult deleteMessageSync(DeleteMessageRequest request) {
-        Future<DeleteMessageResult> future = deleteMessage(request, null);
-        return waitForFuture(future);
+        if (config.isDeleteInBackground()) {
+            deleteMessage(request, backgroundDeleteAsyncHandler);
+            return new DeleteMessageResult();
+        } else {
+            Future<DeleteMessageResult> future = deleteMessage(request, null);
+            return waitForFuture(future);
+        }
+    }
+
+    /**
+     * Deletes a batch of messages from SQS. If <tt>config.isDeleteInBackground()</tt> is false, does not return until a confirmation
+     * from SQS has been received. If <tt>config.isDeleteInBackground()</tt> is true, immediately returns a successful result
+     * and uses multiple calls to {@link #deleteMessage} to delete the message in the background.
+     * If the background call fails, the error will be logged since there is no other way to communicate the failure.
+     *
+     * @return never null
+     */
+    public DeleteMessageBatchResult deleteMessageBatchSync(DeleteMessageBatchRequest request) {
+        if (config.isDeleteInBackground()) {
+            // Submit each entry as a DeleteMessageRequest, since the underlying buffer
+            // doesn't support batch requests.
+            String queueUrl = request.getQueueUrl();
+            List<DeleteMessageBatchRequestEntry> requestEntries = request.getEntries();
+            List<DeleteMessageBatchResultEntry> resultEntries =
+                    new ArrayList<DeleteMessageBatchResultEntry>(requestEntries.size());
+            for (DeleteMessageBatchRequestEntry entry : requestEntries) {
+                deleteMessage(new DeleteMessageRequest().withQueueUrl(queueUrl)
+                                                        .withReceiptHandle(entry.getReceiptHandle()),
+                              backgroundDeleteAsyncHandler);
+                resultEntries.add(new DeleteMessageBatchResultEntry().withId(entry.getId()));
+            }
+            return new DeleteMessageBatchResult().withSuccessful(resultEntries);
+        } else {
+            return realSqs.deleteMessageBatch(request);
+        }
     }
 
     /**
@@ -222,21 +290,20 @@ class QueueBuffer {
      *         back to the service to fetch the results
      */
     private boolean canBeRetrievedFromQueueBuffer(ReceiveMessageRequest rq) {
-        return !hasRequestedQueueAttributes(rq) && requestedMessageAttributesAreCompatible(rq) && isBufferingEnabled()
+        return requestedAttributesAreCompatible(rq) && requestedMessageAttributesAreCompatible(rq) && isBufferingEnabled()
                 && (rq.getVisibilityTimeout() == null);
     }
 
     /**
-     * @return True if request has been configured to return queue attributes. False otherwise
+     * @return True if request has been configured to return compatible attributes. False otherwise
      */
-    private boolean hasRequestedQueueAttributes(ReceiveMessageRequest rq) {
-        return rq.getAttributeNames() != null && !rq.getAttributeNames().isEmpty();
+    private boolean requestedAttributesAreCompatible(ReceiveMessageRequest rq) {
+        return rq.getAttributeNames().equals(config.getReceiveAttributeNames());
     }
 
     /**
      * @return True if request has been configured to return compatible message attributes. False otherwise.
      */
-    // TODO-RS: If useful, extend this to support any subset of attributes instead of an exact match.
     private boolean requestedMessageAttributesAreCompatible(ReceiveMessageRequest rq) {
         return rq.getMessageAttributeNames().equals(config.getReceiveMessageAttributeNames());
     }

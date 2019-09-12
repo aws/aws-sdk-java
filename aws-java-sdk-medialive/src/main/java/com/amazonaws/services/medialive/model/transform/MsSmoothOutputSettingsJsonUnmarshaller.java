@@ -48,6 +48,10 @@ public class MsSmoothOutputSettingsJsonUnmarshaller implements Unmarshaller<MsSm
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("h265PackagingType", targetDepth)) {
+                    context.nextToken();
+                    msSmoothOutputSettings.setH265PackagingType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("nameModifier", targetDepth)) {
                     context.nextToken();
                     msSmoothOutputSettings.setNameModifier(context.getUnmarshaller(String.class).unmarshall(context));

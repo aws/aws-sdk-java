@@ -39,6 +39,8 @@ public class H264SettingsMarshaller {
             .marshallLocationName("bufSize").build();
     private static final MarshallingInfo<String> COLORMETADATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorMetadata").build();
+    private static final MarshallingInfo<StructuredPojo> COLORSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceSettings").build();
     private static final MarshallingInfo<String> ENTROPYENCODING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entropyEncoding").build();
     private static final MarshallingInfo<String> FIXEDAFD_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -124,6 +126,7 @@ public class H264SettingsMarshaller {
             protocolMarshaller.marshall(h264Settings.getBufFillPct(), BUFFILLPCT_BINDING);
             protocolMarshaller.marshall(h264Settings.getBufSize(), BUFSIZE_BINDING);
             protocolMarshaller.marshall(h264Settings.getColorMetadata(), COLORMETADATA_BINDING);
+            protocolMarshaller.marshall(h264Settings.getColorSpaceSettings(), COLORSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(h264Settings.getEntropyEncoding(), ENTROPYENCODING_BINDING);
             protocolMarshaller.marshall(h264Settings.getFixedAfd(), FIXEDAFD_BINDING);
             protocolMarshaller.marshall(h264Settings.getFlickerAq(), FLICKERAQ_BINDING);

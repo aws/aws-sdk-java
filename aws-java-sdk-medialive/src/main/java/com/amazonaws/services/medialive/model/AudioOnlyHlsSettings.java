@@ -29,11 +29,11 @@ public class AudioOnlyHlsSettings implements Serializable, Cloneable, Structured
     /** Specifies the group to which the audio Rendition belongs. */
     private String audioGroupId;
     /**
-     * For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     * cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons. The
-     * iPhone does not resize the image, it crops a centered image on the top/bottom and left/right. Additionally, this
-     * image file gets saved bit-for-bit into every 10-second segment file, so will increase bandwidth by {image file
-     * size} * {segment count} * {user count.}.
+     * Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low
+     * bit-size file because the image increases the output audio bandwidth.
+     * 
+     * The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     * "ID3 tag version 2.4.0 - Native Frames" standard.
      */
     private InputLocation audioOnlyImage;
     /**
@@ -88,18 +88,18 @@ public class AudioOnlyHlsSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     * cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons. The
-     * iPhone does not resize the image, it crops a centered image on the top/bottom and left/right. Additionally, this
-     * image file gets saved bit-for-bit into every 10-second segment file, so will increase bandwidth by {image file
-     * size} * {segment count} * {user count.}.
+     * Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low
+     * bit-size file because the image increases the output audio bandwidth.
+     * 
+     * The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     * "ID3 tag version 2.4.0 - Native Frames" standard.
      * 
      * @param audioOnlyImage
-     *        For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     *        cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons.
-     *        The iPhone does not resize the image, it crops a centered image on the top/bottom and left/right.
-     *        Additionally, this image file gets saved bit-for-bit into every 10-second segment file, so will increase
-     *        bandwidth by {image file size} * {segment count} * {user count.}.
+     *        Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend
+     *        a low bit-size file because the image increases the output audio bandwidth.
+     * 
+     *        The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     *        "ID3 tag version 2.4.0 - Native Frames" standard.
      */
 
     public void setAudioOnlyImage(InputLocation audioOnlyImage) {
@@ -107,17 +107,17 @@ public class AudioOnlyHlsSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     * cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons. The
-     * iPhone does not resize the image, it crops a centered image on the top/bottom and left/right. Additionally, this
-     * image file gets saved bit-for-bit into every 10-second segment file, so will increase bandwidth by {image file
-     * size} * {segment count} * {user count.}.
+     * Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low
+     * bit-size file because the image increases the output audio bandwidth.
      * 
-     * @return For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     *         cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two
-     *         reasons. The iPhone does not resize the image, it crops a centered image on the top/bottom and
-     *         left/right. Additionally, this image file gets saved bit-for-bit into every 10-second segment file, so
-     *         will increase bandwidth by {image file size} * {segment count} * {user count.}.
+     * The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     * "ID3 tag version 2.4.0 - Native Frames" standard.
+     * 
+     * @return Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend
+     *         a low bit-size file because the image increases the output audio bandwidth.
+     * 
+     *         The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     *         "ID3 tag version 2.4.0 - Native Frames" standard.
      */
 
     public InputLocation getAudioOnlyImage() {
@@ -125,18 +125,18 @@ public class AudioOnlyHlsSettings implements Serializable, Cloneable, Structured
     }
 
     /**
-     * For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     * cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons. The
-     * iPhone does not resize the image, it crops a centered image on the top/bottom and left/right. Additionally, this
-     * image file gets saved bit-for-bit into every 10-second segment file, so will increase bandwidth by {image file
-     * size} * {segment count} * {user count.}.
+     * Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend a low
+     * bit-size file because the image increases the output audio bandwidth.
+     * 
+     * The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     * "ID3 tag version 2.4.0 - Native Frames" standard.
      * 
      * @param audioOnlyImage
-     *        For use with an audio only Stream. Must be a .jpg or .png file. If given, this image will be used as the
-     *        cover-art for the audio only output. Ideally, it should be formatted for an iPhone screen for two reasons.
-     *        The iPhone does not resize the image, it crops a centered image on the top/bottom and left/right.
-     *        Additionally, this image file gets saved bit-for-bit into every 10-second segment file, so will increase
-     *        bandwidth by {image file size} * {segment count} * {user count.}.
+     *        Optional. Specifies the .jpg or .png image to use as the cover art for an audio-only output. We recommend
+     *        a low bit-size file because the image increases the output audio bandwidth.
+     * 
+     *        The image is attached to the audio as an ID3 tag, frame type APIC, picture type 0x10, as per the
+     *        "ID3 tag version 2.4.0 - Native Frames" standard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

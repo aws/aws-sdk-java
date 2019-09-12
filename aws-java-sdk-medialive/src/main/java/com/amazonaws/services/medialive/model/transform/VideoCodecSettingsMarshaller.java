@@ -31,6 +31,8 @@ public class VideoCodecSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("frameCaptureSettings").build();
     private static final MarshallingInfo<StructuredPojo> H264SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("h264Settings").build();
+    private static final MarshallingInfo<StructuredPojo> H265SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("h265Settings").build();
 
     private static final VideoCodecSettingsMarshaller instance = new VideoCodecSettingsMarshaller();
 
@@ -50,6 +52,7 @@ public class VideoCodecSettingsMarshaller {
         try {
             protocolMarshaller.marshall(videoCodecSettings.getFrameCaptureSettings(), FRAMECAPTURESETTINGS_BINDING);
             protocolMarshaller.marshall(videoCodecSettings.getH264Settings(), H264SETTINGS_BINDING);
+            protocolMarshaller.marshall(videoCodecSettings.getH265Settings(), H265SETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

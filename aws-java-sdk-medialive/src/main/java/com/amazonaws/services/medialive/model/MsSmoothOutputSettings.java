@@ -26,8 +26,72 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class MsSmoothOutputSettings implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     */
+    private String h265PackagingType;
     /** String concatenated to the end of the destination filename. Required for multiple outputs of the same type. */
     private String nameModifier;
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @see MsSmoothH265PackagingType
+     */
+
+    public void setH265PackagingType(String h265PackagingType) {
+        this.h265PackagingType = h265PackagingType;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @return Only applicable when this output is referencing an H.265 video description. Specifies whether MP4
+     *         segments should be packaged as HEV1 or HVC1.
+     * @see MsSmoothH265PackagingType
+     */
+
+    public String getH265PackagingType() {
+        return this.h265PackagingType;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MsSmoothH265PackagingType
+     */
+
+    public MsSmoothOutputSettings withH265PackagingType(String h265PackagingType) {
+        setH265PackagingType(h265PackagingType);
+        return this;
+    }
+
+    /**
+     * Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments should
+     * be packaged as HEV1 or HVC1.
+     * 
+     * @param h265PackagingType
+     *        Only applicable when this output is referencing an H.265 video description. Specifies whether MP4 segments
+     *        should be packaged as HEV1 or HVC1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MsSmoothH265PackagingType
+     */
+
+    public MsSmoothOutputSettings withH265PackagingType(MsSmoothH265PackagingType h265PackagingType) {
+        this.h265PackagingType = h265PackagingType.toString();
+        return this;
+    }
 
     /**
      * String concatenated to the end of the destination filename. Required for multiple outputs of the same type.
@@ -78,6 +142,8 @@ public class MsSmoothOutputSettings implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getH265PackagingType() != null)
+            sb.append("H265PackagingType: ").append(getH265PackagingType()).append(",");
         if (getNameModifier() != null)
             sb.append("NameModifier: ").append(getNameModifier());
         sb.append("}");
@@ -94,6 +160,10 @@ public class MsSmoothOutputSettings implements Serializable, Cloneable, Structur
         if (obj instanceof MsSmoothOutputSettings == false)
             return false;
         MsSmoothOutputSettings other = (MsSmoothOutputSettings) obj;
+        if (other.getH265PackagingType() == null ^ this.getH265PackagingType() == null)
+            return false;
+        if (other.getH265PackagingType() != null && other.getH265PackagingType().equals(this.getH265PackagingType()) == false)
+            return false;
         if (other.getNameModifier() == null ^ this.getNameModifier() == null)
             return false;
         if (other.getNameModifier() != null && other.getNameModifier().equals(this.getNameModifier()) == false)
@@ -106,6 +176,7 @@ public class MsSmoothOutputSettings implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getH265PackagingType() == null) ? 0 : getH265PackagingType().hashCode());
         hashCode = prime * hashCode + ((getNameModifier() == null) ? 0 : getNameModifier().hashCode());
         return hashCode;
     }

@@ -30,6 +30,8 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
 
     private H264Settings h264Settings;
 
+    private H265Settings h265Settings;
+
     /**
      * @param frameCaptureSettings
      */
@@ -83,6 +85,32 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * @param h265Settings
+     */
+
+    public void setH265Settings(H265Settings h265Settings) {
+        this.h265Settings = h265Settings;
+    }
+
+    /**
+     * @return
+     */
+
+    public H265Settings getH265Settings() {
+        return this.h265Settings;
+    }
+
+    /**
+     * @param h265Settings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoCodecSettings withH265Settings(H265Settings h265Settings) {
+        setH265Settings(h265Settings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -97,7 +125,9 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
         if (getFrameCaptureSettings() != null)
             sb.append("FrameCaptureSettings: ").append(getFrameCaptureSettings()).append(",");
         if (getH264Settings() != null)
-            sb.append("H264Settings: ").append(getH264Settings());
+            sb.append("H264Settings: ").append(getH264Settings()).append(",");
+        if (getH265Settings() != null)
+            sb.append("H265Settings: ").append(getH265Settings());
         sb.append("}");
         return sb.toString();
     }
@@ -120,6 +150,10 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getH264Settings() != null && other.getH264Settings().equals(this.getH264Settings()) == false)
             return false;
+        if (other.getH265Settings() == null ^ this.getH265Settings() == null)
+            return false;
+        if (other.getH265Settings() != null && other.getH265Settings().equals(this.getH265Settings()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +164,7 @@ public class VideoCodecSettings implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getFrameCaptureSettings() == null) ? 0 : getFrameCaptureSettings().hashCode());
         hashCode = prime * hashCode + ((getH264Settings() == null) ? 0 : getH264Settings().hashCode());
+        hashCode = prime * hashCode + ((getH265Settings() == null) ? 0 : getH265Settings().hashCode());
         return hashCode;
     }
 

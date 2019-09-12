@@ -164,7 +164,8 @@ public class AmazonSQSBufferedAsyncClient implements AmazonSQSAsync {
     public DeleteMessageBatchResult deleteMessageBatch(DeleteMessageBatchRequest deleteMessageBatchRequest)
             throws AmazonServiceException, AmazonClientException {
         ResultConverter.appendUserAgent(deleteMessageBatchRequest, USER_AGENT);
-        return realSQS.deleteMessageBatch(deleteMessageBatchRequest);
+        QueueBuffer buffer = getQBuffer(deleteMessageBatchRequest.getQueueUrl());
+        return buffer.deleteMessageBatchSync(deleteMessageBatchRequest);
     }
 
     public DeleteMessageResult deleteMessage(DeleteMessageRequest deleteMessageRequest) throws AmazonServiceException,

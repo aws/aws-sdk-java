@@ -21,8 +21,8 @@ import javax.annotation.Generated;
 public enum FleetActivityStatus {
 
     Error("error"),
-    PendingFulfillment("pending-fulfillment"),
-    PendingTermination("pending-termination"),
+    Pending_fulfillment("pending_fulfillment"),
+    Pending_termination("pending_termination"),
     Fulfilled("fulfilled");
 
     private String value;

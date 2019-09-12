@@ -1,3 +1,29 @@
+# __1.11.631__ __2019-09-12__
+## __AWS Elemental MediaLive__
+  - ### Features
+    - AWS Elemental MediaLive now supports High Efficiency Video Coding (HEVC) for standard-definition (SD), high-definition (HD), and ultra-high-definition (UHD) encoding with HDR support.Encoding with HEVC offers a number of advantages. While UHD video requires an advanced codec beyond H.264 (AVC), high frame rate (HFR) or High Dynamic Range (HDR) content in HD also benefit from HEVC's advancements. In addition, benefits can be achieved with HD and SD content even if HDR and HFR are not needed.
+
+## __Amazon Elastic Compute Cloud__
+  - ### Features
+    - Fix for FleetActivityStatus and FleetStateCode enum
+
+## __Amazon Simple Queue Service (SQS)__
+  - ### Features
+    - Added a DeleteInBackground option to the buffered async client, which causes synchronous delete message calls to be submitted in the background. This improves delete latency at the cost of possibly increasing duplicates if the background deletions fail, and improves efficiency since individual delete calls will be batched together.
+    - Added support for "adaptive prefetching" to the buffered async client. This optional feature makes the outgoing receive message calls to SQS proportional to the rate of incoming receive message calls to the client. In particular, this means if incoming calls are stopped, the client will stop making calls to SQS.
+    - Added support for attributes when prefetching messages using the buffered async client. The configuration now supports a ReceiveAttributeNames parameter: any incoming receive message calls that request the same list of attributes will be satisfied from the buffers. The default is to not fetch any attributes, which matches previous behaviour.
+
+  - ### Bugfixes
+    - Fixed the buffered async client to timeout receive message requests correctly: empty results will be returned according to the WaitTimeSeconds request parameter and the ReceiveMessageWaitTimeSeconds queue attribute. By default requests will wait at least 50 milliseconds before completing, in order to avoid expensive busy-waiting, but the new MinReceiveWaitTimeMs configuration parameter can be used to tune this.
+
+## __Amazon WorkMail Message Flow__
+  - ### Features
+    - This release allows customers to access email messages as they flow to and from Amazon WorkMail.
+
+## __Elastic Load Balancing__
+  - ### Features
+    - Documentation updates for elasticloadbalancingv2: This release adds support for TLS SNI on Network Load Balancers 
+
 # __1.11.630__ __2019-09-11__
 ## __AWS Config__
   - ### Features

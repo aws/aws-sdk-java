@@ -24,8 +24,8 @@ public enum FleetStateCode {
     Active("active"),
     Deleted("deleted"),
     Failed("failed"),
-    DeletedRunning("deleted-running"),
-    DeletedTerminating("deleted-terminating"),
+    Deleted_running("deleted_running"),
+    Deleted_terminating("deleted_terminating"),
     Modifying("modifying");
 
     private String value;

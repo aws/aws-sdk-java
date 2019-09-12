@@ -54,7 +54,7 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not
-     * apply.
+     * apply. Otherwise, this parameter is required.
      * </p>
      */
     private String vpcId;
@@ -370,12 +370,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not
-     * apply.
+     * apply. Otherwise, this parameter is required.
      * </p>
      * 
      * @param vpcId
      *        The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does
-     *        not apply.
+     *        not apply. Otherwise, this parameter is required.
      */
 
     public void setVpcId(String vpcId) {
@@ -385,11 +385,11 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not
-     * apply.
+     * apply. Otherwise, this parameter is required.
      * </p>
      * 
      * @return The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter
-     *         does not apply.
+     *         does not apply. Otherwise, this parameter is required.
      */
 
     public String getVpcId() {
@@ -399,12 +399,12 @@ public class CreateTargetGroupRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does not
-     * apply.
+     * apply. Otherwise, this parameter is required.
      * </p>
      * 
      * @param vpcId
      *        The identifier of the virtual private cloud (VPC). If the target is a Lambda function, this parameter does
-     *        not apply.
+     *        not apply. Otherwise, this parameter is required.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

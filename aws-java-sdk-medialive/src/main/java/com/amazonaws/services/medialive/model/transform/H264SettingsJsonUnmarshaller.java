@@ -72,6 +72,10 @@ public class H264SettingsJsonUnmarshaller implements Unmarshaller<H264Settings, 
                     context.nextToken();
                     h264Settings.setColorMetadata(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("colorSpaceSettings", targetDepth)) {
+                    context.nextToken();
+                    h264Settings.setColorSpaceSettings(H264ColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("entropyEncoding", targetDepth)) {
                     context.nextToken();
                     h264Settings.setEntropyEncoding(context.getUnmarshaller(String.class).unmarshall(context));

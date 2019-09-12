@@ -56,6 +56,10 @@ public class VideoCodecSettingsJsonUnmarshaller implements Unmarshaller<VideoCod
                     context.nextToken();
                     videoCodecSettings.setH264Settings(H264SettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("h265Settings", targetDepth)) {
+                    context.nextToken();
+                    videoCodecSettings.setH265Settings(H265SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

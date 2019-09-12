@@ -17,11 +17,18 @@ package com.amazonaws.services.sqs.buffered;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
+import com.amazonaws.services.sqs.model.QueueAttributeName;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -40,11 +47,27 @@ import com.amazonaws.services.sqs.model.ReceiveMessageResult;
  * which it uses to satisfy incoming requests. The number of requests pre-fetched and kept in the
  * buffer, as well as the maximum number of threads used to retrieve the messages are configurable.
  * <p>
- * Synchronization strategy: - Threads must hold the TaskSpawnSyncPoint object monitor to spawn a
- * new task or modify the number of inflight tasks - Threads must hold the monitor of the "futures"
- * list to modify the list - Threads must hold the monitor of the "finishedTasks" list to modify the
- * list - If you need to lock both futures and finishedTasks, lock futures first and finishedTasks
- * second
+ * Synchronization strategy:
+ * <li>
+ * Threads must hold the TaskSpawnSyncPoint object monitor to spawn a new task or modify the number of inflight tasks
+ * </li>
+ * <li>
+ * Threads must hold the monitor of the "futures" list to modify the list
+ * <ul>
+ * <li>
+ * If you need to lock both futures and an individual future, lock futures first and the future second
+ * </li>
+ * </ul>
+ * </li>
+ * <li>
+ * Threads must hold the monitor of the "finishedTasks" list to modify the list
+ * <ul>
+ * <li>
+ * If you need to lock both futures and finishedTasks, lock futures first and finishedTasks second
+ * </li>
+ * </ul>
+ * </li>
+ *
  */
 public class ReceiveQueueBuffer {
 
@@ -70,6 +93,8 @@ public class ReceiveQueueBuffer {
 
     private final Executor executor;
 
+    private final ScheduledExecutorService waitTimer = Executors.newSingleThreadScheduledExecutor();
+
     private final AmazonSQS sqsClient;
 
     private long bufferCounter = 0;
@@ -80,6 +105,13 @@ public class ReceiveQueueBuffer {
      * indicates that the time is uninitialized.
      */
     private volatile long visibilityTimeoutNanos = -1;
+
+    /**
+     * This buffer's queue default receive wait time. Used to set the timeout on futures so they complete
+     * according to when the synchronous call to SQS would have. Synchronized by {@code futures}. -1
+     * indicates that the time is uninitialized.
+     */
+    private volatile int defaultWaitTimeSeconds = -1;
 
     /**
      * Used as permits controlling the number of in flight receive batches. Synchronized by
@@ -96,7 +128,7 @@ public class ReceiveQueueBuffer {
     volatile boolean shutDown = false;
 
     /** message delivery futures we gave out */
-    private final LinkedList<ReceiveMessageFuture> futures = new LinkedList<ReceiveMessageFuture>();
+    private final Set<ReceiveMessageFuture> futures = new LinkedHashSet<ReceiveMessageFuture>();
 
     /** finished batches are stored in this list. */
     private LinkedList<ReceiveMessageBatchTask> finishedTasks = new LinkedList<ReceiveMessageBatchTask>();
@@ -121,6 +153,12 @@ public class ReceiveQueueBuffer {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         }
+        waitTimer.shutdown();
+        try {
+            waitTimer.awaitTermination(20, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+        }
     }
 
     /**
@@ -141,13 +179,31 @@ public class ReceiveQueueBuffer {
         if (rq.getMaxNumberOfMessages() != null) {
             numMessages = rq.getMaxNumberOfMessages();
         }
-        QueueBufferFuture<ReceiveMessageRequest, ReceiveMessageResult> toReturn = issueFuture(numMessages, callback);
+        synchronized (futures) {
+            if (defaultWaitTimeSeconds == -1) {
+                GetQueueAttributesRequest request = new GetQueueAttributesRequest().withQueueUrl(qUrl)
+                        .withAttributeNames(QueueAttributeName.ReceiveMessageWaitTimeSeconds);
+                ResultConverter.appendUserAgent(request, AmazonSQSBufferedAsyncClient.USER_AGENT);
+                defaultWaitTimeSeconds = Integer.parseInt(sqsClient.getQueueAttributes(request).getAttributes()
+                        .get(QueueAttributeName.ReceiveMessageWaitTimeSeconds.toString()));
+            }
+        }
+        int waitTimeSeconds = defaultWaitTimeSeconds;
+        if (rq.getWaitTimeSeconds() != null) {
+            waitTimeSeconds = rq.getWaitTimeSeconds();
+        }
+        long waitTimeMs = Math.max(config.getMinReceiveWaitTimeMs(),
+                TimeUnit.MILLISECONDS.convert(waitTimeSeconds, TimeUnit.SECONDS));
+        ReceiveMessageFuture toReturn = issueFuture(numMessages, waitTimeMs, callback);
 
         // attempt to satisfy it right away...
         satisfyFuturesFromBuffer();
 
         // spawn more receive tasks if we need them...
         spawnMoreReceiveTasks();
+
+        // start the wait timer on the future (which will do nothing if the future is already satisfied)
+        toReturn.startWaitTimer();
 
         return toReturn;
     }
@@ -158,11 +214,11 @@ public class ReceiveQueueBuffer {
      * 
      * @return never null
      */
-    private ReceiveMessageFuture issueFuture(int size,
+    private ReceiveMessageFuture issueFuture(int size, long waitTimeMs,
                                              QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult> callback) {
         synchronized (futures) {
-            ReceiveMessageFuture theFuture = new ReceiveMessageFuture(callback, size);
-            futures.addLast(theFuture);
+            ReceiveMessageFuture theFuture = new ReceiveMessageFuture(callback, size, waitTimeMs);
+            futures.add(theFuture);
             return theFuture;
         }
     }
@@ -176,14 +232,16 @@ public class ReceiveQueueBuffer {
             synchronized (finishedTasks) {
                 // attempt to satisfy futures until we run out of either futures or
                 // finished tasks
-                while ((!futures.isEmpty()) && (!finishedTasks.isEmpty())) {
+                Iterator<ReceiveMessageFuture> futureIter = futures.iterator();
+                while (futureIter.hasNext() && (!finishedTasks.isEmpty())) {
                     // Remove any expired tasks before attempting to fufill the future
                     pruneExpiredTasks();
                     // Fufill the future from a non expired task if there is one. There is still a
                     // slight chance that the first task could have expired between the time we
                     // pruned and the time we fufill the future
                     if (!finishedTasks.isEmpty()) {
-                        fufillFuture(futures.poll());
+                        fufillFuture(futureIter.next());
+                        futureIter.remove();
                     }
                 }
             }
@@ -290,6 +348,17 @@ public class ReceiveQueueBuffer {
 
         int desiredBatches = config.getMaxDoneReceiveBatches();
         desiredBatches = desiredBatches < 1 ? 1 : desiredBatches;
+        if (config.isAdapativePrefetching()) {
+            synchronized (futures) {
+                int totalRequested = 0;
+                for (Iterator<ReceiveMessageFuture> futuresIter = futures.iterator(); futuresIter.hasNext();) {
+                    ReceiveMessageFuture future = futuresIter.next();
+                    totalRequested += future.getRequestedSize();
+                }
+                int batchesNeededToFulfillFutures = (int) Math.ceil((float) totalRequested / config.getMaxBatchSize());
+                desiredBatches = Math.min(batchesNeededToFulfillFutures, desiredBatches);
+            }
+        }
 
         synchronized (finishedTasks) {
             if (finishedTasks.size() >= desiredBatches)
@@ -339,7 +408,7 @@ public class ReceiveQueueBuffer {
         synchronized (finishedTasks) {
             finishedTasks.addLast(batch);
             if (log.isTraceEnabled()) {
-                log.info("Queue " + qUrl + " now has " + finishedTasks.size() + " receive results cached ");
+                log.trace("Queue " + qUrl + " now has " + finishedTasks.size() + " receive results cached ");
             }
         }
         synchronized (taskSpawnSyncPoint) {
@@ -373,15 +442,72 @@ public class ReceiveQueueBuffer {
         /* how many messages did the request ask for */
         private int requestedSize;
 
-        ReceiveMessageFuture(QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult> cb, int paramSize) {
+        private final long waitTimeDeadlineNano;
+        private volatile Future<?> timeoutFuture;
+
+        ReceiveMessageFuture(QueueBufferCallback<ReceiveMessageRequest, ReceiveMessageResult> cb, int paramSize, long waitTimeMs) {
             super(cb);
             requestedSize = paramSize;
+            waitTimeDeadlineNano = System.nanoTime() + TimeUnit.NANOSECONDS.convert(waitTimeMs, TimeUnit.MILLISECONDS);
+        }
+
+        public void startWaitTimer() {
+            if (isDone() || timeoutFuture != null) {
+                return;
+            }
+
+            long remaining = waitTimeDeadlineNano - System.nanoTime();
+            if (remaining <= 0) {
+                timeout();
+            } else {
+                Runnable timeoutRunnable = new Runnable() {
+                    @Override
+                    public void run() {
+                        timeout();
+                    }
+                };
+                timeoutFuture = waitTimer.schedule(timeoutRunnable, remaining, TimeUnit.NANOSECONDS);
+            }
+        }
+
+        public boolean isExpired() {
+            return System.nanoTime() > waitTimeDeadlineNano;
+        }
+
+        @Override
+        public synchronized void setSuccess(ReceiveMessageResult result) {
+            cancelTimeout();
+            super.setSuccess(result);
+        }
+
+        @Override
+        public synchronized void setFailure(Exception exception) {
+            cancelTimeout();
+            super.setFailure(exception);
+        }
+
+        public void timeout() {
+            // Synchronize on the set of futures before synchronizing on this
+            // object to avoid deadlock.
+            synchronized (futures) {
+                synchronized (this) {
+                    if (!isDone()) {
+                        setSuccess(new ReceiveMessageResult());
+                        futures.remove(this);
+                    }
+                }
+            }
         }
 
         public int getRequestedSize() {
             return requestedSize;
         }
 
+        private synchronized void cancelTimeout() {
+            if (timeoutFuture != null) {
+                timeoutFuture.cancel(false);
+            }
+        }
     }
 
     /**
@@ -399,9 +525,6 @@ public class ReceiveQueueBuffer {
 
         /**
          * Constructs a receive task waiting the specified time before calling SQS.
-         * 
-         * @param waitTimeMs
-         *            the time to wait before calling SQS
          */
         ReceiveMessageBatchTask(ReceiveQueueBuffer paramParentBuffer) {
             parentBuffer = paramParentBuffer;

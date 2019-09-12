@@ -559,7 +559,7 @@ public class SendQueueBuffer {
 
             for (DeleteMessageBatchResultEntry entry : batchResult.getSuccessful()) {
                 int index = Integer.parseInt(entry.getId());
-                futures.get(index).setSuccess(null);
+                futures.get(index).setSuccess(new DeleteMessageResult());
             }
 
             for (BatchResultErrorEntry errorEntry : batchResult.getFailed()) {
@@ -569,8 +569,7 @@ public class SendQueueBuffer {
                 } else {
                     try {
                         // retry.
-                        sqsClient.deleteMessage(requests.get(index));
-                        futures.get(index).setSuccess(null);
+                        futures.get(index).setSuccess(sqsClient.deleteMessage(requests.get(index)));
                     } catch (AmazonClientException ace) {
                         futures.get(index).setFailure(ace);
                     }
@@ -606,7 +605,7 @@ public class SendQueueBuffer {
 
             for (ChangeMessageVisibilityBatchResultEntry entry : batchResult.getSuccessful()) {
                 int index = Integer.parseInt(entry.getId());
-                futures.get(index).setSuccess(null);
+                futures.get(index).setSuccess(new ChangeMessageVisibilityResult());
             }
 
             for (BatchResultErrorEntry errorEntry : batchResult.getFailed()) {
@@ -616,8 +615,7 @@ public class SendQueueBuffer {
                 } else {
                     try {
                         // retry.
-                        sqsClient.changeMessageVisibility(requests.get(index));
-                        futures.get(index).setSuccess(null);
+                        futures.get(index).setSuccess(sqsClient.changeMessageVisibility(requests.get(index)));
                     } catch (AmazonClientException ace) {
                         futures.get(index).setFailure(ace);
                     }
