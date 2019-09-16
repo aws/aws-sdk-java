@@ -47,7 +47,8 @@ public class ApacheHttpClientFactory implements HttpClientFactory<ConnectionMana
         // Note that it is important we register the original connection manager with the
         // IdleConnectionReaper as it's required for the successful deregistration of managers
         // from the reaper. See https://github.com/aws/aws-sdk-java/issues/722.
-        final HttpClientConnectionManager cm = cmFactory.create(settings);
+        HttpClientConnectionManager cm = cmFactory.create(settings);
+        cm = new ConnectionManagerDecorator(cm);
 
         builder.setRequestExecutor(new SdkHttpRequestExecutor())
                 .setKeepAliveStrategy(buildKeepAliveStrategy(settings))

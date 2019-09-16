@@ -119,6 +119,8 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.http.Header;
@@ -128,6 +130,7 @@ import org.apache.http.HttpStatus;
 import org.apache.http.StatusLine;
 import org.apache.http.client.methods.HttpRequestBase;
 import org.apache.http.client.protocol.HttpClientContext;
+import org.apache.http.conn.HttpClientConnectionManager;
 import org.apache.http.entity.BufferedHttpEntity;
 import org.apache.http.impl.execchain.RequestAbortedException;
 import org.apache.http.pool.ConnPoolControl;
@@ -136,6 +139,8 @@ import org.apache.http.protocol.HttpContext;
 
 @ThreadSafe
 public class AmazonHttpClient {
+    private static final ExecutorService EXEC = Executors.newSingleThreadExecutor();
+
     public static final String HEADER_USER_AGENT = "User-Agent";
     public static final String HEADER_SDK_TRANSACTION_ID = "amz-sdk-invocation-id";
     public static final String HEADER_SDK_RETRY_INFO = "amz-sdk-retry";
@@ -322,6 +327,7 @@ public class AmazonHttpClient {
              requestMetricCollector,
              HttpClientSettings.adapt(config, useBrowserCompatibleHostNameVerifier, calculateCRC32FromCompressedData));
         this.httpClient = httpClientFactory.create(this.httpClientSettings);
+        EXEC.submit(new PoolStatsLogger(1000, httpClient.getHttpClientConnectionManager()));
     }
 
     /**
@@ -1873,6 +1879,37 @@ public class AmazonHttpClient {
                     return null;
                 }
                 return apacheResponse.getStatusLine().getStatusCode();
+            }
+        }
+    }
+
+    private static final class PoolStatsLogger implements Runnable {
+        private final int periodMs;
+        private final HttpClientConnectionManager connManager;
+
+        private PoolStatsLogger(int periodMs, HttpClientConnectionManager connManager) {
+            this.periodMs = periodMs;
+            this.connManager = connManager;
+        }
+
+        @Override
+        public void run() {
+            while (true) {
+                if (connManager instanceof ConnPoolControl<?>) {
+                    final PoolStats stats = ((ConnPoolControl<?>) connManager).getTotalStats();
+                    int available = stats.getAvailable();
+                    int leased = stats.getLeased();
+                    int pending = stats.getPending();
+                    int max = stats.getMax();
+
+                    String msg = String.format("Current pool stats - Available: %d, Leased: %d, Pending: %d, Max: %d%n", available, leased, pending, max);
+                    log.info(msg);
+                }
+
+                try {
+                    Thread.sleep(periodMs);
+                } catch (Exception e) {
+                }
             }
         }
     }
