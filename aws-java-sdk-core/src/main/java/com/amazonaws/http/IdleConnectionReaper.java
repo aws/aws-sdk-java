@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
+import org.apache.http.pool.ConnPoolControl;
+import org.apache.http.pool.PoolStats;
 
 /**
  * Daemon thread to periodically check connection pools for idle connections.
@@ -179,7 +181,9 @@ public final class IdleConnectionReaper extends Thread {
                     // open so they can be reused.  We want to close out any idle
                     // connections so that they don't sit around in CLOSE_WAIT.
                     try {
+                        LOG.info("Pool stats before reaping idle connections - " + poolStatsString(entry.getKey()));
                         entry.getKey().closeIdleConnections(entry.getValue(), TimeUnit.MILLISECONDS);
+                        LOG.info("Pool stats after reaping idle connections - " + poolStatsString(entry.getKey()));
                     } catch (Exception t) {
                         LOG.warn("Unable to close idle connections", t);
                     }
@@ -192,5 +196,18 @@ public final class IdleConnectionReaper extends Thread {
         }
 
         LOG.debug("Shutting down reaper thread.");
+    }
+
+    private static String poolStatsString(HttpClientConnectionManager connManager)  {
+        if (connManager instanceof ConnPoolControl<?>) {
+            final PoolStats stats = ((ConnPoolControl<?>) connManager).getTotalStats();
+            int available = stats.getAvailable();
+            int leased = stats.getLeased();
+            int pending = stats.getPending();
+            int max = stats.getMax();
+
+            return String.format("Available: %d, Leased: %d, Pending: %d, Max: %d%n", available, leased, pending, max);
+        }
+        return "Unavailable";
     }
 }
