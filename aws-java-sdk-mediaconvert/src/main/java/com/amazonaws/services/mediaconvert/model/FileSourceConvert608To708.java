@@ -15,8 +15,9 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
- * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+ * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+ * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using the
+ * 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum FileSourceConvert608To708 {

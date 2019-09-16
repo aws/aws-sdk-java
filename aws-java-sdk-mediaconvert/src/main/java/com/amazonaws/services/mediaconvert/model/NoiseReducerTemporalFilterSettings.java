@@ -37,9 +37,10 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
      */
     private Integer speed;
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: * [0 ..
-     * 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with image
-     * preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We
+     * recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with
+     * minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of
+     * complexity reduction
      */
     private Integer strength;
 
@@ -127,14 +128,16 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: * [0 ..
-     * 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with image
-     * preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We
+     * recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with
+     * minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of
+     * complexity reduction
      * 
      * @param strength
-     *        Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: *
-     *        [0 .. 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with
-     *        image preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     *        Specify the strength of the noise reducing filter on this output. Higher values produce stronger
+     *        filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for
+     *        complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation *
+     *        8-16 for a high level of complexity reduction
      */
 
     public void setStrength(Integer strength) {
@@ -142,13 +145,15 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: * [0 ..
-     * 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with image
-     * preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We
+     * recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with
+     * minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of
+     * complexity reduction
      * 
-     * @return Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range:
-     *         * [0 .. 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with
-     *         image preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * @return Specify the strength of the noise reducing filter on this output. Higher values produce stronger
+     *         filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for
+     *         complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation *
+     *         8-16 for a high level of complexity reduction
      */
 
     public Integer getStrength() {
@@ -156,14 +161,16 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
     }
 
     /**
-     * Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: * [0 ..
-     * 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with image
-     * preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     * Specify the strength of the noise reducing filter on this output. Higher values produce stronger filtering. We
+     * recommend the following value ranges, depending on the result that you want: * 0-2 for complexity reduction with
+     * minimal sharpness loss * 2-8 for complexity reduction with image preservation * 8-16 for a high level of
+     * complexity reduction
      * 
      * @param strength
-     *        Relative strength of noise reducing filter. Higher values produce stronger filtering. Recommended Range: *
-     *        [0 .. 2] for complexity reduction with minimal sharpness loss * [2 .. 8] for complexity reduction with
-     *        image preservation * [8 .. 16] for noise reduction. Reduce noise combined high complexity reduction
+     *        Specify the strength of the noise reducing filter on this output. Higher values produce stronger
+     *        filtering. We recommend the following value ranges, depending on the result that you want: * 0-2 for
+     *        complexity reduction with minimal sharpness loss * 2-8 for complexity reduction with image preservation *
+     *        8-16 for a high level of complexity reduction
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

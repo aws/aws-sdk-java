@@ -15,12 +15,14 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * For DRM with CMAF, the encryption type is always sample AES.
+ * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+ * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum CmafEncryptionType {
 
-    SAMPLE_AES("SAMPLE_AES");
+    SAMPLE_AES("SAMPLE_AES"),
+    AES_CTR("AES_CTR");
 
     private String value;
 

@@ -112,6 +112,13 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String platformVersion;
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -695,6 +702,73 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @return The metadata that you apply to the cluster to assist with categorization and organization. Each tag
+     *         consists of a key and an optional value, both of which you define.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
+     *        consists of a key and an optional value, both of which you define.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The metadata that you apply to the cluster to assist with categorization and organization. Each tag consists of a
+     * key and an optional value, both of which you define.
+     * </p>
+     * 
+     * @param tags
+     *        The metadata that you apply to the cluster to assist with categorization and organization. Each tag
+     *        consists of a key and an optional value, both of which you define.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    public Cluster addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -731,7 +805,9 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         if (getClientRequestToken() != null)
             sb.append("ClientRequestToken: ").append(getClientRequestToken()).append(",");
         if (getPlatformVersion() != null)
-            sb.append("PlatformVersion: ").append(getPlatformVersion());
+            sb.append("PlatformVersion: ").append(getPlatformVersion()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -798,6 +874,10 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPlatformVersion() != null && other.getPlatformVersion().equals(this.getPlatformVersion()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -819,6 +899,7 @@ public class Cluster implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCertificateAuthority() == null) ? 0 : getCertificateAuthority().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

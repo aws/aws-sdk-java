@@ -18,7 +18,8 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for File-based Captions in Source
+ * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption
+ * source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileSourceSettings" target="_top">AWS
  *      API Documentation</a>
@@ -27,25 +28,29 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class FileSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      */
     private String convert608To708;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'.
+     * 'srt', 'xml', and 'smi'.
      */
     private String sourceFile;
     /** Specifies a time delta in seconds to offset the captions from the source file. */
     private Integer timeDelta;
 
     /**
-     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
-     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @see FileSourceConvert608To708
      */
 
@@ -54,11 +59,14 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
-     * @return If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
-     *         the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * @return Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *         choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *         through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *         into 708.
      * @see FileSourceConvert608To708
      */
 
@@ -67,12 +75,15 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
-     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSourceConvert608To708
      */
@@ -83,12 +94,15 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        If set to UPCONVERT, 608 caption data is both passed through via the "608 compatibility bytes" fields of
-     *        the 708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FileSourceConvert608To708
      */
@@ -100,11 +114,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'.
+     * 'srt', 'xml', and 'smi'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', and 'smi'.
+     *        'stl', 'srt', 'xml', and 'smi'.
      */
 
     public void setSourceFile(String sourceFile) {
@@ -113,10 +127,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'.
+     * 'srt', 'xml', and 'smi'.
      * 
      * @return External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *         'stl', 'srt', and 'smi'.
+     *         'stl', 'srt', 'xml', and 'smi'.
      */
 
     public String getSourceFile() {
@@ -125,11 +139,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', and 'smi'.
+     * 'srt', 'xml', and 'smi'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', and 'smi'.
+     *        'stl', 'srt', 'xml', and 'smi'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

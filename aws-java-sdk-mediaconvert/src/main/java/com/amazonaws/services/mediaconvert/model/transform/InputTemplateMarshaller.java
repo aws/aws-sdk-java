@@ -57,6 +57,8 @@ public class InputTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("psiControl").build();
     private static final MarshallingInfo<String> TIMECODESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeSource").build();
+    private static final MarshallingInfo<String> TIMECODESTART_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timecodeStart").build();
     private static final MarshallingInfo<StructuredPojo> VIDEOSELECTOR_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("videoSelector").build();
 
@@ -90,6 +92,7 @@ public class InputTemplateMarshaller {
             protocolMarshaller.marshall(inputTemplate.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getPsiControl(), PSICONTROL_BINDING);
             protocolMarshaller.marshall(inputTemplate.getTimecodeSource(), TIMECODESOURCE_BINDING);
+            protocolMarshaller.marshall(inputTemplate.getTimecodeStart(), TIMECODESTART_BINDING);
             protocolMarshaller.marshall(inputTemplate.getVideoSelector(), VIDEOSELECTOR_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

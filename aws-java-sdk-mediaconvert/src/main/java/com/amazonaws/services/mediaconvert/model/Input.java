@@ -124,13 +124,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<String> supplementalImps;
     /**
-     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
-     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
-     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
-     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
+     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
+     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
+     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
+     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
+     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     private String timecodeSource;
+    /**
+     * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
+     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
+     * (SPECIFIEDSTART). For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     */
+    private String timecodeStart;
     /** Selector for video. */
     private VideoSelector videoSelector;
 
@@ -1100,19 +1109,23 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
-     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
-     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
-     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
+     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
+     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
+     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
+     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
+     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
-     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
-     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
-     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
-     *        timecodes.
+     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
+     *        the service counts input video frames. This input frame count affects only the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
+     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
+     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
+     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
+     *        source, the service will use Embedded by default. For more information about timecodes, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @see InputTimecodeSource
      */
 
@@ -1121,18 +1134,22 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
-     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
-     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
-     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
+     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
+     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
+     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
+     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
+     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
-     * @return Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
-     *         apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
-     *         this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED)
-     *         or by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
-     *         HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
-     *         timecodes.
+     * @return Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
+     *         the service counts input video frames. This input frame count affects only the behavior of features that
+     *         apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
+     *         Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
+     *         the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
+     *         that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
+     *         source, the service will use Embedded by default. For more information about timecodes, see
+     *         https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @see InputTimecodeSource
      */
 
@@ -1141,19 +1158,23 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
-     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
-     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
-     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
+     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
+     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
+     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
+     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
+     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
-     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
-     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
-     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
-     *        timecodes.
+     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
+     *        the service counts input video frames. This input frame count affects only the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
+     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
+     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
+     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
+     *        source, the service will use Embedded by default. For more information about timecodes, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
@@ -1164,25 +1185,81 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that apply to a
-     * single input at a time, such as input clipping and synchronizing some captions formats. Use this setting to
-     * specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or by starting the first
-     * frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or HH:MM:SS;FF, where FF is the frame
-     * number. Only set this to EMBEDDED if your source video has embedded timecodes.
+     * Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how the
+     * service counts input video frames. This input frame count affects only the behavior of features that apply to a
+     * single input at a time, such as input clipping and synchronizing some captions formats. Choose Embedded (EMBEDDED)
+     * to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start the first frame at zero.
+     * Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode that you specify in the setting
+     * Start timecode (timecodeStart). If you don't specify a value for Timecode source, the service will use Embedded by
+     * default. For more information about timecodes, see https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * 
      * @param timecodeSource
-     *        Timecode source under input settings (InputTimecodeSource) only affects the behavior of features that
-     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Use
-     *        this setting to specify whether the service counts frames by timecodes embedded in the video (EMBEDDED) or
-     *        by starting the first frame at zero (ZEROBASED). In both cases, the timecode format is HH:MM:SS:FF or
-     *        HH:MM:SS;FF, where FF is the frame number. Only set this to EMBEDDED if your source video has embedded
-     *        timecodes.
+     *        Use this Timecode source setting, located under the input settings (InputTimecodeSource), to specify how
+     *        the service counts input video frames. This input frame count affects only the behavior of features that
+     *        apply to a single input at a time, such as input clipping and synchronizing some captions formats. Choose
+     *        Embedded (EMBEDDED) to use the timecodes in your input video. Choose Start at zero (ZEROBASED) to start
+     *        the first frame at zero. Choose Specified start (SPECIFIEDSTART) to start the first frame at the timecode
+     *        that you specify in the setting Start timecode (timecodeStart). If you don't specify a value for Timecode
+     *        source, the service will use Embedded by default. For more information about timecodes, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputTimecodeSource
      */
 
     public Input withTimecodeSource(InputTimecodeSource timecodeSource) {
         this.timecodeSource = timecodeSource.toString();
+        return this;
+    }
+
+    /**
+     * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
+     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
+     * (SPECIFIEDSTART). For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * 
+     * @param timecodeStart
+     *        Specify the timecode that you want the service to use for this input's initial frame. To use this setting,
+     *        you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to
+     *        Specified start (SPECIFIEDSTART). For more information about timecodes, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     */
+
+    public void setTimecodeStart(String timecodeStart) {
+        this.timecodeStart = timecodeStart;
+    }
+
+    /**
+     * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
+     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
+     * (SPECIFIEDSTART). For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * 
+     * @return Specify the timecode that you want the service to use for this input's initial frame. To use this
+     *         setting, you must set the Timecode source setting, located under the input settings
+     *         (InputTimecodeSource), to Specified start (SPECIFIEDSTART). For more information about timecodes, see
+     *         https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     */
+
+    public String getTimecodeStart() {
+        return this.timecodeStart;
+    }
+
+    /**
+     * Specify the timecode that you want the service to use for this input's initial frame. To use this setting, you
+     * must set the Timecode source setting, located under the input settings (InputTimecodeSource), to Specified start
+     * (SPECIFIEDSTART). For more information about timecodes, see
+     * https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * 
+     * @param timecodeStart
+     *        Specify the timecode that you want the service to use for this input's initial frame. To use this setting,
+     *        you must set the Timecode source setting, located under the input settings (InputTimecodeSource), to
+     *        Specified start (SPECIFIEDSTART). For more information about timecodes, see
+     *        https://docs.aws.amazon.com/console/mediaconvert/timecode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Input withTimecodeStart(String timecodeStart) {
+        setTimecodeStart(timecodeStart);
         return this;
     }
 
@@ -1266,6 +1343,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("SupplementalImps: ").append(getSupplementalImps()).append(",");
         if (getTimecodeSource() != null)
             sb.append("TimecodeSource: ").append(getTimecodeSource()).append(",");
+        if (getTimecodeStart() != null)
+            sb.append("TimecodeStart: ").append(getTimecodeStart()).append(",");
         if (getVideoSelector() != null)
             sb.append("VideoSelector: ").append(getVideoSelector());
         sb.append("}");
@@ -1350,6 +1429,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTimecodeSource() != null && other.getTimecodeSource().equals(this.getTimecodeSource()) == false)
             return false;
+        if (other.getTimecodeStart() == null ^ this.getTimecodeStart() == null)
+            return false;
+        if (other.getTimecodeStart() != null && other.getTimecodeStart().equals(this.getTimecodeStart()) == false)
+            return false;
         if (other.getVideoSelector() == null ^ this.getVideoSelector() == null)
             return false;
         if (other.getVideoSelector() != null && other.getVideoSelector().equals(this.getVideoSelector()) == false)
@@ -1379,6 +1462,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());
         hashCode = prime * hashCode + ((getSupplementalImps() == null) ? 0 : getSupplementalImps().hashCode());
         hashCode = prime * hashCode + ((getTimecodeSource() == null) ? 0 : getTimecodeSource().hashCode());
+        hashCode = prime * hashCode + ((getTimecodeStart() == null) ? 0 : getTimecodeStart().hashCode());
         hashCode = prime * hashCode + ((getVideoSelector() == null) ? 0 : getVideoSelector().hashCode());
         return hashCode;
     }

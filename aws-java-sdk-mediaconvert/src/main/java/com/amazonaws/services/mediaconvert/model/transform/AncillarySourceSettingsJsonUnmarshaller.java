@@ -48,9 +48,17 @@ public class AncillarySourceSettingsJsonUnmarshaller implements Unmarshaller<Anc
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("convert608To708", targetDepth)) {
+                    context.nextToken();
+                    ancillarySourceSettings.setConvert608To708(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("sourceAncillaryChannelNumber", targetDepth)) {
                     context.nextToken();
                     ancillarySourceSettings.setSourceAncillaryChannelNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("terminateCaptions", targetDepth)) {
+                    context.nextToken();
+                    ancillarySourceSettings.setTerminateCaptions(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

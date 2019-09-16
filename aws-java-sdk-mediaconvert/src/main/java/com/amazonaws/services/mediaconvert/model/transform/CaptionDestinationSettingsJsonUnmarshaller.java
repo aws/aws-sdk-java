@@ -64,6 +64,10 @@ public class CaptionDestinationSettingsJsonUnmarshaller implements Unmarshaller<
                     context.nextToken();
                     captionDestinationSettings.setEmbeddedDestinationSettings(EmbeddedDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("imscDestinationSettings", targetDepth)) {
+                    context.nextToken();
+                    captionDestinationSettings.setImscDestinationSettings(ImscDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("sccDestinationSettings", targetDepth)) {
                     context.nextToken();
                     captionDestinationSettings.setSccDestinationSettings(SccDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));

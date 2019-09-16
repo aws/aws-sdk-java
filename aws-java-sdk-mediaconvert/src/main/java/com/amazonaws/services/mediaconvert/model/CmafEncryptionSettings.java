@@ -31,7 +31,10 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
      * the Initialization Vector will follow the segment number by default.
      */
     private String constantInitializationVector;
-    /** For DRM with CMAF, the encryption type is always sample AES. */
+    /**
+     * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
+     */
     private String encryptionMethod;
     /**
      * When you use DRM with CMAF outputs, choose whether the service writes the 128-bit encryption initialization
@@ -39,8 +42,8 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
      */
     private String initializationVectorInManifest;
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
-     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
      */
     private SpekeKeyProviderCmaf spekeKeyProvider;
     /** Use these settings to set up encryption with a static key provider. */
@@ -92,10 +95,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * 
      * @param encryptionMethod
-     *        For DRM with CMAF, the encryption type is always sample AES.
+     *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
+     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * @see CmafEncryptionType
      */
 
@@ -104,9 +109,11 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * 
-     * @return For DRM with CMAF, the encryption type is always sample AES.
+     * @return Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
+     *         AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * @see CmafEncryptionType
      */
 
@@ -115,10 +122,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * 
      * @param encryptionMethod
-     *        For DRM with CMAF, the encryption type is always sample AES.
+     *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
+     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -129,10 +138,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * For DRM with CMAF, the encryption type is always sample AES.
+     * Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose AES-CBC
+     * subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * 
      * @param encryptionMethod
-     *        For DRM with CMAF, the encryption type is always sample AES.
+     *        Specify the encryption scheme that you want the service to use when encrypting your CMAF segments. Choose
+     *        AES-CBC subsample (SAMPLE-AES) or AES_CTR (AES-CTR).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CmafEncryptionType
      */
@@ -202,12 +213,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
-     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
      * 
      * @param spekeKeyProvider
-     *        Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
-     *        type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
+     *        If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     *        provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings
      *        instead.
      */
 
@@ -216,12 +227,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
-     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
      * 
-     * @return Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
-     *         type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
-     *         instead.
+     * @return If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant
+     *         key provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider
+     *         settings instead.
      */
 
     public SpekeKeyProviderCmaf getSpekeKeyProvider() {
@@ -229,12 +240,12 @@ public class CmafEncryptionSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group type is
-     * CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings instead.
+     * If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     * provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings instead.
      * 
      * @param spekeKeyProvider
-     *        Use these settings when doing DRM encryption with a SPEKE-compliant key provider, if your output group
-     *        type is CMAF. If your output group type is HLS, MS Smooth, or DASH, use the SpekeKeyProvider settings
+     *        If your output group type is CMAF, use these settings when doing DRM encryption with a SPEKE-compliant key
+     *        provider. If your output group type is HLS, DASH, or Microsoft Smooth, use the SpekeKeyProvider settings
      *        instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

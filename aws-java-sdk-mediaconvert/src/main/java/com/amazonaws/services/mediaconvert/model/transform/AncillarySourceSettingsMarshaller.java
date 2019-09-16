@@ -27,8 +27,12 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AncillarySourceSettingsMarshaller {
 
+    private static final MarshallingInfo<String> CONVERT608TO708_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("convert608To708").build();
     private static final MarshallingInfo<Integer> SOURCEANCILLARYCHANNELNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourceAncillaryChannelNumber").build();
+    private static final MarshallingInfo<String> TERMINATECAPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terminateCaptions").build();
 
     private static final AncillarySourceSettingsMarshaller instance = new AncillarySourceSettingsMarshaller();
 
@@ -46,7 +50,9 @@ public class AncillarySourceSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(ancillarySourceSettings.getConvert608To708(), CONVERT608TO708_BINDING);
             protocolMarshaller.marshall(ancillarySourceSettings.getSourceAncillaryChannelNumber(), SOURCEANCILLARYCHANNELNUMBER_BINDING);
+            protocolMarshaller.marshall(ancillarySourceSettings.getTerminateCaptions(), TERMINATECAPTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

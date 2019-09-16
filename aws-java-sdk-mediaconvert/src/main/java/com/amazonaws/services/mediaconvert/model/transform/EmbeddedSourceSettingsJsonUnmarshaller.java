@@ -60,6 +60,10 @@ public class EmbeddedSourceSettingsJsonUnmarshaller implements Unmarshaller<Embe
                     context.nextToken();
                     embeddedSourceSettings.setSource608TrackNumber(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("terminateCaptions", targetDepth)) {
+                    context.nextToken();
+                    embeddedSourceSettings.setTerminateCaptions(context.getUnmarshaller(String.class).unmarshall(context));
+                }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
                     if (context.getCurrentDepth() <= originalDepth)

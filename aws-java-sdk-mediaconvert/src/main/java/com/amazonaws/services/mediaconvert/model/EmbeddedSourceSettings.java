@@ -27,8 +27,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EmbeddedSourceSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      */
     private String convert608To708;
     /**
@@ -41,14 +42,22 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
      * this should always be set to '1'.
      */
     private Integer source608TrackNumber;
+    /**
+     * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to
+     * continue onto your next input, disable this setting.
+     */
+    private String terminateCaptions;
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @see EmbeddedConvert608To708
      */
 
@@ -57,11 +66,14 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
-     * @return When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the
-     *         708 wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * @return Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *         choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *         through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *         into 708.
      * @see EmbeddedConvert608To708
      */
 
@@ -70,12 +82,15 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */
@@ -86,12 +101,15 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
-     * When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     * wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     * Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you choose
+     * Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data through using
+     * the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data into 708.
      * 
      * @param convert608To708
-     *        When set to UPCONVERT, 608 data is both passed through via the "608 compatibility bytes" fields of the 708
-     *        wrapper as well as translated into 708. 708 data present in the source content will be discarded.
+     *        Specify whether this set of input captions appears in your outputs in both 608 and 708 format. If you
+     *        choose Upconvert (UPCONVERT), MediaConvert includes the captions data in two ways: it passes the 608 data
+     *        through using the 608 compatibility bytes fields of the 708 wrapper, and it also translates the 608 data
+     *        into 708.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EmbeddedConvert608To708
      */
@@ -182,6 +200,65 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
     }
 
     /**
+     * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to
+     * continue onto your next input, disable this setting.
+     * 
+     * @param terminateCaptions
+     *        By default, the service terminates any unterminated captions at the end of each input. If you want the
+     *        caption to continue onto your next input, disable this setting.
+     * @see EmbeddedTerminateCaptions
+     */
+
+    public void setTerminateCaptions(String terminateCaptions) {
+        this.terminateCaptions = terminateCaptions;
+    }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to
+     * continue onto your next input, disable this setting.
+     * 
+     * @return By default, the service terminates any unterminated captions at the end of each input. If you want the
+     *         caption to continue onto your next input, disable this setting.
+     * @see EmbeddedTerminateCaptions
+     */
+
+    public String getTerminateCaptions() {
+        return this.terminateCaptions;
+    }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to
+     * continue onto your next input, disable this setting.
+     * 
+     * @param terminateCaptions
+     *        By default, the service terminates any unterminated captions at the end of each input. If you want the
+     *        caption to continue onto your next input, disable this setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EmbeddedTerminateCaptions
+     */
+
+    public EmbeddedSourceSettings withTerminateCaptions(String terminateCaptions) {
+        setTerminateCaptions(terminateCaptions);
+        return this;
+    }
+
+    /**
+     * By default, the service terminates any unterminated captions at the end of each input. If you want the caption to
+     * continue onto your next input, disable this setting.
+     * 
+     * @param terminateCaptions
+     *        By default, the service terminates any unterminated captions at the end of each input. If you want the
+     *        caption to continue onto your next input, disable this setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EmbeddedTerminateCaptions
+     */
+
+    public EmbeddedSourceSettings withTerminateCaptions(EmbeddedTerminateCaptions terminateCaptions) {
+        this.terminateCaptions = terminateCaptions.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -198,7 +275,9 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
         if (getSource608ChannelNumber() != null)
             sb.append("Source608ChannelNumber: ").append(getSource608ChannelNumber()).append(",");
         if (getSource608TrackNumber() != null)
-            sb.append("Source608TrackNumber: ").append(getSource608TrackNumber());
+            sb.append("Source608TrackNumber: ").append(getSource608TrackNumber()).append(",");
+        if (getTerminateCaptions() != null)
+            sb.append("TerminateCaptions: ").append(getTerminateCaptions());
         sb.append("}");
         return sb.toString();
     }
@@ -225,6 +304,10 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
             return false;
         if (other.getSource608TrackNumber() != null && other.getSource608TrackNumber().equals(this.getSource608TrackNumber()) == false)
             return false;
+        if (other.getTerminateCaptions() == null ^ this.getTerminateCaptions() == null)
+            return false;
+        if (other.getTerminateCaptions() != null && other.getTerminateCaptions().equals(this.getTerminateCaptions()) == false)
+            return false;
         return true;
     }
 
@@ -236,6 +319,7 @@ public class EmbeddedSourceSettings implements Serializable, Cloneable, Structur
         hashCode = prime * hashCode + ((getConvert608To708() == null) ? 0 : getConvert608To708().hashCode());
         hashCode = prime * hashCode + ((getSource608ChannelNumber() == null) ? 0 : getSource608ChannelNumber().hashCode());
         hashCode = prime * hashCode + ((getSource608TrackNumber() == null) ? 0 : getSource608TrackNumber().hashCode());
+        hashCode = prime * hashCode + ((getTerminateCaptions() == null) ? 0 : getTerminateCaptions().hashCode());
         return hashCode;
     }
 

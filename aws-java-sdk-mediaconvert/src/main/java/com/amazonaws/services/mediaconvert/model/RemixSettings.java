@@ -39,7 +39,10 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
      * different.
      */
     private Integer channelsIn;
-    /** Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8 */
+    /**
+     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even
+     * numbers to 64.)
+     */
     private Integer channelsOut;
 
     /**
@@ -135,10 +138,12 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even
+     * numbers to 64.)
      * 
      * @param channelsOut
-     *        Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     *        Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and
+     *        even numbers to 64.)
      */
 
     public void setChannelsOut(Integer channelsOut) {
@@ -146,9 +151,11 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even
+     * numbers to 64.)
      * 
-     * @return Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     * @return Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and
+     *         even numbers to 64.)
      */
 
     public Integer getChannelsOut() {
@@ -156,10 +163,12 @@ public class RemixSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     * Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and even
+     * numbers to 64.)
      * 
      * @param channelsOut
-     *        Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8
+     *        Specify the number of channels in this output after remixing. Valid values: 1, 2, 4, 6, 8... 64. (1 and
+     *        even numbers to 64.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
