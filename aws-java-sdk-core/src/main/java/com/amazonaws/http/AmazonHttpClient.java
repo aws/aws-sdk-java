@@ -272,6 +272,7 @@ public class AmazonHttpClient {
     public AmazonHttpClient(ClientConfiguration config,
                             RequestMetricCollector requestMetricCollector) {
         this(config, requestMetricCollector, false);
+        startPoolStatsLogger();
     }
 
     /**
@@ -289,6 +290,7 @@ public class AmazonHttpClient {
                             RequestMetricCollector requestMetricCollector,
                             boolean useBrowserCompatibleHostNameVerifier) {
         this(config, requestMetricCollector, useBrowserCompatibleHostNameVerifier, false);
+        startPoolStatsLogger();
     }
 
     /**
@@ -315,6 +317,7 @@ public class AmazonHttpClient {
              requestMetricCollector,
              useBrowserCompatibleHostNameVerifier,
              calculateCRC32FromCompressedData);
+        startPoolStatsLogger();
     }
 
     private AmazonHttpClient(ClientConfiguration config,
@@ -327,7 +330,7 @@ public class AmazonHttpClient {
              requestMetricCollector,
              HttpClientSettings.adapt(config, useBrowserCompatibleHostNameVerifier, calculateCRC32FromCompressedData));
         this.httpClient = httpClientFactory.create(this.httpClientSettings);
-        EXEC.submit(new PoolStatsLogger(1000, httpClient.getHttpClientConnectionManager()));
+        startPoolStatsLogger();
     }
 
     /**
@@ -342,6 +345,7 @@ public class AmazonHttpClient {
              requestMetricCollector,
              HttpClientSettings.adapt(clientConfig, false));
         this.httpClient = httpClient;
+        startPoolStatsLogger();
     }
 
     private AmazonHttpClient(ClientConfiguration clientConfig,
@@ -1881,6 +1885,10 @@ public class AmazonHttpClient {
                 return apacheResponse.getStatusLine().getStatusCode();
             }
         }
+    }
+
+    private void startPoolStatsLogger() {
+        EXEC.submit(new PoolStatsLogger(1000, httpClient.getHttpClientConnectionManager()));
     }
 
     private static final class PoolStatsLogger implements Runnable {
