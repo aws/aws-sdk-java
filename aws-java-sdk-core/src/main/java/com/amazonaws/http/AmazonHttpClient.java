@@ -139,7 +139,7 @@ import org.apache.http.protocol.HttpContext;
 
 @ThreadSafe
 public class AmazonHttpClient {
-    private static final ExecutorService EXEC = Executors.newSingleThreadExecutor();
+    private final ExecutorService exec = Executors.newFixedThreadPool(4);
 
     public static final String HEADER_USER_AGENT = "User-Agent";
     public static final String HEADER_SDK_TRANSACTION_ID = "amz-sdk-invocation-id";
@@ -1888,7 +1888,7 @@ public class AmazonHttpClient {
     }
 
     private void startPoolStatsLogger() {
-        EXEC.submit(new PoolStatsLogger(1000, httpClient.getHttpClientConnectionManager()));
+        exec.submit(new PoolStatsLogger(1000, httpClient.getHttpClientConnectionManager()));
     }
 
     private static final class PoolStatsLogger implements Runnable {
