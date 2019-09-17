@@ -80,6 +80,10 @@ public class SolutionVersionJsonUnmarshaller implements Unmarshaller<SolutionVer
                     context.nextToken();
                     solutionVersion.setSolutionConfig(SolutionConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("trainingHours", targetDepth)) {
+                    context.nextToken();
+                    solutionVersion.setTrainingHours(context.getUnmarshaller(Double.class).unmarshall(context));
+                }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
                     solutionVersion.setStatus(context.getUnmarshaller(String.class).unmarshall(context));

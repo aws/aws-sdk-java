@@ -23,7 +23,7 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * This data type is used as an input parameter to <code> <a>SimulateCustomPolicy</a> </code> and
- * <code> <a>SimulateCustomPolicy</a> </code>.
+ * <code> <a>SimulatePrincipalPolicy</a> </code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ContextEntry" target="_top">AWS API

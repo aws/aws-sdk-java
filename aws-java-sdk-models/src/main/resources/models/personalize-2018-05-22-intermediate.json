@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientConstructors", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -258,6 +258,10 @@
       }, {
         "exceptionName" : "LimitExceededException",
         "documentation" : "<p>The limit on the number of requests per second has been exceeded.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "ResourceInUseException",
+        "documentation" : "<p>The specified resource is in use.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -1506,6 +1510,10 @@
       }, {
         "exceptionName" : "ResourceNotFoundException",
         "documentation" : "<p>Could not find the specified resource.</p>",
+        "httpStatusCode" : null
+      }, {
+        "exceptionName" : "InvalidNextTokenException",
+        "documentation" : "<p>The token is not valid.</p>",
         "httpStatusCode" : null
       } ],
       "hasBlobMemberAsPayload" : false,
@@ -12180,7 +12188,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "performHPO",
-        "c2jShape" : "PerformHPO",
+        "c2jShape" : "Boolean",
         "deprecated" : false,
         "documentation" : "<p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p> <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>",
         "enumType" : null,
@@ -12856,7 +12864,7 @@
         },
         "PerformHPO" : {
           "c2jName" : "performHPO",
-          "c2jShape" : "PerformHPO",
+          "c2jShape" : "Boolean",
           "deprecated" : false,
           "documentation" : "<p>Whether to perform hyperparameter optimization (HPO) on the specified or selected recipe. The default is <code>false</code>.</p> <p>When performing AutoML, this parameter is always <code>true</code> and you should not set it to <code>false</code>.</p>",
           "enumType" : null,
@@ -49666,6 +49674,73 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "trainingHours",
+        "c2jShape" : "TrainingHours",
+        "deprecated" : false,
+        "documentation" : "<p>The time used to train the model. </p>",
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withTrainingHours",
+        "getterDocumentation" : "/**<p>The time used to train the model. </p>\n@return The time used to train the model.*/",
+        "getterMethodName" : "getTrainingHours",
+        "getterModel" : {
+          "returnType" : "Double",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "trainingHours",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "trainingHours",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "Double",
+        "marshallingType" : "DOUBLE",
+        "name" : "TrainingHours",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.*/",
+        "setterMethodName" : "setTrainingHours",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Double",
+          "variableName" : "trainingHours",
+          "variableType" : "Double",
+          "documentation" : "",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "Double",
+          "variableName" : "trainingHours",
+          "variableType" : "Double",
+          "documentation" : "<p>The time used to train the model. </p>",
+          "simpleType" : "Double",
+          "variableSetterType" : "Double"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "status",
         "c2jShape" : "Status",
         "deprecated" : false,
@@ -50748,6 +50823,74 @@
             "documentation" : "<p>The status of the solution version.</p> <p>A solution version can be in one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>",
             "simpleType" : "String",
             "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "TrainingHours" : {
+          "c2jName" : "trainingHours",
+          "c2jShape" : "TrainingHours",
+          "deprecated" : false,
+          "documentation" : "<p>The time used to train the model. </p>",
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withTrainingHours",
+          "getterDocumentation" : "/**<p>The time used to train the model. </p>\n@return The time used to train the model.*/",
+          "getterMethodName" : "getTrainingHours",
+          "getterModel" : {
+            "returnType" : "Double",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "trainingHours",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "trainingHours",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "Double",
+          "marshallingType" : "DOUBLE",
+          "name" : "TrainingHours",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.*/",
+          "setterMethodName" : "setTrainingHours",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Double",
+            "variableName" : "trainingHours",
+            "variableType" : "Double",
+            "documentation" : "",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>The time used to train the model. </p>\n@param trainingHours The time used to train the model.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "Double",
+            "variableName" : "trainingHours",
+            "variableType" : "Double",
+            "documentation" : "<p>The time used to train the model. </p>",
+            "simpleType" : "Double",
+            "variableSetterType" : "Double"
           },
           "xmlNameSpaceUri" : null
         }

@@ -31,6 +31,8 @@ public class QueryExecutionStatisticsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineExecutionTimeInMillis").build();
     private static final MarshallingInfo<Long> DATASCANNEDINBYTES_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataScannedInBytes").build();
+    private static final MarshallingInfo<String> DATAMANIFESTLOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataManifestLocation").build();
 
     private static final QueryExecutionStatisticsMarshaller instance = new QueryExecutionStatisticsMarshaller();
 
@@ -50,6 +52,7 @@ public class QueryExecutionStatisticsMarshaller {
         try {
             protocolMarshaller.marshall(queryExecutionStatistics.getEngineExecutionTimeInMillis(), ENGINEEXECUTIONTIMEINMILLIS_BINDING);
             protocolMarshaller.marshall(queryExecutionStatistics.getDataScannedInBytes(), DATASCANNEDINBYTES_BINDING);
+            protocolMarshaller.marshall(queryExecutionStatistics.getDataManifestLocation(), DATAMANIFESTLOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

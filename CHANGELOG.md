@@ -1,3 +1,20 @@
+# __1.11.633__ __2019-09-17__
+## __AWS Identity and Access Management__
+  - ### Features
+    - Documentation updates for iam
+
+## __Amazon Athena__
+  - ### Features
+    - This release adds DataManifestLocation field indicating the location and file name of the data manifest file. Users can get a list of files that the Athena query wrote or intended to write from the manifest file.
+
+## __Amazon Personalize__
+  - ### Features
+    - [Personalize] Adds trainingHours to solutionVersion properties.
+
+## __Amazon S3__
+  - ### Features
+    - Adds an implementation of equals & hashcode to HeadBucketRequest
+
 # __1.11.632__ __2019-09-16__
 ## __AWS Elemental MediaConvert__
   - ### Features

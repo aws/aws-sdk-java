@@ -83,7 +83,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * Upon success, the response includes the same trust policy in JSON format.
      * </p>
      */
     private String assumeRolePolicyDocument;
@@ -328,7 +328,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * Upon success, the response includes the same trust policy in JSON format.
      * </p>
      * 
      * @param assumeRolePolicyDocument
@@ -361,7 +361,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     *        Upon success, the response includes the same trust policy in JSON format.
      */
 
     public void setAssumeRolePolicyDocument(String assumeRolePolicyDocument) {
@@ -399,7 +399,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * Upon success, the response includes the same trust policy in JSON format.
      * </p>
      * 
      * @return The trust relationship policy document that grants an entity permission to assume the role.</p>
@@ -431,7 +431,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         </li>
      *         </ul>
      *         <p>
-     *         Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     *         Upon success, the response includes the same trust policy in JSON format.
      */
 
     public String getAssumeRolePolicyDocument() {
@@ -469,7 +469,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </li>
      * </ul>
      * <p>
-     * Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     * Upon success, the response includes the same trust policy in JSON format.
      * </p>
      * 
      * @param assumeRolePolicyDocument
@@ -502,7 +502,7 @@ public class CreateRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        </li>
      *        </ul>
      *        <p>
-     *        Upon success, the response includes the same trust policy as a URL-encoded JSON string.
+     *        Upon success, the response includes the same trust policy in JSON format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

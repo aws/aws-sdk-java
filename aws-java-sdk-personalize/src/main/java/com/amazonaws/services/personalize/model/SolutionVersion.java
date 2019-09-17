@@ -79,6 +79,12 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
     private SolutionConfig solutionConfig;
     /**
      * <p>
+     * The time used to train the model.
+     * </p>
+     */
+    private Double trainingHours;
+    /**
+     * <p>
      * The status of the solution version.
      * </p>
      * <p>
@@ -470,6 +476,46 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
+     * The time used to train the model.
+     * </p>
+     * 
+     * @param trainingHours
+     *        The time used to train the model.
+     */
+
+    public void setTrainingHours(Double trainingHours) {
+        this.trainingHours = trainingHours;
+    }
+
+    /**
+     * <p>
+     * The time used to train the model.
+     * </p>
+     * 
+     * @return The time used to train the model.
+     */
+
+    public Double getTrainingHours() {
+        return this.trainingHours;
+    }
+
+    /**
+     * <p>
+     * The time used to train the model.
+     * </p>
+     * 
+     * @param trainingHours
+     *        The time used to train the model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SolutionVersion withTrainingHours(Double trainingHours) {
+        setTrainingHours(trainingHours);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the solution version.
      * </p>
      * <p>
@@ -713,6 +759,8 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
             sb.append("DatasetGroupArn: ").append(getDatasetGroupArn()).append(",");
         if (getSolutionConfig() != null)
             sb.append("SolutionConfig: ").append(getSolutionConfig()).append(",");
+        if (getTrainingHours() != null)
+            sb.append("TrainingHours: ").append(getTrainingHours()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getFailureReason() != null)
@@ -767,6 +815,10 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getSolutionConfig() != null && other.getSolutionConfig().equals(this.getSolutionConfig()) == false)
             return false;
+        if (other.getTrainingHours() == null ^ this.getTrainingHours() == null)
+            return false;
+        if (other.getTrainingHours() != null && other.getTrainingHours().equals(this.getTrainingHours()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -799,6 +851,7 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEventType() == null) ? 0 : getEventType().hashCode());
         hashCode = prime * hashCode + ((getDatasetGroupArn() == null) ? 0 : getDatasetGroupArn().hashCode());
         hashCode = prime * hashCode + ((getSolutionConfig() == null) ? 0 : getSolutionConfig().hashCode());
+        hashCode = prime * hashCode + ((getTrainingHours() == null) ? 0 : getTrainingHours().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

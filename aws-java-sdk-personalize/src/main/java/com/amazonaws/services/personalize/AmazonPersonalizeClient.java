@@ -618,6 +618,8 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      *         The specified resource already exists.
      * @throws LimitExceededException
      *         The limit on the number of requests per second has been exceeded.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
      * @sample AmazonPersonalize.CreateDatasetImportJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetImportJob"
      *      target="_top">AWS API Documentation</a>
@@ -2671,6 +2673,8 @@ public class AmazonPersonalizeClient extends AmazonWebServiceClient implements A
      *         Provide a valid value for the field or parameter.
      * @throws ResourceNotFoundException
      *         Could not find the specified resource.
+     * @throws InvalidNextTokenException
+     *         The token is not valid.
      * @sample AmazonPersonalize.ListSolutionVersions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListSolutionVersions"
      *      target="_top">AWS API Documentation</a>
