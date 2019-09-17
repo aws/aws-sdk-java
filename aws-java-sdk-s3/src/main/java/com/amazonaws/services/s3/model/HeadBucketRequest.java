@@ -36,4 +36,30 @@ public class HeadBucketRequest extends AmazonWebServiceRequest implements Serial
     public HeadBucketRequest(String bucketName) {
         this.bucketName = bucketName;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof HeadBucketRequest == false){
+            return false;
+        }
+        HeadBucketRequest other = (HeadBucketRequest)obj;
+        if(other.getBucketName() == null ^ this.getBucketName() == null)
+            return false;
+        if (other.getBucketName() != null && !other.getBucketName().equals(this.getBucketName()))
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode(){
+        final int prime = 31;
+        int hashCode = 1;
+        hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
+        return hashCode;
+    }
 }
